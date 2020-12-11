@@ -1,6 +1,6 @@
 FROM wikimedia/mediawiki:latest
 ENV MEDIAWIKI_DB_TYPE=postgres
-ENV MEDIAWIKI_DB_HOST=postgres://llyqubbrkfupoa:a740a65c2dd45b3992bb9a0a3be16d8af28dbdc4412c78ebc7b2c20783855991@ec2-54-156-47-113.compute-1.amazonaws.com:5432/d50jjl9kk3htap
+ENV MEDIAWIKI_DB_HOST=llyqubbrkfupoa:a740a65c2dd45b3992bb9a0a3be16d8af28dbdc4412c78ebc7b2c20783855991@ec2-54-156-47-113.compute-1.amazonaws.com
 ENV MEDIAWIKI_DB_PASSWORD=Test123!
 ENV MEDIAWIKI_DB_USER=Aeroaquaponic
 ENV MEDIAWIKI_DB_NAME=Aeroaquaponic
