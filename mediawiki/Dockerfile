@@ -6,4 +6,5 @@ ENV MEDIAWIKI_DB_USER=llyqubbrkfupoa
 ENV MEDIAWIKI_DB_NAME=d50jjl9kk3htap
 # RUN kill `pidof apachectl`
 RUN sed -i "s|80|$PORT|g" /etc/apache2/ports.conf
+RUN sed -i "s|443|$PORT|g" /etc/apache2/ports.conf
 CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
