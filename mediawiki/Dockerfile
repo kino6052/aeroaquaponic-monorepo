@@ -1,10 +1,11 @@
+FROM debian:sid
+
 ENV MEDIAWIKI_DB_TYPE=postgres
 ENV MEDIAWIKI_DB_HOST=ec2-54-156-47-113.compute-1.amazonaws.com
 ENV MEDIAWIKI_DB_PASSWORD=a740a65c2dd45b3992bb9a0a3be16d8af28dbdc4412c78ebc7b2c20783855991
 ENV MEDIAWIKI_DB_USER=llyqubbrkfupoa
 ENV MEDIAWIKI_DB_NAME=d50jjl9kk3htap
 RUN sed -i "s|80|$PORT|g" /etc/apache2/ports.conf
-FROM debian:sid
 
 ENV MEDIAWIKI_VERSION wmf/1.30.0-wmf.4
 
