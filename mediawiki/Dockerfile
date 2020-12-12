@@ -4,7 +4,3 @@ ENV MEDIAWIKI_DB_HOST=ec2-54-156-47-113.compute-1.amazonaws.com
 ENV MEDIAWIKI_DB_PASSWORD=a740a65c2dd45b3992bb9a0a3be16d8af28dbdc4412c78ebc7b2c20783855991
 ENV MEDIAWIKI_DB_USER=llyqubbrkfupoa
 ENV MEDIAWIKI_DB_NAME=d50jjl9kk3htap
-# RUN kill `pidof apachectl`
-RUN sed -i "s|80|$PORT|g" /etc/apache2/ports.conf
-RUN sed -i "s|443|$PORT|g" /etc/apache2/ports.conf
-CMD ["apachectl", "-e", "info", "-D", "FOREGROUND"]
