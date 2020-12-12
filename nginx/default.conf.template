@@ -2,6 +2,6 @@
 server {
   listen $PORT default_server;
   location /   {
-    proxy_pass https://google.com;
+    proxy_pass default_server;
   }
 }
