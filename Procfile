@@ -1,1 +1,2 @@
-web: echo hostname -I && echo $PORT
+web: hostname -I && echo $PORT
+worker: hostname -I && echo $PORT
