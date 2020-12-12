@@ -5,3 +5,4 @@ setup:
 build:
   docker:
     web: mediawiki/Dockerfile
+    nginx: nginx/Dockerfile
