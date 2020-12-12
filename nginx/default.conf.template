@@ -2,6 +2,6 @@
 server {
   listen $PORT default_server;
   location /   {
-    proxy_pass default_server;
+    proxy_pass https://127.0.0.1;
   }
 }
