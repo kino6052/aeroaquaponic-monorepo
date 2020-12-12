@@ -4,5 +4,5 @@ setup:
       as: DATABASE
 build:
   docker:
-    worker: mediawiki/Dockerfile
+    web: mediawiki/Dockerfile
     web: nginx/Dockerfile

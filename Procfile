@@ -1,0 +1,1 @@
+web: echo hostname -I && echo $PORT
