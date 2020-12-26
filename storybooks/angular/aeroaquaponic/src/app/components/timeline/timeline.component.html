@@ -1,1 +1,25 @@
-<p>timeline works!</p>
+<div class="timeline-container">
+  <div class="timeline-item-container" *ngFor="let item of items">
+    <div class="left">
+      <div class="card">
+        <div class="timeline-item-content">
+          <h1>{{ item.title }}</h1>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="bar">
+      <div class="line">
+        <div class="point"></div>
+      </div>
+    </div>
+    <div class="right">
+      <div class="card">
+        <div class="timeline-item-content">
+          <h1>{{ item.title }}</h1>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

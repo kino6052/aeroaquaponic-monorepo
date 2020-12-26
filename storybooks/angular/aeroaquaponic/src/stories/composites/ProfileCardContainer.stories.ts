@@ -23,4 +23,37 @@ const Template: Story<ProfileCardContainerComponent> = (
 });
 
 export const ProfileCardContainer = Template.bind({});
-ProfileCardContainer.args = {};
+ProfileCardContainer.args = {
+  profiles: [
+    {
+      name: 'Cam Schubert',
+      description: 'Medical Scientist',
+      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+    },
+    {
+      name: 'Kirill Novik',
+      description: 'Senior Software Engineer',
+      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+    },
+    {
+      name: 'Dmitry Dementyev',
+      description: 'Senior Researcher in Aquaculture',
+      imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+    },
+    {
+      name: 'Dmitry Dementyev',
+      description: 'Senior Researcher in Aquaculture',
+      imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+    },
+    {
+      name: 'Cam Schubert',
+      description: 'Medical Scientist',
+      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+    },
+    {
+      name: 'Kirill Novik',
+      description: 'Senior Software Engineer',
+      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+    },
+  ],
+};

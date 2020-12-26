@@ -1,15 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+export interface ITimelineItem {
+  title: string;
+  description: string;
+}
 
 @Component({
   selector: 'aeroaquaponic-timeline',
   templateUrl: './timeline.component.html',
-  styleUrls: ['./timeline.component.scss']
+  styleUrls: ['./timeline.component.scss'],
 })
 export class TimelineComponent implements OnInit {
+  @Input()
+  items: ITimelineItem[] = [];
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

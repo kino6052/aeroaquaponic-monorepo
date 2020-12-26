@@ -3,6 +3,8 @@ import { moduleMetadata } from '@storybook/angular';
 import { Meta, Story } from '@storybook/angular/types-6-0';
 import { HeadingComponent } from 'src/app/components/heading/heading.component';
 import { SectionComponent } from 'src/app/components/section/section.component';
+import { SpacerComponent } from 'src/app/components/spacer/spacer.component';
+import { TimelineComponent } from 'src/app/components/timeline/timeline.component';
 import { TypographyComponent } from 'src/app/components/typography/typography.component';
 import {
   data,
@@ -18,6 +20,8 @@ export default {
         TypographyComponent,
         SectionComponent,
         HeadingComponent,
+        TimelineComponent,
+        SpacerComponent,
       ],
     }),
   ],
