@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'aeroaquaponic-projects',
@@ -7,6 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectsComponent implements OnInit {
   constructor() {}
+
+  @Input()
+  title = '';
+
+  @Input()
+  subtitle = '';
+
+  @Input()
+  text = '';
 
   ngOnInit(): void {}
 }

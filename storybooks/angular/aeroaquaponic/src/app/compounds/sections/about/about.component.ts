@@ -1,15 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
-  styleUrls: ['./about.component.scss']
+  styleUrls: ['./about.component.scss'],
 })
 export class AboutComponent implements OnInit {
+  @Input()
+  title = 'About Us';
 
-  constructor() { }
+  @Input()
+  subtitle = 'Our team';
 
-  ngOnInit(): void {
-  }
+  @Input()
+  text = `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`;
 
+  constructor() {}
+
+  ngOnInit(): void {}
 }
