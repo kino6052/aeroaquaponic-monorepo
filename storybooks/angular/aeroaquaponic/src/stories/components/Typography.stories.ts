@@ -16,7 +16,6 @@ export default {
   ],
   title: 'Aeroaquaponic/Components/Typography',
   component: TypographyComponent,
-  template: '<p>Test</p>',
 } as Meta;
 
 const Template: Story<TypographyComponent> = (args: TypographyComponent) => ({

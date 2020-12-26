@@ -1,0 +1,27 @@
+.container {
+  font-family: "Work Sans";
+  display: flex;
+  flex-direction: column;
+  width: 24vw;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5vw;
+  margin: 2vw;
+  & img {
+    height: 12.5vw;
+    width: 12.5vw;
+    border-radius: 50vw;
+    background-color: grey;
+    background-size: cover;
+    background-position: center;
+  }
+  & .name {
+    font-weight: bold;
+    margin-top: 2vw;
+  }
+  & .description {
+    text-align: center;
+    font-weight: lighter;
+    margin-top: 1vw;
+  }
+}

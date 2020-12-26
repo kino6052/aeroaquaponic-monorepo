@@ -45,8 +45,8 @@
     "components": [
         {
             "name": "AboutComponent",
-            "id": "component-AboutComponent-419d2ccd9147b188afb8d0d9a75e227c",
-            "file": "src/app/compounds/sections/about/about.component.ts",
+            "id": "component-AboutComponent-9e85e1391cf80459549aa7186c8f5d41",
+            "file": "src/app/composites/sections/about/about.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -61,7 +61,23 @@
                 "./about.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "subtitle",
+                    "defaultValue": "'Our team'",
+                    "line": 13
+                },
+                {
+                    "name": "text",
+                    "defaultValue": "`We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`",
+                    "line": 16
+                },
+                {
+                    "name": "title",
+                    "defaultValue": "'About Us'",
+                    "line": 10
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -71,7 +87,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 20
                 }
             ],
             "hostBindings": [],
@@ -79,7 +95,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss']\n})\nexport class AboutComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss'],\n})\nexport class AboutComponent implements OnInit {\n  @Input()\n  title = 'About Us';\n\n  @Input()\n  subtitle = 'Our team';\n\n  @Input()\n  text = `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -92,12 +108,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 16
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Projects\"\n    subtitle=\"Let's make this happen!\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-typography>\n    We are a non-profit organization of scientists and engineers who want to\n    bring a change to the world. Our goal is to provide tools to achieve the\n    goal of self-sufficiency. This great feat will not be possible without you.\n    Only together can we achieve this.\n  </aeroaquaponic-typography>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "AppComponent",
@@ -420,8 +436,8 @@
         },
         {
             "name": "ProjectsComponent",
-            "id": "component-ProjectsComponent-5db49a3abbae05b9cc5eed321944ce32",
-            "file": "src/app/compounds/sections/projects/projects.component.ts",
+            "id": "component-ProjectsComponent-c9893cee8c08667d92fbd793665d19d3",
+            "file": "src/app/composites/sections/projects/projects.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -444,7 +460,7 @@
                 },
                 {
                     "name": "text",
-                    "defaultValue": "`At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`",
+                    "defaultValue": "''",
                     "line": 18
                 },
                 {
@@ -462,7 +478,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 20
                 }
             ],
             "hostBindings": [],
@@ -470,7 +486,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = '';\n\n  @Input()\n  subtitle = '';\n\n  @Input()\n  text = `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`;\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = '';\n\n  @Input()\n  subtitle = '';\n\n  @Input()\n  text = '';\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -724,17 +740,9 @@
                 "name": "AboutUs",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/compounds/Section.stories.ts",
+                "file": "src/stories/composites/AboutUs.stories.ts",
                 "type": "",
-                "defaultValue": "AboutUsTemplate.bind({})"
-            },
-            {
-                "name": "AboutUsTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/compounds/Section.stories.ts",
-                "type": "Story<AboutComponent>",
-                "defaultValue": "(args: AboutComponent) => ({\n  component: AboutComponent,\n  props: args,\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "context",
@@ -828,17 +836,9 @@
                 "name": "Projects",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/compounds/Section.stories.ts",
+                "file": "src/stories/composites/Projects.stories.ts",
                 "type": "",
-                "defaultValue": "ProjectsTemplate.bind({})"
-            },
-            {
-                "name": "ProjectsTemplate",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/compounds/Section.stories.ts",
-                "type": "Story<ProjectsComponent>",
-                "defaultValue": "(\n  args: ProjectsComponent\n) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
+                "defaultValue": "Template.bind({})"
             },
             {
                 "name": "require",
@@ -902,44 +902,44 @@
                 "file": "src/stories/components/Typography.stories.ts",
                 "type": "Story<TypographyComponent>",
                 "defaultValue": "(args: TypographyComponent) => ({\n  component: TypographyComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/AboutUs.stories.ts",
+                "type": "Story<AboutComponent>",
+                "defaultValue": "(args: AboutComponent) => ({\n  component: AboutComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/Projects.stories.ts",
+                "type": "Story<ProjectsComponent>",
+                "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "src/stories/compounds/Section.stories.ts": [
+            "src/stories/composites/AboutUs.stories.ts": [
                 {
                     "name": "AboutUs",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/compounds/Section.stories.ts",
+                    "file": "src/stories/composites/AboutUs.stories.ts",
                     "type": "",
-                    "defaultValue": "AboutUsTemplate.bind({})"
+                    "defaultValue": "Template.bind({})"
                 },
                 {
-                    "name": "AboutUsTemplate",
+                    "name": "Template",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/stories/compounds/Section.stories.ts",
+                    "file": "src/stories/composites/AboutUs.stories.ts",
                     "type": "Story<AboutComponent>",
                     "defaultValue": "(args: AboutComponent) => ({\n  component: AboutComponent,\n  props: args,\n})"
-                },
-                {
-                    "name": "Projects",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/compounds/Section.stories.ts",
-                    "type": "",
-                    "defaultValue": "ProjectsTemplate.bind({})"
-                },
-                {
-                    "name": "ProjectsTemplate",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "src/stories/compounds/Section.stories.ts",
-                    "type": "Story<ProjectsComponent>",
-                    "defaultValue": "(\n  args: ProjectsComponent\n) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
                 }
             ],
             "src/test.ts": [
@@ -1108,6 +1108,24 @@
                     "type": "Story<TypographyComponent>",
                     "defaultValue": "(args: TypographyComponent) => ({\n  component: TypographyComponent,\n  props: args,\n})"
                 }
+            ],
+            "src/stories/composites/Projects.stories.ts": [
+                {
+                    "name": "Projects",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/Projects.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/Projects.stories.ts",
+                    "type": "Story<ProjectsComponent>",
+                    "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1187,16 +1205,16 @@
                 "status": "low"
             },
             {
-                "filePath": "src/app/compounds/sections/about/about.component.ts",
+                "filePath": "src/app/composites/sections/about/about.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AboutComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
-                "filePath": "src/app/compounds/sections/projects/projects.component.ts",
+                "filePath": "src/app/composites/sections/projects/projects.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ProjectsComponent",
@@ -1375,7 +1393,7 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/compounds/Section.stories.ts",
+                "filePath": "src/stories/composites/AboutUs.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1385,17 +1403,17 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/compounds/Section.stories.ts",
+                "filePath": "src/stories/composites/AboutUs.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "AboutUsTemplate",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "src/stories/compounds/Section.stories.ts",
+                "filePath": "src/stories/composites/Projects.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -1405,11 +1423,11 @@
                 "status": "low"
             },
             {
-                "filePath": "src/stories/compounds/Section.stories.ts",
+                "filePath": "src/stories/composites/Projects.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "ProjectsTemplate",
+                "name": "Template",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
