@@ -4,18 +4,19 @@ import { Story, Meta } from '@storybook/angular/types-6-0';
 import { AppModule } from 'src/app/app.module';
 import { SectionComponent } from 'src/app/components/section/section.component';
 import { TypographyComponent } from 'src/app/components/typography/typography.component';
-import Button from '../app/components/button.component';
+import Button from '../../app/components/button.component';
 
 export default {
   decorators: [
     moduleMetadata({
       // imports both components to allow component composition with storybook
-      declarations: [TypographyComponent, SectionComponent],
+      declarations: [TypographyComponent],
       // imports: [AppModule],
     }),
   ],
-  title: 'Aeroaquaponic/Typography',
+  title: 'Aeroaquaponic/Components/Typography',
   component: TypographyComponent,
+  template: '<p>Test</p>',
 } as Meta;
 
 const Template: Story<TypographyComponent> = (args: TypographyComponent) => ({

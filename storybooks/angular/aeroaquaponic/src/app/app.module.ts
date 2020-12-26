@@ -7,9 +7,10 @@ import { TypographyComponent } from './components/typography/typography.componen
 import { SectionComponent } from './components/section/section.component';
 import { ProjectsComponent } from './compounds/sections/projects/projects.component';
 import { AboutComponent } from './compounds/sections/about/about.component';
+import { HeadingComponent } from './components/heading/heading.component';
 
 @NgModule({
-  declarations: [AppComponent, TypographyComponent, SectionComponent, ProjectsComponent, AboutComponent],
+  declarations: [AppComponent, TypographyComponent, SectionComponent, ProjectsComponent, AboutComponent, HeadingComponent],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],

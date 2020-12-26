@@ -14,7 +14,7 @@ import {
 export class TypographyComponent implements OnInit {
   @Input() text: string = '';
 
-  @Input() isCentered: boolean = false;
+  @Input() isCentered: boolean = true;
 
   constructor() {}
 
