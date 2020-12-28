@@ -1,0 +1,15 @@
+main {
+  height: 75vw;
+  overflow-y: visible;
+}
+img {
+  display: flex;
+  position: absolute;
+  width: 100%;
+}
+#grass {
+  z-index: -2;
+}
+#diagonals {
+  z-index: -1;
+}

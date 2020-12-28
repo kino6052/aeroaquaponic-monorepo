@@ -12,6 +12,9 @@ export class HeadingComponent implements OnInit {
   @Input()
   subtitle = '';
 
+  @Input()
+  version: 'black' | 'white' = 'black';
+
   constructor() {}
 
   ngOnInit(): void {}

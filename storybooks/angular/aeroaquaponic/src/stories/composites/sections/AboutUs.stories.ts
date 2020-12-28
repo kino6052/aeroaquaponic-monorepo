@@ -27,7 +27,7 @@ export default {
       ],
     }),
   ],
-  title: 'Aeroaquaponic/Composites/Section/About',
+  title: 'Aeroaquaponic/Composites/Sections/About',
   component: AboutComponent,
 } as Meta;
 

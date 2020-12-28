@@ -1,6 +1,66 @@
 {
     "pipes": [],
-    "interfaces": [],
+    "interfaces": [
+        {
+            "name": "IProfileCard",
+            "id": "interface-IProfileCard-ef9141aa01a03a9fc2d27ecdf0b2ea86",
+            "file": "src/app/components/profile-card/profile-card.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "imageUrl",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                },
+                {
+                    "name": "name",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "ITimelineItem",
+            "id": "interface-ITimelineItem-dd1151d353558034fc77df6d78d353a0",
+            "file": "src/app/components/timeline/timeline.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "properties": [
+                {
+                    "name": "description",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "title",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        }
+    ],
     "injectables": [],
     "classes": [
         {
@@ -45,7 +105,7 @@
     "components": [
         {
             "name": "AboutComponent",
-            "id": "component-AboutComponent-9e85e1391cf80459549aa7186c8f5d41",
+            "id": "component-AboutComponent-77838a64f9ffc8be883833a712953b2c",
             "file": "src/app/composites/sections/about/about.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -63,18 +123,23 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "profiles",
+                    "defaultValue": "data.profiles",
+                    "line": 19
+                },
+                {
                     "name": "subtitle",
-                    "defaultValue": "'Our team'",
+                    "defaultValue": "data.subtitle",
                     "line": 13
                 },
                 {
                     "name": "text",
-                    "defaultValue": "`We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`",
+                    "defaultValue": "data.text",
                     "line": 16
                 },
                 {
                     "name": "title",
-                    "defaultValue": "'About Us'",
+                    "defaultValue": "data.title",
                     "line": 10
                 }
             ],
@@ -87,7 +152,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 23
                 }
             ],
             "hostBindings": [],
@@ -95,7 +160,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss'],\n})\nexport class AboutComponent implements OnInit {\n  @Input()\n  title = 'About Us';\n\n  @Input()\n  subtitle = 'Our team';\n\n  @Input()\n  text = `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'app-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss'],\n})\nexport class AboutComponent implements OnInit {\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  profiles = data.profiles;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -108,12 +173,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 16
+                "line": 19
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-profile-card-container\n    [profiles]=\"profiles\"\n  ></aeroaquaponic-profile-card-container>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "AppComponent",
@@ -356,7 +421,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n  height: 8.78vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  & h1 {\r\n    margin: 0;\r\n    padding: 0;\r\n    font-size: 6.25vw;\r\n    line-height: 6.25vw;\r\n    font-family: spartan;\r\n    color: black;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n  & h2 {\r\n    margin: 0;\r\n    padding: 0;\r\n    font-size: 2.34vw;\r\n    line-height: 2.34vw;\r\n    font-family: spartan;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\n",
+                    "data": ".container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: center;\r\n  align-items: center;\r\n  & h1 {\r\n    margin: 0;\r\n    padding: 0;\r\n    font-size: 6.25vw;\r\n    line-height: 6.25vw;\r\n    font-family: spartan, sans-serif;\r\n    color: black;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n  & h2 {\r\n    margin: 0;\r\n    padding: 0;\r\n    font-size: 2.34vw;\r\n    line-height: 2.34vw;\r\n    font-family: spartan;\r\n    font-weight: 400;\r\n    color: black;\r\n    text-align: center;\r\n    width: 100%;\r\n  }\r\n}\r\n",
                     "styleUrl": "./heading.component.scss"
                 }
             ],
@@ -370,7 +435,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\n  <h1>{{ title }}</h1>\n  <h2>{{ subtitle }}</h2>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <h1>{{ title }}</h1>\n  <h2>{{ subtitle }}</h2>\n</div>\n"
         },
         {
             "name": "PageComponent",
@@ -435,8 +500,144 @@
             "stylesData": ""
         },
         {
+            "name": "ProfileCardComponent",
+            "id": "component-ProfileCardComponent-ef9141aa01a03a9fc2d27ecdf0b2ea86",
+            "file": "src/app/components/profile-card/profile-card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-profile-card",
+            "styleUrls": [
+                "./profile-card.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile-card.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "description",
+                    "defaultValue": "'description'",
+                    "line": 22
+                },
+                {
+                    "name": "imageUrl",
+                    "defaultValue": "''",
+                    "line": 16
+                },
+                {
+                    "name": "name",
+                    "defaultValue": "'name'",
+                    "line": 19
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 26
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\r\n  font-family: \"Work Sans\";\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 24vw;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 1.5vw;\r\n  margin: 2vw;\r\n  & img {\r\n    height: 12.5vw;\r\n    width: 12.5vw;\r\n    border-radius: 50vw;\r\n    background-color: grey;\r\n    background-size: cover;\r\n    background-position: center;\r\n  }\r\n  & .name {\r\n    font-weight: bold;\r\n    margin-top: 2vw;\r\n  }\r\n  & .description {\r\n    text-align: center;\r\n    font-weight: lighter;\r\n    margin-top: 1vw;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./profile-card.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 22
+            },
+            "implements": [
+                "OnInit",
+                "IProfileCard"
+            ],
+            "templateData": "<div class=\"container\">\n  <img src=\"{{ imageUrl }}\" />\n  <div class=\"name\">{{ name }}</div>\n  <div class=\"description\">{{ description }}</div>\n</div>\n"
+        },
+        {
+            "name": "ProfileCardContainerComponent",
+            "id": "component-ProfileCardContainerComponent-0c15cc8116f6f835c3bb78255003010a",
+            "file": "src/app/composites/profile-card-container/profile-card-container.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-profile-card-container",
+            "styleUrls": [
+                "./profile-card-container.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./profile-card-container.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "profiles",
+                    "defaultValue": "[]",
+                    "line": 11,
+                    "type": "IProfileCard[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 15
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { IProfileCard } from 'src/app/components/profile-card/profile-card.component';\n\n@Component({\n  selector: 'aeroaquaponic-profile-card-container',\n  templateUrl: './profile-card-container.component.html',\n  styleUrls: ['./profile-card-container.component.scss'],\n})\nexport class ProfileCardContainerComponent implements OnInit {\n  @Input()\n  profiles: IProfileCard[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "div {\r\n  width: 100%;\r\n  display: flex;\r\n  flex-direction: row;\r\n  justify-content: center;\r\n  flex-wrap: wrap;\r\n}\r\n",
+                    "styleUrl": "./profile-card-container.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 11
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div>\n  <aeroaquaponic-profile-card\n    *ngFor=\"let profile of profiles\"\n    [name]=\"profile.name\"\n    [description]=\"profile.description\"\n    [imageUrl]=\"profile.imageUrl\"\n  ></aeroaquaponic-profile-card>\n</div>\n"
+        },
+        {
             "name": "ProjectsComponent",
-            "id": "component-ProjectsComponent-c9893cee8c08667d92fbd793665d19d3",
+            "id": "component-ProjectsComponent-dda22da77d2575b38ea82406d5521767",
             "file": "src/app/composites/sections/projects/projects.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -454,19 +655,25 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "items",
+                    "defaultValue": "data.items",
+                    "line": 22,
+                    "type": "ITimelineItem[]"
+                },
+                {
                     "name": "subtitle",
-                    "defaultValue": "''",
-                    "line": 15
+                    "defaultValue": "data.subtitle",
+                    "line": 16
                 },
                 {
                     "name": "text",
-                    "defaultValue": "''",
-                    "line": 18
+                    "defaultValue": "data.text",
+                    "line": 19
                 },
                 {
                     "name": "title",
-                    "defaultValue": "''",
-                    "line": 12
+                    "defaultValue": "data.title",
+                    "line": 13
                 }
             ],
             "outputsClass": [],
@@ -478,7 +685,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20
+                    "line": 24
                 }
             ],
             "hostBindings": [],
@@ -486,7 +693,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = '';\n\n  @Input()\n  subtitle = '';\n\n  @Input()\n  text = '';\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ITimelineItem } from 'src/app/components/timeline/timeline.component';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  items: ITimelineItem[] = data.items;\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -499,12 +706,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 9
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    [title]=\"title\"\n    [subtitle]=\"subtitle\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-timeline [items]=\"items\"></aeroaquaponic-timeline>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "SectionComponent",
@@ -553,7 +760,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n  margin: 0;\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  height: 75vw;\r\n}\r\n",
+                    "data": "div {\r\n  margin: 0;\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  min-height: 75vw;\r\n}\r\n",
                     "styleUrl": "./section.component.scss"
                 }
             ],
@@ -568,6 +775,129 @@
                 "OnInit"
             ],
             "templateData": "<div [ngClass]=\"{ isDebugging: isDebugging }\">\n  <ng-content></ng-content>\n</div>\n"
+        },
+        {
+            "name": "SpacerComponent",
+            "id": "component-SpacerComponent-bb9cf83659d18898a7e9cf386f2af5fe",
+            "file": "src/app/components/spacer/spacer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-spacer",
+            "styleUrls": [
+                "./spacer.component.scss"
+            ],
+            "styles": [],
+            "template": "<div    style=\"display: flex;\n  width: 100%; height: {{ height }}vw;\"\n  ></div>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "height",
+                    "defaultValue": "1",
+                    "line": 13
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-spacer',\n  styleUrls: ['./spacer.component.scss'],\n  template: `<div\n    style=\"display: flex;\n  width: 100%; height: {{ height }}vw;\"\n  ></div>`,\n})\nexport class SpacerComponent implements OnInit {\n  @Input()\n  height = 1;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "",
+                    "styleUrl": "./spacer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ]
+        },
+        {
+            "name": "TimelineComponent",
+            "id": "component-TimelineComponent-dd1151d353558034fc77df6d78d353a0",
+            "file": "src/app/components/timeline/timeline.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-timeline",
+            "styleUrls": [
+                "./timeline.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./timeline.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "items",
+                    "defaultValue": "[]",
+                    "line": 15,
+                    "type": "ITimelineItem[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".timeline-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 100%;\r\n  height: 100%;\r\n  .timeline-item-container {\r\n    display: grid;\r\n    grid-template-areas: \"left bar right\";\r\n    .card {\r\n      display: flex;\r\n      box-shadow: 0px 0px 1vw lightgrey;\r\n      width: 100%;\r\n      height: 100%;\r\n      flex-direction: column;\r\n      & .timeline-item-content {\r\n        margin: 2vw;\r\n        & h1 {\r\n          font-size: 1.56vw;\r\n          line-height: 1.56vw;\r\n          font-family: spartan, sans-serif;\r\n        }\r\n        & p {\r\n          font-size: 1.18vw;\r\n          line-height: 1.56vw;\r\n          font-family: \"Work Sans\", sans-serif;\r\n        }\r\n      }\r\n    }\r\n    .left {\r\n      grid-area: left;\r\n      align-self: end;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .right {\r\n      grid-area: right;\r\n      align-self: start;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .bar {\r\n      grid-area: bar;\r\n      align-self: center;\r\n      width: 3vw;\r\n      height: 105%;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      .line {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        background: #51ac2b;\r\n        border-radius: 100vw;\r\n        height: 100%;\r\n        width: 0.5vw;\r\n        .point {\r\n          display: flex;\r\n          width: 2vw;\r\n          height: 2vw;\r\n          background: #51ac2b;\r\n          position: absolute;\r\n          border-radius: 10vw;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(odd) {\r\n    .right {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(even) {\r\n    .left {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./timeline.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"timeline-container\">\n  <div class=\"timeline-item-container\" *ngFor=\"let item of items\">\n    <div class=\"left\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"bar\">\n      <div class=\"line\">\n        <div class=\"point\"></div>\n      </div>\n    </div>\n    <div class=\"right\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "TypographyComponent",
@@ -623,7 +953,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n  p {\r\n    width: 79.88vw;\r\n    margin: 0;\r\n    line-height: 2.24vw;\r\n    font-size: 1.75vw;\r\n    font-family: spartan;\r\n  }\r\n  height: 16.21vw;\r\n  display: flex;\r\n}\r\n.centered {\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n}\r\n",
+                    "data": "div {\r\n  p {\r\n    width: 79.88vw;\r\n    margin: 0;\r\n    line-height: 2.24vw;\r\n    font-size: 1.75vw;\r\n    font-family: \"Work Sans\", sans-serif;\r\n  }\r\n  display: flex;\r\n}\r\n.centered {\r\n  justify-content: center;\r\n  align-items: center;\r\n  text-align: center;\r\n}\r\n",
                     "styleUrl": "./typography.component.scss"
                 }
             ],
@@ -661,10 +991,22 @@
                             "name": "HeadingComponent"
                         },
                         {
+                            "name": "ProfileCardComponent"
+                        },
+                        {
+                            "name": "ProfileCardContainerComponent"
+                        },
+                        {
                             "name": "ProjectsComponent"
                         },
                         {
                             "name": "SectionComponent"
+                        },
+                        {
+                            "name": "SpacerComponent"
+                        },
+                        {
+                            "name": "TimelineComponent"
                         },
                         {
                             "name": "TypographyComponent"
@@ -737,7 +1079,7 @@
     "miscellaneous": {
         "variables": [
             {
-                "name": "AboutUs",
+                "name": "About",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/composites/AboutUs.stories.ts",
@@ -753,12 +1095,20 @@
                 "defaultValue": "require.context('./', true, /\\.spec\\.ts$/)"
             },
             {
-                "name": "environment",
+                "name": "data",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/environments/environment.prod.ts",
+                "file": "src/app/composites/sections/about/about.component.ts",
                 "type": "object",
-                "defaultValue": "{\n  production: true\n}"
+                "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n}"
+            },
+            {
+                "name": "data",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/composites/sections/projects/projects.component.ts",
+                "type": "object",
+                "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n}"
             },
             {
                 "name": "environment",
@@ -767,6 +1117,14 @@
                 "file": "src/environments/environment.ts",
                 "type": "object",
                 "defaultValue": "{\n  production: false\n}"
+            },
+            {
+                "name": "environment",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/environments/environment.prod.ts",
+                "type": "object",
+                "defaultValue": "{\n  production: true\n}"
             },
             {
                 "name": "Large",
@@ -812,14 +1170,6 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/Button.stories.ts",
-                "type": "",
-                "defaultValue": "Template.bind({})"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/components/Heading.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
@@ -828,7 +1178,31 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/Button.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/ProfileCard.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/components/Typography.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "ProfileCardContainer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/ProfileCardContainer.stories.ts",
                 "type": "",
                 "defaultValue": "Template.bind({})"
             },
@@ -883,6 +1257,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/Heading.stories.ts",
+                "type": "Story<HeadingComponent>",
+                "defaultValue": "(args: HeadingComponent) => ({\n  component: HeadingComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/components/Button.stories.ts",
                 "type": "Story<Button>",
                 "defaultValue": "(args: Button) => ({\n  component: Button,\n  props: args,\n})"
@@ -891,9 +1273,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/Heading.stories.ts",
-                "type": "Story<HeadingComponent>",
-                "defaultValue": "(args: HeadingComponent) => ({\n  component: HeadingComponent,\n  props: args,\n})"
+                "file": "src/stories/components/ProfileCard.stories.ts",
+                "type": "Story<ProfileCardComponent>",
+                "defaultValue": "(args: ProfileCardComponent) => ({\n  component: ProfileCardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -907,6 +1289,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/Timeline.stories.ts",
+                "type": "Story<TimelineComponent>",
+                "defaultValue": "(args: TimelineComponent) => ({\n  component: TimelineComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/composites/AboutUs.stories.ts",
                 "type": "Story<AboutComponent>",
                 "defaultValue": "(args: AboutComponent) => ({\n  component: AboutComponent,\n  props: args,\n})"
@@ -915,9 +1305,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/composites/ProfileCardContainer.stories.ts",
+                "type": "Story<ProfileCardContainerComponent>",
+                "defaultValue": "(\n  args: ProfileCardContainerComponent\n) => ({\n  component: ProfileCardContainerComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/composites/Projects.stories.ts",
                 "type": "Story<ProjectsComponent>",
                 "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Timeline",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/Timeline.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
             }
         ],
         "functions": [],
@@ -926,7 +1332,7 @@
         "groupedVariables": {
             "src/stories/composites/AboutUs.stories.ts": [
                 {
-                    "name": "AboutUs",
+                    "name": "About",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
                     "file": "src/stories/composites/AboutUs.stories.ts",
@@ -959,14 +1365,24 @@
                     "type": "literal type"
                 }
             ],
-            "src/environments/environment.prod.ts": [
+            "src/app/composites/sections/about/about.component.ts": [
                 {
-                    "name": "environment",
+                    "name": "data",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "src/environments/environment.prod.ts",
+                    "file": "src/app/composites/sections/about/about.component.ts",
                     "type": "object",
-                    "defaultValue": "{\n  production: true\n}"
+                    "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n}"
+                }
+            ],
+            "src/app/composites/sections/projects/projects.component.ts": [
+                {
+                    "name": "data",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/composites/sections/projects/projects.component.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n}"
                 }
             ],
             "src/environments/environment.ts": [
@@ -977,6 +1393,16 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/environments/environment.prod.ts": [
+                {
+                    "name": "environment",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/environments/environment.prod.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  production: true\n}"
                 }
             ],
             "src/stories/components/Button.stories.ts": [
@@ -1091,6 +1517,24 @@
                     "defaultValue": "(args: HeadingComponent) => ({\n  component: HeadingComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/components/ProfileCard.stories.ts": [
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/ProfileCard.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/ProfileCard.stories.ts",
+                    "type": "Story<ProfileCardComponent>",
+                    "defaultValue": "(args: ProfileCardComponent) => ({\n  component: ProfileCardComponent,\n  props: args,\n})"
+                }
+            ],
             "src/stories/components/Typography.stories.ts": [
                 {
                     "name": "Primary",
@@ -1109,6 +1553,24 @@
                     "defaultValue": "(args: TypographyComponent) => ({\n  component: TypographyComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/composites/ProfileCardContainer.stories.ts": [
+                {
+                    "name": "ProfileCardContainer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/ProfileCardContainer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/ProfileCardContainer.stories.ts",
+                    "type": "Story<ProfileCardContainerComponent>",
+                    "defaultValue": "(\n  args: ProfileCardContainerComponent\n) => ({\n  component: ProfileCardContainerComponent,\n  props: args,\n})"
+                }
+            ],
             "src/stories/composites/Projects.stories.ts": [
                 {
                     "name": "Projects",
@@ -1125,6 +1587,24 @@
                     "file": "src/stories/composites/Projects.stories.ts",
                     "type": "Story<ProjectsComponent>",
                     "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/stories/components/Timeline.stories.ts": [
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/Timeline.stories.ts",
+                    "type": "Story<TimelineComponent>",
+                    "defaultValue": "(args: TimelineComponent) => ({\n  component: TimelineComponent,\n  props: args,\n})"
+                },
+                {
+                    "name": "Timeline",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/components/Timeline.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
                 }
             ]
         },
@@ -1147,7 +1627,7 @@
         ]
     },
     "coverage": {
-        "count": 2,
+        "count": 1,
         "status": "low",
         "files": [
             {
@@ -1187,12 +1667,57 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/components/profile-card/profile-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileCardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/profile-card/profile-card.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IProfileCard",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/components/section/section.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "SectionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/spacer/spacer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SpacerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/timeline/timeline.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TimelineComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/components/timeline/timeline.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "ITimelineItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
                 "status": "low"
             },
             {
@@ -1205,12 +1730,31 @@
                 "status": "low"
             },
             {
+                "filePath": "src/app/composites/profile-card-container/profile-card-container.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ProfileCardContainerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
                 "filePath": "src/app/composites/sections/about/about.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "AboutComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/sections/about/about.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1219,7 +1763,17 @@
                 "linktype": "component",
                 "name": "ProjectsComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/sections/projects/projects.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -1373,6 +1927,46 @@
                 "status": "low"
             },
             {
+                "filePath": "src/stories/components/ProfileCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/ProfileCard.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/Timeline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/components/Timeline.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Timeline",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
                 "filePath": "src/stories/components/Typography.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -1397,13 +1991,33 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "AboutUs",
+                "name": "About",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
                 "filePath": "src/stories/composites/AboutUs.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/ProfileCardContainer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "ProfileCardContainer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/ProfileCardContainer.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

@@ -12,6 +12,7 @@ import { ProfileCardComponent } from './components/profile-card/profile-card.com
 import { SpacerComponent } from './components/spacer/spacer.component';
 import { ProfileCardContainerComponent } from './composites/profile-card-container/profile-card-container.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
+import { MainComponent } from './composites/sections/main/main.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { TimelineComponent } from './components/timeline/timeline.component';
     SpacerComponent,
     ProfileCardContainerComponent,
     TimelineComponent,
+    MainComponent,
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],

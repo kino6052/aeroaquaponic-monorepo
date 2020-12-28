@@ -25,7 +25,7 @@ export default {
       ],
     }),
   ],
-  title: 'Aeroaquaponic/Composites/Section/Projects',
+  title: 'Aeroaquaponic/Composites/Sections/Projects',
   component: ProjectsComponent,
 } as Meta;
 

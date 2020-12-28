@@ -28,4 +28,5 @@ export const Primary = Template.bind({});
 Primary.args = {
   title: 'Title',
   subtitle: 'Subtitle',
+  version: 'black',
 };

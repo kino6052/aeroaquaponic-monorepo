@@ -9,7 +9,6 @@
     font-size: 6.25vw;
     line-height: 6.25vw;
     font-family: spartan, sans-serif;
-    color: black;
     text-align: center;
     width: 100%;
   }
@@ -20,8 +19,13 @@
     line-height: 2.34vw;
     font-family: spartan;
     font-weight: 400;
-    color: black;
     text-align: center;
     width: 100%;
+  }
+  &.black {
+    color: black;
+  }
+  &.white {
+    color: white;
   }
 }
