@@ -1,0 +1,45 @@
+.container {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  & .filler {
+    flex: 1;
+  }
+  & .navbar {
+    flex: 1;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 6.05vw;
+    align-items: center;
+    justify-content: center;
+    & div {
+      a {
+        font-size: 1.75vw;
+        line-height: 1.75vw;
+      }
+      font-family: spartan, sans-serif;
+      width: 12.5vw;
+      height: 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+}
+
+.white {
+  color: white;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline 3px solid white;
+  }
+}
+
+.black {
+  color: black;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline 3px solid black;
+  }
+}

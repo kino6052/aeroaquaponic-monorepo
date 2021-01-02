@@ -13,10 +13,16 @@ import { SpacerComponent } from './components/spacer/spacer.component';
 import { ProfileCardContainerComponent } from './composites/profile-card-container/profile-card-container.component';
 import { TimelineComponent } from './components/timeline/timeline.component';
 import { MainComponent } from './composites/sections/main/main.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { PageComponent } from './pages/page/page.component';
+import { VideoComponent } from './components/video/video.component';
+import { YouTubePlayer, YouTubePlayerModule } from '@angular/youtube-player';
+import { VideoModule } from './video/video.module';
 
 @NgModule({
   declarations: [
     AppComponent,
+    YouTubePlayer,
     TypographyComponent,
     SectionComponent,
     ProjectsComponent,
@@ -27,10 +33,12 @@ import { MainComponent } from './composites/sections/main/main.component';
     ProfileCardContainerComponent,
     TimelineComponent,
     MainComponent,
+    MenuComponent,
+    PageComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule],
+  imports: [BrowserModule, AppRoutingModule, VideoModule],
   providers: [],
   bootstrap: [AppComponent],
-  exports: [TypographyComponent, SectionComponent],
+  exports: [],
 })
 export class AppModule {}

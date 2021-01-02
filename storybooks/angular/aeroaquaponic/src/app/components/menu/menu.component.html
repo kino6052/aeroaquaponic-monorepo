@@ -1,0 +1,8 @@
+<div class="container">
+  <div class="filler"></div>
+  <div class="navbar">
+    <div *ngFor="let item of items">
+      <a [class]="color" href="{{ item.link }}">{{ item.text }}</a>
+    </div>
+  </div>
+</div>

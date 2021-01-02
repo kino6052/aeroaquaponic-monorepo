@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-about',
+  selector: 'aeroaquaponic-about',
   templateUrl: './about.component.html',
   styleUrls: ['./about.component.scss'],
 })

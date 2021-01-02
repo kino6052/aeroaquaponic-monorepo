@@ -7,17 +7,34 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
   @Input()
-  title = data.title;
+  title = MainSectionData.title;
 
   @Input()
-  subtitle = data.subtitle;
+  subtitle = MainSectionData.subtitle;
+
+  @Input()
+  items = MainSectionData.items;
 
   constructor() {}
 
   ngOnInit(): void {}
 }
 
-export const data = {
+export const MainSectionData = {
   title: 'AEROAQUAPONIC',
   subtitle: 'Forming the Units of Self-sufficiency',
+  items: [
+    {
+      text: 'Get eBook',
+      link: '#link',
+    },
+    {
+      text: 'Projects',
+      link: '#link',
+    },
+    {
+      text: 'About Us',
+      link: '#link',
+    },
+  ],
 };
