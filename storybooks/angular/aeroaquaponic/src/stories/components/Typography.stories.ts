@@ -1,10 +1,7 @@
 // also exported from '@storybook/angular' if you can deal with breaking changes in 6.1
 import { moduleMetadata } from '@storybook/angular';
-import { Story, Meta } from '@storybook/angular/types-6-0';
-import { AppModule } from 'src/app/app.module';
-import { SectionComponent } from 'src/app/components/section/section.component';
+import { Meta, Story } from '@storybook/angular/types-6-0';
 import { TypographyComponent } from 'src/app/components/typography/typography.component';
-import Button from '../../app/components/button.component';
 
 export default {
   decorators: [

@@ -1,8 +1,10 @@
-<iframe
-  width="560"
-  height="315"
-  [src]="safeUrl"
-  frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<div class="video">
+  <youtube-player
+    class="player"
+    [width]="width"
+    [height]="height"
+    (ready)="handlePlayerReady($event)"
+    (stateChange)="handleStateChange($event)"
+    [videoId]="videoId"
+  ></youtube-player>
+</div>

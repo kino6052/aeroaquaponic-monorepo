@@ -1,0 +1,16 @@
+<div class="footer">
+  <div class="logo-container">
+    <div
+      class="logo"
+      [ngStyle]="{
+        'background-image': 'url(' + logo.link + ')'
+      }"
+    ></div>
+    <div class="spacer"></div>
+    <p class="logo-description">{{ logo.description }}</p>
+  </div>
+  <div class="links">
+    <h2>Social Media</h2>
+    <a *ngFor="let link of links" [href]="link.link">{{ link.name }}</a>
+  </div>
+</div>

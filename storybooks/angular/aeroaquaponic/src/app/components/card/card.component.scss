@@ -1,0 +1,25 @@
+.card {
+  font-family: "Work Sans", sans-serif;
+  background-color: #494949;
+  justify-content: space-between;
+  padding: 3vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  width: 20vw;
+  height: 40vw;
+  border: 0.3vw solid white;
+  line-height: 2.24vw;
+  font-size: 1.2vw;
+  h1 {
+    justify-content: center;
+    text-transform: uppercase;
+    display: flex;
+    flex: 1;
+    font-family: spartan, sans-serif;
+  }
+  p {
+    display: flex;
+    flex: 5;
+  }
+}

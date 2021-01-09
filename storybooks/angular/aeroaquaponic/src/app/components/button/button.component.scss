@@ -1,0 +1,42 @@
+.container {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  .storybook-button {
+    width: 19.5vw;
+    height: 4.68vw;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    border: none;
+    margin: 0 4px;
+    font-size: 1.75vw;
+    line-height: 1.75vw;
+    font-weight: 400;
+    font-family: "Work Sans";
+    span {
+      display: flex;
+      height: 4.6vw;
+      width: 4.6vw;
+    }
+  }
+  .storybook-button--primary {
+    background: #51ac2b;
+    color: white;
+  }
+  .storybook-button--secondary {
+    background: white;
+    color: black;
+  }
+  /* .storybook-button--small {
+    font-size: 12px;
+    padding: 10px 16px;
+  }
+  .storybook-button--medium {
+    font-size: 14px;
+    padding: 11px 20px;
+  }
+  .storybook-button--large {
+    font-size: 16px;
+    padding: 12px 24px;
+  } */
+}
