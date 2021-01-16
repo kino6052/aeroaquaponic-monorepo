@@ -4,6 +4,9 @@
   align-items: center;
   justify-content: center;
   .storybook-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 19.5vw;
     height: 4.68vw;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -13,10 +16,15 @@
     line-height: 1.75vw;
     font-weight: 400;
     font-family: "Work Sans";
-    span {
+    transition: 0.1s;
+    &:hover {
+      transform: scale(1.05);
+    }
+    img {
       display: flex;
-      height: 4.6vw;
-      width: 4.6vw;
+      height: 2.6vw;
+      width: 2.6vw;
+      margin-right: 1.5vw;
     }
   }
   .storybook-button--primary {

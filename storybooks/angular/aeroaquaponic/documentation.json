@@ -237,7 +237,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-profile-card-container\n    [profiles]=\"profiles\"\n  ></aeroaquaponic-profile-card-container>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-profile-card-container\n    [profiles]=\"profiles\"\n  ></aeroaquaponic-profile-card-container>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "AppComponent",
@@ -575,6 +575,73 @@
             "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Support Us\"\n    subtitle=\"Make Your Contribution!\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"10\"></aeroaquaponic-spacer>\n  <aeroaquaponic-button\n    [primary]=\"false\"\n    [iconLink]=\"\n      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmore.ko-fi.com%2Fbrand-assets&psig=AOvVaw3lzBtLhDLSVtekMRf-iu9C&ust=1609730905088000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDrxojp_u0CFQAAAAAdAAAAABAD'\n    \"\n    label=\"Buy Us Coffee\"\n  ></aeroaquaponic-button>\n</aeroaquaponic-section>\n"
         },
         {
+            "name": "FooterComponent",
+            "id": "component-FooterComponent-166a4aa05a8e12dd62496423baaa6018",
+            "file": "src/app/composites/footer/footer.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-footer",
+            "styleUrls": [
+                "./footer.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./footer.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "links",
+                    "defaultValue": "FooterComponentData.links",
+                    "line": 13
+                },
+                {
+                    "name": "logo",
+                    "defaultValue": "FooterComponentData.logo",
+                    "line": 10
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 17
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-footer',\n  templateUrl: './footer.component.html',\n  styleUrls: ['./footer.component.scss'],\n})\nexport class FooterComponent implements OnInit {\n  @Input()\n  logo = FooterComponentData.logo;\n\n  @Input()\n  links = FooterComponentData.links;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const FooterComponentData = {\n  logo: {\n    link: 'https://aeroaquaponic.org/images/logo.png',\n    description:\n      \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n  },\n  links: [\n    {\n      link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n      name: 'YouTube',\n    },\n    {\n      link: 'https://www.instagram.com/aeroaquaponic/',\n      name: 'Instagram',\n    },\n    {\n      link: 'https://www.linkedin.com/company/aeroaquaponic',\n      name: 'LinkedIn',\n    },\n    {\n      link: 'https://twitter.com/AeroAquaponics',\n      name: 'Twitter',\n    },\n    {\n      link: 'https://medium.com/@aeroaquaponic',\n      name: 'Medium',\n    },\n    {\n      link: 'https://www.facebook.com/aeroaquaponic2020',\n      name: 'Facebook',\n    },\n  ],\n};\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".footer {\r\n  display: flex;\r\n  flex-direction: row;\r\n  width: 100%;\r\n  height: 30vw;\r\n  background-color: #333;\r\n  color: white;\r\n  font-family: \"Work Sans\", sans-serif;\r\n  font-size: 1.8vw;\r\n  line-height: 2vw;\r\n  justify-content: space-between;\r\n  .logo-container {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: row;\r\n    .logo {\r\n      width: 10vw;\r\n      height: 10vw;\r\n      background-size: contain;\r\n    }\r\n    .spacer {\r\n      display: flex;\r\n      width: 2vw;\r\n      height: 100%;\r\n    }\r\n    .logo-description {\r\n      margin: 0;\r\n      padding: 0;\r\n      width: 24vw;\r\n    }\r\n  }\r\n  .links {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-end;\r\n    h2 {\r\n      margin: 0;\r\n      padding: 0;\r\n      margin-bottom: 2vw;\r\n    }\r\n    a {\r\n      color: white;\r\n    }\r\n  }\r\n}\r\n",
+                    "styleUrl": "./footer.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 13
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"footer\">\n  <div class=\"logo-container\">\n    <div\n      class=\"logo\"\n      [ngStyle]=\"{\n        'background-image': 'url(' + logo.link + ')'\n      }\"\n    ></div>\n    <div class=\"spacer\"></div>\n    <p class=\"logo-description\">{{ logo.description }}</p>\n  </div>\n  <div class=\"links\">\n    <h2>Social Media</h2>\n    <a *ngFor=\"let link of links\" [href]=\"link.link\">{{ link.name }}</a>\n  </div>\n</div>\n"
+        },
+        {
             "name": "HeaderComponent",
             "id": "component-HeaderComponent-ad6abb3d4b5d1b11264bcf34393d0bb1",
             "file": "src/stories/header.component.ts",
@@ -904,7 +971,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Overview\"\n    subtitle=\"Our Vision\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer [height]=\"10\"></aeroaquaponic-spacer>\n  <aeroaquaponic-video></aeroaquaponic-video>\n  <aeroaquaponic-spacer [height]=\"10\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Overview\"\n    subtitle=\"Our Vision\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer [height]=\"10\"></aeroaquaponic-spacer>\n  <aeroaquaponic-video></aeroaquaponic-video>\n  <aeroaquaponic-spacer [height]=\"6\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "PageComponent",
@@ -960,7 +1027,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<main>\n  <aeroaquaponic-main></aeroaquaponic-main>\n  <aeroaquaponic-cards-container></aeroaquaponic-cards-container>\n  <aeroaquaponic-overview></aeroaquaponic-overview>\n  <aeroaquaponic-projects></aeroaquaponic-projects>\n  <aeroaquaponic-about></aeroaquaponic-about>\n</main>\n"
+            "templateData": "<main>\n  <aeroaquaponic-main></aeroaquaponic-main>\n  <aeroaquaponic-cards-container></aeroaquaponic-cards-container>\n  <aeroaquaponic-overview></aeroaquaponic-overview>\n  <aeroaquaponic-projects></aeroaquaponic-projects>\n  <aeroaquaponic-donate></aeroaquaponic-donate>\n  <aeroaquaponic-about></aeroaquaponic-about>\n  <aeroaquaponic-footer></aeroaquaponic-footer>\n</main>\n"
         },
         {
             "name": "ProfileCardComponent",
@@ -1223,7 +1290,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n  margin: 0 0 6vw 0;\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n  min-height: 40vw;\r\n}\r\n",
+                    "data": "div {\r\n  margin: 0 0 6vw 0;\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n",
                     "styleUrl": "./section.component.scss"
                 }
             ],
@@ -1577,6 +1644,9 @@
                             "name": "DonateComponent"
                         },
                         {
+                            "name": "FooterComponent"
+                        },
+                        {
                             "name": "HeadingComponent"
                         },
                         {
@@ -1809,6 +1879,22 @@
                 "defaultValue": "{\n  production: false\n}"
             },
             {
+                "name": "Footer",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/Footer.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "FooterComponentData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/composites/footer/footer.component.ts",
+                "type": "object",
+                "defaultValue": "{\n  logo: {\n    link: 'https://aeroaquaponic.org/images/logo.png',\n    description:\n      \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n  },\n  links: [\n    {\n      link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n      name: 'YouTube',\n    },\n    {\n      link: 'https://www.instagram.com/aeroaquaponic/',\n      name: 'Instagram',\n    },\n    {\n      link: 'https://www.linkedin.com/company/aeroaquaponic',\n      name: 'LinkedIn',\n    },\n    {\n      link: 'https://twitter.com/AeroAquaponics',\n      name: 'Twitter',\n    },\n    {\n      link: 'https://medium.com/@aeroaquaponic',\n      name: 'Medium',\n    },\n    {\n      link: 'https://www.facebook.com/aeroaquaponic2020',\n      name: 'Facebook',\n    },\n  ],\n}"
+            },
+            {
                 "name": "Large",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1939,6 +2025,14 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/Card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/components/Heading.stories.ts",
                 "type": "Story<HeadingComponent>",
                 "defaultValue": "(args: HeadingComponent) => ({\n  component: HeadingComponent,\n  props: args,\n})"
@@ -1950,14 +2044,6 @@
                 "file": "src/stories/components/ProfileCard.stories.ts",
                 "type": "Story<ProfileCardComponent>",
                 "defaultValue": "(args: ProfileCardComponent) => ({\n  component: ProfileCardComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/components/Card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1979,9 +2065,25 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "src/stories/components/Menu.stories.ts",
+                "type": "Story<MenuComponent>",
+                "defaultValue": "(args: MenuComponent) => ({\n  component: MenuComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "src/stories/components/Video.stories.ts",
                 "type": "Story<VideoComponent>",
                 "defaultValue": "(args: VideoComponent) => ({\n  component: VideoComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/Footer.stories.ts",
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\n  component: FooterComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -1995,25 +2097,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/Menu.stories.ts",
-                "type": "Story<MenuComponent>",
-                "defaultValue": "(args: MenuComponent) => ({\n  component: MenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/composites/CardContainer.stories.ts",
                 "type": "Story<CardsContainerComponent>",
                 "defaultValue": "(\n  args: CardsContainerComponent\n) => ({\n  component: CardsContainerComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/composites/sections/Donate.stories.ts",
-                "type": "Story<DonateComponent>",
-                "defaultValue": "(args: DonateComponent) => ({\n  component: DonateComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2027,9 +2113,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/composites/sections/Main.stories.ts",
-                "type": "Story<MainComponent>",
-                "defaultValue": "(args: MainComponent) => ({\n  component: MainComponent,\n  props: args,\n})"
+                "file": "src/stories/composites/sections/Donate.stories.ts",
+                "type": "Story<DonateComponent>",
+                "defaultValue": "(args: DonateComponent) => ({\n  component: DonateComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2038,6 +2124,14 @@
                 "file": "src/stories/composites/sections/Projects.stories.ts",
                 "type": "Story<ProjectsComponent>",
                 "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/sections/Main.stories.ts",
+                "type": "Story<MainComponent>",
+                "defaultValue": "(args: MainComponent) => ({\n  component: MainComponent,\n  props: args,\n})"
             },
             {
                 "name": "Timeline",
@@ -2233,6 +2327,34 @@
                     "file": "src/environments/environment.ts",
                     "type": "object",
                     "defaultValue": "{\n  production: false\n}"
+                }
+            ],
+            "src/stories/composites/Footer.stories.ts": [
+                {
+                    "name": "Footer",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/Footer.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/Footer.stories.ts",
+                    "type": "Story<FooterComponent>",
+                    "defaultValue": "(args: FooterComponent) => ({\n  component: FooterComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/composites/footer/footer.component.ts": [
+                {
+                    "name": "FooterComponentData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/composites/footer/footer.component.ts",
+                    "type": "object",
+                    "defaultValue": "{\n  logo: {\n    link: 'https://aeroaquaponic.org/images/logo.png',\n    description:\n      \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n  },\n  links: [\n    {\n      link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n      name: 'YouTube',\n    },\n    {\n      link: 'https://www.instagram.com/aeroaquaponic/',\n      name: 'Instagram',\n    },\n    {\n      link: 'https://www.linkedin.com/company/aeroaquaponic',\n      name: 'LinkedIn',\n    },\n    {\n      link: 'https://twitter.com/AeroAquaponics',\n      name: 'Twitter',\n    },\n    {\n      link: 'https://medium.com/@aeroaquaponic',\n      name: 'Medium',\n    },\n    {\n      link: 'https://www.facebook.com/aeroaquaponic2020',\n      name: 'Facebook',\n    },\n  ],\n}"
                 }
             ],
             "src/stories/components/Button.stories.ts": [
@@ -2487,7 +2609,7 @@
         ]
     },
     "coverage": {
-        "count": 1,
+        "count": 0,
         "status": "low",
         "files": [
             {
@@ -2679,6 +2801,25 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "CardsContainerComponentData",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/footer/footer.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FooterComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/footer/footer.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "FooterComponentData",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3018,6 +3159,26 @@
             },
             {
                 "filePath": "src/stories/composites/CardContainer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/Footer.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Footer",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/Footer.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

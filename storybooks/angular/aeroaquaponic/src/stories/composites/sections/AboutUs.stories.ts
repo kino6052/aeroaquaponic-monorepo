@@ -11,6 +11,7 @@ import {
   AboutComponent,
   data,
 } from 'src/app/composites/sections/about/about.component';
+import { SocialComponent } from 'src/app/composites/social/social.component';
 
 export default {
   decorators: [
@@ -24,6 +25,7 @@ export default {
         SpacerComponent,
         ProfileCardComponent,
         ProfileCardContainerComponent,
+        SocialComponent,
       ],
     }),
   ],

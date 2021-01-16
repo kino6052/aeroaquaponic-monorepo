@@ -21,6 +21,7 @@ import { DonateComponent } from 'src/app/composites/sections/donate/donate.compo
 import { MainComponent } from 'src/app/composites/sections/main/main.component';
 import { OverviewComponent } from 'src/app/composites/sections/overview/overview.component';
 import { ProjectsComponent } from 'src/app/composites/sections/projects/projects.component';
+import { SocialComponent } from 'src/app/composites/social/social.component';
 import { PageComponent } from 'src/app/pages/page/page.component';
 import { VideoModule } from 'src/app/video/video.module';
 
@@ -47,6 +48,7 @@ export default {
         OverviewComponent,
         FooterComponent,
         DonateComponent,
+        SocialComponent,
       ],
       imports: [VideoModule],
     }),

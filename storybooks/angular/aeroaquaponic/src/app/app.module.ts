@@ -21,6 +21,7 @@ import { CardsContainerComponent } from './composites/cards-container/cards-cont
 import { OverviewComponent } from './composites/sections/overview/overview.component';
 import { DonateComponent } from './composites/sections/donate/donate.component';
 import { FooterComponent } from './composites/footer/footer.component';
+import { SocialComponent } from './composites/social/social.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { FooterComponent } from './composites/footer/footer.component';
     OverviewComponent,
     DonateComponent,
     FooterComponent,
+    SocialComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, VideoModule],
   providers: [],

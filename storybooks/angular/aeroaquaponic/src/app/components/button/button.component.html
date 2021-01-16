@@ -5,11 +5,7 @@
     [ngClass]="classes"
     [ngStyle]="{ 'background-color': backgroundColor }"
   >
-    <!-- <span
-      *ngIf="iconLink"
-      [ngStyle]="{ background: iconLink, backgroundColor: 'black' }"
-      >test</span
-    > -->
+    <img *ngIf="iconLink" src="{{ iconLink }}" />
     {{ label }}
   </button>
 </div>
