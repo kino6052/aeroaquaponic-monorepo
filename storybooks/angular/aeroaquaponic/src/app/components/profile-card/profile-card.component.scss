@@ -7,6 +7,11 @@
   justify-content: center;
   font-size: 1.5vw;
   margin: 2vw;
+  transition: 0.1s;
+  &:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
   & img {
     height: 12.5vw;
     width: 12.5vw;

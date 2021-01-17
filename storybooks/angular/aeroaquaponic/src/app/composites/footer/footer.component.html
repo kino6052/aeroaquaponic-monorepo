@@ -11,6 +11,8 @@
   </div>
   <div class="links">
     <h2>Social Media</h2>
-    <a *ngFor="let link of links" [href]="link.link">{{ link.name }}</a>
+    <a target="_blank" *ngFor="let link of links" [href]="link.link">{{
+      link.name
+    }}</a>
   </div>
 </div>

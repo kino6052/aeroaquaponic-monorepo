@@ -1,8 +1,10 @@
 <div class="container">
   <aeroaquaponic-card
+    [image]="card.image"
     [title]="card.title"
     [text]="card.text"
     [label]="card.label"
+    [link]="card.link"
     *ngFor="let card of cards"
   >
   </aeroaquaponic-card>

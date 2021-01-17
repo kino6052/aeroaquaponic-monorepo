@@ -5,6 +5,9 @@
         <div class="timeline-item-content">
           <h1>{{ item.title }}</h1>
           <p>{{ item.description }}</p>
+          <a target="_blank" *ngIf="item.link" href="{{ item.link }}">{{
+            item.linkText
+          }}</a>
         </div>
       </div>
     </div>
@@ -18,6 +21,9 @@
         <div class="timeline-item-content">
           <h1>{{ item.title }}</h1>
           <p>{{ item.description }}</p>
+          <a target="_blank" *ngIf="item.link" href="{{ item.link }}">{{
+            item.linkText
+          }}</a>
         </div>
       </div>
     </div>

@@ -26,6 +26,17 @@
           line-height: 1.56vw;
           font-family: "Work Sans", sans-serif;
         }
+        & a {
+          color: #51ac2b;
+          font-weight: bold;
+          font-size: 1.18vw;
+          line-height: 1.56vw;
+          font-family: "Work Sans", sans-serif;
+          text-decoration: none;
+          &:hover {
+            text-decoration: underline 3px solid #51ac2b;
+          }
+        }
       }
     }
     .left {

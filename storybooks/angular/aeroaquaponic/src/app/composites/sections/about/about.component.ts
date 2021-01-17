@@ -30,33 +30,45 @@ export const data = {
   profiles: [
     {
       name: 'Cam Schubert',
-      description: 'Medical Scientist',
+      description: 'Director of Community Development',
       imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Cam_Schubert_-_Director_of_Community_Development',
     },
     {
       name: 'Kirill Novik',
-      description: 'Senior Software Engineer',
+      description: 'Director of Research and Development',
       imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Kirill_Novik_-_Research_and_Development_Director',
     },
     {
       name: 'Dmitry Dementyev',
       description: 'Senior Researcher in Aquaculture',
       imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Dmitry_Dementyev_-_Director_of_Research',
     },
     {
-      name: 'Dmitry Dementyev',
-      description: 'Senior Researcher in Aquaculture',
-      imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+      name: 'Darrah Herman',
+      description: 'Director of Ecosystem Balance',
+      imageUrl: 'https://aeroaquaponic.org/images/darrah.jpeg',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Darrah_Herman_-_Director_of_Ecosystem_Balance',
     },
     {
-      name: 'Cam Schubert',
-      description: 'Medical Scientist',
-      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+      name: 'Jameson Owens',
+      description: 'Director of Community Outreach',
+      imageUrl: 'https://aeroaquaponic.org/images/jameson.jpeg',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Jameson_Owens_-_Director_of_Community_Outreach',
     },
     {
-      name: 'Kirill Novik',
-      description: 'Senior Software Engineer',
-      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+      name: 'Nikita Novik',
+      description: 'Creative Director',
+      imageUrl: 'https://aeroaquaponic.org/images/nikita.jpeg',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Nikita_Novik_-_Creative_Director',
     },
   ],
 };

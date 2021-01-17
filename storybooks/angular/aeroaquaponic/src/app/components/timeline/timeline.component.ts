@@ -3,6 +3,8 @@ import { Component, Input, OnInit } from '@angular/core';
 export interface ITimelineItem {
   title: string;
   description: string;
+  link?: string;
+  linkText?: string;
 }
 
 @Component({

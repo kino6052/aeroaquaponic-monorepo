@@ -39,16 +39,24 @@ export const data = {
       title: 'Groundwork',
       description:
         'We will need to gather information about what is out there already in order to find best candidates for collaboration.',
+      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',
+      linkText: 'Learn more',
     },
     {
       title: 'Unit of Self-Sufficiency',
       description:
         'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-sufficiency_Proof_of_Concept',
+      linkText: 'Learn more',
     },
     {
       title: 'Self-sufficiency Guide',
       description:
         'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',
+      link:
+        'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Informational_Infrastructure',
+      linkText: 'Learn more',
     },
   ],
 };

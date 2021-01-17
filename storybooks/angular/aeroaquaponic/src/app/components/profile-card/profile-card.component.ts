@@ -4,6 +4,7 @@ export interface IProfileCard {
   imageUrl: string;
   name: string;
   description: string;
+  link: string;
 }
 
 @Component({
@@ -12,6 +13,17 @@ export interface IProfileCard {
   styleUrls: ['./profile-card.component.scss'],
 })
 export class ProfileCardComponent implements OnInit, IProfileCard {
+  @Input()
+  onClickHandler(e: Event) {
+    const a = document.createElement('a');
+    a.setAttribute('target', '_blank');
+    a.setAttribute('href', this.link);
+    a.click();
+  }
+
+  @Input()
+  link = '';
+
   @Input()
   imageUrl = '';
 

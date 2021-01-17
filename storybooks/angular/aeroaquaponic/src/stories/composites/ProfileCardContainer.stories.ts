@@ -29,31 +29,37 @@ ProfileCardContainer.args = {
       name: 'Cam Schubert',
       description: 'Medical Scientist',
       imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+      link: '',
     },
     {
       name: 'Kirill Novik',
       description: 'Senior Software Engineer',
       imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+      link: '',
     },
     {
       name: 'Dmitry Dementyev',
       description: 'Senior Researcher in Aquaculture',
       imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+      link: '',
     },
     {
       name: 'Dmitry Dementyev',
       description: 'Senior Researcher in Aquaculture',
       imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+      link: '',
     },
     {
       name: 'Cam Schubert',
       description: 'Medical Scientist',
       imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',
+      link: '',
     },
     {
       name: 'Kirill Novik',
       description: 'Senior Software Engineer',
       imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',
+      link: '',
     },
   ],
 };

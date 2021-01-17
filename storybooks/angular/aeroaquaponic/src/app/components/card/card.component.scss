@@ -8,18 +8,39 @@
   flex-direction: column;
   width: 20vw;
   height: 40vw;
-  border: 0.3vw solid white;
-  line-height: 2.24vw;
+  border: 0.2vw solid white;
+  line-height: 1.56vw;
   font-size: 1.2vw;
   h1 {
+    text-align: center;
+    display: flex;
     justify-content: center;
     text-transform: uppercase;
     display: flex;
     flex: 1;
     font-family: spartan, sans-serif;
+    margin: 0 0 1vw 0;
+    line-height: 2.56vw;
+    height: 5vw;
+  }
+  .image {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: auto;
+    margin: 0 0 2vw 0;
+    img {
+      border-radius: 100vw;
+      display: flex;
+      width: 15vw;
+      height: 15vw;
+    }
   }
   p {
     display: flex;
+    margin: 0;
+    display: flex;
     flex: 5;
+    align-content: flex-start;
   }
 }

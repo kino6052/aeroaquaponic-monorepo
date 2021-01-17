@@ -25,4 +25,5 @@ Primary.args = {
   name: 'Mr. Twister',
   description: 'Leitminister',
   imageUrl: 'https://aeroaquaponic.org/images/dima.png',
+  link: '',
 };

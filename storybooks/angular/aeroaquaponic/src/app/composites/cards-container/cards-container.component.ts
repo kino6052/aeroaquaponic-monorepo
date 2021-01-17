@@ -18,22 +18,28 @@ export class CardsContainerComponent implements OnInit {
 export const CardsContainerComponentData = {
   cards: [
     {
+      image: 'https://aeroaquaponic.org/images/technology.png',
       title: 'Technology',
       text:
-        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',
+        'Aeroaquaponic systems are a soilless farming technology which combines aeroponics with cyclical aquaponics.',
       label: 'Learn More',
+      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',
     },
     {
-      title: 'Technology',
+      image: 'https://aeroaquaponic.org/images/unit-of-self-sufficiency.png',
+      title: 'Unit of Self-Sufficiency',
       text:
-        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',
+        'Unit of self-sufficiency is a model of human existence in which the needs of its members are fulfilled with the minimal sufficient amount of sustainable resources owned by the unit.',
       label: 'Learn More',
+      link: 'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-Sufficiency',
     },
     {
-      title: 'Technology',
+      image: 'https://aeroaquaponic.org/images/logo.png',
+      title: 'Free Book',
       text:
-        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',
+        "Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.",
       label: 'Learn More',
+      link: 'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Vision',
     },
   ],
 };
