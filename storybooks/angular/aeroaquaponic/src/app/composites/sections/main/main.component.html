@@ -9,5 +9,8 @@
     [version]="'white'"
   ></aeroaquaponic-heading>
   <aeroaquaponic-spacer height="4"></aeroaquaponic-spacer>
-  <aeroaquaponic-button [label]="'Learn More'"></aeroaquaponic-button>
+  <aeroaquaponic-button
+    (click)="onClickHandler('#cards')"
+    [label]="'Learn More'"
+  ></aeroaquaponic-button>
 </aeroaquaponic-section>

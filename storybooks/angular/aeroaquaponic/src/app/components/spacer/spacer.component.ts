@@ -10,7 +10,7 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class SpacerComponent implements OnInit {
   @Input()
-  height = 1;
+  height: string | number = '1';
 
   constructor() {}
 

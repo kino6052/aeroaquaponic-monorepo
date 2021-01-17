@@ -3,31 +3,71 @@
     "interfaces": [
         {
             "name": "ICard",
-            "id": "interface-ICard-4f99cde74f2219c2e6ee60e6a7024e1f",
+            "id": "interface-ICard-955544ab85ebf48514c0ca5e40588a7c",
             "file": "src/app/components/card/card.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n})\nexport class CardComponent implements OnInit {\n  @Input()\n  title: string = CardComponentData.title;\n\n  @Input()\n  text: string = CardComponentData.text;\n\n  @Input()\n  label: string = CardComponentData.label;\n\n  @Input()\n  onClickHandler: (e: Event) => void = (e) => {\n    console.warn(e);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport interface ICard {\n  title: string;\n  text: string;\n  label: string;\n}\n\nexport const CardComponentData: ICard = {\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n};\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n})\nexport class CardComponent implements OnInit {\n  @Input()\n  image: string = CardComponentData.image;\n\n  @Input()\n  title: string = CardComponentData.title;\n\n  @Input()\n  text: string = CardComponentData.text;\n\n  @Input()\n  label: string = CardComponentData.label;\n\n  @Input()\n  link: string = CardComponentData.link;\n\n  @Input()\n  onClickHandler: (e: Event) => void = (e) => {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', this.link);\n    a.click();\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport interface ICard {\n  image: string;\n  title: string;\n  text: string;\n  label: string;\n  link: string;\n}\n\nexport const CardComponentData: ICard = {\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n  image: 'https://aeroaquaponic.org/images/logo.png',\n  link: 'https://aeroaquaponic.org',\n};\n",
             "properties": [
+                {
+                    "name": "image",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
                 {
                     "name": "label",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 31
+                    "line": 41
+                },
+                {
+                    "name": "link",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
                 },
                 {
                     "name": "text",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 30
+                    "line": 40
                 },
                 {
                     "name": "title",
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 29
+                    "line": 39
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 150,
+            "methods": []
+        },
+        {
+            "name": "IIcon",
+            "id": "interface-IIcon-8a2f331bed387446bebf041ee85bd96c",
+            "file": "src/app/composites/social/social.component.ts",
+            "type": "interface",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IIcon {\n  link: string;\n  image: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-social',\n  templateUrl: './social.component.html',\n  styleUrls: ['./social.component.scss'],\n})\nexport class SocialComponent implements OnInit {\n  @Input()\n  icons: IIcon[] = SocialComponentData;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const SocialComponentData: IIcon[] = [\n  {\n    link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n    image: 'https://aeroaquaponic.org/images/youtube.png',\n  },\n  {\n    link: 'https://www.facebook.com/aeroaquaponic2020',\n    image: 'https://aeroaquaponic.org/images/facebook.png',\n  },\n  {\n    link: 'https://twitter.com/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/twitter.png',\n  },\n  {\n    link: 'https://www.instagram.com/aeroaquaponic/',\n    image: 'https://aeroaquaponic.org/images/kickstarter.png',\n  },\n  {\n    link: 'https://www.linkedin.com/company/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/linkedin.png',\n  },\n];\n",
+            "properties": [
+                {
+                    "name": "image",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 5
+                },
+                {
+                    "name": "link",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 4
                 }
             ],
             "indexSignatures": [],
@@ -62,10 +102,10 @@
         },
         {
             "name": "IProfileCard",
-            "id": "interface-IProfileCard-ef9141aa01a03a9fc2d27ecdf0b2ea86",
+            "id": "interface-IProfileCard-b6776fb992af51d26b64ea823afd661a",
             "file": "src/app/components/profile-card/profile-card.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n  link: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  onClickHandler(e: Event) {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', this.link);\n    a.click();\n  }\n\n  @Input()\n  link = '';\n\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "properties": [
                 {
                     "name": "description",
@@ -82,6 +122,13 @@
                     "line": 4
                 },
                 {
+                    "name": "link",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 7
+                },
+                {
                     "name": "name",
                     "type": "string",
                     "optional": false,
@@ -95,10 +142,10 @@
         },
         {
             "name": "ITimelineItem",
-            "id": "interface-ITimelineItem-dd1151d353558034fc77df6d78d353a0",
+            "id": "interface-ITimelineItem-e8546ce19b794501d282e4bd37c6d414",
             "file": "src/app/components/timeline/timeline.component.ts",
             "type": "interface",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n  link?: string;\n  linkText?: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "properties": [
                 {
                     "name": "description",
@@ -106,6 +153,20 @@
                     "optional": false,
                     "description": "",
                     "line": 5
+                },
+                {
+                    "name": "link",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 6
+                },
+                {
+                    "name": "linkText",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 7
                 },
                 {
                     "name": "title",
@@ -164,7 +225,7 @@
     "components": [
         {
             "name": "AboutComponent",
-            "id": "component-AboutComponent-5275be905ed1c38a3ac404394a337f90",
+            "id": "component-AboutComponent-b626650a7dd5428179e4ef0f427383f7",
             "file": "src/app/composites/sections/about/about.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -219,7 +280,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss'],\n})\nexport class AboutComponent implements OnInit {\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  profiles = data.profiles;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n};\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-about',\n  templateUrl: './about.component.html',\n  styleUrls: ['./about.component.scss'],\n})\nexport class AboutComponent implements OnInit {\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  profiles = data.profiles;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Director of Community Development',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Cam_Schubert_-_Director_of_Community_Development',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Director of Research and Development',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Kirill_Novik_-_Research_and_Development_Director',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Dmitry_Dementyev_-_Director_of_Research',\n    },\n    {\n      name: 'Darrah Herman',\n      description: 'Director of Ecosystem Balance',\n      imageUrl: 'https://aeroaquaponic.org/images/darrah.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Darrah_Herman_-_Director_of_Ecosystem_Balance',\n    },\n    {\n      name: 'Jameson Owens',\n      description: 'Director of Community Outreach',\n      imageUrl: 'https://aeroaquaponic.org/images/jameson.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Jameson_Owens_-_Director_of_Community_Outreach',\n    },\n    {\n      name: 'Nikita Novik',\n      description: 'Creative Director',\n      imageUrl: 'https://aeroaquaponic.org/images/nikita.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Nikita_Novik_-_Creative_Director',\n    },\n  ],\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -237,7 +298,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-profile-card-container\n    [profiles]=\"profiles\"\n  ></aeroaquaponic-profile-card-container>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"{{ title }}\"\n    subtitle=\"{{ subtitle }}\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-profile-card-container\n    [profiles]=\"profiles\"\n  ></aeroaquaponic-profile-card-container>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-social></aeroaquaponic-social>\n  <aeroaquaponic-spacer height=\"8\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "AppComponent",
@@ -356,7 +417,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".container {\r\n  display: flex;\r\n  width: 100%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  .storybook-button {\r\n    width: 19.5vw;\r\n    height: 4.68vw;\r\n    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\r\n    border: none;\r\n    margin: 0 4px;\r\n    font-size: 1.75vw;\r\n    line-height: 1.75vw;\r\n    font-weight: 400;\r\n    font-family: \"Work Sans\";\r\n    span {\r\n      display: flex;\r\n      height: 4.6vw;\r\n      width: 4.6vw;\r\n    }\r\n  }\r\n  .storybook-button--primary {\r\n    background: #51ac2b;\r\n    color: white;\r\n  }\r\n  .storybook-button--secondary {\r\n    background: white;\r\n    color: black;\r\n  }\r\n  /* .storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n  }\r\n  .storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n  }\r\n  .storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n  } */\r\n}\r\n",
+                    "data": ".container {\r\n  display: flex;\r\n  width: 100%;\r\n  align-items: center;\r\n  justify-content: center;\r\n  .storybook-button {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    width: 19.5vw;\r\n    height: 4.68vw;\r\n    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);\r\n    border: none;\r\n    margin: 0 4px;\r\n    font-size: 1.75vw;\r\n    line-height: 1.75vw;\r\n    font-weight: 400;\r\n    font-family: \"Work Sans\";\r\n    transition: 0.1s;\r\n    &:hover {\r\n      transform: scale(1.05);\r\n      cursor: pointer;\r\n    }\r\n    img {\r\n      display: flex;\r\n      height: 2.6vw;\r\n      width: 2.6vw;\r\n      margin-right: 1.5vw;\r\n    }\r\n  }\r\n  .storybook-button--primary {\r\n    background: #51ac2b;\r\n    color: white;\r\n  }\r\n  .storybook-button--secondary {\r\n    background: white;\r\n    color: black;\r\n  }\r\n  /* .storybook-button--small {\r\n    font-size: 12px;\r\n    padding: 10px 16px;\r\n  }\r\n  .storybook-button--medium {\r\n    font-size: 14px;\r\n    padding: 11px 20px;\r\n  }\r\n  .storybook-button--large {\r\n    font-size: 16px;\r\n    padding: 12px 24px;\r\n  } */\r\n}\r\n",
                     "styleUrl": "./button.component.scss"
                 }
             ],
@@ -372,11 +433,11 @@
                     }
                 }
             },
-            "templateData": "<div class=\"container\">\n  <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    <!-- <span\n      *ngIf=\"iconLink\"\n      [ngStyle]=\"{ background: iconLink, backgroundColor: 'black' }\"\n      >test</span\n    > -->\n    {{ label }}\n  </button>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <button\n    type=\"button\"\n    (click)=\"onClick.emit($event)\"\n    [ngClass]=\"classes\"\n    [ngStyle]=\"{ 'background-color': backgroundColor }\"\n  >\n    <img *ngIf=\"iconLink\" src=\"{{ iconLink }}\" />\n    {{ label }}\n  </button>\n</div>\n"
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-4f99cde74f2219c2e6ee60e6a7024e1f",
+            "id": "component-CardComponent-955544ab85ebf48514c0ca5e40588a7c",
             "file": "src/app/components/card/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -394,27 +455,39 @@
             "viewProviders": [],
             "inputsClass": [
                 {
+                    "name": "image",
+                    "defaultValue": "CardComponentData.image",
+                    "line": 10,
+                    "type": "string"
+                },
+                {
                     "name": "label",
                     "defaultValue": "CardComponentData.label",
-                    "line": 16,
+                    "line": 19,
+                    "type": "string"
+                },
+                {
+                    "name": "link",
+                    "defaultValue": "CardComponentData.link",
+                    "line": 22,
                     "type": "string"
                 },
                 {
                     "name": "onClickHandler",
-                    "defaultValue": "(e) => {\n    console.warn(e);\n  }",
-                    "line": 19,
+                    "defaultValue": "(e) => {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', this.link);\n    a.click();\n  }",
+                    "line": 25,
                     "type": "function"
                 },
                 {
                     "name": "text",
                     "defaultValue": "CardComponentData.text",
-                    "line": 13,
+                    "line": 16,
                     "type": "string"
                 },
                 {
                     "name": "title",
                     "defaultValue": "CardComponentData.title",
-                    "line": 10,
+                    "line": 13,
                     "type": "string"
                 }
             ],
@@ -427,7 +500,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 25
+                    "line": 34
                 }
             ],
             "hostBindings": [],
@@ -435,11 +508,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n})\nexport class CardComponent implements OnInit {\n  @Input()\n  title: string = CardComponentData.title;\n\n  @Input()\n  text: string = CardComponentData.text;\n\n  @Input()\n  label: string = CardComponentData.label;\n\n  @Input()\n  onClickHandler: (e: Event) => void = (e) => {\n    console.warn(e);\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport interface ICard {\n  title: string;\n  text: string;\n  label: string;\n}\n\nexport const CardComponentData: ICard = {\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n};\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-card',\n  templateUrl: './card.component.html',\n  styleUrls: ['./card.component.scss'],\n})\nexport class CardComponent implements OnInit {\n  @Input()\n  image: string = CardComponentData.image;\n\n  @Input()\n  title: string = CardComponentData.title;\n\n  @Input()\n  text: string = CardComponentData.text;\n\n  @Input()\n  label: string = CardComponentData.label;\n\n  @Input()\n  link: string = CardComponentData.link;\n\n  @Input()\n  onClickHandler: (e: Event) => void = (e) => {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', this.link);\n    a.click();\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport interface ICard {\n  image: string;\n  title: string;\n  text: string;\n  label: string;\n  link: string;\n}\n\nexport const CardComponentData: ICard = {\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n  image: 'https://aeroaquaponic.org/images/logo.png',\n  link: 'https://aeroaquaponic.org',\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".card {\r\n  font-family: \"Work Sans\", sans-serif;\r\n  background-color: #494949;\r\n  justify-content: space-between;\r\n  padding: 3vw;\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 20vw;\r\n  height: 40vw;\r\n  border: 0.3vw solid white;\r\n  line-height: 2.24vw;\r\n  font-size: 1.2vw;\r\n  h1 {\r\n    justify-content: center;\r\n    text-transform: uppercase;\r\n    display: flex;\r\n    flex: 1;\r\n    font-family: spartan, sans-serif;\r\n  }\r\n  p {\r\n    display: flex;\r\n    flex: 5;\r\n  }\r\n}\r\n",
+                    "data": ".card {\r\n  font-family: \"Work Sans\", sans-serif;\r\n  background-color: #494949;\r\n  justify-content: space-between;\r\n  padding: 3vw;\r\n  color: white;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 20vw;\r\n  height: 40vw;\r\n  border: 0.2vw solid white;\r\n  line-height: 1.56vw;\r\n  font-size: 1.2vw;\r\n  h1 {\r\n    text-align: center;\r\n    display: flex;\r\n    justify-content: center;\r\n    text-transform: uppercase;\r\n    display: flex;\r\n    flex: 1;\r\n    font-family: spartan, sans-serif;\r\n    margin: 0 0 1vw 0;\r\n    line-height: 2.56vw;\r\n    height: 5vw;\r\n  }\r\n  .image {\r\n    display: flex;\r\n    justify-content: center;\r\n    width: 100%;\r\n    height: auto;\r\n    margin: 0 0 2vw 0;\r\n    img {\r\n      border-radius: 100vw;\r\n      display: flex;\r\n      width: 15vw;\r\n      height: 15vw;\r\n    }\r\n  }\r\n  p {\r\n    display: flex;\r\n    margin: 0;\r\n    display: flex;\r\n    flex: 5;\r\n    align-content: flex-start;\r\n  }\r\n}\r\n",
                     "styleUrl": "./card.component.scss"
                 }
             ],
@@ -448,16 +521,16 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 21
+                "line": 30
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"card\">\n  <h1>{{ title }}</h1>\n  <div class=\"divider\"></div>\n  <p>{{ text }}</p>\n  <aeroaquaponic-button\n    [label]=\"label\"\n    (onClick)=\"onClickHandler($event)\"\n  ></aeroaquaponic-button>\n</div>\n"
+            "templateData": "<div class=\"card\">\n  <h1>{{ title }}</h1>\n  <div class=\"divider\"></div>\n  <div class=\"image\">\n    <img src=\"{{ image }}\" />\n  </div>\n  <p>{{ text }}</p>\n  <aeroaquaponic-button\n    [label]=\"label\"\n    (onClick)=\"onClickHandler($event)\"\n  ></aeroaquaponic-button>\n</div>\n"
         },
         {
             "name": "CardsContainerComponent",
-            "id": "component-CardsContainerComponent-5d71378c82a4155a86dedd78730831f0",
+            "id": "component-CardsContainerComponent-2ab84860bc072d7dfeaeac6d4fa93df8",
             "file": "src/app/composites/cards-container/cards-container.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -498,7 +571,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ICard } from 'src/app/components/card/card.component';\n\n@Component({\n  selector: 'aeroaquaponic-cards-container',\n  templateUrl: './cards-container.component.html',\n  styleUrls: ['./cards-container.component.scss'],\n})\nexport class CardsContainerComponent implements OnInit {\n  @Input()\n  cards: ICard[] = CardsContainerComponentData.cards;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const CardsContainerComponentData = {\n  cards: [\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n  ],\n};\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ICard } from 'src/app/components/card/card.component';\n\n@Component({\n  selector: 'aeroaquaponic-cards-container',\n  templateUrl: './cards-container.component.html',\n  styleUrls: ['./cards-container.component.scss'],\n})\nexport class CardsContainerComponent implements OnInit {\n  @Input()\n  cards: ICard[] = CardsContainerComponentData.cards;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const CardsContainerComponentData = {\n  cards: [\n    {\n      image: 'https://aeroaquaponic.org/images/technology.png',\n      title: 'Technology',\n      text:\n        'Aeroaquaponic systems are a soilless farming technology which combines aeroponics with cyclical aquaponics.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/unit-of-self-sufficiency.png',\n      title: 'Unit of Self-Sufficiency',\n      text:\n        'Unit of self-sufficiency is a model of human existence in which the needs of its members are fulfilled with the minimal sufficient amount of sustainable resources owned by the unit.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-Sufficiency',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/logo.png',\n      title: 'Free Book',\n      text:\n        \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Vision',\n    },\n  ],\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -516,11 +589,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"container\">\n  <aeroaquaponic-card\n    [title]=\"card.title\"\n    [text]=\"card.text\"\n    [label]=\"card.label\"\n    *ngFor=\"let card of cards\"\n  >\n  </aeroaquaponic-card>\n</div>\n"
+            "templateData": "<div class=\"container\">\n  <aeroaquaponic-card\n    [image]=\"card.image\"\n    [title]=\"card.title\"\n    [text]=\"card.text\"\n    [label]=\"card.label\"\n    [link]=\"card.link\"\n    *ngFor=\"let card of cards\"\n  >\n  </aeroaquaponic-card>\n</div>\n"
         },
         {
             "name": "DonateComponent",
-            "id": "component-DonateComponent-3d21134ae884d1c5dc69cb8ea2f57ae4",
+            "id": "component-DonateComponent-05d0de9d5f13a837af698b3626c2a0b1",
             "file": "src/app/composites/sections/donate/donate.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -536,7 +609,14 @@
                 "./donate.component.html"
             ],
             "viewProviders": [],
-            "inputsClass": [],
+            "inputsClass": [
+                {
+                    "name": "onClickHandler",
+                    "defaultValue": "(e) => {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', 'https://ko-fi.com/aeroaquaponic');\n    a.click();\n  }",
+                    "line": 10,
+                    "type": "function"
+                }
+            ],
             "outputsClass": [],
             "propertiesClass": [],
             "methodsClass": [
@@ -546,7 +626,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 12
+                    "line": 19
                 }
             ],
             "hostBindings": [],
@@ -554,7 +634,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-donate',\n  templateUrl: './donate.component.html',\n  styleUrls: ['./donate.component.scss']\n})\nexport class DonateComponent implements OnInit {\n\n  constructor() { }\n\n  ngOnInit(): void {\n  }\n\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\n@Component({\n  selector: 'aeroaquaponic-donate',\n  templateUrl: './donate.component.html',\n  styleUrls: ['./donate.component.scss'],\n})\nexport class DonateComponent implements OnInit {\n  @Input()\n  onClickHandler: (e: Event) => void = (e) => {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', 'https://ko-fi.com/aeroaquaponic');\n    a.click();\n  };\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -567,12 +647,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 8
+                "line": 15
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Support Us\"\n    subtitle=\"Make Your Contribution!\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"10\"></aeroaquaponic-spacer>\n  <aeroaquaponic-button\n    [primary]=\"false\"\n    [iconLink]=\"\n      'https://www.google.com/url?sa=i&url=https%3A%2F%2Fmore.ko-fi.com%2Fbrand-assets&psig=AOvVaw3lzBtLhDLSVtekMRf-iu9C&ust=1609730905088000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCIDrxojp_u0CFQAAAAAdAAAAABAD'\n    \"\n    label=\"Buy Us Coffee\"\n  ></aeroaquaponic-button>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Support Us\"\n    subtitle=\"Make Your Contribution!\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-button\n    [primary]=\"false\"\n    [iconLink]=\"\n      'https://uploads-ssl.webflow.com/5c14e387dab576fe667689cf/5c91bddac6c3aa6b3718fd86_kofisvglofo.svg'\n    \"\n    label=\"Buy Us Coffee\"\n    (onClick)=\"onClickHandler($event)\"\n  ></aeroaquaponic-button>\n  <aeroaquaponic-spacer height=\"8\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "FooterComponent",
@@ -625,7 +705,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".footer {\r\n  display: flex;\r\n  flex-direction: row;\r\n  width: 100%;\r\n  height: 30vw;\r\n  background-color: #333;\r\n  color: white;\r\n  font-family: \"Work Sans\", sans-serif;\r\n  font-size: 1.8vw;\r\n  line-height: 2vw;\r\n  justify-content: space-between;\r\n  .logo-container {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: row;\r\n    .logo {\r\n      width: 10vw;\r\n      height: 10vw;\r\n      background-size: contain;\r\n    }\r\n    .spacer {\r\n      display: flex;\r\n      width: 2vw;\r\n      height: 100%;\r\n    }\r\n    .logo-description {\r\n      margin: 0;\r\n      padding: 0;\r\n      width: 24vw;\r\n    }\r\n  }\r\n  .links {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-end;\r\n    h2 {\r\n      margin: 0;\r\n      padding: 0;\r\n      margin-bottom: 2vw;\r\n    }\r\n    a {\r\n      color: white;\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ".footer {\r\n  display: flex;\r\n  flex-direction: row;\r\n  width: 100%;\r\n  height: 30vw;\r\n  background-color: #333;\r\n  color: white;\r\n  font-family: \"Work Sans\", sans-serif;\r\n  font-size: 1.8vw;\r\n  line-height: 2vw;\r\n  justify-content: space-between;\r\n  .logo-container {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: row;\r\n    .logo {\r\n      width: 10vw;\r\n      height: 10vw;\r\n      background-size: contain;\r\n    }\r\n    .spacer {\r\n      display: flex;\r\n      width: 2vw;\r\n      height: 100%;\r\n    }\r\n    .logo-description {\r\n      margin: 0;\r\n      padding: 0;\r\n      width: 24vw;\r\n    }\r\n  }\r\n  .links {\r\n    padding: 4vw;\r\n    display: flex;\r\n    flex-direction: column;\r\n    align-items: flex-end;\r\n    h2 {\r\n      margin: 0;\r\n      padding: 0;\r\n      margin-bottom: 2vw;\r\n    }\r\n    a {\r\n      color: white;\r\n      margin-bottom: 1vw;\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./footer.component.scss"
                 }
             ],
@@ -639,7 +719,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"footer\">\n  <div class=\"logo-container\">\n    <div\n      class=\"logo\"\n      [ngStyle]=\"{\n        'background-image': 'url(' + logo.link + ')'\n      }\"\n    ></div>\n    <div class=\"spacer\"></div>\n    <p class=\"logo-description\">{{ logo.description }}</p>\n  </div>\n  <div class=\"links\">\n    <h2>Social Media</h2>\n    <a *ngFor=\"let link of links\" [href]=\"link.link\">{{ link.name }}</a>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"footer\">\n  <div class=\"logo-container\">\n    <div\n      class=\"logo\"\n      [ngStyle]=\"{\n        'background-image': 'url(' + logo.link + ')'\n      }\"\n    ></div>\n    <div class=\"spacer\"></div>\n    <p class=\"logo-description\">{{ logo.description }}</p>\n  </div>\n  <div class=\"links\">\n    <h2>Social Media</h2>\n    <a target=\"_blank\" *ngFor=\"let link of links\" [href]=\"link.link\">{{\n      link.name\n    }}</a>\n  </div>\n</div>\n"
         },
         {
             "name": "HeaderComponent",
@@ -774,7 +854,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div [className]=\"'container ' + version\">\n  <h1>{{ title }}</h1>\n  <h2>{{ subtitle }}</h2>\n</div>\n"
+            "templateData": "<div [className]=\"'container ' + version\">\n  <h1>{{ title }}</h1>\n  <aeroaquaponic-spacer height=\"1\"></aeroaquaponic-spacer>\n  <h2>{{ subtitle }}</h2>\n</div>\n"
         },
         {
             "name": "MainComponent",
@@ -971,7 +1051,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Overview\"\n    subtitle=\"Our Vision\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer [height]=\"10\"></aeroaquaponic-spacer>\n  <aeroaquaponic-video></aeroaquaponic-video>\n  <aeroaquaponic-spacer [height]=\"6\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    title=\"Overview\"\n    subtitle=\"Our Vision\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer [height]=\"6\"></aeroaquaponic-spacer>\n  <aeroaquaponic-video></aeroaquaponic-video>\n  <aeroaquaponic-spacer [height]=\"10\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "PageComponent",
@@ -1031,7 +1111,7 @@
         },
         {
             "name": "ProfileCardComponent",
-            "id": "component-ProfileCardComponent-ef9141aa01a03a9fc2d27ecdf0b2ea86",
+            "id": "component-ProfileCardComponent-b6776fb992af51d26b64ea823afd661a",
             "file": "src/app/components/profile-card/profile-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1051,17 +1131,26 @@
                 {
                     "name": "description",
                     "defaultValue": "'description'",
-                    "line": 22
+                    "line": 34
                 },
                 {
                     "name": "imageUrl",
                     "defaultValue": "''",
-                    "line": 16
+                    "line": 28
+                },
+                {
+                    "name": "link",
+                    "defaultValue": "''",
+                    "line": 25
                 },
                 {
                     "name": "name",
                     "defaultValue": "'name'",
-                    "line": 19
+                    "line": 31
+                },
+                {
+                    "name": "onClickHandler",
+                    "line": 17
                 }
             ],
             "outputsClass": [],
@@ -1073,7 +1162,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 26
+                    "line": 38
                 }
             ],
             "hostBindings": [],
@@ -1081,11 +1170,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IProfileCard {\n  imageUrl: string;\n  name: string;\n  description: string;\n  link: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-profile-card',\n  templateUrl: './profile-card.component.html',\n  styleUrls: ['./profile-card.component.scss'],\n})\nexport class ProfileCardComponent implements OnInit, IProfileCard {\n  @Input()\n  onClickHandler(e: Event) {\n    const a = document.createElement('a');\n    a.setAttribute('target', '_blank');\n    a.setAttribute('href', this.link);\n    a.click();\n  }\n\n  @Input()\n  link = '';\n\n  @Input()\n  imageUrl = '';\n\n  @Input()\n  name = 'name';\n\n  @Input()\n  description = 'description';\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".container {\r\n  font-family: \"Work Sans\";\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 24vw;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 1.5vw;\r\n  margin: 2vw;\r\n  & img {\r\n    height: 12.5vw;\r\n    width: 12.5vw;\r\n    border-radius: 50vw;\r\n    background-color: grey;\r\n    background-size: cover;\r\n    background-position: center;\r\n  }\r\n  & .name {\r\n    font-weight: bold;\r\n    margin-top: 2vw;\r\n  }\r\n  & .description {\r\n    text-align: center;\r\n    font-weight: lighter;\r\n    margin-top: 1vw;\r\n  }\r\n}\r\n",
+                    "data": ".container {\r\n  font-family: \"Work Sans\";\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 24vw;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 1.5vw;\r\n  margin: 2vw;\r\n  transition: 0.1s;\r\n  &:hover {\r\n    transform: scale(1.1);\r\n    cursor: pointer;\r\n  }\r\n  & img {\r\n    height: 12.5vw;\r\n    width: 12.5vw;\r\n    border-radius: 50vw;\r\n    background-color: grey;\r\n    background-size: cover;\r\n    background-position: center;\r\n  }\r\n  & .name {\r\n    font-weight: bold;\r\n    margin-top: 2vw;\r\n  }\r\n  & .description {\r\n    text-align: center;\r\n    font-weight: lighter;\r\n    margin-top: 1vw;\r\n  }\r\n}\r\n",
                     "styleUrl": "./profile-card.component.scss"
                 }
             ],
@@ -1094,13 +1183,13 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 22
+                "line": 34
             },
             "implements": [
                 "OnInit",
                 "IProfileCard"
             ],
-            "templateData": "<div class=\"container\">\n  <img src=\"{{ imageUrl }}\" />\n  <div class=\"name\">{{ name }}</div>\n  <div class=\"description\">{{ description }}</div>\n</div>\n"
+            "templateData": "<div class=\"container\" (click)=\"onClickHandler($event)\">\n  <img src=\"{{ imageUrl }}\" />\n  <div class=\"name\">{{ name }}</div>\n  <div class=\"description\">{{ description }}</div>\n</div>\n"
         },
         {
             "name": "ProfileCardContainerComponent",
@@ -1163,11 +1252,11 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div>\n  <aeroaquaponic-profile-card\n    *ngFor=\"let profile of profiles\"\n    [name]=\"profile.name\"\n    [description]=\"profile.description\"\n    [imageUrl]=\"profile.imageUrl\"\n  ></aeroaquaponic-profile-card>\n</div>\n"
+            "templateData": "<div>\n  <aeroaquaponic-profile-card\n    *ngFor=\"let profile of profiles\"\n    [name]=\"profile.name\"\n    [description]=\"profile.description\"\n    [imageUrl]=\"profile.imageUrl\"\n    [link]=\"profile.link\"\n  ></aeroaquaponic-profile-card>\n</div>\n"
         },
         {
             "name": "ProjectsComponent",
-            "id": "component-ProjectsComponent-dda22da77d2575b38ea82406d5521767",
+            "id": "component-ProjectsComponent-5de0a4270a50b9ebe234cd281e666d03",
             "file": "src/app/composites/sections/projects/projects.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1223,7 +1312,7 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ITimelineItem } from 'src/app/components/timeline/timeline.component';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  items: ITimelineItem[] = data.items;\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n};\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\nimport { ITimelineItem } from 'src/app/components/timeline/timeline.component';\n\n@Component({\n  selector: 'aeroaquaponic-projects',\n  templateUrl: './projects.component.html',\n  styleUrls: ['./projects.component.scss'],\n})\nexport class ProjectsComponent implements OnInit {\n  constructor() {}\n\n  @Input()\n  title = data.title;\n\n  @Input()\n  subtitle = data.subtitle;\n\n  @Input()\n  text = data.text;\n\n  @Input()\n  items: ITimelineItem[] = data.items;\n\n  ngOnInit(): void {}\n}\n\nexport const data = {\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-sufficiency_Proof_of_Concept',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Informational_Infrastructure',\n      linkText: 'Learn more',\n    },\n  ],\n};\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
@@ -1241,7 +1330,7 @@
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    [title]=\"title\"\n    [subtitle]=\"subtitle\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-timeline [items]=\"items\"></aeroaquaponic-timeline>\n</aeroaquaponic-section>\n"
+            "templateData": "<aeroaquaponic-section>\n  <aeroaquaponic-heading\n    [title]=\"title\"\n    [subtitle]=\"subtitle\"\n  ></aeroaquaponic-heading>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-typography>\n    {{ text }}\n  </aeroaquaponic-typography>\n  <aeroaquaponic-spacer height=\"4\"></aeroaquaponic-spacer>\n  <aeroaquaponic-timeline [items]=\"items\"></aeroaquaponic-timeline>\n  <aeroaquaponic-spacer height=\"8\"></aeroaquaponic-spacer>\n</aeroaquaponic-section>\n"
         },
         {
             "name": "SectionComponent",
@@ -1290,7 +1379,7 @@
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": "div {\r\n  margin: 0 0 6vw 0;\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n",
+                    "data": "div {\r\n  padding: 1vw;\r\n  display: flex;\r\n  flex-direction: column;\r\n  width: 100%;\r\n}\r\n",
                     "styleUrl": "./section.component.scss"
                 }
             ],
@@ -1305,6 +1394,69 @@
                 "OnInit"
             ],
             "templateData": "<div [ngClass]=\"{ isDebugging: isDebugging, section: true }\">\n  <ng-content></ng-content>\n</div>\n"
+        },
+        {
+            "name": "SocialComponent",
+            "id": "component-SocialComponent-8a2f331bed387446bebf041ee85bd96c",
+            "file": "src/app/composites/social/social.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "aeroaquaponic-social",
+            "styleUrls": [
+                "./social.component.scss"
+            ],
+            "styles": [],
+            "templateUrl": [
+                "./social.component.html"
+            ],
+            "viewProviders": [],
+            "inputsClass": [
+                {
+                    "name": "icons",
+                    "defaultValue": "SocialComponentData",
+                    "line": 15,
+                    "type": "IIcon[]"
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 19
+                }
+            ],
+            "hostBindings": [],
+            "hostListeners": [],
+            "description": "",
+            "rawdescription": "",
+            "type": "component",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface IIcon {\n  link: string;\n  image: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-social',\n  templateUrl: './social.component.html',\n  styleUrls: ['./social.component.scss'],\n})\nexport class SocialComponent implements OnInit {\n  @Input()\n  icons: IIcon[] = SocialComponentData;\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n\nexport const SocialComponentData: IIcon[] = [\n  {\n    link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n    image: 'https://aeroaquaponic.org/images/youtube.png',\n  },\n  {\n    link: 'https://www.facebook.com/aeroaquaponic2020',\n    image: 'https://aeroaquaponic.org/images/facebook.png',\n  },\n  {\n    link: 'https://twitter.com/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/twitter.png',\n  },\n  {\n    link: 'https://www.instagram.com/aeroaquaponic/',\n    image: 'https://aeroaquaponic.org/images/kickstarter.png',\n  },\n  {\n    link: 'https://www.linkedin.com/company/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/linkedin.png',\n  },\n];\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": ".container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  flex-direction: row;\r\n  height: 4.1vw;\r\n  width: 100%;\r\n  border-radius: 50vw;\r\n  background-size: cover;\r\n  background-position: center;\r\n  align-items: center;\r\n  justify-content: center;\r\n  font-size: 1.17vw;\r\n  a {\r\n    transition: 0.1s;\r\n    &:hover {\r\n      transform: scale(1.1);\r\n    }\r\n    img {\r\n      border-radius: 100vw;\r\n      height: 4.1vw;\r\n      width: 4.1vw;\r\n    }\r\n    margin: 0 3vw;\r\n  }\r\n}\r\n",
+                    "styleUrl": "./social.component.scss"
+                }
+            ],
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "args": [],
+                "line": 15
+            },
+            "implements": [
+                "OnInit"
+            ],
+            "templateData": "<div class=\"container\">\n  <a target=\"_blank\" href=\"{{ icon.link }}\" *ngFor=\"let icon of icons\">\n    <img src=\"{{ icon.image }}\" />\n  </a>\n</div>\n"
         },
         {
             "name": "SpacerComponent",
@@ -1368,7 +1520,7 @@
         },
         {
             "name": "TimelineComponent",
-            "id": "component-TimelineComponent-dd1151d353558034fc77df6d78d353a0",
+            "id": "component-TimelineComponent-e8546ce19b794501d282e4bd37c6d414",
             "file": "src/app/components/timeline/timeline.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1388,7 +1540,7 @@
                 {
                     "name": "items",
                     "defaultValue": "[]",
-                    "line": 15,
+                    "line": 17,
                     "type": "ITimelineItem[]"
                 }
             ],
@@ -1401,7 +1553,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 19
+                    "line": 21
                 }
             ],
             "hostBindings": [],
@@ -1409,11 +1561,11 @@
             "description": "",
             "rawdescription": "",
             "type": "component",
-            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
+            "sourceCode": "import { Component, Input, OnInit } from '@angular/core';\n\nexport interface ITimelineItem {\n  title: string;\n  description: string;\n  link?: string;\n  linkText?: string;\n}\n\n@Component({\n  selector: 'aeroaquaponic-timeline',\n  templateUrl: './timeline.component.html',\n  styleUrls: ['./timeline.component.scss'],\n})\nexport class TimelineComponent implements OnInit {\n  @Input()\n  items: ITimelineItem[] = [];\n\n  constructor() {}\n\n  ngOnInit(): void {}\n}\n",
             "assetsDirs": [],
             "styleUrlsData": [
                 {
-                    "data": ".timeline-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 100%;\r\n  height: 100%;\r\n  .timeline-item-container {\r\n    display: grid;\r\n    grid-template-areas: \"left bar right\";\r\n    .card {\r\n      display: flex;\r\n      box-shadow: 0px 0px 1vw lightgrey;\r\n      width: 100%;\r\n      height: 100%;\r\n      flex-direction: column;\r\n      & .timeline-item-content {\r\n        margin: 2vw;\r\n        & h1 {\r\n          font-size: 1.56vw;\r\n          line-height: 1.56vw;\r\n          font-family: spartan, sans-serif;\r\n        }\r\n        & p {\r\n          font-size: 1.18vw;\r\n          line-height: 1.56vw;\r\n          font-family: \"Work Sans\", sans-serif;\r\n        }\r\n      }\r\n    }\r\n    .left {\r\n      grid-area: left;\r\n      align-self: end;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .right {\r\n      grid-area: right;\r\n      align-self: start;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .bar {\r\n      grid-area: bar;\r\n      align-self: center;\r\n      width: 3vw;\r\n      height: 105%;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      .line {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        background: #51ac2b;\r\n        border-radius: 100vw;\r\n        height: 100%;\r\n        width: 0.5vw;\r\n        .point {\r\n          display: flex;\r\n          width: 2vw;\r\n          height: 2vw;\r\n          background: #51ac2b;\r\n          position: absolute;\r\n          border-radius: 10vw;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(odd) {\r\n    .right {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(even) {\r\n    .left {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
+                    "data": ".timeline-container {\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n  width: 100%;\r\n  height: 100%;\r\n  .timeline-item-container {\r\n    display: grid;\r\n    grid-template-areas: \"left bar right\";\r\n    .card {\r\n      display: flex;\r\n      box-shadow: 0px 0px 1vw lightgrey;\r\n      width: 100%;\r\n      height: 100%;\r\n      flex-direction: column;\r\n      & .timeline-item-content {\r\n        margin: 2vw;\r\n        & h1 {\r\n          font-size: 1.56vw;\r\n          line-height: 1.56vw;\r\n          font-family: spartan, sans-serif;\r\n        }\r\n        & p {\r\n          font-size: 1.18vw;\r\n          line-height: 1.56vw;\r\n          font-family: \"Work Sans\", sans-serif;\r\n        }\r\n        & a {\r\n          color: #51ac2b;\r\n          font-weight: bold;\r\n          font-size: 1.18vw;\r\n          line-height: 1.56vw;\r\n          font-family: \"Work Sans\", sans-serif;\r\n          text-decoration: none;\r\n          &:hover {\r\n            text-decoration: underline 3px solid #51ac2b;\r\n          }\r\n        }\r\n      }\r\n    }\r\n    .left {\r\n      grid-area: left;\r\n      align-self: end;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .right {\r\n      grid-area: right;\r\n      align-self: start;\r\n      width: 30vw;\r\n      margin: 2vw;\r\n    }\r\n    .bar {\r\n      grid-area: bar;\r\n      align-self: center;\r\n      width: 3vw;\r\n      height: 105%;\r\n      display: flex;\r\n      justify-content: center;\r\n      align-items: center;\r\n      .line {\r\n        display: flex;\r\n        justify-content: center;\r\n        align-items: center;\r\n        background: #51ac2b;\r\n        border-radius: 100vw;\r\n        height: 100%;\r\n        width: 0.5vw;\r\n        .point {\r\n          display: flex;\r\n          width: 2vw;\r\n          height: 2vw;\r\n          background: #51ac2b;\r\n          position: absolute;\r\n          border-radius: 10vw;\r\n        }\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(odd) {\r\n    .right {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n  .timeline-item-container:nth-child(even) {\r\n    .left {\r\n      .card {\r\n        display: none;\r\n      }\r\n    }\r\n  }\r\n}\r\n",
                     "styleUrl": "./timeline.component.scss"
                 }
             ],
@@ -1422,12 +1574,12 @@
                 "name": "constructor",
                 "description": "",
                 "args": [],
-                "line": 15
+                "line": 17
             },
             "implements": [
                 "OnInit"
             ],
-            "templateData": "<div class=\"timeline-container\">\n  <div class=\"timeline-item-container\" *ngFor=\"let item of items\">\n    <div class=\"left\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n        </div>\n      </div>\n    </div>\n    <div class=\"bar\">\n      <div class=\"line\">\n        <div class=\"point\"></div>\n      </div>\n    </div>\n    <div class=\"right\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
+            "templateData": "<div class=\"timeline-container\">\n  <div class=\"timeline-item-container\" *ngFor=\"let item of items\">\n    <div class=\"left\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n          <a target=\"_blank\" *ngIf=\"item.link\" href=\"{{ item.link }}\">{{\n            item.linkText\n          }}</a>\n        </div>\n      </div>\n    </div>\n    <div class=\"bar\">\n      <div class=\"line\">\n        <div class=\"point\"></div>\n      </div>\n    </div>\n    <div class=\"right\">\n      <div class=\"card\">\n        <div class=\"timeline-item-content\">\n          <h1>{{ item.title }}</h1>\n          <p>{{ item.description }}</p>\n          <a target=\"_blank\" *ngIf=\"item.link\" href=\"{{ item.link }}\">{{\n            item.linkText\n          }}</a>\n        </div>\n      </div>\n    </div>\n  </div>\n</div>\n"
         },
         {
             "name": "TypographyComponent",
@@ -1674,6 +1826,9 @@
                             "name": "SectionComponent"
                         },
                         {
+                            "name": "SocialComponent"
+                        },
+                        {
                             "name": "SpacerComponent"
                         },
                         {
@@ -1812,7 +1967,7 @@
                 "subtype": "variable",
                 "file": "src/app/components/card/card.component.ts",
                 "type": "ICard",
-                "defaultValue": "{\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n}"
+                "defaultValue": "{\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n  image: 'https://aeroaquaponic.org/images/logo.png',\n  link: 'https://aeroaquaponic.org',\n}"
             },
             {
                 "name": "CardContainer",
@@ -1828,7 +1983,7 @@
                 "subtype": "variable",
                 "file": "src/app/composites/cards-container/cards-container.component.ts",
                 "type": "object",
-                "defaultValue": "{\n  cards: [\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n  ],\n}"
+                "defaultValue": "{\n  cards: [\n    {\n      image: 'https://aeroaquaponic.org/images/technology.png',\n      title: 'Technology',\n      text:\n        'Aeroaquaponic systems are a soilless farming technology which combines aeroponics with cyclical aquaponics.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/unit-of-self-sufficiency.png',\n      title: 'Unit of Self-Sufficiency',\n      text:\n        'Unit of self-sufficiency is a model of human existence in which the needs of its members are fulfilled with the minimal sufficient amount of sustainable resources owned by the unit.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-Sufficiency',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/logo.png',\n      title: 'Free Book',\n      text:\n        \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Vision',\n    },\n  ],\n}"
             },
             {
                 "name": "context",
@@ -1844,7 +1999,7 @@
                 "subtype": "variable",
                 "file": "src/app/composites/sections/about/about.component.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n}"
+                "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Director of Community Development',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Cam_Schubert_-_Director_of_Community_Development',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Director of Research and Development',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Kirill_Novik_-_Research_and_Development_Director',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Dmitry_Dementyev_-_Director_of_Research',\n    },\n    {\n      name: 'Darrah Herman',\n      description: 'Director of Ecosystem Balance',\n      imageUrl: 'https://aeroaquaponic.org/images/darrah.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Darrah_Herman_-_Director_of_Ecosystem_Balance',\n    },\n    {\n      name: 'Jameson Owens',\n      description: 'Director of Community Outreach',\n      imageUrl: 'https://aeroaquaponic.org/images/jameson.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Jameson_Owens_-_Director_of_Community_Outreach',\n    },\n    {\n      name: 'Nikita Novik',\n      description: 'Creative Director',\n      imageUrl: 'https://aeroaquaponic.org/images/nikita.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Nikita_Novik_-_Creative_Director',\n    },\n  ],\n}"
             },
             {
                 "name": "data",
@@ -1852,7 +2007,7 @@
                 "subtype": "variable",
                 "file": "src/app/composites/sections/projects/projects.component.ts",
                 "type": "object",
-                "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n}"
+                "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-sufficiency_Proof_of_Concept',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Informational_Infrastructure',\n      linkText: 'Learn more',\n    },\n  ],\n}"
             },
             {
                 "name": "Donate",
@@ -2006,12 +2161,60 @@
                 "defaultValue": "Template.bind({})"
             },
             {
+                "name": "Social",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/sections/Social.stories.ts",
+                "type": "",
+                "defaultValue": "Template.bind({})"
+            },
+            {
+                "name": "SocialComponentData",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/app/composites/social/social.component.ts",
+                "type": "IIcon[]",
+                "defaultValue": "[\n  {\n    link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n    image: 'https://aeroaquaponic.org/images/youtube.png',\n  },\n  {\n    link: 'https://www.facebook.com/aeroaquaponic2020',\n    image: 'https://aeroaquaponic.org/images/facebook.png',\n  },\n  {\n    link: 'https://twitter.com/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/twitter.png',\n  },\n  {\n    link: 'https://www.instagram.com/aeroaquaponic/',\n    image: 'https://aeroaquaponic.org/images/kickstarter.png',\n  },\n  {\n    link: 'https://www.linkedin.com/company/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/linkedin.png',\n  },\n]"
+            },
+            {
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "src/stories/Page.stories.ts",
                 "type": "Story<PageComponent>",
                 "defaultValue": "(args: PageComponent) => ({\n  component: PageComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/CardContainer.stories.ts",
+                "type": "Story<CardsContainerComponent>",
+                "defaultValue": "(\n  args: CardsContainerComponent\n) => ({\n  component: CardsContainerComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/Footer.stories.ts",
+                "type": "Story<FooterComponent>",
+                "defaultValue": "(args: FooterComponent) => ({\n  component: FooterComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/ProfileCardContainer.stories.ts",
+                "type": "Story<ProfileCardContainerComponent>",
+                "defaultValue": "(\n  args: ProfileCardContainerComponent\n) => ({\n  component: ProfileCardContainerComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/components/Card.stories.ts",
+                "type": "Story<CardComponent>",
+                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2025,9 +2228,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/Card.stories.ts",
-                "type": "Story<CardComponent>",
-                "defaultValue": "(args: CardComponent) => ({\n  component: CardComponent,\n  props: args,\n})"
+                "file": "src/stories/components/Menu.stories.ts",
+                "type": "Story<MenuComponent>",
+                "defaultValue": "(args: MenuComponent) => ({\n  component: MenuComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2065,41 +2268,9 @@
                 "name": "Template",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "src/stories/components/Menu.stories.ts",
-                "type": "Story<MenuComponent>",
-                "defaultValue": "(args: MenuComponent) => ({\n  component: MenuComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "src/stories/components/Video.stories.ts",
                 "type": "Story<VideoComponent>",
                 "defaultValue": "(args: VideoComponent) => ({\n  component: VideoComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/composites/Footer.stories.ts",
-                "type": "Story<FooterComponent>",
-                "defaultValue": "(args: FooterComponent) => ({\n  component: FooterComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/composites/ProfileCardContainer.stories.ts",
-                "type": "Story<ProfileCardContainerComponent>",
-                "defaultValue": "(\n  args: ProfileCardContainerComponent\n) => ({\n  component: ProfileCardContainerComponent,\n  props: args,\n})"
-            },
-            {
-                "name": "Template",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "src/stories/composites/CardContainer.stories.ts",
-                "type": "Story<CardsContainerComponent>",
-                "defaultValue": "(\n  args: CardsContainerComponent\n) => ({\n  component: CardsContainerComponent,\n  props: args,\n})"
             },
             {
                 "name": "Template",
@@ -2132,6 +2303,14 @@
                 "file": "src/stories/composites/sections/Main.stories.ts",
                 "type": "Story<MainComponent>",
                 "defaultValue": "(args: MainComponent) => ({\n  component: MainComponent,\n  props: args,\n})"
+            },
+            {
+                "name": "Template",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "src/stories/composites/sections/Social.stories.ts",
+                "type": "Story<SocialComponent>",
+                "defaultValue": "(args: SocialComponent) => ({\n  component: SocialComponent,\n  props: args,\n})"
             },
             {
                 "name": "Timeline",
@@ -2223,7 +2402,7 @@
                     "subtype": "variable",
                     "file": "src/app/components/card/card.component.ts",
                     "type": "ICard",
-                    "defaultValue": "{\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n}"
+                    "defaultValue": "{\n  title: 'Technology',\n  text:\n    'We all want to be independent from the system. We all want to be independent from the system. We all want to be independent from the system.',\n  label: 'Learn More',\n  image: 'https://aeroaquaponic.org/images/logo.png',\n  link: 'https://aeroaquaponic.org',\n}"
                 }
             ],
             "src/stories/composites/CardContainer.stories.ts": [
@@ -2251,7 +2430,7 @@
                     "subtype": "variable",
                     "file": "src/app/composites/cards-container/cards-container.component.ts",
                     "type": "object",
-                    "defaultValue": "{\n  cards: [\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n    {\n      title: 'Technology',\n      text:\n        'It is always great when the latest technology are always by your side. It is important to pay attention to the latest trends. Making selfies with you phone is such a waste of your time.',\n      label: 'Learn More',\n    },\n  ],\n}"
+                    "defaultValue": "{\n  cards: [\n    {\n      image: 'https://aeroaquaponic.org/images/technology.png',\n      title: 'Technology',\n      text:\n        'Aeroaquaponic systems are a soilless farming technology which combines aeroponics with cyclical aquaponics.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/unit-of-self-sufficiency.png',\n      title: 'Unit of Self-Sufficiency',\n      text:\n        'Unit of self-sufficiency is a model of human existence in which the needs of its members are fulfilled with the minimal sufficient amount of sustainable resources owned by the unit.',\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-Sufficiency',\n    },\n    {\n      image: 'https://aeroaquaponic.org/images/logo.png',\n      title: 'Free Book',\n      text:\n        \"Get our free eBook and learn about our ideas on how to solve some of the world's biggest problems.\",\n      label: 'Learn More',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Vision',\n    },\n  ],\n}"
                 }
             ],
             "src/test.ts": [
@@ -2278,7 +2457,7 @@
                     "subtype": "variable",
                     "file": "src/app/composites/sections/about/about.component.ts",
                     "type": "object",
-                    "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n    },\n    {\n      name: 'Cam Schubert',\n      description: 'Medical Scientist',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Senior Software Engineer',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n    },\n  ],\n}"
+                    "defaultValue": "{\n  title: 'About Us',\n  subtitle: 'Our Team',\n  text: `We are a non-profit organization of scientists and engineers who want to bring a change to the world. Our goal is to provide tools to achieve the goal of self-sufficiency. This great feat will not be possible without you. Only together can we achieve this.`,\n  profiles: [\n    {\n      name: 'Cam Schubert',\n      description: 'Director of Community Development',\n      imageUrl: 'https://aeroaquaponic.org/images/cam.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Cam_Schubert_-_Director_of_Community_Development',\n    },\n    {\n      name: 'Kirill Novik',\n      description: 'Director of Research and Development',\n      imageUrl: 'https://aeroaquaponic.org/images/kirill.jpg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Kirill_Novik_-_Research_and_Development_Director',\n    },\n    {\n      name: 'Dmitry Dementyev',\n      description: 'Senior Researcher in Aquaculture',\n      imageUrl: 'https://aeroaquaponic.org/images/dima.png',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Dmitry_Dementyev_-_Director_of_Research',\n    },\n    {\n      name: 'Darrah Herman',\n      description: 'Director of Ecosystem Balance',\n      imageUrl: 'https://aeroaquaponic.org/images/darrah.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Darrah_Herman_-_Director_of_Ecosystem_Balance',\n    },\n    {\n      name: 'Jameson Owens',\n      description: 'Director of Community Outreach',\n      imageUrl: 'https://aeroaquaponic.org/images/jameson.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Jameson_Owens_-_Director_of_Community_Outreach',\n    },\n    {\n      name: 'Nikita Novik',\n      description: 'Creative Director',\n      imageUrl: 'https://aeroaquaponic.org/images/nikita.jpeg',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Nikita_Novik_-_Creative_Director',\n    },\n  ],\n}"
                 }
             ],
             "src/app/composites/sections/projects/projects.component.ts": [
@@ -2288,7 +2467,7 @@
                     "subtype": "variable",
                     "file": "src/app/composites/sections/projects/projects.component.ts",
                     "type": "object",
-                    "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n    },\n  ],\n}"
+                    "defaultValue": "{\n  title: 'Projects',\n  subtitle: \"Let's make this happen!\",\n  text: `At Aeroaquaponic, we believe that the solution that will change the dead-end\n  direction of modern society lies in sustainability. However, not the\n  sustainability that comes from the industry, but the one that comes from the\n  eco-communities. We believe that communities that are capable of producing\n  most and, ideally, all of their food and being self-sufficient are the\n  answer. It is a countermeasure to consumerism which is the driving force\n  behind unsustainable resource utilization.`,\n  items: [\n    {\n      title: 'Groundwork',\n      description:\n        'We will need to gather information about what is out there already in order to find best candidates for collaboration.',\n      link: 'https://aeroaquaponic.fandom.com/wiki/Self-sufficiency_Research',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Unit of Self-Sufficiency',\n      description:\n        'We will work together on the proof-of-concept of Unit of Self-Sufficiency.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Unit_of_Self-sufficiency_Proof_of_Concept',\n      linkText: 'Learn more',\n    },\n    {\n      title: 'Self-sufficiency Guide',\n      description:\n        'Once the other two objectives are complete we would like to let the world know how to achieve this goal.',\n      link:\n        'https://aeroaquaponic.fandom.com/wiki/Aeroaquaponic_Informational_Infrastructure',\n      linkText: 'Learn more',\n    },\n  ],\n}"
                 }
             ],
             "src/stories/composites/sections/Donate.stories.ts": [
@@ -2553,6 +2732,34 @@
                     "defaultValue": "(args: ProjectsComponent) => ({\n  component: ProjectsComponent,\n  props: args,\n})"
                 }
             ],
+            "src/stories/composites/sections/Social.stories.ts": [
+                {
+                    "name": "Social",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/sections/Social.stories.ts",
+                    "type": "",
+                    "defaultValue": "Template.bind({})"
+                },
+                {
+                    "name": "Template",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/stories/composites/sections/Social.stories.ts",
+                    "type": "Story<SocialComponent>",
+                    "defaultValue": "(args: SocialComponent) => ({\n  component: SocialComponent,\n  props: args,\n})"
+                }
+            ],
+            "src/app/composites/social/social.component.ts": [
+                {
+                    "name": "SocialComponentData",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "src/app/composites/social/social.component.ts",
+                    "type": "IIcon[]",
+                    "defaultValue": "[\n  {\n    link: 'https://www.youtube.com/channel/UCGes3ATrv3cOwRb39wo2iXQ',\n    image: 'https://aeroaquaponic.org/images/youtube.png',\n  },\n  {\n    link: 'https://www.facebook.com/aeroaquaponic2020',\n    image: 'https://aeroaquaponic.org/images/facebook.png',\n  },\n  {\n    link: 'https://twitter.com/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/twitter.png',\n  },\n  {\n    link: 'https://www.instagram.com/aeroaquaponic/',\n    image: 'https://aeroaquaponic.org/images/kickstarter.png',\n  },\n  {\n    link: 'https://www.linkedin.com/company/aeroaquaponic',\n    image: 'https://aeroaquaponic.org/images/linkedin.png',\n  },\n]"
+                }
+            ],
             "src/stories/components/Timeline.stories.ts": [
                 {
                     "name": "Template",
@@ -2645,7 +2852,7 @@
                 "linktype": "component",
                 "name": "CardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/9",
                 "status": "low"
             },
             {
@@ -2654,7 +2861,7 @@
                 "linktype": "interface",
                 "name": "ICard",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
@@ -2700,7 +2907,7 @@
                 "linktype": "component",
                 "name": "ProfileCardComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/6",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -2709,7 +2916,7 @@
                 "linktype": "interface",
                 "name": "IProfileCard",
                 "coveragePercent": 0,
-                "coverageCount": "0/4",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2745,7 +2952,7 @@
                 "linktype": "interface",
                 "name": "ITimelineItem",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
@@ -2858,7 +3065,7 @@
                 "linktype": "component",
                 "name": "DonateComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/3",
+                "coverageCount": "0/4",
                 "status": "low"
             },
             {
@@ -2904,6 +3111,34 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "data",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/social/social.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "SocialComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/social/social.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "IIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "src/app/composites/social/social.component.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "SocialComponentData",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3279,6 +3514,26 @@
             },
             {
                 "filePath": "src/stories/composites/sections/Projects.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Template",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/sections/Social.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Social",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "src/stories/composites/sections/Social.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",

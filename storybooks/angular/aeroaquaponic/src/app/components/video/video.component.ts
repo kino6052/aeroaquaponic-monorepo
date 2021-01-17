@@ -9,8 +9,8 @@ let apiLoaded = false;
 })
 export class VideoComponent implements OnInit {
   onError = (e: unknown) => console.warn(e);
-  handlePlayerReady = (event: CustomEvent) => {
-    const target = (event.target as unknown) as {
+  handlePlayerReady = (event: unknown) => {
+    const target = ((event as Event).target as unknown) as {
       mute: Function;
       playVideo: Function;
     };
@@ -18,11 +18,11 @@ export class VideoComponent implements OnInit {
     target?.playVideo();
   };
 
-  handleStateChange = (event: CustomEvent) => {
+  handleStateChange = (event: unknown) => {
     // @ts-ignore
     const data: number = event.data as number;
     if (data !== 0) return;
-    const target = (event.target as unknown) as {
+    const target = ((event as Event).target as unknown) as {
       mute: Function;
       playVideo: Function;
       stopVideo: Function;

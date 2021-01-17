@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GeneralService } from '../../general.service';
 
 interface IMenuItem {
   text: string;
@@ -15,9 +16,14 @@ export class MenuComponent implements OnInit {
   items: IMenuItem[] = [];
 
   @Input()
+  onClickHandler = (id: string) => {
+    this.generalService.scrollToId(id);
+  };
+
+  @Input()
   color: 'black' | 'white' = 'black';
 
-  constructor() {}
+  constructor(private generalService: GeneralService) {}
 
   ngOnInit(): void {}
 }

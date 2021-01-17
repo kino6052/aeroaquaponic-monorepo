@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { GeneralService } from 'src/app/general.service';
 
 @Component({
   selector: 'aeroaquaponic-main',
@@ -15,7 +16,12 @@ export class MainComponent implements OnInit {
   @Input()
   items = MainSectionData.items;
 
-  constructor() {}
+  @Input()
+  onClickHandler = (id: string) => {
+    this.generalService.scrollToId(id);
+  };
+
+  constructor(private generalService: GeneralService) {}
 
   ngOnInit(): void {}
 }
@@ -25,16 +31,20 @@ export const MainSectionData = {
   subtitle: 'Forming the Units of Self-sufficiency',
   items: [
     {
-      text: 'Get eBook',
-      link: '#link',
+      text: 'Overview',
+      link: '#overview',
     },
     {
       text: 'Projects',
-      link: '#link',
+      link: '#projects',
     },
     {
-      text: 'About Us',
-      link: '#link',
+      text: 'Donate',
+      link: '#support',
+    },
+    {
+      text: 'About',
+      link: '#about',
     },
   ],
 };

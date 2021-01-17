@@ -2,7 +2,7 @@
   <div class="filler"></div>
   <div class="navbar">
     <div *ngFor="let item of items">
-      <a [class]="color" href="{{ item.link }}">{{ item.text }}</a>
+      <a [class]="color" (click)="onClickHandler(item.link)">{{ item.text }}</a>
     </div>
   </div>
 </div>

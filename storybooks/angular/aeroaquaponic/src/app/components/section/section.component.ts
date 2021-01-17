@@ -15,6 +15,9 @@ export class SectionComponent implements OnInit {
   @Input()
   isDebugging = false;
 
+  @Input()
+  id: string = '';
+
   constructor() {}
 
   ngOnInit(): void {}
