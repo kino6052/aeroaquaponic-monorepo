@@ -1,9 +1,7 @@
-import {
-  FieldIntegrationService,
-  FieldService,
-  StateService,
-} from "./field01.refactored.service";
+import { FieldIntegrationService } from "./field.integration.service";
+import { FieldService } from "./field01.refactored.service";
 import { Service } from "./service";
+import { StateService } from "./state.refactored.service";
 
 beforeEach(() => {
   FieldService.resetInstance();

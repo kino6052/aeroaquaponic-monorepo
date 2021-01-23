@@ -5,6 +5,7 @@ import { StateSubject } from "./state.service";
 import "./styles.css";
 import { useSharedState } from "./utils";
 import { InitSubject } from "./init.service";
+import { StateService } from "./state.refactored.service";
 
 const EventWrapper: React.FC = (props) => {
   const children = props.children;
@@ -69,7 +70,7 @@ const Form = (props: { inputs: IInput[] }) => {
 };
 
 export default function App() {
-  const [state] = useSharedState(StateSubject as Observable<IInput[]>, []);
+  const [state] = useSharedState(StateService.getInstance().StateSubject);
   return (
     <div className="App">
       <Form inputs={state} />

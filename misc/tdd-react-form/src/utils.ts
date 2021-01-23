@@ -3,17 +3,16 @@ import { BehaviorSubject, Observable } from "rxjs";
 import { skip } from "rxjs/operators";
 
 export const useSharedState = <T>(
-  subject: Observable<T>,
-  defaultState: T
+  subject: BehaviorSubject<T>
 ): [T, typeof useState] => {
-  const [value, setState] = useState<T>(defaultState);
+  const [value, setState] = useState<T>(subject.getValue());
   useEffect(() => {
-    const sub = subject.subscribe((s) => setState(s));
+    const sub = subject.pipe(skip(1)).subscribe((s) => setState(s));
     return () => sub.unsubscribe();
   }, [subject]);
-  // const newSetState = (state: T) => subject.next(state);
+  const newSetState = (state: T) => subject.next(state);
   // @ts-ignore
-  return [value];
+  return [value, newSetState];
 };
 
 export const setPartial = <T>(
