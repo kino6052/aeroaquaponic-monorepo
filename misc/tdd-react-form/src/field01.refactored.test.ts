@@ -1,6 +1,8 @@
 import { FieldService } from "./field01.refactored.service";
 
-beforeEach(() => {});
+beforeEach(() => {
+  FieldService.resetInstance();
+});
 
 describe("Field 001", () => {
   it("should get/set value", () => {
