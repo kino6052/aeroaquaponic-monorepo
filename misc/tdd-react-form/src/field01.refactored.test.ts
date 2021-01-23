@@ -4,12 +4,29 @@ import {
   StateService,
 } from "./field01.refactored.service";
 import { Service } from "./service";
-import { StateSubject } from "./state.service";
 
 beforeEach(() => {
   FieldService.resetInstance();
   StateService.resetInstance();
   FieldIntegrationService.resetInstance();
+});
+
+describe("Extra Tests", () => {
+  it("should not create instance when there is one already", () => {
+    expect(FieldService.getInstance()).toEqual(FieldService.getInstance());
+    expect(StateService.getInstance()).toEqual(StateService.getInstance());
+    expect(
+      FieldIntegrationService.getInstance(
+        FieldService.getInstance(),
+        StateService.getInstance()
+      )
+    ).toEqual(
+      FieldIntegrationService.getInstance(
+        FieldService.getInstance(),
+        StateService.getInstance()
+      )
+    );
+  });
 });
 
 describe("Field 001 Integration", () => {
@@ -20,6 +37,15 @@ describe("Field 001 Integration", () => {
     Service.EventSubject.next(["change", fieldService.id, "123"]);
     expect(fieldService.getValue()).toBe("(123");
   });
+
+  it("should update value on event", () => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+    Service.EventSubject.next(["change", fieldService.id, undefined]);
+    expect(fieldService.getValue()).toBe("");
+  });
+
   it("state should update when value udpates", () => {
     const fieldService = FieldService.getInstance();
     const stateService = StateService.getInstance();
@@ -28,6 +54,7 @@ describe("Field 001 Integration", () => {
     fieldService.setValue("123");
     expect(stateService.getValue(fieldService.id)).toBe("(123");
   });
+
   it("should validate on button click", () => {
     const fieldService = FieldService.getInstance();
     const stateService = StateService.getInstance();
@@ -63,6 +90,22 @@ describe("Field 001", () => {
     expect(error).toBeTruthy();
   });
 
+  it("should validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeTruthy();
+  });
+
+  it("should validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("1234567890");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeFalsy();
+  });
+
   it("should be disabled on validate", async () => {
     const fieldService = FieldService.getInstance();
     fieldService.setValue("123");
@@ -77,5 +120,14 @@ describe("Field 001", () => {
     await fieldService.validate();
     const isDisabled = fieldService.getIsDisabled();
     expect(isDisabled).toBe(false);
+  });
+
+  describe("Formatting", () => {
+    it("should correctly format", () => {
+      expect(FieldService.formatPhone()).toBe("");
+      expect(FieldService.formatPhone("a")).toBe("");
+      expect(FieldService.formatPhone("12345")).toBe("(123) 45");
+      expect(FieldService.formatPhone("1234567890")).toBe("(123) 456-7890");
+    });
   });
 });
