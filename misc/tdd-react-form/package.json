@@ -13,6 +13,7 @@
     "rxjs": "6.6.3"
   },
   "devDependencies": {
+    "@types/jest": "^26.0.20",
     "@types/react": "16.9.19",
     "@types/react-dom": "16.9.5",
     "typescript": "3.7.5"
@@ -34,6 +35,9 @@
       "<rootDir>/src/*.service.ts",
       "!<rootDir>/node_modules/"
     ],
-    "coverageReporters": ["json", "html"]
+    "coverageReporters": [
+      "json",
+      "html"
+    ]
   }
 }
