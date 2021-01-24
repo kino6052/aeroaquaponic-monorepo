@@ -1,13 +1,11 @@
 import * as React from "react";
-import { Observable } from "rxjs";
+import { InitSubject } from "./init.service";
 import { IInput, Service, SubmitId } from "./service";
-import { StateSubject } from "./state.service";
+import { StateService } from "./state.refactored.service";
 import "./styles.css";
 import { useSharedState } from "./utils";
-import { InitSubject } from "./init.service";
-import { StateService } from "./state.refactored.service";
-import { FieldIntegrationService } from "./field.integration.service";
-import { FieldService } from "./field01.refactored.service";
+import './field01.refactored.service';
+import './field02.refactored.service';
 
 const EventWrapper: React.FC = (props) => {
   const children = props.children;
@@ -73,11 +71,6 @@ const Form = (props: { inputs: IInput[] }) => {
 
 export default function App() {
   const [state] = useSharedState(StateService.getInstance().StateSubject);
-  React.useEffect(() => {
-    const fieldService = FieldService.getInstance();
-    const stateService = StateService.getInstance();
-    FieldIntegrationService.getInstance(fieldService, stateService);
-  })
   return (
     <div className="App">
       <Form inputs={state} />

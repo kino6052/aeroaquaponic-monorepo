@@ -26,7 +26,7 @@ export class StateService {
   setInput = (nextInput: IInput) => {
     const prevState = this.StateSubject.getValue();
     const newState = [nextInput, ...prevState].filter(
-      (_, i, arr) => arr.findIndex(({ id }) => id === id) === i
+      ({ id }, i, arr) => arr.findIndex(({ id: _id }) => _id === id) === i
     );
     this.StateSubject.next(newState);
   };
