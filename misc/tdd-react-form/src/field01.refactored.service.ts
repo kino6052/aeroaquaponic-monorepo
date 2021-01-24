@@ -103,7 +103,7 @@ export class FieldService {
   // Utils
   static validateInput = (v: string | undefined) => {
     if (!v) return "Should have value";
-    if (v.length < 10) return "Enter full number";
+    if (v.replace(/\D/g, "").length < 10) return "Enter full number";
     return "";
   };
 

@@ -1,12 +1,13 @@
 import * as React from "react";
 import { InitSubject } from "./init.service";
-import { IInput, Service, SubmitId } from "./service";
+import { IInput, Service } from "./service";
 import { StateService } from "./state.refactored.service";
 import "./styles.css";
 import { useSharedState } from "./utils";
 import './field01.refactored.service';
 import './field02.refactored.service';
 import './field03.refactored.service';
+import { SubmitId } from "./submit.refactored.service";
 
 const EventWrapper: React.FC = (props) => {
   const children = props.children;
