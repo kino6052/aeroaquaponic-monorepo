@@ -1,58 +1,130 @@
-import { map, skip, take } from "rxjs/operators";
-import { Button001Id, Field001Id, Field001Service } from "./field01.service";
+import { StateService } from "./state.service";
+import { FieldIntegrationService, FieldService } from "./field01.service";
 import { Service } from "./service";
 
 beforeEach(() => {
-  Field001Service.ErrorSubject.next("");
-  Field001Service.ValueSubject.next("");
-  Field001Service.IsDisabledSubject.next(false);
-  Field001Service.IsTouchedSubject.next(false);
+  FieldService.resetInstance();
+  StateService.resetInstance();
+  FieldIntegrationService.resetInstance();
+});
+
+describe("Extra Tests", () => {
+  it("should not create instance when there is one already", () => {
+    expect(FieldService.getInstance()).toEqual(FieldService.getInstance());
+    expect(StateService.getInstance()).toEqual(StateService.getInstance());
+    expect(
+      FieldIntegrationService.getInstance(
+        FieldService.getInstance(),
+        StateService.getInstance()
+      )
+    ).toEqual(
+      FieldIntegrationService.getInstance(
+        FieldService.getInstance(),
+        StateService.getInstance()
+      )
+    );
+  });
+});
+
+describe("Field 001 Integration", () => {
+  it("should update value on event", () => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+    Service.EventSubject.next(["change", fieldService.id, "123"]);
+    expect(fieldService.getValue()).toBe("(123");
+  });
+
+  it("should update value on event", () => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+    Service.EventSubject.next(["change", fieldService.id, undefined]);
+    expect(fieldService.getValue()).toBe("");
+  });
+
+  it("state should update when value udpates", () => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+    expect(stateService.getValue(fieldService.id)).toBe("");
+    fieldService.setValue("123");
+    expect(stateService.getValue(fieldService.id)).toBe("(123");
+  });
+
+  it("should validate on button click", () => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+    const spy = jest
+      .spyOn(fieldService, "validate")
+      .mockImplementation(jest.fn());
+    Service.EventSubject.next(["click", fieldService.buttonId, ""]);
+    expect(spy).toHaveBeenCalledTimes(1);
+  });
 });
 
 describe("Field 001", () => {
-  it("should format ", () => {
-    const format = (s: string) => {
-      const r = s.replace(/\D/g, "");
-      const m = r.match(/^(\d{1,3})(\d{1,3})?(\d{1,4})?$/);
-      const first = (m?.[1] && `(${m[1]}`) ?? "";
-      const second = (m?.[2] && `) ${m[2]}`) ?? "";
-      const third = (m?.[3] && `-${m[3]}`) ?? "";
-      return first + second + third;
-    };
-    expect(format("1")).toEqual("(1");
-    expect(format("123")).toEqual("(123");
-    expect(format("12334")).toEqual("(123) 34");
-    expect(format("1233455")).toEqual("(123) 345-5");
-    expect(format("1233455777")).toEqual("(123) 345-5777");
+  it("should get/set value", () => {
+    const fieldService = FieldService.getInstance();
+    expect(fieldService.getValue()).toBe("");
+    fieldService.setValue("123");
+    expect(fieldService.getValue()).toBe("(123");
   });
 
-  it("should react on change", () => {
-    const spy = jest.fn();
-    Field001Service.ChangeSubject().pipe(take(1)).subscribe(spy);
-    Service.EventSubject.next(["change", Field001Id, "test"]);
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy).toHaveBeenCalledWith("test");
+  it("should get/set value", () => {
+    const fieldService = FieldService.getInstance();
+    expect(fieldService.getIsTouched()).toBe(false);
+    fieldService.setValue("123");
+    expect(fieldService.getIsTouched()).toBe(true);
   });
 
-  it("should get touched on focus", () => {
-    const spy = jest.fn();
-    Field001Service.StateSubject_().pipe(skip(1), take(1)).subscribe(spy);
-    Field001Service.FocusSubject().pipe(take(1)).subscribe();
-    Service.OnFocusSubject().next(["focus", Field001Id, ""]);
-    expect(spy).toHaveBeenCalledTimes(1);
-    expect(spy.mock.calls[0][0].isTouched).toBe(true);
+  it("should validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("123");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeTruthy();
   });
 
-  it("should validate input on button click", async () => {
-    expect(Field001Service.ErrorSubject.getValue()).toBe("");
-    const result = Field001Service.ValidationSubject()
-      .pipe(
-        take(1),
-        map(() => Field001Service.ErrorSubject.getValue())
-      )
-      .toPromise();
-    Service.OnClickSubject().next(["click", Button001Id, ""]);
-    const res = await result;
-    expect(res).toEqual("Should have value");
+  it("should validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeTruthy();
+  });
+
+  it("should validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("1234567890");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeFalsy();
+  });
+
+  it("should be disabled on validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("123");
+    fieldService.validate();
+    const isDisabled = fieldService.getIsDisabled();
+    expect(isDisabled).toBe(true);
+  });
+
+  it("should be disabled on validate", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("123");
+    await fieldService.validate();
+    const isDisabled = fieldService.getIsDisabled();
+    expect(isDisabled).toBe(false);
+  });
+
+  describe("Formatting", () => {
+    it("should correctly format", () => {
+      expect(FieldService.formatPhone()).toBe("");
+      expect(FieldService.formatPhone("a")).toBe("");
+      expect(FieldService.formatPhone("12345")).toBe("(123) 45");
+      expect(FieldService.formatPhone("1234567890")).toBe("(123) 456-7890");
+    });
   });
 });

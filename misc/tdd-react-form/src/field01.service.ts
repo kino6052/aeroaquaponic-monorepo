@@ -1,47 +1,92 @@
-import { BehaviorSubject, combineLatest, of } from "rxjs";
-import { delay, filter, map, switchMap, tap } from "rxjs/operators";
-import { Service } from "./service";
+import { BehaviorSubject, combineLatest } from "rxjs";
+import { filter, map, tap } from "rxjs/operators";
 import { InitSubject } from "./init.service";
+import { Service } from "./service";
+import { StateService } from "./state.service";
 
-export const Field001Id = "one";
-export const Button001Id = "one-button";
+export class FieldIntegrationService {
+  private static instance: FieldIntegrationService | undefined = undefined;
 
-export class Field001Service {
-  // State
-  static ValueSubject = new BehaviorSubject("");
-  static ErrorSubject = new BehaviorSubject("");
-  static IsTouchedSubject = new BehaviorSubject(false);
-  static IsDisabledSubject = new BehaviorSubject(false);
-
-  // IO
-  static ChangeSubject = () =>
-    Service.OnChangeSubject().pipe(
-      filter(([, id]) => id === Field001Id),
-      map(([, , v]) => v),
-      tap((v) => Field001Service.ValueSubject.next(v ?? ""))
-    );
-
-  static FocusSubject = () =>
-    Service.OnFocusSubject().pipe(
-      filter(([, id]) => id === Field001Id),
-      tap(() => Field001Service.IsTouchedSubject.next(true))
-    );
-
-  static ClickSubject = () =>
-    Service.OnClickSubject().pipe(filter(([, id]) => id === Button001Id));
-
-  // Init
-  static init = () => {
-    Field001Service.ChangeSubject().subscribe();
-    Field001Service.ClickSubject().subscribe();
-    Field001Service.FocusSubject().subscribe();
-    Field001Service.ValidationSubject().subscribe();
+  static resetInstance = () => {
+    FieldIntegrationService.instance = undefined;
   };
 
-  // Utils
-  static validate = (v: string | undefined): string | undefined => {
-    if (!v) return "Should have value";
-    if (v.length < 10) return "Enter full number";
+  static getInstance = (
+    fieldService: FieldService,
+    stateService: StateService
+  ) => {
+    if (!FieldIntegrationService.instance)
+      FieldIntegrationService.instance = new FieldIntegrationService(
+        fieldService,
+        stateService
+      );
+    return FieldIntegrationService.instance;
+  };
+
+  constructor(
+    private fieldService: FieldService,
+    private stateService: StateService
+  ) {
+    this.ChangeSubject().subscribe();
+    this.ClickSubject().subscribe();
+    combineLatest([
+      this.fieldService.ValueSubject,
+      this.fieldService.ErrorSubject,
+      this.fieldService.IsTouchedSubject,
+      this.fieldService.IsDisabledSubject,
+    ]).subscribe(([value, error, isTouched, isDisabled]) => {
+      const id = fieldService.id;
+      this.stateService.setInput({
+        id,
+        value,
+        error,
+        isTouched,
+        isDisabled,
+      });
+    });
+  }
+
+  ChangeSubject = () =>
+    Service.OnChangeSubject().pipe(
+      filter(([, id]) => id === this.fieldService.id),
+      map(([, , v]) => v),
+      tap((v) => this.fieldService.setValue(v ?? ""))
+    );
+
+  ClickSubject = () =>
+    Service.OnClickSubject().pipe(
+      filter(([, id]) => id === this.fieldService.buttonId),
+      tap(() => this.fieldService.validate())
+    );
+}
+
+export class FieldService {
+  id = "one";
+  buttonId = "one-button";
+  // State
+  public ValueSubject = new BehaviorSubject("");
+  public ErrorSubject = new BehaviorSubject("");
+  public IsTouchedSubject = new BehaviorSubject(false);
+  public IsDisabledSubject = new BehaviorSubject(false);
+
+  private static instance: FieldService | undefined = undefined;
+
+  static resetInstance = () => {
+    FieldService.instance = undefined;
+  };
+
+  static getInstance = () => {
+    if (!FieldService.instance) FieldService.instance = new FieldService();
+    return FieldService.instance;
+  };
+
+  constructor() {}
+
+  getValue = () => this.ValueSubject.getValue();
+
+  setValue = (value: string) => {
+    this.ValueSubject.next(FieldService.formatPhone(value));
+    this.IsTouchedSubject.next(true);
   };
 
   static formatPhone = (s: string = "") => {
@@ -53,40 +98,36 @@ export class Field001Service {
     return first + second + third;
   };
 
-  // Computed
-  static ValidationSubject = () =>
-    Field001Service.ClickSubject().pipe(
-      tap(() => Field001Service.IsDisabledSubject.next(true)),
-      switchMap(() =>
-        of(Field001Service.ValueSubject.getValue()).pipe(
-          delay(1000),
-          tap((value) => {
-            Field001Service.IsDisabledSubject.next(false);
-            Field001Service.ErrorSubject.next(
-              Field001Service.validate(value) ?? ""
-            );
-          })
-        )
-      )
-    );
+  getIsTouched = () => this.IsTouchedSubject.getValue();
 
-  static StateSubject_ = () =>
-    combineLatest([
-      Field001Service.ValueSubject,
-      Field001Service.ErrorSubject,
-      Field001Service.IsDisabledSubject,
-      Field001Service.IsTouchedSubject
-    ]).pipe(
-      map(([value, error, isDisabled, isTouched]) => ({
-        id: Field001Id,
-        isTouched,
-        isDisabled,
-        value: Field001Service.formatPhone(value),
-        error
-      }))
-    );
+  // Utils
+  static validateInput = (v: string | undefined) => {
+    if (!v) return "Should have value";
+    if (v.replace(/\D/g, "").length < 10) return "Enter full number";
+    return "";
+  };
+
+  validate = async () => {
+    this.IsDisabledSubject.next(true);
+    return new Promise((res) => {
+      setTimeout(() => {
+        const value = this.ValueSubject.getValue();
+        const error = FieldService.validateInput(value);
+        this.ErrorSubject.next(error);
+        this.IsDisabledSubject.next(false);
+        res(error);
+      }, 1000);
+    });
+  };
+
+  getError = () => this.ErrorSubject.getValue();
+
+  getIsDisabled = () => this.IsDisabledSubject.getValue();
 }
 
 InitSubject.subscribe(() => {
-  Field001Service.init();
+  // Initialization
+  const fieldService = FieldService.getInstance();
+  const stateInstance = StateService.getInstance();
+  FieldIntegrationService.getInstance(fieldService, stateInstance);
 });

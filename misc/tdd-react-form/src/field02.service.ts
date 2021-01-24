@@ -1,91 +1,127 @@
-import { BehaviorSubject, combineLatest, of } from "rxjs";
-import { delay, filter, map, switchMap, tap } from "rxjs/operators";
+import { BehaviorSubject, combineLatest } from "rxjs";
+import { filter, map, tap } from "rxjs/operators";
 import { Service } from "./service";
+import { StateService } from "./state.service";
+import { FieldService as PhoneFieldService } from "./field01.service";
 import { InitSubject } from "./init.service";
-import { Field001Service } from "./field01.service";
 
-export const Field002Id = "two";
-export const Button002Id = "two-button";
+export class FieldIntegrationService {
+  private static instance: FieldIntegrationService | undefined = undefined;
 
-export class Field002Service {
-  static ValueSubject = new BehaviorSubject("");
-  static ErrorSubject = new BehaviorSubject("");
-  static IsTouchedSubject = new BehaviorSubject(false);
-  static IsDisabledSubject = new BehaviorSubject(false);
-
-  static ChangeSubject = () =>
-    Service.OnChangeSubject().pipe(
-      filter(([, id]) => id === Field002Id),
-      map(([, , v]) => v),
-      tap((v) => Field002Service.ValueSubject.next(v ?? ""))
-    );
-
-  static FocusSubject = () =>
-    Service.OnFocusSubject().pipe(
-      filter(([, id]) => id === Field002Id),
-      tap(() => Field002Service.IsTouchedSubject.next(true))
-    );
-
-  static ClickSubject = () =>
-    Service.OnClickSubject().pipe(filter(([, id]) => id === Button002Id));
-
-  static validate = (e: string, v: string): string | undefined => {
-    if (!v) return "Should have value";
-    if (e) return "Fix phone number above";
+  static resetInstance = () => {
+    FieldIntegrationService.instance = undefined;
   };
 
-  static formatPhone = (s: string = "") => {
-    const r = s.replace(/\D/g, "");
-    const m = r.match(/^(\d{1,3})(\d{1,3})?(\d{1,})?$/);
-    const first = (m?.[1] && `(${m[1]}`) ?? "";
-    const second = (m?.[2] && `) ${m[2]}`) ?? "";
-    const third = (m?.[3] && `-${m[3].substring(0, 4)}`) ?? "";
-    return first + second + third;
+  static getInstance = (
+    fieldService: FieldService,
+    stateService: StateService
+  ) => {
+    if (!FieldIntegrationService.instance)
+      FieldIntegrationService.instance = new FieldIntegrationService(
+        fieldService,
+        stateService
+      );
+    return FieldIntegrationService.instance;
   };
 
-  static ValidationSubject = () =>
-    Field002Service.ClickSubject().pipe(
-      tap(() => Field002Service.IsDisabledSubject.next(true)),
-      switchMap(() =>
-        of([
-          Field001Service.ErrorSubject.getValue(),
-          Field002Service.ValueSubject.getValue()
-        ]).pipe(
-          delay(1000),
-          tap(([error, value]) => {
-            Field002Service.IsDisabledSubject.next(false);
-            Field002Service.ErrorSubject.next(
-              Field002Service.validate(error, value) ?? ""
-            );
-          })
-        )
-      )
-    );
-
-  static init = () => {
-    Field002Service.ChangeSubject().subscribe();
-    Field002Service.ClickSubject().subscribe();
-    Field002Service.FocusSubject().subscribe();
-    Field002Service.ValidationSubject().subscribe();
-  };
-
-  static StateSubject_ = () =>
+  constructor(
+    private fieldService: FieldService,
+    private stateService: StateService
+  ) {
+    this.ChangeSubject().subscribe();
+    this.ClickSubject().subscribe();
     combineLatest([
-      Field002Service.ValueSubject,
-      Field002Service.ErrorSubject,
-      Field002Service.IsDisabledSubject,
-      Field002Service.IsTouchedSubject
-    ]).pipe(
-      map(([value, error, isDisabled, isTouched]) => ({
-        id: Field002Id,
+      this.fieldService.ValueSubject,
+      this.fieldService.ErrorSubject,
+      this.fieldService.IsTouchedSubject,
+      this.fieldService.IsDisabledSubject,
+    ]).subscribe(([value, error, isTouched, isDisabled]) => {
+      const id = fieldService.id;
+      this.stateService.setInput({
+        id,
+        value,
+        error,
         isTouched,
         isDisabled,
-        value,
-        error
-      }))
+      });
+    });
+  }
+
+  ChangeSubject = () =>
+    Service.OnChangeSubject().pipe(
+      filter(([, id]) => id === this.fieldService.id),
+      map(([, , v]) => v),
+      tap((v) => this.fieldService.setValue(v ?? ""))
+    );
+
+  ClickSubject = () =>
+    Service.OnClickSubject().pipe(
+      filter(([, id]) => id === this.fieldService.buttonId),
+      tap(() => this.fieldService.validate())
     );
 }
 
+export class FieldService {
+  id = "two";
+  buttonId = "two-button";
+  // State
+  public ValueSubject = new BehaviorSubject("");
+  public ErrorSubject = new BehaviorSubject("");
+  public IsTouchedSubject = new BehaviorSubject(false);
+  public IsDisabledSubject = new BehaviorSubject(false);
+
+  private static instance: FieldService | undefined = undefined;
+
+  static resetInstance = () => {
+    FieldService.instance = undefined;
+  };
+
+  static getInstance = () => {
+    if (!FieldService.instance) FieldService.instance = new FieldService();
+    return FieldService.instance;
+  };
+
+  constructor() {}
+
+  getValue = () => this.ValueSubject.getValue();
+
+  setValue = (value: string) => {
+    this.ValueSubject.next(value);
+    this.IsTouchedSubject.next(true);
+  };
+
+  getIsTouched = () => this.IsTouchedSubject.getValue();
+
+  // Utils
+  static validateInput = (v: string | undefined) => {
+    if (!v) return "Should have value";
+    const phoneFieldService = PhoneFieldService.getInstance();
+    const hasError = !!phoneFieldService.ErrorSubject.getValue();
+    if (hasError) return "Fix phone number";
+    return "";
+  };
+
+  validate = async () => {
+    this.IsDisabledSubject.next(true);
+    return new Promise((res) => {
+      setTimeout(() => {
+        const value = this.ValueSubject.getValue();
+        const error = FieldService.validateInput(value);
+        this.ErrorSubject.next(error);
+        this.IsDisabledSubject.next(false);
+        res(error);
+      }, 1000);
+    });
+  };
+
+  getError = () => this.ErrorSubject.getValue();
+
+  getIsDisabled = () => this.IsDisabledSubject.getValue();
+}
+
 InitSubject.subscribe(() => {
-  Field002Service.init();
+  // Initialization
+  const fieldService = FieldService.getInstance();
+  const stateInstance = StateService.getInstance();
+  FieldIntegrationService.getInstance(fieldService, stateInstance);
 });

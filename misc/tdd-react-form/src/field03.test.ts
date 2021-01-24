@@ -1,8 +1,6 @@
-import { StateService } from "./state.refactored.service";
-import {
-  FieldIntegrationService,
-  FieldService,
-} from "./field01.refactored.service";
+import { StateService } from "./state.service";
+import { FieldIntegrationService, FieldService } from "./field03.service";
+import { FieldService as SecondFieldService } from "./field02.service";
 import { Service } from "./service";
 
 beforeEach(() => {
@@ -29,13 +27,13 @@ describe("Extra Tests", () => {
   });
 });
 
-describe("Field 001 Integration", () => {
+describe("Field 002 Integration", () => {
   it("should update value on event", () => {
     const fieldService = FieldService.getInstance();
     const stateService = StateService.getInstance();
     FieldIntegrationService.getInstance(fieldService, stateService);
-    Service.EventSubject.next(["change", fieldService.id, "123"]);
-    expect(fieldService.getValue()).toBe("(123");
+    Service.EventSubject.next(["change", fieldService.id, "abc"]);
+    expect(fieldService.getValue()).toBe("abc");
   });
 
   it("should update value on event", () => {
@@ -51,8 +49,8 @@ describe("Field 001 Integration", () => {
     const stateService = StateService.getInstance();
     FieldIntegrationService.getInstance(fieldService, stateService);
     expect(stateService.getValue(fieldService.id)).toBe("");
-    fieldService.setValue("123");
-    expect(stateService.getValue(fieldService.id)).toBe("(123");
+    fieldService.setValue("abc");
+    expect(stateService.getValue(fieldService.id)).toBe("abc");
   });
 
   it("should validate on button click", () => {
@@ -67,27 +65,19 @@ describe("Field 001 Integration", () => {
   });
 });
 
-describe("Field 001", () => {
+describe("Field 002", () => {
   it("should get/set value", () => {
     const fieldService = FieldService.getInstance();
     expect(fieldService.getValue()).toBe("");
-    fieldService.setValue("123");
-    expect(fieldService.getValue()).toBe("(123");
+    fieldService.setValue("abc");
+    expect(fieldService.getValue()).toBe("abc");
   });
 
   it("should get/set value", () => {
     const fieldService = FieldService.getInstance();
     expect(fieldService.getIsTouched()).toBe(false);
-    fieldService.setValue("123");
+    fieldService.setValue("abc");
     expect(fieldService.getIsTouched()).toBe(true);
-  });
-
-  it("should validate", async () => {
-    const fieldService = FieldService.getInstance();
-    fieldService.setValue("123");
-    await fieldService.validate();
-    const error = fieldService.getError();
-    expect(error).toBeTruthy();
   });
 
   it("should validate", async () => {
@@ -98,9 +88,21 @@ describe("Field 001", () => {
     expect(error).toBeTruthy();
   });
 
-  it("should validate", async () => {
+  it("should validate with error if previous field does NOT match the current", async () => {
     const fieldService = FieldService.getInstance();
-    fieldService.setValue("1234567890");
+    fieldService.setValue("abc");
+    const secondFieldSerivce = SecondFieldService.getInstance();
+    secondFieldSerivce.setValue("efg");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeTruthy();
+  });
+
+  it("should validate with NO error if previous field DOES match the current", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("abc");
+    const secondFieldSerivce = SecondFieldService.getInstance();
+    secondFieldSerivce.setValue("abc");
     await fieldService.validate();
     const error = fieldService.getError();
     expect(error).toBeFalsy();
@@ -108,7 +110,7 @@ describe("Field 001", () => {
 
   it("should be disabled on validate", async () => {
     const fieldService = FieldService.getInstance();
-    fieldService.setValue("123");
+    fieldService.setValue("abc");
     fieldService.validate();
     const isDisabled = fieldService.getIsDisabled();
     expect(isDisabled).toBe(true);
@@ -116,18 +118,9 @@ describe("Field 001", () => {
 
   it("should be disabled on validate", async () => {
     const fieldService = FieldService.getInstance();
-    fieldService.setValue("123");
+    fieldService.setValue("abc");
     await fieldService.validate();
     const isDisabled = fieldService.getIsDisabled();
     expect(isDisabled).toBe(false);
-  });
-
-  describe("Formatting", () => {
-    it("should correctly format", () => {
-      expect(FieldService.formatPhone()).toBe("");
-      expect(FieldService.formatPhone("a")).toBe("");
-      expect(FieldService.formatPhone("12345")).toBe("(123) 45");
-      expect(FieldService.formatPhone("1234567890")).toBe("(123) 456-7890");
-    });
   });
 });

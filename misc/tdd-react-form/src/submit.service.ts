@@ -1,9 +1,9 @@
-import "./state.refactored.service";
+import "./state.service";
 import { concat, from } from "rxjs";
 import { filter, switchMap } from "rxjs/operators";
-import { FieldService as Field01Service } from "./field01.refactored.service";
-import { FieldService as Field02Service } from "./field02.refactored.service";
-import { FieldService as Field03Service } from "./field03.refactored.service";
+import { FieldService as Field01Service } from "./field01.service";
+import { FieldService as Field02Service } from "./field02.service";
+import { FieldService as Field03Service } from "./field03.service";
 import { Service } from "./service";
 import { InitSubject } from "./init.service";
 
