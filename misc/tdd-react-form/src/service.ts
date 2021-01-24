@@ -1,7 +1,6 @@
 import React from "react";
 import { Subject } from "rxjs";
 import { filter } from "rxjs/operators";
-import { InitSubject } from "./init.service";
 
 export interface IInput {
   value: string;
@@ -36,6 +35,8 @@ export const generateSingleton = <I>(clazz: Constructor<I>) => {
 
 export class Service {
   static EventSubject = new Subject<IEvent>();
+
+  static InitSubject = new Subject();
 
   static unboxInputEvent = (
     e: React.ChangeEvent<HTMLInputElement>

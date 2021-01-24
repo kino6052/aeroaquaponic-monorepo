@@ -1,9 +1,8 @@
 import { BehaviorSubject, combineLatest } from "rxjs";
 import { filter, map, tap } from "rxjs/operators";
+import { FieldService as PhoneFieldService } from "./field01.service";
 import { Service } from "./service";
 import { StateService } from "./state.service";
-import { FieldService as PhoneFieldService } from "./field01.service";
-import { InitSubject } from "./init.service";
 
 export class FieldIntegrationService {
   private static instance: FieldIntegrationService | undefined = undefined;
@@ -119,7 +118,7 @@ export class FieldService {
   getIsDisabled = () => this.IsDisabledSubject.getValue();
 }
 
-InitSubject.subscribe(() => {
+Service.InitSubject.subscribe(() => {
   // Initialization
   const fieldService = FieldService.getInstance();
   const stateInstance = StateService.getInstance();

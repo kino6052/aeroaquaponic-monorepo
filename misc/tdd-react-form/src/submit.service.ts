@@ -1,11 +1,10 @@
-import "./state.service";
-import { concat, from } from "rxjs";
+import { from } from "rxjs";
 import { filter, switchMap } from "rxjs/operators";
 import { FieldService as Field01Service } from "./field01.service";
 import { FieldService as Field02Service } from "./field02.service";
 import { FieldService as Field03Service } from "./field03.service";
 import { generateSingleton, Service } from "./service";
-import { InitSubject } from "./init.service";
+import "./state.service";
 
 export const SubmitId = "submit";
 
@@ -33,6 +32,6 @@ class _SubmitService {
 
 export const SubmitService = generateSingleton(_SubmitService);
 
-InitSubject.subscribe(() => {
+Service.InitSubject.subscribe(() => {
   SubmitService.getInstance();
 });

@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
-import { BehaviorSubject, Observable } from "rxjs";
-import { skip } from "rxjs/operators";
+import { BehaviorSubject } from "rxjs";
 
 export const useSharedState = <T>(
   subject: BehaviorSubject<T>
 ): [T, (state: T) => void] => {
   const [value, setState] = useState<T>(subject.getValue());
   useEffect(() => {
-    const sub = subject.pipe(skip(1)).subscribe((s) => setState(s));
+    const sub = subject.subscribe((s) => setState(s));
     return () => sub.unsubscribe();
   }, [subject]);
   const newSetState = (state: T) => subject.next(state);

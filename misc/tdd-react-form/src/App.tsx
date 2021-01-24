@@ -1,5 +1,4 @@
 import * as React from "react";
-import { InitSubject } from "./init.service";
 import { IInput, Service } from "./service";
 import { StateService } from "./state.service";
 import "./styles.css";
@@ -43,9 +42,6 @@ const EventWrapper: React.FC<{ id: string }> = (props) => {
 
 const Form = (props: { inputs: IInput[] }) => {
   const { inputs } = props;
-  React.useEffect(() => {
-    InitSubject.next();
-  }, []);
   return (
     <form>
       {inputs.map((input) => (
@@ -72,6 +68,9 @@ const Form = (props: { inputs: IInput[] }) => {
 };
 
 export default function App() {
+  React.useEffect(() => {
+    Service.InitSubject.next();
+  }, []);
   const [state] = useSharedState(StateService.getInstance().StateSubject);
   return (
     <div className="App">

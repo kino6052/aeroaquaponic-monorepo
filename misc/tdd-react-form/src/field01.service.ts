@@ -1,6 +1,5 @@
 import { BehaviorSubject, combineLatest } from "rxjs";
 import { filter, map, tap } from "rxjs/operators";
-import { InitSubject } from "./init.service";
 import { generateSingleton, Service } from "./service";
 import { StateService } from "./state.service";
 
@@ -103,9 +102,7 @@ class _FieldService {
 
 export const FieldService = generateSingleton(_FieldService);
 
-InitSubject.subscribe(() => {
+Service.InitSubject.subscribe(() => {
   // Initialization
-  FieldService.getInstance();
-  StateService.getInstance();
   FieldIntegrationService.getInstance();
 });

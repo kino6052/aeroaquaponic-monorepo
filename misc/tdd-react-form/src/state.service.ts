@@ -2,13 +2,13 @@ import { BehaviorSubject } from "rxjs";
 import { FieldService as Field01Service } from "./field01.service";
 import { FieldService as Field02Service } from "./field02.service";
 import { FieldService as Field03Service } from "./field03.service";
-import { IInput } from "./service";
+import { IInput, Service } from "./service";
 
-const PositionMap = {
+const getPositionMap = () => ({
   [Field01Service.getInstance().id]: 1,
   [Field02Service.getInstance().id]: 2,
   [Field03Service.getInstance().id]: 3,
-};
+});
 
 export class StateService {
   private static instance: StateService | undefined = undefined;
@@ -37,7 +37,13 @@ export class StateService {
     const prevState = this.StateSubject.getValue();
     const newState = [nextInput, ...prevState]
       .filter(isUnique)
-      .sort(({ id: a }, { id: b }) => PositionMap[a] - PositionMap[b]);
+      .sort(
+        ({ id: a }, { id: b }) => getPositionMap()[a] - getPositionMap()[b]
+      );
     this.StateSubject.next(newState);
   };
 }
+
+Service.InitSubject.subscribe(() => {
+  StateService.getInstance();
+});
