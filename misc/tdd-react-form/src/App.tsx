@@ -9,29 +9,30 @@ import './field02.service';
 import './field03.service';
 import { SubmitId } from "./submit.service";
 
-const EventWrapper: React.FC = (props) => {
-  const children = props.children;
+const EventWrapper: React.FC<{ id: string }> = (props) => {
+  const { children, id } = props;
   const childrenWithProps = React.Children.map<
     React.ReactNode,
     React.ReactNode
   >(children, (child) => {
     if (React.isValidElement(child)) {
       return React.cloneElement(child, {
+        id,
         onClick: (e: React.MouseEvent) => {
           e.preventDefault();
-          Service.EventSubject.next(["click", child.props.id, ""]);
+          Service.EventSubject.next(["click", id, ""]);
         },
         onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
           Service.EventSubject.next([
             "change",
-            child.props.id,
+            id,
             e?.target?.value
           ]);
         },
         onFocus: (e: React.FocusEvent) => {
           e.preventDefault();
-          Service.EventSubject.next(["focus", child.props.id, ""]);
+          Service.EventSubject.next(["focus", id, ""]);
         }
       });
     }
@@ -50,22 +51,21 @@ const Form = (props: { inputs: IInput[] }) => {
       {inputs.map((input) => (
         <div key={input.id} style={{ flexDirection: "column" }}>
           <div>
-            <EventWrapper>
+            <EventWrapper id={input.id}>
               <input
                 disabled={input.isDisabled}
-                id={input.id}
                 value={input.value}
               />
             </EventWrapper>
-            <EventWrapper>
-              <button id={`${input.id}-button`}>Validate</button>
+            <EventWrapper id={`${input.id}-button`}>
+              <button>Validate</button>
             </EventWrapper>
           </div>
           {input.error && <p style={{ color: "red" }}>{input.error}</p>}
         </div>
       ))}
-      <EventWrapper>
-        <button id={SubmitId}>Submit</button>
+      <EventWrapper id={SubmitId}>
+        <button>Submit</button>
       </EventWrapper>
     </form>
   );
