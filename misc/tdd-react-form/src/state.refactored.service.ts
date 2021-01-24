@@ -1,3 +1,4 @@
+import { values } from "lodash";
 import { BehaviorSubject } from "rxjs";
 import { IInput } from "./service";
 
@@ -25,7 +26,7 @@ export class StateService {
   setInput = (nextInput: IInput) => {
     const prevState = this.StateSubject.getValue();
     const newState = [nextInput, ...prevState].filter(
-      (input, i, arr) => arr.indexOf(input) === i
+      (_, i, arr) => arr.findIndex(({ id }) => id === id) === i
     );
     this.StateSubject.next(newState);
   };

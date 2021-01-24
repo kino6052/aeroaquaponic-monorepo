@@ -1,0 +1,1 @@
+{"version":3,"sources":["styles.css"],"names":[],"mappings":"AAAA,EACE,SAAU,CACV,QACF,CAEA,IACE,YACF,CAEA,KACE,sBACF","file":"main.cc1e1edb.chunk.css","sourcesContent":["p {\r\n  padding: 0;\r\n  margin: 0;\r\n}\r\n\r\ndiv {\r\n  display: flex;\r\n}\r\n\r\n.App {\r\n  font-family: sans-serif;\r\n}\r\n"]}

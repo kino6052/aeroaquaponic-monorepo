@@ -6,6 +6,8 @@ import "./styles.css";
 import { useSharedState } from "./utils";
 import { InitSubject } from "./init.service";
 import { StateService } from "./state.refactored.service";
+import { FieldIntegrationService } from "./field.integration.service";
+import { FieldService } from "./field01.refactored.service";
 
 const EventWrapper: React.FC = (props) => {
   const children = props.children;
@@ -71,6 +73,11 @@ const Form = (props: { inputs: IInput[] }) => {
 
 export default function App() {
   const [state] = useSharedState(StateService.getInstance().StateSubject);
+  React.useEffect(() => {
+    const fieldService = FieldService.getInstance();
+    const stateService = StateService.getInstance();
+    FieldIntegrationService.getInstance(fieldService, stateService);
+  })
   return (
     <div className="App">
       <Form inputs={state} />
