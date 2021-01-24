@@ -1,8 +1,9 @@
 import { BehaviorSubject, combineLatest } from "rxjs";
 import { filter, map, tap } from "rxjs/operators";
-import { InitSubject } from "./init.service";
 import { Service } from "./service";
 import { StateService } from "./state.refactored.service";
+import { FieldService as PhoneFieldService } from "./field01.refactored.service";
+import { InitSubject } from "./init.service";
 
 export class FieldIntegrationService {
   private static instance: FieldIntegrationService | undefined = undefined;
@@ -61,8 +62,8 @@ export class FieldIntegrationService {
 }
 
 export class FieldService {
-  id = "one";
-  buttonId = "one-button";
+  id = "three";
+  buttonId = "three-button";
   // State
   public ValueSubject = new BehaviorSubject("");
   public ErrorSubject = new BehaviorSubject("");
@@ -85,26 +86,18 @@ export class FieldService {
   getValue = () => this.ValueSubject.getValue();
 
   setValue = (value: string) => {
-    this.ValueSubject.next(FieldService.formatPhone(value));
+    this.ValueSubject.next(value);
     this.IsTouchedSubject.next(true);
-  };
-
-  static formatPhone = (s: string = "") => {
-    const r = s.replace(/\D/g, "");
-    const m = r.match(/^(\d{1,3})(\d{1,3})?(\d{1,})?$/);
-    const first = (m?.[1] && `(${m[1]}`) ?? "";
-    const second = (m?.[2] && `) ${m[2]}`) ?? "";
-    const third = (m?.[3] && `-${m[3].substring(0, 4)}`) ?? "";
-    return first + second + third;
   };
 
   getIsTouched = () => this.IsTouchedSubject.getValue();
 
   // Utils
-  static validateInput = (v: string | undefined) => {
+  static validateInput = (v: string | undefined): string | undefined => {
     if (!v) return "Should have value";
-    if (v.length < 10) return "Enter full number";
-    return "";
+    const phoneFieldService = PhoneFieldService.getInstance();
+    const hasError = !!phoneFieldService.ErrorSubject.getValue();
+    if (hasError) return "Fix phone number";
   };
 
   validate = async () => {
@@ -113,7 +106,9 @@ export class FieldService {
       setTimeout(() => {
         const value = this.ValueSubject.getValue();
         const error = FieldService.validateInput(value);
-        this.ErrorSubject.next(error);
+        if (error) {
+          this.ErrorSubject.next(error);
+        }
         this.IsDisabledSubject.next(false);
         res(error);
       }, 1000);

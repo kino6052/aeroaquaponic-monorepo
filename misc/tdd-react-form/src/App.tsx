@@ -6,6 +6,7 @@ import "./styles.css";
 import { useSharedState } from "./utils";
 import './field01.refactored.service';
 import './field02.refactored.service';
+import './field03.refactored.service';
 
 const EventWrapper: React.FC = (props) => {
   const children = props.children;

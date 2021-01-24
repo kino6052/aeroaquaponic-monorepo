@@ -3,6 +3,7 @@ import { filter, map, tap } from "rxjs/operators";
 import { Service } from "./service";
 import { StateService } from "./state.refactored.service";
 import { FieldService as PhoneFieldService } from "./field01.refactored.service";
+import { InitSubject } from "./init.service";
 
 export class FieldIntegrationService {
   private static instance: FieldIntegrationService | undefined = undefined;
@@ -119,7 +120,9 @@ export class FieldService {
   getIsDisabled = () => this.IsDisabledSubject.getValue();
 }
 
-// Initialization
-const fieldService = FieldService.getInstance();
-const stateInstance = StateService.getInstance();
-FieldIntegrationService.getInstance(fieldService, stateInstance);
+InitSubject.subscribe(() => {
+  // Initialization
+  const fieldService = FieldService.getInstance();
+  const stateInstance = StateService.getInstance();
+  FieldIntegrationService.getInstance(fieldService, stateInstance);
+});

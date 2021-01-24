@@ -1,6 +1,14 @@
-import { values } from "lodash";
 import { BehaviorSubject } from "rxjs";
+import { FieldService as Field01Service } from "./field01.refactored.service";
+import { FieldService as Field02Service } from "./field02.refactored.service";
+import { FieldService as Field03Service } from "./field03.refactored.service";
 import { IInput } from "./service";
+
+const PositionMap = {
+  [Field01Service.getInstance().id]: 1,
+  [Field02Service.getInstance().id]: 2,
+  [Field03Service.getInstance().id]: 3,
+};
 
 export class StateService {
   private static instance: StateService | undefined = undefined;
@@ -24,10 +32,12 @@ export class StateService {
   getValue = (id: string) => this.getInput(id)?.value;
 
   setInput = (nextInput: IInput) => {
+    const isUnique = (input: IInput, i: number, arr: IInput[]) =>
+      arr.findIndex(({ id }) => id === input.id) === i;
     const prevState = this.StateSubject.getValue();
-    const newState = [nextInput, ...prevState].filter(
-      ({ id }, i, arr) => arr.findIndex(({ id: _id }) => _id === id) === i
-    );
+    const newState = [nextInput, ...prevState]
+      .filter(isUnique)
+      .sort(({ id: a }, { id: b }) => PositionMap[a] - PositionMap[b]);
     this.StateSubject.next(newState);
   };
 }
