@@ -1,31 +1,13 @@
 import { BehaviorSubject, combineLatest } from "rxjs";
 import { filter, map, tap } from "rxjs/operators";
 import { InitSubject } from "./init.service";
-import { Service } from "./service";
+import { generateSingleton, Service } from "./service";
 import { StateService } from "./state.service";
 
-export class FieldIntegrationService {
-  private static instance: FieldIntegrationService | undefined = undefined;
-
-  static resetInstance = () => {
-    FieldIntegrationService.instance = undefined;
-  };
-
-  static getInstance = (
-    fieldService: FieldService,
-    stateService: StateService
-  ) => {
-    if (!FieldIntegrationService.instance)
-      FieldIntegrationService.instance = new FieldIntegrationService(
-        fieldService,
-        stateService
-      );
-    return FieldIntegrationService.instance;
-  };
-
+class _FieldIntegrationService {
   constructor(
-    private fieldService: FieldService,
-    private stateService: StateService
+    private fieldService = FieldService.getInstance(),
+    private stateService = StateService.getInstance()
   ) {
     this.ChangeSubject().subscribe();
     this.ClickSubject().subscribe();
@@ -60,36 +42,30 @@ export class FieldIntegrationService {
     );
 }
 
-export class FieldService {
+export const FieldIntegrationService = generateSingleton(
+  _FieldIntegrationService
+);
+
+class _FieldService {
   id = "one";
   buttonId = "one-button";
+
   // State
   public ValueSubject = new BehaviorSubject("");
   public ErrorSubject = new BehaviorSubject("");
   public IsTouchedSubject = new BehaviorSubject(false);
   public IsDisabledSubject = new BehaviorSubject(false);
 
-  private static instance: FieldService | undefined = undefined;
-
-  static resetInstance = () => {
-    FieldService.instance = undefined;
-  };
-
-  static getInstance = () => {
-    if (!FieldService.instance) FieldService.instance = new FieldService();
-    return FieldService.instance;
-  };
-
   constructor() {}
 
   getValue = () => this.ValueSubject.getValue();
 
   setValue = (value: string) => {
-    this.ValueSubject.next(FieldService.formatPhone(value));
+    this.ValueSubject.next(this.formatPhone(value));
     this.IsTouchedSubject.next(true);
   };
 
-  static formatPhone = (s: string = "") => {
+  formatPhone = (s: string = "") => {
     const r = s.replace(/\D/g, "");
     const m = r.match(/^(\d{1,3})(\d{1,3})?(\d{1,})?$/);
     const first = (m?.[1] && `(${m[1]}`) ?? "";
@@ -112,7 +88,7 @@ export class FieldService {
     return new Promise((res) => {
       setTimeout(() => {
         const value = this.ValueSubject.getValue();
-        const error = FieldService.validateInput(value);
+        const error = _FieldService.validateInput(value);
         this.ErrorSubject.next(error);
         this.IsDisabledSubject.next(false);
         res(error);
@@ -125,9 +101,11 @@ export class FieldService {
   getIsDisabled = () => this.IsDisabledSubject.getValue();
 }
 
+export const FieldService = generateSingleton(_FieldService);
+
 InitSubject.subscribe(() => {
   // Initialization
-  const fieldService = FieldService.getInstance();
-  const stateInstance = StateService.getInstance();
-  FieldIntegrationService.getInstance(fieldService, stateInstance);
+  FieldService.getInstance();
+  StateService.getInstance();
+  FieldIntegrationService.getInstance();
 });

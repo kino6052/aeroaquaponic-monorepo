@@ -4,27 +4,14 @@ import { filter, switchMap } from "rxjs/operators";
 import { FieldService as Field01Service } from "./field01.service";
 import { FieldService as Field02Service } from "./field02.service";
 import { FieldService as Field03Service } from "./field03.service";
-import { Service } from "./service";
+import { generateSingleton, Service } from "./service";
 import { InitSubject } from "./init.service";
 
 export const SubmitId = "submit";
 
-export class SubmitService {
-  private static instance: SubmitService | undefined = undefined;
-
-  static resetInstance = () => {
-    SubmitService.instance = undefined;
-  };
-
-  static getInstance = () => {
-    if (!SubmitService.instance) SubmitService.instance = new _SubmitService();
-    return SubmitService.instance;
-  };
-}
-
 class _SubmitService {
   constructor(
-    private field01Service: Field01Service = Field01Service.getInstance(),
+    private field01Service = Field01Service.getInstance(),
     private field02Service: Field02Service = Field02Service.getInstance(),
     private field03Service: Field03Service = Field03Service.getInstance()
   ) {
@@ -43,6 +30,8 @@ class _SubmitService {
       switchMap(() => from(this.submit()))
     );
 }
+
+export const SubmitService = generateSingleton(_SubmitService);
 
 InitSubject.subscribe(() => {
   SubmitService.getInstance();
