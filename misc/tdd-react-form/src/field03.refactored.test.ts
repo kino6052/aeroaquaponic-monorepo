@@ -2,8 +2,8 @@ import { StateService } from "./state.refactored.service";
 import {
   FieldIntegrationService,
   FieldService,
-} from "./field02.refactored.service";
-import { FieldService as PhoneFieldService } from "./field01.refactored.service";
+} from "./field03.refactored.service";
+import { FieldService as SecondFieldService } from "./field02.refactored.service";
 import { Service } from "./service";
 
 beforeEach(() => {
@@ -85,28 +85,30 @@ describe("Field 002", () => {
 
   it("should validate", async () => {
     const fieldService = FieldService.getInstance();
-    fieldService.setValue("abc");
-    await fieldService.validate();
-    const error = fieldService.getError();
-    expect(error).toBeFalsy();
-  });
-
-  it("should validate", async () => {
-    const fieldService = FieldService.getInstance();
     fieldService.setValue("");
     await fieldService.validate();
     const error = fieldService.getError();
     expect(error).toBeTruthy();
   });
 
-  it("should validate with error if previous field has error", async () => {
+  it("should validate with error if previous field does NOT match the current", async () => {
     const fieldService = FieldService.getInstance();
     fieldService.setValue("abc");
-    const phoneFieldSerivce = PhoneFieldService.getInstance();
-    await phoneFieldSerivce.validate();
+    const secondFieldSerivce = SecondFieldService.getInstance();
+    secondFieldSerivce.setValue("efg");
     await fieldService.validate();
     const error = fieldService.getError();
     expect(error).toBeTruthy();
+  });
+
+  it("should validate with NO error if previous field DOES match the current", async () => {
+    const fieldService = FieldService.getInstance();
+    fieldService.setValue("abc");
+    const secondFieldSerivce = SecondFieldService.getInstance();
+    secondFieldSerivce.setValue("abc");
+    await fieldService.validate();
+    const error = fieldService.getError();
+    expect(error).toBeFalsy();
   });
 
   it("should be disabled on validate", async () => {

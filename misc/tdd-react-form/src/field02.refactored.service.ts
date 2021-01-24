@@ -93,11 +93,12 @@ export class FieldService {
   getIsTouched = () => this.IsTouchedSubject.getValue();
 
   // Utils
-  static validateInput = (v: string | undefined): string | undefined => {
+  static validateInput = (v: string | undefined) => {
     if (!v) return "Should have value";
     const phoneFieldService = PhoneFieldService.getInstance();
     const hasError = !!phoneFieldService.ErrorSubject.getValue();
     if (hasError) return "Fix phone number";
+    return "";
   };
 
   validate = async () => {
@@ -106,9 +107,7 @@ export class FieldService {
       setTimeout(() => {
         const value = this.ValueSubject.getValue();
         const error = FieldService.validateInput(value);
-        if (error) {
-          this.ErrorSubject.next(error);
-        }
+        this.ErrorSubject.next(error);
         this.IsDisabledSubject.next(false);
         res(error);
       }, 1000);
