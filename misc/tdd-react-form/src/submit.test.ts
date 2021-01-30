@@ -4,6 +4,7 @@ import { SubmitId, SubmitService } from "./submit.service";
 import { FieldService as Field01Service } from "./field01.service";
 import { FieldService as Field02Service } from "./field02.service";
 import { FieldService as Field03Service } from "./field03.service";
+import { EventSubject } from "./EventWrapper";
 
 beforeEach(() => {
   SubmitService.resetInstance();
@@ -22,7 +23,7 @@ describe("Submit Integration", () => {
   it("should call submit on click", () => {
     const submitService = SubmitService.getInstance();
     const spy = jest.spyOn(submitService, "submit");
-    Service.EventSubject.next(["click", SubmitId, ""]);
+    EventSubject.next(["click", SubmitId, ""]);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });

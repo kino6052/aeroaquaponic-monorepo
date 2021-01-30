@@ -1,6 +1,7 @@
 import React from "react";
 import { Subject } from "rxjs";
 import { filter } from "rxjs/operators";
+import { EventSubject, IEvent } from "./EventWrapper";
 
 export interface IInput {
   value: string;
@@ -10,9 +11,6 @@ export interface IInput {
   isDisabled?: boolean;
 }
 
-export type EventType = "click" | "change" | "focus";
-export type Id = string;
-export type IEvent = [EventType, Id, string | undefined];
 export const SubmitId = "submit";
 
 type Constructor<T> = new (...args: any[]) => T;
@@ -43,17 +41,11 @@ export class Service {
   ): string | undefined => e?.target?.value;
 
   static OnChangeSubject = () =>
-    Service.EventSubject.pipe(
-      filter(([type]) => type === "change")
-    ) as Subject<IEvent>;
+    EventSubject.pipe(filter(([type]) => type === "change")) as Subject<IEvent>;
 
   static OnClickSubject = () =>
-    Service.EventSubject.pipe(
-      filter(([type]) => type === "click")
-    ) as Subject<IEvent>;
+    EventSubject.pipe(filter(([type]) => type === "click")) as Subject<IEvent>;
 
   static OnFocusSubject = () =>
-    Service.EventSubject.pipe(
-      filter(([type]) => type === "focus")
-    ) as Subject<IEvent>;
+    EventSubject.pipe(filter(([type]) => type === "focus")) as Subject<IEvent>;
 }

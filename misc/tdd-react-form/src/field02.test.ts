@@ -2,6 +2,7 @@ import { StateService } from "./state.service";
 import { FieldIntegrationService, FieldService } from "./field02.service";
 import { FieldService as PhoneFieldService } from "./field01.service";
 import { Service } from "./service";
+import { EventSubject } from "./EventWrapper";
 
 beforeEach(() => {
   FieldService.resetInstance();
@@ -32,7 +33,7 @@ describe("Field 002 Integration", () => {
     const fieldService = FieldService.getInstance();
     const stateService = StateService.getInstance();
     FieldIntegrationService.getInstance(fieldService, stateService);
-    Service.EventSubject.next(["change", fieldService.id, "abc"]);
+    EventSubject.next(["change", fieldService.id, "abc"]);
     expect(fieldService.getValue()).toBe("abc");
   });
 
@@ -40,7 +41,7 @@ describe("Field 002 Integration", () => {
     const fieldService = FieldService.getInstance();
     const stateService = StateService.getInstance();
     FieldIntegrationService.getInstance(fieldService, stateService);
-    Service.EventSubject.next(["change", fieldService.id, undefined]);
+    EventSubject.next(["change", fieldService.id, undefined]);
     expect(fieldService.getValue()).toBe("");
   });
 
@@ -60,7 +61,7 @@ describe("Field 002 Integration", () => {
     const spy = jest
       .spyOn(fieldService, "validate")
       .mockImplementation(jest.fn());
-    Service.EventSubject.next(["click", fieldService.buttonId, ""]);
+    EventSubject.next(["click", fieldService.buttonId, ""]);
     expect(spy).toHaveBeenCalledTimes(1);
   });
 });
