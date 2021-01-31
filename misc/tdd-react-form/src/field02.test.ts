@@ -1,8 +1,7 @@
-import { StateService } from "./state.service";
-import { FieldIntegrationService, FieldService } from "./field02.service";
-import { FieldService as PhoneFieldService } from "./field01.service";
-import { Service } from "./service";
 import { EventSubject } from "./EventWrapper";
+import { FieldService as PhoneFieldService } from "./field01.service";
+import { FieldIntegrationService, FieldService } from "./field02.service";
+import { StateService } from "./state.service";
 
 beforeEach(() => {
   FieldService.resetInstance();

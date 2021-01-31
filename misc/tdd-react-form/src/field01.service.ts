@@ -3,11 +3,15 @@ import { filter, map, tap } from "rxjs/operators";
 import { generateSingleton, Service } from "./service";
 import { StateService } from "./state.service";
 
-class _FieldIntegrationService {
-  constructor(
-    private fieldService = FieldService.getInstance(),
-    private stateService = StateService.getInstance()
-  ) {
+export class _FieldIntegrationService {
+  fieldService: Field;
+  stateService: StateService;
+
+  constructor(...args: [Field, StateService]) {
+    const [fieldService, stateService] = args;
+    this.fieldService = fieldService;
+    this.stateService = stateService;
+
     this.ChangeSubject().subscribe();
     this.ClickSubject().subscribe();
     combineLatest([
@@ -41,11 +45,7 @@ class _FieldIntegrationService {
     );
 }
 
-export const FieldIntegrationService = generateSingleton(
-  _FieldIntegrationService
-);
-
-class _FieldService {
+export class Field {
   id = "one";
   buttonId = "one-button";
 
@@ -87,7 +87,7 @@ class _FieldService {
     return new Promise((res) => {
       setTimeout(() => {
         const value = this.ValueSubject.getValue();
-        const error = _FieldService.validateInput(value);
+        const error = Field.validateInput(value);
         this.ErrorSubject.next(error);
         this.IsDisabledSubject.next(false);
         res(error);
@@ -100,7 +100,12 @@ class _FieldService {
   getIsDisabled = () => this.IsDisabledSubject.getValue();
 }
 
-export const FieldService = generateSingleton(_FieldService);
+export const FieldService = generateSingleton(Field, []);
+
+export const FieldIntegrationService = generateSingleton(
+  _FieldIntegrationService,
+  [FieldService.getInstance()!, StateService.getInstance()]
+);
 
 Service.InitSubject.subscribe(() => {
   // Initialization

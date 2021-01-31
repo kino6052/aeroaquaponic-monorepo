@@ -30,7 +30,7 @@ class _SubmitService {
     );
 }
 
-export const SubmitService = generateSingleton(_SubmitService);
+export const SubmitService = generateSingleton(_SubmitService, []);
 
 Service.InitSubject.subscribe(() => {
   SubmitService.getInstance();

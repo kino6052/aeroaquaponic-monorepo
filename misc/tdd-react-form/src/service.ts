@@ -13,19 +13,25 @@ export interface IInput {
 
 export const SubmitId = "submit";
 
-type Constructor<T> = new (...args: any[]) => T;
-
-export const generateSingleton = <I>(clazz: Constructor<I>) => {
+export const generateSingleton = <R extends new (...args: any) => any>(
+  clazz: R,
+  deps: ConstructorParameters<R>
+) => {
   const singleton = class {
-    private static instance: I | undefined = undefined;
+    private static instance: InstanceType<R> | undefined = undefined;
 
     static resetInstance = () => {
       singleton.instance = undefined;
     };
 
-    static getInstance = () => {
-      if (!singleton.instance) singleton.instance = new clazz();
-      return singleton.instance;
+    static getInstance = (): InstanceType<R> => {
+      if (!singleton.instance) {
+        const instance = new clazz(...deps);
+        singleton.instance = instance;
+        return instance;
+      } else {
+        return singleton.instance;
+      }
     };
   };
   return singleton;

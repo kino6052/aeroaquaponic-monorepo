@@ -95,7 +95,7 @@ export class FieldService {
   static validateInput = (v: string | undefined) => {
     if (!v) return "Should have value";
     const phoneFieldService = PhoneFieldService.getInstance();
-    const hasError = !!phoneFieldService.ErrorSubject.getValue();
+    const hasError = !!phoneFieldService?.ErrorSubject.getValue();
     if (hasError) return "Fix phone number";
     return "";
   };
