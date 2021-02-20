@@ -95,9 +95,13 @@ export const act = (state: typeof initialState) => ([
   id,
   value,
 ]: IInput) => {
+  // Input Change
   const isChange = type === "change";
-  const isSubmit = type === "click" && id === Id.Submit;
   const onChangeResult = isChange && onChange(id, value, state);
-  const onClickResult = isSubmit && onSubmit(state);
-  return onChangeResult || onClickResult || state;
+
+  // Submit
+  const isSubmit = type === "click" && id === Id.Submit;
+  const onSubmitResult = isSubmit && onSubmit(state);
+
+  return onChangeResult || onSubmitResult || state;
 };
