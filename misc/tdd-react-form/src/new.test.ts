@@ -16,7 +16,7 @@ const initialState = {
     value: "",
     error: "",
   },
-} as const;
+};
 
 type InputType = "change";
 
@@ -35,13 +35,10 @@ const act = (input: Array<IInput>) => {
   return input.reduce((state, [type, id, value]) => {
     if (id === inputId01 && type === "change") {
       const input = state[inputId01];
-      const newInput = { ...input, value };
+      const newInput = { ...input, value: formatPhone(value) };
       return {
         ...state,
-        [inputId01]: {
-          value: formatPhone(value),
-          error: "",
-        },
+        [inputId01]: newInput,
       };
     }
     return state;
