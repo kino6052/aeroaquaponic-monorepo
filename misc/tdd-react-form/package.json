@@ -32,11 +32,12 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/src/*.service.ts",
+      "<rootDir>/src/new.ts",
       "!<rootDir>/node_modules/",
       "!<rootDir>/node_modules/*"
     ],
     "coverageReporters": [
+      "text",
       "json",
       "html"
     ]

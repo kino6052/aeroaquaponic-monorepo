@@ -1,6 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`should format phone 1`] = `
+exports[`Formatting should format phone 1`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`Formatting should format phone 2`] = `
 Object {
   "1": Object {
     "error": "",
@@ -17,7 +34,7 @@ Object {
 }
 `;
 
-exports[`should format phone 2`] = `
+exports[`Formatting should format phone 3`] = `
 Object {
   "1": Object {
     "error": "",
@@ -34,7 +51,7 @@ Object {
 }
 `;
 
-exports[`should format phone 3`] = `
+exports[`Formatting should format phone 4`] = `
 Object {
   "1": Object {
     "error": "",
@@ -51,7 +68,7 @@ Object {
 }
 `;
 
-exports[`should format phone 4`] = `
+exports[`Formatting should format phone 5`] = `
 Object {
   "1": Object {
     "error": "",
@@ -68,7 +85,7 @@ Object {
 }
 `;
 
-exports[`should format phone 5`] = `
+exports[`Formatting should format phone 6`] = `
 Object {
   "1": Object {
     "error": "",
@@ -85,7 +102,7 @@ Object {
 }
 `;
 
-exports[`should format phone 6`] = `
+exports[`Formatting should format phone 7`] = `
 Object {
   "1": Object {
     "error": "",
@@ -102,7 +119,7 @@ Object {
 }
 `;
 
-exports[`should format phone 7`] = `
+exports[`Formatting should format phone 8`] = `
 Object {
   "1": Object {
     "error": "",
@@ -119,7 +136,7 @@ Object {
 }
 `;
 
-exports[`should format phone 8`] = `
+exports[`Formatting should format phone 9`] = `
 Object {
   "1": Object {
     "error": "",
@@ -136,7 +153,7 @@ Object {
 }
 `;
 
-exports[`should format phone 9`] = `
+exports[`Formatting should format phone 10`] = `
 Object {
   "1": Object {
     "error": "",
@@ -153,7 +170,7 @@ Object {
 }
 `;
 
-exports[`should format phone 10`] = `
+exports[`Formatting should format phone 11`] = `
 Object {
   "1": Object {
     "error": "",
@@ -165,6 +182,142 @@ Object {
   },
   "3": Object {
     "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 1`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-7890",
+  },
+  "2": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 2`] = `
+Object {
+  "1": Object {
+    "error": "Enter full phone number",
+    "value": "(123) 45",
+  },
+  "2": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 3`] = `
+Object {
+  "1": Object {
+    "error": "Enter full phone number",
+    "value": "(123) 45",
+  },
+  "2": Object {
+    "error": "Fix phone number",
+    "value": "12345",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 4`] = `
+Object {
+  "1": Object {
+    "error": "Enter full phone number",
+    "value": "(123) 45",
+  },
+  "2": Object {
+    "error": "Fix phone number",
+    "value": "12345",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 5`] = `
+Object {
+  "1": Object {
+    "error": "Enter full phone number",
+    "value": "(123) 45",
+  },
+  "2": Object {
+    "error": "Fix phone number",
+    "value": "12345",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 6`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-7890",
+  },
+  "2": Object {
+    "error": "",
+    "value": "12345",
+  },
+  "3": Object {
+    "error": "",
+    "value": "12345",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 7`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-7890",
+  },
+  "2": Object {
+    "error": "",
+    "value": "12345",
+  },
+  "3": Object {
+    "error": "Does not match",
+    "value": "1",
+  },
+}
+`;
+
+exports[`Validation should validate inputs on submit 8`] = `
+Object {
+  "1": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+  "2": Object {
+    "error": "Cannot be empty",
+    "value": "",
+  },
+  "3": Object {
+    "error": "Cannot be empty",
     "value": "",
   },
 }

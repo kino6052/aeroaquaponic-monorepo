@@ -22,30 +22,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.31% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>3/3</span>
+                <span class='fraction'>0/3</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>5/6</span>
+                <span class='fraction'>0/6</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">92.31% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>12/13</span>
+                <span class='fraction'>0/13</span>
             </div>
         
             
@@ -54,7 +54,7 @@
             Press <em>n</em> or <em>j</em> to go to the next uncovered block, <em>b</em>, <em>p</em> or <em>k</em> for the previous block.
         </p>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -101,7 +101,7 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -109,25 +109,25 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { from } from "rxjs";
@@ -138,33 +138,33 @@ import { FieldService as Field03Service } from "./field03.service";
 import { generateSingleton, Service } from "./service";
 import "./state.service";
 &nbsp;
-export const SubmitId = "submit";
+export const SubmitId = <span class="cstat-no" title="statement not covered" >"submit";</span>
 &nbsp;
 class _SubmitService {
-  constructor(
-    private field01Service = Field01Service.getInstance(),
-    private field02Service: Field02Service = Field02Service.getInstance(),
-    private field03Service: Field03Service = Field03Service.getInstance()
+<span class="fstat-no" title="function not covered" >  co</span>nstructor(
+    private field01Service = <span class="branch-0 cbranch-no" title="branch not covered" >Field01Service.getInstance(),</span>
+    private field02Service: Field02Service = <span class="branch-0 cbranch-no" title="branch not covered" >Field02Service.getInstance(),</span>
+    private field03Service: Field03Service = <span class="branch-0 cbranch-no" title="branch not covered" >Field03Service.getInstance()</span>
   ) {
-    this.ClickSubject().subscribe();
+<span class="cstat-no" title="statement not covered" >    this.ClickSubject().subscribe();</span>
   }
 &nbsp;
-  submit = async () =&gt; {
-    await this.field01Service.validate();
-    await this.field02Service.validate();
-    await this.field03Service.validate();
+  submit = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >as</span>ync () =&gt; {</span>
+<span class="cstat-no" title="statement not covered" >    await this.field01Service.validate();</span>
+<span class="cstat-no" title="statement not covered" >    await this.field02Service.validate();</span>
+<span class="cstat-no" title="statement not covered" >    await this.field03Service.validate();</span>
   };
 &nbsp;
-  ClickSubject = () =&gt;
-    Service.OnClickSubject().pipe(
-      filter(([, id]) =&gt; id === SubmitId),
-      switchMap(() =&gt; from(this.submit()))
+  ClickSubject = <span class="cstat-no" title="statement not covered" ><span class="fstat-no" title="function not covered" >()</span> =&gt;</span>
+<span class="cstat-no" title="statement not covered" >    Service.OnClickSubject().pipe(</span>
+      filter(<span class="fstat-no" title="function not covered" >([</span>, id]) =&gt; <span class="cstat-no" title="statement not covered" >id === SubmitId)</span>,
+      switchMap(<span class="fstat-no" title="function not covered" >()</span> =&gt; <span class="cstat-no" title="statement not covered" >from(this.submit()))</span>
     );
 }
 &nbsp;
-export const SubmitService = generateSingleton(_SubmitService);
+export const SubmitService = <span class="cstat-no" title="statement not covered" >generateSingleton(_SubmitService, []);</span>
 &nbsp;
-Service.InitSubject.subscribe(<span class="fstat-no" title="function not covered" >()</span> =&gt; {
+<span class="cstat-no" title="statement not covered" >Service.InitSubject.subscribe(<span class="fstat-no" title="function not covered" >()</span> =&gt; {</span>
 <span class="cstat-no" title="statement not covered" >  SubmitService.getInstance();</span>
 });
 &nbsp;</pre></td></tr></table></pre>
@@ -174,7 +174,7 @@ Service.InitSubject.subscribe(<span class="fstat-no" title="function not covered
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Thu Jan 28 2021 19:08:28 GMT-0700 (Mountain Standard Time)
+                at Sat Feb 20 2021 10:53:12 GMT-0700 (Mountain Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

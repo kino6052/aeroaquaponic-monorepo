@@ -1,59 +1,92 @@
-const inputId01 = "1";
-const inputId02 = "2";
-const inputId03 = "3";
-const submitId = "submit";
+import { act, Id, IInput, initialState } from "./new";
 
-const initialState = {
-  [inputId01]: {
-    value: "",
-    error: "",
-  },
-  [inputId02]: {
-    value: "",
-    error: "",
-  },
-  [inputId03]: {
-    value: "",
-    error: "",
-  },
-};
+const sequence = (inputs: IInput[]): typeof initialState =>
+  inputs.reduce((acc, input) => act(acc)(input), initialState);
 
-type InputType = "change";
+describe("Formatting", () => {
+  it("should format phone", () => {
+    expect(act(initialState)(["change", Id.Input01, ""])).toMatchSnapshot();
+    expect(act(initialState)(["change", Id.Input01, "1"])).toMatchSnapshot();
+    expect(act(initialState)(["change", Id.Input01, "12"])).toMatchSnapshot();
+    expect(act(initialState)(["change", Id.Input01, "123"])).toMatchSnapshot();
+    expect(act(initialState)(["change", Id.Input01, "1234"])).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "12345"])
+    ).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "123456"])
+    ).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "1234567"])
+    ).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "12345678"])
+    ).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "123456789"])
+    ).toMatchSnapshot();
+    expect(
+      act(initialState)(["change", Id.Input01, "1234567890"])
+    ).toMatchSnapshot();
+  });
+});
 
-type IInput = [InputType, string, string];
-
-const formatPhone = (s: string) => {
-  const r = s.replace(/\D/g, ""); // Replace all non-digit characters with empty
-  const m = r.match(/^(\d{1,3})(\d{1,3})?(\d{1,})?$/); // Find three groups
-  const first = (m?.[1] && `(${m[1]}`) ?? ""; // First group of max three digits (123)
-  const second = (m?.[2] && `) ${m[2]}`) ?? ""; // Second group of max three digits
-  const third = (m?.[3] && `-${m[3].substring(0, 4)}`) ?? ""; // four group of max four digits
-  return first + second + third;
-};
-
-const act = (input: Array<IInput>) => {
-  return input.reduce((state, [type, id, value]) => {
-    if (id === inputId01 && type === "change") {
-      const input = state[inputId01];
-      const newInput = { ...input, value: formatPhone(value) };
-      return {
-        ...state,
-        [inputId01]: newInput,
-      };
-    }
-    return state;
-  }, initialState);
-};
-
-it("should format phone", () => {
-  expect(act([["change", inputId01, "1"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "12"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "123"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "1234"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "12345"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "123456"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "1234567"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "12345678"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "123456789"]])).toMatchSnapshot();
-  expect(act([["change", inputId01, "1234567890"]])).toMatchSnapshot();
+describe("Validation", () => {
+  it("should validate inputs on submit", () => {
+    expect(
+      sequence([
+        ["change", Id.Input01, "1234567890"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "12345"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "12345"],
+        ["change", Id.Input02, "12345"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "12345"],
+        ["change", Id.Input02, "12345"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "12345"],
+        ["change", Id.Input02, "12345"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "1234567890"],
+        ["change", Id.Input02, "12345"],
+        ["change", Id.Input03, "12345"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, "1234567890"],
+        ["change", Id.Input02, "12345"],
+        ["change", Id.Input03, "1"],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.Input01, ""],
+        ["click", Id.Submit, ""],
+      ])
+    ).toMatchSnapshot();
+  });
 });
