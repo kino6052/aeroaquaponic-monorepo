@@ -1,0 +1,171 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should format phone 1`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(1",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 2`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(12",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 3`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 4`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 4",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 5`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 45",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 6`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 7`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-7",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 8`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-78",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 9`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-789",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
+
+exports[`should format phone 10`] = `
+Object {
+  "1": Object {
+    "error": "",
+    "value": "(123) 456-7890",
+  },
+  "2": Object {
+    "error": "",
+    "value": "",
+  },
+  "3": Object {
+    "error": "",
+    "value": "",
+  },
+}
+`;
