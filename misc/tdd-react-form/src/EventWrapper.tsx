@@ -3,7 +3,7 @@ import { Subject } from "rxjs";
 
 export type EventType = "click" | "change" | "focus";
 export type Id = string;
-export type IEvent = [EventType, Id, string | undefined];
+export type IEvent = [EventType, Id, string];
 
 export const EventSubject = new Subject<IEvent>();
 
