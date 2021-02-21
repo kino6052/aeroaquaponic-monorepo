@@ -8,6 +8,7 @@ export enum Id {
   AddItemButton = "add-item-button",
   AddItemInput = "add-item-input",
   SaveItemButton = "save-item-button",
+  Item = "item",
 }
 
 export type IInput = [InputType, string, string];
@@ -20,22 +21,24 @@ export interface INode {
   parent: string;
 }
 
-type ITree = { [id: string]: ITree[] };
+export type ITree = { [id: string]: ITree };
 
 export type IState = {
-  nodes: { [id: string]: INode };
+  treeNodes: { [id: string]: INode };
   tree: ITree;
-  selected: string;
+  selectedNode: string;
   addItemInput: string;
   itemSearchInput: string;
+  currentId: number;
 };
 
 export const initialState: IState = {
-  nodes: {},
+  treeNodes: {},
   tree: {},
-  selected: "",
+  selectedNode: "",
   itemSearchInput: "",
   addItemInput: "",
+  currentId: 0,
 };
 
 EventSubject.subscribe((event) => {

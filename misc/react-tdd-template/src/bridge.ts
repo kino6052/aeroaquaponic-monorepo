@@ -1,5 +1,5 @@
 import { BehaviorSubject } from "rxjs";
-import { act } from "./service";
+import { act } from "./services/service";
 import { EventSubject } from "./utils/EventWrapper";
 
 export type InputType = "change" | "click" | "focus";
