@@ -7,6 +7,13 @@ export enum Id {
   Submit = "submit",
 }
 
+export interface AppState {
+  [Id.Input01]: {
+    value: string;
+    error: string;
+  };
+}
+
 export const initialState = {
   [Id.Input01]: {
     value: "",
@@ -90,11 +97,13 @@ const onChange = (id: string, value: string, state: typeof initialState) => {
   }
 };
 
-export const act = (state: typeof initialState) => ([
+export const getAct = () => {};
+
+export const act = <T extends Record<string, unknown>>(state: T) => ([
   type,
   id,
   value,
-]: IInput) => {
+]: IInput): T => {
   // Input Change
   const isChange = type === "change";
   const onChangeResult = isChange && onChange(id, value, state);
