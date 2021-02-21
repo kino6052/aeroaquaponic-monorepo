@@ -1,4 +1,3 @@
-import { BehaviorSubject } from "rxjs";
 import { Id, IInput, initialState, INode, IState, ITree } from "../bridge";
 
 export const act = (state: IState) => ([type, id, value]: IInput): IState => {
@@ -18,13 +17,15 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
     const parent = state.treeNodes[state.selectedNode];
     const newParent =
       (parent && {
-        ...parent,
-        children: [...parent.children, newNode.id],
+        [parent.id]: {
+          ...parent,
+          children: [...parent.children, newNode.id],
+        },
       }) ||
       {};
     const treeNodes = {
       ...state.treeNodes,
-      ...{ [newParent.id]: newParent },
+      ...newParent,
       ...{ [newNode.id]: newNode },
     };
     const process = (id: string = ""): ITree =>
