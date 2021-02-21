@@ -99,11 +99,11 @@ const onChange = (id: string, value: string, state: typeof initialState) => {
 
 export const getAct = () => {};
 
-export const act = <T extends Record<string, unknown>>(state: T) => ([
+export const act = (state: typeof initialState) => ([
   type,
   id,
   value,
-]: IInput): T => {
+]: IInput) => {
   // Input Change
   const isChange = type === "change";
   const onChangeResult = isChange && onChange(id, value, state);
