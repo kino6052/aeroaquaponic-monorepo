@@ -1,5 +1,10 @@
 import { Id, IInput, initialState, INode, IState, ITree } from "../bridge";
 
+const getIds = (tree: ITree): string[] =>
+  Object.entries(tree).reduce((acc, [id, tree]) => {
+    return [...acc, id, ...getIds(tree)];
+  }, [] as string[]);
+
 export const act = (state: IState) => ([type, id, value]: IInput): IState => {
   if (type === "change" && id === Id.AddItemInput) {
     return {
@@ -13,6 +18,7 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       isCollapsed: false,
       parent: state.selectedNode,
       title: state.addItemInput,
+      isHighlighted: false,
     };
     const parent = state.treeNodes[state.selectedNode];
     const newParent =
@@ -67,9 +73,24 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       .reduce((acc, node) => {
         return { ...acc, [node.id]: process(node.id) };
       }, {});
+    const newTreeNodes = Object.values(state.treeNodes)
+      .map((node) => {
+        const isHighlighted =
+          !!value && node.title.toLowerCase().includes(value.toLowerCase());
+        return {
+          ...node,
+          isHighlighted,
+        };
+      })
+      .reduce(
+        (acc, node) => ({ ...acc, [node.id]: node }),
+        {} as typeof treeNodes
+      );
     return {
       ...state,
+      itemSearchInput: value,
       tree,
+      treeNodes: newTreeNodes,
     };
   }
   return state;

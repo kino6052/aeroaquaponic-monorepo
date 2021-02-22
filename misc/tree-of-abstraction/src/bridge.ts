@@ -20,6 +20,7 @@ export interface INode {
   isCollapsed: boolean;
   children: string[];
   parent: string;
+  isHighlighted: boolean;
 }
 
 export type ITree = { [id: string]: ITree };

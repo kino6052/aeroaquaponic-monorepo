@@ -148,4 +148,6 @@ describe("Tree", () => {
       ])
     ).toMatchSnapshot();
   });
+
+  it("should collapse", () => {});
 });
