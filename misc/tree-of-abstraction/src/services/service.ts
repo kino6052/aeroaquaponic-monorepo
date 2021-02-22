@@ -92,6 +92,39 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       tree,
       treeNodes: newTreeNodes,
     };
+  } else if (type === "click" && id.includes(Id.CollapseItemButton)) {
+    console.warn("here");
+    const treeNodes = state.treeNodes;
+    const processedId = id.replace(`${Id.CollapseItemButton}-`, "");
+    const newTreeNodes = Object.values(state.treeNodes)
+      .map((node) => {
+        const processedNodeId = node.id.replace(`${Id.Item}-`, "");
+        const isCollapsed = processedNodeId === processedId;
+        return {
+          ...node,
+          isCollapsed,
+        };
+      })
+      .reduce(
+        (acc, node) => ({ ...acc, [node.id]: node }),
+        {} as typeof treeNodes
+      );
+    const process = (id: string = ""): ITree =>
+      newTreeNodes[id]?.children.reduce((acc, child) => {
+        const node = newTreeNodes[child];
+        const isCollapsed = node.isCollapsed;
+        return { ...acc, [child]: isCollapsed ? {} : process(child) };
+      }, {}) || {};
+    const tree = Object.values(newTreeNodes)
+      .filter((node) => node.parent === "" && !node.isCollapsed)
+      .reduce((acc, node) => {
+        return { ...acc, [node.id]: process(node.id) };
+      }, {});
+    return {
+      ...state,
+      tree,
+      treeNodes: newTreeNodes,
+    };
   }
   return state;
 };

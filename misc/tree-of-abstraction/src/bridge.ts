@@ -10,6 +10,7 @@ export enum Id {
   SaveItemButton = "save-item-button",
   Item = "item",
   SearchItemsInput = "search-items-input",
+  CollapseItemButton = "collapse-button",
 }
 
 export type IInput = [InputType, string, string];
