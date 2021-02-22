@@ -49,6 +49,28 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       ...state,
       selectedNode: id,
     };
+  } else if (type === "change" && Id.SearchItemsInput) {
+    const treeNodes = state.treeNodes;
+    const process = (id: string = ""): ITree =>
+      treeNodes[id]?.children.reduce((acc, child) => {
+        const node = treeNodes[child];
+        const hasSearchTerm = node.title
+          .toLowerCase()
+          .includes(value.toLowerCase());
+        const result = process(child);
+        const hasChildren = Object.entries(result).length > 0;
+        if (hasSearchTerm || hasChildren) return { ...acc, [child]: result };
+        return acc;
+      }, {}) || {};
+    const tree = Object.values(treeNodes)
+      .filter(({ parent }) => parent === "")
+      .reduce((acc, node) => {
+        return { ...acc, [node.id]: process(node.id) };
+      }, {});
+    return {
+      ...state,
+      tree,
+    };
   }
   return state;
 };

@@ -41,4 +41,111 @@ describe("Tree", () => {
       ])
     ).toMatchSnapshot();
   });
+
+  it("should search", () => {
+    expect(
+      sequence([
+        ["change", Id.AddItemInput, "one"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "two"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "three"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-2`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.SearchItemsInput, "o"],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.AddItemInput, "one"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "two"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "three"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-2`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.SearchItemsInput, "ur"],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.AddItemInput, "one"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "two"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "three"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-2`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.SearchItemsInput, "TWO"],
+      ])
+    ).toMatchSnapshot();
+    expect(
+      sequence([
+        ["change", Id.AddItemInput, "one"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "two"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-0`, ""],
+        ["change", Id.AddItemInput, "three"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-2`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.AddItemInput, "four"],
+        ["click", Id.AddItemButton, ""],
+        ["click", `${Id.Item}-3`, ""],
+        ["change", Id.SearchItemsInput, ""],
+      ])
+    ).toMatchSnapshot();
+  });
 });

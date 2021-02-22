@@ -112,3 +112,319 @@ Object {
   },
 }
 `;
+
+exports[`Tree should search 1`] = `
+Object {
+  "addItemInput": "four",
+  "currentId": 7,
+  "itemSearchInput": "",
+  "selectedNode": "item-3",
+  "tree": Object {
+    "item-0": Object {
+      "item-1": Object {},
+      "item-2": Object {
+        "item-3": Object {
+          "item-4": Object {},
+          "item-5": Object {},
+          "item-6": Object {},
+        },
+      },
+    },
+  },
+  "treeNodes": Object {
+    "item-0": Object {
+      "children": Array [
+        "item-1",
+        "item-2",
+      ],
+      "id": "item-0",
+      "isCollapsed": false,
+      "parent": "",
+      "title": "one",
+    },
+    "item-1": Object {
+      "children": Array [],
+      "id": "item-1",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "two",
+    },
+    "item-2": Object {
+      "children": Array [
+        "item-3",
+      ],
+      "id": "item-2",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "three",
+    },
+    "item-3": Object {
+      "children": Array [
+        "item-4",
+        "item-5",
+        "item-6",
+      ],
+      "id": "item-3",
+      "isCollapsed": false,
+      "parent": "item-2",
+      "title": "four",
+    },
+    "item-4": Object {
+      "children": Array [],
+      "id": "item-4",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-5": Object {
+      "children": Array [],
+      "id": "item-5",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-6": Object {
+      "children": Array [],
+      "id": "item-6",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+  },
+}
+`;
+
+exports[`Tree should search 2`] = `
+Object {
+  "addItemInput": "four",
+  "currentId": 7,
+  "itemSearchInput": "",
+  "selectedNode": "item-3",
+  "tree": Object {
+    "item-0": Object {
+      "item-2": Object {
+        "item-3": Object {
+          "item-4": Object {},
+          "item-5": Object {},
+          "item-6": Object {},
+        },
+      },
+    },
+  },
+  "treeNodes": Object {
+    "item-0": Object {
+      "children": Array [
+        "item-1",
+        "item-2",
+      ],
+      "id": "item-0",
+      "isCollapsed": false,
+      "parent": "",
+      "title": "one",
+    },
+    "item-1": Object {
+      "children": Array [],
+      "id": "item-1",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "two",
+    },
+    "item-2": Object {
+      "children": Array [
+        "item-3",
+      ],
+      "id": "item-2",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "three",
+    },
+    "item-3": Object {
+      "children": Array [
+        "item-4",
+        "item-5",
+        "item-6",
+      ],
+      "id": "item-3",
+      "isCollapsed": false,
+      "parent": "item-2",
+      "title": "four",
+    },
+    "item-4": Object {
+      "children": Array [],
+      "id": "item-4",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-5": Object {
+      "children": Array [],
+      "id": "item-5",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-6": Object {
+      "children": Array [],
+      "id": "item-6",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+  },
+}
+`;
+
+exports[`Tree should search 3`] = `
+Object {
+  "addItemInput": "four",
+  "currentId": 7,
+  "itemSearchInput": "",
+  "selectedNode": "item-3",
+  "tree": Object {
+    "item-0": Object {
+      "item-1": Object {},
+    },
+  },
+  "treeNodes": Object {
+    "item-0": Object {
+      "children": Array [
+        "item-1",
+        "item-2",
+      ],
+      "id": "item-0",
+      "isCollapsed": false,
+      "parent": "",
+      "title": "one",
+    },
+    "item-1": Object {
+      "children": Array [],
+      "id": "item-1",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "two",
+    },
+    "item-2": Object {
+      "children": Array [
+        "item-3",
+      ],
+      "id": "item-2",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "three",
+    },
+    "item-3": Object {
+      "children": Array [
+        "item-4",
+        "item-5",
+        "item-6",
+      ],
+      "id": "item-3",
+      "isCollapsed": false,
+      "parent": "item-2",
+      "title": "four",
+    },
+    "item-4": Object {
+      "children": Array [],
+      "id": "item-4",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-5": Object {
+      "children": Array [],
+      "id": "item-5",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-6": Object {
+      "children": Array [],
+      "id": "item-6",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+  },
+}
+`;
+
+exports[`Tree should search 4`] = `
+Object {
+  "addItemInput": "four",
+  "currentId": 7,
+  "itemSearchInput": "",
+  "selectedNode": "item-3",
+  "tree": Object {
+    "item-0": Object {
+      "item-1": Object {},
+      "item-2": Object {
+        "item-3": Object {
+          "item-4": Object {},
+          "item-5": Object {},
+          "item-6": Object {},
+        },
+      },
+    },
+  },
+  "treeNodes": Object {
+    "item-0": Object {
+      "children": Array [
+        "item-1",
+        "item-2",
+      ],
+      "id": "item-0",
+      "isCollapsed": false,
+      "parent": "",
+      "title": "one",
+    },
+    "item-1": Object {
+      "children": Array [],
+      "id": "item-1",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "two",
+    },
+    "item-2": Object {
+      "children": Array [
+        "item-3",
+      ],
+      "id": "item-2",
+      "isCollapsed": false,
+      "parent": "item-0",
+      "title": "three",
+    },
+    "item-3": Object {
+      "children": Array [
+        "item-4",
+        "item-5",
+        "item-6",
+      ],
+      "id": "item-3",
+      "isCollapsed": false,
+      "parent": "item-2",
+      "title": "four",
+    },
+    "item-4": Object {
+      "children": Array [],
+      "id": "item-4",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-5": Object {
+      "children": Array [],
+      "id": "item-5",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+    "item-6": Object {
+      "children": Array [],
+      "id": "item-6",
+      "isCollapsed": false,
+      "parent": "item-3",
+      "title": "four",
+    },
+  },
+}
+`;
