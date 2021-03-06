@@ -21,7 +21,10 @@ export const Container = (props: { state: IState }) => (
           <li
             style={{
               marginLeft: node.indent * 32,
-              backgroundColor: node.isHighlighted ? "yellow" : "unset",
+              backgroundColor:
+                (node.isHighlighted && "yellow") ||
+                (node.id === props.state.selectedNode && "lightgrey") ||
+                "unset",
             }}
           >
             <EventWrapper

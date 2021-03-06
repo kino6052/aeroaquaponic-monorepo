@@ -4,8 +4,6 @@ import { EventSubject } from "./utils/EventWrapper";
 
 export type InputType = "change" | "click" | "focus";
 
-export const RootId = "root";
-
 export enum Id {
   AddItemButton = "add-item-button",
   AddItemInput = "add-item-input",
@@ -14,6 +12,8 @@ export enum Id {
   SearchItemsInput = "search-items-input",
   CollapseItemButton = "collapse-button",
 }
+
+export const RootId = `${Id.Item}-root`;
 
 export type IInput = [InputType, string, string];
 
@@ -51,7 +51,7 @@ export const initialState: IState = {
   treeNodes: {
     [RootId]: RootNode,
   },
-  tree: [],
+  tree: [RootId],
   selectedNode: "",
   itemSearchInput: "",
   addItemInput: "",
