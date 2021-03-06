@@ -1,10 +1,35 @@
-import { Id, IInput, initialState, INode, IState, ITree } from "../bridge";
+import {
+  Id,
+  IInput,
+  initialState,
+  INode,
+  IState,
+  ITree,
+  RootId,
+} from "../bridge";
+import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
 
 const getIds = (tree: ITree): string[] =>
   Object.entries(tree).reduce((acc, [id, tree]) => {
     return [...acc, id, ...getIds(tree)];
   }, [] as string[]);
+
+const getProcess = ({ treeNodes }: IState, value: string) =>
+  function process(
+    id: string = "root",
+    predicate: (child: string, value: string, hasChildren: boolean) => boolean
+  ): ITree {
+    return (
+      treeNodes[id]?.children.reduce((acc, child) => {
+        const result = process(child, predicate);
+        const hasChildren = Object.entries(result).length > 0;
+        const hasTestPassed = predicate(child, value, hasChildren);
+        if (hasTestPassed) return { ...acc, [child]: result };
+        return acc;
+      }, {}) || {}
+    );
+  };
 
 export const act = (state: IState) => ([type, id, value]: IInput): IState => {
   if (type === "change" && id === Id.AddItemInput) {
@@ -13,15 +38,16 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       addItemInput: value,
     };
   } else if (type === "click" && id === Id.AddItemButton) {
+    const selectedId = state.selectedNode || RootId;
     const newNode: INode = {
       children: [] as string[],
       id: `${Id.Item}-${Utils.generateId()}`,
       isCollapsed: false,
-      parent: state.selectedNode,
+      parent: selectedId,
       title: state.addItemInput,
       isHighlighted: false,
     };
-    const parent = state.treeNodes[state.selectedNode];
+    const parent = state.treeNodes[selectedId];
     const newParent =
       (parent && {
         [parent.id]: {
@@ -35,16 +61,9 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       ...newParent,
       ...{ [newNode.id]: newNode },
     };
-    const process = (id: string = ""): ITree =>
-      treeNodes[id]?.children.reduce(
-        (acc, child) => ({ ...acc, [child]: process(child) }),
-        {}
-      ) || {};
-    const tree = Object.values(treeNodes)
-      .filter(({ parent }) => parent === "")
-      .reduce((acc, node) => {
-        return { ...acc, [node.id]: process(node.id) };
-      }, {});
+    const tree = {
+      [RootId]: getProcess({ ...state, treeNodes }, value)("root", () => true),
+    };
     return {
       ...state,
       treeNodes,
@@ -57,22 +76,20 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
     };
   } else if (type === "change" && Id.SearchItemsInput) {
     const treeNodes = state.treeNodes;
-    const process = (id: string = ""): ITree =>
-      treeNodes[id]?.children.reduce((acc, child) => {
-        const node = treeNodes[child];
-        const hasSearchTerm = node.title
-          .toLowerCase()
-          .includes(value.toLowerCase());
-        const result = process(child);
-        const hasChildren = Object.entries(result).length > 0;
-        if (hasSearchTerm || hasChildren) return { ...acc, [child]: result };
-        return acc;
-      }, {}) || {};
-    const tree = Object.values(treeNodes)
-      .filter(({ parent }) => parent === "")
-      .reduce((acc, node) => {
-        return { ...acc, [node.id]: process(node.id) };
-      }, {});
+    const getHasSearchTerm = (
+      child: string,
+      value: string,
+      hasChildren: boolean
+    ) => {
+      const node = treeNodes[child];
+      const hasSearchTerm = node.title
+        .toLowerCase()
+        .includes(value.toLowerCase());
+      return hasSearchTerm || hasChildren;
+    };
+    const tree = {
+      [RootId]: getProcess(state, value)("root", getHasSearchTerm),
+    };
     const newTreeNodes = Object.values(state.treeNodes)
       .map((node) => {
         const isHighlighted =
@@ -93,7 +110,6 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       treeNodes: newTreeNodes,
     };
   } else if (type === "click" && id.includes(Id.CollapseItemButton)) {
-    console.warn("here");
     const treeNodes = state.treeNodes;
     const processedId = id.replace(`${Id.CollapseItemButton}-`, "");
     const newTreeNodes = Object.values(state.treeNodes)
@@ -109,17 +125,12 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
         (acc, node) => ({ ...acc, [node.id]: node }),
         {} as typeof treeNodes
       );
-    const process = (id: string = ""): ITree =>
-      newTreeNodes[id]?.children.reduce((acc, child) => {
-        const node = newTreeNodes[child];
-        const isCollapsed = node.isCollapsed;
-        return { ...acc, [child]: isCollapsed ? {} : process(child) };
-      }, {}) || {};
-    const tree = Object.values(newTreeNodes)
-      .filter((node) => node.parent === "" && !node.isCollapsed)
-      .reduce((acc, node) => {
-        return { ...acc, [node.id]: process(node.id) };
-      }, {});
+    const tree = {
+      [RootId]: getProcess({ ...state, treeNodes: newTreeNodes }, value)(
+        "root",
+        (child) => !newTreeNodes[newTreeNodes[child].parent].isCollapsed
+      ),
+    };
     return {
       ...state,
       tree,
