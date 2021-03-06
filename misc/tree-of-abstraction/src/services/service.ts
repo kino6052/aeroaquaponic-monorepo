@@ -7,28 +7,20 @@ import {
   ITree,
   RootId,
 } from "../bridge";
-import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
-
-const getIds = (tree: ITree): string[] =>
-  Object.entries(tree).reduce((acc, [id, tree]) => {
-    return [...acc, id, ...getIds(tree)];
-  }, [] as string[]);
 
 const getProcess = ({ treeNodes }: IState, value: string) =>
   function process(
     id: string = "root",
     predicate: (child: string, value: string, hasChildren: boolean) => boolean
   ): ITree {
-    return (
-      treeNodes[id]?.children.reduce((acc, child) => {
-        const result = process(child, predicate);
-        const hasChildren = Object.entries(result).length > 0;
-        const hasTestPassed = predicate(child, value, hasChildren);
-        if (hasTestPassed) return { ...acc, [child]: result };
-        return acc;
-      }, {}) || {}
-    );
+    return treeNodes[id]?.children.reduce((acc, child) => {
+      const result = process(child, predicate);
+      const hasChildren = Object.entries(result).length > 0;
+      const hasTestPassed = predicate(child, value, hasChildren);
+      if (hasTestPassed) return [...acc, treeNodes[child], ...result];
+      return acc;
+    }, [] as ITree);
   };
 
 export const act = (state: IState) => ([type, id, value]: IInput): IState => {
@@ -46,6 +38,7 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       parent: selectedId,
       title: state.addItemInput,
       isHighlighted: false,
+      indent: state.treeNodes[selectedId].indent + 1,
     };
     const parent = state.treeNodes[selectedId];
     const newParent =
@@ -61,9 +54,7 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       ...newParent,
       ...{ [newNode.id]: newNode },
     };
-    const tree = {
-      [RootId]: getProcess({ ...state, treeNodes }, value)("root", () => true),
-    };
+    const tree = getProcess({ ...state, treeNodes }, value)("root", () => true);
     return {
       ...state,
       treeNodes,
@@ -87,9 +78,7 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
         .includes(value.toLowerCase());
       return hasSearchTerm || hasChildren;
     };
-    const tree = {
-      [RootId]: getProcess(state, value)("root", getHasSearchTerm),
-    };
+    const tree = getProcess(state, value)("root", getHasSearchTerm);
     const newTreeNodes = Object.values(state.treeNodes)
       .map((node) => {
         const isHighlighted =
@@ -125,12 +114,10 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
         (acc, node) => ({ ...acc, [node.id]: node }),
         {} as typeof treeNodes
       );
-    const tree = {
-      [RootId]: getProcess({ ...state, treeNodes: newTreeNodes }, value)(
-        "root",
-        (child) => !newTreeNodes[newTreeNodes[child].parent].isCollapsed
-      ),
-    };
+    const tree = getProcess({ ...state, treeNodes: newTreeNodes }, value)(
+      "root",
+      (child) => !newTreeNodes[newTreeNodes[child].parent].isCollapsed
+    );
     return {
       ...state,
       tree,
