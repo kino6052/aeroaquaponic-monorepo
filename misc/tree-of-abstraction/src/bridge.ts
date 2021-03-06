@@ -10,7 +10,7 @@ export enum Id {
   AddItemButton = "add-item-button",
   AddItemInput = "add-item-input",
   SaveItemButton = "save-item-button",
-  Item = "item",
+  Item = "item-element",
   SearchItemsInput = "search-items-input",
   CollapseItemButton = "collapse-button",
 }
@@ -27,7 +27,7 @@ export interface INode {
   indent: number;
 }
 
-export type ITree = INode[];
+export type ITree = string[];
 
 export type IState = {
   treeNodes: { [id: string]: INode };
@@ -51,14 +51,15 @@ export const initialState: IState = {
   treeNodes: {
     [RootId]: RootNode,
   },
-  tree: [RootNode],
+  tree: [],
   selectedNode: "",
   itemSearchInput: "",
   addItemInput: "",
 };
 
 EventSubject.subscribe((event) => {
-  StateSubject.next(act(StateSubject.getValue())(event));
+  const newState = act(StateSubject.getValue())(event);
+  StateSubject.next(newState);
 });
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);

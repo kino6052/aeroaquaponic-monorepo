@@ -1,7 +1,6 @@
 import * as React from "react";
 import { StateSubject } from "./bridge";
 import { Container } from "./components/Container";
-import "./styles.css";
 import { useSharedState } from "./utils/utils";
 
 export default function App() {

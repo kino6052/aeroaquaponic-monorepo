@@ -18,7 +18,7 @@ const getProcess = ({ treeNodes }: IState, value: string) =>
       const result = process(child, predicate);
       const hasChildren = Object.entries(result).length > 0;
       const hasTestPassed = predicate(child, value, hasChildren);
-      if (hasTestPassed) return [...acc, treeNodes[child], ...result];
+      if (hasTestPassed) return [...acc, child, ...result];
       return acc;
     }, [] as ITree);
   };
@@ -104,7 +104,8 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
     const newTreeNodes = Object.values(state.treeNodes)
       .map((node) => {
         const processedNodeId = node.id.replace(`${Id.Item}-`, "");
-        const isCollapsed = processedNodeId === processedId;
+        const isCollapsed =
+          processedNodeId === processedId && !node.isCollapsed;
         return {
           ...node,
           isCollapsed,
