@@ -36,7 +36,7 @@ export const Container = (props: { state: IState }) => (
             <EventWrapper
               id={`${Id.CollapseItemButton}-${id.replace(`${Id.Item}-`, "")}`}
             >
-              <button>_</button>
+              <button>{node.isCollapsed ? "open" : "close"}</button>
             </EventWrapper>
           </li>
         );

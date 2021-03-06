@@ -31,15 +31,38 @@ const processState = (
   predicates: Array<
     (state: IState) => (child: string, hasChildren: boolean) => boolean
   >,
+  maps: Array<(state: IState) => IState["treeNodes"]>,
   state: IState = initialState
-): IState =>
-  predicates.reduce(
-    (acc, predicate) => ({
-      ...acc,
-      tree: [RootId, ...getProcess(acc)(RootId, predicate)],
+): IState => {
+  const updatedState = maps.reduce(
+    (state, map) => ({
+      ...state,
+      treeNodes: map(state),
     }),
     state
   );
+  const filteredState = predicates.reduce(
+    (state, predicate) => ({
+      ...state,
+      tree: [RootId, ...getProcess(state)(RootId, predicate)],
+    }),
+    updatedState
+  );
+  return filteredState;
+};
+
+const updateHighligted = (state: IState) => {
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const value = state.itemSearchInput;
+    const isHighlighted =
+      !!value && node.title.toLowerCase().includes(value.toLowerCase());
+    return {
+      ...node,
+      isHighlighted,
+    };
+  });
+  return newTreeNodes;
+};
 
 const getIsCollapsed = (state: IState) => (child: string) => {
   const { itemSearchInput, treeNodes } = state;
@@ -118,22 +141,10 @@ const clickItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
-const changeSearchInput = (
-  state: IState,
-  [type, id, value]: IEvent
-): IState => {
-  const newTreeNodes = updateTreeNodes(state, (node) => {
-    const isHighlighted =
-      !!value && node.title.toLowerCase().includes(value.toLowerCase());
-    return {
-      ...node,
-      isHighlighted,
-    };
-  });
+const changeSearchInput = (state: IState, [, , value]: IEvent): IState => {
   return {
     ...state,
     itemSearchInput: value,
-    treeNodes: newTreeNodes,
   };
 };
 
@@ -176,14 +187,18 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id.includes(Id.CollapseItemButton) &&
     collapseItem(state, [type, id, value]);
-  const result =
+  const eventProcessingResult =
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||
     changeSearchInputResult ||
     collapseItemResult ||
     state;
-  return processState([getIsVisible], result);
+  return processState(
+    [getIsVisible],
+    [updateHighligted],
+    eventProcessingResult
+  );
 };
 
 export const sequence = (inputs: IInput[]): IState =>
