@@ -32,7 +32,6 @@ export type IState = {
   selectedNode: string;
   addItemInput: string;
   itemSearchInput: string;
-  currentId: number;
 };
 
 export const initialState: IState = {
@@ -41,7 +40,6 @@ export const initialState: IState = {
   selectedNode: "",
   itemSearchInput: "",
   addItemInput: "",
-  currentId: 0,
 };
 
 EventSubject.subscribe((event) => {

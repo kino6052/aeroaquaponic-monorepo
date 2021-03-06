@@ -1,4 +1,5 @@
 import { Id, IInput, initialState, INode, IState, ITree } from "../bridge";
+import { Utils } from "../utils/utils";
 
 const getIds = (tree: ITree): string[] =>
   Object.entries(tree).reduce((acc, [id, tree]) => {
@@ -14,7 +15,7 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
   } else if (type === "click" && id === Id.AddItemButton) {
     const newNode: INode = {
       children: [] as string[],
-      id: `${Id.Item}-${state.currentId}`,
+      id: `${Id.Item}-${Utils.generateId()}`,
       isCollapsed: false,
       parent: state.selectedNode,
       title: state.addItemInput,
@@ -46,7 +47,6 @@ export const act = (state: IState) => ([type, id, value]: IInput): IState => {
       }, {});
     return {
       ...state,
-      currentId: state.currentId + 1,
       treeNodes,
       tree,
     };
