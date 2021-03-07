@@ -66,7 +66,7 @@ const updateHighligted = (state: IState) => {
 
 const getIsCollapsed = (state: IState) => (child: string) => {
   const { itemSearchInput, treeNodes } = state;
-  return !itemSearchInput && !treeNodes[treeNodes[child].parent].isCollapsed;
+  return !itemSearchInput && !treeNodes[treeNodes[child].parent]?.isCollapsed;
 };
 
 const getHasSearchTerm = ({ treeNodes, itemSearchInput }: IState) => (
@@ -88,8 +88,10 @@ const getIsVisible = (state: IState) => (
   const isSelected = state.selectedNode === child;
   const isCollapsed = getIsCollapsed(state)(child);
   const hasInput = !!state.itemSearchInput;
+  const hasParent = !!state.treeNodes[child].parent;
   return (
-    isSelected || (hasInput && hasSearchTerm) || isCollapsed || hasChildren
+    hasParent &&
+    (isSelected || (hasInput && hasSearchTerm) || isCollapsed || hasChildren)
   );
 };
 
@@ -134,6 +136,23 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
   return {
     ...state,
     treeNodes,
+  };
+};
+
+const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
+  const processedId = id.replace(`${Id.RemoveItemButton}-`, "");
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const processedNodeId = node.id.replace(`${Id.Item}-`, "");
+    const isFound = processedNodeId === processedId && processedId !== RootId;
+    if (!isFound) return node;
+    return {
+      ...node,
+      parent: "",
+    };
+  });
+  return {
+    ...state,
+    treeNodes: newTreeNodes,
   };
 };
 
@@ -190,12 +209,17 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id.includes(Id.CollapseItemButton) &&
     collapseItem(state, [type, id, value]);
+  const clickRemoveItemButtonResult =
+    type === "click" &&
+    id.includes(Id.RemoveItemButton) &&
+    clickRemoveItemButton(state, [type, id, value]);
   const eventProcessingResult =
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||
     changeSearchInputResult ||
     collapseItemResult ||
+    clickRemoveItemButtonResult ||
     state;
   return processState(
     [getIsVisible],
