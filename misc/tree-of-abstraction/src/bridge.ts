@@ -11,6 +11,8 @@ export enum Id {
   Item = "item-element",
   SearchItemsInput = "search-items-input",
   CollapseItemButton = "collapse-button",
+  RemoveItemButton = "remove-item-button",
+  EditItemButton = "edit-item-button",
 }
 
 export const RootId = `${Id.Item}-root`;

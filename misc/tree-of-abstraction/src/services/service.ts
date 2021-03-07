@@ -85,9 +85,12 @@ const getIsVisible = (state: IState) => (
   hasChildren: boolean
 ) => {
   const hasSearchTerm = getHasSearchTerm(state)(child, hasChildren);
+  const isSelected = state.selectedNode === child;
   const isCollapsed = getIsCollapsed(state)(child);
   const hasInput = !!state.itemSearchInput;
-  return (hasInput && hasSearchTerm) || isCollapsed;
+  return (
+    isSelected || (hasInput && hasSearchTerm) || isCollapsed || hasChildren
+  );
 };
 
 const updateTreeNodes = (state: IState, cb: (node: INode) => INode) =>
