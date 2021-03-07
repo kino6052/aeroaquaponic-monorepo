@@ -1,6 +1,6 @@
-import { Id, initialState, RootId } from "../../bridge";
+import { Id, RootId } from "../../bridge";
 import { Utils } from "../../utils/utils";
-import { act, sequence } from "../service";
+import { sequence } from "../service";
 
 let counter = 0;
 

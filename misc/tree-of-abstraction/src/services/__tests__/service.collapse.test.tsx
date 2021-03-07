@@ -63,9 +63,6 @@ describe("Collapse Logic", () => {
           "item-element-1",
           "item-element-2",
           "item-element-3",
-          "item-element-4",
-          "item-element-5",
-          "item-element-6",
         ],
         "treeNodes": Object {
           "item-element-0": Object {

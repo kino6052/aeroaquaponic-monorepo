@@ -1,3 +1,4 @@
+import { intersection, union, update, without } from "lodash";
 import {
   Id,
   IInput,
@@ -26,6 +27,20 @@ const getProcess = (state: IState) =>
       return acc;
     }, [] as ITree);
   };
+
+const getDescendants = (id: string, state: IState): string[] => {
+  const node = state.treeNodes[id];
+  if (!node) return [];
+  return node.children.reduce((acc, id) => {
+    return [...acc, id, ...getDescendants(id, state)] as string[];
+  }, [] as string[]);
+};
+
+const getParents = (id: string, state: IState): string[] => {
+  const node = state.treeNodes[id];
+  if (!node) return [];
+  return [...getParents(node.parent, state), id];
+};
 
 const processState = (
   predicates: Array<
@@ -141,14 +156,22 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
 
 const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
   const processedId = id.replace(`${Id.RemoveItemButton}-`, "");
+  const itemId = `${Id.Item}-${processedId}`;
+  const parentId = state.treeNodes[itemId]?.parent;
   const newTreeNodes = updateTreeNodes(state, (node) => {
-    const processedNodeId = node.id.replace(`${Id.Item}-`, "");
-    const isFound = processedNodeId === processedId && processedId !== RootId;
-    if (!isFound) return node;
-    return {
-      ...node,
-      parent: "",
-    };
+    const isFound = node.id === itemId && node.id !== RootId;
+    const isParent = node.id === parentId;
+    if (isParent)
+      return {
+        ...node,
+        children: node.children.filter((id) => id !== itemId),
+      };
+    if (isFound)
+      return {
+        ...node,
+        parent: "",
+      };
+    return node;
   });
   return {
     ...state,
@@ -168,6 +191,43 @@ const changeSearchInput = (state: IState, [, , value]: IEvent): IState => {
     ...state,
     itemSearchInput: value,
   };
+};
+
+const p = (state: IState): IState => {
+  const currentTree = [RootId, ...getDescendants(RootId, state)];
+  const highlighted = Object.values(state.treeNodes)
+    .filter(({ isHighlighted }) => isHighlighted)
+    .map(({ id }) => id);
+  const highlightedParents = highlighted.reduce(
+    (acc, id) => {
+      return [...acc, ...getParents(id, state)];
+    },
+    [...highlighted] as string[]
+  );
+  const selectedParents = getParents(state.selectedNode, state);
+  const collapsed = Object.values(state.treeNodes)
+    .filter(({ isCollapsed }) => isCollapsed)
+    .map(({ id }) => id);
+  const collapsedDescendants = collapsed.reduce((acc, id) => {
+    return [...acc, ...getDescendants(id, state)];
+  }, [] as string[]);
+  if (!state.itemSearchInput) {
+    const toExclude = without(
+      collapsedDescendants,
+      ...highlightedParents,
+      ...selectedParents
+    );
+    const tree = without(currentTree, ...toExclude);
+    return { ...state, tree };
+  } else {
+    return {
+      ...state,
+      tree: intersection(
+        currentTree,
+        union(highlightedParents, selectedParents)
+      ),
+    };
+  }
 };
 
 const collapseItem = (state: IState, [, id]: IEvent): IState => {
@@ -221,11 +281,10 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     collapseItemResult ||
     clickRemoveItemButtonResult ||
     state;
-  return processState(
-    [getIsVisible],
-    [updateHighligted],
-    eventProcessingResult
-  );
+  return p({
+    ...eventProcessingResult,
+    treeNodes: updateHighligted(eventProcessingResult),
+  });
 };
 
 export const sequence = (inputs: IInput[]): IState =>
