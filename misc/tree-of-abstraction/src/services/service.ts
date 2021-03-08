@@ -1,32 +1,16 @@
-import { intersection, union, update, without } from "lodash";
+import { intersection, union, without } from "lodash";
 import {
   Id,
   IInput,
   initialState,
   INode,
   IState,
-  ITree,
+  RedoStack,
   RootId,
+  UndoStack,
 } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
-
-const getProcess = (state: IState) =>
-  function process(
-    id: string = "root",
-    predicate: (
-      state: IState
-    ) => (child: string, hasChildren: boolean) => boolean = () => () => true
-  ): ITree {
-    const { treeNodes } = state;
-    return treeNodes[id]?.children.reduce((acc, child) => {
-      const result = process(child, predicate);
-      const hasChildren = Object.entries(result).length > 0;
-      const hasTestPassed = predicate(state)(child, hasChildren);
-      if (hasTestPassed) return [...acc, child, ...result];
-      return acc;
-    }, [] as ITree);
-  };
 
 const getDescendants = (id: string, state: IState): string[] => {
   const node = state.treeNodes[id];
@@ -42,30 +26,6 @@ const getParents = (id: string, state: IState): string[] => {
   return [...getParents(node.parent, state), id];
 };
 
-const processState = (
-  predicates: Array<
-    (state: IState) => (child: string, hasChildren: boolean) => boolean
-  >,
-  maps: Array<(state: IState) => IState["treeNodes"]>,
-  state: IState = initialState
-): IState => {
-  const updatedState = maps.reduce(
-    (state, map) => ({
-      ...state,
-      treeNodes: map(state),
-    }),
-    state
-  );
-  const filteredState = predicates.reduce(
-    (state, predicate) => ({
-      ...state,
-      tree: [RootId, ...getProcess(state)(RootId, predicate)],
-    }),
-    updatedState
-  );
-  return filteredState;
-};
-
 const updateHighligted = (state: IState) => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const value = state.itemSearchInput;
@@ -77,37 +37,6 @@ const updateHighligted = (state: IState) => {
     };
   });
   return newTreeNodes;
-};
-
-const getIsCollapsed = (state: IState) => (child: string) => {
-  const { itemSearchInput, treeNodes } = state;
-  return !itemSearchInput && !treeNodes[treeNodes[child].parent]?.isCollapsed;
-};
-
-const getHasSearchTerm = ({ treeNodes, itemSearchInput }: IState) => (
-  child: string,
-  hasChildren: boolean
-) => {
-  const node = treeNodes[child];
-  const hasSearchTerm = node.title
-    .toLowerCase()
-    .includes(itemSearchInput.toLowerCase());
-  return hasSearchTerm || hasChildren;
-};
-
-const getIsVisible = (state: IState) => (
-  child: string,
-  hasChildren: boolean
-) => {
-  const hasSearchTerm = getHasSearchTerm(state)(child, hasChildren);
-  const isSelected = state.selectedNode === child;
-  const isCollapsed = getIsCollapsed(state)(child);
-  const hasInput = !!state.itemSearchInput;
-  const hasParent = !!state.treeNodes[child].parent;
-  return (
-    hasParent &&
-    (isSelected || (hasInput && hasSearchTerm) || isCollapsed || hasChildren)
-  );
 };
 
 const updateTreeNodes = (state: IState, cb: (node: INode) => INode) =>
@@ -126,6 +55,7 @@ const changeAddItemInput = (state: IState, [, , value]: IEvent): IState => {
 };
 
 const clickAddItemInput = (state: IState, event: IEvent): IState => {
+  UndoStack.push(state);
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
@@ -155,6 +85,7 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
 };
 
 const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
+  UndoStack.push(state);
   const processedId = id.replace(`${Id.RemoveItemButton}-`, "");
   const itemId = `${Id.Item}-${processedId}`;
   const parentId = state.treeNodes[itemId]?.parent;
@@ -193,7 +124,7 @@ const changeSearchInput = (state: IState, [, , value]: IEvent): IState => {
   };
 };
 
-const p = (state: IState): IState => {
+const process = (state: IState): IState => {
   const currentTree = [RootId, ...getDescendants(RootId, state)];
   const highlighted = Object.values(state.treeNodes)
     .filter(({ isHighlighted }) => isHighlighted)
@@ -249,6 +180,16 @@ const collapseItem = (state: IState, [, id]: IEvent): IState => {
 };
 
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
+  const redoResult =
+    type === "change" &&
+    id === Id.Redo &&
+    UndoStack.push(state) &&
+    RedoStack.pop();
+  const undoResult =
+    type === "change" &&
+    id === Id.Undo &&
+    RedoStack.push(state) &&
+    UndoStack.pop();
   const changeAddItemInputResult =
     type === "change" &&
     id === Id.AddItemInput &&
@@ -274,6 +215,8 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     id.includes(Id.RemoveItemButton) &&
     clickRemoveItemButton(state, [type, id, value]);
   const eventProcessingResult =
+    undoResult ||
+    redoResult ||
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||
@@ -281,7 +224,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     collapseItemResult ||
     clickRemoveItemButtonResult ||
     state;
-  return p({
+  return process({
     ...eventProcessingResult,
     treeNodes: updateHighligted(eventProcessingResult),
   });

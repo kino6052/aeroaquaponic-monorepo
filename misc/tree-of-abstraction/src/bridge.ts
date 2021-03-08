@@ -13,6 +13,8 @@ export enum Id {
   CollapseItemButton = "collapse-button",
   RemoveItemButton = "remove-item-button",
   EditItemButton = "edit-item-button",
+  Undo = "undo",
+  Redo = "redo",
 }
 
 export const RootId = `${Id.Item}-root`;
@@ -59,9 +61,23 @@ export const initialState: IState = {
   addItemInput: "",
 };
 
+export const UndoStack: IState[] = [];
+export const RedoStack: IState[] = [];
+
 EventSubject.subscribe((event) => {
-  const newState = act(StateSubject.getValue())(event);
+  const prevState = StateSubject.getValue();
+  const newState = act(prevState)(event);
   StateSubject.next(newState);
 });
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);
+
+document.addEventListener("keypress", (e) => {
+  if (e.code === "KeyZ" && e.ctrlKey)
+    EventSubject.next(["change", Id.Undo, ""]);
+});
+
+document.addEventListener("keypress", (e) => {
+  if (e.code === "KeyY" && e.ctrlKey)
+    EventSubject.next(["change", Id.Redo, ""]);
+});
