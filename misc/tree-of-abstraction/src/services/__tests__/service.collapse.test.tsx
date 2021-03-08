@@ -57,6 +57,7 @@ describe("Collapse Logic", () => {
         "addItemInput": "four",
         "itemSearchInput": "",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",

@@ -179,17 +179,18 @@ const collapseItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
+const showControls = (state: IState, [type, , value]: IEvent): IState => {
+  return {
+    ...state,
+    shouldShowControls: type === "keydown" && value === "ControlLeft",
+  };
+};
+
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
-  const redoResult =
-    type === "change" &&
-    id === Id.Redo &&
-    UndoStack.push(state) &&
-    RedoStack.pop();
-  const undoResult =
-    type === "change" &&
-    id === Id.Undo &&
-    RedoStack.push(state) &&
-    UndoStack.pop();
+  const ctrlPressedResult =
+    ["keydown", "keyup"].includes(type) &&
+    id === Id.Keyboard &&
+    showControls(state, [type, id, value]);
   const changeAddItemInputResult =
     type === "change" &&
     id === Id.AddItemInput &&
@@ -215,8 +216,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     id.includes(Id.RemoveItemButton) &&
     clickRemoveItemButton(state, [type, id, value]);
   const eventProcessingResult =
-    undoResult ||
-    redoResult ||
+    ctrlPressedResult ||
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||

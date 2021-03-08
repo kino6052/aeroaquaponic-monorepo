@@ -33,17 +33,24 @@ export const Container = (props: { state: IState }) => (
             >
               <span>{node.title}</span>
             </EventWrapper>
-            <span> </span>
-            <EventWrapper
-              id={`${Id.CollapseItemButton}-${id.replace(`${Id.Item}-`, "")}`}
-            >
-              <button>{node.isCollapsed ? "Open" : "Close"}</button>
-            </EventWrapper>
-            <EventWrapper
-              id={`${Id.RemoveItemButton}-${id.replace(`${Id.Item}-`, "")}`}
-            >
-              <button>Delete</button>
-            </EventWrapper>
+            {props.state.shouldShowControls && (
+              <>
+                <span> </span>
+                <EventWrapper
+                  id={`${Id.CollapseItemButton}-${id.replace(
+                    `${Id.Item}-`,
+                    ""
+                  )}`}
+                >
+                  <button>{node.isCollapsed ? "Open" : "Close"}</button>
+                </EventWrapper>
+                <EventWrapper
+                  id={`${Id.RemoveItemButton}-${id.replace(`${Id.Item}-`, "")}`}
+                >
+                  <button>Delete</button>
+                </EventWrapper>
+              </>
+            )}
           </li>
         );
       })}

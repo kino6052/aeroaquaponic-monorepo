@@ -31,6 +31,7 @@ describe("App", () => {
         "addItemInput": "",
         "itemSearchInput": "",
         "selectedNode": "",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
         ],
@@ -62,6 +63,7 @@ describe("Tree", () => {
         "addItemInput": "one",
         "itemSearchInput": "",
         "selectedNode": "",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -122,6 +124,7 @@ describe("Tree", () => {
         "addItemInput": "four",
         "itemSearchInput": "",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",

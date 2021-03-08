@@ -56,6 +56,7 @@ describe("Search", () => {
         "addItemInput": "four",
         "itemSearchInput": "o",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -186,6 +187,7 @@ describe("Search", () => {
         "addItemInput": "four",
         "itemSearchInput": "ur",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -315,6 +317,7 @@ describe("Search", () => {
         "addItemInput": "four",
         "itemSearchInput": "TWO",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -442,6 +445,7 @@ describe("Search", () => {
         "addItemInput": "four",
         "itemSearchInput": "",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -572,6 +576,7 @@ describe("Search", () => {
         "addItemInput": "four",
         "itemSearchInput": "four",
         "selectedNode": "item-element-1",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",

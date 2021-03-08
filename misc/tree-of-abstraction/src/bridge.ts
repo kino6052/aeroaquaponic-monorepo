@@ -13,8 +13,7 @@ export enum Id {
   CollapseItemButton = "collapse-button",
   RemoveItemButton = "remove-item-button",
   EditItemButton = "edit-item-button",
-  Undo = "undo",
-  Redo = "redo",
+  Keyboard = "keyboard",
 }
 
 export const RootId = `${Id.Item}-root`;
@@ -39,6 +38,7 @@ export type IState = {
   selectedNode: string;
   addItemInput: string;
   itemSearchInput: string;
+  shouldShowControls: boolean;
 };
 
 const RootNode = {
@@ -59,6 +59,7 @@ export const initialState: IState = {
   selectedNode: "",
   itemSearchInput: "",
   addItemInput: "",
+  shouldShowControls: false,
 };
 
 export const UndoStack: IState[] = [];
@@ -74,10 +75,18 @@ export const StateSubject = new BehaviorSubject<IState>(initialState);
 
 document.addEventListener("keypress", (e) => {
   if (e.code === "KeyZ" && e.ctrlKey)
-    EventSubject.next(["change", Id.Undo, ""]);
+    EventSubject.next(["change", Id.Keyboard, "ctrl+z"]);
 });
 
 document.addEventListener("keypress", (e) => {
   if (e.code === "KeyY" && e.ctrlKey)
-    EventSubject.next(["change", Id.Redo, ""]);
+    EventSubject.next(["change", Id.Keyboard, "ctrl+y"]);
+});
+
+document.addEventListener("keydown", (e) => {
+  EventSubject.next(["keydown", Id.Keyboard, e.code]);
+});
+
+document.addEventListener("keyup", (e) => {
+  EventSubject.next(["keyup", Id.Keyboard, e.code]);
 });

@@ -56,6 +56,7 @@ describe("Remove", () => {
         "addItemInput": "four",
         "itemSearchInput": "",
         "selectedNode": "item-element-3",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -180,6 +181,7 @@ describe("Remove", () => {
         "addItemInput": "four",
         "itemSearchInput": "",
         "selectedNode": "remove-item-button-item-element-root",
+        "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
           "item-element-0",
