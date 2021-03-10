@@ -2,6 +2,7 @@ import { intersection, union, without } from "lodash";
 import { Id, initialState, INode, IState, RootId, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
+import { Shortcut } from "./shortcuts.service";
 
 const getDescendants = (id: string, state: IState): string[] => {
   const node = state.treeNodes[id];
@@ -205,6 +206,22 @@ const toggleEditItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
+const shortcutToggleEditItem = (state: IState, event: IEvent): IState => {
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const isFound = node.id === state.selectedNode;
+    if (!isFound) return node;
+    const isEditable = !node.isEditable;
+    return {
+      ...node,
+      isEditable,
+    };
+  });
+  return {
+    ...state,
+    treeNodes: newTreeNodes,
+  };
+};
+
 const showControls = (state: IState, [type, , value]: IEvent): IState => {
   return {
     ...state,
@@ -217,6 +234,11 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id.includes(Id.EditItemButton) &&
     toggleEditItem(state, [type, id, value]);
+  const shortcutToggleEditResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.Edit &&
+    shortcutToggleEditItem(state, [type, id, value]);
   const ctrlPressedResult =
     ["keydown", "keyup"].includes(type) &&
     id === Id.Keyboard &&
@@ -251,7 +273,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     clickRemoveItemButton(state, [type, id, value]);
 
   const eventProcessingResult =
-    ctrlPressedResult ||
+    // ctrlPressedResult ||
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||
@@ -260,6 +282,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     clickRemoveItemButtonResult ||
     editItemResult ||
     changeItemTitleResult ||
+    shortcutToggleEditResult ||
     state;
 
   return process({
