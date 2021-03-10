@@ -55,6 +55,7 @@ const changeAddItemInput = (state: IState, [, , value]: IEvent): IState => {
 };
 
 const clickAddItemInput = (state: IState, event: IEvent): IState => {
+  if (!state.addItemInput) return state;
   UndoStack.push(state);
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
@@ -230,5 +231,5 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
   });
 };
 
-export const sequence = (inputs: IInput[]): IState =>
+export const sequence = (inputs: IEvent[]): IState =>
   inputs.reduce((acc, input) => act(acc)(input), initialState);

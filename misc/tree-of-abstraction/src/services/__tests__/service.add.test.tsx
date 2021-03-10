@@ -1,4 +1,5 @@
-import { Id, initialState } from "../../bridge";
+import { cloneDeep } from "lodash";
+import { Id, initialState, RootId } from "../../bridge";
 import { Utils } from "../../utils/utils";
 import { act, sequence } from "../service";
 
@@ -49,6 +50,36 @@ describe("App", () => {
       }
     `);
   });
+
+  it("should build tree", () => {
+    const s = cloneDeep(initialState);
+    s.treeNodes[RootId].children = ["test"];
+    expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "test",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [
+              "test",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
 });
 
 describe("Tree", () => {
@@ -82,6 +113,36 @@ describe("Tree", () => {
             "children": Array [
               "item-element-0",
             ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should not add node if empty", () => {
+    expect(
+      sequence([
+        ["change", Id.AddItemInput, ""],
+        ["click", Id.AddItemButton, ""],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": false,

@@ -34,7 +34,6 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/src/new.ts",
       "!<rootDir>/node_modules/",
       "!<rootDir>/node_modules/*"
     ],
