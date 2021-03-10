@@ -5,15 +5,13 @@ import { EventWrapper } from "../utils/EventWrapper";
 export const Container = (props: { state: IState }) => (
   <>
     <EventWrapper id={Id.SearchItemsInput}>
-      <input placeholder="Search" value={props.state.itemSearchInput} />
+      <input
+        autoFocus
+        placeholder="Search"
+        value={props.state.itemSearchInput}
+      />
     </EventWrapper>
     <br />
-    <EventWrapper id={Id.AddItemInput}>
-      <input placeholder="Add Item" value={props.state.addItemInput} />
-    </EventWrapper>
-    <EventWrapper id={Id.AddItemButton}>
-      <button>Add Item</button>
-    </EventWrapper>
     <ul>
       {props.state.tree.map((id) => {
         const node = props.state.treeNodes[id];
@@ -32,7 +30,7 @@ export const Container = (props: { state: IState }) => (
               id={`${Id.Item}-${id.replace(`${Id.Item}-`, "")}`}
             >
               {!node.isEditable && <span>{node.title}</span>}
-              {node.isEditable && <input value={node.title} />}
+              {node.isEditable && <input autoFocus value={node.title} />}
             </EventWrapper>
             {/* {props.state.shouldShowControls && (
               <>

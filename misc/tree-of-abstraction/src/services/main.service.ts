@@ -1,4 +1,4 @@
-import { intersection, union, without } from "lodash";
+import { intersection, max, union, without } from "lodash";
 import { Id, initialState, INode, IState, RootId, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
@@ -48,7 +48,7 @@ const changeAddItemInput = (state: IState, [, , value]: IEvent): IState => {
 
 const clickAddItemInput = (state: IState, event: IEvent): IState => {
   if (!state.addItemInput) return state;
-  UndoStack.push(state);
+  UndoStack.push(state.treeNodes);
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
@@ -78,8 +78,39 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
   };
 };
 
+const shortcutAddItem = (state: IState, event: IEvent): IState => {
+  UndoStack.push(state.treeNodes);
+  const selectedId = state.selectedNode || RootId;
+  const newNode: INode = {
+    children: [] as string[],
+    id: `${Id.Item}-${Utils.generateId()}`,
+    isCollapsed: false,
+    parent: selectedId,
+    title: "title",
+    isHighlighted: false,
+    isEditable: false,
+    indent: state.treeNodes[selectedId].indent + 1,
+  };
+  const parent = state.treeNodes[selectedId];
+  const newParent = {
+    [parent.id]: {
+      ...parent,
+      children: [...parent.children, newNode.id],
+    },
+  };
+  const treeNodes = {
+    ...state.treeNodes,
+    ...newParent,
+    ...{ [newNode.id]: newNode },
+  };
+  return {
+    ...state,
+    treeNodes,
+  };
+};
+
 const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
-  UndoStack.push(state);
+  UndoStack.push(state.treeNodes);
   const processedId = id.replace(`${Id.RemoveItemButton}-`, "");
   const itemId = `${Id.Item}-${processedId}`;
   const parentId = state.treeNodes[itemId]?.parent;
@@ -222,6 +253,84 @@ const shortcutToggleEditItem = (state: IState, event: IEvent): IState => {
   };
 };
 
+const shortcutEnter = (state: IState, event: IEvent): IState => {
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const isFound = node.id === state.selectedNode;
+    if (!isFound) return node;
+    const isEditable = false;
+    return {
+      ...node,
+      isEditable,
+    };
+  });
+  return {
+    ...state,
+    treeNodes: newTreeNodes,
+  };
+};
+
+const shortcutDown = (state: IState, event: IEvent): IState => {
+  const nodes = state.tree;
+  const maxIndex = nodes.length;
+  const index = state.tree.indexOf(state.selectedNode);
+  const newIndex = (index + 1) % maxIndex;
+  return { ...state, selectedNode: nodes[newIndex] };
+};
+
+const shortcutMoveDown = (state: IState, event: IEvent): IState => {
+  const node = state.treeNodes[state.selectedNode];
+  const parent = state.treeNodes[node.parent];
+  const children = parent.children;
+  const maxIndex = children.length - 1;
+  const index = parent.children.indexOf(node.id);
+  if (index === maxIndex) return state;
+  const newChildren = [
+    ...children.slice(0, index),
+    children[index + 1],
+    children[index],
+    ...children.slice(index + 2),
+  ];
+  const treeNodes = updateTreeNodes(state, (node) => {
+    if (node.id !== node.parent) return node;
+    return {
+      ...node,
+      children: newChildren,
+    };
+  });
+  return { ...state, treeNodes };
+};
+
+const shortcutUp = (state: IState, event: IEvent): IState => {
+  console.warn("up");
+  const nodes = state.tree;
+  const maxIndex = nodes.length;
+  const index = state.tree.indexOf(state.selectedNode);
+  const newIndex = (maxIndex + (index - 1)) % maxIndex;
+  return { ...state, selectedNode: nodes[newIndex] };
+};
+
+const shortcutMoveUp = (state: IState, event: IEvent): IState => {
+  const node = state.treeNodes[state.selectedNode];
+  const parent = state.treeNodes[node.parent];
+  const children = parent.children;
+  const index = parent.children.indexOf(node.id);
+  if (index === 0) return state;
+  const newChildren = [
+    ...children.slice(0, index),
+    children[index - 1],
+    children[index],
+    ...children.slice(index + 2),
+  ];
+  const treeNodes = updateTreeNodes(state, (node) => {
+    if (node.id !== node.parent) return node;
+    return {
+      ...node,
+      children: newChildren,
+    };
+  });
+  return { ...state, treeNodes };
+};
+
 const showControls = (state: IState, [type, , value]: IEvent): IState => {
   return {
     ...state,
@@ -230,19 +339,48 @@ const showControls = (state: IState, [type, , value]: IEvent): IState => {
 };
 
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
-  const editItemResult =
-    type === "click" &&
-    id.includes(Id.EditItemButton) &&
-    toggleEditItem(state, [type, id, value]);
+  // Shortcuts
+  const shortcutEnterResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.Enter &&
+    shortcutEnter(state, [type, id, value]);
   const shortcutToggleEditResult =
     type === "keydown" &&
     id === Id.Keyboard &&
     value === Shortcut.Edit &&
     shortcutToggleEditItem(state, [type, id, value]);
-  const ctrlPressedResult =
-    ["keydown", "keyup"].includes(type) &&
+  const shortcutAddItemResult =
+    type === "keydown" &&
     id === Id.Keyboard &&
-    showControls(state, [type, id, value]);
+    value === Shortcut.Add &&
+    shortcutAddItem(state, [type, id, value]);
+  const shortcutDownResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.Down &&
+    shortcutDown(state, [type, id, value]);
+  const shortcutUpResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.Up &&
+    shortcutUp(state, [type, id, value]);
+  const shortcutMoveDownResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.MoveDown &&
+    shortcutMoveDown(state, [type, id, value]);
+  const shortcutMoveUpResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.MoveUp &&
+    shortcutMoveUp(state, [type, id, value]);
+
+  // IO
+  const editItemResult =
+    type === "click" &&
+    id.includes(Id.EditItemButton) &&
+    toggleEditItem(state, [type, id, value]);
   const changeAddItemInputResult =
     type === "change" &&
     id === Id.AddItemInput &&
@@ -273,7 +411,12 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     clickRemoveItemButton(state, [type, id, value]);
 
   const eventProcessingResult =
-    // ctrlPressedResult ||
+    shortcutEnterResult ||
+    shortcutAddItemResult ||
+    shortcutMoveDownResult ||
+    shortcutMoveUpResult ||
+    shortcutUpResult ||
+    shortcutDownResult ||
     changeAddItemInputResult ||
     clickAddItemInputResult ||
     clickItemResult ||

@@ -65,8 +65,8 @@ export const initialState: IState = {
   shouldShowControls: false,
 };
 
-export const UndoStack: IState[] = [];
-export const RedoStack: IState[] = [];
+export const UndoStack: IState["treeNodes"][] = [];
+export const RedoStack: IState["treeNodes"][] = [];
 
 EventSubject.subscribe((event) => {
   const prevState = StateSubject.getValue();
