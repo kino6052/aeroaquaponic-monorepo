@@ -1,6 +1,6 @@
 import { Id } from "../../bridge";
 import { Utils } from "../../utils/utils";
-import { sequence } from "../service";
+import { sequence } from "../main.service";
 
 let counter = 0;
 

@@ -34,7 +34,7 @@ export const Container = (props: { state: IState }) => (
               {!node.isEditable && <span>{node.title}</span>}
               {node.isEditable && <input value={node.title} />}
             </EventWrapper>
-            {props.state.shouldShowControls && (
+            {/* {props.state.shouldShowControls && (
               <>
                 <span> </span>
                 <EventWrapper
@@ -56,7 +56,7 @@ export const Container = (props: { state: IState }) => (
                   <button>Delete</button>
                 </EventWrapper>
               </>
-            )}
+            )} */}
           </li>
         );
       })}

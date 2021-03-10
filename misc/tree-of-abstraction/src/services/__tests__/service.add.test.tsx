@@ -1,7 +1,7 @@
 import { cloneDeep } from "lodash";
 import { Id, initialState, RootId } from "../../bridge";
 import { Utils } from "../../utils/utils";
-import { act, sequence } from "../service";
+import { act, sequence } from "../main.service";
 
 let counter = 0;
 

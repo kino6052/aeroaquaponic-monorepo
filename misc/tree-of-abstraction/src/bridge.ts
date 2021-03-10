@@ -1,6 +1,7 @@
 import { BehaviorSubject } from "rxjs";
-import { act } from "./services/service";
+import { act } from "./services/main.service";
 import { EventSubject } from "./utils/EventWrapper";
+import "./services/shortcuts.service";
 
 export type InputType = "change" | "click" | "focus";
 
@@ -74,21 +75,3 @@ EventSubject.subscribe((event) => {
 });
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);
-
-document.addEventListener("keypress", (e) => {
-  if (e.code === "KeyZ" && e.ctrlKey)
-    EventSubject.next(["change", Id.Keyboard, "ctrl+z"]);
-});
-
-document.addEventListener("keypress", (e) => {
-  if (e.code === "KeyY" && e.ctrlKey)
-    EventSubject.next(["change", Id.Keyboard, "ctrl+y"]);
-});
-
-document.addEventListener("keydown", (e) => {
-  EventSubject.next(["keydown", Id.Keyboard, e.code]);
-});
-
-document.addEventListener("keyup", (e) => {
-  EventSubject.next(["keyup", Id.Keyboard, e.code]);
-});

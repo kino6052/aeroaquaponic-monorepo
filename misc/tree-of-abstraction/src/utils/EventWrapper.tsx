@@ -18,7 +18,7 @@ export const EventWrapper: React.FC<{ id: string }> = (props) => {
         id,
         onClick: (e: React.MouseEvent) => {
           e.preventDefault();
-          EventSubject.next(["click", id, ""]);
+          EventSubject.next(["click", id, `${+e.ctrlKey}${+e.shiftKey}`]);
         },
         onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
