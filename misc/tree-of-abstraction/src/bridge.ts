@@ -24,6 +24,7 @@ export interface INode {
   id: string;
   title: string;
   isCollapsed: boolean;
+  isEditable: boolean;
   children: string[];
   parent: string;
   isHighlighted: boolean;
@@ -46,6 +47,7 @@ const RootNode = {
   children: [],
   isCollapsed: false,
   isHighlighted: false,
+  isEditable: false,
   parent: "",
   title: "ROOT",
   indent: 0,

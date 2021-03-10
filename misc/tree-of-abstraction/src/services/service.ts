@@ -65,6 +65,7 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
     parent: selectedId,
     title: state.addItemInput,
     isHighlighted: false,
+    isEditable: false,
     indent: state.treeNodes[selectedId].indent + 1,
   };
   const parent = state.treeNodes[selectedId];
@@ -180,6 +181,39 @@ const collapseItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
+const changeItemTitle = (state: IState, [, id, value]: IEvent): IState => {
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const isFound = id === node.id;
+    if (!isFound) return node;
+    return {
+      ...node,
+      title: value,
+    };
+  });
+  return {
+    ...state,
+    treeNodes: newTreeNodes,
+  };
+};
+
+const toggleEditItem = (state: IState, [, id]: IEvent): IState => {
+  const processedId = id.replace(`${Id.EditItemButton}-`, "");
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    const processedNodeId = node.id.replace(`${Id.Item}-`, "");
+    const isFound = processedNodeId === processedId;
+    if (!isFound) return node;
+    const isEditable = !node.isEditable;
+    return {
+      ...node,
+      isEditable,
+    };
+  });
+  return {
+    ...state,
+    treeNodes: newTreeNodes,
+  };
+};
+
 const showControls = (state: IState, [type, , value]: IEvent): IState => {
   return {
     ...state,
@@ -188,6 +222,10 @@ const showControls = (state: IState, [type, , value]: IEvent): IState => {
 };
 
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
+  const editItemResult =
+    type === "click" &&
+    id.includes(Id.EditItemButton) &&
+    toggleEditItem(state, [type, id, value]);
   const ctrlPressedResult =
     ["keydown", "keyup"].includes(type) &&
     id === Id.Keyboard &&
@@ -200,13 +238,17 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id === Id.AddItemButton &&
     clickAddItemInput(state, [type, id, value]);
+  const changeItemTitleResult =
+    type === "change" &&
+    id.includes(Id.Item) &&
+    changeItemTitle(state, [type, id, value]);
   const clickItemResult =
     type === "click" &&
     id.includes(Id.Item) &&
     clickItem(state, [type, id, value]);
   const changeSearchInputResult =
     type === "change" &&
-    Id.SearchItemsInput &&
+    id === Id.SearchItemsInput &&
     changeSearchInput(state, [type, id, value]);
   const collapseItemResult =
     type === "click" &&
@@ -224,6 +266,8 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     changeSearchInputResult ||
     collapseItemResult ||
     clickRemoveItemButtonResult ||
+    editItemResult ||
+    changeItemTitleResult ||
     state;
   return process({
     ...eventProcessingResult,

@@ -31,7 +31,8 @@ export const Container = (props: { state: IState }) => (
               key={id}
               id={`${Id.Item}-${id.replace(`${Id.Item}-`, "")}`}
             >
-              <span>{node.title}</span>
+              {!node.isEditable && <span>{node.title}</span>}
+              {node.isEditable && <input value={node.title} />}
             </EventWrapper>
             {props.state.shouldShowControls && (
               <>
@@ -43,6 +44,11 @@ export const Container = (props: { state: IState }) => (
                   )}`}
                 >
                   <button>{node.isCollapsed ? "Open" : "Close"}</button>
+                </EventWrapper>
+                <EventWrapper
+                  id={`${Id.EditItemButton}-${id.replace(`${Id.Item}-`, "")}`}
+                >
+                  <button>Edit</button>
                 </EventWrapper>
                 <EventWrapper
                   id={`${Id.RemoveItemButton}-${id.replace(`${Id.Item}-`, "")}`}

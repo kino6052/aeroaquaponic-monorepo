@@ -28,6 +28,7 @@ describe("Tree", () => {
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": false,
+            "isEditable": false,
             "isHighlighted": false,
             "parent": "",
             "title": "ROOT",
