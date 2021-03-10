@@ -1,14 +1,5 @@
 import { intersection, union, without } from "lodash";
-import {
-  Id,
-  IInput,
-  initialState,
-  INode,
-  IState,
-  RedoStack,
-  RootId,
-  UndoStack,
-} from "../bridge";
+import { Id, initialState, INode, IState, RootId, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
 
@@ -258,6 +249,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id.includes(Id.RemoveItemButton) &&
     clickRemoveItemButton(state, [type, id, value]);
+
   const eventProcessingResult =
     ctrlPressedResult ||
     changeAddItemInputResult ||
@@ -269,6 +261,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     editItemResult ||
     changeItemTitleResult ||
     state;
+
   return process({
     ...eventProcessingResult,
     treeNodes: updateHighligted(eventProcessingResult),
