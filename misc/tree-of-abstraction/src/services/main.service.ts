@@ -20,6 +20,15 @@ const getDescendants = (id: string, state: IState): string[] => {
   }, [] as string[]);
 };
 
+const getIsDescendant = (
+  potentialDescendant: string,
+  potentialParent: string,
+  state: IState
+) => {
+  const descendants = getDescendants(potentialParent, state);
+  return descendants.includes(potentialDescendant);
+};
+
 const getParents = (id: string, state: IState): string[] => {
   const node = state.treeNodes[id];
   if (!node) return [];
@@ -175,7 +184,47 @@ const shortcutRemoveItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
-const clickItem = (state: IState, [, id]: IEvent): IState => {
+const clickItem = (state: IState, [, id, value]: IEvent): IState => {
+  if (value === "11") {
+    const isDescendantOrSelf =
+      getIsDescendant(id, state.selectedNode, state) ||
+      id === state.selectedNode;
+    if (isDescendantOrSelf) return state;
+    const newTreeNodes = updateTreeNodes(state, (node) => {
+      const parentId = state.treeNodes[state.selectedNode].parent;
+      // Update target node
+      if (node.id === id) {
+        return {
+          ...node,
+          children: [
+            state.selectedNode,
+            ...node.children.filter((id) => id !== state.selectedNode),
+          ],
+        };
+      }
+      // Update selected node's parent
+      if (node.id === parentId) {
+        return {
+          ...node,
+          children: node.children.filter((id) => id !== state.selectedNode),
+        };
+      }
+      // Update selected node parent property
+      if (node.id === state.selectedNode) {
+        return {
+          ...node,
+          parent: id,
+          indent: state.treeNodes[id].indent + 1,
+        };
+      }
+      return node;
+    });
+    return {
+      ...state,
+      treeNodes: newTreeNodes,
+      selectedNode: id,
+    };
+  }
   return {
     ...state,
     selectedNode: id,
@@ -359,7 +408,6 @@ const shortcutMoveDown = (state: IState, event: IEvent): IState => {
 };
 
 const shortcutUp = (state: IState, event: IEvent): IState => {
-  console.warn("up");
   const nodes = state.tree;
   const maxIndex = nodes.length;
   const index = state.tree.indexOf(state.selectedNode);

@@ -40,6 +40,184 @@ describe("Tree", () => {
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Undo],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should undo", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Undo],
+        ["keydown", Id.Keyboard, Shortcut.Undo],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should undo and redo", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Undo],
+        ["keydown", Id.Keyboard, Shortcut.Undo],
+        ["keydown", Id.Keyboard, Shortcut.Redo],
+        ["keydown", Id.Keyboard, Shortcut.Redo],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+              "item-element-2",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should show controls", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
@@ -94,6 +272,182 @@ describe("Tree", () => {
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": true,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should change parent", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["click", `${Id.Item}-3`, "11"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "item-element-3",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-1",
+          "item-element-2",
+          "item-element-3",
+          "item-element-0",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-3",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-3": Object {
+            "children": Array [
+              "item-element-0",
+            ],
+            "id": "item-element-3",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-1",
+              "item-element-2",
+              "item-element-3",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should change parent", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["click", `${Id.Item}-2`, "11"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "item-element-2",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
+          "item-element-3",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [
+              "item-element-3",
+            ],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-3": Object {
+            "children": Array [],
+            "id": "item-element-3",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-2",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+              "item-element-2",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
             "parent": "",
