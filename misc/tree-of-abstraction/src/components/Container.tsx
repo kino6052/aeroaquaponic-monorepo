@@ -17,6 +17,7 @@ export const Container = (props: { state: IState }) => (
         const node = props.state.treeNodes[id];
         return (
           <li
+            key={id}
             style={{
               marginLeft: node.indent * 32,
               backgroundColor:
@@ -31,8 +32,9 @@ export const Container = (props: { state: IState }) => (
             >
               {!node.isEditable && <span>{node.title}</span>}
               {node.isEditable && <input autoFocus value={node.title} />}
-            </EventWrapper>
-            {/* {props.state.shouldShowControls && (
+            </EventWrapper>{" "}
+            <span>{node.isCollapsed ? "(...)" : ""}</span>
+            {/* {true && (
               <>
                 <span> </span>
                 <EventWrapper

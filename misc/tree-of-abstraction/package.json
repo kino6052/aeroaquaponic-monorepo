@@ -7,6 +7,7 @@
   "dependencies": {
     "@types/keypress": "^2.0.30",
     "@types/lodash": "4.14.167",
+    "hotkeys-js": "^3.8.3",
     "keypress": "^0.2.1",
     "keypress.js": "^2.1.5",
     "lodash": "4.17.20",
@@ -37,7 +38,7 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "./src/services/*.ts",
+      "<rootDir>/src/services/*.ts",
       "!<rootDir>/node_modules/",
       "!<rootDir>/node_modules/*"
     ],
