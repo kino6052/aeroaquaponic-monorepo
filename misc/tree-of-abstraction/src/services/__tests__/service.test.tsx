@@ -34,6 +34,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -64,6 +65,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "",
         "selectedNote": "",
         "tree": Array [
@@ -95,6 +97,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -129,6 +132,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -168,6 +172,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -244,6 +249,7 @@ describe("App", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -292,6 +298,69 @@ describe("App", () => {
               "item-element-1",
               "item-element-2",
             ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should toggle scope", () => {
+    expect(sequence([["keydown", Id.Keyboard, Shortcut.ToggleScope]]))
+      .toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
+        "scope": "tree",
+        "selectedNode": "item-element-root",
+        "selectedNote": "",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": false,

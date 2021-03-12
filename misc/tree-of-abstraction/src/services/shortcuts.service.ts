@@ -3,6 +3,7 @@ import { Id } from "../bridge";
 import { EventSubject } from "../utils/EventWrapper";
 
 export enum Shortcut {
+  ToggleScope = "alt + shift",
   Add = "ctrl+shift+a",
   MoveDown = "ctrl+down",
   MoveUp = "ctrl+up",
@@ -14,7 +15,6 @@ export enum Shortcut {
   Colapse = "ctrl+shift+c",
   Enter = "enter",
   Remove = "delete",
-  AddNote = "ctrl+alt+shift+a",
 }
 
 try {

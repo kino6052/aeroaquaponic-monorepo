@@ -1,3 +1,4 @@
+import { without, xor } from "lodash";
 import { Id, initialState, IState, RedoStack, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Shortcut } from "./shortcuts.service";
@@ -20,8 +21,18 @@ import {
   shortcutEnter,
 } from "./tree.service";
 
+const toggleScope = (state: IState, event: IEvent): IState => ({
+  ...state,
+  scope: without(["tree", "notes"], state.scope).join("") as "tree" | "notes",
+});
+
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
   // Shortcuts
+  const toggleScopeResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.ToggleScope &&
+    toggleScope(state, [type, id, value]);
   const shortcutCollapseItemResult =
     type === "keydown" &&
     id === Id.Keyboard &&
@@ -107,6 +118,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
   }
 
   const nonUndoableTreeResult =
+    toggleScopeResult ||
     // Undo / Redo
     shortcutUndoResult ||
     shortcutRedoResult ||

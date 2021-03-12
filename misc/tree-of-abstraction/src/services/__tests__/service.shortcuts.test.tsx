@@ -48,6 +48,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -116,6 +117,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -161,6 +163,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -238,6 +241,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -291,6 +295,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -370,6 +375,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -447,6 +453,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-3",
         "selectedNote": "",
         "tree": Array [
@@ -535,6 +542,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -591,6 +599,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-2",
         "selectedNote": "",
         "tree": Array [
@@ -689,6 +698,7 @@ describe("Undo/Redo", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-0",
         "selectedNote": "",
         "tree": Array [
@@ -799,6 +809,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-2",
         "selectedNote": "",
         "tree": Array [
@@ -882,6 +893,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-2",
         "selectedNote": "",
         "tree": Array [
@@ -962,6 +974,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-2",
         "selectedNote": "",
         "tree": Array [
@@ -1041,6 +1054,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-0",
         "selectedNote": "",
         "tree": Array [
@@ -1119,6 +1133,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "",
         "selectedNote": "",
         "tree": Array [
@@ -1197,6 +1212,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "",
         "selectedNote": "",
         "tree": Array [
@@ -1267,6 +1283,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -1297,6 +1314,7 @@ describe("Move Up and Down", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -1335,6 +1353,7 @@ describe("Remote", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -1413,6 +1432,7 @@ describe("Remote", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-0",
         "selectedNote": "",
         "tree": Array [
@@ -1489,6 +1509,7 @@ describe("Remote", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -1564,6 +1585,7 @@ describe("Remote", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -1614,6 +1636,7 @@ describe("Edit", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-0",
         "selectedNote": "",
         "tree": Array [
@@ -1692,6 +1715,7 @@ describe("Edit", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-0",
         "selectedNote": "",
         "tree": Array [
@@ -1772,6 +1796,7 @@ describe("Edit", () => {
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "scope": "tree",
         "selectedNode": "item-element-1",
         "selectedNote": "",
         "tree": Array [

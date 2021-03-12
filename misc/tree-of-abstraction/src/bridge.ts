@@ -45,6 +45,8 @@ export interface INote {
 export type ITree = string[];
 
 export type IState = {
+  scope: "tree" | "notes";
+
   // Tree
   treeNodes: { [id: string]: INode };
   tree: ITree;
@@ -71,6 +73,8 @@ const RootNode = {
 };
 
 export const initialState: IState = {
+  scope: "tree",
+
   // Tree
   treeNodes: {
     [RootId]: RootNode,
