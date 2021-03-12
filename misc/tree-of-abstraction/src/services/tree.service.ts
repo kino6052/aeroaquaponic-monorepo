@@ -30,7 +30,9 @@ export const updateHighligted = (state: IState) => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const value = state.itemSearchInput;
     const isHighlighted =
-      !!value && node.title.toLowerCase().includes(value.toLowerCase());
+      !!value &&
+      value.length >= 3 &&
+      node.title.toLowerCase().includes(value.toLowerCase());
     return {
       ...node,
       isHighlighted,
@@ -195,7 +197,7 @@ export const process = (state: IState): IState => {
   const collapsedDescendants = collapsed.reduce((acc, id) => {
     return [...acc, ...getDescendants(id, state)];
   }, [] as string[]);
-  if (!state.itemSearchInput) {
+  if (!state.itemSearchInput || state.itemSearchInput.length < 3) {
     const toExclude = without(
       collapsedDescendants,
       ...highlightedParents,

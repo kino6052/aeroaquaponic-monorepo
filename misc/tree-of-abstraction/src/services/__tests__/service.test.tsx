@@ -172,6 +172,9 @@ describe("App", () => {
         "selectedNote": "",
         "tree": Array [
           "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
         ],
         "treeNodes": Object {
           "item-element-0": Object {
