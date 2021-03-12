@@ -31,7 +31,7 @@ describe("App", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -59,7 +59,7 @@ describe("App", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -95,7 +95,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "one",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -139,7 +139,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",

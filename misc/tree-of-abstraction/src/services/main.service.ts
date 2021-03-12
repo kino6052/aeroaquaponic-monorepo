@@ -65,8 +65,6 @@ const changeAddItemInput = (state: IState, [, , value]: IEvent): IState => {
 
 const clickAddItemInput = (state: IState, event: IEvent): IState => {
   if (!state.addItemInput) return state;
-  RedoStack.length = 0;
-  UndoStack.push(state.treeNodes);
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
@@ -97,8 +95,6 @@ const clickAddItemInput = (state: IState, event: IEvent): IState => {
 };
 
 const shortcutAddItem = (state: IState, event: IEvent): IState => {
-  RedoStack.length = 0;
-  UndoStack.push(state.treeNodes);
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
@@ -129,8 +125,6 @@ const shortcutAddItem = (state: IState, event: IEvent): IState => {
 };
 
 const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
-  RedoStack.length = 0;
-  UndoStack.push(state.treeNodes);
   const processedId = id.replace(`${Id.RemoveItemButton}-`, "");
   const itemId = `${Id.Item}-${processedId}`;
   const parentId = state.treeNodes[itemId]?.parent;
@@ -156,8 +150,6 @@ const clickRemoveItemButton = (state: IState, [, id]: IEvent): IState => {
 };
 
 const shortcutRemoveItem = (state: IState, [, id]: IEvent): IState => {
-  RedoStack.length = 0;
-  UndoStack.push(state.treeNodes);
   const nodeId = state.selectedNode;
   const parentId = state.treeNodes[nodeId]?.parent;
   const parent = state.treeNodes[parentId];
@@ -567,31 +559,44 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     id.includes(Id.RemoveItemButton) &&
     clickRemoveItemButton(state, [type, id, value]);
 
-  const eventProcessingResult =
-    shortcutUndoResult ||
-    shortcutRedoResult ||
-    shortcutCollapseItemResult ||
-    shortcutEnterResult ||
+  const nodeModifyingResult =
+    // Shortcuts
     shortcutAddItemResult ||
+    shortcutRemoveItemResult ||
     shortcutMoveDownResult ||
     shortcutMoveUpResult ||
+    clickItemResult ||
+    changeItemTitleResult;
+
+  if (nodeModifyingResult) {
+    RedoStack.length = 0;
+    UndoStack.push(state.treeNodes);
+  }
+
+  const eventProcessingResult =
+    // Undo / Redo
+    shortcutUndoResult ||
+    shortcutRedoResult ||
+    // Other
     shortcutUpResult ||
     shortcutDownResult ||
+    shortcutCollapseItemResult ||
+    shortcutEnterResult ||
     shortcutToggleEditResult ||
-    shortcutRemoveItemResult ||
+    // IO
     changeAddItemInputResult ||
     clickAddItemInputResult ||
-    clickItemResult ||
     changeSearchInputResult ||
     collapseItemResult ||
     clickRemoveItemButtonResult ||
     editItemResult ||
-    changeItemTitleResult ||
     state;
 
+  const result = nodeModifyingResult || eventProcessingResult;
+
   return process({
-    ...eventProcessingResult,
-    treeNodes: updateHighligted(eventProcessingResult),
+    ...result,
+    treeNodes: updateHighligted(result),
   });
 };
 

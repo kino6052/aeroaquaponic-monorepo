@@ -46,7 +46,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -105,7 +105,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -154,7 +154,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -227,17 +227,20 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "item-element-root",
+        "selectedNode": "item-element-0",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
         ],
         "treeNodes": Object {
           "item-element-0": Object {
             "children": Array [],
             "id": "item-element-0",
             "indent": 1,
-            "isCollapsed": false,
+            "isCollapsed": true,
             "isEditable": false,
             "isHighlighted": false,
             "parent": "item-element-root",
@@ -271,7 +274,7 @@ describe("Tree", () => {
             ],
             "id": "item-element-root",
             "indent": 0,
-            "isCollapsed": true,
+            "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
             "parent": "",
@@ -302,30 +305,30 @@ describe("Tree", () => {
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
-          "item-element-1",
+          "item-element-0",
           "item-element-2",
           "item-element-3",
-          "item-element-0",
+          "item-element-1",
         ],
         "treeNodes": Object {
           "item-element-0": Object {
             "children": Array [],
             "id": "item-element-0",
-            "indent": 2,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-3",
-            "title": "title",
-          },
-          "item-element-1": Object {
-            "children": Array [],
-            "id": "item-element-1",
             "indent": 1,
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
             "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-3",
             "title": "title",
           },
           "item-element-2": Object {
@@ -340,7 +343,7 @@ describe("Tree", () => {
           },
           "item-element-3": Object {
             "children": Array [
-              "item-element-0",
+              "item-element-1",
             ],
             "id": "item-element-3",
             "indent": 1,
@@ -352,7 +355,7 @@ describe("Tree", () => {
           },
           "item-element-root": Object {
             "children": Array [
-              "item-element-1",
+              "item-element-0",
               "item-element-2",
               "item-element-3",
             ],
@@ -578,13 +581,13 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "item-element-1",
+        "selectedNode": "item-element-2",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
-          "item-element-1",
           "item-element-0",
           "item-element-2",
+          "item-element-1",
         ],
         "treeNodes": Object {
           "item-element-0": Object {
@@ -619,9 +622,9 @@ describe("Tree", () => {
           },
           "item-element-root": Object {
             "children": Array [
-              "item-element-1",
               "item-element-0",
               "item-element-2",
+              "item-element-1",
             ],
             "id": "item-element-root",
             "indent": 0,

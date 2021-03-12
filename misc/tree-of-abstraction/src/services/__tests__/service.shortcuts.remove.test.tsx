@@ -46,7 +46,7 @@ describe("Tree", () => {
       Object {
         "addItemInput": "",
         "itemSearchInput": "",
-        "selectedNode": "",
+        "selectedNode": "item-element-root",
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
@@ -122,7 +122,7 @@ describe("Tree", () => {
         "shouldShowControls": false,
         "tree": Array [
           "item-element-root",
-          "item-element-1",
+          "item-element-0",
           "item-element-2",
         ],
         "treeNodes": Object {
@@ -133,7 +133,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "parent": "",
+            "parent": "item-element-root",
             "title": "title",
           },
           "item-element-1": Object {
@@ -143,7 +143,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "parent": "item-element-root",
+            "parent": "",
             "title": "title",
           },
           "item-element-2": Object {
@@ -158,7 +158,7 @@ describe("Tree", () => {
           },
           "item-element-root": Object {
             "children": Array [
-              "item-element-1",
+              "item-element-0",
               "item-element-2",
             ],
             "id": "item-element-root",

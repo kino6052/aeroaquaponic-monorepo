@@ -59,7 +59,7 @@ export const initialState: IState = {
     [RootId]: RootNode,
   },
   tree: [RootId],
-  selectedNode: "",
+  selectedNode: RootId,
   itemSearchInput: "",
   addItemInput: "",
   shouldShowControls: false,
