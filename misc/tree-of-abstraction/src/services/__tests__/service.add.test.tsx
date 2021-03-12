@@ -52,6 +52,33 @@ describe("App", () => {
     `);
   });
 
+  it("should act", () => {
+    expect(act({ ...initialState, selectedNode: "" })(["click", "", ""]))
+      .toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
   it("should build tree", () => {
     const s = cloneDeep(initialState);
     s.treeNodes[RootId].children = ["test"];

@@ -1,4 +1,4 @@
-import { intersection, max, union, without } from "lodash";
+import { intersection, union, without } from "lodash";
 import {
   Id,
   initialState,
@@ -447,16 +447,14 @@ const shortcutMoveUp = (state: IState, event: IEvent): IState => {
 const shortcutUndo = (state: IState, event: IEvent): IState => {
   if (!UndoStack.length) return state;
   RedoStack.push(state.treeNodes);
-  const prev = UndoStack.pop();
-  if (!prev) return state;
+  const prev = UndoStack.pop()!;
   return { ...state, treeNodes: prev };
 };
 
 const shortcutRedo = (state: IState, event: IEvent): IState => {
   if (!RedoStack.length) return state;
   UndoStack.push(state.treeNodes);
-  const prev = RedoStack.pop();
-  if (!prev) return state;
+  const prev = RedoStack.pop()!;
   return { ...state, treeNodes: prev };
 };
 
@@ -602,3 +600,7 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
 
 export const sequence = (inputs: IEvent[]): IState =>
   inputs.reduce((acc, input) => act(acc)(input), initialState);
+
+export const getSequence = (initialState: IState) => (
+  inputs: IEvent[]
+): IState => inputs.reduce((acc, input) => act(acc)(input), initialState);
