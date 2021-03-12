@@ -36,7 +36,7 @@ afterAll(() => {
 describe.skip("Notes", () => {
   it("should add note", () => {
     expect(
-      sequence([["keydown", Id.Keyboard, Shortcut.AddNote]])
+      sequence([["keydown", Id.Keyboard, Shortcut.Add]])
     ).toMatchInlineSnapshot("test");
   });
 
@@ -45,7 +45,7 @@ describe.skip("Notes", () => {
       sequence([
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
-        ["keydown", Id.Keyboard, Shortcut.AddNote],
+        ["keydown", Id.Keyboard, Shortcut.Add],
       ])
     ).toMatchInlineSnapshot("test");
   });
@@ -55,7 +55,7 @@ describe.skip("Notes", () => {
       sequence([
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
-        ["keydown", Id.Keyboard, Shortcut.AddNote],
+        ["keydown", Id.Keyboard, Shortcut.Add],
       ])
     ).toMatchInlineSnapshot("test");
   });
@@ -65,7 +65,7 @@ describe.skip("Notes", () => {
       sequence([
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
-        ["keydown", Id.Keyboard, Shortcut.AddNote],
+        ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Edit],
       ])
     ).toMatchInlineSnapshot("test");
