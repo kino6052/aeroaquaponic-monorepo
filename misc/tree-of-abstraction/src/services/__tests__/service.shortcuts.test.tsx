@@ -292,7 +292,7 @@ describe("Tree", () => {
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
-        ["click", `${Id.Item}-3`, "11"],
+        ["click", `${Id.Item}-3`, "10"],
       ])
     ).toMatchInlineSnapshot(`
       Object {
@@ -381,7 +381,7 @@ describe("Tree", () => {
         ["keydown", Id.Keyboard, Shortcut.Down],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
-        ["click", `${Id.Item}-2`, "11"],
+        ["click", `${Id.Item}-2`, "10"],
       ])
     ).toMatchInlineSnapshot(`
       Object {
@@ -444,6 +444,111 @@ describe("Tree", () => {
               "item-element-0",
               "item-element-1",
               "item-element-2",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should change parent", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["click", `${Id.Item}-0`, "10"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "addItemInput": "",
+        "itemSearchInput": "",
+        "selectedNode": "item-element-0",
+        "shouldShowControls": false,
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-3",
+          "item-element-4",
+          "item-element-2",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [
+              "item-element-1",
+              "item-element-2",
+            ],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [
+              "item-element-3",
+            ],
+            "id": "item-element-1",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-0",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-0",
+            "title": "title",
+          },
+          "item-element-3": Object {
+            "children": Array [
+              "item-element-4",
+            ],
+            "id": "item-element-3",
+            "indent": 3,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-1",
+            "title": "title",
+          },
+          "item-element-4": Object {
+            "children": Array [],
+            "id": "item-element-4",
+            "indent": 4,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "parent": "item-element-3",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
             ],
             "id": "item-element-root",
             "indent": 0,

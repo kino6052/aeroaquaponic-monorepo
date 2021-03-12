@@ -24,9 +24,9 @@ const getIsDescendant = (
   potentialDescendant: string,
   potentialParent: string,
   state: IState
-) => {
+): [boolean, string[]] => {
   const descendants = getDescendants(potentialParent, state);
-  return descendants.includes(potentialDescendant);
+  return [descendants.includes(potentialDescendant), descendants];
 };
 
 const getParents = (id: string, state: IState): string[] => {
@@ -185,13 +185,26 @@ const shortcutRemoveItem = (state: IState, [, id]: IEvent): IState => {
 };
 
 const clickItem = (state: IState, [, id, value]: IEvent): IState => {
-  if (value === "11") {
-    const isDescendantOrSelf =
-      getIsDescendant(id, state.selectedNode, state) ||
-      id === state.selectedNode;
+  if (value === "10") {
+    const [isDescendant, descendants] = getIsDescendant(
+      id,
+      state.selectedNode,
+      state
+    );
+    const isDescendantOrSelf = isDescendant || id === state.selectedNode;
     if (isDescendantOrSelf) return state;
     const newTreeNodes = updateTreeNodes(state, (node) => {
       const parentId = state.treeNodes[state.selectedNode].parent;
+      // Update indent of descendants
+      if (descendants.includes(node.id)) {
+        return {
+          ...node,
+          indent:
+            state.treeNodes[id].indent +
+            (node.indent - state.treeNodes[state.selectedNode].indent) +
+            1,
+        };
+      }
       // Update target node
       if (node.id === id) {
         return {

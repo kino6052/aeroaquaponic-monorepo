@@ -4,8 +4,8 @@ import { EventSubject } from "../utils/EventWrapper";
 
 export enum Shortcut {
   Add = "ctrl+shift+a",
-  MoveDown = "ctrl+down",
-  MoveUp = "ctrl+up",
+  MoveDown = "ctrl+shift+down",
+  MoveUp = "ctrl+shift+up",
   Up = "up",
   Down = "down",
   Edit = "ctrl+shift+e",
