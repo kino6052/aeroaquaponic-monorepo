@@ -14,6 +14,7 @@ export enum Shortcut {
   Colapse = "ctrl+shift+c",
   Enter = "enter",
   Remove = "delete",
+  AddNote = "ctrl+alt+shift+a",
 }
 
 try {
