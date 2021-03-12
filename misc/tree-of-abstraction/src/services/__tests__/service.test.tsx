@@ -2,6 +2,7 @@ import { cloneDeep } from "lodash";
 import { Id, initialState, RootId } from "../../bridge";
 import { Utils } from "../../utils/utils";
 import { act, sequence } from "../main.service";
+import { Shortcut } from "../shortcuts.service";
 
 let counter = 0;
 
@@ -138,6 +139,155 @@ describe("App", () => {
           "item-element-root": Object {
             "children": Array [
               "test",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should search", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["change", Id.SearchItemsInput, "te"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "te",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
+        "selectedNode": "item-element-root",
+        "selectedNote": "",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+              "item-element-2",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should search", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["change", Id.SearchItemsInput, "tit"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "tit",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
+        "selectedNode": "item-element-root",
+        "selectedNote": "",
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": true,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": true,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": true,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+              "item-element-2",
             ],
             "id": "item-element-root",
             "indent": 0,
