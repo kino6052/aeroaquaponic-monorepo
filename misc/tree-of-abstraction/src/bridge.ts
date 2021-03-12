@@ -6,6 +6,7 @@ import "./services/shortcuts.service";
 export type InputType = "change" | "click" | "focus";
 
 export enum Id {
+  // Items
   AddItemButton = "add-item-button",
   AddItemInput = "add-item-input",
   SaveItemButton = "save-item-button",
@@ -14,6 +15,10 @@ export enum Id {
   CollapseItemButton = "collapse-button",
   RemoveItemButton = "remove-item-button",
   EditItemButton = "edit-item-button",
+  // Notes
+  Note = "note-element",
+  NoteTitle = "note-title",
+  NoteDescription = "note-description",
   Keyboard = "keyboard",
 }
 
@@ -27,25 +32,41 @@ export interface INode {
   isCollapsed: boolean;
   isEditable: boolean;
   children: string[];
+  notes: string[];
   parent: string;
   isHighlighted: boolean;
   indent: number;
 }
 
+export interface INote {
+  id: string;
+  title: string;
+  description: string;
+  isCollapsed: boolean;
+  isEditable: boolean;
+  parents: string[];
+}
+
 export type ITree = string[];
 
 export type IState = {
+  // Tree
   treeNodes: { [id: string]: INode };
   tree: ITree;
   selectedNode: string;
-  addItemInput: string;
   itemSearchInput: string;
-  shouldShowControls: boolean;
+
+  // Notes
+  noteNodes: { [id: string]: INote };
+  notes: string[];
+  selectedNote: string;
+  noteSearchInput: string;
 };
 
 const RootNode = {
   id: RootId,
   children: [],
+  notes: [],
   isCollapsed: false,
   isHighlighted: false,
   isEditable: false,
@@ -55,14 +76,19 @@ const RootNode = {
 };
 
 export const initialState: IState = {
+  // Tree
   treeNodes: {
     [RootId]: RootNode,
   },
   tree: [RootId],
   selectedNode: RootId,
   itemSearchInput: "",
-  addItemInput: "",
-  shouldShowControls: false,
+
+  //Notes
+  noteNodes: {},
+  notes: [],
+  selectedNote: "",
+  noteSearchInput: "",
 };
 
 export const UndoStack: IState["treeNodes"][] = [];

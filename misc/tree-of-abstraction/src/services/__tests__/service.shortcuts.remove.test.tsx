@@ -44,10 +44,12 @@ describe("Tree", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-root",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -62,6 +64,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -72,6 +75,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -82,6 +86,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -96,6 +101,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -116,10 +122,12 @@ describe("Tree", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-0",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -133,6 +141,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -143,6 +152,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "title",
           },
@@ -153,6 +163,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -166,6 +177,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },

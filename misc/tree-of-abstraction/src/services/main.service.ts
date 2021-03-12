@@ -56,50 +56,13 @@ const updateTreeNodes = (state: IState, cb: (node: INode) => INode) =>
       {} as typeof state.treeNodes
     );
 
-const changeAddItemInput = (state: IState, [, , value]: IEvent): IState => {
-  return {
-    ...state,
-    addItemInput: value,
-  };
-};
-
-const clickAddItemInput = (state: IState, event: IEvent): IState => {
-  if (!state.addItemInput) return state;
-  const selectedId = state.selectedNode || RootId;
-  const newNode: INode = {
-    children: [] as string[],
-    id: `${Id.Item}-${Utils.generateId()}`,
-    isCollapsed: false,
-    parent: selectedId,
-    title: state.addItemInput,
-    isHighlighted: false,
-    isEditable: false,
-    indent: state.treeNodes[selectedId].indent + 1,
-  };
-  const parent = state.treeNodes[selectedId];
-  const newParent = {
-    [parent.id]: {
-      ...parent,
-      children: [...parent.children, newNode.id],
-    },
-  };
-  const treeNodes = {
-    ...state.treeNodes,
-    ...newParent,
-    ...{ [newNode.id]: newNode },
-  };
-  return {
-    ...state,
-    treeNodes,
-  };
-};
-
 const shortcutAddItem = (state: IState, event: IEvent): IState => {
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
     id: `${Id.Item}-${Utils.generateId()}`,
     isCollapsed: false,
+    notes: [],
     parent: selectedId,
     title: "title",
     isHighlighted: false,
@@ -458,13 +421,6 @@ const shortcutRedo = (state: IState, event: IEvent): IState => {
   return { ...state, treeNodes: prev };
 };
 
-const showControls = (state: IState, [type, , value]: IEvent): IState => {
-  return {
-    ...state,
-    shouldShowControls: type === "keydown" && value === "ControlLeft",
-  };
-};
-
 export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
   // Shortcuts
   const shortcutCollapseItemResult =
@@ -528,14 +484,6 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     type === "click" &&
     id.includes(Id.EditItemButton) &&
     toggleEditItem(state, [type, id, value]);
-  const changeAddItemInputResult =
-    type === "change" &&
-    id === Id.AddItemInput &&
-    changeAddItemInput(state, [type, id, value]);
-  const clickAddItemInputResult =
-    type === "click" &&
-    id === Id.AddItemButton &&
-    clickAddItemInput(state, [type, id, value]);
   const changeItemTitleResult =
     type === "change" &&
     id.includes(Id.Item) &&
@@ -582,8 +530,6 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
     shortcutEnterResult ||
     shortcutToggleEditResult ||
     // IO
-    changeAddItemInputResult ||
-    clickAddItemInputResult ||
     changeSearchInputResult ||
     collapseItemResult ||
     clickRemoveItemButtonResult ||

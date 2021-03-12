@@ -45,10 +45,12 @@ describe("Other", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-0",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -63,6 +65,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": true,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -73,6 +76,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -83,6 +87,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -97,6 +102,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -117,10 +123,12 @@ describe("Other", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-0",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
           "item-element-0",
@@ -135,6 +143,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -145,6 +154,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -155,6 +165,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -169,6 +180,7 @@ describe("Other", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },

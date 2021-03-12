@@ -29,10 +29,12 @@ describe("App", () => {
   it("should act", () => {
     expect(act(initialState)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-root",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
         ],
@@ -44,6 +46,7 @@ describe("App", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -56,10 +59,12 @@ describe("App", () => {
     expect(act({ ...initialState, selectedNode: "" })(["click", "", ""]))
       .toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
         ],
@@ -71,6 +76,7 @@ describe("App", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -84,10 +90,12 @@ describe("App", () => {
     s.treeNodes[RootId].children = ["test"];
     expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-root",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
           "test",
@@ -102,6 +110,7 @@ describe("App", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -120,34 +129,24 @@ describe("Tree", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "one",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-root",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
-          "item-element-0",
         ],
         "treeNodes": Object {
-          "item-element-0": Object {
-            "children": Array [],
-            "id": "item-element-0",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-root",
-            "title": "one",
-          },
           "item-element-root": Object {
-            "children": Array [
-              "item-element-0",
-            ],
+            "children": Array [],
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -164,10 +163,12 @@ describe("Tree", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-root",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
         ],
@@ -179,6 +180,7 @@ describe("Tree", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
@@ -214,109 +216,24 @@ describe("Tree", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "addItemInput": "four",
         "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [],
         "selectedNode": "item-element-3",
-        "shouldShowControls": false,
+        "selectedNote": "",
         "tree": Array [
           "item-element-root",
-          "item-element-0",
-          "item-element-1",
-          "item-element-2",
-          "item-element-3",
-          "item-element-4",
-          "item-element-5",
-          "item-element-6",
         ],
         "treeNodes": Object {
-          "item-element-0": Object {
-            "children": Array [
-              "item-element-1",
-              "item-element-2",
-            ],
-            "id": "item-element-0",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-root",
-            "title": "one",
-          },
-          "item-element-1": Object {
-            "children": Array [],
-            "id": "item-element-1",
-            "indent": 2,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-0",
-            "title": "two",
-          },
-          "item-element-2": Object {
-            "children": Array [
-              "item-element-3",
-            ],
-            "id": "item-element-2",
-            "indent": 2,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-0",
-            "title": "three",
-          },
-          "item-element-3": Object {
-            "children": Array [
-              "item-element-4",
-              "item-element-5",
-              "item-element-6",
-            ],
-            "id": "item-element-3",
-            "indent": 3,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-2",
-            "title": "four",
-          },
-          "item-element-4": Object {
-            "children": Array [],
-            "id": "item-element-4",
-            "indent": 4,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-3",
-            "title": "four",
-          },
-          "item-element-5": Object {
-            "children": Array [],
-            "id": "item-element-5",
-            "indent": 4,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-3",
-            "title": "four",
-          },
-          "item-element-6": Object {
-            "children": Array [],
-            "id": "item-element-6",
-            "indent": 4,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "parent": "item-element-3",
-            "title": "four",
-          },
           "item-element-root": Object {
-            "children": Array [
-              "item-element-0",
-            ],
+            "children": Array [],
             "id": "item-element-root",
             "indent": 0,
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
+            "notes": Array [],
             "parent": "",
             "title": "ROOT",
           },
