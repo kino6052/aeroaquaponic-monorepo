@@ -388,7 +388,7 @@ describe("App", () => {
           "note-element-0": Object {
             "description": "Description...",
             "id": "note-element-0",
-            "isCollapsed": false,
+            "isCollapsed": true,
             "isEditable": false,
             "parents": Array [
               "item-element-root",

@@ -7,3 +7,15 @@ body {
   margin: 0;
   padding: 0;
 }
+
+* {
+  transition: 0.5s;
+}
+
+p,
+a,
+b,
+i {
+  margin: 0;
+  padding: 0;
+}

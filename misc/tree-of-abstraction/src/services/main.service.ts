@@ -2,7 +2,13 @@ import { without } from "lodash";
 import { Id, initialState, IState, RedoStack, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
-import { processNotes, shortcutAddNote } from "./note.service";
+import {
+  processNotes,
+  shortcutAddNote,
+  shortcutCollapseNote,
+  shortcutDownNote,
+  shortcutUpNote,
+} from "./note.service";
 import { Shortcut } from "./shortcuts.service";
 import {
   changeItemTitle,
@@ -92,8 +98,12 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
   }
   if (state.scope === "notes") {
     return processNotes(
-      compose([[Shortcut.Add, shortcutAddNote]])(state, [type, id, value]) ||
-        state
+      compose([
+        [Shortcut.Add, shortcutAddNote],
+        [Shortcut.Up, shortcutUpNote],
+        [Shortcut.Down, shortcutDownNote],
+        [Shortcut.Collapse, shortcutCollapseNote],
+      ])(state, [type, id, value]) || state
     );
   }
   return state;

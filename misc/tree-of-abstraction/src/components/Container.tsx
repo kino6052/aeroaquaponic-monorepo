@@ -87,38 +87,40 @@ export const Container = (props: { state: IState }) => (
         {props.state.notes.map((id) => {
           const note = props.state.noteNodes[id];
           return (
-            <li key={id}>
-              <EventWrapper
-                key={id}
-                id={`${Id.Item}-${id.replace(`${Id.Note}-`, "")}`}
-              >
-                <div>
+            <li
+              key={id}
+              style={{
+                background: id === props.state.selectedNote ? "grey" : "unset",
+              }}
+            >
+              <>
+                <EventWrapper
+                  key={id}
+                  id={`${Id.Item}-${id.replace(`${Id.Note}-`, "")}`}
+                >
                   {!note.isEditable && <p>{note.title}</p>}
-                  {note.isEditable && (
-                    <EventWrapper
-                      id={`${Id.NoteTitle}-${id.replace(
-                        `${Id.NoteTitle}-`,
-                        ""
-                      )}`}
-                    >
-                      <input value={note.title} />
-                    </EventWrapper>
-                  )}
                   {!note.isEditable && !note.isCollapsed && (
                     <p>{note.description}</p>
                   )}
-                  {note.isEditable && (
-                    <EventWrapper
-                      id={`${Id.NoteDescription}-${id.replace(
-                        `${Id.NoteDescription}-`,
-                        ""
-                      )}`}
-                    >
-                      <input value={note.title} />
-                    </EventWrapper>
-                  )}
-                </div>
-              </EventWrapper>{" "}
+                </EventWrapper>
+                {note.isEditable && (
+                  <EventWrapper
+                    id={`${Id.NoteTitle}-${id.replace(`${Id.NoteTitle}-`, "")}`}
+                  >
+                    <input value={note.title} />
+                  </EventWrapper>
+                )}
+                {note.isEditable && (
+                  <EventWrapper
+                    id={`${Id.NoteDescription}-${id.replace(
+                      `${Id.NoteDescription}-`,
+                      ""
+                    )}`}
+                  >
+                    <input value={note.title} />
+                  </EventWrapper>
+                )}
+              </>
             </li>
           );
         })}
