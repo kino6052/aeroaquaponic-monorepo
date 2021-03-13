@@ -9,11 +9,13 @@ export const Container = (props: { state: IState }) => (
       flexDirection: "row",
       height: "100vh",
       overflow: "hidden",
+      background: "black",
     }}
     className="container"
   >
     <div
       style={{
+        opacity: props.state.scope === "tree" ? "100%" : "50%",
         display: "flex",
         flexDirection: "column",
         width: "50%",
@@ -63,6 +65,7 @@ export const Container = (props: { state: IState }) => (
     <div
       style={{
         display: "flex",
+        opacity: props.state.scope === "notes" ? "100%" : "50%",
         flexDirection: "column",
         width: "50%",
         borderRight: "2px dashed black",
