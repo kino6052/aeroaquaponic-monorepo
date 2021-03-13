@@ -375,7 +375,7 @@ describe("App", () => {
     `);
   });
 
-  it("should toggle scope", () => {
+  it("should add note", () => {
     expect(
       sequence([
         ["keydown", Id.Keyboard, Shortcut.ToggleScope],
@@ -384,14 +384,25 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
-        "noteNodes": Object {},
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "Description...",
+            "id": "note-element-0",
+            "isCollapsed": false,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+        },
         "noteSearchInput": "",
         "notes": Array [
-          'note-element-0'
+          "note-element-0",
         ],
         "scope": "notes",
         "selectedNode": "item-element-root",
-        "selectedNote": "",
+        "selectedNote": "note-element-0",
         "tree": Array [
           "item-element-root",
         ],

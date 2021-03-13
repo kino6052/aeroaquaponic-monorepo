@@ -1,10 +1,11 @@
 import { without, xor } from "lodash";
 import { Id, initialState, IState, RedoStack, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
+import { processNotes, shortcutAddNote } from "./note.service";
 import { Shortcut } from "./shortcuts.service";
 import {
   changeItemTitle,
-  process,
+  process as processTree,
   changeSearchInput,
   clickItem,
   shortcutAddItem,
@@ -26,13 +27,16 @@ const toggleScope = (state: IState, event: IEvent): IState => ({
   scope: without(["tree", "notes"], state.scope).join("") as "tree" | "notes",
 });
 
-export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
+export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
   // Shortcuts
   const toggleScopeResult =
     type === "keydown" &&
     id === Id.Keyboard &&
     value === Shortcut.ToggleScope &&
-    toggleScope(state, [type, id, value]);
+    toggleScope(_state, [type, id, value]);
+
+  const state = toggleScopeResult || _state;
+
   if (state.scope === "tree") {
     const shortcutCollapseItemResult =
       type === "keydown" &&
@@ -134,13 +138,34 @@ export const act = (state: IState) => ([type, id, value]: IEvent): IState => {
 
     const treeResult = undoableTreeResult || nonUndoableTreeResult;
 
-    return process({
+    return processTree({
       ...treeResult,
       treeNodes: updateHighligted(treeResult),
     });
   }
-  return toggleScopeResult || state;
+  if (state.scope === "notes") {
+    const result = p([[Shortcut.Add, shortcutAddNote]])(state, [
+      type,
+      id,
+      value,
+    ]);
+    return processNotes(result);
+  }
+  return state;
 };
+
+const p = (
+  arr: Array<[shortcut: Shortcut, cb: (state: IState, event: IEvent) => IState]>
+) => (state: IState, event: IEvent): IState =>
+  arr.reduce((acc, [shortcut, cb]) => {
+    return (
+      (event[0] === "keydown" &&
+        event[1] === Id.Keyboard &&
+        shortcut === event[2] &&
+        cb(state, event)) ||
+      acc
+    );
+  }, state);
 
 export const sequence = (inputs: IEvent[]): IState =>
   inputs.reduce((acc, input) => act(acc)(input), initialState);
