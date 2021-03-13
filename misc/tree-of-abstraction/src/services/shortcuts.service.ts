@@ -12,7 +12,7 @@ export enum Shortcut {
   Edit = "ctrl+shift+e",
   Redo = "ctrl+shift+z",
   Undo = "ctrl+z",
-  Colapse = "ctrl+shift+c",
+  Collapse = "ctrl+shift+c",
   Enter = "enter",
   Remove = "delete",
 }

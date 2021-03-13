@@ -18,7 +18,7 @@ import {
   shortcutUndo,
   shortcutUp,
   updateHighligted,
-  shortcutCollapseItem,
+  shortcutCollapse,
   shortcutEnter,
 } from "./tree.service";
 
@@ -38,62 +38,6 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
   const state = toggleScopeResult || _state;
 
   if (state.scope === "tree") {
-    const shortcutCollapseItemResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Colapse &&
-      shortcutCollapseItem(state, [type, id, value]);
-    const shortcutEnterResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Enter &&
-      shortcutEnter(state, [type, id, value]);
-    const shortcutToggleEditResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Edit &&
-      shortcutToggleEditItem(state, [type, id, value]);
-    const shortcutAddItemResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Add &&
-      shortcutAddItem(state, [type, id, value]);
-    const shortcutDownResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Down &&
-      shortcutDown(state, [type, id, value]);
-    const shortcutUpResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Up &&
-      shortcutUp(state, [type, id, value]);
-    const shortcutMoveDownResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.MoveDown &&
-      shortcutMoveDown(state, [type, id, value]);
-    const shortcutMoveUpResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.MoveUp &&
-      shortcutMoveUp(state, [type, id, value]);
-    const shortcutRemoveItemResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Remove &&
-      shortcutRemoveItem(state, [type, id, value]);
-    const shortcutUndoResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Undo &&
-      shortcutUndo(state, [type, id, value]);
-    const shortcutRedoResult =
-      type === "keydown" &&
-      id === Id.Keyboard &&
-      value === Shortcut.Redo &&
-      shortcutRedo(state, [type, id, value]);
-
     // IO
     const changeItemTitleResult =
       type === "change" &&
@@ -110,10 +54,12 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
 
     const undoableTreeResult =
       // Shortcuts
-      shortcutAddItemResult ||
-      shortcutRemoveItemResult ||
-      shortcutMoveDownResult ||
-      shortcutMoveUpResult ||
+      compose([
+        [Shortcut.Add, shortcutAddItem],
+        [Shortcut.Remove, shortcutRemoveItem],
+        [Shortcut.MoveDown, shortcutMoveDown],
+        [Shortcut.MoveUp, shortcutMoveUp],
+      ])(state, [type, id, value]) ||
       clickItemResult ||
       changeItemTitleResult;
 
@@ -123,15 +69,15 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
     }
 
     const nonUndoableTreeResult =
-      // Undo / Redo
-      shortcutUndoResult ||
-      shortcutRedoResult ||
-      // Other
-      shortcutUpResult ||
-      shortcutDownResult ||
-      shortcutCollapseItemResult ||
-      shortcutEnterResult ||
-      shortcutToggleEditResult ||
+      compose([
+        [Shortcut.Undo, shortcutUndo],
+        [Shortcut.Redo, shortcutRedo],
+        [Shortcut.Up, shortcutUp],
+        [Shortcut.Down, shortcutDown],
+        [Shortcut.Collapse, shortcutCollapse],
+        [Shortcut.Enter, shortcutEnter],
+        [Shortcut.Edit, shortcutToggleEditItem],
+      ])(state, [type, id, value]) ||
       // IO
       changeSearchInputResult ||
       state;
@@ -144,28 +90,25 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
     });
   }
   if (state.scope === "notes") {
-    const result = p([[Shortcut.Add, shortcutAddNote]])(state, [
-      type,
-      id,
-      value,
-    ]);
-    return processNotes(result);
+    return processNotes(
+      compose([[Shortcut.Add, shortcutAddNote]])(state, [type, id, value]) ||
+        state
+    );
   }
   return state;
 };
 
-const p = (
+const compose = (
   arr: Array<[shortcut: Shortcut, cb: (state: IState, event: IEvent) => IState]>
-) => (state: IState, event: IEvent): IState =>
+) => (state: IState, event: IEvent): IState | false =>
   arr.reduce((acc, [shortcut, cb]) => {
-    return (
-      (event[0] === "keydown" &&
-        event[1] === Id.Keyboard &&
-        shortcut === event[2] &&
-        cb(state, event)) ||
-      acc
-    );
-  }, state);
+    const result =
+      event[0] === "keydown" &&
+      event[1] === Id.Keyboard &&
+      event[2] === shortcut &&
+      cb(state, event);
+    return result || acc;
+  }, false as IState | false);
 
 export const sequence = (inputs: IEvent[]): IState =>
   inputs.reduce((acc, input) => act(acc)(input), initialState);

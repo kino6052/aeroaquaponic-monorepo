@@ -367,7 +367,7 @@ describe("Undo/Redo", () => {
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
-        ["keydown", Id.Keyboard, Shortcut.Colapse],
+        ["keydown", Id.Keyboard, Shortcut.Collapse],
       ])
     ).toMatchInlineSnapshot(`
       Object {

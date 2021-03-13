@@ -216,7 +216,7 @@ export const process = (state: IState): IState => {
   }
 };
 
-export const shortcutCollapseItem = (state: IState, [, id]: IEvent): IState => {
+export const shortcutCollapse = (state: IState, [, id]: IEvent): IState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = node.id === state.selectedNode;
     if (!isFound) return node;
