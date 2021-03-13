@@ -374,4 +374,41 @@ describe("App", () => {
       }
     `);
   });
+
+  it("should toggle scope", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {},
+        "noteSearchInput": "",
+        "notes": Array [
+          'note-element-0'
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
 });
