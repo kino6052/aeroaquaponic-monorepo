@@ -1,6 +1,5 @@
 import { Id, initialState } from "../../bridge";
-import { Utils } from "../../utils/utils";
-import { getSequence, sequence } from "../main.service";
+import { getSequence, sequence, Utils } from "../../utils/utils";
 import { Shortcut } from "../shortcuts.service";
 
 let counter = 0;

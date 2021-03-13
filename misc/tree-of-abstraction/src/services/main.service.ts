@@ -1,15 +1,18 @@
-import { without, xor } from "lodash";
+import { without } from "lodash";
 import { Id, initialState, IState, RedoStack, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
+import { compose } from "../utils/utils";
 import { processNotes, shortcutAddNote } from "./note.service";
 import { Shortcut } from "./shortcuts.service";
 import {
   changeItemTitle,
-  process as processTree,
   changeSearchInput,
   clickItem,
+  process as processTree,
   shortcutAddItem,
+  shortcutCollapse,
   shortcutDown,
+  shortcutEnter,
   shortcutMoveDown,
   shortcutMoveUp,
   shortcutRedo,
@@ -18,8 +21,6 @@ import {
   shortcutUndo,
   shortcutUp,
   updateHighligted,
-  shortcutCollapse,
-  shortcutEnter,
 } from "./tree.service";
 
 const toggleScope = (state: IState, event: IEvent): IState => ({
@@ -97,22 +98,3 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
   }
   return state;
 };
-
-const compose = (
-  arr: Array<[shortcut: Shortcut, cb: (state: IState, event: IEvent) => IState]>
-) => (state: IState, event: IEvent): IState | false =>
-  arr.reduce((acc, [shortcut, cb]) => {
-    const result =
-      event[0] === "keydown" &&
-      event[1] === Id.Keyboard &&
-      event[2] === shortcut &&
-      cb(state, event);
-    return result || acc;
-  }, false as IState | false);
-
-export const sequence = (inputs: IEvent[]): IState =>
-  inputs.reduce((acc, input) => act(acc)(input), initialState);
-
-export const getSequence = (initialState: IState) => (
-  inputs: IEvent[]
-): IState => inputs.reduce((acc, input) => act(acc)(input), initialState);

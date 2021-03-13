@@ -1,6 +1,8 @@
-import { uniqueId } from "lodash";
 import { useEffect, useState } from "react";
-import { BehaviorSubject, Subject } from "rxjs";
+import { BehaviorSubject } from "rxjs";
+import { Id, initialState, IState } from "../bridge";
+import { act } from "../services/main.service";
+import { IEvent } from "./EventWrapper";
 
 export const useSharedState = <T>(
   subject: BehaviorSubject<T>
@@ -23,12 +25,42 @@ export const setPartial = <T>(
 };
 
 const getRandomNumbers = (length: number) => {
-  const value = Array.from(Math.round(Math.random()*(Math.pow(10, length))).toString()).reverse();
-  return new Array(length).fill('0').map((v, i) => value[i] || v).reverse().join('');
-}  
+  const value = Array.from(
+    Math.round(Math.random() * Math.pow(10, length)).toString()
+  ).reverse();
+  return new Array(length)
+    .fill("0")
+    .map((v, i) => value[i] || v)
+    .reverse()
+    .join("");
+};
 
-const generateId = (amount: number = 4, length: number = 4) => new Array(amount).fill(0).map((a, i, b) => `${i && '-'}${getRandomNumbers(length)}`).join('')
+const generateId = (amount: number = 4, length: number = 4) =>
+  new Array(amount)
+    .fill(0)
+    .map((a, i, b) => `${i && "-"}${getRandomNumbers(length)}`)
+    .join("");
 
 export const Utils = {
-  generateId
-}
+  generateId,
+};
+
+export const compose = (arr: Array<any>) => (
+  state: IState,
+  event: IEvent
+): IState | false =>
+  arr.reduce((acc, [shortcut, cb]) => {
+    const result =
+      event[0] === "keydown" &&
+      event[1] === Id.Keyboard &&
+      event[2] === shortcut &&
+      cb(state, event);
+    return result || acc;
+  }, false as IState | false);
+
+export const sequence = (inputs: IEvent[]): IState =>
+  inputs.reduce((acc, input) => act(acc)(input), initialState);
+
+export const getSequence = (initialState: IState) => (
+  inputs: IEvent[]
+): IState => inputs.reduce((acc, input) => act(acc)(input), initialState);

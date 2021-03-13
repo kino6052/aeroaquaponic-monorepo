@@ -19,7 +19,7 @@ export const Container = (props: { state: IState }) => (
         width: "50%",
         borderRight: "2px dashed black",
         height: "100%",
-
+        background: "#333",
         overflow: "scroll",
       }}
     >
@@ -42,8 +42,8 @@ export const Container = (props: { state: IState }) => (
               style={{
                 marginLeft: node.indent * 32,
                 backgroundColor:
-                  (node.isHighlighted && "yellow") ||
-                  (node.id === props.state.selectedNode && "lightgrey") ||
+                  (node.isHighlighted && "orange") ||
+                  (node.id === props.state.selectedNode && "grey") ||
                   "unset",
               }}
             >
@@ -66,6 +66,7 @@ export const Container = (props: { state: IState }) => (
         flexDirection: "column",
         width: "50%",
         borderRight: "2px dashed black",
+        background: "#333",
         height: "100%",
       }}
     >
