@@ -17,6 +17,8 @@ export enum Id {
   Keyboard = "keyboard",
 }
 
+export const Scope = ['tree', 'notes'] as const
+
 export const RootId = `${Id.Item}-root`;
 
 export type IInput = [InputType, string, string];
@@ -45,7 +47,7 @@ export interface INote {
 export type ITree = string[];
 
 export type IState = {
-  scope: "tree" | "notes";
+  scope:  typeof Scope[number];
 
   // Tree
   treeNodes: { [id: string]: INode };
@@ -73,7 +75,7 @@ const RootNode = {
 };
 
 export const initialState: IState = {
-  scope: "tree",
+  scope: Scope[0],
 
   // Tree
   treeNodes: {

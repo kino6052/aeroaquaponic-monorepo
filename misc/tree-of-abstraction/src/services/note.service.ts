@@ -51,8 +51,7 @@ export const shortcutCollapseNote = (state: IState, event: IEvent): IState => {
   return { ...state, noteNodes: newNoteNodes };
 };
 
-export const shortcutRemoveNote = (state: IState, event: IEvent): IState => {
-  const notes = state.notes;
+export const shortcutRemoveNote = (state: IState): IState => {
   const selectedNote = state.noteNodes[state.selectedNote];
   const newNoteNodes: IState["noteNodes"] = {
     ...state.noteNodes,

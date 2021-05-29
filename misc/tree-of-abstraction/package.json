@@ -27,7 +27,7 @@
   "scripts": {
     "start": "react-scripts start ",
     "build": "react-scripts build -- .",
-    "test": "react-scripts test --env=jsdom --collect-coverage",
+    "test": "react-scripts test --env=jsdom --coverage --watchAll=false",
     "eject": "react-scripts eject"
   },
   "browserslist": [
@@ -38,10 +38,15 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "<rootDir>/src/services/*.ts",
-      "!<rootDir>/node_modules/",
-      "!<rootDir>/node_modules/*"
+      "./src/services/*.ts"
     ],
+    "coverageThreshold": {
+      "global": {
+        "lines": 99,
+        "statements": 99,
+        "branches": 99
+      }
+    },
     "coverageReporters": [
       "text",
       "json",

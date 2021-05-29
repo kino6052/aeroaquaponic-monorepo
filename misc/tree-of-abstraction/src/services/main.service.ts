@@ -1,5 +1,5 @@
 import { without } from "lodash";
-import { Id, initialState, IState, RedoStack, UndoStack } from "../bridge";
+import { Id, initialState, IState, RedoStack, Scope, UndoStack } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
@@ -7,6 +7,7 @@ import {
   shortcutAddNote,
   shortcutCollapseNote,
   shortcutDownNote,
+  shortcutRemoveNote,
   shortcutUpNote,
 } from "./note.service";
 import { Shortcut } from "./shortcuts.service";
@@ -31,7 +32,7 @@ import {
 
 const toggleScope = (state: IState, event: IEvent): IState => ({
   ...state,
-  scope: without(["tree", "notes"], state.scope).join("") as "tree" | "notes",
+  scope: without(Scope, state.scope)[0],
 });
 
 export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
@@ -96,15 +97,15 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
       treeNodes: updateHighligted(treeResult),
     });
   }
-  if (state.scope === "notes") {
+  else {
     return processNotes(
       compose([
         [Shortcut.Add, shortcutAddNote],
         [Shortcut.Up, shortcutUpNote],
         [Shortcut.Down, shortcutDownNote],
         [Shortcut.Collapse, shortcutCollapseNote],
+        [Shortcut.Remove, shortcutRemoveNote],
       ])(state, [type, id, value]) || state
     );
   }
-  return state;
 };
