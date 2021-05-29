@@ -619,4 +619,57 @@ describe("Notes", () => {
       }
     `);
   });
+
+  it("should edit", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["change", `${Id.Note}-0`, "test"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "Description...",
+            "id": "note-element-0",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "test",
+          },
+        },
+        "noteSearchInput": "",
+        "notes": Array [
+          "note-element-0",
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-0",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-0",
+            ],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
 });
