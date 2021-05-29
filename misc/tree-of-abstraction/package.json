@@ -38,7 +38,8 @@
   ],
   "jest": {
     "collectCoverageFrom": [
-      "./src/services/*.ts"
+      "!./src/services/shortcuts.service.ts",
+      "./src/services/*.service.ts"
     ],
     "coverageThreshold": {
       "global": {
