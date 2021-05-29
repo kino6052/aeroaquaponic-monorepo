@@ -373,7 +373,7 @@ describe("App", () => {
         },
       }
     `);
-    
+
     expect(
       sequence([
         ["keydown", Id.Keyboard, Shortcut.ToggleScope],
@@ -447,7 +447,9 @@ describe("App", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+            ],
             "parent": "",
             "title": "ROOT",
           },

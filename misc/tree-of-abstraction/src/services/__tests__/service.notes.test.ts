@@ -72,7 +72,9 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -133,7 +135,10 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -194,7 +199,10 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -256,7 +264,10 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -305,7 +316,9 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -354,7 +367,9 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+            ],
             "parent": "",
             "title": "ROOT",
           },
@@ -380,16 +395,12 @@ describe("Notes", () => {
             "id": "note-element-0",
             "isCollapsed": true,
             "isEditable": false,
-            "parents": Array [
-              "item-element-root",
-            ],
+            "parents": Array [],
             "title": "Title",
           },
         },
         "noteSearchInput": "",
-        "notes": Array [
-          "note-element-0",
-        ],
+        "notes": Array [],
         "scope": "notes",
         "selectedNode": "item-element-root",
         "selectedNote": "note-element-0",
@@ -478,7 +489,10 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-1",
+              "note-element-3",
+            ],
             "parent": "item-element-root",
             "title": "title",
           },
@@ -543,7 +557,61 @@ describe("Notes", () => {
             "isCollapsed": false,
             "isEditable": false,
             "isHighlighted": false,
-            "notes": Array [],
+            "notes": Array [
+              "note-element-0",
+            ],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should collapse", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Collapse],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "Description...",
+            "id": "note-element-0",
+            "isCollapsed": false,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+        },
+        "noteSearchInput": "",
+        "notes": Array [
+          "note-element-0",
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-0",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-0",
+            ],
             "parent": "",
             "title": "ROOT",
           },

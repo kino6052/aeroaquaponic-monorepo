@@ -5,16 +5,27 @@ import { Utils } from "../utils/utils";
 import { getDescendants, updateTreeNodes } from "./tree.service";
 
 export const shortcutAddNote = (state: IState, event: IEvent): IState => {
+  const noteId=  `${Id.Note}-${Utils.generateId()}`
   const newNoteNode: INote = {
     description: "Description...",
     title: "Title",
-    id: `${Id.Note}-${Utils.generateId()}`,
+    id: noteId,
     isCollapsed: true,
     isEditable: false,
     parents: [state.selectedNode],
   };
+  const newTreeNodes = updateTreeNodes(state, (node) => {
+    if (node.id === state.selectedNode) {
+      return {
+        ...node,
+        notes: [...node.notes, noteId],
+      };
+    }
+    return node;
+  });
   return {
     ...state,
+    treeNodes: newTreeNodes,
     selectedNote: newNoteNode.id,
     noteNodes: {
       [newNoteNode.id]: newNoteNode,
