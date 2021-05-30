@@ -862,4 +862,37 @@ describe("Notes", () => {
       }
     `);
   });
+
+  it("should serach", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["change", Id.SearchItemsInput, "te"],
+      ])
+    ).toMatchInlineSnapshot(``);
+  });
+
+  it("should serach", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["change", Id.SearchItemsInput, "Ti"],
+      ])
+    ).toMatchInlineSnapshot(``);
+  });
 });
