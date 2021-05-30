@@ -149,17 +149,13 @@ export const processNotes = (state: IState): IState => {
   const newNotes: string[] = Object.values(state.noteNodes).reduce(
     (acc, note) => {
       const intersectionResult = intersection(descendants, note.parents);
-      if (intersectionResult.length > 0) {
-        const isMatch =
-          state.noteSearchInput.length >= 3 &&
-          note.title
-            .toLowerCase()
-            .includes(state.noteSearchInput.toLowerCase());
-        const notFiltered = state.noteSearchInput.length < 3;
+      const isMatch =
+        state.noteSearchInput.length >= 3 &&
+        note.title.toLowerCase().includes(state.noteSearchInput.toLowerCase());
+      const notFiltered =
+        state.noteSearchInput.length < 3 && intersectionResult.length > 0;
 
-        return isMatch || notFiltered ? [...acc, note.id] : acc;
-      }
-      return acc;
+      return isMatch || notFiltered ? [...acc, note.id] : acc;
     },
     [] as string[]
   );
