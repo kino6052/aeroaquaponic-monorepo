@@ -83,6 +83,56 @@ export const shortcutRemoveNote = (state: IState): IState => {
   return { ...state, noteNodes: newNoteNodes, treeNodes: newTreeNodes };
 };
 
+export const editNote = (state: IState): IState => {
+  const selectedNote = state.noteNodes[state.selectedNote];
+  const newNoteNodes: IState["noteNodes"] = {
+    ...state.noteNodes,
+    [state.selectedNote]: {
+      ...selectedNote,
+      isEditable: !selectedNote.isEditable
+    },
+  };
+  return { ...state, noteNodes: newNoteNodes };
+};
+
+export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) =>
+  Object.values(state.noteNodes)
+    .map(cb)
+    .reduce(
+      (acc, note) => ({ ...acc, [note.id]: note }),
+      {} as typeof state.noteNodes
+    );
+
+export const changeNoteTitle = (state: IState, [, id, value]: IEvent): IState => {
+  const newNoteNodes = updateNoteNodes(state, (note) => {
+    const isFound = id.replace(Id.NoteTitle, '') === note.id.replace(Id.Note, '');
+    if (!isFound) return note;
+    return {
+      ...note,
+      title: value,
+    };
+  });
+  return {
+    ...state,
+    noteNodes: newNoteNodes,
+  };
+};
+
+export const changeNoteDescription = (state: IState, [, id, value]: IEvent): IState => {
+  const newNoteNodes = updateNoteNodes(state, (note) => {
+    const isFound = id.replace(Id.NoteDescription, '') === note.id.replace(Id.Note, '');
+    if (!isFound) return note;
+    return {
+      ...note,
+      description: value,
+    };
+  });
+  return {
+    ...state,
+    noteNodes: newNoteNodes,
+  };
+};
+
 export const processNotes = (state: IState): IState => {
   const newNotes: string[] = Object.values(state.noteNodes).reduce(
     (acc, note) => {

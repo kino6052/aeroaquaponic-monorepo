@@ -105,7 +105,7 @@ export const Container = (props: { state: IState }) => (
                 </EventWrapper>
                 {note.isEditable && (
                   <EventWrapper
-                    id={`${Id.NoteTitle}-${id.replace(`${Id.NoteTitle}-`, "")}`}
+                    id={`${Id.NoteTitle}-${id.replace(`${Id.Note}-`, "")}`}
                   >
                     <input value={note.title} />
                   </EventWrapper>
@@ -113,11 +113,11 @@ export const Container = (props: { state: IState }) => (
                 {note.isEditable && (
                   <EventWrapper
                     id={`${Id.NoteDescription}-${id.replace(
-                      `${Id.NoteDescription}-`,
+                      `${Id.Note}-`,
                       ""
                     )}`}
                   >
-                    <input value={note.title} />
+                    <input value={note.description} />
                   </EventWrapper>
                 )}
               </>

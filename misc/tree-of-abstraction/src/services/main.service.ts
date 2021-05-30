@@ -3,6 +3,9 @@ import { Id, initialState, IState, RedoStack, Scope, UndoStack } from "../bridge
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
+  changeNoteDescription,
+  changeNoteTitle,
+  editNote,
   processNotes,
   shortcutAddNote,
   shortcutCollapseNote,
@@ -36,6 +39,7 @@ const toggleScope = (state: IState, event: IEvent): IState => ({
 });
 
 export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
+  console.warn(type, id, value)
   // Shortcuts
   const toggleScopeResult =
     type === "keydown" &&
@@ -92,19 +96,31 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
 
     const treeResult = undoableTreeResult || nonUndoableTreeResult;
 
-    return processTree({
+    return processNotes(processTree({
       ...treeResult,
       treeNodes: updateHighligted(treeResult),
-    });
+    }));
   }
   else {
+    const changeNoteTitleResult =
+      type === "change" &&
+      id.includes(Id.NoteTitle) &&
+      changeNoteTitle(state, [type, id, value]);
+
+    const changeNoteDescriptionResult =
+      type === "change" &&
+      id.includes(Id.NoteDescription) &&
+      changeNoteDescription(state, [type, id, value]);
+
     return processNotes(
+      changeNoteTitleResult || changeNoteDescriptionResult ||
       compose([
         [Shortcut.Add, shortcutAddNote],
         [Shortcut.Up, shortcutUpNote],
         [Shortcut.Down, shortcutDownNote],
         [Shortcut.Collapse, shortcutCollapseNote],
         [Shortcut.Remove, shortcutRemoveNote],
+        [Shortcut.Edit, editNote]
       ])(state, [type, id, value]) || state
     );
   }
