@@ -11,6 +11,7 @@ import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
   changeNoteDescription,
+  changeNotesSearchInput,
   changeNoteTitle,
   editNote,
   processNotes,
@@ -110,6 +111,12 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
       })
     );
   } else {
+    // IO
+    const changeNotesSearchInputResult =
+      type === "change" &&
+      id === Id.SearchNotesInput &&
+      changeNotesSearchInput(state, [type, id, value]);
+
     const changeNoteTitleResult =
       type === "change" &&
       id.includes(Id.NoteTitle) &&
@@ -131,6 +138,7 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
           [Shortcut.Remove, shortcutRemoveNote],
           [Shortcut.Edit, editNote],
         ])(state, [type, id, value]) ||
+        changeNotesSearchInputResult ||
         state
     );
   }

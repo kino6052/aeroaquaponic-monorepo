@@ -74,7 +74,7 @@ export const Container = (props: { state: IState }) => (
       }}
     >
       <div style={{ display: "flex", position: "fixed", top: 0 }}>
-        <EventWrapper id={Id.SearchItemsInput}>
+        <EventWrapper id={Id.SearchNotesInput}>
           <input
             autoFocus
             placeholder="Search"

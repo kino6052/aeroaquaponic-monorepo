@@ -863,19 +863,157 @@ describe("Notes", () => {
     `);
   });
 
-  it("should serach", () => {
+  it("should search", () => {
     expect(
       sequence([
         ["keydown", Id.Keyboard, Shortcut.ToggleScope],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
-        ["change", Id.SearchItemsInput, "te"],
+        ["change", Id.SearchNotesInput, "titl"],
       ])
-    ).toMatchInlineSnapshot(``);
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "Description...",
+            "id": "note-element-0",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+          "note-element-1": Object {
+            "description": "Description...",
+            "id": "note-element-1",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+          "note-element-2": Object {
+            "description": "Description...",
+            "id": "note-element-2",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+        },
+        "noteSearchInput": "titl",
+        "notes": Array [
+          "note-element-2",
+          "note-element-1",
+          "note-element-0",
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-2",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
+              "note-element-2",
+            ],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
   });
 
-  it("should serach", () => {
+  it("should search", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["change", Id.SearchNotesInput, "1234"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "Description...",
+            "id": "note-element-0",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+          "note-element-1": Object {
+            "description": "Description...",
+            "id": "note-element-1",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+          "note-element-2": Object {
+            "description": "Description...",
+            "id": "note-element-2",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "Title",
+          },
+        },
+        "noteSearchInput": "1234",
+        "notes": Array [],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-2",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
+              "note-element-2",
+            ],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should search", () => {
     expect(
       sequence([
         ["keydown", Id.Keyboard, Shortcut.Add],
@@ -891,8 +1029,113 @@ describe("Notes", () => {
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
         ["keydown", Id.Keyboard, Shortcut.Up],
-        ["change", Id.SearchItemsInput, "Ti"],
+        ["change", Id.SearchNotesInput, "titl"],
       ])
-    ).toMatchInlineSnapshot(``);
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-3": Object {
+            "description": "Description...",
+            "id": "note-element-3",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-2",
+            ],
+            "title": "Title",
+          },
+          "note-element-4": Object {
+            "description": "Description...",
+            "id": "note-element-4",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-2",
+            ],
+            "title": "Title",
+          },
+          "note-element-5": Object {
+            "description": "Description...",
+            "id": "note-element-5",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-2",
+            ],
+            "title": "Title",
+          },
+        },
+        "noteSearchInput": "titl",
+        "notes": Array [
+          "note-element-5",
+          "note-element-4",
+          "note-element-3",
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-2",
+        "selectedNote": "note-element-5",
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [],
+            "id": "item-element-1",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-3",
+              "note-element-4",
+              "note-element-5",
+            ],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+              "item-element-1",
+              "item-element-2",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
   });
 });

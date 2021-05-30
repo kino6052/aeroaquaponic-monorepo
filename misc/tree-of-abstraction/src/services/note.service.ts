@@ -169,7 +169,7 @@ export const processNotes = (state: IState): IState => {
   };
 };
 
-export const changeSearchInput = (
+export const changeNotesSearchInput = (
   state: IState,
   [, , value]: IEvent
 ): IState => {

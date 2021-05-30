@@ -14,10 +14,11 @@ export enum Id {
   Note = "note-element",
   NoteTitle = "note-title",
   NoteDescription = "note-description",
+  SearchNotesInput = "search-notes-input",
   Keyboard = "keyboard",
 }
 
-export const Scope = ['tree', 'notes'] as const
+export const Scope = ["tree", "notes"] as const;
 
 export const RootId = `${Id.Item}-root`;
 
@@ -47,7 +48,7 @@ export interface INote {
 export type ITree = string[];
 
 export type IState = {
-  scope:  typeof Scope[number];
+  scope: typeof Scope[number];
 
   // Tree
   treeNodes: { [id: string]: INode };
