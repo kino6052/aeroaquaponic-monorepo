@@ -743,4 +743,123 @@ describe("Notes", () => {
       }
     `);
   });
+
+  it("should correctly get descendants", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-3": Object {
+            "description": "Description...",
+            "id": "note-element-3",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-2",
+            ],
+            "title": "Title",
+          },
+          "note-element-4": Object {
+            "description": "Description...",
+            "id": "note-element-4",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-2",
+            ],
+            "title": "Title",
+          },
+        },
+        "noteSearchInput": "",
+        "notes": Array [
+          "note-element-4",
+          "note-element-3",
+        ],
+        "scope": "tree",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-3",
+        "tree": Array [
+          "item-element-root",
+          "item-element-0",
+          "item-element-1",
+          "item-element-2",
+        ],
+        "treeNodes": Object {
+          "item-element-0": Object {
+            "children": Array [
+              "item-element-1",
+            ],
+            "id": "item-element-0",
+            "indent": 1,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-root",
+            "title": "title",
+          },
+          "item-element-1": Object {
+            "children": Array [
+              "item-element-2",
+            ],
+            "id": "item-element-1",
+            "indent": 2,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "item-element-0",
+            "title": "title",
+          },
+          "item-element-2": Object {
+            "children": Array [],
+            "id": "item-element-2",
+            "indent": 3,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-3",
+              "note-element-4",
+            ],
+            "parent": "item-element-1",
+            "title": "title",
+          },
+          "item-element-root": Object {
+            "children": Array [
+              "item-element-0",
+            ],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
 });

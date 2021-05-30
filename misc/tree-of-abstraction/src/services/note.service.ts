@@ -5,7 +5,7 @@ import { Utils } from "../utils/utils";
 import { getDescendants, updateTreeNodes } from "./tree.service";
 
 export const shortcutAddNote = (state: IState, event: IEvent): IState => {
-  const noteId = `${Id.Note}-${Utils.generateId()}`
+  const noteId = `${Id.Note}-${Utils.generateId()}`;
   const newNoteNode: INote = {
     description: "Description...",
     title: "Title",
@@ -89,7 +89,7 @@ export const editNote = (state: IState): IState => {
     ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
     [state.selectedNote]: {
       ...selectedNote,
-      isEditable: !selectedNote.isEditable
+      isEditable: !selectedNote.isEditable,
     },
   };
   return { ...state, noteNodes: newNoteNodes };
@@ -103,9 +103,13 @@ export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) =>
       {} as typeof state.noteNodes
     );
 
-export const changeNoteTitle = (state: IState, [, id, value]: IEvent): IState => {
+export const changeNoteTitle = (
+  state: IState,
+  [, id, value]: IEvent
+): IState => {
   const newNoteNodes = updateNoteNodes(state, (note) => {
-    const isFound = id.replace(Id.NoteTitle, '') === note.id.replace(Id.Note, '');
+    const isFound =
+      id.replace(Id.NoteTitle, "") === note.id.replace(Id.Note, "");
     if (!isFound) return note;
     return {
       ...note,
@@ -118,9 +122,13 @@ export const changeNoteTitle = (state: IState, [, id, value]: IEvent): IState =>
   };
 };
 
-export const changeNoteDescription = (state: IState, [, id, value]: IEvent): IState => {
+export const changeNoteDescription = (
+  state: IState,
+  [, id, value]: IEvent
+): IState => {
   const newNoteNodes = updateNoteNodes(state, (note) => {
-    const isFound = id.replace(Id.NoteDescription, '') === note.id.replace(Id.Note, '');
+    const isFound =
+      id.replace(Id.NoteDescription, "") === note.id.replace(Id.Note, "");
     if (!isFound) return note;
     return {
       ...note,
@@ -134,15 +142,22 @@ export const changeNoteDescription = (state: IState, [, id, value]: IEvent): ISt
 };
 
 export const processNotes = (state: IState): IState => {
+  const descendants = [
+    state.selectedNode,
+    ...getDescendants(state.selectedNode, state),
+  ];
   const newNotes: string[] = Object.values(state.noteNodes).reduce(
     (acc, note) => {
-      const descendants = [
-        state.selectedNode,
-        getDescendants(state.selectedNode, state),
-      ];
       const intersectionResult = intersection(descendants, note.parents);
       if (intersectionResult.length > 0) {
-        return [...acc, note.id];
+        const isMatch =
+          state.noteSearchInput.length >= 3 &&
+          note.title
+            .toLowerCase()
+            .includes(state.noteSearchInput.toLowerCase());
+        const notFiltered = state.noteSearchInput.length < 3;
+
+        return isMatch || notFiltered ? [...acc, note.id] : acc;
       }
       return acc;
     },
@@ -151,5 +166,15 @@ export const processNotes = (state: IState): IState => {
   return {
     ...state,
     notes: newNotes,
+  };
+};
+
+export const changeSearchInput = (
+  state: IState,
+  [, , value]: IEvent
+): IState => {
+  return {
+    ...state,
+    noteSearchInput: value,
   };
 };

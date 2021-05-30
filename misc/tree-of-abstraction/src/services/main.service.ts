@@ -1,5 +1,12 @@
 import { without } from "lodash";
-import { Id, initialState, IState, RedoStack, Scope, UndoStack } from "../bridge";
+import {
+  Id,
+  initialState,
+  IState,
+  RedoStack,
+  Scope,
+  UndoStack,
+} from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
@@ -96,12 +103,13 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
 
     const treeResult = undoableTreeResult || nonUndoableTreeResult;
 
-    return processNotes(processTree({
-      ...treeResult,
-      treeNodes: updateHighligted(treeResult),
-    }));
-  }
-  else {
+    return processNotes(
+      processTree({
+        ...treeResult,
+        treeNodes: updateHighligted(treeResult),
+      })
+    );
+  } else {
     const changeNoteTitleResult =
       type === "change" &&
       id.includes(Id.NoteTitle) &&
@@ -113,15 +121,17 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
       changeNoteDescription(state, [type, id, value]);
 
     return processNotes(
-      changeNoteTitleResult || changeNoteDescriptionResult ||
-      compose([
-        [Shortcut.Add, shortcutAddNote],
-        [Shortcut.Up, shortcutUpNote],
-        [Shortcut.Down, shortcutDownNote],
-        [Shortcut.Collapse, shortcutCollapseNote],
-        [Shortcut.Remove, shortcutRemoveNote],
-        [Shortcut.Edit, editNote]
-      ])(state, [type, id, value]) || state
+      changeNoteTitleResult ||
+        changeNoteDescriptionResult ||
+        compose([
+          [Shortcut.Add, shortcutAddNote],
+          [Shortcut.Up, shortcutUpNote],
+          [Shortcut.Down, shortcutDownNote],
+          [Shortcut.Collapse, shortcutCollapseNote],
+          [Shortcut.Remove, shortcutRemoveNote],
+          [Shortcut.Edit, editNote],
+        ])(state, [type, id, value]) ||
+        state
     );
   }
 };
