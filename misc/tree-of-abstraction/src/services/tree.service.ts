@@ -256,7 +256,7 @@ export const shortcutToggleEditItem = (
 ): IState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = node.id === state.selectedNode;
-    if (!isFound) return node;
+    if (!isFound) return { ...node, isEditable: false };
     const isEditable = !node.isEditable;
     return {
       ...node,

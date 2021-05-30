@@ -5,7 +5,7 @@ import { Utils } from "../utils/utils";
 import { getDescendants, updateTreeNodes } from "./tree.service";
 
 export const shortcutAddNote = (state: IState, event: IEvent): IState => {
-  const noteId=  `${Id.Note}-${Utils.generateId()}`
+  const noteId = `${Id.Note}-${Utils.generateId()}`
   const newNoteNode: INote = {
     description: "Description...",
     title: "Title",
@@ -86,7 +86,7 @@ export const shortcutRemoveNote = (state: IState): IState => {
 export const editNote = (state: IState): IState => {
   const selectedNote = state.noteNodes[state.selectedNote];
   const newNoteNodes: IState["noteNodes"] = {
-    ...state.noteNodes,
+    ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
     [state.selectedNote]: {
       ...selectedNote,
       isEditable: !selectedNote.isEditable

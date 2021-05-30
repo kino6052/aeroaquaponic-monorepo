@@ -39,7 +39,7 @@ const toggleScope = (state: IState, event: IEvent): IState => ({
 });
 
 export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
-  console.warn(type, id, value)
+  // console.warn(type, id, value)
   // Shortcuts
   const toggleScopeResult =
     type === "keydown" &&

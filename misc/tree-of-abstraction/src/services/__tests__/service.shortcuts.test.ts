@@ -1784,6 +1784,7 @@ describe("Edit", () => {
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
         ["keydown", Id.Keyboard, Shortcut.Down],
         ["keydown", Id.Keyboard, Shortcut.Edit],
         ["change", `${Id.Item}-0`, "test"],

@@ -238,7 +238,7 @@ describe("Notes", () => {
             "description": "Description...",
             "id": "note-element-1",
             "isCollapsed": true,
-            "isEditable": false,
+            "isEditable": true,
             "parents": Array [
               "item-element-root",
             ],
@@ -529,14 +529,14 @@ describe("Notes", () => {
         "itemSearchInput": "",
         "noteNodes": Object {
           "note-element-0": Object {
-            "description": "Description...",
+            "description": "test",
             "id": "note-element-0",
             "isCollapsed": true,
-            "isEditable": false,
+            "isEditable": true,
             "parents": Array [
               "item-element-root",
             ],
-            "title": "Title",
+            "title": "test",
           },
         },
         "noteSearchInput": "",
@@ -627,21 +627,21 @@ describe("Notes", () => {
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Down],
         ["keydown", Id.Keyboard, Shortcut.Edit],
-        ["change", `${Id.Note}-0`, "test"],
+        ["change", `${Id.NoteDescription}-0`, "test"],
       ])
     ).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
         "noteNodes": Object {
           "note-element-0": Object {
-            "description": "Description...",
+            "description": "test",
             "id": "note-element-0",
             "isCollapsed": true,
-            "isEditable": false,
+            "isEditable": true,
             "parents": Array [
               "item-element-root",
             ],
-            "title": "test",
+            "title": "Title",
           },
         },
         "noteSearchInput": "",
@@ -664,6 +664,77 @@ describe("Notes", () => {
             "isHighlighted": false,
             "notes": Array [
               "note-element-0",
+            ],
+            "parent": "",
+            "title": "ROOT",
+          },
+        },
+      }
+    `);
+  });
+
+  it("should edit", () => {
+    expect(
+      sequence([
+        ["keydown", Id.Keyboard, Shortcut.ToggleScope],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["change", `${Id.NoteTitle}-0`, "test"],
+        ["change", `${Id.NoteDescription}-0`, "test"],
+        ["change", `${Id.NoteTitle}-1`, "test"],
+        ["change", `${Id.NoteDescription}-1`, "test"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "itemSearchInput": "",
+        "noteNodes": Object {
+          "note-element-0": Object {
+            "description": "test",
+            "id": "note-element-0",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "test",
+          },
+          "note-element-1": Object {
+            "description": "test",
+            "id": "note-element-1",
+            "isCollapsed": true,
+            "isEditable": false,
+            "parents": Array [
+              "item-element-root",
+            ],
+            "title": "test",
+          },
+        },
+        "noteSearchInput": "",
+        "notes": Array [
+          "note-element-1",
+          "note-element-0",
+        ],
+        "scope": "notes",
+        "selectedNode": "item-element-root",
+        "selectedNote": "note-element-0",
+        "tree": Array [
+          "item-element-root",
+        ],
+        "treeNodes": Object {
+          "item-element-root": Object {
+            "children": Array [],
+            "id": "item-element-root",
+            "indent": 0,
+            "isCollapsed": false,
+            "isEditable": false,
+            "isHighlighted": false,
+            "notes": Array [
+              "note-element-0",
+              "note-element-1",
             ],
             "parent": "",
             "title": "ROOT",
