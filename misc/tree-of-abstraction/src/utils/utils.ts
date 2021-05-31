@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { BehaviorSubject } from "rxjs";
-import { Id, initialTreeState, ITreeState } from "../bridge";
-import { treeAct } from "../services/main.service";
+import { IAct, Id, initialState, IState as IState } from "../bridge";
+import { act } from "../services/main.service";
 import { IEvent } from "./EventWrapper";
 
 export const useSharedState = <T>(
@@ -46,9 +46,9 @@ export const Utils = {
 };
 
 export const compose = (arr: Array<any>) => (
-  state: ITreeState,
+  state: IState,
   event: IEvent
-): ITreeState | false =>
+): IState | false =>
   arr.reduce((acc, [shortcut, cb]) => {
     const result =
       event[0] === "keydown" &&
@@ -56,12 +56,10 @@ export const compose = (arr: Array<any>) => (
       event[2] === shortcut &&
       cb(state, event);
     return result || acc;
-  }, false as ITreeState | false);
+  }, false as IState | false);
 
-export const sequence = (inputs: IEvent[]): ITreeState =>
-  inputs.reduce((acc, input) => treeAct(acc)(input), initialTreeState);
-
-export const getSequence = (initialState: ITreeState) => (
+export const genericSequence = <T>(act: IAct<T>, initialState: T) => (
   inputs: IEvent[]
-): ITreeState =>
-  inputs.reduce((acc, input) => treeAct(acc)(input), initialState);
+): T => {
+  return inputs.reduce((acc, input) => act(acc)(input), initialState);
+};

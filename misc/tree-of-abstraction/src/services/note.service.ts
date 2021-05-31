@@ -1,13 +1,10 @@
 import { intersection } from "lodash";
-import { Id, INote, ITreeState } from "../bridge";
+import { Id, INote, IState } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
 import { getDescendants, updateTreeNodes } from "./tree.service";
 
-export const shortcutAddNote = (
-  state: ITreeState,
-  event: IEvent
-): ITreeState => {
+export const shortcutAddNote = (state: IState, event: IEvent): IState => {
   const noteId = `${Id.Note}-${Utils.generateId()}`;
   const newNoteNode: INote = {
     description: "Description...",
@@ -37,10 +34,7 @@ export const shortcutAddNote = (
   };
 };
 
-export const shortcutDownNote = (
-  state: ITreeState,
-  event: IEvent
-): ITreeState => {
+export const shortcutDownNote = (state: IState, event: IEvent): IState => {
   const notes = state.notes;
   const maxIndex = notes.length;
   const index = state.notes.indexOf(state.selectedNote);
@@ -48,10 +42,7 @@ export const shortcutDownNote = (
   return { ...state, selectedNote: notes[newIndex] };
 };
 
-export const shortcutUpNote = (
-  state: ITreeState,
-  event: IEvent
-): ITreeState => {
+export const shortcutUpNote = (state: IState, event: IEvent): IState => {
   const notes = state.notes;
   const maxIndex = notes.length;
   const index = state.notes.indexOf(state.selectedNote);
@@ -59,12 +50,9 @@ export const shortcutUpNote = (
   return { ...state, selectedNote: notes[newIndex] };
 };
 
-export const shortcutCollapseNote = (
-  state: ITreeState,
-  event: IEvent
-): ITreeState => {
+export const shortcutCollapseNote = (state: IState, event: IEvent): IState => {
   const note = state.noteNodes[state.selectedNote];
-  const newNoteNodes: ITreeState["noteNodes"] = {
+  const newNoteNodes: IState["noteNodes"] = {
     ...state.noteNodes,
     [state.selectedNote]: {
       ...note,
@@ -74,9 +62,9 @@ export const shortcutCollapseNote = (
   return { ...state, noteNodes: newNoteNodes };
 };
 
-export const shortcutRemoveNote = (state: ITreeState): ITreeState => {
+export const shortcutRemoveNote = (state: IState): IState => {
   const selectedNote = state.noteNodes[state.selectedNote];
-  const newNoteNodes: ITreeState["noteNodes"] = {
+  const newNoteNodes: IState["noteNodes"] = {
     ...state.noteNodes,
     [state.selectedNote]: {
       ...selectedNote,
@@ -95,9 +83,9 @@ export const shortcutRemoveNote = (state: ITreeState): ITreeState => {
   return { ...state, noteNodes: newNoteNodes, treeNodes: newTreeNodes };
 };
 
-export const editNote = (state: ITreeState): ITreeState => {
+export const editNote = (state: IState): IState => {
   const selectedNote = state.noteNodes[state.selectedNote];
-  const newNoteNodes: ITreeState["noteNodes"] = {
+  const newNoteNodes: IState["noteNodes"] = {
     ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
     [state.selectedNote]: {
       ...selectedNote,
@@ -107,10 +95,7 @@ export const editNote = (state: ITreeState): ITreeState => {
   return { ...state, noteNodes: newNoteNodes };
 };
 
-export const updateNoteNodes = (
-  state: ITreeState,
-  cb: (note: INote) => INote
-) =>
+export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) =>
   Object.values(state.noteNodes)
     .map(cb)
     .reduce(
@@ -119,9 +104,9 @@ export const updateNoteNodes = (
     );
 
 export const changeNoteTitle = (
-  state: ITreeState,
+  state: IState,
   [, id, value]: IEvent
-): ITreeState => {
+): IState => {
   const newNoteNodes = updateNoteNodes(state, (note) => {
     const isFound =
       id.replace(Id.NoteTitle, "") === note.id.replace(Id.Note, "");
@@ -138,9 +123,9 @@ export const changeNoteTitle = (
 };
 
 export const changeNoteDescription = (
-  state: ITreeState,
+  state: IState,
   [, id, value]: IEvent
-): ITreeState => {
+): IState => {
   const newNoteNodes = updateNoteNodes(state, (note) => {
     const isFound =
       id.replace(Id.NoteDescription, "") === note.id.replace(Id.Note, "");
@@ -156,7 +141,7 @@ export const changeNoteDescription = (
   };
 };
 
-export const processNotes = (state: ITreeState): ITreeState => {
+export const processNotes = (state: IState): IState => {
   const descendants = [
     state.selectedNode,
     ...getDescendants(state.selectedNode, state),
@@ -181,9 +166,9 @@ export const processNotes = (state: ITreeState): ITreeState => {
 };
 
 export const changeNotesSearchInput = (
-  state: ITreeState,
+  state: IState,
   [, , value]: IEvent
-): ITreeState => {
+): IState => {
   return {
     ...state,
     noteSearchInput: value,

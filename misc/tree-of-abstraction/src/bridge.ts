@@ -1,9 +1,10 @@
 import { BehaviorSubject } from "rxjs";
-import { treeAct, collectionAct } from "./services/main.service";
+import { act } from "./services/main.service";
 import {} from "./services/collection.service";
-import { EventSubject } from "./utils/EventWrapper";
+import { EventSubject, IEvent } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
 import "./services/persistence.service";
+import { genericSequence } from "./utils/utils";
 
 export type InputType = "change" | "click" | "focus";
 
@@ -18,7 +19,11 @@ export enum Id {
   NoteDescription = "note-description",
   SearchNotesInput = "search-notes-input",
   Keyboard = "keyboard",
+  // Collection
+  Collection = "collection-element",
 }
+
+export type IAct<T> = (state: T) => (event: IEvent) => T;
 
 export const Scope = ["tree", "notes"] as const;
 
@@ -26,9 +31,12 @@ export const RootId = `${Id.Item}-root`;
 
 export type IInput = [InputType, string, string];
 
-export interface INode {
+export interface IEntity {
   id: string;
   title: string;
+}
+
+export interface INode extends IEntity {
   isCollapsed: boolean;
   isEditable: boolean;
   children: string[];
@@ -38,9 +46,7 @@ export interface INode {
   indent: number;
 }
 
-export interface INote {
-  id: string;
-  title: string;
+export interface INote extends IEntity {
   description: string;
   isCollapsed: boolean;
   isEditable: boolean;
@@ -49,10 +55,21 @@ export interface INote {
 
 export type ITree = string[];
 
-export type ITreeState = {
-  scope: typeof Scope[number];
+export enum ERoute {
+  Collection = "Collection",
+  Tree = "Tree",
+}
+
+export type IState = {
+  // Routing
+  route: ERoute;
+
+  // Collection
+  collectionNodes: { [id: string]: IEntity };
+  selectedCollection?: string;
 
   // Tree
+  scope: typeof Scope[number];
   treeNodes: { [id: string]: INode };
   tree: ITree;
   selectedNode: string;
@@ -77,10 +94,14 @@ const RootNode = {
   indent: 0,
 };
 
-export const initialTreeState: ITreeState = {
-  scope: Scope[0],
+export const initialState: IState = {
+  // Routing
+  route: ERoute.Tree,
+  collectionNodes: {},
+  selectedCollection: "",
 
   // Tree
+  scope: Scope[0],
   treeNodes: {
     [RootId]: RootNode,
   },
@@ -95,31 +116,16 @@ export const initialTreeState: ITreeState = {
   noteSearchInput: "",
 };
 
-export const TreeStateSubject = new BehaviorSubject<ITreeState>(
-  initialTreeState
-);
+export const StateSubject = new BehaviorSubject<IState>(initialState);
 
 EventSubject.subscribe((event) => {
-  const prevState = TreeStateSubject.getValue();
-  const newState = treeAct(prevState)(event);
-  TreeStateSubject.next(newState);
+  const prevState = StateSubject.getValue();
+  const newState = act(prevState)(event);
+  StateSubject.next(newState);
 });
 
-export interface ICollectionState {
-  collectionIds: string[];
-  currentCollectionId?: string;
-}
+export const sequence = genericSequence(act, initialState);
 
-export const initialCollectionState: ICollectionState = {
-  collectionIds: [],
-};
-
-export const CollectionStateSubject = new BehaviorSubject<ICollectionState>(
-  initialCollectionState
-);
-
-EventSubject.subscribe((event) => {
-  const prevState = CollectionStateSubject.getValue();
-  const newState = collectionAct(prevState)(event);
-  CollectionStateSubject.next(newState);
-});
+export const getSequence = (initialState: IState) => (
+  inputs: IEvent[]
+): IState => inputs.reduce((acc, input) => act(acc)(input), initialState);

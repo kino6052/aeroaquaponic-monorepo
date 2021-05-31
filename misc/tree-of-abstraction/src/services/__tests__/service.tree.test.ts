@@ -1,7 +1,7 @@
 import { cloneDeep } from "lodash";
-import { Id, initialTreeState, RootId } from "../../bridge";
-import { sequence, Utils } from "../../utils/utils";
-import { treeAct } from "../main.service";
+import { Id, initialState, RootId, sequence } from "../../bridge";
+import { Utils } from "../../utils/utils";
+import { act } from "../main.service";
 import { Shortcut } from "../shortcuts.service";
 
 let counter = 0;
@@ -28,13 +28,16 @@ afterAll(() => {
 
 describe("App", () => {
   it("should act", () => {
-    expect(treeAct(initialTreeState)(["click", "", ""])).toMatchInlineSnapshot(`
+    expect(act(initialState)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -58,15 +61,17 @@ describe("App", () => {
   });
 
   it("should act", () => {
-    expect(
-      treeAct({ ...initialTreeState, selectedNode: "" })(["click", "", ""])
-    ).toMatchInlineSnapshot(`
+    expect(act({ ...initialState, selectedNode: "" })(["click", "", ""]))
+      .toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "",
         "selectedNote": "",
         "tree": Array [
@@ -90,15 +95,18 @@ describe("App", () => {
   });
 
   it("should build tree", () => {
-    const s = cloneDeep(initialTreeState);
+    const s = cloneDeep(initialState);
     s.treeNodes[RootId].children = ["test"];
-    expect(treeAct(s)(["click", "", ""])).toMatchInlineSnapshot(`
+    expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -125,15 +133,18 @@ describe("App", () => {
   });
 
   it("should click", () => {
-    const s = cloneDeep(initialTreeState);
+    const s = cloneDeep(initialState);
     s.treeNodes[RootId].children = ["test"];
-    expect(treeAct(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
+    expect(act(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -169,11 +180,14 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "te",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -246,11 +260,14 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "tit",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -317,11 +334,14 @@ describe("App", () => {
     expect(sequence([["keydown", Id.Keyboard, Shortcut.ToggleScope]]))
       .toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "notes",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -349,11 +369,14 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -382,11 +405,14 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {},
         "noteSearchInput": "",
         "notes": Array [],
+        "route": "Tree",
         "scope": "tree",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "",
         "tree": Array [
@@ -417,6 +443,7 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
+        "collectionNodes": Object {},
         "itemSearchInput": "",
         "noteNodes": Object {
           "note-element-0": Object {
@@ -434,7 +461,9 @@ describe("App", () => {
         "notes": Array [
           "note-element-0",
         ],
+        "route": "Tree",
         "scope": "notes",
+        "selectedCollection": "",
         "selectedNode": "item-element-root",
         "selectedNote": "note-element-0",
         "tree": Array [
