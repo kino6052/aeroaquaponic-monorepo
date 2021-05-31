@@ -1,4 +1,4 @@
-import { Id, initialState } from "../../bridge";
+import { Id, initialTreeState } from "../../bridge";
 import { getSequence, sequence, Utils } from "../../utils/utils";
 import { Shortcut } from "../shortcuts.service";
 
@@ -359,7 +359,7 @@ describe("Undo/Redo", () => {
 
   it("should add and collapse", () => {
     expect(
-      getSequence({ ...initialState, selectedNode: "" })([
+      getSequence({ ...initialTreeState, selectedNode: "" })([
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],

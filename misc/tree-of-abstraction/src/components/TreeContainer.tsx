@@ -1,8 +1,8 @@
 import React from "react";
-import { Id, IState } from "../bridge";
+import { Id, ITreeState } from "../bridge";
 import { EventWrapper } from "../utils/EventWrapper";
 
-export const Container = (props: { state: IState }) => (
+export const TreeContainer = (props: { state: ITreeState }) => (
   <div
     style={{
       display: "flex",

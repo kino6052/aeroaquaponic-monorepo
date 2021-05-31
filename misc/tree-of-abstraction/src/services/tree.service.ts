@@ -1,9 +1,10 @@
 import { intersection, union, without } from "lodash";
-import { Id, INode, IState, RedoStack, RootId, UndoStack } from "../bridge";
+import { Id, INode, ITreeState, RootId } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
+import { RedoStack, UndoStack } from "./main.service";
 
-export const getDescendants = (id: string, state: IState): string[] => {
+export const getDescendants = (id: string, state: ITreeState): string[] => {
   const node = state.treeNodes[id];
   if (!node) return [];
   return node.children.reduce((acc, id) => {
@@ -14,19 +15,19 @@ export const getDescendants = (id: string, state: IState): string[] => {
 export const getIsDescendant = (
   potentialDescendant: string,
   potentialParent: string,
-  state: IState
+  state: ITreeState
 ): [boolean, string[]] => {
   const descendants = getDescendants(potentialParent, state);
   return [descendants.includes(potentialDescendant), descendants];
 };
 
-export const getParents = (id: string, state: IState): string[] => {
+export const getParents = (id: string, state: ITreeState): string[] => {
   const node = state.treeNodes[id];
   if (!node) return [];
   return [...getParents(node.parent, state), id];
 };
 
-export const updateHighligted = (state: IState) => {
+export const updateHighligted = (state: ITreeState) => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const value = state.itemSearchInput;
     const isHighlighted =
@@ -41,7 +42,10 @@ export const updateHighligted = (state: IState) => {
   return newTreeNodes;
 };
 
-export const updateTreeNodes = (state: IState, cb: (node: INode) => INode) =>
+export const updateTreeNodes = (
+  state: ITreeState,
+  cb: (node: INode) => INode
+) =>
   Object.values(state.treeNodes)
     .map(cb)
     .reduce(
@@ -49,7 +53,10 @@ export const updateTreeNodes = (state: IState, cb: (node: INode) => INode) =>
       {} as typeof state.treeNodes
     );
 
-export const shortcutAddItem = (state: IState, event: IEvent): IState => {
+export const shortcutAddItem = (
+  state: ITreeState,
+  event: IEvent
+): ITreeState => {
   const selectedId = state.selectedNode || RootId;
   const newNode: INode = {
     children: [] as string[],
@@ -80,7 +87,10 @@ export const shortcutAddItem = (state: IState, event: IEvent): IState => {
   };
 };
 
-export const shortcutRemoveItem = (state: IState, [, id]: IEvent): IState => {
+export const shortcutRemoveItem = (
+  state: ITreeState,
+  [, id]: IEvent
+): ITreeState => {
   const nodeId = state.selectedNode;
   const parentId = state.treeNodes[nodeId]?.parent;
   const parent = state.treeNodes[parentId];
@@ -109,7 +119,10 @@ export const shortcutRemoveItem = (state: IState, [, id]: IEvent): IState => {
   };
 };
 
-export const clickItem = (state: IState, [, id, value]: IEvent): IState => {
+export const clickItem = (
+  state: ITreeState,
+  [, id, value]: IEvent
+): ITreeState => {
   if (value === "10") {
     const [isDescendant, descendants] = getIsDescendant(
       id,
@@ -170,16 +183,16 @@ export const clickItem = (state: IState, [, id, value]: IEvent): IState => {
 };
 
 export const changeSearchInput = (
-  state: IState,
+  state: ITreeState,
   [, , value]: IEvent
-): IState => {
+): ITreeState => {
   return {
     ...state,
     itemSearchInput: value,
   };
 };
 
-export const process = (state: IState): IState => {
+export const process = (state: ITreeState): ITreeState => {
   const currentTree = [RootId, ...getDescendants(RootId, state)];
   const highlighted = Object.values(state.treeNodes)
     .filter(({ isHighlighted }) => isHighlighted)
@@ -216,7 +229,10 @@ export const process = (state: IState): IState => {
   }
 };
 
-export const shortcutCollapse = (state: IState, [, id]: IEvent): IState => {
+export const shortcutCollapse = (
+  state: ITreeState,
+  [, id]: IEvent
+): ITreeState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = node.id === state.selectedNode;
     if (!isFound) return node;
@@ -233,9 +249,9 @@ export const shortcutCollapse = (state: IState, [, id]: IEvent): IState => {
 };
 
 export const changeItemTitle = (
-  state: IState,
+  state: ITreeState,
   [, id, value]: IEvent
-): IState => {
+): ITreeState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = id === node.id;
     if (!isFound) return node;
@@ -251,9 +267,9 @@ export const changeItemTitle = (
 };
 
 export const shortcutToggleEditItem = (
-  state: IState,
+  state: ITreeState,
   event: IEvent
-): IState => {
+): ITreeState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = node.id === state.selectedNode;
     if (!isFound) return { ...node, isEditable: false };
@@ -269,7 +285,7 @@ export const shortcutToggleEditItem = (
   };
 };
 
-export const shortcutEnter = (state: IState, event: IEvent): IState => {
+export const shortcutEnter = (state: ITreeState, event: IEvent): ITreeState => {
   const newTreeNodes = updateTreeNodes(state, (node) => {
     const isFound = node.id === state.selectedNode;
     if (!isFound) return node;
@@ -285,7 +301,7 @@ export const shortcutEnter = (state: IState, event: IEvent): IState => {
   };
 };
 
-export const shortcutDown = (state: IState, event: IEvent): IState => {
+export const shortcutDown = (state: ITreeState, event: IEvent): ITreeState => {
   const nodes = state.tree;
   const maxIndex = nodes.length;
   const index = state.tree.indexOf(state.selectedNode);
@@ -293,7 +309,10 @@ export const shortcutDown = (state: IState, event: IEvent): IState => {
   return { ...state, selectedNode: nodes[newIndex] };
 };
 
-export const shortcutMoveDown = (state: IState, event: IEvent): IState => {
+export const shortcutMoveDown = (
+  state: ITreeState,
+  event: IEvent
+): ITreeState => {
   const node = state.treeNodes[state.selectedNode];
   if (!node) return state;
   const parent = state.treeNodes[node.parent];
@@ -318,7 +337,7 @@ export const shortcutMoveDown = (state: IState, event: IEvent): IState => {
   return { ...state, treeNodes };
 };
 
-export const shortcutUp = (state: IState, event: IEvent): IState => {
+export const shortcutUp = (state: ITreeState, event: IEvent): ITreeState => {
   const nodes = state.tree;
   const maxIndex = nodes.length;
   const index = state.tree.indexOf(state.selectedNode);
@@ -326,7 +345,10 @@ export const shortcutUp = (state: IState, event: IEvent): IState => {
   return { ...state, selectedNode: nodes[newIndex] };
 };
 
-export const shortcutMoveUp = (state: IState, event: IEvent): IState => {
+export const shortcutMoveUp = (
+  state: ITreeState,
+  event: IEvent
+): ITreeState => {
   const node = state.treeNodes[state.selectedNode];
   if (!node) return state;
   const parent = state.treeNodes[node.parent];
@@ -350,14 +372,14 @@ export const shortcutMoveUp = (state: IState, event: IEvent): IState => {
   return { ...state, treeNodes };
 };
 
-export const shortcutUndo = (state: IState, event: IEvent): IState => {
+export const shortcutUndo = (state: ITreeState, event: IEvent): ITreeState => {
   if (!UndoStack.length) return state;
   RedoStack.push(state.treeNodes);
   const prev = UndoStack.pop()!;
   return { ...state, treeNodes: prev };
 };
 
-export const shortcutRedo = (state: IState, event: IEvent): IState => {
+export const shortcutRedo = (state: ITreeState, event: IEvent): ITreeState => {
   if (!RedoStack.length) return state;
   UndoStack.push(state.treeNodes);
   const prev = RedoStack.pop()!;

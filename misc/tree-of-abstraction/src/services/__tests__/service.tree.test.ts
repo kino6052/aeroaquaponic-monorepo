@@ -1,7 +1,7 @@
 import { cloneDeep } from "lodash";
-import { Id, initialState, RootId } from "../../bridge";
+import { Id, initialTreeState, RootId } from "../../bridge";
 import { sequence, Utils } from "../../utils/utils";
-import { act } from "../main.service";
+import { treeAct } from "../main.service";
 import { Shortcut } from "../shortcuts.service";
 
 let counter = 0;
@@ -28,7 +28,7 @@ afterAll(() => {
 
 describe("App", () => {
   it("should act", () => {
-    expect(act(initialState)(["click", "", ""])).toMatchInlineSnapshot(`
+    expect(treeAct(initialTreeState)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
         "noteNodes": Object {},
@@ -58,8 +58,9 @@ describe("App", () => {
   });
 
   it("should act", () => {
-    expect(act({ ...initialState, selectedNode: "" })(["click", "", ""]))
-      .toMatchInlineSnapshot(`
+    expect(
+      treeAct({ ...initialTreeState, selectedNode: "" })(["click", "", ""])
+    ).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
         "noteNodes": Object {},
@@ -89,9 +90,9 @@ describe("App", () => {
   });
 
   it("should build tree", () => {
-    const s = cloneDeep(initialState);
+    const s = cloneDeep(initialTreeState);
     s.treeNodes[RootId].children = ["test"];
-    expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
+    expect(treeAct(s)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
         "noteNodes": Object {},
@@ -124,9 +125,9 @@ describe("App", () => {
   });
 
   it("should click", () => {
-    const s = cloneDeep(initialState);
+    const s = cloneDeep(initialTreeState);
     s.treeNodes[RootId].children = ["test"];
-    expect(act(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
+    expect(treeAct(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
       Object {
         "itemSearchInput": "",
         "noteNodes": Object {},

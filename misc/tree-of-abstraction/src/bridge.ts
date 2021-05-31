@@ -1,5 +1,6 @@
 import { BehaviorSubject } from "rxjs";
-import { act } from "./services/main.service";
+import { treeAct, collectionAct } from "./services/main.service";
+import {} from "./services/collection.service";
 import { EventSubject } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
 import "./services/persistence.service";
@@ -48,7 +49,7 @@ export interface INote {
 
 export type ITree = string[];
 
-export type IState = {
+export type ITreeState = {
   scope: typeof Scope[number];
 
   // Tree
@@ -76,7 +77,7 @@ const RootNode = {
   indent: 0,
 };
 
-export const initialState: IState = {
+export const initialTreeState: ITreeState = {
   scope: Scope[0],
 
   // Tree
@@ -94,13 +95,31 @@ export const initialState: IState = {
   noteSearchInput: "",
 };
 
-export const UndoStack: IState["treeNodes"][] = [];
-export const RedoStack: IState["treeNodes"][] = [];
+export const TreeStateSubject = new BehaviorSubject<ITreeState>(
+  initialTreeState
+);
 
 EventSubject.subscribe((event) => {
-  const prevState = StateSubject.getValue();
-  const newState = act(prevState)(event);
-  StateSubject.next(newState);
+  const prevState = TreeStateSubject.getValue();
+  const newState = treeAct(prevState)(event);
+  TreeStateSubject.next(newState);
 });
 
-export const StateSubject = new BehaviorSubject<IState>(initialState);
+export interface ICollectionState {
+  collectionIds: string[];
+  currentCollectionId?: string;
+}
+
+export const initialCollectionState: ICollectionState = {
+  collectionIds: [],
+};
+
+export const CollectionStateSubject = new BehaviorSubject<ICollectionState>(
+  initialCollectionState
+);
+
+EventSubject.subscribe((event) => {
+  const prevState = CollectionStateSubject.getValue();
+  const newState = collectionAct(prevState)(event);
+  CollectionStateSubject.next(newState);
+});

@@ -1,12 +1,5 @@
 import { without } from "lodash";
-import {
-  Id,
-  initialState,
-  IState,
-  RedoStack,
-  Scope,
-  UndoStack,
-} from "../bridge";
+import { ICollectionState, Id, ITreeState, Scope } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
@@ -41,12 +34,19 @@ import {
   updateHighligted,
 } from "./tree.service";
 
-const toggleScope = (state: IState, event: IEvent): IState => ({
+export const UndoStack: ITreeState["treeNodes"][] = [];
+export const RedoStack: ITreeState["treeNodes"][] = [];
+
+const toggleScope = (state: ITreeState, event: IEvent): ITreeState => ({
   ...state,
   scope: without(Scope, state.scope)[0],
 });
 
-export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
+export const treeAct = (_state: ITreeState) => ([
+  type,
+  id,
+  value,
+]: IEvent): ITreeState => {
   // console.warn(type, id, value)
   // Shortcuts
   const toggleScopeResult =
@@ -142,4 +142,14 @@ export const act = (_state: IState) => ([type, id, value]: IEvent): IState => {
         state
     );
   }
+};
+
+export const collectionAct = (state: ICollectionState) => (event: IEvent) => {
+  return state;
+  // compose([
+  //   [Shortcut.Add, shortcutAddItem],
+  //   [Shortcut.Remove, shortcutRemoveItem],
+  //   [Shortcut.MoveDown, shortcutMoveDown],
+  //   [Shortcut.MoveUp, shortcutMoveUp],
+  // ]);
 };
