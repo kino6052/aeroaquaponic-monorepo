@@ -7,10 +7,12 @@
   "dependencies": {
     "@types/keypress": "^2.0.30",
     "@types/lodash": "4.14.167",
+    "firebase": "^8.6.3",
+    "firebase-cli": "^1.2.0",
     "hotkeys-js": "^3.8.3",
     "keypress": "^0.2.1",
     "keypress.js": "^2.1.5",
-    "lodash": "4.17.20",
+    "lodash": "^4.17.21",
     "react": "17.0.0",
     "react-dom": "17.0.0",
     "react-scripts": "^3.4.1",

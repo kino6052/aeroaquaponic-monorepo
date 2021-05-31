@@ -2,6 +2,7 @@ import { BehaviorSubject } from "rxjs";
 import { act } from "./services/main.service";
 import { EventSubject } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
+import "./services/persistence.service";
 
 export type InputType = "change" | "click" | "focus";
 
