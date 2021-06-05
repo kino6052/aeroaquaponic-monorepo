@@ -140,8 +140,7 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
   }
 };
 
-export const act: IAct<IAppState> = (__state) => (event) => {
-  const _state = __state.tree;
-  const tree = actTree(_state)(event);
-  return { ...__state, tree };
+export const act: IAct<IAppState> = (state) => (event) => {
+  const tree = actTree(state.tree)(event);
+  return { ...state, tree };
 };
