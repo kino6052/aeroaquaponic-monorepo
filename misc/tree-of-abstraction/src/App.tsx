@@ -5,13 +5,13 @@ import { TreeContainer as Container } from "./components/Container";
 import { useSharedState } from "./utils/utils";
 
 export default function App() {
-  const [treeState] = useSharedState(StateSubject);
+  const [state] = useSharedState(StateSubject);
   return (
     <div className="App">
       <Router>
         <Switch>
           <Route exact path="/">
-            <Container state={treeState} />
+            <Container state={state.tree} />
           </Route>
         </Switch>
       </Router>

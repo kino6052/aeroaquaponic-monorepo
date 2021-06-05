@@ -60,7 +60,7 @@ export enum ERoute {
   Tree = "Tree",
 }
 
-export type IState = {
+export type IAppState = {
   // Routing
   route: ERoute;
 
@@ -68,19 +68,23 @@ export type IState = {
   collectionNodes: { [id: string]: IEntity };
   selectedCollection?: string;
 
-  // Tree
-  scope: typeof Scope[number];
-  treeNodes: { [id: string]: INode };
-  tree: ITree;
-  selectedNode: string;
-  itemSearchInput: string;
+  tree: {
+    // Tree
+    scope: typeof Scope[number];
+    treeNodes: { [id: string]: INode };
+    tree: ITree;
+    selectedNode: string;
+    itemSearchInput: string;
 
-  // Notes
-  noteNodes: { [id: string]: INote };
-  notes: string[];
-  selectedNote: string;
-  noteSearchInput: string;
+    // Notes
+    noteNodes: { [id: string]: INote };
+    notes: string[];
+    selectedNote: string;
+    noteSearchInput: string;
+  };
 };
+
+export type IState = IAppState["tree"];
 
 const RootNode = {
   id: RootId,
@@ -94,29 +98,31 @@ const RootNode = {
   indent: 0,
 };
 
-export const initialState: IState = {
+export const initialState: IAppState = {
   // Routing
   route: ERoute.Tree,
   collectionNodes: {},
   selectedCollection: "",
 
-  // Tree
-  scope: Scope[0],
-  treeNodes: {
-    [RootId]: RootNode,
-  },
-  tree: [RootId],
-  selectedNode: RootId,
-  itemSearchInput: "",
+  tree: {
+    // Tree
+    scope: Scope[0],
+    treeNodes: {
+      [RootId]: RootNode,
+    },
+    tree: [RootId],
+    selectedNode: RootId,
+    itemSearchInput: "",
 
-  //Notes
-  noteNodes: {},
-  notes: [],
-  selectedNote: "",
-  noteSearchInput: "",
+    //Notes
+    noteNodes: {},
+    notes: [],
+    selectedNote: "",
+    noteSearchInput: "",
+  },
 };
 
-export const StateSubject = new BehaviorSubject<IState>(initialState);
+export const StateSubject = new BehaviorSubject<IAppState>(initialState);
 
 EventSubject.subscribe((event) => {
   const prevState = StateSubject.getValue();
@@ -126,6 +132,6 @@ EventSubject.subscribe((event) => {
 
 export const sequence = genericSequence(act, initialState);
 
-export const getSequence = (initialState: IState) => (
+export const getSequence = (initialState: IAppState) => (
   inputs: IEvent[]
-): IState => inputs.reduce((acc, input) => act(acc)(input), initialState);
+): IAppState => inputs.reduce((acc, input) => act(acc)(input), initialState);

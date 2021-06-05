@@ -31,29 +31,31 @@ describe("App", () => {
     expect(act(initialState)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -61,33 +63,39 @@ describe("App", () => {
   });
 
   it("should act", () => {
-    expect(act({ ...initialState, selectedNode: "" })(["click", "", ""]))
-      .toMatchInlineSnapshot(`
+    expect(
+      act({
+        ...initialState,
+        tree: { ...initialState.tree, selectedNode: "" },
+      })(["click", "", ""])
+    ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -96,36 +104,38 @@ describe("App", () => {
 
   it("should build tree", () => {
     const s = cloneDeep(initialState);
-    s.treeNodes[RootId].children = ["test"];
+    s.tree.treeNodes[RootId].children = ["test"];
     expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-          "test",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [
-              "test",
-            ],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+            "test",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [
+                "test",
+              ],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -134,36 +144,38 @@ describe("App", () => {
 
   it("should click", () => {
     const s = cloneDeep(initialState);
-    s.treeNodes[RootId].children = ["test"];
+    s.tree.treeNodes[RootId].children = ["test"];
     expect(act(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-          "test",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [
-              "test",
-            ],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+            "test",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [
+                "test",
+              ],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -181,69 +193,71 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "te",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-          "item-element-0",
-          "item-element-1",
-          "item-element-2",
-        ],
-        "treeNodes": Object {
-          "item-element-0": Object {
-            "children": Array [],
-            "id": "item-element-0",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-1": Object {
-            "children": Array [],
-            "id": "item-element-1",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-2": Object {
-            "children": Array [],
-            "id": "item-element-2",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-root": Object {
-            "children": Array [
-              "item-element-0",
-              "item-element-1",
-              "item-element-2",
-            ],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "te",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+            "item-element-0",
+            "item-element-1",
+            "item-element-2",
+          ],
+          "treeNodes": Object {
+            "item-element-0": Object {
+              "children": Array [],
+              "id": "item-element-0",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-1": Object {
+              "children": Array [],
+              "id": "item-element-1",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-2": Object {
+              "children": Array [],
+              "id": "item-element-2",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-root": Object {
+              "children": Array [
+                "item-element-0",
+                "item-element-1",
+                "item-element-2",
+              ],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -261,69 +275,71 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "tit",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-          "item-element-0",
-          "item-element-1",
-          "item-element-2",
-        ],
-        "treeNodes": Object {
-          "item-element-0": Object {
-            "children": Array [],
-            "id": "item-element-0",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": true,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-1": Object {
-            "children": Array [],
-            "id": "item-element-1",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": true,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-2": Object {
-            "children": Array [],
-            "id": "item-element-2",
-            "indent": 1,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": true,
-            "notes": Array [],
-            "parent": "item-element-root",
-            "title": "title",
-          },
-          "item-element-root": Object {
-            "children": Array [
-              "item-element-0",
-              "item-element-1",
-              "item-element-2",
-            ],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "tit",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+            "item-element-0",
+            "item-element-1",
+            "item-element-2",
+          ],
+          "treeNodes": Object {
+            "item-element-0": Object {
+              "children": Array [],
+              "id": "item-element-0",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": true,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-1": Object {
+              "children": Array [],
+              "id": "item-element-1",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": true,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-2": Object {
+              "children": Array [],
+              "id": "item-element-2",
+              "indent": 1,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": true,
+              "notes": Array [],
+              "parent": "item-element-root",
+              "title": "title",
+            },
+            "item-element-root": Object {
+              "children": Array [
+                "item-element-0",
+                "item-element-1",
+                "item-element-2",
+              ],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -335,29 +351,31 @@ describe("App", () => {
       .toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "notes",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "notes",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -370,29 +388,31 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -406,29 +426,31 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {},
-        "noteSearchInput": "",
-        "notes": Array [],
         "route": "Tree",
-        "scope": "tree",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }
@@ -444,44 +466,46 @@ describe("App", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collectionNodes": Object {},
-        "itemSearchInput": "",
-        "noteNodes": Object {
-          "note-element-0": Object {
-            "description": "Description...",
-            "id": "note-element-0",
-            "isCollapsed": true,
-            "isEditable": false,
-            "parents": Array [
-              "item-element-root",
-            ],
-            "title": "Title",
-          },
-        },
-        "noteSearchInput": "",
-        "notes": Array [
-          "note-element-0",
-        ],
         "route": "Tree",
-        "scope": "notes",
         "selectedCollection": "",
-        "selectedNode": "item-element-root",
-        "selectedNote": "note-element-0",
-        "tree": Array [
-          "item-element-root",
-        ],
-        "treeNodes": Object {
-          "item-element-root": Object {
-            "children": Array [],
-            "id": "item-element-root",
-            "indent": 0,
-            "isCollapsed": false,
-            "isEditable": false,
-            "isHighlighted": false,
-            "notes": Array [
-              "note-element-0",
-            ],
-            "parent": "",
-            "title": "ROOT",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {
+            "note-element-0": Object {
+              "description": "Description...",
+              "id": "note-element-0",
+              "isCollapsed": true,
+              "isEditable": false,
+              "parents": Array [
+                "item-element-root",
+              ],
+              "title": "Title",
+            },
+          },
+          "noteSearchInput": "",
+          "notes": Array [
+            "note-element-0",
+          ],
+          "scope": "notes",
+          "selectedNode": "item-element-root",
+          "selectedNote": "note-element-0",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [
+                "note-element-0",
+              ],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }

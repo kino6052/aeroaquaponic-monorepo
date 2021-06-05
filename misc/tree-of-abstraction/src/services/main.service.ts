@@ -1,5 +1,5 @@
 import { without } from "lodash";
-import { IAct, Id, IState, Scope } from "../bridge";
+import { IAct, IAppState, Id, IState, Scope } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
@@ -42,11 +42,7 @@ const toggleScope = (state: IState, event: IEvent): IState => ({
   scope: without(Scope, state.scope)[0],
 });
 
-export const act: IAct<IState> = (_state: IState) => ([
-  type,
-  id,
-  value,
-]: IEvent): IState => {
+export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
   // console.warn(type, id, value)
   // Shortcuts
   const toggleScopeResult =
@@ -142,4 +138,10 @@ export const act: IAct<IState> = (_state: IState) => ([
         state
     );
   }
+};
+
+export const act: IAct<IAppState> = (__state) => (event) => {
+  const _state = __state.tree;
+  const tree = actTree(_state)(event);
+  return { ...__state, tree };
 };
