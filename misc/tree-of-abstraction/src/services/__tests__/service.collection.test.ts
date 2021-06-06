@@ -1,5 +1,6 @@
-import { Id, sequence } from "../../bridge";
-import { Utils } from "../../utils/utils";
+import { ERoute, IAppState, Id, initialState, sequence } from "../../bridge";
+import { genericSequence, Utils } from "../../utils/utils";
+import { act } from "../main.service";
 import { Shortcut } from "../shortcuts.service";
 
 let counter = 0;
@@ -32,68 +33,29 @@ afterAll(() => {
   jest.restoreAllMocks();
 });
 
+const collectionState: IAppState = {
+  ...initialState,
+  route: ERoute.Collection,
+};
+
 describe("Collection", () => {
   it("should add collection", () => {
     expect(
-      sequence([
+      genericSequence(
+        act,
+        collectionState
+      )([
         ["keydown", Id.Keyboard, Shortcut.Add],
         ["keydown", Id.Keyboard, Shortcut.Add],
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
-        "route": "Tree",
-        "selectedCollection": "",
-        "tree": Object {
-          "itemSearchInput": "",
-          "noteNodes": Object {},
-          "noteSearchInput": "",
-          "notes": Array [],
-          "scope": "tree",
-          "selectedNode": "item-element-root",
-          "selectedNote": "",
-          "tree": Array [
-            "item-element-root",
-            "item-element-0",
-            "item-element-1",
-          ],
-          "treeNodes": Object {
-            "item-element-0": Object {
-              "children": Array [],
-              "id": "item-element-0",
-              "indent": 1,
-              "isCollapsed": false,
-              "isEditable": false,
-              "isHighlighted": false,
-              "notes": Array [],
-              "parent": "item-element-root",
-              "title": "title",
-            },
-            "item-element-1": Object {
-              "children": Array [],
-              "id": "item-element-1",
-              "indent": 1,
-              "isCollapsed": false,
-              "isEditable": false,
-              "isHighlighted": false,
-              "notes": Array [],
-              "parent": "item-element-root",
-              "title": "title",
-            },
-            "item-element-root": Object {
-              "children": Array [
-                "item-element-0",
-                "item-element-1",
-              ],
-              "id": "item-element-root",
-              "indent": 0,
-              "isCollapsed": false,
-              "isEditable": false,
-              "isHighlighted": false,
-              "notes": Array [],
-              "parent": "",
-              "title": "ROOT",
-            },
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
+        "route": "Collection",
+        "tree": Object {},
           },
         },
       }

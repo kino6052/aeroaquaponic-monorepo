@@ -30,9 +30,11 @@ describe("App", () => {
   it("should act", () => {
     expect(act(initialState)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -70,9 +72,11 @@ describe("App", () => {
       })(["click", "", ""])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -107,9 +111,11 @@ describe("App", () => {
     s.tree.treeNodes[RootId].children = ["test"];
     expect(act(s)(["click", "", ""])).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -147,9 +153,11 @@ describe("App", () => {
     s.tree.treeNodes[RootId].children = ["test"];
     expect(act(s)(["click", RootId, ""])).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -192,9 +200,11 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "te",
           "noteNodes": Object {},
@@ -274,9 +284,11 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "tit",
           "noteNodes": Object {},
@@ -350,9 +362,11 @@ describe("App", () => {
     expect(sequence([["keydown", Id.Keyboard, Shortcut.ToggleScope]]))
       .toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -387,9 +401,11 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -425,9 +441,11 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -465,9 +483,11 @@ describe("App", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {

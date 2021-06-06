@@ -1,7 +1,8 @@
 import * as React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { StateSubject } from "./bridge";
-import { TreeContainer as Container } from "./components/Container";
+import { CollectionContainer } from "./components/CollectionContainer";
+import { TreeContainer } from "./components/TreeContainer";
 import { useSharedState } from "./utils/utils";
 
 export default function App() {
@@ -11,7 +12,10 @@ export default function App() {
       <Router>
         <Switch>
           <Route exact path="/">
-            <Container state={state.tree} />
+            <CollectionContainer state={state} />
+          </Route>
+          <Route path="/:tree">
+            <TreeContainer state={state} />
           </Route>
         </Switch>
       </Router>

@@ -43,9 +43,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -117,9 +119,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -168,9 +172,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -251,9 +257,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -310,9 +318,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -398,9 +408,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -481,9 +493,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -575,9 +589,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -637,9 +653,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -741,9 +759,11 @@ describe("Undo/Redo", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -857,9 +877,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -946,9 +968,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1032,9 +1056,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1117,9 +1143,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1201,9 +1229,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1285,9 +1315,11 @@ describe("Move Up and Down", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1361,9 +1393,11 @@ describe("Move Up and Down", () => {
     const state = sequence([["keydown", Id.Keyboard, Shortcut.MoveDown]]);
     expect(state).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1397,9 +1431,11 @@ describe("Move Up and Down", () => {
     const state = sequence([["keydown", Id.Keyboard, Shortcut.MoveUp]]);
     expect(state).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1441,9 +1477,11 @@ describe("Remote", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1525,9 +1563,11 @@ describe("Remote", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1607,9 +1647,11 @@ describe("Remote", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1688,9 +1730,11 @@ describe("Remote", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1744,9 +1788,11 @@ describe("Edit", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1828,9 +1874,11 @@ describe("Edit", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "",
           "noteNodes": Object {},
@@ -1915,9 +1963,11 @@ describe("Edit", () => {
       ])
     ).toMatchInlineSnapshot(`
       Object {
-        "collectionNodes": Object {},
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
         "route": "Tree",
-        "selectedCollection": "",
         "tree": Object {
           "itemSearchInput": "test",
           "noteNodes": Object {},

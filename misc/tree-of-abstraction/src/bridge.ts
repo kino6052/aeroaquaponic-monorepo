@@ -34,11 +34,11 @@ export type IInput = [InputType, string, string];
 export interface IEntity {
   id: string;
   title: string;
+  isEditable: boolean;
 }
 
 export interface INode extends IEntity {
   isCollapsed: boolean;
-  isEditable: boolean;
   children: string[];
   notes: string[];
   parent: string;
@@ -49,7 +49,6 @@ export interface INode extends IEntity {
 export interface INote extends IEntity {
   description: string;
   isCollapsed: boolean;
-  isEditable: boolean;
   parents: string[];
 }
 
@@ -64,9 +63,11 @@ export type IAppState = {
   // Routing
   route: ERoute;
 
-  // Collection
-  collectionNodes: { [id: string]: IEntity };
-  selectedCollection?: string;
+  collection: {
+    // Collection
+    collectionNodes: { [id: string]: IEntity };
+    selectedCollection?: string;
+  };
 
   tree: {
     // Tree
@@ -101,8 +102,11 @@ const RootNode = {
 export const initialState: IAppState = {
   // Routing
   route: ERoute.Tree,
-  collectionNodes: {},
-  selectedCollection: "",
+
+  collection: {
+    collectionNodes: {},
+    selectedCollection: "",
+  },
 
   tree: {
     // Tree
