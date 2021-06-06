@@ -25,20 +25,49 @@ afterAll(() => {
   jest.restoreAllMocks();
 });
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
-
-afterAll(() => {
-  jest.restoreAllMocks();
-});
-
 const collectionState: IAppState = {
   ...initialState,
   route: ERoute.Collection,
 };
 
 describe("Collection", () => {
+  it("should correct perform empty sequence", () => {
+    expect(genericSequence(act, collectionState)([])).toMatchInlineSnapshot(`
+      Object {
+        "collection": Object {
+          "collectionNodes": Object {},
+          "selectedCollection": "",
+        },
+        "route": "Collection",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
+          },
+        },
+      }
+    `);
+  });
+
   it("should add collection", () => {
     expect(
       genericSequence(
@@ -51,11 +80,44 @@ describe("Collection", () => {
     ).toMatchInlineSnapshot(`
       Object {
         "collection": Object {
-          "collectionNodes": Object {},
+          "collectionNodes": Object {
+            "collection-element-0": Object {
+              "id": "collection-element-0",
+              "isEditable": false,
+              "title": "Collection",
+            },
+            "collection-element-1": Object {
+              "id": "collection-element-1",
+              "isEditable": false,
+              "title": "Collection",
+            },
+          },
           "selectedCollection": "",
         },
         "route": "Collection",
-        "tree": Object {},
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
           },
         },
       }

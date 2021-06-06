@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { BehaviorSubject } from "rxjs";
 import { IAct, Id, initialState, IState as IState } from "../bridge";
 import { act } from "../services/main.service";
+import { Shortcut } from "../services/shortcuts.service";
 import { IEvent } from "./EventWrapper";
 
 export const useSharedState = <T>(
@@ -45,10 +46,9 @@ export const Utils = {
   generateId,
 };
 
-export const compose = (arr: Array<any>) => (
-  state: IState,
-  event: IEvent
-): IState | false =>
+export const compose = <T>(
+  arr: Array<[Shortcut, (state: T, event: IEvent) => T]>
+) => (state: T, event: IEvent): T | false =>
   arr.reduce((acc, [shortcut, cb]) => {
     const result =
       event[0] === "keydown" &&
@@ -56,7 +56,7 @@ export const compose = (arr: Array<any>) => (
       event[2] === shortcut &&
       cb(state, event);
     return result || acc;
-  }, false as IState | false);
+  }, false as T | false);
 
 export const genericSequence = <T>(act: IAct<T>, initialState: T) => (
   inputs: IEvent[]

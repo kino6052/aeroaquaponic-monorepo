@@ -24,14 +24,6 @@ afterAll(() => {
   jest.restoreAllMocks();
 });
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
-
-afterAll(() => {
-  jest.restoreAllMocks();
-});
-
 describe("Undo/Redo", () => {
   it("should undo", () => {
     expect(

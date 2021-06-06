@@ -24,14 +24,6 @@ afterAll(() => {
   jest.restoreAllMocks();
 });
 
-afterEach(() => {
-  jest.clearAllMocks();
-});
-
-afterAll(() => {
-  jest.restoreAllMocks();
-});
-
 describe("Notes", () => {
   it("should add note", () => {
     expect(

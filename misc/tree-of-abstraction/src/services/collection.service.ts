@@ -1,11 +1,21 @@
-import { Id, IState } from "../bridge";
+import { IAppState, Id, IState } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
 
-export const shortcutAddCollection = (state: IState, event: IEvent): IState => {
+export const shortcutAddCollection = (
+  state: IAppState["collection"],
+  event: IEvent
+): IAppState["collection"] => {
   const collectionId = `${Id.Collection}-${Utils.generateId()}`;
   return {
     ...state,
-    // collectionIds: [...state.collectionIds, collectionId],
+    collectionNodes: {
+      ...state.collectionNodes,
+      [collectionId]: {
+        id: collectionId,
+        isEditable: false,
+        title: "Collection",
+      },
+    },
   };
 };
