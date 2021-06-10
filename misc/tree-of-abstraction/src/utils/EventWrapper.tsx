@@ -1,7 +1,13 @@
 import React from "react";
 import { Subject } from "rxjs";
 
-export type EventType = "click" | "change" | "focus" | "keydown" | "keyup";
+export type EventType =
+  | "click"
+  | "change"
+  | "focus"
+  | "keydown"
+  | "keyup"
+  | "route";
 export type Id = string;
 export type IEvent = [EventType, Id, string];
 

@@ -126,11 +126,19 @@ export const initialState: IAppState = {
   },
 };
 
-export const StateSubject = new BehaviorSubject<IAppState>(initialState);
+const initialCollectionState: IAppState = {
+  ...initialState,
+  route: ERoute.Collection,
+};
+
+export const StateSubject = new BehaviorSubject<IAppState>(
+  initialCollectionState
+);
 
 EventSubject.subscribe((event) => {
   const prevState = StateSubject.getValue();
   const newState = act(prevState)(event);
+  console.info(newState);
   StateSubject.next(newState);
 });
 

@@ -144,10 +144,11 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
 export const actCollection: IAct<IAppState["collection"]> = (state) => (
   event
 ) => {
-  const collection = compose([[Shortcut.Add, shortcutAddCollection]])(
-    state,
-    event
-  ) as IAppState["collection"];
+  const collection =
+    (compose([[Shortcut.Add, shortcutAddCollection]])(
+      state,
+      event
+    ) as IAppState["collection"]) || state;
   return collection;
 };
 
@@ -155,7 +156,7 @@ export const act: IAct<IAppState> = (state) => (event) => {
   const tree =
     state.route === ERoute.Tree ? actTree(state.tree)(event) : state.tree;
   const collection =
-    state.route == ERoute.Collection
+    state.route === ERoute.Collection
       ? actCollection(state.collection)(event)
       : state.collection;
   return { ...state, tree, collection };

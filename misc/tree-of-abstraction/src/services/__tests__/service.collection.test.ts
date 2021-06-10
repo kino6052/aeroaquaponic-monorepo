@@ -123,4 +123,44 @@ describe("Collection", () => {
       }
     `);
   });
+
+  it("should move down", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+      ])
+    ).toMatchInlineSnapshot(``);
+  });
+
+  it("should move up", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Up],
+      ])
+    ).toMatchInlineSnapshot(``);
+  });
+
+  it("should select", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Enter],
+      ])
+    ).toMatchInlineSnapshot(``);
+  });
 });
