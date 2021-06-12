@@ -24,14 +24,14 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>32/32</span>
+                <span class='fraction'>33/33</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>47/47</span>
+                <span class='fraction'>49/49</span>
             </div>
         
             
@@ -45,7 +45,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>28/28</span>
+                <span class='fraction'>29/29</span>
             </div>
         
             
@@ -219,7 +219,22 @@
 <a name='L161'></a><a href='#L161'>161</a>
 <a name='L162'></a><a href='#L162'>162</a>
 <a name='L163'></a><a href='#L163'>163</a>
-<a name='L164'></a><a href='#L164'>164</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L164'></a><a href='#L164'>164</a>
+<a name='L165'></a><a href='#L165'>165</a>
+<a name='L166'></a><a href='#L166'>166</a>
+<a name='L167'></a><a href='#L167'>167</a>
+<a name='L168'></a><a href='#L168'>168</a>
+<a name='L169'></a><a href='#L169'>169</a>
+<a name='L170'></a><a href='#L170'>170</a>
+<a name='L171'></a><a href='#L171'>171</a>
+<a name='L172'></a><a href='#L172'>172</a>
+<a name='L173'></a><a href='#L173'>173</a>
+<a name='L174'></a><a href='#L174'>174</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -362,31 +377,41 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">279x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">279x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">279x</span>
+<span class="cline-any cline-yes">13x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">279x</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">289x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { without } from "lodash";
 import { ERoute, IAct, IAppState, Id, IState, Scope } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
-import { shortcutAddCollection } from "./collection.service";
+import {
+  shortcutAddCollection,
+  shortcutDownCollection,
+  shortcutEnterCollection,
+  shortcutUpCollection,
+} from "./collection.service";
 import {
   changeNoteDescription,
   changeNotesSearchInput,
@@ -529,10 +554,12 @@ export const actCollection: IAct&lt;IAppState["collection"]&gt; = (state) =&gt; 
   event
 ) =&gt; {
   const collection =
-    (compose([[Shortcut.Add, shortcutAddCollection]])(
-      state,
-      event
-    ) as IAppState["collection"]) || state;
+    (compose([
+      [Shortcut.Add, shortcutAddCollection],
+      [Shortcut.Down, shortcutDownCollection],
+      [Shortcut.Up, shortcutUpCollection],
+      [Shortcut.Enter, shortcutEnterCollection],
+    ])(state, event) as IAppState["collection"]) || state;
   return collection;
 };
 &nbsp;
@@ -543,7 +570,10 @@ export const act: IAct&lt;IAppState&gt; = (state) =&gt; (event) =&gt; {
     state.route === ERoute.Collection
       ? actCollection(state.collection)(event)
       : state.collection;
-  return { ...state, tree, collection };
+  const route = !!collection.selectedCollection
+    ? ERoute.Tree
+    : ERoute.Collection;
+  return { ...state, route, tree, collection };
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -552,7 +582,7 @@ export const act: IAct&lt;IAppState&gt; = (state) =&gt; (event) =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Wed Jun 09 2021 18:10:35 GMT-0700 (Mountain Standard Time)
+                at Sat Jun 12 2021 09:39:33 GMT-0700 (Mountain Standard Time)
             </div>
         </div>
         <script src="prettify.js"></script>

@@ -37,7 +37,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -113,7 +113,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -166,7 +166,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -251,7 +251,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -312,7 +312,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -402,7 +402,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -487,7 +487,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -583,7 +583,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -647,7 +647,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -753,7 +753,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -871,7 +871,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -962,7 +962,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1050,7 +1050,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1137,7 +1137,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1223,7 +1223,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1309,7 +1309,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1387,7 +1387,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1425,7 +1425,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1471,7 +1471,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1557,7 +1557,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1641,7 +1641,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1724,7 +1724,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1782,7 +1782,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1868,7 +1868,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1957,7 +1957,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {

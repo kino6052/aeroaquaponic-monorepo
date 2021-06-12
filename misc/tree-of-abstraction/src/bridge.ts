@@ -35,6 +35,7 @@ export interface IEntity {
   id: string;
   title: string;
   isEditable: boolean;
+  isHighlighted: boolean;
 }
 
 export interface INode extends IEntity {
@@ -42,7 +43,6 @@ export interface INode extends IEntity {
   children: string[];
   notes: string[];
   parent: string;
-  isHighlighted: boolean;
   indent: number;
 }
 
@@ -105,7 +105,7 @@ export const initialState: IAppState = {
 
   collection: {
     collectionNodes: {},
-    selectedCollection: "",
+    selectedCollection: "test",
   },
 
   tree: {
@@ -126,9 +126,13 @@ export const initialState: IAppState = {
   },
 };
 
-const initialCollectionState: IAppState = {
+export const initialCollectionState: IAppState = {
   ...initialState,
   route: ERoute.Collection,
+  collection: {
+    ...initialState.collection,
+    selectedCollection: undefined,
+  },
 };
 
 export const StateSubject = new BehaviorSubject<IAppState>(

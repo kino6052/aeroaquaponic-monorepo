@@ -32,7 +32,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -74,7 +74,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -113,7 +113,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -155,7 +155,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -202,7 +202,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -286,7 +286,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -364,7 +364,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -403,7 +403,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -443,7 +443,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -485,7 +485,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -496,6 +496,7 @@ describe("App", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],

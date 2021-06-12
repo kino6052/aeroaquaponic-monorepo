@@ -12,6 +12,7 @@ export const shortcutAddNote = (state: IState, event: IEvent): IState => {
     id: noteId,
     isCollapsed: true,
     isEditable: false,
+    isHighlighted: false,
     parents: [state.selectedNode],
   };
   const newTreeNodes = updateTreeNodes(state, (node) => {

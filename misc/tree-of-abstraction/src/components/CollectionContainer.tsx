@@ -23,8 +23,7 @@ export const CollectionContainer: React.FC<{ state: IAppState }> = (props) => {
               key={id}
               style={{
                 marginLeft: "32px",
-                backgroundColor:
-                  (entity.id === state.selectedCollection && "grey") || "unset",
+                backgroundColor: (entity.isHighlighted && "grey") || "unset",
               }}
             >
               <EventWrapper

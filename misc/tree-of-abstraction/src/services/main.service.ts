@@ -2,7 +2,12 @@ import { without } from "lodash";
 import { ERoute, IAct, IAppState, Id, IState, Scope } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
-import { shortcutAddCollection } from "./collection.service";
+import {
+  shortcutAddCollection,
+  shortcutDownCollection,
+  shortcutEnterCollection,
+  shortcutUpCollection,
+} from "./collection.service";
 import {
   changeNoteDescription,
   changeNotesSearchInput,
@@ -145,10 +150,12 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
   event
 ) => {
   const collection =
-    (compose([[Shortcut.Add, shortcutAddCollection]])(
-      state,
-      event
-    ) as IAppState["collection"]) || state;
+    (compose([
+      [Shortcut.Add, shortcutAddCollection],
+      [Shortcut.Down, shortcutDownCollection],
+      [Shortcut.Up, shortcutUpCollection],
+      [Shortcut.Enter, shortcutEnterCollection],
+    ])(state, event) as IAppState["collection"]) || state;
   return collection;
 };
 
@@ -159,5 +166,8 @@ export const act: IAct<IAppState> = (state) => (event) => {
     state.route === ERoute.Collection
       ? actCollection(state.collection)(event)
       : state.collection;
-  return { ...state, tree, collection };
+  const route = !!collection.selectedCollection
+    ? ERoute.Tree
+    : ERoute.Collection;
+  return { ...state, route, tree, collection };
 };

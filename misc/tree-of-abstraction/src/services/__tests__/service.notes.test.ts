@@ -35,7 +35,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -46,6 +46,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -94,7 +95,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -105,6 +106,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -115,6 +117,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -165,7 +168,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -176,6 +179,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -186,6 +190,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -237,7 +242,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -248,6 +253,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -258,6 +264,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": true,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -307,7 +314,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -318,6 +325,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -365,7 +373,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -376,6 +384,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -424,7 +433,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -435,6 +444,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [],
               "title": "Title",
             },
@@ -481,7 +491,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -492,6 +502,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-0",
               ],
@@ -502,6 +513,7 @@ describe("Notes", () => {
               "id": "note-element-2",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [],
               "title": "Title",
             },
@@ -510,6 +522,7 @@ describe("Notes", () => {
               "id": "note-element-3",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-0",
               ],
@@ -576,7 +589,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -587,6 +600,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": true,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -635,7 +649,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -646,6 +660,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": false,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -695,7 +710,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -706,6 +721,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": true,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -761,7 +777,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -772,6 +788,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -782,6 +799,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -845,7 +863,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -856,6 +874,7 @@ describe("Notes", () => {
               "id": "note-element-3",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-2",
               ],
@@ -866,6 +885,7 @@ describe("Notes", () => {
               "id": "note-element-4",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-2",
               ],
@@ -959,7 +979,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -970,6 +990,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -980,6 +1001,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -990,6 +1012,7 @@ describe("Notes", () => {
               "id": "note-element-2",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -1043,7 +1066,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1054,6 +1077,7 @@ describe("Notes", () => {
               "id": "note-element-0",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -1064,6 +1088,7 @@ describe("Notes", () => {
               "id": "note-element-1",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -1074,6 +1099,7 @@ describe("Notes", () => {
               "id": "note-element-2",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-root",
               ],
@@ -1132,7 +1158,7 @@ describe("Notes", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
-          "selectedCollection": "",
+          "selectedCollection": "test",
         },
         "route": "Tree",
         "tree": Object {
@@ -1143,6 +1169,7 @@ describe("Notes", () => {
               "id": "note-element-3",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-2",
               ],
@@ -1153,6 +1180,7 @@ describe("Notes", () => {
               "id": "note-element-4",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-2",
               ],
@@ -1163,6 +1191,7 @@ describe("Notes", () => {
               "id": "note-element-5",
               "isCollapsed": true,
               "isEditable": false,
+              "isHighlighted": false,
               "parents": Array [
                 "item-element-2",
               ],
