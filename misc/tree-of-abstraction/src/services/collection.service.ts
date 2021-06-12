@@ -1,6 +1,7 @@
 import { IAppState, Id, IState } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
+import { Shortcut } from "./shortcuts.service";
 
 export const shortcutAddCollection = (
   state: IAppState["collection"],
@@ -79,5 +80,69 @@ export const shortcutEnterCollection = (
   return {
     ...state,
     selectedCollection: list[highlightedItemIndex].id,
+  };
+};
+
+export const shortcutEditCollection = (
+  state: IAppState["collection"],
+  event: IEvent
+): IAppState["collection"] | false => {
+  const [type, id, value] = event;
+  const isEnter = value === Shortcut.Enter;
+
+  const list = getCollectionList(state);
+  const highlightedItemIndex = list.findIndex(
+    (highlightedItem) => highlightedItem.isHighlighted
+  );
+
+  const isEditable = list[highlightedItemIndex].isEditable;
+
+  if (isEnter && !isEditable) return false;
+
+  const collectionNodes = list
+    .map((item, index) => ({
+      ...item,
+      isEditable: index === highlightedItemIndex ? !item.isEditable : false,
+    }))
+    .reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
+  return {
+    ...state,
+    collectionNodes,
+  };
+};
+
+export const shortcutRemoveCollection = (
+  state: IAppState["collection"],
+  event: IEvent
+): IAppState["collection"] => {
+  const list = getCollectionList(state);
+  const highlightedItemIndex = list.findIndex(
+    (highlightedItem) => highlightedItem.isHighlighted
+  );
+  const collectionNodes = list
+    .filter((item, index) => index !== highlightedItemIndex)
+    .reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
+  return {
+    ...state,
+    collectionNodes,
+  };
+};
+
+export const changeCollectionTitle = (
+  state: IAppState["collection"],
+  event: IEvent
+): IAppState["collection"] => {
+  const [, id, value] = event;
+  const list = getCollectionList(state);
+  const itemIndex = list.findIndex((item) => item.id === id);
+  const collectionNodes = list
+    .map((item, index) => ({
+      ...item,
+      title: index === itemIndex ? value : item.title,
+    }))
+    .reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
+  return {
+    ...state,
+    collectionNodes,
   };
 };

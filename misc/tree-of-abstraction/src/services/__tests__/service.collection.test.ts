@@ -308,4 +308,65 @@ describe("Collection", () => {
       }
     `);
   });
+
+  it("should edit", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["change", `${Id.Collection}-0`, "123"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "collection": Object {
+          "collectionNodes": Object {
+            "collection-element-0": Object {
+              "id": "collection-element-0",
+              "isEditable": true,
+              "isHighlighted": true,
+              "title": "123",
+            },
+            "collection-element-1": Object {
+              "id": "collection-element-1",
+              "isEditable": false,
+              "isHighlighted": false,
+              "title": "Collection",
+            },
+          },
+          "selectedCollection": undefined,
+        },
+        "route": "Collection",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
+          },
+        },
+      }
+    `);
+  });
 });

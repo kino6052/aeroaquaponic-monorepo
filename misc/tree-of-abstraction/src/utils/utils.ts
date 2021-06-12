@@ -47,7 +47,7 @@ export const Utils = {
 };
 
 export const compose = <T>(
-  arr: Array<[Shortcut, (state: T, event: IEvent) => T]>
+  arr: Array<[Shortcut, (state: T, event: IEvent) => T | false]>
 ) => (state: T, event: IEvent): T | false =>
   arr.reduce((acc, [shortcut, cb]) => {
     const result =
@@ -55,7 +55,7 @@ export const compose = <T>(
       event[1] === Id.Keyboard &&
       event[2] === shortcut &&
       cb(state, event);
-    return result || acc;
+    return acc || result;
   }, false as T | false);
 
 export const genericSequence = <T>(act: IAct<T>, initialState: T) => (

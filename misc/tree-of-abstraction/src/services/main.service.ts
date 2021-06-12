@@ -3,9 +3,12 @@ import { ERoute, IAct, IAppState, Id, IState, Scope } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
+  changeCollectionTitle,
   shortcutAddCollection,
   shortcutDownCollection,
+  shortcutEditCollection,
   shortcutEnterCollection,
+  shortcutRemoveCollection,
   shortcutUpCollection,
 } from "./collection.service";
 import {
@@ -149,13 +152,25 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
 export const actCollection: IAct<IAppState["collection"]> = (state) => (
   event
 ) => {
+  const [type, id, value] = event;
+
+  const changeCollectionTitleResult =
+    type === "change" &&
+    id.includes(Id.Collection) &&
+    changeCollectionTitle(state, [type, id, value]);
+
   const collection =
     (compose([
       [Shortcut.Add, shortcutAddCollection],
       [Shortcut.Down, shortcutDownCollection],
       [Shortcut.Up, shortcutUpCollection],
+      [Shortcut.Edit, shortcutEditCollection],
+      [Shortcut.Enter, shortcutEditCollection],
       [Shortcut.Enter, shortcutEnterCollection],
-    ])(state, event) as IAppState["collection"]) || state;
+      [Shortcut.Remove, shortcutRemoveCollection],
+    ])(state, event) as IAppState["collection"]) ||
+    changeCollectionTitleResult ||
+    state;
   return collection;
 };
 
