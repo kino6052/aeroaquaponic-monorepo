@@ -71,6 +71,7 @@ const normalizeState = (state: { [id: string]: IAppState["tree"] }) =>
                   .map((node) => ({
                     ...node,
                     children: node.children || [],
+                    notes: node.notes || [],
                   }))
                   .reduce((acc, node) => ({ ...acc, [node.id]: node }), {})) ||
               {},

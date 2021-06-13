@@ -39,6 +39,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -116,6 +117,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -170,6 +172,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -256,6 +259,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -318,6 +322,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -409,6 +414,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -495,6 +501,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -592,6 +599,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -657,6 +665,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -764,6 +773,7 @@ describe("Undo/Redo", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -883,6 +893,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -975,6 +986,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1064,6 +1076,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1152,6 +1165,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1239,6 +1253,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1326,6 +1341,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1405,6 +1421,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1444,6 +1461,7 @@ describe("Move Up and Down", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1491,6 +1509,7 @@ describe("Remote", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1578,6 +1597,7 @@ describe("Remote", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1663,6 +1683,7 @@ describe("Remote", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1747,6 +1768,7 @@ describe("Remote", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1806,6 +1828,7 @@ describe("Edit", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1893,6 +1916,7 @@ describe("Edit", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1983,6 +2007,7 @@ describe("Edit", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "test",

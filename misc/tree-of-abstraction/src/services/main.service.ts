@@ -189,8 +189,7 @@ export const act: IAct<IAppState> = (state) => (event) => {
   // Switches
   if (state.isLoading) return { ...state, isLoading: false };
   // IO
-  if (id === Id.State && state.route === ERoute.Collection) {
-    console.warn(value);
+  else if (id === Id.State && state.route === ERoute.Collection) {
     const loadedState = JSON.parse(value);
     const collectionNodes = (Object.keys(loadedState) as string[])
       .map((key) => {
@@ -216,8 +215,7 @@ export const act: IAct<IAppState> = (state) => (event) => {
         collectionNodes,
       },
     };
-  }
-  if (
+  } else if (
     id === Id.State &&
     state.route === ERoute.Tree &&
     state.collection.selectedCollection

@@ -37,6 +37,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -98,6 +99,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -172,6 +174,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -247,6 +250,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -320,6 +324,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -380,6 +385,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -441,6 +447,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -500,6 +507,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -599,6 +607,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -660,6 +669,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -722,6 +732,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -790,6 +801,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -877,6 +889,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -994,6 +1007,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1082,6 +1096,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -1175,6 +1190,7 @@ describe("Notes", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",

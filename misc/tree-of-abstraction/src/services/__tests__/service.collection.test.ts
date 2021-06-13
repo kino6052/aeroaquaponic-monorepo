@@ -42,6 +42,7 @@ describe("Collection", () => {
           "collectionNodes": Object {},
           "selectedCollection": undefined,
         },
+        "isLoading": false,
         "route": "Collection",
         "tree": Object {
           "itemSearchInput": "",
@@ -102,6 +103,7 @@ describe("Collection", () => {
           },
           "selectedCollection": undefined,
         },
+        "isLoading": false,
         "route": "Collection",
         "tree": Object {
           "itemSearchInput": "",
@@ -162,6 +164,7 @@ describe("Collection", () => {
           },
           "selectedCollection": undefined,
         },
+        "isLoading": false,
         "route": "Collection",
         "tree": Object {
           "itemSearchInput": "",
@@ -222,6 +225,7 @@ describe("Collection", () => {
           },
           "selectedCollection": undefined,
         },
+        "isLoading": false,
         "route": "Collection",
         "tree": Object {
           "itemSearchInput": "",
@@ -283,6 +287,7 @@ describe("Collection", () => {
           },
           "selectedCollection": "collection-element-0",
         },
+        "isLoading": true,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -345,6 +350,7 @@ describe("Collection", () => {
           },
           "selectedCollection": undefined,
         },
+        "isLoading": false,
         "route": "Collection",
         "tree": Object {
           "itemSearchInput": "",

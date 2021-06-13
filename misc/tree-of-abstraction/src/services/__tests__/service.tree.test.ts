@@ -34,6 +34,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -77,6 +78,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -117,6 +119,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -160,6 +163,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -208,6 +212,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "te",
@@ -293,6 +298,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "tit",
@@ -372,6 +378,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -412,6 +419,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -453,6 +461,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",
@@ -496,6 +505,7 @@ describe("App", () => {
           "collectionNodes": Object {},
           "selectedCollection": "test",
         },
+        "isLoading": false,
         "route": "Tree",
         "tree": Object {
           "itemSearchInput": "",

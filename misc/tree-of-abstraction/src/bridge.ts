@@ -88,8 +88,8 @@ export type IAppState = {
     itemSearchInput: string;
 
     // Notes
-    noteNodes?: { [id: string]: INote };
-    notes?: string[];
+    noteNodes: { [id: string]: INote };
+    notes: string[];
     selectedNote: string;
     noteSearchInput: string;
   };
@@ -117,6 +117,7 @@ export const initialState: IAppState = {
 
   collection: {
     collectionNodes: {},
+    selectedCollection: "test",
   },
 
   tree: {
