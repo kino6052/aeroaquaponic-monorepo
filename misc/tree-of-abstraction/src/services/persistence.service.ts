@@ -82,7 +82,6 @@ const normalizeState = (state: { [id: string]: IAppState["tree"] }) =>
 
 window.addEventListener("load", () => {
   EventSubject.subscribe((event) => {
-    console.warn("Event Subject");
     const [type, id, value] = event;
     // On Save Keydown
     if (type === "keydown" && value === Shortcut.Save) {
@@ -105,7 +104,6 @@ window.addEventListener("load", () => {
       }
       // On Load IO
     } else if (type === "io" && id === Id.Load && value === "true") {
-      console.info("Load");
       getCollections().then((state) => {
         console.info(state);
         if (!state) return;
