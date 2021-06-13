@@ -1,7 +1,9 @@
 import firebase from "firebase/app";
-
 import "firebase/auth";
 import "firebase/database";
+import { IAppState, Id, StateSubject } from "../bridge";
+import { EventSubject } from "../utils/EventWrapper";
+import { Shortcut } from "./shortcuts.service";
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -17,34 +19,108 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig);
 
-// const db = firebase.database();
+const db = firebase.database();
 
-// const writeUserData = (userId: string, name: string, email: string) => {
-//   firebase
-//     .database()
-//     .ref("users/" + userId)
-//     .set({
-//       username: name,
-//       email: email,
-//     });
-// };
+const writeCollection = (
+  collectionId: string,
+  tree: IAppState["tree"],
+  cb: () => void
+) => {
+  firebase
+    .database()
+    .ref("collection/" + collectionId)
+    .set({
+      ...tree,
+    })
+    .then(cb)
+    .catch(cb);
+};
 
-// writeUserData("1", "test2", "test@test.test");
+const dbRef = firebase.database().ref();
 
-// const dbRef = firebase.database().ref();
-// dbRef
-//   .child("users")
-//   .child("1")
-//   .get()
-//   .then((snapshot) => {
-//     if (snapshot.exists()) {
-//       console.log(snapshot.val());
-//     } else {
-//       console.log("No data available");
-//     }
-//   })
-//   .catch((error) => {
-//     console.error(error);
-//   });
+const getCollections = () =>
+  dbRef
+    .child("collection")
+    .get()
+    .then((snapshot) => {
+      if (snapshot.exists()) {
+        console.log(snapshot.val());
+        return snapshot.val();
+      } else {
+        console.log("No data available");
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 
-export const test = 1;
+const normalizeState = (state: { [id: string]: IAppState["tree"] }) =>
+  Object.entries(state)
+    .map(
+      ([id, tree]) =>
+        [
+          id,
+          {
+            ...tree,
+            noteNodes: tree.noteNodes || {},
+            notes: tree.notes || [],
+            tree: tree.tree || [],
+            treeNodes:
+              (tree.treeNodes &&
+                Object.values(tree.treeNodes)
+                  .map((node) => ({
+                    ...node,
+                    children: node.children || [],
+                  }))
+                  .reduce((acc, node) => ({ ...acc, [node.id]: node }), {})) ||
+              {},
+          } as IAppState["tree"],
+        ] as [string, IAppState["tree"]]
+    )
+    .reduce((acc, [id, tree]) => ({ ...acc, [id]: tree }), {});
+
+window.addEventListener("load", () => {
+  EventSubject.subscribe((event) => {
+    console.warn("Event Subject");
+    const [type, id, value] = event;
+    // On Save Keydown
+    if (type === "keydown" && value === Shortcut.Save) {
+      EventSubject.next(["io", Id.Save, "true"]);
+    }
+    // On Save IO
+    else if (type === "io" && id === Id.Save && value === "true") {
+      const {
+        collection: { selectedCollection },
+        tree,
+      } = StateSubject.getValue();
+      // Write Collection
+      if (selectedCollection) {
+        writeCollection(selectedCollection, tree, () => {
+          EventSubject.next(["io", Id.Save, "false"]);
+        });
+        // Reset Loading State
+      } else {
+        EventSubject.next(["io", Id.Save, "false"]);
+      }
+      // On Load IO
+    } else if (type === "io" && id === Id.Load && value === "true") {
+      console.info("Load");
+      getCollections().then((state) => {
+        console.info(state);
+        if (!state) return;
+        EventSubject.next([
+          "io",
+          Id.State,
+          JSON.stringify(normalizeState(state)),
+        ]);
+      });
+    }
+  });
+
+  StateSubject.subscribe((state) => {
+    // Loading Event
+    if (state.isLoading) {
+      EventSubject.next(["io", Id.Load, "true"]);
+    }
+  });
+});

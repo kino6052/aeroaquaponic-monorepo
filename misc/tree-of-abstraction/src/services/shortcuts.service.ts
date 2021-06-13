@@ -15,6 +15,7 @@ export enum Shortcut {
   Collapse = "ctrl+shift+c",
   Enter = "enter",
   Remove = "delete",
+  Save = "ctrl+s",
 }
 
 try {

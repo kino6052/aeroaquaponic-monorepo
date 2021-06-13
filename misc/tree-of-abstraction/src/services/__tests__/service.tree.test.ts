@@ -43,6 +43,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -85,6 +86,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -124,6 +126,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "test",
@@ -166,6 +169,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "test",
@@ -213,6 +217,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -297,6 +302,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -375,6 +381,7 @@ describe("App", () => {
           "scope": "notes",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -414,6 +421,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -454,6 +462,7 @@ describe("App", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -510,6 +519,7 @@ describe("App", () => {
           "scope": "notes",
           "selectedNode": "item-element-root",
           "selectedNote": "note-element-0",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],

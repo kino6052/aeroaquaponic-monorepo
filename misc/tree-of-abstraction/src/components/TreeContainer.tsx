@@ -86,8 +86,9 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
         </div>
         <br />
         <ul>
-          {state.notes.map((id) => {
-            const note = state.noteNodes[id];
+          {state.notes?.map((id) => {
+            const note = state.noteNodes?.[id];
+            if (!note) return null;
             return (
               <li
                 key={id}

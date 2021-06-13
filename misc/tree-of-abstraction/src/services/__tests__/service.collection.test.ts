@@ -51,6 +51,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -110,6 +111,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -169,6 +171,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -228,6 +231,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -288,6 +292,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Collection",
           "tree": Array [
             "item-element-root",
           ],
@@ -349,6 +354,7 @@ describe("Collection", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],

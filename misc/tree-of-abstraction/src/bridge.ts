@@ -4,6 +4,7 @@ import {} from "./services/collection.service";
 import { EventSubject, IEvent } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
 import "./services/persistence.service";
+import "./services/browser.service";
 import { genericSequence } from "./utils/utils";
 
 export type InputType = "change" | "click" | "focus";
@@ -21,6 +22,11 @@ export enum Id {
   Keyboard = "keyboard",
   // Collection
   Collection = "collection-element",
+  // IO
+  Save = "save-io",
+  Load = "load-io",
+  State = "collections-io",
+  Tree = "tree-io",
 }
 
 export type IAct<T> = (state: T) => (event: IEvent) => T;
@@ -60,6 +66,8 @@ export enum ERoute {
 }
 
 export type IAppState = {
+  isLoading: boolean;
+
   // Routing
   route: ERoute;
 
@@ -70,6 +78,8 @@ export type IAppState = {
   };
 
   tree: {
+    title: string;
+
     // Tree
     scope: typeof Scope[number];
     treeNodes: { [id: string]: INode };
@@ -78,8 +88,8 @@ export type IAppState = {
     itemSearchInput: string;
 
     // Notes
-    noteNodes: { [id: string]: INote };
-    notes: string[];
+    noteNodes?: { [id: string]: INote };
+    notes?: string[];
     selectedNote: string;
     noteSearchInput: string;
   };
@@ -100,15 +110,18 @@ const RootNode = {
 };
 
 export const initialState: IAppState = {
+  isLoading: false,
+
   // Routing
   route: ERoute.Tree,
 
   collection: {
     collectionNodes: {},
-    selectedCollection: "test",
   },
 
   tree: {
+    title: "Tree",
+
     // Tree
     scope: Scope[0],
     treeNodes: {
@@ -135,14 +148,17 @@ export const initialCollectionState: IAppState = {
   },
 };
 
-export const StateSubject = new BehaviorSubject<IAppState>(
-  initialCollectionState
-);
+export const initialLoadingState: IAppState = {
+  ...initialCollectionState,
+  isLoading: true,
+};
+
+export const StateSubject = new BehaviorSubject<IAppState>(initialLoadingState);
 
 EventSubject.subscribe((event) => {
   const prevState = StateSubject.getValue();
   const newState = act(prevState)(event);
-  console.info(newState);
+  console.info(event, newState);
   StateSubject.next(newState);
 });
 

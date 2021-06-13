@@ -1,5 +1,15 @@
 import { without } from "lodash";
-import { ERoute, IAct, IAppState, Id, IState, Scope } from "../bridge";
+import {
+  ERoute,
+  IAct,
+  IAppState,
+  Id,
+  IEntity,
+  initialLoadingState,
+  initialState,
+  IState,
+  Scope,
+} from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
@@ -175,6 +185,53 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
 };
 
 export const act: IAct<IAppState> = (state) => (event) => {
+  const [type, id, value] = event;
+  // Switches
+  if (state.isLoading) return { ...state, isLoading: false };
+  // IO
+  if (id === Id.State && state.route === ERoute.Collection) {
+    console.warn(value);
+    const loadedState = JSON.parse(value);
+    const collectionNodes = (Object.keys(loadedState) as string[])
+      .map((key) => {
+        const node: IEntity = {
+          id: key,
+          isEditable: false,
+          isHighlighted: false,
+          title: (loadedState[key] as IAppState["tree"]).title,
+        };
+        return node;
+      })
+      .reduce(
+        (acc, node) => ({
+          ...acc,
+          [node.id]: node,
+        }),
+        {} as IAppState["collection"]["collectionNodes"]
+      );
+    return {
+      ...initialLoadingState,
+      isLoading: false,
+      collection: {
+        collectionNodes,
+      },
+    };
+  }
+  if (
+    id === Id.State &&
+    state.route === ERoute.Tree &&
+    state.collection.selectedCollection
+  ) {
+    const tree = JSON.parse(value)[state.collection.selectedCollection];
+    return {
+      ...initialState,
+      isLoading: false,
+      tree: tree || initialState.tree,
+      collection: {
+        ...state.collection,
+      },
+    };
+  }
   const tree =
     state.route === ERoute.Tree ? actTree(state.tree)(event) : state.tree;
   const collection =
@@ -184,5 +241,17 @@ export const act: IAct<IAppState> = (state) => (event) => {
   const route = !!collection.selectedCollection
     ? ERoute.Tree
     : ERoute.Collection;
-  return { ...state, route, tree, collection };
+  const hasRouteChanged = route !== state.route;
+  const title =
+    (collection.selectedCollection &&
+      collection.collectionNodes[collection.selectedCollection as string]
+        ?.title) ||
+    "Tree";
+  return {
+    ...state,
+    route,
+    tree: { ...tree, title },
+    collection,
+    isLoading: hasRouteChanged,
+  };
 };

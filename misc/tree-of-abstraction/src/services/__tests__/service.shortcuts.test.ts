@@ -48,6 +48,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -124,6 +125,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -177,6 +179,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -262,6 +265,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -323,6 +327,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -413,6 +418,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -498,6 +504,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-3",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -594,6 +601,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -658,6 +666,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-2",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -764,6 +773,7 @@ describe("Undo/Redo", () => {
           "scope": "tree",
           "selectedNode": "item-element-0",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -882,6 +892,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-2",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -973,6 +984,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-2",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-2",
@@ -1061,6 +1073,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-2",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1148,6 +1161,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-0",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-1",
@@ -1234,6 +1248,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1320,6 +1335,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1398,6 +1414,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -1436,6 +1453,7 @@ describe("Move Up and Down", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -1482,6 +1500,7 @@ describe("Remote", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1568,6 +1587,7 @@ describe("Remote", () => {
           "scope": "tree",
           "selectedNode": "item-element-0",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1652,6 +1672,7 @@ describe("Remote", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1735,6 +1756,7 @@ describe("Remote", () => {
           "scope": "tree",
           "selectedNode": "item-element-root",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
           ],
@@ -1793,6 +1815,7 @@ describe("Edit", () => {
           "scope": "tree",
           "selectedNode": "item-element-0",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1879,6 +1902,7 @@ describe("Edit", () => {
           "scope": "tree",
           "selectedNode": "item-element-0",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",
@@ -1968,6 +1992,7 @@ describe("Edit", () => {
           "scope": "tree",
           "selectedNode": "item-element-1",
           "selectedNote": "",
+          "title": "Tree",
           "tree": Array [
             "item-element-root",
             "item-element-0",

@@ -7,7 +7,7 @@ export type EventType =
   | "focus"
   | "keydown"
   | "keyup"
-  | "route";
+  | "io";
 export type Id = string;
 export type IEvent = [EventType, Id, string];
 

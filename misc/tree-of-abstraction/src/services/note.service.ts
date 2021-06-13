@@ -36,6 +36,7 @@ export const shortcutAddNote = (state: IState, event: IEvent): IState => {
 };
 
 export const shortcutDownNote = (state: IState, event: IEvent): IState => {
+  if (!state.notes) return { ...state, notes: [] };
   const notes = state.notes;
   const maxIndex = notes.length;
   const index = state.notes.indexOf(state.selectedNote);
@@ -44,6 +45,7 @@ export const shortcutDownNote = (state: IState, event: IEvent): IState => {
 };
 
 export const shortcutUpNote = (state: IState, event: IEvent): IState => {
+  if (!state.notes) return { ...state, notes: [] };
   const notes = state.notes;
   const maxIndex = notes.length;
   const index = state.notes.indexOf(state.selectedNote);
@@ -52,6 +54,7 @@ export const shortcutUpNote = (state: IState, event: IEvent): IState => {
 };
 
 export const shortcutCollapseNote = (state: IState, event: IEvent): IState => {
+  if (!state.noteNodes) return { ...state, noteNodes: {} };
   const note = state.noteNodes[state.selectedNote];
   const newNoteNodes: IState["noteNodes"] = {
     ...state.noteNodes,
@@ -64,6 +67,7 @@ export const shortcutCollapseNote = (state: IState, event: IEvent): IState => {
 };
 
 export const shortcutRemoveNote = (state: IState): IState => {
+  if (!state.noteNodes) return { ...state, noteNodes: {} };
   const selectedNote = state.noteNodes[state.selectedNote];
   const newNoteNodes: IState["noteNodes"] = {
     ...state.noteNodes,
@@ -85,6 +89,7 @@ export const shortcutRemoveNote = (state: IState): IState => {
 };
 
 export const editNote = (state: IState): IState => {
+  if (!state.noteNodes) return { ...state, noteNodes: {} };
   const selectedNote = state.noteNodes[state.selectedNote];
   const newNoteNodes: IState["noteNodes"] = {
     ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
@@ -96,13 +101,15 @@ export const editNote = (state: IState): IState => {
   return { ...state, noteNodes: newNoteNodes };
 };
 
-export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) =>
-  Object.values(state.noteNodes)
+export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) => {
+  if (!state.noteNodes) return {};
+  return Object.values(state.noteNodes)
     .map(cb)
     .reduce(
       (acc, note) => ({ ...acc, [note.id]: note }),
       {} as typeof state.noteNodes
     );
+};
 
 export const changeNoteTitle = (
   state: IState,
@@ -143,6 +150,7 @@ export const changeNoteDescription = (
 };
 
 export const processNotes = (state: IState): IState => {
+  if (!state.noteNodes) return { ...state, noteNodes: {} };
   const descendants = [
     state.selectedNode,
     ...getDescendants(state.selectedNode, state),
