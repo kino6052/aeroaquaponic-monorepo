@@ -96,14 +96,22 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                   background: id === state.selectedNote ? "grey" : "unset",
                 }}
               >
-                <>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    width: "100%",
+                  }}
+                >
                   <EventWrapper
                     key={id}
                     id={`${Id.Item}-${id.replace(`${Id.Note}-`, "")}`}
                   >
                     {!note.isEditable && <p>{note.title}</p>}
                     {!note.isEditable && !note.isCollapsed && (
-                      <p>{note.description}</p>
+                      <p
+                        dangerouslySetInnerHTML={{ __html: note.description }}
+                      ></p>
                     )}
                   </EventWrapper>
                   {note.isEditable && (
@@ -120,10 +128,10 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                         ""
                       )}`}
                     >
-                      <input value={note.description} />
+                      <textarea rows={4} cols={50} value={note.description} />
                     </EventWrapper>
                   )}
-                </>
+                </div>
               </li>
             );
           })}

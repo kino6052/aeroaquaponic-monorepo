@@ -2,7 +2,7 @@ import { BehaviorSubject } from "rxjs";
 import { act } from "./services/main.service";
 import { EventSubject, IEvent } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
-import "./services/persistence.service";
+import "./services/persistence.io";
 import { genericSequence } from "./utils/utils";
 
 export type InputType = "change" | "click" | "focus";
