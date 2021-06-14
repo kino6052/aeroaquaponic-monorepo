@@ -111,22 +111,22 @@ export const shortcutEditCollection = (
   };
 };
 
-export const shortcutRemoveCollection = (
-  state: IAppState["collection"],
-  event: IEvent
-): IAppState["collection"] => {
-  const list = getCollectionList(state);
-  const highlightedItemIndex = list.findIndex(
-    (highlightedItem) => highlightedItem.isHighlighted
-  );
-  const collectionNodes = list
-    .filter((item, index) => index !== highlightedItemIndex)
-    .reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
-  return {
-    ...state,
-    collectionNodes,
-  };
-};
+// export const shortcutRemoveCollection = (
+//   state: IAppState["collection"],
+//   event: IEvent
+// ): IAppState["collection"] => {
+//   const list = getCollectionList(state);
+//   const highlightedItemIndex = list.findIndex(
+//     (highlightedItem) => highlightedItem.isHighlighted
+//   );
+//   const collectionNodes = list
+//     .filter((item, index) => index !== highlightedItemIndex)
+//     .reduce((acc, item) => ({ ...acc, [item.id]: item }), {});
+//   return {
+//     ...state,
+//     collectionNodes,
+//   };
+// };
 
 export const changeCollectionTitle = (
   state: IAppState["collection"],

@@ -1,10 +1,8 @@
 import { BehaviorSubject } from "rxjs";
 import { act } from "./services/main.service";
-import {} from "./services/collection.service";
 import { EventSubject, IEvent } from "./utils/EventWrapper";
 import "./services/shortcuts.service";
 import "./services/persistence.service";
-import "./services/browser.service";
 import { genericSequence } from "./utils/utils";
 
 export type InputType = "change" | "click" | "focus";

@@ -43,6 +43,7 @@
   "jest": {
     "collectCoverageFrom": [
       "!./src/services/shortcuts.service.ts",
+      "!./src/services/persistence.service.ts",
       "./src/services/*.service.ts"
     ],
     "coverageThreshold": {

@@ -5,6 +5,8 @@ import { IAppState, Id, StateSubject } from "../bridge";
 import { EventSubject } from "../utils/EventWrapper";
 import { Shortcut } from "./shortcuts.service";
 
+// TODO: Think of how to test this file
+
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyA3kMxazy633uQ4BKTvWYF8hFZEl0PP_as",
@@ -18,8 +20,6 @@ const firebaseConfig = {
 };
 
 firebase.initializeApp(firebaseConfig);
-
-const db = firebase.database();
 
 const writeCollection = (
   collectionId: string,

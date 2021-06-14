@@ -18,7 +18,6 @@ import {
   shortcutDownCollection,
   shortcutEditCollection,
   shortcutEnterCollection,
-  shortcutRemoveCollection,
   shortcutUpCollection,
 } from "./collection.service";
 import {
@@ -177,7 +176,6 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
       [Shortcut.Edit, shortcutEditCollection],
       [Shortcut.Enter, shortcutEditCollection],
       [Shortcut.Enter, shortcutEnterCollection],
-      [Shortcut.Remove, shortcutRemoveCollection],
     ])(state, event) as IAppState["collection"]) ||
     changeCollectionTitleResult ||
     state;
