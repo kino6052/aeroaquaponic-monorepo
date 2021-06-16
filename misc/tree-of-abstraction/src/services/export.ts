@@ -45,11 +45,39 @@ const generateNoteNodes = (legacy: ILegacy): IAppState["tree"]["noteNodes"] =>
           isCollapsed: true,
           isEditable: false,
           isHighlighted: false,
-          parents: note.labels.map((note) => `note-element-${note.id}`),
+          parents: note.labels.map((note) => `item-element-${note.id}`),
           title: note.title,
         } as INote)
     )
     .reduce((acc, note) => ({ ...acc, [note.id]: note }), {});
+
+const generateItemNotesMap = (legacy: ILegacy) => {
+  const result: { [key: string]: string[] } = {};
+  legacy.notes.map((note) => {
+    note.labels.map(({ id }) => {
+      result[id] = [...(result[id] || []), note.id];
+    });
+  });
+  return result;
+};
+
+const traverse = (
+  hierarchy: IHierarchyItem[],
+  result: { [key: string]: number } = {},
+  id: string = "root",
+  indent = 0
+) => {
+  const item = hierarchy.find((item) => item.id === id);
+  if (!item) return result;
+  result[id] = indent;
+  for (const c of item.children) {
+    traverse(hierarchy, result, c, indent + 1);
+  }
+  return result;
+};
+
+const generateItemIndentMap = (hierarchy: IHierarchyItem[]) =>
+  traverse(hierarchy);
 
 const generateTreeNodes = (legacy: ILegacy): IAppState["tree"]["treeNodes"] => {
   const childParentMap = generateChildParentMap(legacy.hierarchy);
@@ -65,8 +93,8 @@ const generateTreeNodes = (legacy: ILegacy): IAppState["tree"]["treeNodes"] => {
           isEditable: false,
           title: item.title,
           children: item.children.map((id) => `item-element-${id}`),
-          indent: 0,
-          notes: itemNotesMap[item.id].map((id) => `note-element-${id}`),
+          indent: itemIndentMap[item.id] || 0,
+          notes: itemNotesMap[item.id]?.map((id) => `note-element-${id}`) || [],
           parent: `item-element-${childParentMap[item.id]}`,
         } as INode)
     )
