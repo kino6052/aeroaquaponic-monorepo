@@ -73,6 +73,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
           borderRight: "2px dashed black",
           background: "#333",
           height: "100%",
+          overflow: "scroll",
         }}
       >
         <div style={{ display: "flex", position: "fixed", top: 0 }}>
