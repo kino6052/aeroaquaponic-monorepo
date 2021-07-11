@@ -56,7 +56,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                   marginLeft: node.indent * 32,
                   backgroundColor:
                     (node.isHighlighted && "orange") ||
-                    (node.id === state.selectedNode && "grey") ||
+                    (node.id === state.selectedNode && "black") ||
                     "unset",
                 }}
               >
@@ -104,7 +104,8 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                 id={id}
                 key={id}
                 style={{
-                  background: id === state.selectedNote ? "grey" : "unset",
+                  padding: "8px",
+                  background: id === state.selectedNote ? "black" : "unset",
                 }}
               >
                 <div
@@ -116,7 +117,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                 >
                   <EventWrapper
                     key={id}
-                    id={`${Id.Item}-${id.replace(`${Id.Note}-`, "")}`}
+                    id={`${Id.Note}-${id.replace(`${Id.Note}-`, "")}`}
                   >
                     {!note.isEditable && <p>{note.title}</p>}
                     {note.parents.map((id) => (
