@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { IAppState, Id, IState } from "../bridge";
 import { EventWrapper } from "../utils/EventWrapper";
 
 export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
   const state = props.state.tree;
+  useEffect(() => {
+    const selectedNode =
+      state.selectedNode && document.querySelector(`#${state.selectedNode}`);
+    const selectedNote =
+      state.selectedNote && document.querySelector(`#${state.selectedNote}`);
+    selectedNode && selectedNode.scrollIntoView();
+    selectedNote && selectedNote.scrollIntoView();
+  }, [state.selectedNode, state.selectedNote]);
   return (
     <div
       style={{
@@ -42,6 +50,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
             const node = state.treeNodes[id];
             return (
               <li
+                id={id}
                 key={id}
                 style={{
                   marginLeft: node.indent * 32,
@@ -92,6 +101,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
             if (!note) return null;
             return (
               <li
+                id={id}
                 key={id}
                 style={{
                   background: id === state.selectedNote ? "grey" : "unset",
