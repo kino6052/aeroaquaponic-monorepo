@@ -115,3 +115,7 @@ const convert = (legacy: ILegacy): IAppState["tree"] => {
     treeNodes: generateTreeNodes(legacy),
   };
 };
+
+// const test =
+
+// console.log(JSON.stringify(convert(test)))

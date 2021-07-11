@@ -1,4 +1,4 @@
-import { intersection } from "lodash";
+import { intersection, uniq, without } from "lodash";
 import { Id, INote, IState } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
@@ -81,7 +81,15 @@ export const shortcutRemoveNote = (state: IState): IState => {
     }
     return node;
   });
-  return { ...state, noteNodes: newNoteNodes, treeNodes: newTreeNodes };
+  const newNotes = without(state.notes, state.selectedNote);
+
+  return {
+    ...state,
+    selectedNote: newNotes[0],
+    notes: newNotes,
+    noteNodes: newNoteNodes,
+    treeNodes: newTreeNodes,
+  };
 };
 
 export const editNote = (state: IState): IState => {
@@ -124,6 +132,24 @@ export const changeNoteTitle = (
   };
 };
 
+export const clickItemFromNote = (state: IState, [, id]: IEvent): IState => {
+  const notes = state.notes;
+  const index = state.notes.indexOf(state.selectedNote);
+  const noteId = notes[index];
+  const newNoteNodes = updateNoteNodes(state, (note) => {
+    const isFound =
+      noteId.replace(Id.Note, "") === note.id.replace(Id.Note, "");
+    if (!isFound) return note;
+    return {
+      ...note,
+      parents: note.parents.includes(id)
+        ? note.parents.filter((_id) => _id !== id)
+        : [...note.parents, id],
+    };
+  });
+  return { ...state, noteNodes: newNoteNodes };
+};
+
 export const changeNoteDescription = (
   state: IState,
   [, id, value]: IEvent
@@ -156,8 +182,8 @@ export const processNotes = (state: IState): IState => {
         note.title.toLowerCase().includes(state.noteSearchInput.toLowerCase());
       const notFiltered =
         state.noteSearchInput.length < 3 && intersectionResult.length > 0;
-
-      return isMatch || notFiltered ? [...acc, note.id] : acc;
+      const isSelected = note.id === state.selectedNote;
+      return isSelected || isMatch || notFiltered ? [...acc, note.id] : acc;
     },
     [] as string[]
   );

@@ -108,6 +108,9 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                     id={`${Id.Item}-${id.replace(`${Id.Note}-`, "")}`}
                   >
                     {!note.isEditable && <p>{note.title}</p>}
+                    {note.parents.map((id) => (
+                      <i key={id}>{state.treeNodes[id].title}</i>
+                    ))}
                     {!note.isEditable && !note.isCollapsed && (
                       <p
                         dangerouslySetInnerHTML={{ __html: note.description }}

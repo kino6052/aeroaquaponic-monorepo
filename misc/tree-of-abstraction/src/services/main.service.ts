@@ -24,6 +24,7 @@ import {
   changeNoteDescription,
   changeNotesSearchInput,
   changeNoteTitle,
+  clickItemFromNote,
   editNote,
   processNotes,
   shortcutAddNote,
@@ -141,9 +142,15 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
       id.includes(Id.NoteDescription) &&
       changeNoteDescription(state, [type, id, value]);
 
+    const clickItemResult =
+      type === "click" &&
+      id.includes(Id.Item) &&
+      clickItemFromNote(state, [type, id, value]);
+
     return processNotes(
       changeNoteTitleResult ||
         changeNoteDescriptionResult ||
+        clickItemResult ||
         compose([
           [Shortcut.Add, shortcutAddNote],
           [Shortcut.Up, shortcutUpNote],
