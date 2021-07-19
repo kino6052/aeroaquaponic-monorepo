@@ -13,6 +13,7 @@ import {
 import { IEvent } from "../utils/EventWrapper";
 import { compose } from "../utils/utils";
 import {
+  changeCollectionSearchInput,
   changeCollectionTitle,
   shortcutAddCollection,
   shortcutDownCollection,
@@ -175,6 +176,11 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
     id.includes(Id.Collection) &&
     changeCollectionTitle(state, [type, id, value]);
 
+  const changeSearchInputResult =
+    type === "change" &&
+    id === Id.SearchItemsInput &&
+    changeCollectionSearchInput(state, [type, id, value]);
+
   const collection =
     (compose([
       [Shortcut.Add, shortcutAddCollection],
@@ -185,6 +191,7 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
       [Shortcut.Enter, shortcutEnterCollection],
     ])(state, event) as IAppState["collection"]) ||
     changeCollectionTitleResult ||
+    changeSearchInputResult ||
     state;
   return collection;
 };
@@ -217,6 +224,7 @@ export const act: IAct<IAppState> = (state) => (event) => {
       ...initialLoadingState,
       isLoading: false,
       collection: {
+        ...initialLoadingState.collection,
         collectionNodes,
       },
     };

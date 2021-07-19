@@ -1,4 +1,4 @@
-import { IAppState, Id, IState } from "../bridge";
+import { IAppState, Id } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
 import { Utils } from "../utils/utils";
 import { Shortcut } from "./shortcuts.service";
@@ -144,5 +144,14 @@ export const changeCollectionTitle = (
   return {
     ...state,
     collectionNodes,
+  };
+};
+
+export const changeCollectionSearchInput = (
+  state: IAppState["collection"],
+  event: IEvent
+): IAppState["collection"] => {
+  return {
+    ...state,
   };
 };

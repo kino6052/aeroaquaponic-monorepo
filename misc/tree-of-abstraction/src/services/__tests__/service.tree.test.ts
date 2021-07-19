@@ -32,6 +32,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -76,6 +77,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -117,6 +119,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -161,6 +164,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -210,6 +214,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -296,6 +301,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -376,6 +382,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -417,6 +424,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -459,6 +467,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -503,6 +512,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,

@@ -40,6 +40,7 @@ describe("Collection", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -101,6 +102,7 @@ describe("Collection", () => {
               "title": "Collection",
             },
           },
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -162,6 +164,7 @@ describe("Collection", () => {
               "title": "Collection",
             },
           },
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -223,6 +226,7 @@ describe("Collection", () => {
               "title": "Collection",
             },
           },
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -285,6 +289,7 @@ describe("Collection", () => {
               "title": "Collection",
             },
           },
+          "collectionSearchInput": "",
           "selectedCollection": "collection-element-0",
         },
         "isLoading": true,
@@ -348,6 +353,7 @@ describe("Collection", () => {
               "title": "Collection",
             },
           },
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -380,5 +386,21 @@ describe("Collection", () => {
         },
       }
     `);
+  });
+
+  it("should search", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["change", `${Id.Collection}-0`, "123"],
+        ["change", Id.SearchCollectionsInput, "12"],
+      ])
+    ).toMatchInlineSnapshot(``);
   });
 });

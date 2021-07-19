@@ -21,6 +21,7 @@ export enum Id {
   Keyboard = "keyboard",
   // Collection
   Collection = "collection-element",
+  SearchCollectionsInput = "search-collections-input",
   // IO
   Save = "save-io",
   Load = "load-io",
@@ -74,6 +75,7 @@ export type IAppState = {
     // Collection
     collectionNodes: { [id: string]: IEntity };
     selectedCollection?: string;
+    collectionSearchInput: string;
   };
 
   tree: {
@@ -117,6 +119,7 @@ export const initialState: IAppState = {
   collection: {
     collectionNodes: {},
     selectedCollection: "test",
+    collectionSearchInput: "",
   },
 
   tree: {

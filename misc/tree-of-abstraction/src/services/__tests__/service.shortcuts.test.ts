@@ -37,6 +37,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -115,6 +116,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -170,6 +172,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -257,6 +260,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -320,6 +324,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -412,6 +417,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -499,6 +505,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -597,6 +604,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -663,6 +671,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -771,6 +780,7 @@ describe("Undo/Redo", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -891,6 +901,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -984,6 +995,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1074,6 +1086,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1163,6 +1176,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1251,6 +1265,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1339,6 +1354,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1419,6 +1435,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1459,6 +1476,7 @@ describe("Move Up and Down", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1507,6 +1525,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1595,6 +1614,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1681,6 +1701,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1766,6 +1787,7 @@ describe("Remote", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1826,6 +1848,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1914,6 +1937,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -2005,6 +2029,7 @@ describe("Edit", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,

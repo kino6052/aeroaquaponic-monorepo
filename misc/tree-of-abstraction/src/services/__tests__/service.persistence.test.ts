@@ -36,6 +36,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -81,6 +82,7 @@ describe("App", () => {
       Object {
         "collection": Object {
           "collectionNodes": Object {},
+          "collectionSearchInput": "",
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -153,6 +155,8 @@ describe("App", () => {
               "title": "Tree",
             },
           },
+          "collectionSearchInput": "",
+          "selectedCollection": undefined,
         },
         "isLoading": false,
         "route": "Collection",
