@@ -41,6 +41,7 @@ describe("Collection", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -103,6 +104,7 @@ describe("Collection", () => {
             },
           },
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -165,6 +167,7 @@ describe("Collection", () => {
             },
           },
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -227,6 +230,7 @@ describe("Collection", () => {
             },
           },
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -290,6 +294,7 @@ describe("Collection", () => {
             },
           },
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "collection-element-0",
         },
         "isLoading": true,
@@ -354,6 +359,7 @@ describe("Collection", () => {
             },
           },
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": undefined,
         },
         "isLoading": false,
@@ -401,6 +407,128 @@ describe("Collection", () => {
         ["change", `${Id.Collection}-0`, "123"],
         ["change", Id.SearchCollectionsInput, "12"],
       ])
-    ).toMatchInlineSnapshot(``);
+    ).toMatchInlineSnapshot(`
+      Object {
+        "collection": Object {
+          "collectionNodes": Object {
+            "collection-element-0": Object {
+              "id": "collection-element-0",
+              "isEditable": true,
+              "isHighlighted": true,
+              "title": "123",
+            },
+            "collection-element-1": Object {
+              "id": "collection-element-1",
+              "isEditable": false,
+              "isHighlighted": false,
+              "title": "Collection",
+            },
+          },
+          "collectionSearchInput": "12",
+          "collections": Array [
+            "collection-element-0",
+            "collection-element-1",
+          ],
+          "selectedCollection": undefined,
+        },
+        "isLoading": false,
+        "route": "Collection",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "title": "Tree",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
+          },
+        },
+      }
+    `);
+  });
+
+  it("should search", () => {
+    expect(
+      genericSequence(
+        act,
+        collectionState
+      )([
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Add],
+        ["keydown", Id.Keyboard, Shortcut.Down],
+        ["keydown", Id.Keyboard, Shortcut.Edit],
+        ["change", `${Id.Collection}-0`, "1234"],
+        ["change", Id.SearchCollectionsInput, "1234"],
+      ])
+    ).toMatchInlineSnapshot(`
+      Object {
+        "collection": Object {
+          "collectionNodes": Object {
+            "collection-element-0": Object {
+              "id": "collection-element-0",
+              "isEditable": true,
+              "isHighlighted": true,
+              "title": "1234",
+            },
+            "collection-element-1": Object {
+              "id": "collection-element-1",
+              "isEditable": false,
+              "isHighlighted": false,
+              "title": "Collection",
+            },
+          },
+          "collectionSearchInput": "1234",
+          "collections": Array [
+            "collection-element-0",
+            "collection-element-1",
+          ],
+          "selectedCollection": undefined,
+        },
+        "isLoading": false,
+        "route": "Collection",
+        "tree": Object {
+          "itemSearchInput": "",
+          "noteNodes": Object {},
+          "noteSearchInput": "",
+          "notes": Array [],
+          "scope": "tree",
+          "selectedNode": "item-element-root",
+          "selectedNote": "",
+          "title": "Tree",
+          "tree": Array [
+            "item-element-root",
+          ],
+          "treeNodes": Object {
+            "item-element-root": Object {
+              "children": Array [],
+              "id": "item-element-root",
+              "indent": 0,
+              "isCollapsed": false,
+              "isEditable": false,
+              "isHighlighted": false,
+              "notes": Array [],
+              "parent": "",
+              "title": "ROOT",
+            },
+          },
+        },
+      }
+    `);
   });
 });

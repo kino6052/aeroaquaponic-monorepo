@@ -8,16 +8,25 @@ export const CollectionContainer: React.FC<{ state: IAppState }> = (props) => {
     <div
       style={{
         display: "flex",
-        flexDirection: "row",
+        flexDirection: "column",
         height: "100vh",
         overflow: "hidden",
         background: "black",
       }}
       className="container"
     >
+      <div>
+        <EventWrapper id={Id.SearchCollectionsInput}>
+          <input
+            autoFocus
+            placeholder="Search"
+            value={state.collectionSearchInput}
+          />
+        </EventWrapper>
+      </div>
       <ul>
-        {Object.values(state.collectionNodes).map((entity) => {
-          const { id } = entity;
+        {state.collections.map((id) => {
+          const entity = state.collectionNodes[id];
           return (
             <li
               key={id}

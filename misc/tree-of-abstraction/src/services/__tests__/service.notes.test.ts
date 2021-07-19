@@ -36,6 +36,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -99,6 +100,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -175,6 +177,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -252,6 +255,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -327,6 +331,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -389,6 +394,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -452,6 +458,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -513,6 +520,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -614,6 +622,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -677,6 +686,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -741,6 +751,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -811,6 +822,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -900,6 +912,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1029,6 +1042,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1148,6 +1162,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1238,6 +1253,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1335,6 +1351,7 @@ describe("Notes", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,

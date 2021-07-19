@@ -38,6 +38,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -117,6 +118,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -173,6 +175,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -261,6 +264,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -325,6 +329,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -418,6 +423,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -506,6 +512,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -605,6 +612,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -672,6 +680,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -781,6 +790,7 @@ describe("Undo/Redo", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -902,6 +912,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -996,6 +1007,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1087,6 +1099,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1177,6 +1190,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1266,6 +1280,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1355,6 +1370,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1436,6 +1452,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1477,6 +1494,7 @@ describe("Move Up and Down", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1526,6 +1544,7 @@ describe("Remote", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1615,6 +1634,7 @@ describe("Remote", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1702,6 +1722,7 @@ describe("Remote", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1788,6 +1809,7 @@ describe("Remote", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1849,6 +1871,7 @@ describe("Edit", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -1938,6 +1961,7 @@ describe("Edit", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,
@@ -2030,6 +2054,7 @@ describe("Edit", () => {
         "collection": Object {
           "collectionNodes": Object {},
           "collectionSearchInput": "",
+          "collections": Array [],
           "selectedCollection": "test",
         },
         "isLoading": false,

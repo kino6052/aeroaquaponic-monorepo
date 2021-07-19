@@ -178,7 +178,7 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
 
   const changeSearchInputResult =
     type === "change" &&
-    id === Id.SearchItemsInput &&
+    id === Id.SearchCollectionsInput &&
     changeCollectionSearchInput(state, [type, id, value]);
 
   const collection =
@@ -226,6 +226,7 @@ export const act: IAct<IAppState> = (state) => (event) => {
       collection: {
         ...initialLoadingState.collection,
         collectionNodes,
+        collections: Object.keys(collectionNodes),
       },
     };
   } else if (

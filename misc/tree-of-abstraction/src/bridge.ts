@@ -76,6 +76,7 @@ export type IAppState = {
     collectionNodes: { [id: string]: IEntity };
     selectedCollection?: string;
     collectionSearchInput: string;
+    collections: string[];
   };
 
   tree: {
@@ -120,6 +121,7 @@ export const initialState: IAppState = {
     collectionNodes: {},
     selectedCollection: "test",
     collectionSearchInput: "",
+    collections: [],
   },
 
   tree: {

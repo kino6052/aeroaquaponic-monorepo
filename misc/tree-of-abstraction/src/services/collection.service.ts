@@ -149,9 +149,20 @@ export const changeCollectionTitle = (
 
 export const changeCollectionSearchInput = (
   state: IAppState["collection"],
-  event: IEvent
+  [, , value]: IEvent
 ): IAppState["collection"] => {
   return {
     ...state,
+    collectionSearchInput: value,
+    collections: Object.values(state.collectionNodes)
+      .filter(
+        (node) =>
+          (value || "").length < 3 ||
+          (value &&
+            node.title
+              .toLowerCase()
+              .includes(state.collectionSearchInput.toLowerCase()))
+      )
+      .map((node) => node.id),
   };
 };
