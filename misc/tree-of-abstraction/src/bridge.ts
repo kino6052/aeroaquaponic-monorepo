@@ -160,11 +160,13 @@ export const initialLoadingState: IAppState = {
 
 export const StateSubject = new BehaviorSubject<IAppState>(initialLoadingState);
 
-EventSubject.subscribe((event) => {
-  const prevState = StateSubject.getValue();
-  const newState = act(prevState)(event);
-  console.info(event, newState);
-  StateSubject.next(newState);
+window.addEventListener("load", () => {
+  EventSubject.subscribe((event) => {
+    const prevState = StateSubject.getValue();
+    const newState = act(prevState)(event);
+    console.info(event, newState);
+    StateSubject.next(newState);
+  });
 });
 
 export const sequence = genericSequence(act, initialState);

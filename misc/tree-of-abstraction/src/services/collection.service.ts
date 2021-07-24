@@ -154,15 +154,21 @@ export const changeCollectionSearchInput = (
   return {
     ...state,
     collectionSearchInput: value,
-    collections: Object.values(state.collectionNodes)
-      .filter(
-        (node) =>
-          (value || "").length < 3 ||
-          (value &&
-            node.title
-              .toLowerCase()
-              .includes(state.collectionSearchInput.toLowerCase()))
-      )
-      .map((node) => node.id),
   };
 };
+
+export const processCollection = (
+  state: IAppState["collection"]
+): IAppState["collection"] => ({
+  ...state,
+  collections: Object.values(state.collectionNodes)
+    .filter(
+      (node) =>
+        (state.collectionSearchInput || "").length < 3 ||
+        (state.collectionSearchInput &&
+          node.title
+            .toLowerCase()
+            .includes(state.collectionSearchInput.toLowerCase()))
+    )
+    .map((node) => node.id),
+});

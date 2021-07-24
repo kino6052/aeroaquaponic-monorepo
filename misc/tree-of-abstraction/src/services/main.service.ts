@@ -15,6 +15,7 @@ import { compose } from "../utils/utils";
 import {
   changeCollectionSearchInput,
   changeCollectionTitle,
+  processCollection as processCollection,
   shortcutAddCollection,
   shortcutDownCollection,
   shortcutEditCollection,
@@ -193,15 +194,13 @@ export const actCollection: IAct<IAppState["collection"]> = (state) => (
     changeCollectionTitleResult ||
     changeSearchInputResult ||
     state;
-  return collection;
+  return processCollection(collection);
 };
 
 export const act: IAct<IAppState> = (state) => (event) => {
   const [type, id, value] = event;
-  // Switches
-  if (state.isLoading) return { ...state, isLoading: false };
   // IO
-  else if (id === Id.State && state.route === ERoute.Collection) {
+  if (id === Id.State && state.route === ERoute.Collection) {
     const loadedState = JSON.parse(value);
     const collectionNodes = (Object.keys(loadedState) as string[])
       .map((key) => {
@@ -243,7 +242,8 @@ export const act: IAct<IAppState> = (state) => (event) => {
         ...state.collection,
       },
     };
-  }
+  } // Switches
+  else if (state.isLoading) return { ...state, isLoading: false };
   const tree =
     state.route === ERoute.Tree ? actTree(state.tree)(event) : state.tree;
   const collection =
