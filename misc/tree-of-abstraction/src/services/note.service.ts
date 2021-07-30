@@ -1,6 +1,7 @@
 import { intersection, uniq, without } from "lodash";
 import { Id, INote, IState } from "../bridge";
 import { IEvent } from "../utils/EventWrapper";
+import { randomNumber, scoreFunction } from "../utils/memory";
 import { Utils } from "../utils/utils";
 import { getDescendants, updateTreeNodes } from "./tree.service";
 
@@ -104,6 +105,30 @@ export const editNote = (state: IState): IState => {
   return { ...state, noteNodes: newNoteNodes };
 };
 
+export const incrementScore = (state: IState): IState => {
+  const selectedNote = state.noteNodes[state.selectedNote];
+  const newNoteNodes: IState["noteNodes"] = {
+    ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
+    [state.selectedNote]: {
+      ...selectedNote,
+      score: Math.max((selectedNote.score || 0) + 1, 0),
+    },
+  };
+  return { ...state, noteNodes: newNoteNodes };
+};
+
+export const decrementScore = (state: IState): IState => {
+  const selectedNote = state.noteNodes[state.selectedNote];
+  const newNoteNodes: IState["noteNodes"] = {
+    ...updateNoteNodes(state, (note) => ({ ...note, isEditable: false })),
+    [state.selectedNote]: {
+      ...selectedNote,
+      score: Math.max((selectedNote.score || 0) - 1, 0),
+    },
+  };
+  return { ...state, noteNodes: newNoteNodes };
+};
+
 export const updateNoteNodes = (state: IState, cb: (note: INote) => INote) => {
   return Object.values(state.noteNodes)
     .map(cb)
@@ -180,10 +205,15 @@ export const processNotes = (state: IState): IState => {
       const isMatch =
         state.noteSearchInput.length >= 3 &&
         note.title.toLowerCase().includes(state.noteSearchInput.toLowerCase());
+      const isMemoryDue = randomNumber.value <= scoreFunction(note.score || 0);
       const notFiltered =
         state.noteSearchInput.length < 3 && intersectionResult.length > 0;
       const isSelected = note.id === state.selectedNote;
-      return isSelected || isMatch || notFiltered ? [...acc, note.id] : acc;
+      return (
+        state.isMemory ? isMemoryDue : isSelected || isMatch || notFiltered
+      )
+        ? [...acc, note.id]
+        : acc;
     },
     [] as string[]
   );

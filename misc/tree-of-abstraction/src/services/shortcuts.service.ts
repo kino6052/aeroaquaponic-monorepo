@@ -1,9 +1,10 @@
 import hotkeys from "hotkeys-js";
 import { Id } from "../bridge";
 import { EventSubject } from "../utils/EventWrapper";
+import { randomNumber } from "../utils/memory";
 
 export enum Shortcut {
-  ToggleScope = "alt+shift+t",
+  ToggleMemory = "alt+shift+m",
   Add = "ctrl+shift+a",
   MoveDown = "ctrl+down",
   MoveUp = "ctrl+up",
@@ -16,12 +17,21 @@ export enum Shortcut {
   Enter = "enter",
   Remove = "delete",
   Save = "ctrl+s",
+  // Memory
+  ToggleScope = "alt+shift+t",
+  IncrementScore = "alt+shift+1",
+  DecrementScore = "alt+shift+2",
+  UpdateNumber = "alt+shift+3",
 }
 
 try {
   hotkeys.filter = () => true;
   hotkeys(Object.values(Shortcut).join(","), (e, handler) => {
     e.preventDefault();
+    if (handler.key === Shortcut.UpdateNumber) {
+      randomNumber.value = Math.random();
+      console.warn(randomNumber.value);
+    }
     EventSubject.next(["keydown", Id.Keyboard, handler.key]);
   });
 } catch (e) {

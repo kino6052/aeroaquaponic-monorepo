@@ -20,6 +20,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
         height: "100vh",
         overflow: "hidden",
         background: "black",
+        border: state.isMemory ? "4px solid red" : "unset",
       }}
       className="container"
     >

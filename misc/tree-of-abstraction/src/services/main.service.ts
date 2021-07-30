@@ -27,7 +27,9 @@ import {
   changeNotesSearchInput,
   changeNoteTitle,
   clickItemFromNote,
+  decrementScore,
   editNote,
+  incrementScore,
   processNotes,
   shortcutAddNote,
   shortcutCollapseNote,
@@ -52,6 +54,7 @@ import {
   shortcutToggleEditItem,
   shortcutUndo,
   shortcutUp,
+  toggleIsMemory,
   updateHighligted,
 } from "./tree.service";
 
@@ -72,7 +75,13 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
     value === Shortcut.ToggleScope &&
     toggleScope(_state, [type, id, value]);
 
-  const state = toggleScopeResult || _state;
+  const toggleIsMemoryResult =
+    type === "keydown" &&
+    id === Id.Keyboard &&
+    value === Shortcut.ToggleMemory &&
+    toggleIsMemory(_state);
+
+  const state = toggleScopeResult || toggleIsMemoryResult || _state;
 
   if (state.scope === "tree") {
     // IO
@@ -160,6 +169,8 @@ export const actTree: IAct<IState> = (_state) => ([type, id, value]) => {
           [Shortcut.Collapse, shortcutCollapseNote],
           [Shortcut.Remove, shortcutRemoveNote],
           [Shortcut.Edit, editNote],
+          [Shortcut.IncrementScore, incrementScore],
+          [Shortcut.DecrementScore, decrementScore],
         ])(state, [type, id, value]) ||
         changeNotesSearchInputResult ||
         state

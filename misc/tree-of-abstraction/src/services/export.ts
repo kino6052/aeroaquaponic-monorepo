@@ -113,6 +113,7 @@ const convert = (legacy: ILegacy): IAppState["tree"] => {
     notes: [],
     noteNodes: generateNoteNodes(legacy),
     treeNodes: generateTreeNodes(legacy),
+    isMemory: false,
   };
 };
 

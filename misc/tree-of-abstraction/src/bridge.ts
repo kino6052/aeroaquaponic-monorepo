@@ -56,6 +56,7 @@ export interface INote extends IEntity {
   description: string;
   isCollapsed: boolean;
   parents: string[];
+  score?: number;
 }
 
 export type ITree = string[];
@@ -90,6 +91,7 @@ export type IAppState = {
     itemSearchInput: string;
 
     // Notes
+    isMemory: boolean;
     noteNodes: { [id: string]: INote };
     notes: string[];
     selectedNote: string;
@@ -137,6 +139,7 @@ export const initialState: IAppState = {
     itemSearchInput: "",
 
     //Notes
+    isMemory: false,
     noteNodes: {},
     notes: [],
     selectedNote: "",

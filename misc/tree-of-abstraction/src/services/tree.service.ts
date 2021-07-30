@@ -180,6 +180,11 @@ export const changeSearchInput = (
   };
 };
 
+export const toggleIsMemory = (state: IState): IState => ({
+  ...state,
+  isMemory: !state.isMemory,
+});
+
 export const process = (state: IState): IState => {
   const currentTree = [RootId, ...getDescendants(RootId, state)];
   const highlighted = Object.values(state.treeNodes)
