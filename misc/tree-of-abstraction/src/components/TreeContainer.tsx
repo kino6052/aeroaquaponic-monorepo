@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { IAppState, Id, IState } from "../bridge";
 import { EventWrapper } from "../utils/EventWrapper";
+import sanitize from "sanitize-html";
 
 export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
   const state = props.state.tree;
@@ -126,7 +127,9 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                     ))}
                     {!note.isEditable && !note.isCollapsed && (
                       <p
-                        dangerouslySetInnerHTML={{ __html: note.description }}
+                        dangerouslySetInnerHTML={{
+                          __html: sanitize(note.description),
+                        }}
                       ></p>
                     )}
                   </EventWrapper>
