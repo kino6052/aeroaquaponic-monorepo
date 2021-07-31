@@ -20,7 +20,6 @@ const RouteHelper: React.FC<{}> = () => {
   const { id } = useParams<{ id: string }>();
 
   React.useEffect(() => {
-    console.warn("Collection", pathname);
     if (pathname) {
       const route = pathname === "/" ? ERoute.Collection : ERoute.Tree;
       document.dispatchEvent(new CustomEvent("route"));
