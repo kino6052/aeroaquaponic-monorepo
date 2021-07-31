@@ -43,6 +43,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -90,6 +91,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -169,6 +171,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",

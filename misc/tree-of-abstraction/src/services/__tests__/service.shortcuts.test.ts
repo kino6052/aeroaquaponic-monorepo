@@ -44,6 +44,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -124,6 +125,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -181,6 +183,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -270,6 +273,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -335,6 +339,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -429,6 +434,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -518,6 +524,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -618,6 +625,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -686,6 +694,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -796,6 +805,7 @@ describe("Undo/Redo", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -918,6 +928,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1013,6 +1024,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1105,6 +1117,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1196,6 +1209,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1286,6 +1300,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1376,6 +1391,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1458,6 +1474,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1500,6 +1517,7 @@ describe("Move Up and Down", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1550,6 +1568,7 @@ describe("Remote", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1640,6 +1659,7 @@ describe("Remote", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1728,6 +1748,7 @@ describe("Remote", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1815,6 +1836,7 @@ describe("Remote", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1877,6 +1899,7 @@ describe("Edit", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -1967,6 +1990,7 @@ describe("Edit", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -2060,6 +2084,7 @@ describe("Edit", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "test",
           "noteNodes": Object {},
           "noteSearchInput": "",

@@ -42,6 +42,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -106,6 +107,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -183,6 +185,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -261,6 +264,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -337,6 +341,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -400,6 +405,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -464,6 +470,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -526,6 +533,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-1": Object {
@@ -628,6 +636,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -692,6 +701,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -757,6 +767,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -828,6 +839,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -918,6 +930,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-3": Object {
@@ -1048,6 +1061,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-3": Object {
@@ -1168,6 +1182,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -1259,6 +1274,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
@@ -1357,6 +1373,7 @@ describe("Notes", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-3": Object {

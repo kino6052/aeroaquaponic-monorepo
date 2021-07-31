@@ -47,6 +47,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -113,6 +114,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -179,6 +181,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -245,6 +248,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -312,6 +316,7 @@ describe("Collection", () => {
         "isLoading": true,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -380,6 +385,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -449,6 +455,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -517,6 +524,7 @@ describe("Collection", () => {
         "isLoading": false,
         "route": "Collection",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",

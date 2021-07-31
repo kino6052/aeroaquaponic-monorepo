@@ -39,6 +39,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -85,6 +86,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -128,6 +130,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -174,6 +177,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -225,6 +229,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "te",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -313,6 +318,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "tit",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -395,6 +401,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -438,6 +445,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -482,6 +490,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {},
           "noteSearchInput": "",
@@ -528,6 +537,7 @@ describe("App", () => {
         "isLoading": false,
         "route": "Tree",
         "tree": Object {
+          "isMemory": false,
           "itemSearchInput": "",
           "noteNodes": Object {
             "note-element-0": Object {
