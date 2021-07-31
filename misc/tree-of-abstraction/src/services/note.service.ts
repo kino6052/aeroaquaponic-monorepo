@@ -212,7 +212,9 @@ export const processNotes = (state: IState): IState => {
         state.noteSearchInput.length < 3 && intersectionResult.length > 0;
       const isSelected = note.id === state.selectedNote;
       return (
-        state.isMemory ? isMemoryDue : isSelected || isMatch || notFiltered
+        state.isMemory
+          ? isMemoryDue && notFiltered
+          : isSelected || isMatch || notFiltered
       )
         ? [...acc, note.id]
         : acc;
