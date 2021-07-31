@@ -29,8 +29,10 @@ try {
   hotkeys(Object.values(Shortcut).join(","), (e, handler) => {
     e.preventDefault();
     if (handler.key === Shortcut.UpdateNumber) {
-      randomNumber.value = Math.random();
-      console.warn(randomNumber.value);
+      Object.keys(randomNumber).forEach((id) => {
+        delete randomNumber[id];
+      });
+      console.warn(randomNumber);
     }
     EventSubject.next(["keydown", Id.Keyboard, handler.key]);
   });

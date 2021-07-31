@@ -205,7 +205,9 @@ export const processNotes = (state: IState): IState => {
       const isMatch =
         state.noteSearchInput.length >= 3 &&
         note.title.toLowerCase().includes(state.noteSearchInput.toLowerCase());
-      const isMemoryDue = randomNumber.value <= scoreFunction(note.score || 0);
+      randomNumber[note.id] = randomNumber[note.id] || Math.random();
+      const isMemoryDue =
+        randomNumber[note.id] <= scoreFunction(note.score || 0);
       const notFiltered =
         state.noteSearchInput.length < 3 && intersectionResult.length > 0;
       const isSelected = note.id === state.selectedNote;
