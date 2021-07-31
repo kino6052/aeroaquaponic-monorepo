@@ -253,8 +253,9 @@ export const act: IAct<IAppState> = (state) => (event) => {
         ...state.collection,
       },
     };
-  } // Switches
-  else if (state.isLoading) return { ...state, isLoading: false };
+  } else if (id === Id.Route && value) {
+    return { ...state, route: value as ERoute };
+  }
   const tree =
     state.route === ERoute.Tree ? actTree(state.tree)(event) : state.tree;
   const collection =
@@ -270,11 +271,13 @@ export const act: IAct<IAppState> = (state) => (event) => {
       collection.collectionNodes[collection.selectedCollection as string]
         ?.title) ||
     "Tree";
-  return {
+  const newState = {
     ...state,
     route,
     tree: { ...tree, title },
     collection,
     isLoading: hasRouteChanged,
   };
+  console.warn(newState);
+  return newState;
 };

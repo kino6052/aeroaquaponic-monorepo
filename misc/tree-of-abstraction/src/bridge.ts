@@ -27,6 +27,7 @@ export enum Id {
   Load = "load-io",
   State = "collections-io",
   Tree = "tree-io",
+  Route = "route-io",
 }
 
 export type IAct<T> = (state: T) => (event: IEvent) => T;

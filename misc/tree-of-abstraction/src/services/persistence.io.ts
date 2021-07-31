@@ -103,23 +103,14 @@ window.addEventListener("load", () => {
         EventSubject.next(["io", Id.Save, "false"]);
       }
       // On Load IO
-    } else if (type === "io" && id === Id.Load && value === "true") {
-      getCollections().then((state) => {
-        console.info(state);
-        if (!state) return;
-        EventSubject.next([
-          "io",
-          Id.State,
-          JSON.stringify(normalizeState(state)),
-        ]);
-      });
     }
   });
+});
 
-  StateSubject.subscribe((state) => {
-    // Loading Event
-    if (state.isLoading) {
-      EventSubject.next(["io", Id.Load, "true"]);
-    }
+document.addEventListener("route", () => {
+  getCollections().then((state) => {
+    console.info(state);
+    if (!state) return;
+    EventSubject.next(["io", Id.State, JSON.stringify(normalizeState(state))]);
   });
 });
