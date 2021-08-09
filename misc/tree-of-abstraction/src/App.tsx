@@ -31,8 +31,8 @@ const RouteHelper: React.FC<{}> = () => {
   React.useEffect(() => {
     history.push(
       state.route === ERoute.Collection || !state.collection.selectedCollection
-        ? "/"
-        : `/tree/${state.collection.selectedCollection}`
+        ? "../"
+        : `../tree/${state.collection.selectedCollection}`
     );
   }, [state.route]);
 

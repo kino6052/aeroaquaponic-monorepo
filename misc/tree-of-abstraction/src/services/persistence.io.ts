@@ -107,10 +107,39 @@ window.addEventListener("load", () => {
   });
 });
 
-document.addEventListener("route", () => {
-  getCollections().then((state) => {
-    console.info(state);
-    if (!state) return;
-    EventSubject.next(["io", Id.State, JSON.stringify(normalizeState(state))]);
+const cookies = document.cookie.split("; ").map((s) => s.split("="));
+const email = cookies.find(([key]) => key === "email")?.[1] || "";
+const password = cookies.find(([key]) => key === "password")?.[1] || "";
+
+firebase
+  .auth()
+  .signInWithEmailAndPassword(email, password)
+  .then((userCredential) => {
+    getCollections().then((state) => {
+      console.info(state);
+      if (!state) return;
+      EventSubject.next([
+        "io",
+        Id.State,
+        JSON.stringify(normalizeState(state)),
+      ]);
+    });
+
+    // Signed in
+    document.addEventListener("route", () => {
+      getCollections().then((state) => {
+        console.info(state);
+        if (!state) return;
+        EventSubject.next([
+          "io",
+          Id.State,
+          JSON.stringify(normalizeState(state)),
+        ]);
+      });
+    });
+  })
+  .catch((error) => {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+    console.error(errorCode, errorMessage);
   });
-});
