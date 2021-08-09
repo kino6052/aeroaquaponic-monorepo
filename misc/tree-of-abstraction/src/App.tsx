@@ -49,11 +49,11 @@ export default function App() {
         {state.isLoading && <Loader />}
         <RouteHelper />
         <Switch>
-          <Route exact path="/">
-            <CollectionContainer state={state} />
-          </Route>
-          <Route path="/tree/:id">
+          <Route strict path="/tree/:id">
             <TreeContainer state={state} />
+          </Route>
+          <Route path="/">
+            <CollectionContainer state={state} />
           </Route>
         </Switch>
       </Router>
