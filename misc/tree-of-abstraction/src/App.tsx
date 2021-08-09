@@ -21,7 +21,9 @@ const RouteHelper: React.FC<{}> = () => {
 
   React.useEffect(() => {
     if (pathname) {
-      const route = pathname === "/" ? ERoute.Collection : ERoute.Tree;
+      const route = !pathname.includes("/tree/")
+        ? ERoute.Collection
+        : ERoute.Tree;
       document.dispatchEvent(new CustomEvent("route"));
       EventSubject.next(["io", Id.Load, "true"]);
       EventSubject.next(["io", Id.Route, route]);
