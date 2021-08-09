@@ -52,7 +52,7 @@ export default function App() {
           <Route strict path="/tree/:id">
             <TreeContainer state={state} />
           </Route>
-          <Route path="/">
+          <Route>
             <CollectionContainer state={state} />
           </Route>
         </Switch>
