@@ -117,6 +117,7 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                     width: "100%",
                   }}
                 >
+                  {state.isMemory && <b>{note.score}</b>}
                   <EventWrapper
                     key={id}
                     id={`${Id.Note}-${id.replace(`${Id.Note}-`, "")}`}
@@ -128,7 +129,13 @@ export const TreeContainer: React.FC<{ state: IAppState }> = (props) => {
                     {!note.isEditable && !note.isCollapsed && (
                       <p
                         dangerouslySetInnerHTML={{
-                          __html: sanitize(note.description),
+                          __html: sanitize(note.description, {
+                            allowedTags: ["image", "img", "video"],
+                            allowedAttributes: {
+                              image: ["src"],
+                              img: ["src"],
+                            },
+                          }),
                         }}
                       ></p>
                     )}
