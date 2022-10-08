@@ -1,0 +1,70 @@
+{
+  "name": "react-tdd-template",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [],
+  "main": "src/index.tsx",
+  "dependencies": {
+    "@types/lodash": "4.14.167",
+    "lodash": "4.17.20",
+    "react": "17.0.0",
+    "react-dom": "17.0.0",
+    "react-scripts": "^3.4.1",
+    "rxjs": "6.6.3"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "^6.5.12",
+    "@storybook/addon-essentials": "^6.5.12",
+    "@storybook/addon-interactions": "^6.5.12",
+    "@storybook/addon-links": "^6.5.12",
+    "@storybook/builder-webpack4": "^6.5.12",
+    "@storybook/manager-webpack4": "^6.5.12",
+    "@storybook/node-logger": "^6.5.12",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.12",
+    "@storybook/testing-library": "^0.0.13",
+    "@types/jest": "^26.0.20",
+    "@types/react": "16.9.19",
+    "@types/react-dom": "16.9.5",
+    "prettier": "2.2.1",
+    "typescript": "^3.7.5"
+  },
+  "scripts": {
+    "start": "react-scripts start ",
+    "build": "react-scripts build -- .",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "jest": {
+    "collectCoverageFrom": [
+      "<rootDir>/src/new.ts",
+      "!<rootDir>/node_modules/",
+      "!<rootDir>/node_modules/*"
+    ],
+    "coverageReporters": [
+      "text",
+      "json",
+      "html"
+    ]
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
+  }
+}
