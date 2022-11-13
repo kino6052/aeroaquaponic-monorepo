@@ -29,30 +29,27 @@ const selectHasReadManifest = (state: IState) =>
   state.hasReadAboutSelfSufficiency;
 
 const reduce = (event: TEvent, state: IState): IState => {
-  if (event[0] === "enter" && state.input === "help") {
-    return produce(state, (draft) => {
+  return produce(state, (draft) => {
+    if (event[0] === "enter" && state.input === "help") {
       draft.output = `
 b Help
 p The commands available can be discovered by double tapping the Tab key.
 `;
-    });
-  }
-  if (event[0] === "change") {
-    return produce(state, (draft) => {
+      return;
+    }
+    if (event[0] === "change") {
       draft.input = event[1];
-    });
-  }
-  if (event[0] === "suggest" && selectInput(state) === "google") {
-    return produce(state, (draft) => {
+      return;
+    }
+    if (event[0] === "suggest" && selectInput(state) === "google") {
       draft.output = `
 b Possible google commands
 ul
     li Self-sufficiency
 `;
-    });
-  }
-  if (event[0] === "suggest") {
-    return produce(state, (draft) => {
+      return;
+    }
+    if (event[0] === "suggest") {
       draft.output = `
 b Available commands
 p Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
@@ -62,13 +59,12 @@ div
   p Allows to find something on the internet
   p Try writing 
 `;
-    });
-  }
-  if (
-    event[0] === "enter" &&
-    selectInput(state) === "google self-sufficiency"
-  ) {
-    return produce(state, (draft) => {
+      return;
+    }
+    if (
+      event[0] === "enter" &&
+      selectInput(state) === "google self-sufficiency"
+    ) {
       draft.isGoogling = true;
       draft.hasReadAboutSelfSufficiency = true;
       draft.output = `
@@ -77,19 +73,18 @@ ul
   li
     b Unit of self-sufficiency
 `;
-    });
-  }
-  if (event[0] === "enter" && selectInput(state) === "leave") {
-    return produce(state, (draft) => {
+      return;
+    }
+    if (event[0] === "enter" && selectInput(state) === "leave") {
       draft.isGoogling = false;
       draft.output = `
 p You read about unit of self-sufficiency and it seemed quite reasonable.
 p It seems relatively simple too, so you want to start thinking in this direction.
 p You created a todo list.
 `;
-    });
-  }
-  return state;
+      return;
+    }
+  });
 };
 
 const compose = (state: IState) => (events: TEvent[]) =>
