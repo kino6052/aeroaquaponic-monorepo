@@ -7,13 +7,25 @@ type TEvent = [TCommand, string];
 interface IState {
   input: string;
   output: string;
-  isGoogling: boolean;
-  hasReadAboutSelfSufficiency: boolean;
+  google: {
+    isGoogling: boolean;
+    options: {
+      [key: string]: {
+        visited: boolean;
+      };
+    };
+  };
 }
 
 const initialState: IState = {
-  isGoogling: false,
-  hasReadAboutSelfSufficiency: false,
+  google: {
+    isGoogling: false,
+    options: {
+      "self-sufficiency": {
+        visited: false,
+      },
+    },
+  },
   input: "",
   output: `
 h1 Wake up, Neo...
@@ -24,19 +36,47 @@ p Yesterday, you started seriously thinking about what alternatives are out ther
 
 const selectOutput = (state: IState) => state.output;
 const selectInput = (state: IState) => state.input;
-const selectIsGoogling = (state: IState) => state.isGoogling;
+const selectIsGoogling = (state: IState) => state.google.isGoogling;
 const selectHasReadManifest = (state: IState) =>
-  state.hasReadAboutSelfSufficiency;
+  state.google.options["self-sufficiency"].visited;
 
 const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
-    if (event[0] === "enter" && state.input === "help") {
-      draft.output = `
-b Help
-p The commands available can be discovered by double tapping the Tab key.
-`;
-      return;
+    if (event[0] === "enter") {
+      draft.input = "";
+      if (state.input === "help") {
+        draft.output = `
+  b Help
+  p The commands available can be discovered by double tapping the Tab key.
+  `;
+        return;
+      }
+      if (selectInput(state) === "google self-sufficiency") {
+        draft.google.isGoogling = true;
+        draft.google.options["self-sufficiency"].visited = true;
+        draft.output = `
+  h1 Google results
+  ul
+    li
+      b Unit of self-sufficiency
+  `;
+        return;
+      }
+      if (
+        selectHasReadManifest(state) === true &&
+        selectIsGoogling(state) === true &&
+        selectInput(state) === "leave"
+      ) {
+        draft.google.isGoogling = false;
+        draft.output = `
+  p You read about unit of self-sufficiency and it seemed quite reasonable.
+  p It seems relatively simple too, so you want to start thinking in this direction.
+  p You created a todo list.
+  `;
+        return;
+      }
     }
+
     if (event[0] === "change") {
       draft.input = event[1];
       return;
@@ -45,11 +85,19 @@ p The commands available can be discovered by double tapping the Tab key.
       draft.output = `
 b Possible google commands
 ul
-    li Self-sufficiency
+  li Self-sufficiency
 `;
       return;
     }
-    if (event[0] === "suggest") {
+    if (event[0] === "suggest" && selectInput(state) === "") {
+      if (selectHasReadManifest(state) === true) {
+        draft.output = `
+b Todo
+ul
+  li Inquire about land costs        
+`;
+        return;
+      }
       draft.output = `
 b Available commands
 p Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
@@ -58,29 +106,6 @@ div
   i google
   p Allows to find something on the internet
   p Try writing 
-`;
-      return;
-    }
-    if (
-      event[0] === "enter" &&
-      selectInput(state) === "google self-sufficiency"
-    ) {
-      draft.isGoogling = true;
-      draft.hasReadAboutSelfSufficiency = true;
-      draft.output = `
-h1 Google results
-ul
-  li
-    b Unit of self-sufficiency
-`;
-      return;
-    }
-    if (event[0] === "enter" && selectInput(state) === "leave") {
-      draft.isGoogling = false;
-      draft.output = `
-p You read about unit of self-sufficiency and it seemed quite reasonable.
-p It seems relatively simple too, so you want to start thinking in this direction.
-p You created a todo list.
 `;
       return;
     }
@@ -106,15 +131,16 @@ p Yesterday, you started seriously thinking about what alternatives are out ther
       ["change", "help"],
       ["enter", ""],
     ]);
+    expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-b Help
-p The commands available can be discovered by double tapping the Tab key.
-"
+  b Help
+  p The commands available can be discovered by double tapping the Tab key.
+  "
 `);
   });
 
-  it("should show help player", () => {
+  it("should show help to player", () => {
     const resultingState = compose(initialState)([["suggest", ""]]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
@@ -138,7 +164,7 @@ div
 "
 b Possible google commands
 ul
-    li Self-sufficiency
+  li Self-sufficiency
 "
 `);
   });
@@ -148,15 +174,16 @@ ul
       ["change", "google self-sufficiency"],
       ["enter", ""],
     ]);
+    expect(selectInput(resultingState)).toEqual("");
     expect(selectIsGoogling(resultingState)).toBe(true);
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-h1 Google results
-ul
-  li
-    b Unit of self-sufficiency
-"
+  h1 Google results
+  ul
+    li
+      b Unit of self-sufficiency
+  "
 `);
   });
 
@@ -167,13 +194,34 @@ ul
       ["change", "leave"],
       ["enter", ""],
     ]);
+    expect(selectInput(resultingState)).toEqual("");
     expect(selectIsGoogling(resultingState)).toBe(false);
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-p You read about unit of self-sufficiency and it seemed quite reasonable.
-p It seems relatively simple too, so you want to start thinking in this direction.
-p You created a todo list.
+  p You read about unit of self-sufficiency and it seemed quite reasonable.
+  p It seems relatively simple too, so you want to start thinking in this direction.
+  p You created a todo list.
+  "
+`);
+  });
+
+  it("should let you examine todo after you leave site", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google self-sufficiency"],
+      ["enter", ""],
+      ["change", "leave"],
+      ["enter", ""],
+      ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectIsGoogling(resultingState)).toBe(false);
+    expect(selectHasReadManifest(resultingState)).toBe(true);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+b Todo
+ul
+  li Inquire about land costs        
 "
 `);
   });
