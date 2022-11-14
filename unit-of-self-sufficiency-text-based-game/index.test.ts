@@ -1,4 +1,5 @@
 import produce from "immer";
+import * as outputs from "./outputs";
 
 type TCommand = "enter" | "change" | "suggest";
 
@@ -45,21 +46,13 @@ const reduce = (event: TEvent, state: IState): IState => {
     if (event[0] === "enter") {
       draft.input = "";
       if (state.input === "help") {
-        draft.output = `
-  b Help
-  p The commands available can be discovered by double tapping the Tab key.
-  `;
+        draft.output = outputs.help;
         return;
       }
       if (selectInput(state) === "google self-sufficiency") {
         draft.google.isGoogling = true;
         draft.google.options["self-sufficiency"].visited = true;
-        draft.output = `
-  h1 Google results
-  ul
-    li
-      b Unit of self-sufficiency
-  `;
+        draft.output = outputs.google;
         return;
       }
       if (
@@ -68,45 +61,24 @@ const reduce = (event: TEvent, state: IState): IState => {
         selectInput(state) === "leave"
       ) {
         draft.google.isGoogling = false;
-        draft.output = `
-  p You read about unit of self-sufficiency and it seemed quite reasonable.
-  p It seems relatively simple too, so you want to start thinking in this direction.
-  p You created a todo list.
-  `;
+        draft.output = outputs.hasReadManifest;
         return;
       }
     }
-
     if (event[0] === "change") {
       draft.input = event[1];
       return;
     }
     if (event[0] === "suggest" && selectInput(state) === "google") {
-      draft.output = `
-b Possible google commands
-ul
-  li Self-sufficiency
-`;
+      draft.output = outputs.googleCommands;
       return;
     }
     if (event[0] === "suggest" && selectInput(state) === "") {
       if (selectHasReadManifest(state) === true) {
-        draft.output = `
-b Todo
-ul
-  li Inquire about land costs        
-`;
+        draft.output = outputs.todo;
         return;
       }
-      draft.output = `
-b Available commands
-p Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
-p Then if you hit Tab twice you will get some options of what makes sense to google.
-div
-  i google
-  p Allows to find something on the internet
-  p Try writing 
-`;
+      draft.output = outputs.availableCommands;
       return;
     }
   });
@@ -134,9 +106,9 @@ p Yesterday, you started seriously thinking about what alternatives are out ther
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-  b Help
-  p The commands available can be discovered by double tapping the Tab key.
-  "
+b Help
+p The commands available can be discovered by double tapping the Tab key.
+"
 `);
   });
 
@@ -179,11 +151,11 @@ ul
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-  h1 Google results
-  ul
-    li
-      b Unit of self-sufficiency
-  "
+h1 Google results
+ul
+  li
+    b Unit of self-sufficiency
+"
 `);
   });
 
@@ -199,10 +171,10 @@ ul
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-  p You read about unit of self-sufficiency and it seemed quite reasonable.
-  p It seems relatively simple too, so you want to start thinking in this direction.
-  p You created a todo list.
-  "
+p You read about unit of self-sufficiency and it seemed quite reasonable.
+p It seems relatively simple too, so you want to start thinking in this direction.
+p You created a todo list.
+"
 `);
   });
 
