@@ -1,5 +1,6 @@
 import { IState, TAvailableCommand } from "./interfaces";
 import * as outputs from "./outputs";
+import { selectCommands } from "./selectors";
 
 export const commands: Record<string, TAvailableCommand> = {
   status: {
@@ -29,7 +30,7 @@ export const getCommandData = (
   state: IState,
   commandName?: typeof commands[number]["name"]
 ): { args: string[]; name?: string; description?: string } => {
-  const { commands } = state;
+  const commands = selectCommands(state);
   const command = commands[commandName || ""];
   if (!command)
     return {

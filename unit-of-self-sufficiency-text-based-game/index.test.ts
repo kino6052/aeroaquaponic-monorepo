@@ -40,9 +40,9 @@ p The commands available can be discovered by double tapping the Tab key.
 h1 Available commands
 p 
 Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
--- status
--- help
 -- google
+-- help
+-- status
 "
 `);
   });
@@ -115,9 +115,9 @@ p You created a todo list.
 h1 Available commands
 p 
 Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
--- status
--- help
 -- google
+-- help
+-- status
 -- todo
 "
 `);
