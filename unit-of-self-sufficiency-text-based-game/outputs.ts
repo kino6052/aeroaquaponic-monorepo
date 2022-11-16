@@ -1,3 +1,9 @@
+export const initialOutput = `
+h1 Wake up, Neo...
+p You wake up with an unpleasant anticipation of yet another day full of work and routine.
+p Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.
+`;
+
 export const help = `
 b Help
 p The commands available can be discovered by double tapping the Tab key.

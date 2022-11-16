@@ -5,9 +5,71 @@ type TCommand = "enter" | "change" | "suggest";
 
 type TEvent = [TCommand, string];
 
+type TAvailableCommand = {
+  name: string;
+  description: string;
+  args: TAvailableCommand[];
+};
+
+const commands: Record<string, TAvailableCommand> = {
+  status: {
+    name: "status",
+    description: "Find out what's going on at the moment",
+    args: [],
+  },
+  help: {
+    name: "help",
+    description: "Find out what available commands are there",
+    args: [],
+  },
+  google: {
+    name: "google",
+    description: "Google search",
+    args: [
+      {
+        name: "Self-sufficiency",
+        description: "Learn about self-sufficiency",
+        args: [],
+      },
+    ],
+  },
+};
+
+const getCommandData = (
+  state: IState,
+  commandName?: typeof commands[number]["name"]
+): { args: string[]; name?: string; description?: string } => {
+  const { commands } = state;
+  const command = commands[commandName || ""];
+  if (!command)
+    return {
+      args: Object.keys(commands),
+      name: "Available commands",
+      description: `
+Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"`,
+    };
+  const { args, description, name } = command;
+  return {
+    args: args.map(({ name }) => name),
+    description: description ?? "",
+    name: name ?? "",
+  };
+};
+
+const generateCommandOutput = ({
+  args,
+  description,
+  name,
+}: ReturnType<typeof getCommandData>) => `
+h1 ${name}
+p ${description}
+${args.map((v) => `-- ${v}`).join("\n")}
+`;
+
 interface IState {
   input: string;
   output: string;
+  commands: Record<string, TAvailableCommand>;
   google: {
     isGoogling: boolean;
     options: {
@@ -28,11 +90,8 @@ const initialState: IState = {
     },
   },
   input: "",
-  output: `
-h1 Wake up, Neo...
-p You wake up with an unpleasant anticipation of yet another day full of work and routine.
-p Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.
-`,
+  commands,
+  output: outputs.initialOutput,
 };
 
 const selectOutput = (state: IState) => state.output;
@@ -40,11 +99,17 @@ const selectInput = (state: IState) => state.input;
 const selectIsGoogling = (state: IState) => state.google.isGoogling;
 const selectHasReadManifest = (state: IState) =>
   state.google.options["self-sufficiency"].visited;
+const selectCommand = (commandName: string, state: IState) =>
+  state.commands[commandName];
 
 const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
     if (event[0] === "enter") {
       draft.input = "";
+      if (selectHasReadManifest(state) && selectInput(state) === "todo") {
+        draft.output = outputs.todo;
+        return;
+      }
       if (state.input === "help") {
         draft.output = outputs.help;
         return;
@@ -52,6 +117,11 @@ const reduce = (event: TEvent, state: IState): IState => {
       if (selectInput(state) === "google self-sufficiency") {
         draft.google.isGoogling = true;
         draft.google.options["self-sufficiency"].visited = true;
+        draft.commands["todo"] = {
+          name: "todo",
+          description: "Your todo list",
+          args: [],
+        };
         draft.output = outputs.google;
         return;
       }
@@ -69,17 +139,16 @@ const reduce = (event: TEvent, state: IState): IState => {
       draft.input = event[1];
       return;
     }
-    if (event[0] === "suggest" && selectInput(state) === "google") {
-      draft.output = outputs.googleCommands;
-      return;
-    }
-    if (event[0] === "suggest" && selectInput(state) === "") {
-      if (selectHasReadManifest(state) === true) {
-        draft.output = outputs.todo;
+    if (event[0] === "suggest") {
+      if (selectInput(state) === "google") {
+        draft.output = generateCommandOutput(getCommandData(state, "google"));
         return;
       }
-      draft.output = outputs.availableCommands;
-      return;
+
+      if (selectInput(state) === "") {
+        draft.output = generateCommandOutput(getCommandData(state));
+        return;
+      }
     }
   });
 };
@@ -116,13 +185,12 @@ p The commands available can be discovered by double tapping the Tab key.
     const resultingState = compose(initialState)([["suggest", ""]]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-b Available commands
-p Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
-p Then if you hit Tab twice you will get some options of what makes sense to google.
-div
-  i google
-  p Allows to find something on the internet
-  p Try writing 
+h1 Available commands
+p 
+Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
+-- status
+-- help
+-- google
 "
 `);
   });
@@ -134,9 +202,9 @@ div
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-b Possible google commands
-ul
-  li Self-sufficiency
+h1 google
+p Google search
+-- Self-sufficiency
 "
 `);
   });
@@ -149,6 +217,7 @@ ul
     expect(selectInput(resultingState)).toEqual("");
     expect(selectIsGoogling(resultingState)).toBe(true);
     expect(selectHasReadManifest(resultingState)).toBe(true);
+    expect(selectCommand("todo", resultingState)).toBeTruthy();
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
 h1 Google results
@@ -178,13 +247,38 @@ p You created a todo list.
 `);
   });
 
-  it("should let you examine todo after you leave site", () => {
+  it("should update your commands after you leave site", () => {
     const resultingState = compose(initialState)([
       ["change", "google self-sufficiency"],
       ["enter", ""],
       ["change", "leave"],
       ["enter", ""],
       ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectIsGoogling(resultingState)).toBe(false);
+    expect(selectHasReadManifest(resultingState)).toBe(true);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 Available commands
+p 
+Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
+-- status
+-- help
+-- google
+-- todo
+"
+`);
+  });
+
+  it("should let you examine todo after you leave site", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google self-sufficiency"],
+      ["enter", ""],
+      ["change", "leave"],
+      ["enter", ""],
+      ["change", "todo"],
+      ["enter", ""],
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectIsGoogling(resultingState)).toBe(false);
