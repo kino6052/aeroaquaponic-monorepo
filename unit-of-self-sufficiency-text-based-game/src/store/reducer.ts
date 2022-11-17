@@ -63,16 +63,33 @@ export const reduce = (event: TEvent, state: IState): IState => {
     if (event[0] === "suggest") {
       const commands = selectCommands(state);
       const input = selectInput(state);
-      if (!commands[input]) {
-        const matches = Object.keys(commands).filter((key) =>
-          key.includes(input)
-        );
+      const [command, argument] = input.split(" ");
+      const _command = commands[command];
+      if (!_command) {
+        const commandNames = Object.keys(commands);
+        const matches = commandNames.filter((key) => key.includes(input));
         if (matches.length === 1) {
           draft.input = matches[0];
         } else {
           draft.output = templateParser(outputs.commandMatch, {
-            matches: matches.join("\n"),
+            matches: (matches.length > 0 ? matches : commandNames).join("\n"),
           });
+        }
+      } else {
+        const argumentNames = _command.args.map(({ name }) => name);
+        const isArgumentInList = argumentNames.includes(argument);
+        if (!isArgumentInList) {
+          const matches = argumentNames.filter((name) => name.includes(input));
+          if (matches.length === 1) {
+            draft.input = `${command} ${matches[0]}`;
+          } else {
+            draft.output = templateParser(outputs.argumentMatch, {
+              command: _command.name,
+              matches: (matches.length > 0 ? matches : argumentNames).join(
+                "\n"
+              ),
+            });
+          }
         }
       }
     }

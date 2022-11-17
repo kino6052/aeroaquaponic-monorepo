@@ -11,7 +11,7 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-h1 Unknown command he
+h1 Unknown command "he"
 p You entered an unknown command
 "
 `);
@@ -23,6 +23,14 @@ p You entered an unknown command
       ["suggest", ""],
     ]);
     expect(selectInput(resultingState)).toEqual("help");
+  });
+
+  it("should show available commands", () => {
+    const resultingState = compose(initialState)([
+      ["change", ""],
+      ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`""`);
   });
 
   it("should show available commands that match the input", () => {
@@ -54,13 +62,47 @@ test
 `);
   });
 
-  // it("should show available commands that match the input", () => {
-  //   const resultingState = compose(initialState)([
-  //     ["change", "goo"],
-  //     ["suggest", ""],
-  //     ["enter", ""],
-  //   ]);
-  //   expect(selectInput(resultingState)).toEqual("te");
-  //   expect(selectOutput(resultingState)).toMatchInlineSnapshot();
-  // });
+  it("should perform the autocompleted command", () => {
+    const resultingState = compose(initialState)([
+      ["change", "goo"],
+      ["suggest", ""],
+      ["enter", ""],
+    ]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 google
+p Google search
+-- Self-sufficiency
+"
+`);
+  });
+
+  it("should suggest params", () => {
+    const resultingState = compose(initialState)([
+      ["change", "goo"],
+      ["suggest", ""],
+      ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("google");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 Some possible arguments for command "google"
+Self-sufficiency
+"
+`);
+  });
+
+  it("should autocomplete params", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google se"],
+      ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"google se"`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 Some possible arguments for command "google"
+Self-sufficiency
+"
+`);
+  });
 });

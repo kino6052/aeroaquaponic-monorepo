@@ -1,10 +1,15 @@
+export const argumentMatch = `
+h1 Some possible arguments for command "{{command}}"
+{{matches}}
+`;
+
 export const commandMatch = `
 h1 Did you mean?
 {{matches}}
 `;
 
 export const unknownCommand = `
-h1 Unknown command {{command}}
+h1 Unknown command "{{command}}"
 p You entered an unknown command
 `;
 
