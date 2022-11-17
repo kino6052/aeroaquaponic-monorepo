@@ -22,7 +22,7 @@ export const reduce = (event: TEvent, state: IState): IState => {
         draft.output = outputs.help;
         return;
       }
-      // TODO: Parse commands and their arguments
+      // TODO: Make the field "browser" instead of "google" and options should be "websites"
       if (selectInput(state) === "google self-sufficiency") {
         draft.google.isGoogling = true;
         draft.google.options["self-sufficiency"].visited = true;
