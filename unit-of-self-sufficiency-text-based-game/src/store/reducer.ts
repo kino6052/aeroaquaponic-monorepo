@@ -1,6 +1,7 @@
 import { IState, TEvent } from "../interfaces";
 import produce from "immer";
 import {
+  selectCommands,
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
@@ -59,6 +60,21 @@ export const reduce = (event: TEvent, state: IState): IState => {
       if (selectInput(state) === "") {
         draft.output = generateCommandOutput(getCommandData(state));
         return;
+      }
+
+      const commands = selectCommands(state);
+      const input = selectInput(state);
+      if (!commands[input]) {
+        const matches = Object.keys(commands).filter((key) =>
+          key.includes(input)
+        );
+        if (matches.length === 1) {
+          draft.input = matches[0];
+        } else {
+          draft.output = templateParser(outputs.commandMatch, {
+            matches: matches.join("\n"),
+          });
+        }
       }
     }
   });

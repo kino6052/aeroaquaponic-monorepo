@@ -1,3 +1,8 @@
+export const commandMatch = `
+h1 Did you mean?
+{{matches}}
+`;
+
 export const unknownCommand = `
 h1 Unknown command {{command}}
 p You entered an unknown command
