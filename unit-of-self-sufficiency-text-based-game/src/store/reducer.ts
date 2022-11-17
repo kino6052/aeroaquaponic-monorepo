@@ -1,12 +1,13 @@
-import { IState, TEvent } from "./interfaces";
+import { IState, TEvent } from "../interfaces";
 import produce from "immer";
 import {
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
 } from "./selectors";
-import * as outputs from "./outputs";
+import * as outputs from "../outputs";
 import { generateCommandOutput, getCommandData } from "./store";
+import { templateParser } from "../utils";
 
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
@@ -41,6 +42,9 @@ export const reduce = (event: TEvent, state: IState): IState => {
         draft.output = outputs.hasReadManifest;
         return;
       }
+      draft.output = templateParser(outputs.unknownCommand, {
+        command: selectInput(state),
+      });
     }
     if (event[0] === "change") {
       draft.input = event[1];

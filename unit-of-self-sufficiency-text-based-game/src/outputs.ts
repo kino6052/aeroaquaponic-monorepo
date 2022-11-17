@@ -1,3 +1,8 @@
+export const unknownCommand = `
+h1 Unknown command {{command}}
+p You entered an unknown command
+`;
+
 export const initialOutput = `
 h1 Wake up, Neo...
 p You wake up with an unpleasant anticipation of yet another day full of work and routine.

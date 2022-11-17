@@ -1,4 +1,4 @@
-import { IState } from "./interfaces";
+import { IState } from "../interfaces";
 export const selectOutput = (state: IState) => state.output;
 export const selectInput = (state: IState) => state.input;
 export const selectIsGoogling = (state: IState) => state.google.isGoogling;

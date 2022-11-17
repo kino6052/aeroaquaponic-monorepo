@@ -1,12 +1,28 @@
-import { compose } from "./reducer";
+import { compose } from "../store/reducer";
 import {
   selectCommand,
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
   selectOutput,
-} from "./selectors";
-import { initialState } from "./store";
+} from "../store/selectors";
+import { initialState } from "../store/store";
+
+describe("CLI features", () => {
+  it("should say that command is unknown", () => {
+    const resultingState = compose(initialState)([
+      ["change", "he"],
+      ["enter", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 Unknown command he
+p You entered an unknown command
+"
+`);
+  });
+});
 
 describe("Game", () => {
   it("should salute player", () => {

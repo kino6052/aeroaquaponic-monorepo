@@ -1,5 +1,5 @@
-import { IState, TAvailableCommand } from "./interfaces";
-import * as outputs from "./outputs";
+import { IState, TAvailableCommand } from "../interfaces";
+import * as outputs from "../outputs";
 import { selectCommands } from "./selectors";
 
 export const commands: Record<string, TAvailableCommand> = {
