@@ -10,11 +10,11 @@ describe("CLI features", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-  "
-  h1 Unknown command he
-  p You entered an unknown command
-  "
-  `);
+"
+h1 Unknown command he
+p You entered an unknown command
+"
+`);
   });
 
   it("should autocomplete command if there is only one match", () => {
@@ -46,11 +46,21 @@ describe("CLI features", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("te");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-  "
-  h1 Did you mean?
-  temp
-  test
-  "
-  `);
+"
+h1 Did you mean?
+temp
+test
+"
+`);
   });
+
+  // it("should show available commands that match the input", () => {
+  //   const resultingState = compose(initialState)([
+  //     ["change", "goo"],
+  //     ["suggest", ""],
+  //     ["enter", ""],
+  //   ]);
+  //   expect(selectInput(resultingState)).toEqual("te");
+  //   expect(selectOutput(resultingState)).toMatchInlineSnapshot();
+  // });
 });

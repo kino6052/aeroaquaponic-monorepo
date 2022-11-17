@@ -47,7 +47,7 @@ Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and 
   };
 };
 
-export const generateCommandOutput = ({
+const _generateCommandOutput = ({
   args,
   description,
   name,
@@ -56,6 +56,11 @@ h1 ${name}
 p ${description}
 ${args.map((v) => `-- ${v}`).join("\n")}
 `;
+
+export const generateCommandOutput = (
+  state: IState,
+  commandName?: typeof commands[number]["name"]
+) => _generateCommandOutput(getCommandData(state, commandName));
 
 export const initialState: IState = {
   google: {

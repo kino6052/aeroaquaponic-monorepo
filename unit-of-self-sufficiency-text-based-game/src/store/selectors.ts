@@ -13,3 +13,5 @@ export const selectCommands = (state: IState) =>
     ) as typeof state.commands;
 export const selectCommand = (commandName: string, state: IState) =>
   selectCommands(state)[commandName];
+export const selectCommandArguments = (commandName: string, state: IState) =>
+  selectCommands(state)[commandName].args;

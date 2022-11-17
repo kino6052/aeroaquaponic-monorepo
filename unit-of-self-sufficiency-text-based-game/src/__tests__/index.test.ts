@@ -1,6 +1,7 @@
 import { compose } from "../store/reducer";
 import {
   selectCommand,
+  selectCommandArguments,
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
@@ -37,12 +38,10 @@ p The commands available can be discovered by double tapping the Tab key.
     const resultingState = compose(initialState)([["suggest", ""]]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-h1 Available commands
-p 
-Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
--- google
--- help
--- status
+h1 Did you mean?
+google
+help
+status
 "
 `);
   });
@@ -54,9 +53,9 @@ Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and 
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-h1 google
-p Google search
--- Self-sufficiency
+h1 Wake up, Neo...
+p You wake up with an unpleasant anticipation of yet another day full of work and routine.
+p Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.
 "
 `);
   });
@@ -112,13 +111,11 @@ p You created a todo list.
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
-h1 Available commands
-p 
-Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and hit Tab key, you will get "google"
--- google
--- help
--- status
--- todo
+h1 Did you mean?
+google
+help
+status
+todo
 "
 `);
   });
@@ -140,6 +137,29 @@ Note: You can autocomplete queries by hitting Tab. For example, enter "goo" and 
 b Todo
 ul
   li Inquire about land costs        
+"
+`);
+  });
+
+  it("should have extra options after it let you examine todo", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google self-sufficiency"],
+      ["enter", ""],
+      ["change", "leave"],
+      ["enter", ""],
+      ["change", "todo"],
+      ["enter", ""],
+      ["change", "google"],
+      ["enter", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectIsGoogling(resultingState)).toBe(false);
+    expect(selectHasReadManifest(resultingState)).toBe(true);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 google
+p Google search
+-- Self-sufficiency
 "
 `);
   });

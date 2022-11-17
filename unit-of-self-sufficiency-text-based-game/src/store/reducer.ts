@@ -1,19 +1,27 @@
-import { IState, TEvent } from "../interfaces";
 import produce from "immer";
+import { IState, TEvent } from "../interfaces";
+import * as outputs from "../outputs";
+import { templateParser } from "../utils";
 import {
   selectCommands,
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
 } from "./selectors";
-import * as outputs from "../outputs";
-import { generateCommandOutput, getCommandData } from "./store";
-import { templateParser } from "../utils";
+import { generateCommandOutput } from "./store";
 
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
     if (event[0] === "enter") {
       draft.input = "";
+      if (selectInput(state) === "google") {
+        draft.output = generateCommandOutput(state, "google");
+        return;
+      }
+      if (selectInput(state) === "") {
+        draft.output = generateCommandOutput(state);
+        return;
+      }
       if (selectHasReadManifest(state) && selectInput(state) === "todo") {
         draft.output = outputs.todo;
         return;
@@ -53,16 +61,6 @@ export const reduce = (event: TEvent, state: IState): IState => {
       return;
     }
     if (event[0] === "suggest") {
-      if (selectInput(state) === "google") {
-        draft.output = generateCommandOutput(getCommandData(state, "google"));
-        return;
-      }
-
-      if (selectInput(state) === "") {
-        draft.output = generateCommandOutput(getCommandData(state));
-        return;
-      }
-
       const commands = selectCommands(state);
       const input = selectInput(state);
       if (!commands[input]) {
