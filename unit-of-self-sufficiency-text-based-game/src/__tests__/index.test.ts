@@ -1,7 +1,6 @@
 import { compose } from "../store/reducer";
 import {
   selectCommand,
-  selectCommandArguments,
   selectHasReadManifest,
   selectInput,
   selectIsGoogling,
@@ -78,6 +77,7 @@ ul
 `);
   });
 
+  // TODO: Remove Leave
   it("should leave site", () => {
     const resultingState = compose(initialState)([
       ["change", "google self-sufficiency"],
@@ -178,5 +178,26 @@ p Google search
     expect(selectInput(resultingState)).toMatchInlineSnapshot(
       `"google buy land dot com"`
     );
+  });
+
+  it("should be able to google buy land dot com", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google self-sufficiency"],
+      ["enter", ""],
+      ["change", "leave"],
+      ["enter", ""],
+      ["change", "todo"],
+      ["enter", ""],
+      ["change", "google bu"],
+      ["suggest", ""],
+      ["enter", ""],
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+"
+h1 Unknown command "google buy land dot com"
+p You entered an unknown command
+"
+`);
   });
 });
