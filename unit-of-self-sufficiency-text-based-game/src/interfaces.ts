@@ -8,10 +8,22 @@ export type TAvailableCommand = {
   args: TAvailableCommand[];
 };
 
+export interface IBrowser {
+  current?: string;
+  visited: string[];
+  resources: {
+    [key: string]: {
+      url: string;
+      description: string;
+    };
+  };
+}
+
 export interface IState {
   input: string;
   output: string;
   commands: Record<string, TAvailableCommand>;
+  // browser: IBrowser;
   google: {
     isGoogling: boolean;
     options: {
