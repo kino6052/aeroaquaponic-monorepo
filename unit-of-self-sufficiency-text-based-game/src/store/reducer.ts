@@ -23,6 +23,7 @@ export const reduce = (event: TEvent, state: IState): IState => {
         return;
       }
       // TODO: Make the field "browser" instead of "google" and options should be "websites"
+      // TODO: There should be news website too
       if (selectInput(state) === "google self-sufficiency") {
         draft.google.isGoogling = true;
         draft.google.options["self-sufficiency"].visited = true;
