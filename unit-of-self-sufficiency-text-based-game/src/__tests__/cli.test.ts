@@ -87,7 +87,7 @@ p Google search
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
 h1 Some possible arguments for command "google"
-Self-sufficiency
+self-sufficiency
 "
 `);
   });
@@ -97,12 +97,8 @@ Self-sufficiency
       ["change", "google se"],
       ["suggest", ""],
     ]);
-    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"google se"`);
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-"
-h1 Some possible arguments for command "google"
-Self-sufficiency
-"
-`);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(
+      `"google self-sufficiency"`
+    );
   });
 });

@@ -40,6 +40,11 @@ export const reduce = (event: TEvent, state: IState): IState => {
           description: "Your todo list",
           args: [],
         };
+        draft.commands["google"].args.push({
+          name: "Buy Land Dot Com",
+          description: "You still haven't bought land??? What's yawr prawblem?",
+          args: [],
+        });
         draft.output = outputs.google;
         return;
       }
@@ -63,11 +68,14 @@ export const reduce = (event: TEvent, state: IState): IState => {
     if (event[0] === "suggest") {
       const commands = selectCommands(state);
       const input = selectInput(state);
-      const [command, argument] = input.split(" ");
+      const [command, _argument = ""] = input.split(" ");
+      const argument = _argument.toLowerCase();
       const _command = commands[command];
       if (!_command) {
         const commandNames = Object.keys(commands);
-        const matches = commandNames.filter((key) => key.includes(input));
+        const matches = commandNames.filter((key) =>
+          key.toLocaleLowerCase().includes(input.toLocaleLowerCase())
+        );
         if (matches.length === 1) {
           draft.input = matches[0];
         } else {
@@ -76,10 +84,14 @@ export const reduce = (event: TEvent, state: IState): IState => {
           });
         }
       } else {
-        const argumentNames = _command.args.map(({ name }) => name);
+        const argumentNames = _command.args.map(({ name }) =>
+          name.toLowerCase()
+        );
         const isArgumentInList = argumentNames.includes(argument);
         if (!isArgumentInList) {
-          const matches = argumentNames.filter((name) => name.includes(input));
+          const matches = argumentNames.filter(
+            (name) => argument && name.includes(argument)
+          );
           if (matches.length === 1) {
             draft.input = `${command} ${matches[0]}`;
           } else {

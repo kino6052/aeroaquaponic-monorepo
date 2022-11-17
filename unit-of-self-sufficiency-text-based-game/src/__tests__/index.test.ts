@@ -54,7 +54,7 @@ status
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
 "
 h1 Some possible arguments for command "google"
-Self-sufficiency
+self-sufficiency
 "
 `);
   });
@@ -159,7 +159,24 @@ ul
 h1 google
 p Google search
 -- Self-sufficiency
+-- Buy Land Dot Com
 "
 `);
+  });
+
+  it("should be able to google buy land dot com", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google self-sufficiency"],
+      ["enter", ""],
+      ["change", "leave"],
+      ["enter", ""],
+      ["change", "todo"],
+      ["enter", ""],
+      ["change", "google bu"],
+      ["suggest", ""],
+    ]);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(
+      `"google buy land dot com"`
+    );
   });
 });
