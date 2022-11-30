@@ -64,7 +64,6 @@ export const generateCommandOutput = (
 
 export const initialState: IState = {
   google: {
-    isGoogling: false,
     options: {
       "self-sufficiency": {
         visited: false,

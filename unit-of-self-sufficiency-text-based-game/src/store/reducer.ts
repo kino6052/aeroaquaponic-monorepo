@@ -6,7 +6,6 @@ import {
   selectCommands,
   selectHasReadManifest,
   selectInput,
-  selectIsGoogling,
 } from "./selectors";
 import { generateCommandOutput } from "./store";
 
@@ -33,7 +32,7 @@ export const reduce = (event: TEvent, state: IState): IState => {
       // TODO: Make the field "browser" instead of "google" and options should be "websites"
       // TODO: There should be news website too
       if (selectInput(state) === "google self-sufficiency") {
-        draft.google.isGoogling = true;
+        // draft.google.isGoogling = true;
         draft.google.options["self-sufficiency"].visited = true;
         draft.commands["todo"] = {
           name: "todo",
@@ -45,15 +44,15 @@ export const reduce = (event: TEvent, state: IState): IState => {
           description: "You still haven't bought land??? What's yawr prawblem?",
           args: [],
         });
-        draft.output = outputs.google;
+        draft.output = outputs.hasReadManifest;
         return;
       }
       if (
         selectHasReadManifest(state) === true &&
-        selectIsGoogling(state) === true &&
+        // selectIsGoogling(state) === true &&
         selectInput(state) === "leave"
       ) {
-        draft.google.isGoogling = false;
+        // draft.google.isGoogling = false;
         draft.output = outputs.hasReadManifest;
         return;
       }
