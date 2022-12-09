@@ -32,7 +32,7 @@ export interface IState {
   data: {
     [id in Id]: { id: Id; title: string; description: string; children: Id[] };
   };
-  currentId: Id;
+  currentId?: Id;
   next: Id[];
   history: Id[];
 }

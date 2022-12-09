@@ -40,6 +40,5 @@ export const initialState: IState = {
     },
   },
   history: [],
-  currentId: Id.Root,
-  next: [],
+  next: [Id.Root],
 };
