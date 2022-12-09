@@ -29,7 +29,10 @@ export enum Id {
 }
 
 export interface IState {
-  data: { [id in Id]: { id: Id; text: string; children: Id[] } };
-  current: Id[];
+  data: {
+    [id in Id]: { id: Id; title: string; description: string; children: Id[] };
+  };
+  currentId: Id;
+  next: Id[];
   history: Id[];
 }
