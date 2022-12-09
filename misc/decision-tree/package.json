@@ -1,0 +1,19 @@
+{
+  "name": "Decision Tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Kirill James Novik",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^29.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.2.2",
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.8.4"
+  }
+}
