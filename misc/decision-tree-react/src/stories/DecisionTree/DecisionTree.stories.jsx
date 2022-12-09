@@ -3,7 +3,7 @@ import "./index.css";
 
 const DecisionTree = (props) => {
   console.warn(props);
-  const { data = {}, currentId = "root", next = [], history = [] } = props;
+  const { data = {}, currentId, next = [], history = [] } = props;
   return (
     <div class="container">
       <div class="tree">
@@ -12,7 +12,7 @@ const DecisionTree = (props) => {
           {history.map((id) => (
             <li className="history">{data[id].title}</li>
           ))}
-          <li className="current">{data[currentId].title}</li>
+          {currentId && <li className="current">{data[currentId].title}</li>}
           {next.map((id) => (
             <li>{data[id].title}</li>
           ))}
@@ -20,7 +20,7 @@ const DecisionTree = (props) => {
       </div>
       <div class="description">
         <h2>Description</h2>
-        <p>{data[currentId].description}</p>
+        <p>{currentId && data[currentId].description}</p>
       </div>
     </div>
   );
@@ -45,8 +45,7 @@ const state001 = {
     },
   },
   history: [],
-  currentId: "root",
-  next: [],
+  next: ["root"],
 };
 
 export const Default = Template.bind({});
