@@ -14,6 +14,13 @@ export enum Id {
   SolutionsToCasesWhereNeedDragAndDrop = "SolutionsToCasesWhereNeedDragAndDrop",
   UseEventListenerHook = "UseEventListenerHook",
   UseNodeDragHook = "UseNodeDragHook",
+  SolutionToCasesWhereNeedToOverrideLinkFunctionality = "SolutionToCasesWhereNeedToOverrideLinkFunctionality",
+  UseLinkInterceptorHook = "UseLinkInterceptorHook",
+  UseMobileOSHook = "UseMobileOSHook",
+  UseIntervalHook = "UseIntervalHook",
+  UseRequestPollingHook = "UseRequestPollingHook",
+  UseSafeStateHook = "UseSafeStateHook",
+  SolutionsToExecutingLifecycleFunctions = "SolutionsToExecutingLifecycleFunctions",
 }
 
 export interface IState {
@@ -39,13 +46,6 @@ export const initialState: IState = {
       description: "Select what problem you are trying to solve",
       children: [Id.ReactAPISolution, Id.BrowserAPISolution],
     },
-    [Id.ReactAPISolution]: {
-      id: Id.ReactAPISolution,
-      title: "I have a problem related to React API",
-      description:
-        "Problems related to lifecycle, adding functionality, passing props and so on.",
-      children: [Id.ReactLifeCycleSolution],
-    },
     [Id.BrowserAPISolution]: {
       id: Id.BrowserAPISolution,
       title: "I have a problem related to browser API",
@@ -62,18 +62,50 @@ export const initialState: IState = {
       id: Id.SolutionsToCasesWhereNeedToGetOSType,
       title: "I need to know what OS is the app running in",
       description: "Questions like 'is it Android or iOS?'",
+      children: [Id.UseMobileOSHook],
+    },
+    [Id.UseMobileOSHook]: {
+      id: Id.UseMobileOSHook,
+      title: "useMobileOS hook",
+      description: "useMobileOS hook allows to get type of the OS",
       children: [],
     },
     [Id.SolutionsToCasesWhereNeedToOverrideDOMLogic]: {
       id: Id.SolutionsToCasesWhereNeedToOverrideDOMLogic,
       title: "I need to override certain DOM-related logic",
       description: "Things like block events or override APIs like console",
+      children: [Id.SolutionToCasesWhereNeedToOverrideLinkFunctionality],
+    },
+    [Id.SolutionToCasesWhereNeedToOverrideLinkFunctionality]: {
+      id: Id.SolutionToCasesWhereNeedToOverrideLinkFunctionality,
+      title: "I need to override what happens when click on link",
+      description: "I need to override what happens when click on link",
+      children: [Id.UseLinkInterceptorHook],
+    },
+    [Id.UseLinkInterceptorHook]: {
+      id: Id.UseLinkInterceptorHook,
+      title: "useLinkInterceptor Hook",
+      description: "useLinkInterceptor allows to override link functionality",
       children: [],
     },
     [Id.SolutionsToCasesWhereNeedToUseTimeIntervals]: {
       id: Id.SolutionsToCasesWhereNeedToUseTimeIntervals,
       title: "I need to use time related functionality",
       description: "APIs like setTimeout, setInterval, etc.",
+      children: [Id.UseIntervalHook, Id.UseRequestPollingHook],
+    },
+    [Id.UseIntervalHook]: {
+      id: Id.UseIntervalHook,
+      title: "useInterval hook",
+      description:
+        "useInterval hook let's you to run a callback at certain time intervals. \nExamples: ...",
+      children: [],
+    },
+    [Id.UseRequestPollingHook]: {
+      id: Id.UseRequestPollingHook,
+      title: "useRequestPolling hook",
+      description:
+        "useRequestPolling hook let's you to run a request at certain time intervals. \nExamples: ...",
       children: [],
     },
     [Id.SolutionsToCasesWhereNeedToSpecifyEvents]: {
@@ -105,23 +137,49 @@ export const initialState: IState = {
         "useNodeDrag hook allows to subscribe to events when drag starts and when it stops",
       children: [],
     },
+    [Id.ReactAPISolution]: {
+      id: Id.ReactAPISolution,
+      title: "I have a problem related to React API",
+      description:
+        "Problems related to lifecycle, adding functionality, passing props and so on.",
+      children: [Id.ReactLifeCycleSolution],
+    },
     [Id.ReactLifeCycleSolution]: {
       id: Id.ReactLifeCycleSolution,
-      title: "Solutions Related to React Lifecycle",
-      description: "",
-      children: [Id.ReactLifeCycleCheckMountedSolution],
+      title: "I have a problem related to React lifecycle",
+      description:
+        "Things like OnMount, OnUnmount, WillUnmount and other lifecycle events...",
+      children: [
+        Id.ReactLifeCycleCheckMountedSolution,
+        Id.SolutionsToExecutingLifecycleFunctions,
+      ],
     },
     [Id.ReactLifeCycleCheckMountedSolution]: {
       id: Id.ReactLifeCycleCheckMountedSolution,
-      title: "Solutions to Cases Where Need to Check if Mounted",
-      description: "",
-      children: [Id.UseCheckMountedHook],
+      title: "I need to check if component is mounted",
+      description: "You need to check if component is mounted",
+      children: [Id.UseCheckMountedHook, Id.UseSafeStateHook],
     },
     [Id.UseCheckMountedHook]: {
       id: Id.UseCheckMountedHook,
-      title: "useCheckMounted Hook",
-      description: "",
+      title: "useCheckMounted hook",
+      description:
+        "useCheckMounted hook allows you to check if component is mounted...",
       children: [],
+    },
+    [Id.UseSafeStateHook]: {
+      id: Id.UseSafeStateHook,
+      title: "useSafeState hook",
+      description:
+        "useSafeState hook allows you to avoid updating state on unmounted component",
+      children: [],
+    },
+    [Id.SolutionsToExecutingLifecycleFunctions]: {
+      id: Id.SolutionsToExecutingLifecycleFunctions,
+      title: "I need to run a callback during lifecycle",
+      description:
+        "Running callback on mount, on unmount, will unmount and other lifecycle events...",
+      children: [Id.ReactLifeCycleCheckMountedSolution],
     },
   },
   history: [],
