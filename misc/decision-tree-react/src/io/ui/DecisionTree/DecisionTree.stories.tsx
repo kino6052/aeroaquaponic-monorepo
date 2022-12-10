@@ -1,37 +1,13 @@
 import React from "react";
-import "./index.css";
-
-const DecisionTree = (props) => {
-  console.warn(props);
-  const { data = {}, currentId, next = [], history = [] } = props;
-  return (
-    <div class="container">
-      <div class="tree">
-        <h2>Decision Tree</h2>
-        <ul class="list">
-          {history.map((id) => (
-            <li className="history">{data[id].title}</li>
-          ))}
-          {currentId && <li className="current">{data[currentId].title}</li>}
-          {next.map((id) => (
-            <li>{data[id].title}</li>
-          ))}
-        </ul>
-      </div>
-      <div class="description">
-        <h2>Description</h2>
-        <p>{currentId && data[currentId].description}</p>
-      </div>
-    </div>
-  );
-};
+import { IState } from "../../../bridge";
+import { DecisionTree } from "./DecisionTree";
 
 export default {
   title: "Example/DecisionTree",
   component: DecisionTree,
 };
 
-const Template = (args = state001) => <DecisionTree {...args} />;
+const Template = (args: IState) => <DecisionTree {...args} />;
 
 // More on interaction testing: https://storybook.js.org/docs/react/writing-tests/interaction-testing
 
@@ -39,7 +15,7 @@ const state001 = {
   data: {
     root: {
       id: "root",
-      title: "Select Options",
+      title: "Get Started",
       description: "",
       children: [],
     },
@@ -49,6 +25,7 @@ const state001 = {
 };
 
 export const Default = Template.bind({});
+// @ts-ignore
 Default.args = state001;
 
 const state002 = {
@@ -78,6 +55,7 @@ const state002 = {
 };
 
 export const Two = Template.bind({});
+// @ts-ignore
 Two.args = state002;
 
 const state003 = {
@@ -113,4 +91,5 @@ const state003 = {
 };
 
 export const Three = Template.bind({});
+// @ts-ignore
 Three.args = state003;
