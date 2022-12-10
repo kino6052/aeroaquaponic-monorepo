@@ -4,24 +4,32 @@ import { EventWrapper } from "../../../utils/EventWrapper";
 import "./index.css";
 
 const Option: React.FC<{
-  className?: "history" | "current";
+  className?: "history" | "current" | "next";
   id: Id;
   title: string;
 }> = ({ title, id, className }) => (
   <EventWrapper id={id}>
-    <li className={className}>{title}</li>
+    <li id={id} className={className}>
+      {title}
+    </li>
   </EventWrapper>
 );
 
 export const DecisionTree = (props: IState) => {
   const { data, currentId, next, history } = props;
+  console.warn(props);
   return (
     <div className="container">
       <div className="tree">
         <h2>Decision Tree</h2>
         <ul className="list">
           {history.map((id) => (
-            <Option id={id} title={data[id].title} className="history" />
+            <Option
+              id={id}
+              key={id}
+              title={data[id].title}
+              className="history"
+            />
           ))}
           {currentId && (
             <Option
@@ -31,7 +39,7 @@ export const DecisionTree = (props: IState) => {
             />
           )}
           {next.map((id) => (
-            <Option id={id} title={data[id].title} />
+            <Option id={id} key={id} title={data[id].title} className="next" />
           ))}
         </ul>
       </div>

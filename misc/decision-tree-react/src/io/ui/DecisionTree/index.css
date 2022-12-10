@@ -33,24 +33,30 @@ body {
 
 .tree {
   border-right: 2px dashed #555;
-  flex-grow: 1;
+  width: 500px;
 }
 @media (max-width: 800px) {
   .tree {
     border: none;
     border-top: 2px dashed #555;
+    width: auto;
   }
 }
 
-.description {
-  flex-grow: 3;
-}
 @media (max-width: 800px) {
   .description {
     height: fit-content;
   }
 }
 
+@keyframes slide-from-left-animation {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 .list {
   display: flex;
   list-style-type: none;
@@ -64,8 +70,8 @@ body {
   }
 }
 .list > * {
+  position: relative;
   padding: 8px 16px;
-  border-radius: 124px;
   border: 2px solid black;
   margin-bottom: 8px;
   overflow: hidden;
@@ -78,9 +84,11 @@ body {
   border: 2px dashed #555;
   color: #555;
 }
-
 .list > *.current {
   background-color: lightgreen;
   border: 2px solid #555;
   color: #555;
+}
+.list > *.next {
+  animation: 0.5s linear 0s slide-from-left-animation;
 }
