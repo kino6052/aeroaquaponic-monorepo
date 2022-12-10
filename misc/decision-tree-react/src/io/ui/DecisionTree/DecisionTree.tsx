@@ -1,6 +1,17 @@
 import React from "react";
-import { IState } from "../../../bridge";
+import { Id, IState } from "../../../bridge";
+import { EventWrapper } from "../../../utils/EventWrapper";
 import "./index.css";
+
+const Option: React.FC<{
+  className?: "history" | "current";
+  id: Id;
+  title: string;
+}> = ({ title, id, className }) => (
+  <EventWrapper id={id}>
+    <li className={className}>{title}</li>
+  </EventWrapper>
+);
 
 export const DecisionTree = (props: IState) => {
   const { data, currentId, next, history } = props;
@@ -10,11 +21,17 @@ export const DecisionTree = (props: IState) => {
         <h2>Decision Tree</h2>
         <ul className="list">
           {history.map((id) => (
-            <li className="history">{data[id].title}</li>
+            <Option id={id} title={data[id].title} className="history" />
           ))}
-          {currentId && <li className="current">{data[currentId].title}</li>}
+          {currentId && (
+            <Option
+              id={currentId}
+              title={data[currentId].title}
+              className="current"
+            />
+          )}
           {next.map((id) => (
-            <li>{data[id].title}</li>
+            <Option id={id} title={data[id].title} />
           ))}
         </ul>
       </div>

@@ -18,8 +18,10 @@ export const presentationIO = (state: IState) =>
   );
 
 // NOTE: Mapping of UI Events to App Events
-EventSubject.subscribe((a) => {
-  AppEventSubject.next(["select", ""]);
+EventSubject.subscribe(([type, id]) => {
+  if (type === "click") {
+    AppEventSubject.next(["select", id]);
+  }
 });
 
 // If you want to start measuring performance in your app, pass a function
