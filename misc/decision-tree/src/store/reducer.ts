@@ -1,8 +1,20 @@
 import produce from "immer";
 import { Id, IState, TEvent } from "../interfaces";
+import { selectChildren } from "./selectors";
 
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
+    if (event[0] === "restore") {
+      const query = event[1] || "";
+      const result = query.replace("?", "").split("&");
+      draft.history = result.slice(0, -1) as Id[];
+      const currentId = result.slice(-1)[0] as Id | undefined;
+      if (currentId) {
+        draft.currentId = currentId;
+        draft.next = selectChildren(draft, currentId);
+      }
+      return;
+    }
     if (event[0] === "select") {
       if (draft.next.includes(event[1] as Id)) {
         const id = event[1] as Id;

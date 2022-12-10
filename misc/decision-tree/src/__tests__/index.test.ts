@@ -1,10 +1,58 @@
 import { Id } from "../interfaces";
-import { getSelectAction } from "../store/actions";
+import { getRestoreAction, getSelectAction } from "../store/actions";
 import { compose } from "../store/reducer";
 import { selectCurrent, selectHistory, selectNext } from "../store/selectors";
 import { initialState } from "../store/store";
 
-describe.only("Game", () => {
+describe("Decision Tree", () => {
+  it("should restore state from query string", () => {
+    const resultingState = compose(initialState)([
+      getRestoreAction("?one&two&three"),
+    ]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`
+[
+  "one",
+  "two",
+]
+`);
+    expect(selectCurrent(resultingState)).toMatchInlineSnapshot(`"three"`);
+    expect(selectNext(resultingState)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it("should restore state from query string", () => {
+    const resultingState = compose(initialState)([
+      getRestoreAction("one&two&three"),
+    ]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`
+[
+  "one",
+  "two",
+]
+`);
+    expect(selectCurrent(resultingState)).toMatchInlineSnapshot(`"three"`);
+    expect(selectNext(resultingState)).toMatchInlineSnapshot(`[]`);
+  });
+
+  it("should restore state from query string", () => {
+    const resultingState = compose(initialState)([getRestoreAction("")]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`[]`);
+    expect(selectCurrent(resultingState)).toMatchInlineSnapshot(`undefined`);
+    expect(selectNext(resultingState)).toMatchInlineSnapshot(`
+[
+  "Root",
+]
+`);
+  });
+
+  it("should restore state from query string", () => {
+    const resultingState = compose(initialState)([getRestoreAction("?root")]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`[]`);
+    expect(selectCurrent(resultingState)).toMatchInlineSnapshot(`"root"`);
+    expect(selectNext(resultingState)).toMatchInlineSnapshot(`[]`);
+  });
+});
+
+describe("Decision Tree", () => {
   it("should give root option on start", () => {
     const resultingState = compose(initialState)([]);
     expect(selectNext(resultingState)).toMatchInlineSnapshot(`
@@ -101,8 +149,10 @@ describe.only("Game", () => {
     expect(selectCurrent(resultingState)).toMatchInlineSnapshot(
       `"ReactAPISolution"`
     );
-    expect(selectNext(resultingState)).toMatchInlineSnapshot(
-      `"ReactAPISolution"`
-    );
+    expect(selectNext(resultingState)).toMatchInlineSnapshot(`
+[
+  "ReactLifeCycleSolution",
+]
+`);
   });
 });

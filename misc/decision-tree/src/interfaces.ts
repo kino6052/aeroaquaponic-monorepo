@@ -1,4 +1,4 @@
-export type TCommand = "select";
+export type TCommand = "select" | "restore";
 
 export type TEvent = [TCommand, string];
 
