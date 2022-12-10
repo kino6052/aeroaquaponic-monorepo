@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { AppEventSubject, IState } from "../../bridge";
-import { EventSubject } from "../../utils/EventWrapper";
+import { EventSubject } from "./utils/EventWrapper";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";

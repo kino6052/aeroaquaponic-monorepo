@@ -1,6 +1,6 @@
 import React from "react";
 import { Id, IState } from "../../../bridge";
-import { EventWrapper } from "../../../utils/EventWrapper";
+import { EventWrapper } from "../utils/EventWrapper";
 import "./index.css";
 
 const Option: React.FC<{

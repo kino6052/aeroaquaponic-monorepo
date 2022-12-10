@@ -1,8 +1,7 @@
-import { Id } from "../../bridge";
+import { Id, initialState } from "../../bridge";
 import { getRestoreAction, getSelectAction } from "../store/actions";
 import { compose } from "../store/reducer";
 import { selectCurrent, selectHistory, selectNext } from "../store/selectors";
-import { initialState } from "../store/store";
 
 describe("Decision Tree", () => {
   it("should restore state from query string", () => {
