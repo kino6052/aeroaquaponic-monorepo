@@ -32,7 +32,7 @@ export interface IState {
   history: Id[];
 }
 
-export type TCommand = "select" | "restore";
+export type TCommand = "select" | "restore" | "load";
 
 export type TEvent = [TCommand, string];
 

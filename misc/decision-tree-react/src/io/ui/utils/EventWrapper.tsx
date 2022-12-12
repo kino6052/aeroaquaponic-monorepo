@@ -1,7 +1,7 @@
 import React from "react";
 import { Subject } from "rxjs";
 
-export type EventType = "click" | "change" | "focus";
+export type EventType = "click" | "change" | "focus" | "load";
 export type Id = string;
 export type IEvent = [EventType, Id, string];
 

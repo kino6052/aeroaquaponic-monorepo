@@ -22,6 +22,9 @@ EventSubject.subscribe(([type, id]) => {
   if (type === "click") {
     AppEventSubject.next(["select", id]);
   }
+  if (type === "load") {
+    AppEventSubject.next(["restore", document.location.search]);
+  }
 });
 
 // If you want to start measuring performance in your app, pass a function
