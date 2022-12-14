@@ -17,7 +17,6 @@ const Option: React.FC<{
 
 export const DecisionTree = (props: IState) => {
   const { data, currentId, next, history } = props;
-  console.warn(props);
   return (
     <div className="container">
       <div className="tree">

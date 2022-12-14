@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { AppEventSubject, IState } from "../../bridge";
+import { AppEventSubject, IState, StateSubject } from "../../bridge";
 import { EventSubject } from "./utils/EventWrapper";
 import App from "./App";
 import "./index.css";
@@ -10,12 +10,13 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
-export const presentationIO = (state: IState) =>
+export const presentationIO = (state: IState) => {
   root.render(
     <React.StrictMode>
       <App state={state} />
     </React.StrictMode>
   );
+};
 
 // NOTE: Mapping of UI Events to App Events
 EventSubject.subscribe(([type, id]) => {
@@ -23,8 +24,14 @@ EventSubject.subscribe(([type, id]) => {
     AppEventSubject.next(["select", id]);
   }
   if (type === "load") {
+    console.warn("LOAD");
     AppEventSubject.next(["restore", document.location.search]);
   }
+});
+
+window.addEventListener("popstate", (event) => {
+  console.warn(event.state.path.split("?")[1]);
+  AppEventSubject.next(["restore", event.state.path.split("?")[1]]);
 });
 
 // If you want to start measuring performance in your app, pass a function
