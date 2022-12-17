@@ -1,15 +1,20 @@
-import { useEffect, useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect, useState } from "react";
 import { IState } from "../../bridge";
 import { EventSubject } from "./utils/EventWrapper";
 import "./App.css";
 import { DecisionTree } from "./DecisionTree/DecisionTree";
 
 function App(props: { state: IState }) {
+  const [isLoaded, setIsLoaded] = useState(false);
+
   useLayoutEffect(() => {
     EventSubject.next(["load", "", ""]);
+    setIsLoaded(true);
   }, []);
 
   useEffect(() => {
+    if (!isLoaded) return;
+
     const { state } = props;
     const _newSearch = `${[...state.history, state.currentId]
       .filter((v) => !!v)

@@ -24,13 +24,12 @@ EventSubject.subscribe(([type, id]) => {
     AppEventSubject.next(["select", id]);
   }
   if (type === "load") {
-    console.warn("LOAD");
     AppEventSubject.next(["restore", document.location.search]);
+    console.warn(document.location.search);
   }
 });
 
 window.addEventListener("popstate", (event) => {
-  console.warn(event.state.path.split("?")[1]);
   AppEventSubject.next(["restore", event.state.path.split("?")[1]]);
 });
 
