@@ -11,9 +11,11 @@ function App(props: { state: IState }) {
 
   useEffect(() => {
     const { state } = props;
-    const newSearch = `?${[...state.history, state.currentId]
+    const _newSearch = `${[...state.history, state.currentId]
       .filter((v) => !!v)
       .join("&")}`;
+
+    const newSearch = _newSearch ? `?${_newSearch}` : "";
 
     if (window.location.search === newSearch) return;
 
