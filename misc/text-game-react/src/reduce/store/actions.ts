@@ -1,4 +1,5 @@
-import { Id, TEvent } from "../../bridge";
+import { TEvent } from "../../bridge";
 
-export const getSelectAction = (id: Id): TEvent => ["select", id];
-export const getRestoreAction = (query: string): TEvent => ["restore", query];
+export const getChangeAction = (input: string): TEvent => ["change", input];
+export const getEnterAction = (): TEvent => ["enter", ""];
+export const getSuggestAction = (): TEvent => ["suggest", ""];

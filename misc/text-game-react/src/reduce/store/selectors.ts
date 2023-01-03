@@ -1,7 +1,16 @@
-import { Id, IState } from "../../bridge";
-
-export const selectCurrent = (state: IState) => state.currentId;
-export const selectHistory = (state: IState) => state.history;
-export const selectNext = (state: IState) => state.next;
-export const selectChildren = (state: IState, id: Id) =>
-  state.data[id]?.children || [];
+import { IState } from "../../bridge";
+export const selectOutput = (state: IState) => state.output;
+export const selectInput = (state: IState) => state.input;
+export const selectHasReadManifest = (state: IState) =>
+  state.google.options["self-sufficiency"].visited;
+export const selectCommands = (state: IState) =>
+  Object.entries(state.commands)
+    .sort(([key1], [key2]) => (key1 > key2 ? 1 : -1))
+    .reduce(
+      (acc, [key, value]) => ({ ...acc, [key]: value }),
+      {}
+    ) as typeof state.commands;
+export const selectCommand = (commandName: string, state: IState) =>
+  selectCommands(state)[commandName];
+export const selectCommandArguments = (commandName: string, state: IState) =>
+  selectCommands(state)[commandName].args;
