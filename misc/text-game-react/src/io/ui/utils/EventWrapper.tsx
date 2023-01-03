@@ -1,7 +1,7 @@
 import React from "react";
 import { Subject } from "rxjs";
 
-export type EventType = "click" | "change" | "focus" | "load";
+export type EventType = "click" | "change" | "focus" | "load" | "keyDown";
 export type Id = string;
 export type IEvent = [EventType, Id, string];
 
@@ -26,6 +26,12 @@ export const EventWrapper: React.FC<React.PropsWithChildren<{ id: string }>> = (
         onChange: (e: React.ChangeEvent<HTMLInputElement>) => {
           e.preventDefault();
           EventSubject.next(["change", id, e?.target?.value]);
+        },
+        onKeyDown: (e: React.KeyboardEvent<HTMLInputElement>) => {
+          if (["Tab"].includes(e.key)) {
+            e.preventDefault();
+          }
+          EventSubject.next(["keyDown", id, e.key]);
         },
         onFocus: (e: React.FocusEvent) => {
           e.preventDefault();

@@ -1,10 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { AppEventSubject, IState, StateSubject } from "../../bridge";
-import { EventSubject } from "./utils/EventWrapper";
+import { AppEventSubject, IState } from "../../bridge";
 import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
+import { EventSubject } from "./utils/EventWrapper";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
@@ -19,18 +19,31 @@ export const presentationIO = (state: IState) => {
 };
 
 // NOTE: Mapping of UI Events to App Events
-EventSubject.subscribe(([type, id]) => {
-  if (type === "click") {
-    AppEventSubject.next(["select", id]);
-  }
+EventSubject.subscribe((event) => {
+  const [type, id, value] = event;
   if (type === "load") {
-    AppEventSubject.next(["restore", document.location.search]);
-    console.warn(document.location.search);
+    // TODO: Implement
+    return;
+  }
+  if (type === "keyDown") {
+    if (value === "Enter") {
+      AppEventSubject.next(["enter", ""]);
+      return;
+    }
+    if (value === "Tab") {
+      AppEventSubject.next(["suggest", ""]);
+      return;
+    }
+    return;
+  }
+  if (type === "change") {
+    AppEventSubject.next([type, value]);
+    return;
   }
 });
 
 window.addEventListener("popstate", (event) => {
-  AppEventSubject.next(["restore", event.state.path.split("?")[1]]);
+  // TODO: Implement if needed
 });
 
 // If you want to start measuring performance in your app, pass a function
