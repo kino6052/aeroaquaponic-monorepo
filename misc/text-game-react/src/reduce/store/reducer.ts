@@ -13,6 +13,7 @@ export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
     if (event[0] === "enter") {
       draft.input = "";
+      draft.history.push(draft.output);
       if (selectInput(state) === "google") {
         draft.output = generateCommandOutput(state, "google");
         return;
@@ -79,7 +80,9 @@ export const reduce = (event: TEvent, state: IState): IState => {
           draft.input = matches[0];
         } else {
           draft.output = templateParser(outputs.commandMatch, {
-            matches: (matches.length > 0 ? matches : commandNames).join("\n"),
+            matches: (matches.length > 0 ? matches : commandNames)
+              .map((m) => `<li>${m}</li>`)
+              .join("\n"),
           });
         }
       } else {
@@ -96,9 +99,9 @@ export const reduce = (event: TEvent, state: IState): IState => {
           } else {
             draft.output = templateParser(outputs.argumentMatch, {
               command: _command.name,
-              matches: (matches.length > 0 ? matches : argumentNames).join(
-                "\n"
-              ),
+              matches: (matches.length > 0 ? matches : argumentNames)
+                .map((m) => `<li>${m}</li>`)
+                .join("\n"),
             });
           }
         }

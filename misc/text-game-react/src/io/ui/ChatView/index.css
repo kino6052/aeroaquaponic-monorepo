@@ -3,7 +3,7 @@ body {
   min-height: 100%;
   margin: 0;
   padding: 0;
-  font-family: Monospace;
+  font-family: monospace !important;
 }
 
 h1,
@@ -12,15 +12,9 @@ h3,
 h4,
 p,
 b,
+span,
 li {
-  margin: 4px 0;
-}
-
-p:nth-child(even) {
-  background-color: #f2f2f2;
-}
-p:nth-child(even)::after {
-  content: "-test";
+  margin: 8px 0;
 }
 
 .container {
@@ -38,6 +32,11 @@ p:nth-child(even)::after {
   height: 100%;
   margin-bottom: 32px;
 }
+
+.container .feed span:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
 .container .input {
   display: flex;
   width: 100%;
@@ -52,7 +51,7 @@ p:nth-child(even)::after {
   box-shadow: -1px -1px rgba(0, 0, 0, 0.4);
 }
 .container .input::before {
-  content: "_____gh";
+  content: "";
   position: absolute;
   padding: 4.5px;
   opacity: 0.5;

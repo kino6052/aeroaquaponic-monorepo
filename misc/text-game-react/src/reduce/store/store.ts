@@ -1,4 +1,5 @@
 import { IState, TAvailableCommand } from "../../bridge";
+import { makeHeader, makeList, makeParagraph } from "../utils";
 import { selectCommands } from "./selectors";
 
 export const commands: Record<string, TAvailableCommand> = {
@@ -51,9 +52,9 @@ const _generateCommandOutput = ({
   description,
   name,
 }: ReturnType<typeof getCommandData>) => `
-h1 ${name}
-p ${description}
-${args.map((v) => `-- ${v}`).join("\n")}
+${makeHeader(name ?? "")}
+${makeParagraph(description ?? "")}
+${makeList("", args)}
 `;
 
 export const generateCommandOutput = (

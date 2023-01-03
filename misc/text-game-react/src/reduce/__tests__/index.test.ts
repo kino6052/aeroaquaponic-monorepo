@@ -16,9 +16,8 @@ describe("Game", () => {
   it("should salute player", () => {
     expect(selectOutput(initialState)).toMatchInlineSnapshot(`
       "
-      h1 Wake up, Neo...
-      p You wake up with an unpleasant anticipation of yet another day full of work and routine.
-      p Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.
+      <h2>Wake up, Neo...</h2>
+      <p>You wake up with an unpleasant anticipation of yet another day full of work and routine.</p><p>Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.</p>
       "
     `);
   });
@@ -31,8 +30,8 @@ describe("Game", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      b Help
-      p The commands available can be discovered by double tapping the Tab key.
+      <h2>Help</h2>
+      <p>The commands available can be discovered by double tapping the Tab key.</p>
       "
     `);
   });
@@ -41,10 +40,10 @@ describe("Game", () => {
     const resultingState = compose(initialState)([getSuggestAction()]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Did you mean?
-      google
-      help
-      status
+      <h2>Did you mean?</h2>
+      <ul><li>google</li>
+      <li>help</li>
+      <li>status</li></ul>
       "
     `);
   });
@@ -56,8 +55,8 @@ describe("Game", () => {
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Some possible arguments for command \\"google\\"
-      self-sufficiency
+      <h2>Some possible arguments for command \\"google\\"</h2>
+      <ul><li>self-sufficiency</li></ul>
       "
     `);
   });
@@ -73,9 +72,8 @@ describe("Game", () => {
     expect(selectCommand("todo", resultingState)).toBeTruthy();
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      p You read about unit of self-sufficiency and it seemed quite reasonable.
-      p It seems relatively simple too, so you want to start thinking in this direction.
-      p You created a todo list.
+      <h2>Reading...</h2>
+      <p>You read about unit of self-sufficiency and it seemed quite reasonable.</p><p>It seems relatively simple too, so you want to start thinking in this direction.</p><p>You created a todo list.</p>
       "
     `);
   });
@@ -91,9 +89,8 @@ describe("Game", () => {
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      p You read about unit of self-sufficiency and it seemed quite reasonable.
-      p It seems relatively simple too, so you want to start thinking in this direction.
-      p You created a todo list.
+      <h2>Reading...</h2>
+      <p>You read about unit of self-sufficiency and it seemed quite reasonable.</p><p>It seems relatively simple too, so you want to start thinking in this direction.</p><p>You created a todo list.</p>
       "
     `);
   });
@@ -109,11 +106,11 @@ describe("Game", () => {
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Did you mean?
-      google
-      help
-      status
-      todo
+      <h2>Did you mean?</h2>
+      <ul><li>google</li>
+      <li>help</li>
+      <li>status</li>
+      <li>todo</li></ul>
       "
     `);
   });
@@ -130,9 +127,8 @@ describe("Game", () => {
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      b Todo
-      ul
-        li Inquire about land costs        
+      <h2>TODO</h2>
+      <ul><li>Inquire about land costs</li></ul>     
       "
     `);
   });
@@ -151,10 +147,9 @@ describe("Game", () => {
     expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 google
-      p Google search
-      -- Self-sufficiency
-      -- Buy Land Dot Com
+      <h2>google</h2>
+      <p>Google search</p>
+      <ul><li>Self-sufficiency</li><li>Buy Land Dot Com</li></ul>
       "
     `);
   });
@@ -186,8 +181,8 @@ describe("Game", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Unknown command \\"google buy land dot com\\"
-      p You entered an unknown command
+      <h2>Unknown command \\"google buy land dot com\\"</h2>
+      <p>You entered an unknown command</p>
       "
     `);
   });

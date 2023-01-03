@@ -11,8 +11,8 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Unknown command \\"he\\"
-      p You entered an unknown command
+      <h2>Unknown command \\"he\\"</h2>
+      <p>You entered an unknown command</p>
       "
     `);
   });
@@ -55,9 +55,9 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toEqual("te");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Did you mean?
-      temp
-      test
+      <h2>Did you mean?</h2>
+      <ul><li>temp</li>
+      <li>test</li></ul>
       "
     `);
   });
@@ -70,9 +70,9 @@ describe("CLI features", () => {
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 google
-      p Google search
-      -- Self-sufficiency
+      <h2>google</h2>
+      <p>Google search</p>
+      <ul><li>Self-sufficiency</li></ul>
       "
     `);
   });
@@ -86,8 +86,8 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toEqual("google");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      h1 Some possible arguments for command \\"google\\"
-      self-sufficiency
+      <h2>Some possible arguments for command \\"google\\"</h2>
+      <ul><li>self-sufficiency</li></ul>
       "
     `);
   });

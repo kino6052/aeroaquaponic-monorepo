@@ -1,4 +1,4 @@
-import { useLayoutEffect } from "react";
+import { useEffect, useLayoutEffect } from "react";
 import { IState } from "../../bridge";
 import "./App.css";
 import { ChatView } from "./ChatView/ChatView";
