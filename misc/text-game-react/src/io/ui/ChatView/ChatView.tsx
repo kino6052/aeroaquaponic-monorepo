@@ -53,7 +53,7 @@ export const ChatView = (props: IState) => {
       </div>
       <div className="input">
         <EventWrapper id={Id.Input}>
-          <input value={input} />
+          <input autoFocus value={input} />
         </EventWrapper>
       </div>
     </div>

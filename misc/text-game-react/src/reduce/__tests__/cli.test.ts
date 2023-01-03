@@ -1,5 +1,5 @@
 import { compose } from "../store/reducer";
-import { selectInput, selectOutput } from "../store/selectors";
+import { selectHistory, selectInput, selectOutput } from "../store/selectors";
 import { initialState } from "../../bridge";
 
 describe("CLI features", () => {
@@ -100,5 +100,30 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toMatchInlineSnapshot(
       `"google self-sufficiency"`
     );
+  });
+
+  it("should clear history", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google"],
+      ["enter", ""],
+    ]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`
+      Array [
+        "
+      <h2>Wake up, Neo...</h2>
+      <p>You wake up with an unpleasant anticipation of yet another day full of work and routine.</p><p>Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.</p>
+      ",
+      ]
+    `);
+  });
+
+  it("should clear history", () => {
+    const resultingState = compose(initialState)([
+      ["change", "google"],
+      ["enter", ""],
+      ["change", "clear"],
+      ["enter", ""],
+    ]);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`Array []`);
   });
 });

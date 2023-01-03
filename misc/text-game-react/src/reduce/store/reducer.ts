@@ -14,6 +14,11 @@ export const reduce = (event: TEvent, state: IState): IState => {
     if (event[0] === "enter") {
       draft.input = "";
       draft.history.push(draft.output);
+      if (selectInput(state) === "clear") {
+        draft.history = [];
+        draft.output = "";
+        return;
+      }
       if (selectInput(state) === "google") {
         draft.output = generateCommandOutput(state, "google");
         return;
