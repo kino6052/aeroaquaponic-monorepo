@@ -9,14 +9,58 @@ import {
 } from "./selectors";
 import { generateCommandOutput } from "./store";
 
+class CLI {
+  private __output: string = "";
+  private __input: string = "";
+  private __history: string[] = [];
+
+  constructor() {}
+
+  clear() {
+    this.__input = "";
+    this.__output = "";
+    this.__history = [];
+  }
+
+  input(input: string) {}
+
+  getState = (): { input: string; output: string; history: string[] } => ({
+    input: this.__input,
+    output: this.__output,
+    history: [],
+  });
+
+  updateDraft = (draft: IState) => {
+    Object.entries(this.getState()).forEach(
+      // @ts-ignore
+      ([key, value]) => (draft[key] = value)
+    );
+  };
+}
+
+let cliInstance: CLI | undefined;
+
+const getCLI = () => {
+  if (!cliInstance) {
+    cliInstance = new CLI();
+  }
+  return cliInstance;
+};
+
+const updateDraft = (draft: IState, props: Partial<IState>) => {
+  // @ts-ignore
+  Object.entries(props).forEach(([key, value]) => (draft[key] = value));
+};
+
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
     if (event[0] === "enter") {
       draft.input = "";
       draft.history.push(draft.output);
       if (selectInput(state) === "clear") {
-        draft.history = [];
-        draft.output = "";
+        const cli = getCLI();
+        cli.clear();
+        cli.updateDraft(draft);
         return;
       }
       if (selectInput(state) === "google") {
