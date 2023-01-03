@@ -2,113 +2,14 @@ import produce from "immer";
 import { IState, TEvent } from "../../bridge";
 import * as outputs from "../outputs";
 import { templateParser } from "../utils";
-import {
-  selectCommands,
-  selectHasReadManifest,
-  selectInput,
-} from "./selectors";
-import { generateCommandOutput } from "./store";
-
-class CLI {
-  private __output: string = "";
-  private __input: string = "";
-  private __history: string[] = [];
-
-  constructor() {}
-
-  clear() {
-    this.__input = "";
-    this.__output = "";
-    this.__history = [];
-  }
-
-  input(input: string) {}
-
-  getState = (): { input: string; output: string; history: string[] } => ({
-    input: this.__input,
-    output: this.__output,
-    history: [],
-  });
-
-  updateDraft = (draft: IState) => {
-    Object.entries(this.getState()).forEach(
-      // @ts-ignore
-      ([key, value]) => (draft[key] = value)
-    );
-  };
-}
-
-let cliInstance: CLI | undefined;
-
-const getCLI = () => {
-  if (!cliInstance) {
-    cliInstance = new CLI();
-  }
-  return cliInstance;
-};
-
-const updateDraft = (draft: IState, props: Partial<IState>) => {
-  // @ts-ignore
-  Object.entries(props).forEach(([key, value]) => (draft[key] = value));
-};
+import { enterHandler } from "./reducers/enter";
+import { selectCommands, selectInput } from "./selectors";
 
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
     if (event[0] === "enter") {
-      draft.input = "";
-      draft.history.push(draft.output);
-      if (selectInput(state) === "clear") {
-        const cli = getCLI();
-        cli.clear();
-        cli.updateDraft(draft);
-        return;
-      }
-      if (selectInput(state) === "google") {
-        draft.output = generateCommandOutput(state, "google");
-        return;
-      }
-      if (selectInput(state) === "") {
-        draft.output = generateCommandOutput(state);
-        return;
-      }
-      if (selectHasReadManifest(state) && selectInput(state) === "todo") {
-        draft.output = outputs.todo;
-        return;
-      }
-      if (state.input === "help") {
-        draft.output = outputs.help;
-        return;
-      }
-      // TODO: Make the field "browser" instead of "google" and options should be "websites"
-      // TODO: There should be news website too
-      if (selectInput(state) === "google self-sufficiency") {
-        // draft.google.isGoogling = true;
-        draft.google.options["self-sufficiency"].visited = true;
-        draft.commands["todo"] = {
-          name: "todo",
-          description: "Your todo list",
-          args: [],
-        };
-        draft.commands["google"].args.push({
-          name: "Buy Land Dot Com",
-          description: "You still haven't bought land??? What's yawr prawblem?",
-          args: [],
-        });
-        draft.output = outputs.hasReadManifest;
-        return;
-      }
-      if (
-        selectHasReadManifest(state) === true &&
-        // selectIsGoogling(state) === true &&
-        selectInput(state) === "leave"
-      ) {
-        // draft.google.isGoogling = false;
-        draft.output = outputs.hasReadManifest;
-        return;
-      }
-      draft.output = templateParser(outputs.unknownCommand, {
-        command: selectInput(state),
-      });
+      enterHandler(draft, state);
+      return;
     }
     if (event[0] === "change") {
       draft.input = event[1];
