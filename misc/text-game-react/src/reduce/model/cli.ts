@@ -1,11 +1,15 @@
 import { IState } from "../../bridge";
 
-class CLI {
+class CommandLineInterface {
   private __output: string = "";
   private __input: string = "";
   private __history: string[] = [];
 
-  constructor() {}
+  constructor(state: IState) {
+    this.__output = state.output;
+    this.__input = state.input;
+    this.__history = state.history;
+  }
 
   clear() {
     this.__input = "";
@@ -18,7 +22,7 @@ class CLI {
   getState = (): { input: string; output: string; history: string[] } => ({
     input: this.__input,
     output: this.__output,
-    history: [],
+    history: this.__history,
   });
 
   updateDraft = (draft: IState) => {
@@ -29,11 +33,11 @@ class CLI {
   };
 }
 
-let cliInstance: CLI | undefined;
+let cliInstance: CommandLineInterface | undefined;
 
-export const getCLI = () => {
+export const getCLI = (state: IState) => {
   if (!cliInstance) {
-    cliInstance = new CLI();
+    cliInstance = new CommandLineInterface(state);
   }
   return cliInstance;
 };

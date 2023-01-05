@@ -9,7 +9,7 @@ export const enterHandler = (draft: IState, state: IState) => {
   draft.input = "";
   draft.history.push(draft.output);
   if (selectInput(state) === "clear") {
-    const cli = getCLI();
+    const cli = getCLI(state);
     cli.clear();
     cli.updateDraft(draft);
     return;
