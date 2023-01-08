@@ -1,16 +1,14 @@
 import { IState } from "../../bridge";
+import * as outputs from "../outputs";
 import {
-  filterWithFallback,
   listOr,
   lowerCaseIncludes,
   makeBold,
   makeItalic,
-  makeList,
   makeListItem,
   templateParser,
 } from "../utils";
 import { Entity, World } from "./global";
-import * as outputs from "../outputs";
 
 class InputParser {
   private __commands: string[] = [];
@@ -25,37 +23,60 @@ class InputParser {
     return this.__commands;
   }
 
-  getSuggestions(commands: string[]) {
-    if (!this.__entity) return "";
-    const finalEntity = commands.reduce<[Entity[], number]>(
-      (tuple, command, i) => {
-        if (tuple[0].length > 1) return tuple;
-        const entities = listOr(tuple[0][0]?.entities, tuple[0]);
-        const filteredMatches = entities.filter(({ state: { name } }) =>
-          lowerCaseIncludes(name, command)
-        );
-        const hasMatches = !!filteredMatches && filteredMatches.length > 0;
-        if (hasMatches) return [filteredMatches, tuple[1] + 1];
-        return [entities, tuple[1]];
-      },
-      [[this.__entity], 0]
-    );
+  generateOutput(
+    commands: string[],
+    entity: Entity,
+    index: number
+  ): [string, string] {
+    console.warn(commands, index);
+    const entities = entity.entities;
+    const hasEntities = entities.length > 0;
 
-    const commandPrefix = [commands.slice(0, finalEntity[1] - 1).join(" ")]
-      .filter((v) => v)
-      .map(makeItalic);
+    const commandPrefix = [commands.join(" ")].filter((v) => v);
 
-    const matches = finalEntity[0]
+    const getItalicCommandPrefix = (prefix: string[]) =>
+      prefix.map((v) => makeItalic(v) + " ");
+
+    const matches = listOr(entities, [entity])
       ?.map(({ state }) =>
         makeListItem(
-          `${commandPrefix}${makeBold(state.name)}: ${state.description}`
+          `${getItalicCommandPrefix(
+            commands.filter((name) => name !== state.name)
+          )}${makeBold(state.name)}: ${state.description}`
         )
       )
       .join("");
     const result = templateParser(outputs.commandMatch, {
       matches,
     });
-    return result;
+
+    return [result, commandPrefix.join(" ")];
+  }
+
+  getSuggestions(_commands: string[]): [string, string] {
+    if (!this.__entity) return ["", ""];
+
+    const commands = _commands.filter((v) => v);
+
+    let entity: Entity = this.__entity;
+    let entityNames = [];
+    let index = 0;
+
+    for (let i = 0; i < commands.length; i++) {
+      const command = commands[i];
+      const matches = entity.entities.filter(({ state: { name } }) =>
+        lowerCaseIncludes(name, command)
+      );
+      const exact = matches[0];
+      if (!exact || matches.length > 1) {
+        return this.generateOutput(entityNames, entity, i);
+      }
+      index = i;
+      entityNames.push(exact.state.name);
+      entity = exact;
+    }
+
+    return this.generateOutput(entityNames, entity, commands.length - 1);
   }
 }
 
@@ -87,7 +108,8 @@ class CommandLineInterface {
     const inputParser = new InputParser(this.__world);
     const commands = inputParser.parse(this.__input);
     const result = inputParser.getSuggestions(commands);
-    this.__output = result;
+    this.__output = result[0];
+    this.__input = result[1];
   }
 
   getState = (): { input: string; output: string; history: string[] } => ({

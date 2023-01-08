@@ -58,7 +58,7 @@ describe("CLI Nested Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><i>internet</i><b>test</b>: website</li></ul>
+      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
       "
     `);
   });
@@ -70,7 +70,19 @@ describe("CLI Nested Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><i>internet</i><b>test</b>: website</li></ul>
+      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
+      "
+    `);
+  });
+
+  it("should suggest", () => {
+    const cli = getCLI(initialState);
+    cli.input = "internet test test test test a";
+    cli.suggest();
+    expect(cli.getState().output).toMatchInlineSnapshot(`
+      "
+      <h2>Did you mean?</h2>
+      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
       "
     `);
   });

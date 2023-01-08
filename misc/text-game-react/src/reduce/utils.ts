@@ -25,6 +25,9 @@ const getRandomNumbers = (length: number) => {
 export const lowerCaseIncludes = (a: string, b: string) =>
   a.toLowerCase().includes(b.toLowerCase());
 
+export const lowerCaseEquals = (a: string, b: string) =>
+  a.toLowerCase() === b.toLowerCase();
+
 export const listOr = <T>(list: T[], or: T[]) =>
   list.length !== 0 ? list : or;
 
