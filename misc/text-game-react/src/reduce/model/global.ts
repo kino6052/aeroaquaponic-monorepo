@@ -1,10 +1,10 @@
 import { IState } from "../../bridge";
-import { generateId } from "../utils";
+import { Utils } from "../utils";
 
 export type TEntityType = "world" | "quest" | "objective" | "cli" | "misc";
 
 export class Entity {
-  private __id = generateId();
+  private __id = Utils.generateId();
   private __entities: Entity[] = [];
   private __type: TEntityType = "misc";
   private __name: string = "";

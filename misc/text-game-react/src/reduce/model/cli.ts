@@ -1,7 +1,6 @@
 import { IState } from "../../bridge";
 import * as outputs from "../outputs";
 import {
-  listOr,
   lowerCaseIncludes,
   makeBold,
   makeItalic,
@@ -10,7 +9,7 @@ import {
 } from "../utils";
 import { Entity, World } from "./global";
 
-class InputParser {
+export class InputParser {
   private __commands: string[] = [];
   private __entity: Entity | undefined;
 
@@ -23,43 +22,40 @@ class InputParser {
     return this.__commands;
   }
 
-  generateOutput(
-    commands: string[],
-    entity: Entity,
-    index: number
-  ): [string, string] {
-    console.warn(commands, index);
-    const entities = entity.entities;
-    const hasEntities = entities.length > 0;
+  generateOutput(entity: Entity[]): [string, string] {
+    const command: Entity | undefined = entity.slice(-1)?.[0] || this.__entity;
 
-    const commandPrefix = [commands.join(" ")].filter((v) => v);
+    const __names = entity.map((v) => v.state.name);
 
-    const getItalicCommandPrefix = (prefix: string[]) =>
-      prefix.map((v) => makeItalic(v) + " ");
+    const hasChildren = !!(command?.entities.length > 0);
 
-    const matches = listOr(entities, [entity])
-      ?.map(({ state }) =>
-        makeListItem(
-          `${getItalicCommandPrefix(
-            commands.filter((name) => name !== state.name)
-          )}${makeBold(state.name)}: ${state.description}`
-        )
-      )
-      .join("");
+    const getMatchOutput = (names: string[], entity: Entity) => {
+      return makeListItem(
+        `${names
+          .map(makeItalic)
+          .map((v) => v + " ")
+          .join("")}${makeBold(entity.state.name)}: ${entity.state.description}`
+      );
+    };
+
+    const matches = hasChildren
+      ? command.entities.map((v) => getMatchOutput(__names, v)).join("")
+      : getMatchOutput(__names.slice(0, -1), command);
+
     const result = templateParser(outputs.commandMatch, {
       matches,
     });
 
-    return [result, commandPrefix.join(" ")];
+    return [result, __names.join(" ")];
   }
 
-  getSuggestions(_commands: string[]): [string, string] {
-    if (!this.__entity) return ["", ""];
+  __getSuggestions(_commands: string[]): Entity[] {
+    if (!this.__entity) return [];
 
     const commands = _commands.filter((v) => v);
 
     let entity: Entity = this.__entity;
-    let entityNames = [];
+    const entities = [];
     let index = 0;
 
     for (let i = 0; i < commands.length; i++) {
@@ -69,14 +65,21 @@ class InputParser {
       );
       const exact = matches[0];
       if (!exact || matches.length > 1) {
-        return this.generateOutput(entityNames, entity, i);
+        return entities;
       }
       index = i;
-      entityNames.push(exact.state.name);
+      entities.push(exact);
       entity = exact;
     }
 
-    return this.generateOutput(entityNames, entity, commands.length - 1);
+    return entities;
+  }
+
+  // TODO: Generate entity list (or list of ids)
+  // So that you can grab one of the entity you need and interact with it
+  getSuggestions(_commands: string[]): [string, string] {
+    const result = this.__getSuggestions(_commands);
+    return this.generateOutput(result);
   }
 }
 

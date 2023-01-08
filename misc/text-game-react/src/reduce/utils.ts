@@ -41,8 +41,10 @@ export const filterWithFallback = <T>(
   return result.length === 0 ? fb : result;
 };
 
-export const generateId = (amount: number = 4, length: number = 4) =>
-  new Array(amount)
-    .fill(0)
-    .map((a, i, b) => `${i && "-"}${getRandomNumbers(length)}`)
-    .join("");
+export class Utils {
+  static generateId = (amount: number = 4, length: number = 4) =>
+    new Array(amount)
+      .fill(0)
+      .map((a, i, b) => `${i && "-"}${getRandomNumbers(length)}`)
+      .join("");
+}
