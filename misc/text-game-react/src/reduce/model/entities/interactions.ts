@@ -1,7 +1,9 @@
 import { IState } from "../../../bridge";
-import { makeBold, makeHeader, makeParagraph } from "../../utils";
+import { makeBold, makeHeader, makeList, makeParagraph } from "../../utils";
 import { getCLI } from "../cli";
 import { EntityId, StatusMeta } from "./entities";
+import { statusInteraction } from "./interactions/status";
+import quest001 from "./interactions/quest001";
 
 export const InteractionMap: Record<
   string,
@@ -17,33 +19,16 @@ export const InteractionMap: Record<
       "Input was cleared..."
     )}`;
   },
-  [EntityId.Status]: (state, cli) => {
-    const {
-      date: { day, month, year },
-      weather: {
-        season,
-        temperature: { degrees, type: temperatureType },
-      },
-      location: { city, continent, country },
-      economics: { inflation, sentiment },
-      politics: { spectrum },
-      description,
-    } = state.entities[EntityId.Status].meta as unknown as StatusMeta;
-    return `${makeHeader("Status")}${makeParagraph(
-      `${makeBold("Date")}: ${year}/${month}/${day}`
-    )}${makeParagraph(`${makeBold("Season")}: ${season}`)}${makeParagraph(
-      `${makeBold("Temperature")}: ${degrees} ${temperatureType}`
-    )}${makeParagraph(
-      `${makeBold("Location")}: ${city}, ${country}, ${continent}`
-    )}${makeParagraph(
-      `${makeBold(
-        "Economics"
-      )}: Inflation Rate: ${inflation}; Sentiment: ${sentiment}`
-    )}
-  ${makeParagraph(
-    `${makeBold("Politics")}: Spectrum: ${spectrum}`
-  )}${makeParagraph(`${makeBold("Description")}: ${description}`)}`;
+  [EntityId.Status]: statusInteraction,
+  [EntityId.Todo]: (state, cli) => {
+    const items = state.entities[EntityId.Todo].entities.map(
+      (v) => state.entities[v].description
+    );
+    return `${makeHeader("Todo")}${makeParagraph(
+      "You are getting closer to your goal."
+    )}${makeParagraph("Here is what's left: ")}${makeList("", items)}`;
   },
+  [EntityId.LearnAboutSelfSufficiency]: quest001.LearnAboutSelfSufficiency,
 };
 
 export const getInteractionById = (id: string) => {

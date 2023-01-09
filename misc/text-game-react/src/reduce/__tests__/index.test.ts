@@ -83,7 +83,9 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`"..."`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul><li>Learn about self-sufficiency</li></ul>"`
+    );
   });
 
   it("should have extra options after it let you examine todo", () => {

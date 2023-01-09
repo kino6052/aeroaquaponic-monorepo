@@ -8,6 +8,7 @@ export enum EntityId {
   Internet = "Internet",
   SelfSufficiency = "SelfSufficiency",
   Clear = "Clear",
+  LearnAboutSelfSufficiency = "LearnAboutSelfSufficiency",
 }
 
 export interface StatusMeta {
@@ -109,6 +110,14 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
     type: "quest",
     name: "todo",
     description: "your todo list",
+    entities: [EntityId.LearnAboutSelfSufficiency],
+    meta: {},
+  },
+  [EntityId.LearnAboutSelfSufficiency]: {
+    id: EntityId.LearnAboutSelfSufficiency,
+    type: "objective",
+    name: "learn-about-self-sufficiency",
+    description: "Learn about self-sufficiency",
     entities: [],
     meta: {},
   },

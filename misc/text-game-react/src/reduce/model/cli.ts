@@ -1,6 +1,7 @@
-import { IState } from "../../bridge";
+import { IState, SerializedEntity } from "../../bridge";
 import { outputs } from "../outputs";
 import { templateParser } from "../utils";
+import { serialize } from "./entities";
 import { Entity, getWorld } from "./global";
 import { InputParser } from "./parser";
 
@@ -81,10 +82,16 @@ class CommandLineInterface {
     this.__input = "";
   }
 
-  getState = (): { input: string; output: string; history: string[] } => ({
+  getState = (): {
+    input: string;
+    output: string;
+    history: string[];
+    entities: { [id: string]: SerializedEntity };
+  } => ({
     input: this.__input,
     output: this.__output,
     history: this.__history,
+    entities: this.__world ? serialize(this.__world) : {}, // TODO: Simplify
   });
 
   updateDraft = (draft: IState) => {

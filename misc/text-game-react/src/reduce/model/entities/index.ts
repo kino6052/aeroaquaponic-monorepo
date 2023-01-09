@@ -1,16 +1,12 @@
 import { IState, SerializedEntity } from "../../../bridge";
 import { Entity } from "../global";
-import { EntityId, EntityMap } from "./entities";
+import { EntityId } from "./entities";
 import { getInteractionById } from "./interactions";
 
-const deserializeEntity = ({
-  description,
-  entities,
-  id,
-  name,
-  type,
-  meta,
-}: SerializedEntity): Entity =>
+export const deserializeEntity = (
+  { description, entities, id, name, type, meta }: SerializedEntity,
+  map: SerializedWorld
+): Entity =>
   new Entity(
     id,
     type,
@@ -18,18 +14,18 @@ const deserializeEntity = ({
     description,
     entities
       .map((id) => {
-        const entity: SerializedEntity | undefined = EntityMap[id as EntityId];
+        const entity: SerializedEntity | undefined = map[id as EntityId];
         if (!entity) return;
-        return deserializeEntity(entity);
+        return deserializeEntity(entity, map);
       })
       .filter((v) => !!v) as unknown as Entity[],
     getInteractionById(id),
     meta
   );
 
-type T = { [id: string]: SerializedEntity };
+type SerializedWorld = { [id: string]: SerializedEntity };
 
-export const serialize = (entity: Entity): T => {
+export const serialize = (entity: Entity): SerializedWorld => {
   const result = [entity].reduce(
     (acc, { state: { description, entities, id, name, type, meta } }) => {
       return {
@@ -44,14 +40,14 @@ export const serialize = (entity: Entity): T => {
         },
         ...entities.reduce(
           (acc, entity) => ({ ...acc, ...serialize(entity) }),
-          {} as T
+          {} as SerializedWorld
         ),
       };
     },
-    {} as T
+    {} as SerializedWorld
   );
   return result;
 };
 
 export const deserialize = (state: IState): Entity =>
-  deserializeEntity(state.entities[EntityId.World]);
+  deserializeEntity(state.entities[EntityId.World], state.entities);
