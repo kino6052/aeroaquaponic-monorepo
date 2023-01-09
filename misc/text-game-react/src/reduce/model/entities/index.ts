@@ -21,6 +21,7 @@
 //   ])
 
 import { IState, SerializedEntity } from "../../../bridge";
+import { makeHeader, makeParagraph } from "../../utils";
 import { Entity } from "../global";
 
 enum EntityId {
@@ -82,6 +83,19 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
   },
 };
 
+const InteractionMap: Record<string, () => string> = {
+  [EntityId.Help]: () =>
+    `${makeHeader("Help")}${makeParagraph(
+      "This is a game about self-sufficiency"
+    )}`,
+};
+
+const getInteractionById = (id: string) => {
+  const interaction = InteractionMap[id];
+  if (!interaction) return () => "...";
+  return interaction;
+};
+
 const deserializeEntity = ({
   description,
   entities,
@@ -100,7 +114,8 @@ const deserializeEntity = ({
         if (!entity) return;
         return deserializeEntity(entity);
       })
-      .filter((v) => !!v) as unknown as Entity[]
+      .filter((v) => !!v) as unknown as Entity[],
+    getInteractionById(id)
   );
 
 type T = { [id: string]: SerializedEntity };

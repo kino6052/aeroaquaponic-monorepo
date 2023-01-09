@@ -18,6 +18,13 @@ class CommandLineInterface {
     this.__world = getWorld(state);
   }
 
+  update(state: IState) {
+    this.__history = state.history;
+    this.__input = state.input;
+    this.__output = state.output;
+    this.__world = getWorld(state);
+  }
+
   clear() {
     this.__input = "";
     this.__output = "";
@@ -51,6 +58,7 @@ class CommandLineInterface {
       this.suggest();
       return;
     }
+    this.__suggestMode = false;
     const commands = inputParser.parse(command);
     const entities = inputParser.getEntities(commands, true);
     const isExact = entities.length === commands.length;
@@ -66,7 +74,6 @@ class CommandLineInterface {
     const result = exact.interact();
     this.__output = result;
     this.__input = "";
-    this.__suggestMode = false;
   }
 
   getState = (): { input: string; output: string; history: string[] } => ({
@@ -86,9 +93,9 @@ class CommandLineInterface {
 let cliInstance: CommandLineInterface | undefined;
 
 export const getCLI = (state: IState) => {
-  // if (!cliInstance) {
-  //   cliInstance = new CommandLineInterface(state);
-  // }
-  // return cliInstance;
-  return new CommandLineInterface(state);
+  if (!cliInstance) {
+    cliInstance = new CommandLineInterface(state);
+  }
+  cliInstance.update(state);
+  return cliInstance;
 };
