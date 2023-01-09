@@ -74,12 +74,4 @@ export class InputParser {
 
     return entities;
   }
-
-  // TODO: Generate entity list (or list of ids)
-  // TODO: Move out of Parser
-  // So that you can grab one of the entity you need and interact with it
-  suggest(commands: string[]): [string, string] {
-    const result = this.getEntities(commands);
-    return this.generateSuggestionOutput(result);
-  }
 }

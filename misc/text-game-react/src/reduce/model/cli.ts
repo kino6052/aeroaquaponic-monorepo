@@ -43,7 +43,8 @@ class CommandLineInterface {
     if (!this.__world) return;
     const inputParser = new InputParser(this.__world);
     const commands = inputParser.parse(this.__input);
-    const result = inputParser.suggest(commands);
+    const entities = inputParser.getEntities(commands);
+    const result = inputParser.generateSuggestionOutput(entities);
     if (!this.__suggestMode) this.updateHistory();
     this.__output = result[0];
     this.__input = result[1];
