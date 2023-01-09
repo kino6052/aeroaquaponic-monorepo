@@ -43,7 +43,11 @@ export const ChatView = (props: IState) => {
     <div className="container">
       <div className="feed">
         {history.map((v) => (
-          <span key={btoa(v)} dangerouslySetInnerHTML={{ __html: v }}></span>
+          <span
+            className="history"
+            key={btoa(v)}
+            dangerouslySetInnerHTML={{ __html: v }}
+          ></span>
         ))}
         {/* 
         //@ts-ignore */}

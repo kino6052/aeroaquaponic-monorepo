@@ -30,11 +30,15 @@ li {
   flex-direction: column;
   flex-grow: 1;
   height: 100%;
-  margin-bottom: 32px;
+  margin-bottom: 64px;
 }
 
-.container .feed span:nth-child(even) {
-  background-color: #f2f2f2;
+.container .history {
+  opacity: 0.3;
+}
+
+.container .feed .history:nth-child(even) {
+  background-color: #aaa;
 }
 
 .container .input {
