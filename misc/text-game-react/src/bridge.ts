@@ -1,5 +1,5 @@
 import { BehaviorSubject, Subject } from "rxjs";
-import { EntityMap } from "./reduce/model/entities";
+import { EntityMap } from "./reduce/model/entities/entities";
 import * as outputs from "./reduce/outputs/outputs";
 
 export enum Id {
