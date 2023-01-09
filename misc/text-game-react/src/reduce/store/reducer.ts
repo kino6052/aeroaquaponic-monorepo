@@ -7,7 +7,6 @@ export const reduce = (event: TEvent, state: IState): IState => {
   const cli = getCLI(state);
   return produce(state, (draft) => {
     if (event[0] === "enter") {
-      console.warn("test");
       cli.input = selectInput(state); // TODO: Parse state
       cli.interact();
       cli.updateDraft(draft);

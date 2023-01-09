@@ -1,4 +1,5 @@
 import { BehaviorSubject, Subject } from "rxjs";
+import { EntityMap } from "./reduce/model/entities";
 import * as outputs from "./reduce/outputs/outputs";
 
 export enum Id {
@@ -22,11 +23,21 @@ export interface IBrowser {
   };
 }
 
+export type TEntityType = "world" | "quest" | "objective" | "cli" | "misc";
+
+export interface SerializedEntity {
+  id: string;
+  entities: string[];
+  type: TEntityType;
+  name: string;
+  description: string;
+}
+
 export interface IState {
   input: string;
   output: string;
   history: string[];
-  entities: { [key: string]: string };
+  entities: { [key: string]: SerializedEntity };
 }
 
 export type TCommand = "change" | "enter" | "suggest" | "load";
@@ -39,7 +50,7 @@ export const initialState: IState = {
   input: "",
   history: [],
   output: outputs.initialOutput,
-  entities: {},
+  entities: EntityMap,
 };
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);

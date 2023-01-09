@@ -86,8 +86,9 @@ class CommandLineInterface {
 let cliInstance: CommandLineInterface | undefined;
 
 export const getCLI = (state: IState) => {
-  if (!cliInstance) {
-    cliInstance = new CommandLineInterface(state);
-  }
-  return cliInstance;
+  // if (!cliInstance) {
+  //   cliInstance = new CommandLineInterface(state);
+  // }
+  // return cliInstance;
+  return new CommandLineInterface(state);
 };

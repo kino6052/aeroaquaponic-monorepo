@@ -1,7 +1,6 @@
-import { IState } from "../../bridge";
+import { IState, TEntityType } from "../../bridge";
 import { Utils } from "../utils";
-
-export type TEntityType = "world" | "quest" | "objective" | "cli" | "misc";
+import { deserialize } from "./entities";
 
 export class Entity {
   private __id = Utils.generateId();
@@ -11,12 +10,14 @@ export class Entity {
   private __description: string = "";
 
   constructor(
+    id: string,
     type: TEntityType,
     name: string,
     description: string,
     entities?: Entity[],
     interact?: () => string
   ) {
+    this.__id = id;
     this.__type = type;
     this.__name = name;
     this.__description = description;
@@ -50,28 +51,9 @@ export class Entity {
 let worldInstance: Entity | undefined;
 
 export const getWorld = (state: IState) => {
-  if (!worldInstance) {
-    worldInstance = new Entity("world", "world", "the world object", [
-      new Entity("cli", "status", "provides status for the game"),
-      new Entity("cli", "help", "lets you know things"),
-      new Entity("quest", "todo", "your todo list", [
-        new Entity(
-          "objective",
-          "learn",
-          "go on the internet and learn about self-sufficiency",
-          [],
-          () => {
-            getWorld(state).entities[0].interact = () => "Done";
-            return "Completed quest. Check status.";
-          }
-        ),
-        new Entity("objective", "test", "website", [], () => "Website!"),
-      ]),
-      new Entity("misc", "internet", "lets you browse web", [
-        new Entity("misc", "self-sufficiency", "website"),
-        new Entity("misc", "test", "website", [], () => "Website!"),
-      ]),
-    ]);
-  }
-  return worldInstance;
+  // if (!worldInstance) {
+  //   worldInstance = deserialize(state);
+  // }
+  // return worldInstance;
+  return deserialize(state);
 };
