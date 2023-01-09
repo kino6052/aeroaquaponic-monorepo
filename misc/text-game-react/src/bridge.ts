@@ -1,6 +1,6 @@
 import { BehaviorSubject, Subject } from "rxjs";
 import { commands } from "./reduce/store/store";
-import * as outputs from "./reduce/outputs";
+import * as outputs from "./reduce/outputs/outputs";
 
 export enum Id {
   Input = "Input",

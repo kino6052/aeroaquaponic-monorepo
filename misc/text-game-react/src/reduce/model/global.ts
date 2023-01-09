@@ -22,7 +22,9 @@ export class Entity {
     this.__entities = entities || [];
   }
 
-  interact() {}
+  interact(): string {
+    return "...";
+  }
 
   get state() {
     return {
@@ -43,56 +45,22 @@ export class Entity {
   }
 }
 
-// class Objective extends Entity {
-//   public isComplete: boolean = false;
-//   public title: string = "";
-//   public description: string = "";
+let worldInstance: Entity | undefined;
 
-//   constructor(title: string, description: string) {
-//     super();
-//     this.title = title;
-//     this.description = description;
-//   }
-// }
-
-// class Quest extends Entity {
-//   private objectives: Objective[] = [];
-
-//   constructor() {
-//     super();
-//   }
-// }
-
-// class Location extends Entity {
-//   constructor() {
-//     super();
-//   }
-// }
-
-// class Status {}
-
-export class World extends Entity {
-  constructor(state: IState) {
-    super("world", "World", "The world object");
-
-    this.entities = [
+export const getWorld = (state: IState) => {
+  if (!worldInstance) {
+    worldInstance = new Entity("world", "world", "the world object", [
       new Entity("cli", "status", "provides status for the game"),
       new Entity("cli", "help", "lets you know things"),
       new Entity("misc", "internet", "lets you browse web", [
         new Entity("misc", "self-sufficiency", "website"),
-        new Entity("misc", "test", "website"),
+        new Entity("misc", "test", "website", [
+          // new Entity("misc", "check", "something", [
+          //   new Entity("misc", "final", "final"),
+          // ]),
+        ]),
       ]),
-    ];
+    ]);
   }
-
-  interact() {}
-}
-
-// let cliInstance: CommandLineInterface | undefined;
-
-// export const getCLI = (state: IState) => {
-//   if (!cliInstance) {
-//     cliInstance = new CommandLineInterface(state);
-//   }
-//   return cliInstance;
-// };
+  return worldInstance;
+};

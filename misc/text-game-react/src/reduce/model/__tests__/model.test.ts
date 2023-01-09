@@ -1,7 +1,8 @@
 import { initialState } from "../../../bridge";
 import { Utils } from "../../utils";
-import { getCLI, InputParser } from "../cli";
-import { World } from "../global";
+import { getCLI } from "../cli";
+import { getWorld } from "../global";
+import { InputParser } from "../parser";
 
 describe("CLI Suggest", () => {
   it("should suggest", () => {
@@ -95,10 +96,10 @@ const idSpy = jest.spyOn(Utils, "generateId");
 describe("CLI Nested Suggest", () => {
   it("should", () => {
     idSpy.mockImplementation(() => "1");
-    const inputParser = new InputParser(new World(initialState));
+    const inputParser = new InputParser(getWorld(initialState));
     const commands = inputParser.parse("sta");
     const result = inputParser
-      .__getSuggestions(commands)
+      .getEntities(commands)
       .map(({ state }) => state.name);
     expect(result).toMatchInlineSnapshot(`
       Array [
@@ -109,10 +110,10 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(new World(initialState));
+    const inputParser = new InputParser(getWorld(initialState));
     const commands = inputParser.parse("inte");
     const result = inputParser
-      .__getSuggestions(commands)
+      .getEntities(commands)
       .map(({ state }) => state.name);
     expect(result).toMatchInlineSnapshot(`
       Array [
@@ -123,10 +124,10 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(new World(initialState));
+    const inputParser = new InputParser(getWorld(initialState));
     const commands = inputParser.parse("internet tes");
     const result = inputParser
-      .__getSuggestions(commands)
+      .getEntities(commands)
       .map(({ state }) => state.name);
     expect(result).toMatchInlineSnapshot(`
       Array [
@@ -138,10 +139,10 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(new World(initialState));
+    const inputParser = new InputParser(getWorld(initialState));
     const commands = inputParser.parse("internet a");
     const result = inputParser
-      .__getSuggestions(commands)
+      .getEntities(commands)
       .map(({ state }) => state.name);
     expect(result).toMatchInlineSnapshot(`
       Array [

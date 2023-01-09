@@ -1,4 +1,4 @@
-import { makeHeader, makeList, makeParagraph, processItem } from "./utils";
+import { makeHeader, makeList, makeParagraph, processItem } from "../utils";
 
 export const argumentMatch = `
 ${makeHeader('Some possible arguments for command "{{command}}"')}

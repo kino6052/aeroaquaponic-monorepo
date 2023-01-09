@@ -1,6 +1,6 @@
 import { IState } from "../../../bridge";
 import { getCLI } from "../../model/cli";
-import * as outputs from "../../outputs";
+import * as outputs from "../../outputs/outputs";
 import { templateParser } from "../../utils";
 import { selectHasReadManifest, selectInput } from "../selectors";
 import { generateCommandOutput } from "../store";
