@@ -8,7 +8,7 @@ export const reduce = (event: TEvent, state: IState): IState => {
     const cli = getCLI(state);
     if (event[0] === "enter") {
       cli.input = selectInput(state); // TODO: Parse state
-      cli.interact(cli);
+      cli.interact(state, cli);
       cli.updateDraft(draft);
     }
     if (event[0] === "change") {

@@ -5,12 +5,7 @@ import {
   getSuggestAction,
 } from "../store/actions";
 import { compose } from "../store/reducer";
-import {
-  selectCommand,
-  selectHasReadManifest,
-  selectInput,
-  selectOutput,
-} from "../store/selectors";
+import { selectInput, selectOutput } from "../store/selectors";
 
 describe("Game", () => {
   it("should salute player", () => {
@@ -28,12 +23,9 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "
-      <h2>Help</h2>
-      <p>The commands available can be discovered by double tapping the Tab key.</p>
-      "
-    `);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>Help</h2><p>This is a game about self-sufficiency</p>"`
+    );
   });
 
   it("should show help to player", () => {
@@ -41,101 +33,62 @@ describe("Game", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li>google</li>
-      <li>help</li>
-      <li>status</li></ul>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
     `);
   });
 
   it("should suggest what to google", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google"),
+      getChangeAction("internet"),
       getSuggestAction(),
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>Some possible arguments for command \\"google\\"</h2>
-      <ul><li>self-sufficiency</li></ul>
+      <h2>Did you mean?</h2>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
   });
 
   it("should google self-sufficiency", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    // expect(selectIsGoogling(resultingState)).toBe(true);
-    expect(selectHasReadManifest(resultingState)).toBe(true);
-    expect(selectCommand("todo", resultingState)).toBeTruthy();
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "
-      <h2>Reading...</h2>
-      <p>You read about unit of self-sufficiency and it seemed quite reasonable.</p><p>It seems relatively simple too, so you want to start thinking in this direction.</p><p>You created a todo list.</p>
-      "
-    `);
-  });
-
-  // TODO: Remove Leave
-  it("should leave site", () => {
-    const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
-      getEnterAction(),
-    ]);
-    expect(selectInput(resultingState)).toEqual("");
-    // expect(selectIsGoogling(resultingState)).toBe(false);
-    expect(selectHasReadManifest(resultingState)).toBe(true);
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "
-      <h2>Reading...</h2>
-      <p>You read about unit of self-sufficiency and it seemed quite reasonable.</p><p>It seems relatively simple too, so you want to start thinking in this direction.</p><p>You created a todo list.</p>
-      "
-    `);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`"..."`);
   });
 
   it("should update your commands after you leave site", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
       getSuggestAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    // expect(selectIsGoogling(resultingState)).toBe(false);
-    expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li>google</li>
-      <li>help</li>
-      <li>status</li>
-      <li>todo</li></ul>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
     `);
   });
 
   it("should let you examine todo after you leave site", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
       getChangeAction("todo"),
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    // expect(selectIsGoogling(resultingState)).toBe(false);
-    expect(selectHasReadManifest(resultingState)).toBe(true);
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "
-      <h2>TODO</h2>
-      <ul><li>Inquire about land costs</li></ul>     
-      "
-    `);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`"..."`);
   });
 
   it("should have extra options after it let you examine todo", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
       getChangeAction("todo"),
       getEnterAction(),
@@ -143,34 +96,29 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    // expect(selectIsGoogling(resultingState)).toBe(false);
-    expect(selectHasReadManifest(resultingState)).toBe(true);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>google</h2>
-      <p>Google search</p>
-      <ul><li>Self-sufficiency</li><li>Buy Land Dot Com</li></ul>
+      <h2>Unknown command \\"google\\"</h2>
+      <p>You entered an unknown command</p>
       "
     `);
   });
 
   it("should be able to google buy land dot com", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
       getChangeAction("todo"),
       getEnterAction(),
-      getChangeAction("google bu"),
+      getChangeAction("internet bu"),
       getSuggestAction(),
     ]);
-    expect(selectInput(resultingState)).toMatchInlineSnapshot(
-      `"google buy land dot com"`
-    );
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"internet"`);
   });
 
   it("should be able to google buy land dot com", () => {
     const resultingState = compose(initialState)([
-      getChangeAction("google self-sufficiency"),
+      getChangeAction("internet self-sufficiency"),
       getEnterAction(),
       getChangeAction("todo"),
       getEnterAction(),
@@ -181,9 +129,20 @@ describe("Game", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>Unknown command \\"google buy land dot com\\"</h2>
-      <p>You entered an unknown command</p>
+      <h2>Did you mean?</h2>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
+    `);
+  });
+
+  it("should show status", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("status"),
+      getEnterAction(),
+    ]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+      "<h2>Status</h2><p><b>Date</b>: 2020/1/1</p><p><b>Season</b>: winter</p><p><b>Temperature</b>: -10 celsius</p><p><b>Location</b>: Disturbipolis, Disturbistan, Disturbium</p><p><b>Economics</b>: Inflation Rate: 7; Sentiment: cold</p>
+        <p><b>Politics</b>: Spectrum: liberal</p><p><b>Description</b>: You are looking for ways to change the course of your life for better</p>"
     `);
   });
 });

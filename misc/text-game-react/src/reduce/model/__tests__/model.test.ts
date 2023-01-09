@@ -11,7 +11,7 @@ describe("CLI Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><b>status</b>: provides status for the game</li><li><b>help</b>: lets you know things</li><li><b>internet</b>: lets you browse web</li></ul>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
     `);
   });
@@ -47,7 +47,7 @@ describe("CLI Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><b>status</b>: provides status for the game</li><li><b>help</b>: lets you know things</li><li><b>internet</b>: lets you browse web</li></ul>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
     `);
   });
@@ -61,7 +61,7 @@ describe("CLI Nested Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
   });
@@ -73,7 +73,7 @@ describe("CLI Nested Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
   });
@@ -85,7 +85,7 @@ describe("CLI Nested Suggest", () => {
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
       <h2>Did you mean?</h2>
-      <ul><li><i>internet</i> <b>test</b>: website</li></ul>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
   });
@@ -132,7 +132,6 @@ describe("CLI Nested Suggest", () => {
     expect(result).toMatchInlineSnapshot(`
       Array [
         "internet",
-        "test",
       ]
     `);
   });

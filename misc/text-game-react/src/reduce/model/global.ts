@@ -9,6 +9,7 @@ export class Entity {
   private __type: TEntityType = "misc";
   private __name: string = "";
   private __description: string = "";
+  private __meta: Record<string, unknown> = {};
 
   constructor(
     id: string,
@@ -16,17 +17,19 @@ export class Entity {
     name: string,
     description: string,
     entities?: Entity[],
-    interact?: (cli: ReturnType<typeof getCLI>) => string
+    interact?: (state: IState, cli: ReturnType<typeof getCLI>) => string,
+    meta?: Record<string, unknown>
   ) {
     this.__id = id;
     this.__type = type;
     this.__name = name;
     this.__description = description;
     this.__entities = entities || [];
+    this.__meta = meta || {};
     if (interact) this.interact = interact;
   }
 
-  interact(cli: ReturnType<typeof getCLI>): string {
+  interact(state: IState, cli: ReturnType<typeof getCLI>): string {
     return "...";
   }
 
@@ -37,6 +40,7 @@ export class Entity {
       type: this.__type,
       name: this.__name,
       description: this.__description,
+      meta: this.__meta,
     };
   }
 

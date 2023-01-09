@@ -41,9 +41,8 @@ describe("CLI features", () => {
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>google</h2>
-      <p>Google search</p>
-      <ul><li>Self-sufficiency</li></ul>
+      <h2>Did you mean?</h2>
+      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
       "
     `);
   });

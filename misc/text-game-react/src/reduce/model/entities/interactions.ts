@@ -1,20 +1,48 @@
-import { makeHeader, makeParagraph } from "../../utils";
+import { IState } from "../../../bridge";
+import { makeBold, makeHeader, makeParagraph } from "../../utils";
 import { getCLI } from "../cli";
-import { EntityId } from "./entities";
+import { EntityId, StatusMeta } from "./entities";
 
 export const InteractionMap: Record<
   string,
-  (cli: ReturnType<typeof getCLI>) => string
+  (state: IState, cli: ReturnType<typeof getCLI>) => string
 > = {
   [EntityId.Help]: () =>
     `${makeHeader("Help")}${makeParagraph(
       "This is a game about self-sufficiency"
     )}`,
-  [EntityId.Clear]: (cli) => {
+  [EntityId.Clear]: (_, cli) => {
     cli.clear();
     return `${makeHeader("Input Cleared")} ${makeParagraph(
       "Input was cleared..."
     )}`;
+  },
+  [EntityId.Status]: (state, cli) => {
+    const {
+      date: { day, month, year },
+      weather: {
+        season,
+        temperature: { degrees, type: temperatureType },
+      },
+      location: { city, continent, country },
+      economics: { inflation, sentiment },
+      politics: { spectrum },
+      description,
+    } = state.entities[EntityId.Status].meta as unknown as StatusMeta;
+    return `${makeHeader("Status")}${makeParagraph(
+      `${makeBold("Date")}: ${year}/${month}/${day}`
+    )}${makeParagraph(`${makeBold("Season")}: ${season}`)}${makeParagraph(
+      `${makeBold("Temperature")}: ${degrees} ${temperatureType}`
+    )}${makeParagraph(
+      `${makeBold("Location")}: ${city}, ${country}, ${continent}`
+    )}${makeParagraph(
+      `${makeBold(
+        "Economics"
+      )}: Inflation Rate: ${inflation}; Sentiment: ${sentiment}`
+    )}
+  ${makeParagraph(
+    `${makeBold("Politics")}: Spectrum: ${spectrum}`
+  )}${makeParagraph(`${makeBold("Description")}: ${description}`)}`;
   },
 };
 

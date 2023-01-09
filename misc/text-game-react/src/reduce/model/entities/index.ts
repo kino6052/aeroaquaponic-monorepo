@@ -9,6 +9,7 @@ const deserializeEntity = ({
   id,
   name,
   type,
+  meta,
 }: SerializedEntity): Entity =>
   new Entity(
     id,
@@ -22,14 +23,15 @@ const deserializeEntity = ({
         return deserializeEntity(entity);
       })
       .filter((v) => !!v) as unknown as Entity[],
-    getInteractionById(id)
+    getInteractionById(id),
+    meta
   );
 
 type T = { [id: string]: SerializedEntity };
 
 export const serialize = (entity: Entity): T => {
   const result = [entity].reduce(
-    (acc, { state: { description, entities, id, name, type } }) => {
+    (acc, { state: { description, entities, id, name, type, meta } }) => {
       return {
         ...acc,
         [id]: {
@@ -38,6 +40,7 @@ export const serialize = (entity: Entity): T => {
           id,
           name,
           type,
+          meta,
         },
         ...entities.reduce(
           (acc, entity) => ({ ...acc, ...serialize(entity) }),

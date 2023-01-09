@@ -1,6 +1,6 @@
 import { BehaviorSubject, Subject } from "rxjs";
 import { EntityMap } from "./reduce/model/entities/entities";
-import * as outputs from "./reduce/outputs/outputs";
+import { outputs } from "./reduce/outputs";
 
 export enum Id {
   Input = "Input",
@@ -31,6 +31,7 @@ export interface SerializedEntity {
   type: TEntityType;
   name: string;
   description: string;
+  meta: Record<string, unknown>;
 }
 
 export interface IState {
