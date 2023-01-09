@@ -9,6 +9,7 @@ class CommandLineInterface {
   private __input: string = "";
   private __history: string[] = [];
   private __world: Entity | undefined;
+  private __suggestMode: boolean = false;
 
   constructor(state: IState) {
     this.__output = state.output;
@@ -36,9 +37,10 @@ class CommandLineInterface {
     const inputParser = new InputParser(this.__world);
     const commands = inputParser.parse(this.__input);
     const result = inputParser.suggest(commands);
-    this.updateHistory();
+    if (!this.__suggestMode) this.updateHistory();
     this.__output = result[0];
     this.__input = result[1];
+    this.__suggestMode = true;
   }
 
   interact() {
@@ -64,6 +66,7 @@ class CommandLineInterface {
     const result = exact.interact();
     this.__output = result;
     this.__input = "";
+    this.__suggestMode = false;
   }
 
   getState = (): { input: string; output: string; history: string[] } => ({

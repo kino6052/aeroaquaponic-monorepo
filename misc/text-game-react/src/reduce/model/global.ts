@@ -14,12 +14,14 @@ export class Entity {
     type: TEntityType,
     name: string,
     description: string,
-    entities?: Entity[]
+    entities?: Entity[],
+    interact?: () => string
   ) {
     this.__type = type;
     this.__name = name;
     this.__description = description;
     this.__entities = entities || [];
+    if (interact) this.interact = interact;
   }
 
   interact(): string {
@@ -54,11 +56,7 @@ export const getWorld = (state: IState) => {
       new Entity("cli", "help", "lets you know things"),
       new Entity("misc", "internet", "lets you browse web", [
         new Entity("misc", "self-sufficiency", "website"),
-        new Entity("misc", "test", "website", [
-          // new Entity("misc", "check", "something", [
-          //   new Entity("misc", "final", "final"),
-          // ]),
-        ]),
+        new Entity("misc", "test", "website", [], () => "Website!"),
       ]),
     ]);
   }
