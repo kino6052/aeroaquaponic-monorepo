@@ -6,7 +6,7 @@ export enum EntityId {
   Help = "Help",
   Todo = "Todo",
   Internet = "Internet",
-  SelfSufficiency = "SelfSufficiency",
+  SelfSufficiencyWebsite = "SelfSufficiencyWebsite",
   Clear = "Clear",
   LearnAboutSelfSufficiency = "LearnAboutSelfSufficiency",
 }
@@ -126,11 +126,11 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
     type: "misc",
     name: "internet",
     description: "let's you browse web",
-    entities: [EntityId.SelfSufficiency],
+    entities: [EntityId.SelfSufficiencyWebsite],
     meta: {},
   },
-  [EntityId.SelfSufficiency]: {
-    id: EntityId.SelfSufficiency,
+  [EntityId.SelfSufficiencyWebsite]: {
+    id: EntityId.SelfSufficiencyWebsite,
     type: "misc",
     name: "self-sufficiency",
     description: "website",

@@ -5,7 +5,7 @@ import { getCLI } from "../../cli";
 import { EntityId } from "../entities";
 
 export default {
-  [EntityId.LearnAboutSelfSufficiency]: (
+  [EntityId.SelfSufficiencyWebsite]: (
     state: IState,
     cli: ReturnType<typeof getCLI>
   ) => {

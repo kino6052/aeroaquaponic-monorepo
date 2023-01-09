@@ -28,7 +28,11 @@ export const InteractionMap: Record<
       "You are getting closer to your goal."
     )}${makeParagraph("Here is what's left: ")}${makeList("", items)}`;
   },
-  [EntityId.LearnAboutSelfSufficiency]: quest001.LearnAboutSelfSufficiency,
+  [EntityId.SelfSufficiencyWebsite]: quest001.SelfSufficiencyWebsite,
+  [EntityId.LearnAboutSelfSufficiency]: () =>
+    `${makeHeader("Objective: Learn About Self-sufficiency")}${makeParagraph(
+      "You need to learn about self-sufficiency"
+    )}`,
 };
 
 export const getInteractionById = (id: string) => {

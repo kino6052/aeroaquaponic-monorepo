@@ -57,7 +57,9 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`"..."`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>Objective: Learn About Self-sufficiency</h2><p>You've read the website and it seemed very reasonable</p>"`
+    );
   });
 
   it("should update your commands after you leave site", () => {
@@ -84,7 +86,7 @@ describe("Game", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul><li>Learn about self-sufficiency</li></ul>"`
+      `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul></ul>"`
     );
   });
 
