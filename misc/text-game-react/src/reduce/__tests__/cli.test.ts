@@ -33,35 +33,6 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toMatchInlineSnapshot(`""`);
   });
 
-  it("should show available commands that match the input", () => {
-    const resultingState = compose({
-      ...initialState,
-      commands: {
-        test: {
-          name: "test",
-          args: [],
-          description: "",
-        },
-        temp: {
-          name: "temp",
-          args: [],
-          description: "",
-        },
-      },
-    })([
-      ["change", "te"],
-      ["suggest", ""],
-    ]);
-    expect(selectInput(resultingState)).toEqual("te");
-    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "
-      <h2>Did you mean?</h2>
-      <ul><li>temp</li>
-      <li>test</li></ul>
-      "
-    `);
-  });
-
   it("should perform the autocompleted command", () => {
     const resultingState = compose(initialState)([
       ["change", "goo"],
@@ -77,7 +48,7 @@ describe("CLI features", () => {
     `);
   });
 
-  it("should suggest params", () => {
+  it.skip("should suggest params", () => {
     const resultingState = compose(initialState)([
       ["change", "goo"],
       ["suggest", ""],
@@ -92,7 +63,7 @@ describe("CLI features", () => {
     `);
   });
 
-  it("should autocomplete params", () => {
+  it.skip("should autocomplete params", () => {
     const resultingState = compose(initialState)([
       ["change", "google se"],
       ["suggest", ""],

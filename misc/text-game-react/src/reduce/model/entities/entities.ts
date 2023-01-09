@@ -7,6 +7,7 @@ export enum EntityId {
   Todo = "Todo",
   Internet = "Internet",
   SelfSufficiency = "SelfSufficiency",
+  Clear = "Clear",
 }
 
 export const EntityMap: { [id in EntityId]: SerializedEntity } = {
@@ -20,7 +21,15 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
       EntityId.Status,
       EntityId.Todo,
       EntityId.Internet,
+      EntityId.Clear,
     ],
+  },
+  [EntityId.Clear]: {
+    id: EntityId.Clear,
+    type: "cli",
+    name: "clear",
+    description: "clear history",
+    entities: [],
   },
   [EntityId.Status]: {
     id: EntityId.Status,

@@ -1,5 +1,6 @@
 import { IState, TEntityType } from "../../bridge";
 import { Utils } from "../utils";
+import { getCLI } from "./cli";
 import { deserialize } from "./entities";
 
 export class Entity {
@@ -15,7 +16,7 @@ export class Entity {
     name: string,
     description: string,
     entities?: Entity[],
-    interact?: () => string
+    interact?: (cli: ReturnType<typeof getCLI>) => string
   ) {
     this.__id = id;
     this.__type = type;
@@ -25,7 +26,7 @@ export class Entity {
     if (interact) this.interact = interact;
   }
 
-  interact(): string {
+  interact(cli: ReturnType<typeof getCLI>): string {
     return "...";
   }
 

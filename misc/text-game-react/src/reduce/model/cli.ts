@@ -51,7 +51,7 @@ class CommandLineInterface {
     this.__suggestMode = true;
   }
 
-  interact() {
+  interact(cli: CommandLineInterface) {
     if (!this.__world) return;
     const inputParser = new InputParser(this.__world);
     const command = this.__input.trim();
@@ -72,7 +72,7 @@ class CommandLineInterface {
       return;
     }
     const exact = entities.slice(-1)[0];
-    const result = exact.interact();
+    const result = exact.interact(cli);
     this.__output = result;
     this.__input = "";
   }
