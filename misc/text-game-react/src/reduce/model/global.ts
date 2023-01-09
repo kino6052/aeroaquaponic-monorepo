@@ -54,6 +54,19 @@ export const getWorld = (state: IState) => {
     worldInstance = new Entity("world", "world", "the world object", [
       new Entity("cli", "status", "provides status for the game"),
       new Entity("cli", "help", "lets you know things"),
+      new Entity("quest", "todo", "your todo list", [
+        new Entity(
+          "objective",
+          "learn",
+          "go on the internet and learn about self-sufficiency",
+          [],
+          () => {
+            getWorld(state).entities[0].interact = () => "Done";
+            return "Completed quest. Check status.";
+          }
+        ),
+        new Entity("objective", "test", "website", [], () => "Website!"),
+      ]),
       new Entity("misc", "internet", "lets you browse web", [
         new Entity("misc", "self-sufficiency", "website"),
         new Entity("misc", "test", "website", [], () => "Website!"),

@@ -13,11 +13,8 @@ const Template = (args: IState) => <ChatView {...args} />;
 const state001: IState = {
   history: ["First item", "Second item", "Third item"],
   input: "test",
-  commands: {},
   output: "",
-  google: {
-    options: {},
-  },
+  entities: {},
 };
 
 export const Default = Template.bind({});

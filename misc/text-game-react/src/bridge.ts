@@ -1,5 +1,4 @@
 import { BehaviorSubject, Subject } from "rxjs";
-import { commands } from "./reduce/store/store";
 import * as outputs from "./reduce/outputs/outputs";
 
 export enum Id {
@@ -27,14 +26,7 @@ export interface IState {
   input: string;
   output: string;
   history: string[];
-  commands: Record<string, TAvailableCommand>;
-  google: {
-    options: {
-      [key: string]: {
-        visited: boolean;
-      };
-    };
-  };
+  entities: { [key: string]: string };
 }
 
 export type TCommand = "change" | "enter" | "suggest" | "load";
@@ -46,15 +38,8 @@ export const AppEventSubject = new Subject<TEvent>();
 export const initialState: IState = {
   input: "",
   history: [],
-  commands,
-  google: {
-    options: {
-      "self-sufficiency": {
-        visited: false,
-      },
-    },
-  },
   output: outputs.initialOutput,
+  entities: {},
 };
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);
