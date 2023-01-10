@@ -35,6 +35,7 @@ export const InteractionMap: Record<
     )}${message}`;
   },
   [EntityId.SelfSufficiencyWebsite]: quest001.SelfSufficiencyWebsite,
+  [EntityId.LandWebsite001]: quest001.LandWebsite001,
   [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency]: () =>
     `${makeHeader("Objective: Learn About Self-sufficiency")}${makeParagraph(
       "You need to learn about self-sufficiency"

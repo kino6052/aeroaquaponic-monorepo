@@ -11,6 +11,7 @@ export enum EntityId {
   TodoQuest001Task001LearnAboutSelfSufficiency = "TodoQuest001Task001LearnAboutSelfSufficiency",
   TodoQuest001Task002FindOutAboutLand = "TodoQuest001Task002FindOutAboutLand",
   LandWebsite001 = "LandWebsite001",
+  TodoQuest001Task003CallRealtor = "TodoQuest001Task003CallRealtor",
 }
 
 export interface StatusMeta {
@@ -128,6 +129,14 @@ export const EntityMap: { [id in EntityId]?: SerializedEntity } = {
     type: "objective",
     name: "find-out-about-land",
     description: "Go to the internet and find out about land",
+    entities: [],
+    meta: {},
+  },
+  [EntityId.TodoQuest001Task003CallRealtor]: {
+    id: EntityId.TodoQuest001Task003CallRealtor,
+    type: "objective",
+    name: "call-realtor",
+    description: "Call realtor to schedule a land visit",
     entities: [],
     meta: {},
   },

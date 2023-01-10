@@ -1,6 +1,6 @@
 import { deserialize, deserializeEntity, serialize } from "..";
 import { IState } from "../../../../bridge";
-import { makeHeader, makeParagraph } from "../../../utils";
+import { makeHeader, makeList, makeParagraph } from "../../../utils";
 import { getCLI } from "../../cli";
 import { EntityId, EntityMap } from "../entities";
 import { SerializedHelper } from "../serialized";
@@ -29,5 +29,26 @@ export default {
     return `${makeHeader("self-sufficiency.com")}${makeParagraph(
       "This is a website about self-sufficiency"
     )}`;
+  },
+  [EntityId.LandWebsite001]: (cli: ReturnType<typeof getCLI>) => {
+    if (!cli.world) return "...";
+    const serialized = serialize(cli.world);
+    const helper = new SerializedHelper(serialized);
+    const hasTask002 = helper.hasChild(
+      EntityId.Todo,
+      EntityId.TodoQuest001Task002FindOutAboutLand
+    );
+    if (hasTask002) {
+      helper.removeById(EntityId.TodoQuest001Task002FindOutAboutLand);
+      helper.add(
+        EntityMap[EntityId.TodoQuest001Task003CallRealtor]!,
+        EntityId.Todo
+      );
+      helper.add(EntityMap[EntityId.LandWebsite001]!, EntityId.Internet);
+      cli.update({ entities: helper.entities });
+    }
+    return `${makeHeader("buy-land.com")}${makeParagraph(
+      "Here are some land items:"
+    )}${makeList("", ["Option One", "Option Two"])}`;
   },
 };
