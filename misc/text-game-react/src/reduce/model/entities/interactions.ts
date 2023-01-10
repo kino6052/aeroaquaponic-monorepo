@@ -43,7 +43,5 @@ export const InteractionMap: Record<
 
 export const getInteractionById = (id: string) => {
   const interaction = InteractionMap[id];
-  if (!interaction)
-    return () => EntityMap[id as EntityId]?.description || "...";
   return interaction;
 };

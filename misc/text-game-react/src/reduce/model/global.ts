@@ -1,5 +1,5 @@
 import { IState, TEntityType } from "../../bridge";
-import { Utils } from "../utils";
+import { makeHeader, makeParagraph, Utils } from "../utils";
 import { getCLI } from "./cli";
 import { deserialize, SerializedWorld } from "./entities";
 
@@ -30,7 +30,9 @@ export class Entity {
   }
 
   interact(cli: ReturnType<typeof getCLI>): string {
-    return this.__description;
+    return `${makeHeader(`Command: ${this.__name}`)}${makeParagraph(
+      this.__description
+    )}`;
   }
 
   get state() {
