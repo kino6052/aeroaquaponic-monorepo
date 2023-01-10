@@ -24,12 +24,18 @@ export const InteractionMap: Record<
     const items = state.entities[EntityId.Todo].entities.map(
       (v) => state.entities[v].description
     );
+    const list = `${makeParagraph("Here is what's left: ")}${makeList(
+      "",
+      items
+    )}`;
+    const message =
+      items.length > 0 ? list : makeParagraph("The list is empty currently");
     return `${makeHeader("Todo")}${makeParagraph(
       "You are getting closer to your goal."
-    )}${makeParagraph("Here is what's left: ")}${makeList("", items)}`;
+    )}${message}`;
   },
   [EntityId.SelfSufficiencyWebsite]: quest001.SelfSufficiencyWebsite,
-  [EntityId.LearnAboutSelfSufficiency]: () =>
+  [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency]: () =>
     `${makeHeader("Objective: Learn About Self-sufficiency")}${makeParagraph(
       "You need to learn about self-sufficiency"
     )}`,

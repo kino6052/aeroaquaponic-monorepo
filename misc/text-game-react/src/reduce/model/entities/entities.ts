@@ -8,7 +8,9 @@ export enum EntityId {
   Internet = "Internet",
   SelfSufficiencyWebsite = "SelfSufficiencyWebsite",
   Clear = "Clear",
-  LearnAboutSelfSufficiency = "LearnAboutSelfSufficiency",
+  TodoQuest001Task001LearnAboutSelfSufficiency = "TodoQuest001Task001LearnAboutSelfSufficiency",
+  TodoQuest001Task002FindOutAboutLand = "TodoQuest001Task002FindOutAboutLand",
+  LandWebsite001 = "LandWebsite001",
 }
 
 export interface StatusMeta {
@@ -39,7 +41,7 @@ export interface StatusMeta {
   description: string;
 }
 
-export const EntityMap: { [id in EntityId]: SerializedEntity } = {
+export const EntityMap: { [id in EntityId]?: SerializedEntity } = {
   [EntityId.World]: {
     id: EntityId.World,
     type: "world",
@@ -110,14 +112,22 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
     type: "quest",
     name: "todo",
     description: "your todo list",
-    entities: [EntityId.LearnAboutSelfSufficiency],
+    entities: [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency],
     meta: {},
   },
-  [EntityId.LearnAboutSelfSufficiency]: {
-    id: EntityId.LearnAboutSelfSufficiency,
+  [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency]: {
+    id: EntityId.TodoQuest001Task001LearnAboutSelfSufficiency,
     type: "objective",
     name: "learn-about-self-sufficiency",
     description: "Learn about self-sufficiency",
+    entities: [],
+    meta: {},
+  },
+  [EntityId.TodoQuest001Task002FindOutAboutLand]: {
+    id: EntityId.TodoQuest001Task002FindOutAboutLand,
+    type: "objective",
+    name: "find-out-about-land",
+    description: "Go to the internet and find out about land",
     entities: [],
     meta: {},
   },
@@ -134,6 +144,14 @@ export const EntityMap: { [id in EntityId]: SerializedEntity } = {
     type: "misc",
     name: "self-sufficiency",
     description: "website",
+    entities: [],
+    meta: {},
+  },
+  [EntityId.LandWebsite001]: {
+    id: EntityId.LandWebsite001,
+    type: "misc",
+    name: "land-website",
+    description: "website with information about land and associated costs",
     entities: [],
     meta: {},
   },

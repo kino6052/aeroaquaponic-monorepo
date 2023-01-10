@@ -1,5 +1,5 @@
 import { BehaviorSubject, Subject } from "rxjs";
-import { EntityMap } from "./reduce/model/entities/entities";
+import { EntityId, EntityMap } from "./reduce/model/entities/entities";
 import { outputs } from "./reduce/outputs";
 
 export enum Id {
@@ -51,7 +51,16 @@ export const initialState: IState = {
   input: "",
   history: [],
   output: outputs.initialOutput,
-  entities: EntityMap,
+  entities: [
+    EntityId.World,
+    EntityId.Status,
+    EntityId.Help,
+    EntityId.Todo,
+    EntityId.Internet,
+    EntityId.SelfSufficiencyWebsite,
+    EntityId.Clear,
+    EntityId.TodoQuest001Task001LearnAboutSelfSufficiency,
+  ].reduce((acc, id) => ({ ...acc, [id]: EntityMap[id] }), {}),
 };
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);

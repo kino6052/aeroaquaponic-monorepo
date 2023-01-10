@@ -23,7 +23,7 @@ export const deserializeEntity = (
     meta
   );
 
-type SerializedWorld = { [id: string]: SerializedEntity };
+export type SerializedWorld = { [id: string]: SerializedEntity };
 
 export const serialize = (entity: Entity): SerializedWorld => {
   const result = [entity].reduce(
