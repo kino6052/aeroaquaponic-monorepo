@@ -49,5 +49,5 @@ export const serialize = (entity: Entity): SerializedWorld => {
   return result;
 };
 
-export const deserialize = (state: IState): Entity =>
-  deserializeEntity(state.entities[EntityId.World], state.entities);
+export const deserialize = (entities: SerializedWorld): Entity =>
+  deserializeEntity(entities[EntityId.World], entities);

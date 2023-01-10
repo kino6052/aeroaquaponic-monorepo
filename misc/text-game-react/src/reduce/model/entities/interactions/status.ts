@@ -1,12 +1,10 @@
-import { IState } from "../../../../bridge";
 import { makeBold, makeHeader, makeParagraph } from "../../../utils";
 import { getCLI } from "../../cli";
 import { EntityId, StatusMeta } from "../entities";
 
-export const statusInteraction: (
-  state: IState,
-  cli: ReturnType<typeof getCLI>
-) => string = (state) => {
+export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
+  cli
+) => {
   const {
     date: { day, month, year },
     weather: {
@@ -17,7 +15,7 @@ export const statusInteraction: (
     economics: { inflation, sentiment },
     politics: { spectrum },
     description,
-  } = state.entities[EntityId.Status].meta as unknown as StatusMeta;
+  } = cli.getState().entities[EntityId.Status].meta as unknown as StatusMeta;
   return `${makeHeader("Status")}${makeParagraph(
     `${makeBold("Date")}: ${year}/${month}/${day}`
   )}${makeParagraph(`${makeBold("Season")}: ${season}`)}${makeParagraph(

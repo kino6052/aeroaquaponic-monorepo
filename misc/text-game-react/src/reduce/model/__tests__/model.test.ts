@@ -96,7 +96,7 @@ const idSpy = jest.spyOn(Utils, "generateId");
 describe("CLI Nested Suggest", () => {
   it("should", () => {
     idSpy.mockImplementation(() => "1");
-    const inputParser = new InputParser(getWorld(initialState));
+    const inputParser = new InputParser(getWorld(initialState.entities));
     const commands = inputParser.parse("sta");
     const result = inputParser
       .getEntities(commands)
@@ -110,7 +110,7 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(getWorld(initialState));
+    const inputParser = new InputParser(getWorld(initialState.entities));
     const commands = inputParser.parse("inte");
     const result = inputParser
       .getEntities(commands)
@@ -124,7 +124,7 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(getWorld(initialState));
+    const inputParser = new InputParser(getWorld(initialState.entities));
     const commands = inputParser.parse("internet tes");
     const result = inputParser
       .getEntities(commands)
@@ -138,7 +138,7 @@ describe("CLI Nested Suggest", () => {
 
   it("should", () => {
     idSpy.mockImplementation(() => "");
-    const inputParser = new InputParser(getWorld(initialState));
+    const inputParser = new InputParser(getWorld(initialState.entities));
     const commands = inputParser.parse("internet a");
     const result = inputParser
       .getEntities(commands)

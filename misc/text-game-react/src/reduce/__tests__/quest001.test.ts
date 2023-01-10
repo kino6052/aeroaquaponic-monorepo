@@ -5,7 +5,7 @@ import {
   getSuggestAction,
 } from "../store/actions";
 import { compose } from "../store/reducer";
-import { selectInput, selectOutput } from "../store/selectors";
+import { selectHistory, selectInput, selectOutput } from "../store/selectors";
 
 describe("Quest 001", () => {
   it("should have a todo item", () => {
@@ -16,6 +16,19 @@ describe("Quest 001", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
       `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul><li>Learn about self-sufficiency</li></ul>"`
+    );
+  });
+
+  it("should have a correct autocomplete sequence", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("internet self"),
+      getSuggestAction(),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectHistory(resultingState).length).toMatchInlineSnapshot(`2`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>self-sufficiency.com</h2><p>You've read the website and it seemed very reasonable</p>"`
     );
   });
 

@@ -4,7 +4,7 @@ import { getWorld } from "../global";
 
 describe("Serialize", () => {
   it("should serialize", () => {
-    const result = serialize(getWorld(initialState));
+    const result = serialize(getWorld(initialState.entities));
     expect(initialState.entities).toEqual(result);
   });
 });

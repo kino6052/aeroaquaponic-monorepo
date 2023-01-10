@@ -6,10 +6,7 @@ import { EntityId, EntityMap } from "../entities";
 import { SerializedHelper } from "../serialized";
 
 export default {
-  [EntityId.SelfSufficiencyWebsite]: (
-    state: IState,
-    cli: ReturnType<typeof getCLI>
-  ) => {
+  [EntityId.SelfSufficiencyWebsite]: (cli: ReturnType<typeof getCLI>) => {
     if (!cli.world) return "...";
     const serialized = serialize(cli.world);
     const helper = new SerializedHelper(serialized);
@@ -24,7 +21,7 @@ export default {
         EntityId.Todo
       );
       helper.add(EntityMap[EntityId.LandWebsite001]!, EntityId.Internet);
-      cli.update({ ...state, entities: helper.entities });
+      cli.update({ entities: helper.entities });
       return `${makeHeader("self-sufficiency.com")}${makeParagraph(
         "You've read the website and it seemed very reasonable"
       )}`;

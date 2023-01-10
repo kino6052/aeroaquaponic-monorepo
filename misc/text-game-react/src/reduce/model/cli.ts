@@ -16,14 +16,14 @@ class CommandLineInterface {
     this.__output = state.output;
     this.__input = state.input;
     this.__history = state.history;
-    this.__world = getWorld(state);
+    this.__world = getWorld(state.entities);
   }
 
-  update(state: IState) {
-    this.__history = state.history;
-    this.__input = state.input;
-    this.__output = state.output;
-    this.__world = getWorld(state);
+  update(state: Partial<IState>) {
+    state.history && (this.__history = state.history);
+    state.input && (this.__input = state.input);
+    state.output && (this.__output = state.output);
+    state.entities && (this.__world = getWorld(state.entities));
   }
 
   clear() {
@@ -64,11 +64,11 @@ class CommandLineInterface {
       this.suggest();
       return;
     }
+    this.updateHistory();
     this.__suggestMode = false;
     const commands = inputParser.parse(command);
     const entities = inputParser.getEntities(commands, true);
     const isExact = entities.length === commands.length;
-    this.updateHistory();
     if (!isExact) {
       this.__output = templateParser(outputs.unknownCommand, {
         command,
@@ -77,7 +77,7 @@ class CommandLineInterface {
       return;
     }
     const exact = entities.slice(-1)[0];
-    const result = exact.interact(state, cli);
+    const result = exact.interact(cli);
     this.__output = result;
     this.__input = "";
   }

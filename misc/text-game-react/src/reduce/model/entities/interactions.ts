@@ -1,26 +1,26 @@
-import { IState } from "../../../bridge";
-import { makeBold, makeHeader, makeList, makeParagraph } from "../../utils";
+import { makeHeader, makeList, makeParagraph } from "../../utils";
 import { getCLI } from "../cli";
-import { EntityId, StatusMeta } from "./entities";
-import { statusInteraction } from "./interactions/status";
+import { EntityId, EntityMap } from "./entities";
 import quest001 from "./interactions/quest001";
+import { statusInteraction } from "./interactions/status";
 
 export const InteractionMap: Record<
   string,
-  (state: IState, cli: ReturnType<typeof getCLI>) => string
+  (cli: ReturnType<typeof getCLI>) => string
 > = {
   [EntityId.Help]: () =>
     `${makeHeader("Help")}${makeParagraph(
       "This is a game about self-sufficiency"
     )}`,
-  [EntityId.Clear]: (_, cli) => {
+  [EntityId.Clear]: (cli) => {
     cli.clear();
     return `${makeHeader("Input Cleared")} ${makeParagraph(
       "Input was cleared..."
     )}`;
   },
   [EntityId.Status]: statusInteraction,
-  [EntityId.Todo]: (state, cli) => {
+  [EntityId.Todo]: (cli) => {
+    const state = cli.getState();
     const items = state.entities[EntityId.Todo].entities.map(
       (v) => state.entities[v].description
     );
@@ -43,6 +43,7 @@ export const InteractionMap: Record<
 
 export const getInteractionById = (id: string) => {
   const interaction = InteractionMap[id];
-  if (!interaction) return () => "...";
+  if (!interaction)
+    return () => EntityMap[id as EntityId]?.description || "...";
   return interaction;
 };

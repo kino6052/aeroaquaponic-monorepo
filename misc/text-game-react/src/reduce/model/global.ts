@@ -1,7 +1,7 @@
 import { IState, TEntityType } from "../../bridge";
 import { Utils } from "../utils";
 import { getCLI } from "./cli";
-import { deserialize } from "./entities";
+import { deserialize, SerializedWorld } from "./entities";
 
 export class Entity {
   private __id = Utils.generateId();
@@ -17,7 +17,7 @@ export class Entity {
     name: string,
     description: string,
     entities?: Entity[],
-    interact?: (state: IState, cli: ReturnType<typeof getCLI>) => string,
+    interact?: (cli: ReturnType<typeof getCLI>) => string,
     meta?: Record<string, unknown>
   ) {
     this.__id = id;
@@ -29,8 +29,8 @@ export class Entity {
     if (interact) this.interact = interact;
   }
 
-  interact(state: IState, cli: ReturnType<typeof getCLI>): string {
-    return "...";
+  interact(cli: ReturnType<typeof getCLI>): string {
+    return this.__description;
   }
 
   get state() {
@@ -55,10 +55,10 @@ export class Entity {
 
 let worldInstance: Entity | undefined;
 
-export const getWorld = (state: IState) => {
+export const getWorld = (entities: SerializedWorld) => {
   // if (!worldInstance) {
   //   worldInstance = deserialize(state);
   // }
   // return worldInstance;
-  return deserialize(state);
+  return deserialize(entities);
 };
