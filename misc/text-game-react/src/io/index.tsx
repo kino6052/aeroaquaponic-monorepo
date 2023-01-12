@@ -1,5 +1,6 @@
 import { BehaviorSubject } from "rxjs";
 import { AppEventSubject, IState, TEvent } from "../bridge";
+import { generateSpeech } from "./speech";
 import { presentationIO } from "./ui";
 
 const QueueSubject = new BehaviorSubject<Array<TEvent>>([]);
@@ -13,6 +14,7 @@ export const io = async (state: IState): Promise<TEvent> =>
   new Promise((res) => {
     // NOTE: Run IO Agents in a non-blocking way
     presentationIO(state);
+    generateSpeech(state);
 
     // NOTE: Can use take(1) and filter() by length
     // NOTE: This function won't return if queue is empty

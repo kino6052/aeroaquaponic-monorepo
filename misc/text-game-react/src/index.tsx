@@ -1,8 +1,6 @@
-import { IState, StateSubject } from "./bridge";
+import { initialState, IState } from "./bridge";
 import { io } from "./io";
 import { reduce } from "./reduce";
-
-const initialState = StateSubject.getValue();
 
 // MAIN APP ENTRY POINT
 // NOTE: A representation of application/stateful agent
@@ -19,4 +17,5 @@ const applicationLoop = async (state: IState): Promise<void> => {
 };
 
 // NOTE: Start the Application
+// @ts-ignore
 applicationLoop(initialState);
