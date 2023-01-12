@@ -73,6 +73,6 @@ export const getStatus = () =>
         sentiment: "cold",
       },
       description:
-        "You are looking for ways to change the course of your life for better",
+        "I feel like I'm on track to making the self-sufficient life-style possible",
     } as StatusMeta,
   } as unknown as SerializedEntity);
