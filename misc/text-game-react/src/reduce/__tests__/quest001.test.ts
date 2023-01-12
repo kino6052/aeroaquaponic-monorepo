@@ -28,7 +28,7 @@ describe("Quest 001", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectHistory(resultingState).length).toMatchInlineSnapshot(`1`);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h3>self-sufficiency.com</h3><p>You've read the website and it seemed very reasonable</p>"`
+      `"<h3>self-sufficiency.com</h3><p>I visited the website about self-sufficiency that I had come across a few days ago. It was an eye-opening experience, and I learned a lot about what it takes to truly become self-sufficient. The website explained that in order to start the journey, I need to form a unit of self-sufficiency, which comprises of three main components: property, technology, and skills.</p><p>The first component, property, is crucial. I need to find a piece of land where I can live without paying rent and where I can grow my food. This will form the foundation of my self-sufficiency journey, and it's something I'll need to start researching and looking into.</p><p>The second component, technology, is also crucial. Over time, I'll need to improve my property and make sure that I don't spend too much time doing unnecessary repetitive labor. This means investing in tools and equipment that will make my life easier and more efficient. It's important to find the balance between working hard and living a well-balanced life.</p><p>The third component, skills, is also key. I need to start developing skills that will allow me to adapt quickly to any change in the world, and not let me lose the self-sufficient status. This means learning new things, experimenting with different techniques, and being open to new ideas.</p><p>Overall, it was an enlightening experience, and it gave me a lot to think about. I now have a better understanding of what it takes to become truly self-sufficient, and I'm excited to start researching and taking action on the different components. I'm looking forward to updating my diary with my progress and thoughts as I learn more about self-sufficiency.</p>"`
     );
   });
 
@@ -54,7 +54,7 @@ describe("Quest 001", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h3>self-sufficiency.com</h3><p>This is a website about self-sufficiency</p>"`
+      `"<h3>self-sufficiency.com</h3><p>I really dug the ideas outlined in the website about self-sufficiency.</p><p>The concept of forming a unit of self-sufficiency really resonated with me.</p><p>Now I just need to follow my todo list</p>"`
     );
   });
 });
