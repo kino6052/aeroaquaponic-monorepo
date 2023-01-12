@@ -1,6 +1,6 @@
+import { initialState } from "../../bridge";
 import { compose } from "../store/reducer";
 import { selectHistory, selectInput, selectOutput } from "../store/selectors";
-import { initialState } from "../../bridge";
 
 describe("CLI features", () => {
   it("should say that command is unknown", () => {
@@ -8,11 +8,11 @@ describe("CLI features", () => {
       ["change", "he"],
       ["enter", ""],
     ]);
-    expect(selectInput(resultingState)).toEqual("");
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"help"`);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>Unknown command \\"he\\"</h2>
-      <p>You entered an unknown command</p>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li></ul>
       "
     `);
   });
@@ -41,8 +41,8 @@ describe("CLI features", () => {
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
-      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
       "
     `);
   });
@@ -77,14 +77,7 @@ describe("CLI features", () => {
       ["change", "google"],
       ["enter", ""],
     ]);
-    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`
-      Array [
-        "
-      <h2>Wake up, Neo...</h2>
-      <p>You wake up with an unpleasant anticipation of yet another day full of work and routine.</p><p>Yesterday, you started seriously thinking about what alternatives are out there that could break you out of this strange cycle.</p>
-      ",
-      ]
-    `);
+    expect(selectHistory(resultingState)).toMatchInlineSnapshot(`Array []`);
   });
 
   it("should clear history", () => {

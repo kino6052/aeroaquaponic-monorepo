@@ -1,6 +1,11 @@
-import { makeHeader, makeList, makeParagraph } from "../../utils";
+import { EntityId } from "../../../bridge";
+import {
+  makeSecondaryHeading,
+  makeList,
+  makeParagraph,
+  processItem,
+} from "../../utils";
 import { getCLI } from "../cli";
-import { EntityId, EntityMap } from "./entities";
 import quest001 from "./interactions/quest001";
 import { statusInteraction } from "./interactions/status";
 
@@ -9,12 +14,12 @@ export const InteractionMap: Record<
   (cli: ReturnType<typeof getCLI>) => string
 > = {
   [EntityId.Help]: () =>
-    `${makeHeader("Help")}${makeParagraph(
+    `${makeSecondaryHeading("Help")}${makeParagraph(
       "This is a game about self-sufficiency"
     )}`,
   [EntityId.Clear]: (cli) => {
     cli.clear();
-    return `${makeHeader("Input Cleared")} ${makeParagraph(
+    return `${makeSecondaryHeading("Input Cleared")} ${makeParagraph(
       "Input was cleared..."
     )}`;
   },
@@ -30,15 +35,21 @@ export const InteractionMap: Record<
     )}`;
     const message =
       items.length > 0 ? list : makeParagraph("The list is empty currently");
-    return `${makeHeader("Todo")}${makeParagraph(
-      "You are getting closer to your goal."
+    return `${makeSecondaryHeading("Todo")}${makeParagraph(
+      "I had a look at my todo and here were the items:"
     )}${message}`;
   },
   [EntityId.SelfSufficiencyWebsite]: quest001.SelfSufficiencyWebsite,
   [EntityId.LandWebsite001]: quest001.LandWebsite001,
   [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency]: () =>
-    `${makeHeader("Objective: Learn About Self-sufficiency")}${makeParagraph(
-      "You need to learn about self-sufficiency"
+    `${makeSecondaryHeading(
+      "Objective: Learn About Self-sufficiency"
+    )}${processItem(
+      [
+        "I need to visit the website I came across yesterday.",
+        "To do that, I need to go to the internet.",
+      ],
+      makeParagraph
     )}`,
 };
 

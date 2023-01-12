@@ -64,18 +64,14 @@ class CommandLineInterface {
       this.suggest();
       return;
     }
-    this.updateHistory();
-    this.__suggestMode = false;
     const commands = inputParser.parse(command);
     const entities = inputParser.getEntities(commands, true);
     const isExact = entities.length === commands.length;
     if (!isExact) {
-      this.__output = templateParser(outputs.unknownCommand, {
-        command,
-      });
-      this.__input = "";
+      this.suggest();
       return;
     }
+    this.__suggestMode = false;
     const exact = entities.slice(-1)[0];
     const result = exact.interact(cli);
     this.__output = result;

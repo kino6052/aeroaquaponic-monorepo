@@ -1,8 +1,8 @@
-import { deserialize, deserializeEntity, serialize } from "..";
-import { IState } from "../../../../bridge";
-import { makeHeader, makeList, makeParagraph } from "../../../utils";
+import { serialize } from "..";
+import { EntityId } from "../../../../bridge";
+import { makeList, makeParagraph, makeSecondaryHeading } from "../../../utils";
 import { getCLI } from "../../cli";
-import { EntityId, EntityMap } from "../entities";
+import { getEntityMap } from "../entities";
 import { SerializedHelper } from "../serialized";
 
 export default {
@@ -17,16 +17,16 @@ export default {
     if (hasTask001) {
       helper.removeById(EntityId.TodoQuest001Task001LearnAboutSelfSufficiency);
       helper.add(
-        EntityMap[EntityId.TodoQuest001Task002FindOutAboutLand]!,
+        getEntityMap()[EntityId.TodoQuest001Task002FindOutAboutLand]!,
         EntityId.Todo
       );
-      helper.add(EntityMap[EntityId.LandWebsite001]!, EntityId.Internet);
+      helper.add(getEntityMap()[EntityId.LandWebsite001]!, EntityId.Internet);
       cli.update({ entities: helper.entities });
-      return `${makeHeader("self-sufficiency.com")}${makeParagraph(
+      return `${makeSecondaryHeading("self-sufficiency.com")}${makeParagraph(
         "You've read the website and it seemed very reasonable"
       )}`;
     }
-    return `${makeHeader("self-sufficiency.com")}${makeParagraph(
+    return `${makeSecondaryHeading("self-sufficiency.com")}${makeParagraph(
       "This is a website about self-sufficiency"
     )}`;
   },
@@ -41,13 +41,13 @@ export default {
     if (hasTask002) {
       helper.removeById(EntityId.TodoQuest001Task002FindOutAboutLand);
       helper.add(
-        EntityMap[EntityId.TodoQuest001Task003CallRealtor]!,
+        getEntityMap()[EntityId.TodoQuest001Task003CallRealtor]!,
         EntityId.Todo
       );
-      helper.add(EntityMap[EntityId.LandWebsite001]!, EntityId.Internet);
+      helper.add(getEntityMap()[EntityId.LandWebsite001]!, EntityId.Internet);
       cli.update({ entities: helper.entities });
     }
-    return `${makeHeader("buy-land.com")}${makeParagraph(
+    return `${makeSecondaryHeading("buy-land.com")}${makeParagraph(
       "Here are some land items:"
     )}${makeList("", ["Option One", "Option Two"])}`;
   },

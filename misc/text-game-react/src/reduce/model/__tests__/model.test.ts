@@ -10,8 +10,8 @@ describe("CLI Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
-      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
       "
     `);
   });
@@ -22,8 +22,8 @@ describe("CLI Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
-      <ul><li><b>help</b>: lets you know things</li></ul>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li></ul>
       "
     `);
   });
@@ -34,8 +34,8 @@ describe("CLI Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
-      <ul><li><b>status</b>: provides status for the game</li></ul>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>status</b>: lets me know what is going on in the world</li></ul>
       "
     `);
   });
@@ -46,8 +46,8 @@ describe("CLI Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
-      <ul><li><b>help</b>: lets you know things</li><li><b>status</b>: provides status for the game</li><li><b>todo</b>: your todo list</li><li><b>internet</b>: let's you browse web</li><li><b>clear</b>: clear history</li></ul>
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
       "
     `);
   });
@@ -60,7 +60,7 @@ describe("CLI Nested Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
+      <h3>Here is what I can do right now:</h3>
       <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
@@ -72,7 +72,7 @@ describe("CLI Nested Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
+      <h3>Here is what I can do right now:</h3>
       <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);
@@ -84,7 +84,7 @@ describe("CLI Nested Suggest", () => {
     cli.suggest();
     expect(cli.getState().output).toMatchInlineSnapshot(`
       "
-      <h2>Did you mean?</h2>
+      <h3>Here is what I can do right now:</h3>
       <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
       "
     `);

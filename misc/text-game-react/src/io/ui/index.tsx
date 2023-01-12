@@ -10,7 +10,19 @@ const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement
 );
 
+const getSpeech = (state: IState) => {
+  speechSynthesis.cancel();
+  let speakData = new SpeechSynthesisUtterance();
+  speakData.lang = "en";
+  speakData.volume = 1; // From 0 to 1
+  speakData.rate = 5; // From 0.1 to 10
+  speakData.pitch = 2; // From 0 to 2
+  speakData.text = state.output;
+  speechSynthesis.speak(speakData);
+};
+
 export const presentationIO = (state: IState) => {
+  getSpeech(state);
   root.render(
     <React.StrictMode>
       <App state={state} />

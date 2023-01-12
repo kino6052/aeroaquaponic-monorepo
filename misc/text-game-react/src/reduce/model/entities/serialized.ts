@@ -19,6 +19,7 @@ export class SerializedHelper {
     this.__entities[entity.id] = entity;
     if (parentId) {
       const parent = this.__entities[parentId];
+      if (parent.entities.includes(entity.id)) return;
       parent.entities = [...parent.entities, entity.id];
     }
   }

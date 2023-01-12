@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { BehaviorSubject } from "rxjs";
 import { Id, IState } from "../../../bridge";
 import { EventWrapper } from "../utils/EventWrapper";
@@ -14,7 +14,7 @@ window.setInterval(() => {
 const TypeWriter: React.FC<{ input: string }> = (props) => {
   const [count, setCount] = useSharedState(TypeWriterSubject);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setCount(0);
   }, []);
 
@@ -28,16 +28,15 @@ const TypeWriter: React.FC<{ input: string }> = (props) => {
 export const ChatView = (props: IState) => {
   const { input, history, output } = props;
   const [key, setKey] = useState(Math.random());
-
   const ref = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    setKey(Math.random());
+  }, [props.output]);
 
   useEffect(() => {
     ref.current?.scrollIntoView();
   }, [ref, history]);
-
-  useEffect(() => {
-    setKey(Math.random());
-  }, [props.history]);
 
   return (
     <div className="container">

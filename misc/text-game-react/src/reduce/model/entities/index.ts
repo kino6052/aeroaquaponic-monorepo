@@ -1,6 +1,5 @@
-import { IState, SerializedEntity } from "../../../bridge";
+import { EntityId, SerializedEntity } from "../../../bridge";
 import { Entity } from "../global";
-import { EntityId } from "./entities";
 import { getInteractionById } from "./interactions";
 
 export const deserializeEntity = (

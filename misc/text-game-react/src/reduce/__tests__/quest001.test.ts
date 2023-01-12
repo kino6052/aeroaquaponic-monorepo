@@ -15,7 +15,7 @@ describe("Quest 001", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul><li>Learn about self-sufficiency</li></ul>"`
+      `"<h3>Todo</h3><p>I had a look at my todo and here were the items:</p><p>Here is what's left: </p><ul><li>Go to the internet to visit the site and learn about self-sufficiency</li></ul>"`
     );
   });
 
@@ -26,9 +26,9 @@ describe("Quest 001", () => {
       getEnterAction(),
     ]);
     expect(selectInput(resultingState)).toEqual("");
-    expect(selectHistory(resultingState).length).toMatchInlineSnapshot(`2`);
+    expect(selectHistory(resultingState).length).toMatchInlineSnapshot(`1`);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h2>self-sufficiency.com</h2><p>You've read the website and it seemed very reasonable</p>"`
+      `"<h3>self-sufficiency.com</h3><p>You've read the website and it seemed very reasonable</p>"`
     );
   });
 
@@ -41,7 +41,7 @@ describe("Quest 001", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h2>Todo</h2><p>You are getting closer to your goal.</p><p>Here is what's left: </p><ul><li>Go to the internet and find out about land</li></ul>"`
+      `"<h3>Todo</h3><p>I had a look at my todo and here were the items:</p><p>Here is what's left: </p><ul><li>go to the internet and find out about land</li></ul>"`
     );
   });
 
@@ -54,7 +54,7 @@ describe("Quest 001", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h2>self-sufficiency.com</h2><p>This is a website about self-sufficiency</p>"`
+      `"<h3>self-sufficiency.com</h3><p>This is a website about self-sufficiency</p>"`
     );
   });
 });

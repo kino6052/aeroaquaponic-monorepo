@@ -3,7 +3,8 @@ export const templateParser = (str: string, vars: Record<string, string>) =>
 
 export const processItem = (strings: string[], fn: (s: string) => string) =>
   strings.reduce((acc, v) => acc + fn(v), "");
-export const makeHeader = (s: string) => `<h2>${s}</h2>`;
+export const makePrimaryHeading = (s: string) => `<h2>${s}</h2>`;
+export const makeSecondaryHeading = (s: string) => `<h3>${s}</h3>`;
 export const makeParagraph = (s: string) => `<p>${s}</p>`;
 export const makeBold = (s: string) => `<b>${s}</b>`;
 export const makeItalic = (s: string) => `<i>${s}</i>`;
