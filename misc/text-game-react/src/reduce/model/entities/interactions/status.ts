@@ -46,5 +46,5 @@ export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
   )}
   ${makeParagraph(
     `The politics seem to be inclined toward a ${spectrum} end of spectrum.`
-  )}${makeParagraph(`Generally, this is how I feel. ${description}.`)}`;
+  )}${makeParagraph(`This is how I feel in general--${description}.`)}`;
 };

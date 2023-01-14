@@ -33,7 +33,7 @@ describe("Game", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li></ul>
       "
     `);
   });
@@ -72,7 +72,7 @@ describe("Game", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li></ul>
       "
     `);
   });
@@ -103,7 +103,7 @@ describe("Game", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li></ul>
       "
     `);
   });
@@ -134,7 +134,7 @@ describe("Game", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li></ul>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li></ul>
       "
     `);
   });
@@ -145,8 +145,8 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "<h3>Status</h3><p>Today is Monday 2020/1/1.</p><p>It's winter.</p> <p>The temperature is -10 degrees celsius.</p><p>I currently live in Disturbipolis, Disturbistan, Disturbium.</p><p>Regarding the economy, the inflation rate is currently 7 percent and the market is pretty cold.</p>
-        <p>The politics seem to be inclined toward a liberal end of spectrum.</p><p>Generally, this is how I feel. I feel like I'm on track to making the self-sufficient life-style possible.</p>"
+      "<h3>Status</h3><p>Today is Monday 2020/1/1.</p><p>The time is 9:23.</p><p>It's winter.</p> <p>The temperature is -10 degrees celsius.</p><p>I currently live in Disturbipolis, Disturbistan, Disturbium.</p><p>I currently work as clerk and make $2000 per month while spending on average $1600 per month.</p><p>Regarding the economy, the inflation rate is currently 7 percent and the market is pretty cold.</p>
+        <p>The politics seem to be inclined toward a liberal end of spectrum.</p><p>This is how I feel in general--I feel like I'm on track to making the self-sufficient life-style possible.</p>"
     `);
   });
 });
