@@ -37,6 +37,7 @@ export enum EntityId {
   TodoQuest001Task002FindOutAboutLand = "TodoQuest001Task002FindOutAboutLand",
   LandWebsite001 = "LandWebsite001",
   TodoQuest001Task003CallRealtor = "TodoQuest001Task003CallRealtor",
+  Phone = "Phone",
 }
 
 export interface SerializedEntity {
@@ -68,6 +69,7 @@ export const initialState: IState = {
   entities: [
     EntityId.World,
     EntityId.Status,
+    EntityId.Phone,
     EntityId.Help,
     EntityId.Todo,
     EntityId.Internet,

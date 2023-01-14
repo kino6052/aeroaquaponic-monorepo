@@ -30,7 +30,7 @@ export class Entity {
   }
 
   interact(cli: ReturnType<typeof getCLI>): string {
-    return `${makeSecondaryHeading(`Command: ${this.__name}`)}${makeParagraph(
+    return `${makeSecondaryHeading(this.__name)}${makeParagraph(
       this.__description
     )}`;
   }

@@ -17,6 +17,7 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
           EntityId.Status,
           EntityId.Todo,
           EntityId.Internet,
+          EntityId.Phone,
         ],
       },
       [EntityId.Clear]: {
@@ -33,6 +34,14 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
         type: "cli",
         name: "help",
         description: "if I forget the sense of direction, this comes in handy",
+        entities: [],
+        meta: {},
+      },
+      [EntityId.Phone]: {
+        id: EntityId.Phone,
+        type: "misc",
+        name: "phone",
+        description: "something I use when need to contact somebody",
         entities: [],
         meta: {},
       },

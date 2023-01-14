@@ -7,6 +7,27 @@ export interface StatusMeta {
     month: number;
     year: number;
     dow: string;
+    time: {
+      hours: number;
+      minutes: number;
+      seconds: number;
+    };
+  };
+  finances: {
+    occupation: {
+      title: string;
+      salary: number; // monthly
+    };
+    accounts: {
+      type: "checking" | "savings";
+      name: string;
+      amount: number;
+    }[];
+    // monthly
+    expenses: {
+      type: string;
+      amount: number;
+    }[];
   };
   weather: {
     season: "winter" | "spring" | "summer" | "fall";
@@ -52,6 +73,38 @@ export const getStatus = () =>
         month: 1,
         year: 2020,
         dow: "Monday",
+        time: {
+          hours: 9,
+          minutes: 23,
+          seconds: 55,
+        },
+      },
+      finances: {
+        accounts: [
+          {
+            type: "checking",
+            amount: 1234,
+            name: "JP Cookie",
+          },
+        ],
+        occupation: {
+          salary: 2000,
+          title: "clerk",
+        },
+        expenses: [
+          {
+            type: "housing",
+            amount: 1000,
+          },
+          {
+            type: "groceries",
+            amount: 300,
+          },
+          {
+            type: "car",
+            amount: 300,
+          },
+        ],
       },
       weather: {
         season: "winter",

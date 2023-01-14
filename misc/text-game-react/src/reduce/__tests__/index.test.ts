@@ -145,8 +145,8 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "<h3>Status</h3><p><b>Date</b>: 2020/1/1</p><p><b>Season</b>: winter</p><p><b>Temperature</b>: -10 celsius</p><p><b>Location</b>: Disturbipolis, Disturbistan, Disturbium</p><p><b>Economics</b>: Inflation Rate: 7; Sentiment: cold</p>
-        <p><b>Politics</b>: Spectrum: liberal</p><p><b>Description</b>: You are looking for ways to change the course of your life for better</p>"
+      "<h3>Status</h3><p>Today is Monday 2020/1/1.</p><p>It's winter.</p> <p>The temperature is -10 degrees celsius.</p><p>I currently live in Disturbipolis, Disturbistan, Disturbium.</p><p>Regarding the economy, the inflation rate is currently 7 percent and the market is pretty cold.</p>
+        <p>The politics seem to be inclined toward a liberal end of spectrum.</p><p>Generally, this is how I feel. I feel like I'm on track to making the self-sufficient life-style possible.</p>"
     `);
   });
 });
