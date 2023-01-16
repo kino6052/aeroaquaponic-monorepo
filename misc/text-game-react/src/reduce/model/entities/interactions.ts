@@ -37,13 +37,15 @@ export const InteractionMap: Record<
   [EntityId.Phone]: (cli) => {
     const state = cli.getState();
     const items = state.entities[EntityId.Phone].entities.map(
-      (v) => state.entities[v].description
+      (v) => `${state.entities[v].name}: ${state.entities[v].description}`
     );
     const description =
       items.length > 0
-        ? items.join(";\n")
-        : "Looked at my phone book. Don't need to contact anybody at this time.";
-    return description;
+        ? makeList("", items)
+        : makeParagraph(
+            "Looked at my phone book. Don't need to contact anybody at this time."
+          );
+    return `${makeSecondaryHeading("Phone")}${description}`;
   },
   [EntityId.Todo]: (cli) => {
     const state = cli.getState();

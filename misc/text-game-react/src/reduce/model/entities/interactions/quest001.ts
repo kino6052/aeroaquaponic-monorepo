@@ -80,7 +80,7 @@ export default {
           },
           size: 4,
           price: 18600,
-          phone: "(444) 333-2211",
+          phone: "444-333-2211",
           description:
             "There is a pretty large plot of land in {{city}}. It has {{size}} acres and is relatively cheap. It's {{price}} dollars. Not that I have the money, but at least it seems doable... I added the realtor's phone number to my contacts",
         },
@@ -91,7 +91,7 @@ export default {
           },
           size: 2,
           price: 12900,
-          phone: "(111) 222-3344",
+          phone: "111-222-3344",
           description:
             "Here is another piece of land I found on the website. It's located in {{city}}. It is smaller--{{size}} acres. This one is going to cost me {{price}} dollars. I added the realtor's phone number to my contacts",
         },
