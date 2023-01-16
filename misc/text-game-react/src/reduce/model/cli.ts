@@ -58,6 +58,7 @@ class CommandLineInterface {
 
   interact(state: IState, cli: CommandLineInterface) {
     if (!this.__world) return;
+    const wasSuggesting = this.__suggestMode;
     const inputParser = new InputParser(this.__world);
     const command = this.__input.trim();
     if (!command) {
@@ -71,6 +72,7 @@ class CommandLineInterface {
       this.suggest();
       return;
     }
+    if (!this.__suggestMode) this.updateHistory();
     this.__suggestMode = false;
     const exact = entities.slice(-1)[0];
     const result = exact.interact(cli);

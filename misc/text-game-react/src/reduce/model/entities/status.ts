@@ -48,6 +48,10 @@ export interface StatusMeta {
     inflation: number;
     sentiment: "hot" | "cold";
   };
+  personal: {
+    mood: "angry" | "sad" | "hopeful" | "happy" | "anxious";
+    energy: number;
+  };
   description: string;
 }
 
@@ -124,6 +128,10 @@ export const getStatus = () =>
       economics: {
         inflation: 7,
         sentiment: "cold",
+      },
+      personal: {
+        energy: 79,
+        mood: "hopeful",
       },
       description:
         "I feel like I'm on track to making the self-sufficient life-style possible",

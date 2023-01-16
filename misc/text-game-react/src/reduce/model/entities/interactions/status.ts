@@ -26,13 +26,14 @@ export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
       expenses,
       occupation: { salary, title },
     },
+    personal: { energy, mood },
     description,
   } = cli.getState().entities[EntityId.Status].meta as unknown as StatusMeta;
   return `${makeSecondaryHeading("Status")}${makeParagraph(
-    `Today is ${dow} ${year}/${month}/${day}.`
-  )}${makeParagraph(`The time is ${hours}:${minutes}.`)}${makeParagraph(
-    `It's ${season}.`
-  )} ${makeParagraph(
+    description
+  )}${makeParagraph(`Today is ${dow} ${year}/${month}/${day}.`)}${makeParagraph(
+    `The time is ${hours}:${minutes}.`
+  )}${makeParagraph(`It's ${season}.`)} ${makeParagraph(
     `The temperature is ${degrees} degrees ${temperatureType}.`
   )}${makeParagraph(
     `I currently live in ${city}, ${country}, ${continent}.`
@@ -46,5 +47,9 @@ export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
   )}
   ${makeParagraph(
     `The politics seem to be inclined toward a ${spectrum} end of spectrum.`
-  )}${makeParagraph(`This is how I feel in general--${description}.`)}`;
+  )}${makeParagraph(
+    `I feel pretty ${mood} and have relatively ${
+      energy > 60 ? "high" : "low"
+    } energy today.`
+  )}`;
 };
