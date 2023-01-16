@@ -72,4 +72,46 @@ describe("Quest 001", () => {
       `"<h3>self-sufficiency.com</h3><p>I really dug the ideas outlined in the website about self-sufficiency.</p><p>The concept of forming a unit of self-sufficiency really resonated with me.</p><p>Now I just need to follow my todo list</p>"`
     );
   });
+
+  it("should go to buy land", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("internet self-sufficiency"),
+      getEnterAction(),
+      getChangeAction("internet land-website"),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h3>buy-land.com</h3><p>Here are some land items I found interesting:</p><ul><li>There is a pretty large plot of land in Stupidale. It has 4 acres and is relatively cheap. It's 18600 dollars. Not that I have the money, but at least it seems doable... I added the realtor's phone number to my contacts</li><li>Here is another piece of land I found on the website. It's located in Cookie. It is smaller--2 acres. This one is going to cost me 12900 dollars. I added the realtor's phone number to my contacts</li></ul>"`
+    );
+  });
+
+  it("should not have phone numbers at first", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("phone"),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"Looked at my phone book. Don't need to contact anybody at this time."`
+    );
+  });
+
+  it("should have phone numbers after visiting the website", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("internet self-sufficiency"),
+      getEnterAction(),
+      getChangeAction("internet land-website"),
+      getEnterAction(),
+      getChangeAction("phone"),
+      getSuggestAction(),
+    ]);
+    expect(selectInput(resultingState)).toMatchSnapshot();
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+      "
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><i>phone</i> <b>(444) 333-2211</b>: Phone number listed for the property located in Stupidale that costs $18600.</li><li><i>phone</i> <b>(111) 222-3344</b>: Phone number listed for the property located in Cookie that costs $12900.</li></ul>
+      "
+    `);
+  });
 });

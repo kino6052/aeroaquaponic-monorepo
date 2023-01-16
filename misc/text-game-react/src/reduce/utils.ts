@@ -1,11 +1,12 @@
-export const templateParser = (str: string, vars: Record<string, string>) =>
-  str.replaceAll(/{{(\w+)}}/g, (_, match: string) => vars[match]);
+export const templateParser = (str: string, vars: Record<string, unknown>) =>
+  str.replaceAll(/{{(\w+)}}/g, (_, match: string) => String(vars[match] || ""));
 
 export const processItem = (strings: string[], fn: (s: string) => string) =>
   strings.reduce((acc, v) => acc + fn(v), "");
 export const makePrimaryHeading = (s: string) => `<h2>${s}</h2>`;
 export const makeSecondaryHeading = (s: string) => `<h3>${s}</h3>`;
 export const makeParagraph = (s: string) => `<p>${s}</p>`;
+export const makeDiv = (s: string) => `<div>${s}</div>`;
 export const makeBold = (s: string) => `<b>${s}</b>`;
 export const makeItalic = (s: string) => `<i>${s}</i>`;
 export const makeListItem = (s: string) => `<li>${s}</li>`;
