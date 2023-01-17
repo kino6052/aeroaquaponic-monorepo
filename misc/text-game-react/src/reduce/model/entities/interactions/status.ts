@@ -43,6 +43,11 @@ export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
       0
     )} per month.`
   )}${makeParagraph(
+    `I currently have a total of $${accounts.reduce(
+      (sum, v) => sum + v.amount,
+      0
+    )} on my accounts.`
+  )}${makeParagraph(
     `Regarding the economy, the inflation rate is currently ${inflation} percent and the market is pretty ${sentiment}.`
   )}
   ${makeParagraph(

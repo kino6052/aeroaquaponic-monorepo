@@ -1,3 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Quest 001 should call phone numbers after visiting the website 1`] = `""`;
+
 exports[`Quest 001 should have phone numbers after visiting the website 1`] = `"phone"`;

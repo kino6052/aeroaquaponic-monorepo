@@ -7,10 +7,10 @@ import {
   makeBold,
 } from "../../utils";
 import { getCLI } from "../cli";
-import quest001 from "./interactions/quest001";
+import { getQuest001Interactions } from "./interactions/quest001";
 import { statusInteraction } from "./interactions/status";
 
-export const InteractionMap: Record<
+const interactionMap: Record<
   string,
   (cli: ReturnType<typeof getCLI>) => string
 > = {
@@ -62,8 +62,9 @@ export const InteractionMap: Record<
       "I had a look at my todo and here were the items:"
     )}${message}`;
   },
-  [EntityId.SelfSufficiencyWebsite]: quest001.SelfSufficiencyWebsite,
-  [EntityId.LandWebsite001]: quest001.LandWebsite001,
+  [EntityId.SelfSufficiencyWebsite]:
+    getQuest001Interactions().SelfSufficiencyWebsite,
+  [EntityId.LandWebsite001]: getQuest001Interactions().LandWebsite001,
   [EntityId.TodoQuest001Task001LearnAboutSelfSufficiency]: () =>
     `${makeSecondaryHeading(
       "Objective: Learn About Self-sufficiency"
@@ -74,9 +75,22 @@ export const InteractionMap: Record<
       ],
       makeParagraph
     )}`,
+  [EntityId.Mom]: (cli) => {
+    const response =
+      getQuest001Interactions()[EntityId.Mom](cli) ||
+      makeParagraph("Might need to call mom at some point");
+    return `${makeSecondaryHeading("Call Mom")}${response}`;
+  },
+  [EntityId.Friend001]: (cli) => {
+    return "Might need to call Tom at some point.";
+  },
+};
+
+export const getInteractionMap = () => {
+  return interactionMap;
 };
 
 export const getInteractionById = (id: string) => {
-  const interaction = InteractionMap[id];
+  const interaction = getInteractionMap()[id];
   return interaction;
 };

@@ -93,7 +93,7 @@ describe("Quest 001", () => {
     ]);
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
-      `"<h3>Phone</h3><p>Looked at my phone book. Don't need to contact anybody at this time.</p>"`
+      `"<h3>Phone</h3><ul><li>Mom: my mother</li><li>Tom: my best friend</li></ul>"`
     );
   });
 
@@ -110,8 +110,26 @@ describe("Quest 001", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><i>phone</i> <b>444-333-2211</b>: Phone number listed for the property located in Stupidale that costs $18600.</li><li><i>phone</i> <b>111-222-3344</b>: Phone number listed for the property located in Cookie that costs $12900.</li></ul>
+      <ul><li><i>phone</i> <b>Mom</b>: my mother</li><li><i>phone</i> <b>Tom</b>: my best friend</li><li><i>phone</i> <b>444-333-2211</b>: Phone number listed for the property located in Stupidale that costs $18600.</li><li><i>phone</i> <b>111-222-3344</b>: Phone number listed for the property located in Cookie that costs $12900.</li></ul>
       "
     `);
+  });
+
+  it("should call phone numbers after visiting the website", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("internet self-sufficiency"),
+      getEnterAction(),
+      getChangeAction("internet land-website"),
+      getEnterAction(),
+      getChangeAction("phone"),
+      getSuggestAction(),
+      getChangeAction("phone 444-"),
+      getSuggestAction(),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toMatchSnapshot();
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<p>I called, but nobody responded.</p>"`
+    );
   });
 });

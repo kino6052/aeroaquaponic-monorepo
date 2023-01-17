@@ -1,4 +1,5 @@
 import { BehaviorSubject, Subject } from "rxjs";
+import { getCLI } from "./reduce/model/cli";
 import { getEntityMap } from "./reduce/model/entities/entities";
 import { outputs } from "./reduce/outputs";
 
@@ -23,7 +24,13 @@ export interface IBrowser {
   };
 }
 
-export type TEntityType = "world" | "quest" | "objective" | "cli" | "misc";
+export type TEntityType =
+  | "world"
+  | "quest"
+  | "objective"
+  | "cli"
+  | "misc"
+  | "person";
 
 export enum EntityId {
   World = "World",
@@ -38,6 +45,8 @@ export enum EntityId {
   LandWebsite001 = "LandWebsite001",
   TodoQuest001Task003CallRealtor = "TodoQuest001Task003CallRealtor",
   Phone = "Phone",
+  Friend001 = "Friend001",
+  Mom = "Mom",
 }
 
 export interface SerializedEntity {
@@ -75,6 +84,8 @@ export const initialState: IState = {
     EntityId.Internet,
     EntityId.SelfSufficiencyWebsite,
     EntityId.TodoQuest001Task001LearnAboutSelfSufficiency,
+    EntityId.Friend001,
+    EntityId.Mom,
   ].reduce((acc, id) => ({ ...acc, [id]: getEntityMap()[id] }), {}),
 };
 

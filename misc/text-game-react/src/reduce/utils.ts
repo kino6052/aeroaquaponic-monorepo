@@ -50,3 +50,49 @@ export class Utils {
       .map((a, i, b) => `${i && "-"}${getRandomNumbers(length)}`)
       .join("");
 }
+
+export const updateIntervals = (
+  update: { i: number; value: number },
+  nums: { value: number; interval: number }[]
+) => {
+  const DEFAULT_INTERVAL = 100;
+  return nums.reduce((nums, _, i) => {
+    const { value, interval = DEFAULT_INTERVAL } = nums[i];
+    const sum = value + (i === update.i ? update.value : 0);
+    const remainder = sum % interval;
+
+    const whole = Math.floor(sum / interval);
+
+    const hasItem = !!nums[update.i];
+    if (!hasItem) return nums;
+
+    const preSlice = nums.slice(0, i);
+    const postSlice = nums.slice(i + 2);
+
+    if (whole === 0)
+      return [
+        ...preSlice,
+        {
+          value: sum,
+          interval,
+        },
+        ...nums.slice(i + 1),
+      ];
+
+    return [
+      ...preSlice,
+      {
+        value: remainder,
+        interval,
+      },
+      {
+        value: (nums[i + 1]?.value || 0) + whole,
+        interval: nums[i + 1]?.interval || DEFAULT_INTERVAL,
+      },
+      ...postSlice,
+    ].filter((v) => !!v);
+  }, nums);
+};
+
+export const zip = <T1, T2>(a1: T1[], a2: T2[]) =>
+  a1.map((_, i) => [a1[i], a2[i]]);

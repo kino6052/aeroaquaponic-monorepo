@@ -1,10 +1,15 @@
 import { SerializedWorld } from ".";
-import { SerializedEntity } from "../../../bridge";
+import { EntityId, SerializedEntity } from "../../../bridge";
+import { getEntityMap } from "./entities";
 
 export class SerializedHelper {
   private __entities: SerializedWorld = {};
   constructor(entities: SerializedWorld) {
     this.__entities = entities;
+  }
+
+  getById(id: string) {
+    return this.__entities[id];
   }
 
   getChildren(id: string) {
@@ -19,18 +24,28 @@ export class SerializedHelper {
     this.__entities[entity.id] = entity;
     if (parentId) {
       const parent = this.__entities[parentId];
+      const entityMap = getEntityMap();
+      if (!entityMap) return;
+      const hasEntity = entityMap[entity.id as EntityId];
+      if (!hasEntity) {
+        entityMap[entity.id as EntityId] = entity;
+      }
       if (parent.entities.includes(entity.id)) return;
       parent.entities = [...parent.entities, entity.id];
     }
   }
 
+  update(id: string, entity: SerializedEntity) {
+    if (!this.__entities[id]) return;
+    this.__entities[id] = {
+      ...entity,
+      id,
+    };
+  }
+
   remove(entity: SerializedEntity) {
     if (!this.__entities[entity.id]) return;
-    const parentIds = this.getParents(entity.id);
-    parentIds.forEach((parentId) => {
-      const parent = this.__entities[parentId];
-      parent.entities = parent.entities.filter((id) => id !== entity.id);
-    });
+    this.removeById(entity.id);
   }
 
   removeById(id: string) {

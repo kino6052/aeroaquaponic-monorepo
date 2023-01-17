@@ -145,7 +145,7 @@ describe("Game", () => {
       getEnterAction(),
     ]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
-      "<h3>Status</h3><p>I feel like I'm on track to making the self-sufficient life-style possible</p><p>Today is Monday 2020/1/1.</p><p>The time is 9:23.</p><p>It's winter.</p> <p>The temperature is -10 degrees celsius.</p><p>I currently live in Disturbipolis, Disturbistan, Disturbium.</p><p>I currently work as clerk and make $2000 per month while spending on average $1600 per month.</p><p>Regarding the economy, the inflation rate is currently 7 percent and the market is pretty cold.</p>
+      "<h3>Status</h3><p>I feel like I'm on track to making the self-sufficient life-style possible</p><p>Today is Monday 2020/1/1.</p><p>The time is 9:23.</p><p>It's winter.</p> <p>The temperature is -10 degrees celsius.</p><p>I currently live in Disturbipolis, Disturbistan, Disturbium.</p><p>I currently work as clerk and make $2000 per month while spending on average $1600 per month.</p><p>I currently have a total of $1234 on my accounts.</p><p>Regarding the economy, the inflation rate is currently 7 percent and the market is pretty cold.</p>
         <p>The politics seem to be inclined toward a liberal end of spectrum.</p><p>I feel pretty hopeful and have relatively high energy today.</p>"
     `);
   });

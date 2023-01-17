@@ -1,7 +1,16 @@
-import { IState, TEntityType } from "../../bridge";
-import { makeSecondaryHeading, makeParagraph, Utils } from "../utils";
+// @ts-ignore
+import { clone } from "ramda";
+import { EntityId, TEntityType } from "../../bridge";
+import {
+  makeParagraph,
+  makeSecondaryHeading,
+  updateIntervals,
+  Utils,
+} from "../utils";
 import { getCLI } from "./cli";
-import { deserialize, SerializedWorld } from "./entities";
+import { deserialize, serialize, SerializedWorld } from "./entities";
+import { SerializedHelper } from "./entities/serialized";
+import { getStatusMeta } from "./entities/utils";
 
 export class Entity {
   private __id = Utils.generateId();
@@ -30,6 +39,41 @@ export class Entity {
   }
 
   interact(cli: ReturnType<typeof getCLI>): string {
+    const meta = getStatusMeta(cli);
+    if (cli.world) {
+      const serialized = serialize(cli.world);
+      const helper = new SerializedHelper(serialized);
+      const time = meta.date?.time;
+      if (meta.date && time) {
+        const keys = Object.keys(time);
+        const entries = Object.entries(time)
+          .reverse()
+          .map((v, i) => ({
+            value: v[1],
+            interval: i === 2 ? 24 : 60,
+          }));
+        const resultTime = updateIntervals({ i: 1, value: 10 }, entries)
+          .map((v) => v.value)
+          .reverse()
+          .reduce(
+            (acc, v, i) => ({
+              ...acc,
+              [keys[i]]: v,
+            }),
+            {}
+          );
+        const status = helper.getById(EntityId.Status);
+        console.warn(status.meta);
+        if (status && status.meta) {
+          const __status = clone(status);
+          __status.meta.date.time = resultTime;
+          console.warn(__status.meta);
+          helper.update(EntityId.Status, { ...__status });
+          cli.update({ entities: helper.entities });
+        }
+      }
+    }
+
     return `${makeSecondaryHeading(this.__name)}${makeParagraph(
       this.__description
     )}`;

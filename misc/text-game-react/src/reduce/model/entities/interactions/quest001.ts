@@ -1,8 +1,6 @@
 import { serialize } from "..";
 import { EntityId } from "../../../../bridge";
 import {
-  makeBold,
-  makeDiv,
   makeList,
   makeParagraph,
   makeSecondaryHeading,
@@ -11,9 +9,22 @@ import {
 } from "../../../utils";
 import { getCLI } from "../../cli";
 import { getEntityMap } from "../entities";
+import { getInteractionMap } from "../interactions";
 import { SerializedHelper } from "../serialized";
+import { getStatusMeta } from "../utils";
 
-export default {
+export const getHasCompletedTask001 = (cli: ReturnType<typeof getCLI>) => {
+  if (!cli.world) return false;
+  const serialized = serialize(cli.world);
+  const helper = new SerializedHelper(serialized);
+  const hasTask001 = helper.hasChild(
+    EntityId.Todo,
+    EntityId.TodoQuest001Task001LearnAboutSelfSufficiency
+  );
+  return !hasTask001;
+};
+
+export const getQuest001Interactions = () => ({
   [EntityId.SelfSufficiencyWebsite]: (cli: ReturnType<typeof getCLI>) => {
     if (!cli.world) return "...";
     const serialized = serialize(cli.world);
@@ -69,6 +80,7 @@ export default {
         price: number;
         description: string;
         phone: string;
+        interact: (cli: ReturnType<typeof getCLI>) => string;
       }[];
     }
     website.meta = {
@@ -83,6 +95,8 @@ export default {
           phone: "444-333-2211",
           description:
             "There is a pretty large plot of land in {{city}}. It has {{size}} acres and is relatively cheap. It's {{price}} dollars. Not that I have the money, but at least it seems doable... I added the realtor's phone number to my contacts",
+          interact: (cli: ReturnType<typeof getCLI>) =>
+            makeParagraph("I called, but nobody responded."),
         },
         {
           address: {
@@ -94,6 +108,8 @@ export default {
           phone: "111-222-3344",
           description:
             "Here is another piece of land I found on the website. It's located in {{city}}. It is smaller--{{size}} acres. This one is going to cost me {{price}} dollars. I added the realtor's phone number to my contacts",
+          interact: (cli: ReturnType<typeof getCLI>) =>
+            makeParagraph("I called, but nobody responded."),
         },
       ],
     };
@@ -106,9 +122,10 @@ export default {
         EntityId.Todo
       );
       (website.meta as unknown as WebsiteMeta).properties.forEach((v) => {
+        const id = v.phone;
         helper.add(
           {
-            id: v.phone,
+            id,
             description: `Phone number listed for the property located in ${v.address.city} that costs $${v.price}.`,
             entities: [],
             meta: {},
@@ -117,6 +134,7 @@ export default {
           },
           EntityId.Phone
         );
+        getInteractionMap()[id] = v.interact;
       });
       helper.add(getEntityMap()[EntityId.LandWebsite001]!, EntityId.Internet);
       cli.update({ entities: helper.entities });
@@ -130,4 +148,24 @@ export default {
       )
     )}`;
   },
-};
+  [EntityId.Mom]: (cli: ReturnType<typeof getCLI>) => {
+    const hasCompletedTask001 = getHasCompletedTask001(cli);
+    const meta = getStatusMeta(cli);
+    const isNewYear = [meta.date?.month, meta.date?.day].every((v) => v === 1);
+    if (!hasCompletedTask001) {
+      return makeParagraph(
+        "I thought about giving my mom a call, but will do that a bit later."
+      );
+    }
+    if (hasCompletedTask001) {
+      return processItem(
+        [
+          "I told my mom about the website and the idea about self-sufficiency.",
+          "It didn't seem to register with her for some reason.",
+          isNewYear ? "I gave her my best wishes for New Year." : "",
+        ].filter((v) => !!v),
+        makeParagraph
+      );
+    }
+  },
+});
