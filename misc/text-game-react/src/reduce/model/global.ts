@@ -35,7 +35,19 @@ export class Entity {
     this.__description = description;
     this.__entities = entities || [];
     this.__meta = meta || {};
-    if (interact) this.interact = interact;
+    if (interact) {
+      this.interact = (cli: ReturnType<typeof getCLI>) => {
+        const { increment } = this.__meta;
+        const __increment = increment as
+          | { i: number; value: number }
+          | undefined;
+        this.updateTime(cli, {
+          i: typeof __increment?.i === "number" ? __increment?.i : 1,
+          value: __increment?.value || 1,
+        });
+        return interact(cli);
+      };
+    }
   }
 
   updateTime(
