@@ -38,7 +38,10 @@ export class Entity {
     if (interact) this.interact = interact;
   }
 
-  interact(cli: ReturnType<typeof getCLI>): string {
+  updateTime(
+    cli: ReturnType<typeof getCLI>,
+    update: { i: number; value: number } = { i: 1, value: 10 }
+  ) {
     const meta = getStatusMeta(cli);
     if (cli.world) {
       const serialized = serialize(cli.world);
@@ -52,7 +55,7 @@ export class Entity {
             value: v[1],
             interval: i === 2 ? 24 : 60,
           }));
-        const resultTime = updateIntervals({ i: 1, value: 10 }, entries)
+        const resultTime = updateIntervals(update, entries)
           .map((v) => v.value)
           .reverse()
           .reduce(
@@ -63,7 +66,6 @@ export class Entity {
             {}
           );
         const status = helper.getById(EntityId.Status);
-        console.warn(status.meta);
         if (status && status.meta) {
           const __status = clone(status);
           __status.meta.date.time = resultTime;
@@ -73,7 +75,9 @@ export class Entity {
         }
       }
     }
+  }
 
+  interact(cli: ReturnType<typeof getCLI>): string {
     return `${makeSecondaryHeading(this.__name)}${makeParagraph(
       this.__description
     )}`;
