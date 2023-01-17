@@ -78,6 +78,7 @@ export class Entity {
   }
 
   interact(cli: ReturnType<typeof getCLI>): string {
+    this.updateTime(cli);
     return `${makeSecondaryHeading(this.__name)}${makeParagraph(
       this.__description
     )}`;
