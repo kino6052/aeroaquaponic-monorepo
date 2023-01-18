@@ -81,7 +81,6 @@ export class Entity {
         if (status && status.meta) {
           const __status = clone(status);
           __status.meta.date.time = resultTime;
-          console.warn(__status.meta);
           helper.update(EntityId.Status, { ...__status });
           cli.update({ entities: helper.entities });
         }

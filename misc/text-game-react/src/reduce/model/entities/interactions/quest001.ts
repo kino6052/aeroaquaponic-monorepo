@@ -72,6 +72,7 @@ export const getQuest001Interactions = () => ({
     const website = getEntityMap()[EntityId.TodoQuest001Task003CallRealtor]!;
     interface WebsiteMeta {
       properties: {
+        id: string;
         address: {
           city: string;
           country: string;
@@ -86,6 +87,7 @@ export const getQuest001Interactions = () => ({
     website.meta = {
       properties: [
         {
+          id: "property001",
           address: {
             city: "Stupidale",
             country: "Disturbistan",
@@ -95,10 +97,14 @@ export const getQuest001Interactions = () => ({
           phone: "444-333-2211",
           description:
             "There is a pretty large plot of land in {{city}}. It has {{size}} acres and is relatively cheap. It's {{price}} dollars. Not that I have the money, but at least it seems doable... I added the realtor's phone number to my contacts",
-          interact: (cli: ReturnType<typeof getCLI>) =>
-            makeParagraph("I called, but nobody responded."),
+          interact: (cli: ReturnType<typeof getCLI>) => {
+            return makeParagraph(
+              "I called, and asked whether the property still available. I asked for some advice. The realtor was pretty friendly. Now I need to go see the land."
+            );
+          },
         },
         {
+          id: "property002",
           address: {
             city: "Cookie",
             country: "Disturbistan",
@@ -133,6 +139,17 @@ export const getQuest001Interactions = () => ({
             type: "misc",
           },
           EntityId.Phone
+        );
+        helper.add(
+          {
+            id: `visit-${v.id}`,
+            description: `visit the property located in ${v.address.city} that costs $${v.price}.`,
+            entities: [],
+            meta: {},
+            name: `visit-${v.address.city}-${v.price}`,
+            type: "misc",
+          },
+          EntityId.Todo
         );
         getInteractionMap()[id] = v.interact;
       });

@@ -90,7 +90,7 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
         id: EntityId.TodoQuest001Task003CallRealtor,
         type: "objective",
         name: "call-realtor",
-        description: "call realtor to schedule a land visit",
+        description: "Optional: call realtor to schedule a land visit",
         entities: [],
         meta: {},
       },
