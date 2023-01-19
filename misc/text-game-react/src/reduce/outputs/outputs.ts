@@ -1,3 +1,4 @@
+import { getCLI } from "../model/cli";
 import { getFormattedDate } from "../model/entities/status";
 import {
   makeBold,
@@ -24,10 +25,10 @@ ${makeParagraph("You entered an unknown command")}
 `;
 
 export const getInitialOutput = () => `
-${makePrimaryHeading(getFormattedDate())}
+${makePrimaryHeading("[2020/01/01 Monday]")}
+${makeSecondaryHeading("Happy New Year!")}
 ${processItem(
   [
-    `Happy New Year!`,
     `I woke up this morning with an uneasy feeling of anticipation, knowing that yet another day full of meaningless work and routine was about to begin. As I opened my eyes, I couldn't help but feel trapped in a rat race that I desperately wanted to escape from. I lay in bed for a moment, staring blankly at the ceiling and thinking about all the alternatives that could break me out of this strange cycle.`,
     `Yesterday, as I was aimlessly browsing the web, I stumbled across a promising resource that could potentially help me make the escape I've been dreaming of. The website was about self-sufficiency and it caught my attention instantly. I spent hours reading through it, and I couldn't help but feel a spark of hope.`,
     `I got out of bed with a sigh, my feet hitting the cold floor. I dragged myself to the bathroom, splashed some water on my face, and got dressed for work. As I made my way to the kitchen, I couldn't help but think about how meaningless this day was going to be. I cursed myself for not having the courage to make a change and break out of this cycle. The smell of coffee and toast filled my nostrils as I sat down at the table, but it did little to lift my spirits. I felt empty and unfulfilled, just like every other day before.`,

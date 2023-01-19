@@ -1,8 +1,10 @@
-import { initialState } from "../../../bridge";
+import { getInitialState } from "../../../bridge";
 import { Utils } from "../../utils";
 import { getCLI } from "../cli";
 import { getWorld } from "../global";
 import { InputParser } from "../parser";
+
+const initialState = getInitialState();
 
 describe("CLI Suggest", () => {
   it("should suggest", () => {

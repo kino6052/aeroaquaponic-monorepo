@@ -1,6 +1,6 @@
-import { SerializedWorld } from ".";
-import { EntityId, SerializedEntity } from "../../../bridge";
+import { SerializedEntity, SerializedWorld } from ".";
 import { getEntityMap } from "./entities";
+import { EntityId } from "./types";
 
 export class SerializedHelper {
   private __entities: SerializedWorld = {};

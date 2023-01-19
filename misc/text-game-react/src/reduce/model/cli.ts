@@ -1,9 +1,16 @@
-import { IState, SerializedEntity } from "../../bridge";
+import { getInitialState, IState } from "../../bridge";
 import { outputs } from "../outputs";
-import { templateParser } from "../utils";
-import { serialize } from "./entities";
+import { makePrimaryHeading, templateParser, updateIntervals } from "../utils";
+import { serialize, SerializedEntity } from "./entities";
+import { SerializedHelper } from "./entities/serialized";
+import { getStatusMeta } from "./entities/utils";
 import { Entity, getWorld } from "./global";
 import { InputParser } from "./parser";
+// @ts-ignore
+import { clone } from "ramda";
+import { TimeHelper } from "../utils/TimeHelper";
+import { getFormattedDate } from "./entities/status";
+import { EntityId } from "./entities/types";
 
 class CommandLineInterface {
   private __output: string = "";
@@ -11,12 +18,21 @@ class CommandLineInterface {
   private __history: string[] = [];
   private __world: Entity | undefined;
   private __suggestMode: boolean = false;
+  private __hasDayPassed: boolean = true;
 
   constructor(state: IState) {
     this.__output = state.output;
     this.__input = state.input;
     this.__history = state.history;
     this.__world = getWorld(state.entities);
+  }
+
+  set hasDayPassed(hasDayPassed: boolean) {
+    this.__hasDayPassed = hasDayPassed;
+  }
+
+  get hasDayPassed() {
+    return this.__hasDayPassed;
   }
 
   update(state: Partial<IState>) {
@@ -56,6 +72,56 @@ class CommandLineInterface {
     this.__suggestMode = true;
   }
 
+  updateTime(
+    update: { i: number; value: number } = { i: 1, value: 1 }
+  ): boolean {
+    const cli = this;
+    const meta = getStatusMeta(cli);
+    if (cli.world) {
+      const serialized = serialize(cli.world);
+      const helper = new SerializedHelper(serialized);
+      const time = meta.date?.time;
+      if (meta.date && time) {
+        const {
+          year,
+          month,
+          day,
+          time: { hours, minutes, seconds },
+        } = meta.date;
+        const timeHelper = new TimeHelper(
+          year,
+          month,
+          day,
+          hours,
+          minutes,
+          seconds
+        );
+        timeHelper.update(update);
+        this.hasDayPassed = timeHelper.getIsDayPassed(update);
+        const resultTime = timeHelper.getFullDate();
+        const status = helper.getById(EntityId.Status);
+        if (status && status.meta) {
+          const __status = clone(status);
+          __status.meta.date = {
+            ...__status.meta.date,
+            year: resultTime.year,
+            month: resultTime.month,
+            day: resultTime.day,
+            dow: resultTime.dow,
+            time: {
+              hours: resultTime.hour,
+              minutes: resultTime.minute,
+              seconds: resultTime.second,
+            },
+          };
+          helper.update(EntityId.Status, { ...__status });
+          cli.update({ entities: helper.entities });
+        }
+      }
+    }
+    return false;
+  }
+
   interact(state: IState, cli: CommandLineInterface) {
     if (!this.__world) return;
     const wasSuggesting = this.__suggestMode;
@@ -75,9 +141,14 @@ class CommandLineInterface {
     if (!this.__suggestMode) this.updateHistory();
     this.__suggestMode = false;
     const exact = entities.slice(-1)[0];
+    this.updateTime();
     const result = exact.interact(cli);
-    this.__output = result;
+    const title = this.__hasDayPassed
+      ? makePrimaryHeading(getFormattedDate(cli))
+      : "";
+    this.__output = `${title}${result}`;
     this.__input = "";
+    this.__hasDayPassed = false;
   }
 
   getState = (): {

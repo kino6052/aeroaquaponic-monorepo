@@ -1,6 +1,23 @@
-import { EntityId, SerializedEntity } from "../../../bridge";
 import { Entity } from "../global";
 import { getInteractionById } from "./interactions";
+import { EntityId } from "./types";
+
+export type TEntityType =
+  | "world"
+  | "quest"
+  | "objective"
+  | "cli"
+  | "misc"
+  | "person";
+
+export interface SerializedEntity {
+  id: string;
+  entities: string[];
+  type: TEntityType;
+  name: string;
+  description: string;
+  meta: Record<string, unknown>;
+}
 
 export const deserializeEntity = (
   { description, entities, id, name, type, meta }: SerializedEntity,
@@ -13,7 +30,7 @@ export const deserializeEntity = (
     description,
     entities
       .map((id) => {
-        const entity: SerializedEntity | undefined = map[id as EntityId];
+        const entity: SerializedEntity | undefined = map[id];
         if (!entity) return;
         return deserializeEntity(entity, map);
       })

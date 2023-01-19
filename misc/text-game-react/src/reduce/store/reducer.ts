@@ -5,6 +5,7 @@ import { selectInput } from "./selectors";
 
 export const reduce = (event: TEvent, state: IState): IState => {
   return produce(state, (draft) => {
+    console.warn(state);
     const cli = getCLI(state);
     if (event[0] === "enter") {
       cli.input = selectInput(state); // TODO: Parse state

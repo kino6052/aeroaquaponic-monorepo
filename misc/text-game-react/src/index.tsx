@@ -1,4 +1,4 @@
-import { initialState, IState } from "./bridge";
+import { getInitialState, IState } from "./bridge";
 import { io } from "./io";
 import { reduce } from "./reduce";
 
@@ -18,4 +18,4 @@ const applicationLoop = async (state: IState): Promise<void> => {
 
 // NOTE: Start the Application
 // @ts-ignore
-applicationLoop(initialState);
+applicationLoop(getInitialState());

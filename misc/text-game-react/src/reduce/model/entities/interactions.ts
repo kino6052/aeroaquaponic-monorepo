@@ -1,4 +1,3 @@
-import { EntityId } from "../../../bridge";
 import {
   makeSecondaryHeading,
   makeList,
@@ -9,6 +8,7 @@ import {
 import { getCLI } from "../cli";
 import { getQuest001Interactions } from "./interactions/quest001";
 import { statusInteraction } from "./interactions/status";
+import { EntityId } from "./types";
 
 const interactionMap: Record<
   string,
@@ -83,6 +83,15 @@ const interactionMap: Record<
   },
   [EntityId.Friend001]: (cli) => {
     return "Might need to call Tom at some point.";
+  },
+  [EntityId.Skip]: (cli) => {
+    cli.updateTime({
+      i: 3,
+      value: 1,
+    });
+    return `${makeSecondaryHeading("Skip")}${makeParagraph(
+      "Will get back to the diary tomorrow."
+    )}`;
   },
 };
 

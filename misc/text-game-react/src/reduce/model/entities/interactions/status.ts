@@ -1,7 +1,7 @@
-import { EntityId } from "../../../../bridge";
-import { makeBold, makeParagraph, makeSecondaryHeading } from "../../../utils";
+import { makeParagraph, makeSecondaryHeading } from "../../../utils";
 import { getCLI } from "../../cli";
-import { StatusMeta } from "../status";
+import { getFormattedDate, StatusMeta } from "../status";
+import { EntityId } from "../types";
 
 export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
   cli
@@ -31,7 +31,7 @@ export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
   } = cli.getState().entities[EntityId.Status].meta as unknown as StatusMeta;
   return `${makeSecondaryHeading("Status")}${makeParagraph(
     description
-  )}${makeParagraph(`Today is ${dow} ${year}/${month}/${day}.`)}${makeParagraph(
+  )}${makeParagraph(`Today is ${getFormattedDate(cli)}.`)}${makeParagraph(
     `The time is ${hours}:${minutes}.`
   )}${makeParagraph(`It's ${season}.`)} ${makeParagraph(
     `The temperature is ${degrees} degrees ${temperatureType}.`

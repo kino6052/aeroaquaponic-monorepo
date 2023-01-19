@@ -1,10 +1,10 @@
 import { serialize } from ".";
-import { initialState } from "../../../bridge";
+import { getInitialState } from "../../../bridge";
 import { getWorld } from "../global";
 
 describe("Serialize", () => {
   it("should serialize", () => {
-    const result = serialize(getWorld(initialState.entities));
-    expect(initialState.entities).toEqual(result);
+    const result = serialize(getWorld(getInitialState().entities));
+    expect(getInitialState().entities).toEqual(result);
   });
 });

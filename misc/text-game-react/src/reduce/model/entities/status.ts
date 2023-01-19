@@ -1,5 +1,7 @@
-import { EntityId, SerializedEntity } from "../../../bridge";
-import { getEntityMap } from "./entities";
+import { SerializedEntity } from ".";
+import { getCLI } from "../cli";
+import { EntityId } from "./types";
+import { getStatusMeta } from "./utils";
 
 export interface StatusMeta {
   date: {
@@ -55,13 +57,16 @@ export interface StatusMeta {
   description: string;
 }
 
-export const getFormattedDate = (): string => {
-  const meta = getEntityMap()[EntityId.Status]?.meta as StatusMeta | undefined;
+export const getFormattedDate = (cli: ReturnType<typeof getCLI>): string => {
+  const meta = getStatusMeta(cli);
   if (!meta) return "";
   const {
+    // @ts-ignore
     date: { day, dow, month, year },
   } = meta;
-  return `[${[String(year), String(month), String(day)].join("/")} ${dow}]`;
+  return `[${[String(year), String(month + 1), String(day + 1)].join(
+    "/"
+  )} ${dow}]`;
 };
 
 export const getStatus = () =>
@@ -73,8 +78,8 @@ export const getStatus = () =>
     entities: [],
     meta: {
       date: {
-        day: 1,
-        month: 1,
+        day: 0,
+        month: 0,
         year: 2020,
         dow: "Monday",
         time: {

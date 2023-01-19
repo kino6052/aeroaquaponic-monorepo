@@ -1,8 +1,8 @@
 import { serialize } from ".";
-import { EntityId } from "../../../bridge";
 import { getCLI } from "../cli";
 import { SerializedHelper } from "./serialized";
 import { StatusMeta } from "./status";
+import { EntityId } from "./types";
 
 export const getStatusMeta = (
   cli: ReturnType<typeof getCLI>

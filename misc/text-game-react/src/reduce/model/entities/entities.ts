@@ -1,5 +1,6 @@
-import { EntityId, SerializedEntity } from "../../../bridge";
+import { SerializedEntity } from ".";
 import { getStatus } from "./status";
+import { EntityId } from "./types";
 
 let entityMap: ReturnType<typeof getEntityMap>;
 
@@ -18,6 +19,7 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
           EntityId.Todo,
           EntityId.Internet,
           EntityId.Phone,
+          EntityId.Skip,
         ],
       },
       [EntityId.Clear]: {
@@ -29,6 +31,14 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
         meta: {},
       },
       [EntityId.Status]: getStatus(),
+      [EntityId.Skip]: {
+        id: EntityId.Skip,
+        type: "cli",
+        name: "skip",
+        description: "sometimes I need to skip a day of writing entries",
+        entities: [],
+        meta: {},
+      },
       [EntityId.Help]: {
         id: EntityId.Help,
         type: "cli",

@@ -2,6 +2,8 @@ import { BehaviorSubject, Subject } from "rxjs";
 import { getCLI } from "./reduce/model/cli";
 import { getEntityMap } from "./reduce/model/entities/entities";
 import { outputs } from "./reduce/outputs";
+import { SerializedEntity } from "./reduce/model/entities";
+import { EntityId } from "./reduce/model/entities/types";
 
 export enum Id {
   Input = "Input",
@@ -24,40 +26,6 @@ export interface IBrowser {
   };
 }
 
-export type TEntityType =
-  | "world"
-  | "quest"
-  | "objective"
-  | "cli"
-  | "misc"
-  | "person";
-
-export enum EntityId {
-  World = "World",
-  Status = "Status",
-  Help = "Help",
-  Todo = "Todo",
-  Internet = "Internet",
-  SelfSufficiencyWebsite = "SelfSufficiencyWebsite",
-  Clear = "Clear",
-  TodoQuest001Task001LearnAboutSelfSufficiency = "TodoQuest001Task001LearnAboutSelfSufficiency",
-  TodoQuest001Task002FindOutAboutLand = "TodoQuest001Task002FindOutAboutLand",
-  LandWebsite001 = "LandWebsite001",
-  TodoQuest001Task003CallRealtor = "TodoQuest001Task003CallRealtor",
-  Phone = "Phone",
-  Friend001 = "Friend001",
-  Mom = "Mom",
-}
-
-export interface SerializedEntity {
-  id: string;
-  entities: string[];
-  type: TEntityType;
-  name: string;
-  description: string;
-  meta: Record<string, unknown>;
-}
-
 export interface IState {
   input: string;
   output: string;
@@ -71,7 +39,7 @@ export type TEvent = [TCommand, string];
 
 export const AppEventSubject = new Subject<TEvent>();
 
-export const initialState: IState = {
+const initialState: IState = {
   input: "",
   history: [],
   output: outputs.getInitialOutput(),
@@ -86,7 +54,10 @@ export const initialState: IState = {
     EntityId.TodoQuest001Task001LearnAboutSelfSufficiency,
     EntityId.Friend001,
     EntityId.Mom,
+    EntityId.Skip,
   ].reduce((acc, id) => ({ ...acc, [id]: getEntityMap()[id] }), {}),
 };
+
+export const getInitialState = () => initialState;
 
 export const StateSubject = new BehaviorSubject<IState>(initialState);

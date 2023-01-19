@@ -42,7 +42,7 @@ describe("CLI features", () => {
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
       "
       <h3>Here is what I can do right now:</h3>
-      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li></ul>
+      <ul><li><b>help</b>: if I forget the sense of direction, this comes in handy</li><li><b>status</b>: lets me know what is going on in the world</li><li><b>todo</b>: my todo list</li><li><b>internet</b>: this is how I browse the internet</li><li><b>phone</b>: something I use when need to contact somebody</li><li><b>skip</b>: sometimes I need to skip a day of writing entries</li></ul>
       "
     `);
   });
