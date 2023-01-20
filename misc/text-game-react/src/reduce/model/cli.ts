@@ -7,7 +7,7 @@ import { Entity, getWorld } from "./global";
 import { InputParser } from "./parser";
 // @ts-ignore
 import { clone } from "ramda";
-import { TimeHelper } from "../utils/TimeHelper";
+import { dayOfWeek, TimeHelper } from "../utils/TimeHelper";
 import { getFormattedDate } from "./entities/status";
 import { EntityId } from "./entities/types";
 
@@ -81,6 +81,7 @@ class CommandLineInterface {
           year,
           month,
           day,
+          dow,
           time: { hours, minutes, seconds },
         } = meta.date;
         const timeHelper = new TimeHelper(
@@ -89,10 +90,11 @@ class CommandLineInterface {
           day,
           hours,
           minutes,
-          seconds
+          seconds,
+          dow as typeof dayOfWeek[number]
         );
-        timeHelper.update(update);
         this.hasDayPassed = timeHelper.getIsDayPassed(update);
+        timeHelper.update(update);
         const resultTime = timeHelper.getFullDate();
         const status = helper.getById(EntityId.Status);
         if (status && status.meta) {
@@ -138,6 +140,8 @@ class CommandLineInterface {
     const exact = entities.slice(-1)[0];
     this.updateTime();
     const result = exact.interact(cli);
+    const meta = getStatusMeta(cli);
+    // console.warn(meta);
     const title = this.__hasDayPassed
       ? makePrimaryHeading(getFormattedDate(cli))
       : "";

@@ -9,7 +9,7 @@ enum ETime {
   Year,
 }
 
-const dayOfWeek = [
+export const dayOfWeek = [
   "Monday",
   "Tuesday",
   "Wednesday",
@@ -34,11 +34,11 @@ export class TimeHelper {
 
   private updateFromIntervals(intervals: ReturnType<typeof updateIntervals>) {
     this.year = intervals[ETime.Year].value;
-    this.month = intervals[ETime.Month].value || this.month;
-    this.day = intervals[ETime.Day].value || this.day;
-    this.hour = intervals[ETime.Hour].value || this.hour;
-    this.minute = intervals[ETime.Minute].value || this.minute;
-    this.second = intervals[ETime.Second].value || this.second;
+    this.month = intervals[ETime.Month].value;
+    this.day = intervals[ETime.Day].value;
+    this.hour = intervals[ETime.Hour].value;
+    this.minute = intervals[ETime.Minute].value;
+    this.second = intervals[ETime.Second].value;
   }
 
   getDaysInMonth(monthIndex: number) {
@@ -65,9 +65,11 @@ export class TimeHelper {
     return false;
   }
 
-  calculateDOW(increment: { i: number; value: number }) {
-    const currentDow = this.dow;
+  calculateDOW(increment: { i: number; value: number }, dow?: typeof this.dow) {
+    const currentDow = dow || this.dow;
+    console.warn(currentDow);
     if (increment.i < 4) {
+      const dowIndex = dayOfWeek.findIndex((dow) => dow === currentDow);
       const intervals = [
         {
           value: this.second,
@@ -75,7 +77,7 @@ export class TimeHelper {
         },
         { value: this.minute, interval: 60 },
         { value: this.hour, interval: 24 },
-        { value: this.day, interval: 7 },
+        { value: dowIndex, interval: 7 },
       ];
       const result = updateIntervals(increment, intervals);
       const i = result.find(({ interval }) => interval === 7)?.value || 0;
@@ -96,8 +98,8 @@ export class TimeHelper {
       { value: this.month, interval: 12 },
       { value: this.year, interval: 1000 },
     ];
-    const result = updateIntervals(increment, intervals);
     this.dow = this.calculateDOW(increment);
+    const result = updateIntervals(increment, intervals);
     this.updateFromIntervals(result);
   }
 

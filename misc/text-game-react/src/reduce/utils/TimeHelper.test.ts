@@ -209,4 +209,55 @@ describe("Time Helper", () => {
     expect(helper.getDaysInMonth(12)).toMatchInlineSnapshot(`31`);
     expect(helper.getDaysInMonth(13)).toMatchInlineSnapshot(`30`);
   });
+
+  it("should get days in month", () => {
+    const helper = new TimeHelper();
+    expect(helper.getFullDate()).toMatchInlineSnapshot(`
+      Object {
+        "day": 0,
+        "dow": "Monday",
+        "hour": 0,
+        "minute": 0,
+        "month": 0,
+        "second": 0,
+        "year": 2020,
+      }
+    `);
+    helper.update({ i: 3, value: 29 });
+    expect(helper.getFullDate()).toMatchInlineSnapshot(`
+      Object {
+        "day": 29,
+        "dow": "Tuesday",
+        "hour": 0,
+        "minute": 0,
+        "month": 0,
+        "second": 0,
+        "year": 20,
+      }
+    `);
+    helper.update({ i: 3, value: 1 });
+    expect(helper.getFullDate()).toMatchInlineSnapshot(`
+      Object {
+        "day": 30,
+        "dow": "Wednesday",
+        "hour": 0,
+        "minute": 0,
+        "month": 0,
+        "second": 0,
+        "year": 20,
+      }
+    `);
+    helper.update({ i: 3, value: 1 });
+    expect(helper.getFullDate()).toMatchInlineSnapshot(`
+      Object {
+        "day": 0,
+        "dow": "Thursday",
+        "hour": 0,
+        "minute": 0,
+        "month": 1,
+        "second": 0,
+        "year": 20,
+      }
+    `);
+  });
 });

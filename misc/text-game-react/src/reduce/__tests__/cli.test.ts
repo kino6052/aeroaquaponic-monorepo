@@ -57,4 +57,30 @@ describe("CLI features", () => {
       "
     `);
   });
+
+  it("should skip", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("skip"),
+      getEnterAction(),
+    ]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>[20/1/2 Tuesday]</h2><h3>Skip</h3><p>Will get back to the diary tomorrow.</p>"`
+    );
+  });
+
+  it("should skip", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("skip"),
+      getEnterAction(),
+      getChangeAction("skip"),
+      getEnterAction(),
+      getChangeAction("skip"),
+      getEnterAction(),
+    ]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h2>[20/1/4 Thursday]</h2><h3>Skip</h3><p>Will get back to the diary tomorrow.</p>"`
+    );
+  });
 });
