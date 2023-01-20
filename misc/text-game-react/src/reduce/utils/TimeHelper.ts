@@ -33,7 +33,7 @@ export class TimeHelper {
   ) {}
 
   private updateFromIntervals(intervals: ReturnType<typeof updateIntervals>) {
-    this.year = intervals[ETime.Year].value || this.year;
+    this.year = intervals[ETime.Year].value;
     this.month = intervals[ETime.Month].value || this.month;
     this.day = intervals[ETime.Day].value || this.day;
     this.hour = intervals[ETime.Hour].value || this.hour;
@@ -42,8 +42,8 @@ export class TimeHelper {
   }
 
   getDaysInMonth(monthIndex: number) {
-    if ((monthIndex + 1) % 2 === 0) return 30;
     if (monthIndex === 1) return 28; // February
+    if ((monthIndex + 1) % 2 === 0) return 30;
     return 31;
   }
 
@@ -78,7 +78,7 @@ export class TimeHelper {
         { value: this.day, interval: 7 },
       ];
       const result = updateIntervals(increment, intervals);
-      const i = result.slice(-1)[0].value;
+      const i = result.find(({ interval }) => interval === 7)?.value || 0;
       return dayOfWeek[i];
     }
     return currentDow;

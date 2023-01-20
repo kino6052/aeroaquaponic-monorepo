@@ -27,12 +27,12 @@ const interactionMap: Record<
       ],
       makeParagraph
     )}`,
-  [EntityId.Clear]: (cli) => {
-    cli.clear();
-    return `${makeSecondaryHeading("Input Cleared")} ${makeParagraph(
-      "Input was cleared..."
-    )}`;
-  },
+  // [EntityId.Clear]: (cli) => {
+  //   cli.clear();
+  //   return `${makeSecondaryHeading("Input Cleared")} ${makeParagraph(
+  //     "Input was cleared..."
+  //   )}`;
+  // },
   [EntityId.Status]: statusInteraction,
   [EntityId.Phone]: (cli) => {
     const state = cli.getState();

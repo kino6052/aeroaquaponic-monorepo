@@ -30,10 +30,6 @@ class CommandLineInterface {
     this.__hasDayPassed = hasDayPassed;
   }
 
-  get hasDayPassed() {
-    return this.__hasDayPassed;
-  }
-
   update(state: Partial<IState>) {
     state.history && (this.__history = state.history);
     state.input && (this.__input = state.input);
@@ -41,11 +37,11 @@ class CommandLineInterface {
     state.entities && (this.__world = getWorld(state.entities));
   }
 
-  clear() {
-    this.__input = "";
-    this.__output = "";
-    this.__history = [];
-  }
+  // clear() {
+  //   this.__input = "";
+  //   this.__output = "";
+  //   this.__history = [];
+  // }
 
   set input(input: string) {
     this.__input = input;
