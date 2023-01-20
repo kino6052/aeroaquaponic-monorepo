@@ -17,5 +17,4 @@ const applicationLoop = async (state: IState): Promise<void> => {
 };
 
 // NOTE: Start the Application
-// @ts-ignore
 applicationLoop(getInitialState());

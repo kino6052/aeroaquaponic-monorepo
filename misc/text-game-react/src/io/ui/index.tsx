@@ -23,6 +23,7 @@ export const presentationIO = (state: IState) => {
 EventSubject.subscribe((event) => {
   const [type, id, value] = event;
   if (type === "load") {
+    AppEventSubject.next(["init", ""]);
     // TODO: Implement
     return;
   }

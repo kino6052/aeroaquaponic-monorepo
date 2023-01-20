@@ -1,6 +1,5 @@
-import { getInitialState, IState } from "../../bridge";
-import { outputs } from "../outputs";
-import { makePrimaryHeading, templateParser, updateIntervals } from "../utils";
+import { IState } from "../../bridge";
+import { makePrimaryHeading } from "../utils";
 import { serialize, SerializedEntity } from "./entities";
 import { SerializedHelper } from "./entities/serialized";
 import { getStatusMeta } from "./entities/utils";

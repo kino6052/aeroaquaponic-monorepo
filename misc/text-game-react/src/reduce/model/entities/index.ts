@@ -1,6 +1,8 @@
 import { Entity } from "../global";
 import { getInteractionById } from "./interactions";
 import { EntityId } from "./types";
+// @ts-ignore
+import { isEmpty } from "ramda";
 
 export type TEntityType =
   | "world"
@@ -65,5 +67,7 @@ export const serialize = (entity: Entity): SerializedWorld => {
   return result;
 };
 
-export const deserialize = (entities: SerializedWorld): Entity =>
-  deserializeEntity(entities[EntityId.World], entities);
+export const deserialize = (entities: SerializedWorld): Entity => {
+  if (Object.keys(entities).length === 0) return new Entity("", "misc", "", "");
+  return deserializeEntity(entities[EntityId.World], entities);
+};
