@@ -10,6 +10,19 @@ import { selectHistory, selectInput, selectOutput } from "../store/selectors";
 
 describe("CLI features", () => {
   const initialState = getInitialState();
+  it("should be uninitialized at first", () => {
+    const resultingState = compose(initialState)([
+      getChangeAction("he"),
+      getEnterAction(),
+    ]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+      "
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><b></b>: </li></ul>
+      "
+    `);
+  });
+
   it("should say that command is unknown", () => {
     const resultingState = compose(initialState)([
       getInitAction(),

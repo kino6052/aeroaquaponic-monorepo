@@ -39,12 +39,8 @@ const interactionMap: Record<
     const items = state.entities[EntityId.Phone].entities.map(
       (v) => `${state.entities[v].name}: ${state.entities[v].description}`
     );
-    const description =
-      items.length > 0
-        ? makeList("", items)
-        : makeParagraph(
-            "Looked at my phone book. Don't need to contact anybody at this time."
-          );
+    const description = makeList("", items);
+
     return `${makeSecondaryHeading("Phone")}${description}`;
   },
   [EntityId.Todo]: (cli) => {
@@ -56,8 +52,7 @@ const interactionMap: Record<
       "",
       items
     )}`;
-    const message =
-      items.length > 0 ? list : makeParagraph("The list is empty currently");
+    const message = list;
     return `${makeSecondaryHeading("Todo")}${makeParagraph(
       "I had a look at my todo and here were the items:"
     )}${message}`;
@@ -76,9 +71,7 @@ const interactionMap: Record<
       makeParagraph
     )}`,
   [EntityId.Mom]: (cli) => {
-    const response =
-      getQuest001Interactions()[EntityId.Mom](cli) ||
-      makeParagraph("Might need to call mom at some point");
+    const response = getQuest001Interactions()[EntityId.Mom](cli);
     return `${makeSecondaryHeading("Call Mom")}${response}`;
   },
   [EntityId.Friend001]: (cli) => {

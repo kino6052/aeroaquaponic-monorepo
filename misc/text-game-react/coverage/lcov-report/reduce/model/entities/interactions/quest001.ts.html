@@ -23,30 +23,30 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">66.66% </span>
+                <span class="strong">88.23% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>34/51</span>
+                <span class='fraction'>45/51</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">31.25% </span>
+                <span class="strong">43.75% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/16</span>
+                <span class='fraction'>7/16</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">63.63% </span>
+                <span class="strong">90.9% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>7/11</span>
+                <span class='fraction'>10/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70.83% </span>
+                <span class="strong">93.75% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>34/48</span>
+                <span class='fraction'>45/48</span>
             </div>
         
             
@@ -273,18 +273,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">10x</span>
+<span class="cline-any cline-yes">11x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">14x</span>
 <span class="cline-any cline-yes">14x</span>
@@ -428,13 +428,13 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -466,15 +466,15 @@ import { SerializedHelper } from "../serialized";
 import { EntityId } from "../types";
 import { getStatusMeta } from "../utils";
 &nbsp;
-export const getHasCompletedTask001 = <span class="fstat-no" title="function not covered" >(c</span>li: ReturnType&lt;typeof getCLI&gt;) =&gt; {
-<span class="cstat-no" title="statement not covered" >  if (!cli.world) <span class="cstat-no" title="statement not covered" >return false;</span></span>
-  const serialized = <span class="cstat-no" title="statement not covered" >serialize(cli.world);</span>
-  const helper = <span class="cstat-no" title="statement not covered" >new SerializedHelper(serialized);</span>
-  const hasTask001 = <span class="cstat-no" title="statement not covered" >helper.hasChild(</span>
+export const getHasCompletedTask001 = (cli: ReturnType&lt;typeof getCLI&gt;) =&gt; {
+  <span class="missing-if-branch" title="if path not taken" >I</span>if (!cli.world) <span class="cstat-no" title="statement not covered" >return false;</span>
+  const serialized = serialize(cli.world);
+  const helper = new SerializedHelper(serialized);
+  const hasTask001 = helper.hasChild(
     EntityId.Todo,
     EntityId.TodoQuest001Task001LearnAboutSelfSufficiency
   );
-<span class="cstat-no" title="statement not covered" >  return !hasTask001;</span>
+  return !hasTask001;
 };
 &nbsp;
 export const getQuest001Interactions = () =&gt; {
@@ -621,14 +621,14 @@ export const getQuest001Interactions = () =&gt; {
         )
       )}`;
     },
-    [EntityId.Mom]: <span class="fstat-no" title="function not covered" >(c</span>li: ReturnType&lt;typeof getCLI&gt;) =&gt; {
-      const hasCompletedTask001 = <span class="cstat-no" title="statement not covered" >getHasCompletedTask001(cli);</span>
-      const meta = <span class="cstat-no" title="statement not covered" >getStatusMeta(cli);</span>
-      const isNewYear = <span class="cstat-no" title="statement not covered" >[meta.date?.month, meta.date?.day].every(</span>
-<span class="fstat-no" title="function not covered" >        (v</span>) =&gt; <span class="cstat-no" title="statement not covered" >v === 1</span>
+    [EntityId.Mom]: (cli: ReturnType&lt;typeof getCLI&gt;) =&gt; {
+      const hasCompletedTask001 = getHasCompletedTask001(cli);
+      const meta = getStatusMeta(cli);
+      const isNewYear = [meta.date?.month, meta.date?.day].every(
+        (v) =&gt; v === 1
       );
-<span class="cstat-no" title="statement not covered" >      if (!hasCompletedTask001) {</span>
-<span class="cstat-no" title="statement not covered" >        return makeParagraph(</span>
+      <span class="missing-if-branch" title="else path not taken" >E</span>if (!hasCompletedTask001) {
+        return makeParagraph(
           "I thought about giving my mom a call, but will do that a bit later."
         );
       }
@@ -652,7 +652,7 @@ export const getQuest001Interactions = () =&gt; {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2023-01-20T10:22:13.001Z
+                at 2023-01-21T12:37:36.360Z
             </div>
         <script src="../../../../prettify.js"></script>
         <script>

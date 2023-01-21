@@ -11,6 +11,11 @@ import { selectInput, selectOutput } from "../store/selectors";
 const initialState = getInitialState();
 
 describe("Game", () => {
+  it("should be uninitialized at first", () => {
+    const resultingState = compose(initialState)([]);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`""`);
+  });
+
   it("should salute player", () => {
     const resultingState = compose(initialState)([getInitAction()]);
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(`

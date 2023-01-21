@@ -23,6 +23,19 @@ describe("Quest 001", () => {
     );
   });
 
+  it("should have a todo item", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("todo le"),
+      getSuggestAction(),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h3>Objective: Learn About Self-sufficiency</h3><p>I need to visit the website I came across yesterday.</p><p>To do that, I need to go to the internet.</p>"`
+    );
+  });
+
   it("should NOT override first entry by status", () => {
     const resultingState = compose(initialState)([
       getInitAction(),
@@ -105,6 +118,32 @@ describe("Quest 001", () => {
     expect(selectInput(resultingState)).toEqual("");
     expect(selectOutput(resultingState)).toMatchInlineSnapshot(
       `"<h3>Phone</h3><ul><li>Mom: my mother</li><li>Tom: my best friend</li></ul>"`
+    );
+  });
+
+  it("should have this phone interaction", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("phone mo"),
+      getSuggestAction(),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"<h3>Call Mom</h3><p>I thought about giving my mom a call, but will do that a bit later.</p>"`
+    );
+  });
+
+  it("should have this phone interaction", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("phone to"),
+      getSuggestAction(),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toEqual("");
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(
+      `"Might need to call Tom at some point."`
     );
   });
 
