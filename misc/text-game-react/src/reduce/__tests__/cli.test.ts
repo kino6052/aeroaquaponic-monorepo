@@ -6,7 +6,7 @@ import {
   getSuggestAction,
 } from "../store/actions";
 import { compose } from "../store/reducer";
-import { selectHistory, selectInput, selectOutput } from "../store/selectors";
+import { selectInput, selectOutput } from "../store/selectors";
 
 describe("CLI features", () => {
   const initialState = getInitialState();

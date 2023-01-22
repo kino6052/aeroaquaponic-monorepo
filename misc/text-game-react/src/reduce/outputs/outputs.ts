@@ -1,5 +1,5 @@
 import { getCLI } from "../model/cli";
-import { getFormattedDate } from "../model/entities/status";
+import { getFormattedDate } from "../model/entities/entities/status";
 import {
   makeBold,
   makeList,

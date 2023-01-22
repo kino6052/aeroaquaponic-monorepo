@@ -15,3 +15,20 @@ export enum EntityId {
   Mom = "Mom",
   Skip = "Skip",
 }
+
+export type TEntityType =
+  | "world"
+  | "quest"
+  | "objective"
+  | "cli"
+  | "misc"
+  | "person";
+
+export interface SerializedEntity {
+  id: string;
+  entities: string[];
+  type: TEntityType;
+  name: string;
+  description: string;
+  meta: Record<string, unknown>;
+}

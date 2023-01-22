@@ -1,8 +1,8 @@
-import { serialize } from ".";
-import { getInitialState } from "../../../bridge";
-import { getInitAction } from "../../store/actions";
-import { compose } from "../../store/reducer";
-import { getWorld } from "../global";
+import { getInitialState } from "../../../../bridge";
+import { getInitAction } from "../../../store/actions";
+import { compose } from "../../../store/reducer";
+import { getWorld } from "../../global";
+import { serialize } from "./serialized";
 
 describe("Serialize", () => {
   it("should serialize", () => {

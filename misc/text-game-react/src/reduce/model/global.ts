@@ -2,7 +2,7 @@
 import { TEntityType } from "../../bridge";
 import { makeParagraph, makeSecondaryHeading, Utils } from "../utils";
 import { getCLI } from "./cli";
-import { deserialize, SerializedWorld } from "./entities";
+import { deserialize, SerializedWorld } from "./entities/utils/serialized";
 
 export class Entity {
   private __id = Utils.generateId();

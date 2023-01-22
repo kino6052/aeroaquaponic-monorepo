@@ -1,8 +1,8 @@
 import produce from "immer";
 import { IState, TEvent } from "../../bridge";
 import { getCLI } from "../model/cli";
-import { getEntityMap } from "../model/entities/entities";
-import { EntityId } from "../model/entities/types";
+import { getEntityMap } from "../model/entities";
+import { EntityId } from "../model/entities/utils/types";
 import { outputs } from "../outputs";
 import { selectInput } from "./selectors";
 

@@ -1,4 +1,4 @@
-import { serialize } from "..";
+import { getEntityMap, getInteractionMap } from "..";
 import {
   makeList,
   makeParagraph,
@@ -7,11 +7,9 @@ import {
   templateParser,
 } from "../../../utils";
 import { getCLI } from "../../cli";
-import { getEntityMap } from "../entities";
-import { getInteractionMap } from "../interactions";
-import { SerializedHelper } from "../serialized";
-import { EntityId } from "../types";
-import { getStatusMeta } from "../utils";
+import { serialize, SerializedHelper } from "../utils/serialized";
+import { EntityId } from "../utils/types";
+import { getStatusMeta } from "../utils/utils";
 
 export const getHasCompletedTask001 = (cli: ReturnType<typeof getCLI>) => {
   if (!cli.world) return false;

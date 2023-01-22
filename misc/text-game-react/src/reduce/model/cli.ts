@@ -1,15 +1,14 @@
 import { IState } from "../../bridge";
 import { makePrimaryHeading } from "../utils";
-import { serialize, SerializedEntity } from "./entities";
-import { SerializedHelper } from "./entities/serialized";
-import { getStatusMeta } from "./entities/utils";
+import { getStatusMeta } from "./entities/utils/utils";
 import { Entity, getWorld } from "./global";
 import { InputParser } from "./parser";
 // @ts-ignore
 import { clone } from "ramda";
 import { dayOfWeek, TimeHelper } from "../utils/TimeHelper";
-import { getFormattedDate } from "./entities/status";
-import { EntityId } from "./entities/types";
+import { getFormattedDate } from "./entities/entities/status";
+import { EntityId, SerializedEntity } from "./entities/utils/types";
+import { serialize, SerializedHelper } from "./entities/utils/serialized";
 
 class CommandLineInterface {
   private __output: string = "";
