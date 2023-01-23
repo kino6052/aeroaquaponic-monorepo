@@ -21,14 +21,7 @@ export const getEntityMap = (): { [id in EntityId]?: SerializedEntity } => {
       [EntityId.Clear]: entities.getClear(),
       [EntityId.Status]: entities.getStatus(),
       [EntityId.Skip]: entities.getSkip(),
-      [EntityId.Help]: {
-        id: EntityId.Help,
-        type: "cli",
-        name: "help",
-        description: "if I forget the sense of direction, this comes in handy",
-        entities: [],
-        meta: {},
-      },
+      [EntityId.Help]: entities.getHelp(),
       [EntityId.Phone]: {
         id: EntityId.Phone,
         type: "misc",
