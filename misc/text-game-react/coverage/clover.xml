@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1674490545598" clover="3.2.0">
-  <project timestamp="1674490545598" name="All files">
-    <metrics statements="391" coveredstatements="379" conditionals="158" coveredconditionals="123" methods="135" coveredmethods="126" elements="684" coveredelements="628" complexity="0" loc="391" ncloc="391" packages="9" files="22" classes="22"/>
+<coverage generated="1674583892458" clover="3.2.0">
+  <project timestamp="1674583892458" name="All files">
+    <metrics statements="410" coveredstatements="398" conditionals="158" coveredconditionals="123" methods="145" coveredmethods="136" elements="713" coveredelements="657" complexity="0" loc="410" ncloc="410" packages="9" files="32" classes="32"/>
     <package name="reduce">
       <metrics statements="47" coveredstatements="42" conditionals="27" coveredconditionals="19" methods="26" coveredmethods="21"/>
       <file name="index.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\index.ts">
@@ -206,36 +206,41 @@
         <line num="16" count="5" type="stmt"/>
         <line num="17" count="550" type="cond" truecount="2" falsecount="0"/>
         <line num="18" count="5" type="stmt"/>
-        <line num="108" count="550" type="stmt"/>
-        <line num="114" count="5" type="stmt"/>
-        <line num="116" count="1" type="stmt"/>
-        <line num="136" count="1" type="stmt"/>
-        <line num="137" count="1" type="stmt"/>
-        <line num="138" count="2" type="stmt"/>
-        <line num="140" count="1" type="stmt"/>
-        <line num="142" count="1" type="stmt"/>
-        <line num="145" count="6" type="stmt"/>
-        <line num="146" count="6" type="stmt"/>
-        <line num="147" count="6" type="stmt"/>
-        <line num="149" count="6" type="stmt"/>
-        <line num="153" count="6" type="stmt"/>
-        <line num="154" count="6" type="stmt"/>
-        <line num="162" count="1" type="stmt"/>
-        <line num="172" count="1" type="stmt"/>
-        <line num="173" count="1" type="stmt"/>
-        <line num="176" count="1" type="stmt"/>
-        <line num="179" count="4" type="stmt"/>
-        <line num="183" count="4" type="stmt"/>
-        <line num="189" count="5" type="stmt"/>
-        <line num="190" count="2129" type="stmt"/>
-        <line num="193" count="5" type="stmt"/>
-        <line num="194" count="2121" type="stmt"/>
-        <line num="195" count="2121" type="stmt"/>
+        <line num="39" count="550" type="stmt"/>
+        <line num="45" count="5" type="stmt"/>
+        <line num="47" count="1" type="stmt"/>
+        <line num="67" count="1" type="stmt"/>
+        <line num="68" count="1" type="stmt"/>
+        <line num="69" count="2" type="stmt"/>
+        <line num="71" count="1" type="stmt"/>
+        <line num="73" count="1" type="stmt"/>
+        <line num="76" count="6" type="stmt"/>
+        <line num="77" count="6" type="stmt"/>
+        <line num="78" count="6" type="stmt"/>
+        <line num="80" count="6" type="stmt"/>
+        <line num="84" count="6" type="stmt"/>
+        <line num="85" count="6" type="stmt"/>
+        <line num="93" count="1" type="stmt"/>
+        <line num="103" count="1" type="stmt"/>
+        <line num="104" count="1" type="stmt"/>
+        <line num="107" count="1" type="stmt"/>
+        <line num="110" count="4" type="stmt"/>
+        <line num="114" count="4" type="stmt"/>
+        <line num="120" count="5" type="stmt"/>
+        <line num="121" count="2129" type="stmt"/>
+        <line num="124" count="5" type="stmt"/>
+        <line num="125" count="2121" type="stmt"/>
+        <line num="126" count="2121" type="stmt"/>
       </file>
     </package>
     <package name="reduce.model.entities.entities">
-      <metrics statements="20" coveredstatements="20" conditionals="4" coveredconditionals="2" methods="9" coveredmethods="9"/>
+      <metrics statements="39" coveredstatements="39" conditionals="4" coveredconditionals="2" methods="19" coveredmethods="19"/>
       <file name="clear.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\clear.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="friend001.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\friend001.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
         <line num="3" count="5" type="stmt"/>
         <line num="4" count="5" type="stmt"/>
@@ -247,6 +252,36 @@
       </file>
       <file name="index.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\index.ts">
         <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+      </file>
+      <file name="internet.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\internet.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="mom.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\mom.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="phone.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\phone.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="quest001task001.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\quest001task001.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="quest001task002.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\quest001task002.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="quest001task003.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\quest001task003.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
       </file>
       <file name="skip.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\skip.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
@@ -267,6 +302,20 @@
         <line num="119" count="6" type="stmt"/>
         <line num="124" count="5" type="stmt"/>
         <line num="125" count="5" type="stmt"/>
+      </file>
+      <file name="todo.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\todo.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
+      </file>
+      <file name="website-buy-land.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\website-buy-land.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+      </file>
+      <file name="website-self-sufficiency.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\website-self-sufficiency.ts">
+        <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
+        <line num="3" count="5" type="stmt"/>
+        <line num="4" count="5" type="stmt"/>
       </file>
       <file name="world.ts" path="C:\Users\Kirill\Documents\Repos\aeroaquaponic-monorepo\misc\text-game-react\src\reduce\model\entities\entities\world.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
