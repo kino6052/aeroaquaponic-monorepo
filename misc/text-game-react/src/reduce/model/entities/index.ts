@@ -7,7 +7,7 @@ import {
 } from "../../utils";
 import { getCLI } from "../cli";
 import * as entities from "./entities/index";
-import { statusInteraction } from "./entities/status";
+import { statusInteraction } from "./entities/cli/status";
 import { getQuest001Interactions } from "./interactions/quest001";
 import { EntityId, SerializedEntity } from "./utils/types";
 

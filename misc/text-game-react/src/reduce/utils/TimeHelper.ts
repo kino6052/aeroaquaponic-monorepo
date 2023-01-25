@@ -67,7 +67,6 @@ export class TimeHelper {
 
   calculateDOW(increment: { i: number; value: number }, dow?: typeof this.dow) {
     const currentDow = dow || this.dow;
-    console.warn(currentDow);
     if (increment.i < 4) {
       const dowIndex = dayOfWeek.findIndex((dow) => dow === currentDow);
       const intervals = [

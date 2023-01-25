@@ -1,4 +1,4 @@
-import { EntityId, SerializedEntity } from "../utils/types";
+import { EntityId, SerializedEntity } from "../../../utils/types";
 
 export const getEntity = () =>
   ({

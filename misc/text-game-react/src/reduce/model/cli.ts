@@ -6,7 +6,7 @@ import { InputParser } from "./parser";
 // @ts-ignore
 import { clone } from "ramda";
 import { dayOfWeek, TimeHelper } from "../utils/TimeHelper";
-import { getFormattedDate } from "./entities/entities/status";
+import { getFormattedDate } from "./entities/entities/cli/status";
 import { EntityId, SerializedEntity } from "./entities/utils/types";
 import { serialize, SerializedHelper } from "./entities/utils/serialized";
 

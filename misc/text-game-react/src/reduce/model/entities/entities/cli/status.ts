@@ -1,7 +1,7 @@
-import { makeParagraph, makeSecondaryHeading } from "../../../utils";
-import { getCLI } from "../../cli";
-import { EntityId, SerializedEntity } from "../utils/types";
-import { getStatusMeta } from "../utils/utils";
+import { makeParagraph, makeSecondaryHeading } from "../../../../utils";
+import { getCLI } from "../../../cli";
+import { EntityId, SerializedEntity } from "../../utils/types";
+import { getStatusMeta } from "../../utils/utils";
 
 export const statusInteraction: (cli: ReturnType<typeof getCLI>) => string = (
   cli

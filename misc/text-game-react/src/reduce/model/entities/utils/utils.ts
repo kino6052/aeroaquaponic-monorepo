@@ -1,6 +1,6 @@
 import { getCLI } from "../../cli";
+import { StatusMeta } from "../entities/cli/status";
 import { serialize, SerializedHelper } from "./serialized";
-import { StatusMeta } from "../entities/status";
 import { EntityId } from "./types";
 
 export const getStatusMeta = (
