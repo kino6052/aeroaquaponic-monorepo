@@ -35,9 +35,8 @@ export class Entity {
   }
 
   interact(cli: ReturnType<typeof getCLI>): string {
-    return `${makeSecondaryHeading(this.__name)}${makeParagraph(
-      this.__description
-    )}`;
+    cli.suggest(true);
+    return "";
   }
 
   get state() {

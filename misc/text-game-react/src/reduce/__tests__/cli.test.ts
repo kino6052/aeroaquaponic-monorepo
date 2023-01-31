@@ -56,6 +56,36 @@ describe("CLI features", () => {
     expect(selectInput(resultingState)).toMatchInlineSnapshot(`""`);
   });
 
+  it("should show available commands", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("internet"),
+      getEnterAction(),
+    ]);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"internet"`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+      "
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
+      "
+    `);
+  });
+
+  it("should show available commands", () => {
+    const resultingState = compose(initialState)([
+      getInitAction(),
+      getChangeAction("internet"),
+      getSuggestAction(),
+    ]);
+    expect(selectInput(resultingState)).toMatchInlineSnapshot(`"internet"`);
+    expect(selectOutput(resultingState)).toMatchInlineSnapshot(`
+      "
+      <h3>Here is what I can do right now:</h3>
+      <ul><li><i>internet</i> <b>self-sufficiency</b>: website</li></ul>
+      "
+    `);
+  });
+
   it("should perform the autocompleted command", () => {
     const resultingState = compose(initialState)([
       getInitAction(),

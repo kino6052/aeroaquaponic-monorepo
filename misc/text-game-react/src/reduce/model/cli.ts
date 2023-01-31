@@ -54,16 +54,20 @@ class CommandLineInterface {
     this.__history = [...this.__history, this.__output];
   }
 
-  suggest() {
+  suggest(suggestMode = this.__suggestMode) {
     if (!this.__world) return;
     const inputParser = new InputParser(this.__world);
     const commands = inputParser.parse(this.__input);
     const entities = inputParser.getEntities(commands);
     const result = inputParser.generateSuggestionOutput(entities);
-    if (!this.__suggestMode) this.updateHistory();
+    if (!suggestMode) this.updateHistory();
     this.__output = result[0];
     this.__input = result[1];
     this.__suggestMode = true;
+  }
+
+  setSuggestMode(isOn: boolean) {
+    this.__suggestMode = isOn;
   }
 
   updateTime(
@@ -139,6 +143,9 @@ class CommandLineInterface {
     const exact = entities.slice(-1)[0];
     this.updateTime();
     const result = exact.interact(cli);
+    if (!result) {
+      return;
+    }
     const meta = getStatusMeta(cli);
     // console.warn(meta);
     const title = this.__hasDayPassed
