@@ -1,6 +1,6 @@
 import { Inter } from "next/font/google";
-import CollapsibleNode from "./components/CollapsibleNode";
-import ImportExport from "./components/ImportExport";
+import CollapsibleNode from "../components/CollapsibleNode";
+import ImportExport from "../components/ImportExport";
 import { State } from "../utils/data";
 import { useSharedState } from "../utils/utils";
 

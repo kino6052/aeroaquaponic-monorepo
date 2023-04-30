@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { INode, State } from "../../utils/data";
+import { INode, State } from "../utils/data";
 import {
   arrayToMapped,
   arrayToTree,
@@ -9,7 +9,7 @@ import {
   sliceArray,
   useSharedState,
   _reduce,
-} from "../../utils/utils";
+} from "../utils/utils";
 import TextNode from "./TextNode";
 import VisibilityNode from "./VisibilityNode";
 
