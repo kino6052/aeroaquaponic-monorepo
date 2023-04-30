@@ -154,3 +154,15 @@ export function copyToClipboard(text: string) {
     }
   });
 }
+
+export const Storage = {
+  getText: () => {
+    try {
+      return localStorage.getItem("onion");
+    } catch (e) {
+      console.error("Could not restore data");
+      return "";
+    }
+  },
+  setText: (text: string) => localStorage.setItem("onion", text),
+};

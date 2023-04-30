@@ -1,11 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { INode, State } from "../utils/data";
-import { copyToClipboard, generateGUID, useSharedState } from "../utils/utils";
+import {
+  Storage,
+  copyToClipboard,
+  generateGUID,
+  useSharedState,
+} from "../utils/utils";
 
 const ImportExport: React.FC = () => {
   const [data, setData] = useSharedState(State);
   const [isVisible, setIsVisible] = useState(false);
-  const [toImport, setToImport] = useState("");
+  const [toImport, setToImport] = useState(Storage.getText());
+
+  useEffect(() => {
+    Storage.setText(JSON.stringify(data));
+  }, []);
+
+  const handleImport = () => {
+    setIsVisible(!isVisible);
+    if (isVisible && toImport) {
+      // console.warn(JSON.stringify(JSON.parse(toImport)));
+      try {
+        setData(JSON.parse(toImport));
+      } catch (e) {
+        setData({
+          id: "root",
+          text: "Summary",
+          type: "node",
+          isOpen: true,
+          children: [
+            {
+              id: generateGUID(),
+              type: "text",
+              text: toImport,
+              children: [],
+            },
+          ],
+        } as INode);
+        console.error("Could not parse import");
+      }
+    }
+  };
+
   return (
     <div className="flex">
       <div>
@@ -20,33 +56,7 @@ const ImportExport: React.FC = () => {
           </textarea>
         </div>
       )}
-      <button
-        onClick={() => {
-          setIsVisible(!isVisible);
-          if (isVisible && toImport) {
-            // console.warn(JSON.stringify(JSON.parse(toImport)));
-            try {
-              setData(JSON.parse(toImport));
-            } catch (e) {
-              setData({
-                id: "root",
-                text: "Summary",
-                type: "node",
-                isOpen: true,
-                children: [
-                  {
-                    id: generateGUID(),
-                    type: "text",
-                    text: toImport,
-                    children: [],
-                  },
-                ],
-              } as INode);
-              console.error("Could not parse import");
-            }
-          }
-        }}
-      >
+      <button onClick={handleImport}>
         {isVisible ? "finish import" : "import data"}
       </button>
     </div>
