@@ -1,0 +1,233 @@
+{
+  "id": "root",
+  "type": "node",
+  "text": "Summary",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "ed22273f-9a54-4249-a230-12ec7c2ad76c",
+      "type": "text",
+      "text": "                     ",
+      "children": []
+    },
+    {
+      "id": "be61bfa6-9791-4866-bdd2-1bb6cb5c1c0e",
+      "text": "Knowledge relates to objects via intuition.  ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "dbda2841-38ff-4a39-9a76-0255783929b2",
+          "type": "text",
+          "text": " In  whatsoever mode, or by whatsoever means, our knowledge may relate to objects, it is at least quite clear that the only manner in which it immediately relates to them is by means of an intuition. To this as the indispensable groundwork, all thought points.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1cbf56dc-c4aa-4c98-b1f2-27da2a1a3051",
+      "text": "Intuition depends on receptivity. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "3fe090e1-ece4-43b0-9953-da0bb02f74ac",
+          "type": "text",
+          "text": " But an intuition can take place only in so far as the object is given to us.  This, again, is only possible, to man at least, on condition that the object affect the mind in a certain manner.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ebd3d485-cf42-4d18-9349-94e90bceb105",
+      "text": "The capacity for receptivity is sensibility.  ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "21d8e310-2369-4e43-ad51-350940a743c7",
+          "type": "text",
+          "text": " The capacity for receiving representations (receptivity) through the mode in which we are affected by objects, objects, is called sensibility.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "0fd3e6cd-bd77-483c-9209-faf0ec756530",
+      "text": "Thoughts rely on intuition. Intuition relies on sensibility.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "02913c0b-f224-4142-a312-51ebf65f8d72",
+          "type": "text",
+          "text": " By means of sensibility, therefore, objects are given to us, and it alone furnishes us with intuitions; by the understanding they are thought, and from it arise conceptions. But an thought must directly, or indirectly, by means of certain signs, relate ultimately to intuitions; consequently, with us, to sensibility, because in no other way can an object be given to us.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1ba4e8b5-26cb-4549-9594-87f088abf5ff",
+      "type": "text",
+      "text": " \n\n     ",
+      "children": []
+    },
+    {
+      "id": "90ce59ef-47a1-4731-a93f-4701c5d96883",
+      "text": "Sensation is effect of interacting with object.  ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "6d40a581-fc0f-4b90-b19c-099ab308db16",
+          "type": "text",
+          "text": " The effect of an object upon the faculty of representation, so far as we are affected by the said object, is sensation.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e654de0f-60ee-4ef2-a1ad-d8ba90b65d72",
+      "type": "text",
+      "text": "That sort of intuition which relates to an object by means of sensation is called an empirical intuition.",
+      "children": []
+    },
+    {
+      "id": "28bb16d6-6328-471d-a0b5-a1cd46d42dd7",
+      "text": "Phenomenon = matter.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "2ac733ac-94fa-4b91-9f00-861bc6988345",
+          "type": "text",
+          "text": " The undetermined object of an empirical intuition is called phenomenon. That which in the phenomenon corresponds to the sensation, I term its matter; but that which effects that the content of the phenomenon can be arranged under certain relations, I call its form.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "01dbad0f-9f3e-44eb-aede-852432d3d5e1",
+      "text": "Matter is given aposteriori. Form of the matter is given apriori.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "f2ac6492-dd16-411b-98cf-fd074d518d74",
+          "type": "text",
+          "text": " But that in which our sensations are merely arranged, and by which they are susceptible of assuming a certain form, cannot be itself sensation. It is, then, the matter of all phenomena that is given to us à posteriori; the form must lie that in which our sensations are merely arranged, and by which they are susceptible of assuming a certain form, cannot be itself sensation. It is, then, the matter of all phenomena that is given to us à posteriori; the form must lie ready à priori for them in the mind, and consequently can be regarded separately from all",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "d76be24c-c4e6-40a0-8a96-ebcfe65f480a",
+      "type": "text",
+      "text": "sensation.\n      \n     ",
+      "children": []
+    },
+    {
+      "id": "cf601847-6e84-4c7b-be05-6ae1ad3dbc4c",
+      "text": "Representations are disconnected from sensations. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "55381767-a9de-4efd-b08f-ced77fd7cf0d",
+          "type": "text",
+          "text": " I call all representations pure, in the transcendental meaning of the word, wherein nothing is met with that belongs to sensation.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "a2563547-0681-4727-b3ec-686ec822fa8f",
+      "text": "Sensibility without senses is \"pure intuition\". ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "1ab10f30-15b4-46bb-8e12-fe76f958ef34",
+          "type": "text",
+          "text": " And accordingly we find existing in the mind à priori, the pure form of sensuous intuitions in general, in which all the manifold content of the phenomenal world is arranged and viewed under certain relations. This pure form of sensibility I shall call pure intuition.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "5e9a907f-1203-405d-b551-69c908c786c4",
+      "text": "Taking away empirical intuition aspects will result in pure intuition.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "662de6ff-6944-4182-9b76-b3d8ecf18710",
+          "type": "text",
+          "text": " Thus, if I take away from our representation of a body all that the understanding thinks as belonging to it, as substance, force, divisibility, etc., and also whatever belongs to sensation, as impenetrability, hardness, colour, etc.; yet there is still something left us from this empirical intuition, namely, extension and shape. These belong to pure intuition, which exists à priori in the mind, as a mere form of sensibility, and without any real object of the senses or any",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "bc734a3d-be4b-4df0-a607-af1a34029dfe",
+      "type": "text",
+      "text": "sensation.\n      \n      ",
+      "children": []
+    },
+    {
+      "id": "54a3cb14-2607-4ca4-9b59-db15f33e5951",
+      "text": "Thoughts on how to structure the study of sensibility and thought.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "7797d6cd-64a6-4ba5-9ce4-d20837c52df4",
+          "type": "text",
+          "text": "  ",
+          "children": []
+        },
+        {
+          "id": "86ffec02-35c2-4d9a-8694-a41efe134f3a",
+          "text": "Transcedental aesthetic; ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "94457495-5fdf-4392-b068-7a9dbb0fcdb1",
+              "type": "text",
+              "text": " The science of all the principles of sensibility à priori, I call transcendental æsthetic.[10] There must, then, be such a science forming the first part of the transcendental doctrine of elements,",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "fde1289f-4f94-40ac-aea8-fb9de5a8fb88",
+          "text": "Transcendental logic;",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "a8073169-ff7d-42c9-9863-580d515c885f",
+              "type": "text",
+              "text": " in contradistinction to that part which contains the principles of pure thought, and which is called transcendental logic.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
