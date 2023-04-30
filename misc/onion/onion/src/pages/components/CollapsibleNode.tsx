@@ -156,6 +156,8 @@ const CollapsibleNode: React.FC<{
 
     const [before, section, after] = sliceArray(array, index, index + 1);
 
+    const mappedState = arrayToMapped(flattenObject(state));
+
     // console.warn(array[index].children);
     // setArray([...before, ...array[index].children, ...after]);
     const updatedChildrenMap = arrayToMapped(
@@ -164,9 +166,9 @@ const CollapsibleNode: React.FC<{
 
     const mappedArray = {
       ...updatedChildrenMap,
-      ...arrayToMapped(flattenObject(state)),
+      ...mappedState,
       [node.id]: {
-        ...node,
+        ...mappedState[node.id],
         children: Object.values(updatedChildrenMap).map(({ id }) => id),
       },
     };

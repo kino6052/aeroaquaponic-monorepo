@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import CollapsibleNode from "./components/CollapsibleNode";
+import ImportExport from "./components/ImportExport";
 import { State } from "./components/data";
 import { useSharedState } from "./components/utils";
 
@@ -13,6 +14,8 @@ export default function Home() {
         Onion Summarization Tool
       </h2>
       <CollapsibleNode node={data} />
+      <br />
+      <ImportExport />
     </main>
   );
 }
