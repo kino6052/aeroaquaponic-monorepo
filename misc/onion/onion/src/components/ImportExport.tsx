@@ -1,9 +1,9 @@
 import { useCallback, useEffect, useState } from "react";
-import { INode, State } from "../utils/data";
+import { State } from "../utils/data";
 import {
   Storage,
   copyToClipboard,
-  generateGUID,
+  importData,
   useSharedState,
 } from "../utils/utils";
 
@@ -15,39 +15,10 @@ const ImportExport: React.FC = () => {
   const handleImport = useCallback(() => {
     setIsVisible(!isVisible);
     if (isVisible && toImport) {
-      // console.warn(JSON.stringify(JSON.parse(toImport)));
-      try {
-        const result = JSON.parse(toImport);
-        setData(result);
-
-        return result;
-      } catch (e) {
-        const result = {
-          id: "root",
-          text: "Summary",
-          type: "node",
-          isOpen: true,
-          children: [
-            {
-              id: generateGUID(),
-              type: "text",
-              text: toImport,
-              children: [],
-            },
-          ],
-        } as INode;
-        setData(result);
-        console.error("Could not parse import");
-
-        return result;
-      }
+      const result = importData(toImport);
+      setData(result);
     }
-  }, []);
-
-  useEffect(() => {
-    const result = handleImport();
-    Storage.setText(JSON.stringify(result));
-  }, [data, handleImport]);
+  }, [isVisible, setData, toImport]);
 
   return (
     <div className="flex">
@@ -63,7 +34,7 @@ const ImportExport: React.FC = () => {
           </textarea>
         </div>
       )}
-      <button onClick={handleImport}>
+      <button onClick={() => handleImport()}>
         {isVisible ? "finish import" : "import data"}
       </button>
     </div>

@@ -158,11 +158,36 @@ export function copyToClipboard(text: string) {
 export const Storage = {
   getText: () => {
     try {
-      return localStorage.getItem("onion");
+      return localStorage.getItem("onion") || "";
     } catch (e) {
       console.error("Could not restore data");
       return "";
     }
   },
   setText: (text: string) => localStorage.setItem("onion", text),
+};
+
+export const importData = (data?: string) => {
+  try {
+    const result = JSON.parse(data);
+    return result;
+  } catch (e) {
+    const result = {
+      id: "root",
+      text: "Summary",
+      type: "node",
+      isOpen: true,
+      children: [
+        {
+          id: generateGUID(),
+          type: "text",
+          text: data,
+          children: [],
+        },
+      ],
+    } as INode;
+    console.error("Could not parse import");
+
+    return result;
+  }
 };

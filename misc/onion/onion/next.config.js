@@ -2,7 +2,7 @@
 const nextConfig = {
   reactStrictMode: true,
   output: "export",
-  assetPrefix: "/onion/",
+  // assetPrefix: "/onion/",
 };
 
 module.exports = nextConfig;

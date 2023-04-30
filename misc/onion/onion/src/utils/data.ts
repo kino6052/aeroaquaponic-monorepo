@@ -1,4 +1,5 @@
 import { BehaviorSubject } from "rxjs";
+import { Storage, importData } from "./utils";
 
 export interface INode {
   id: string;
@@ -31,4 +32,11 @@ export const data: INode = {
   ],
 };
 
-export const State = new BehaviorSubject(data);
+const _data = importData(Storage.getText());
+
+export const State = new BehaviorSubject<INode>(_data);
+
+State.subscribe((_data) => {
+  console.warn(_data);
+  Storage.setText(JSON.stringify(_data));
+});
