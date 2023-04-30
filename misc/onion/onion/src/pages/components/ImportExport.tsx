@@ -1,6 +1,10 @@
 import { useState } from "react";
-import { INode, State } from "./data";
-import { copyToClipboard, generateGUID, useSharedState } from "./utils";
+import { INode, State } from "../../utils/data";
+import {
+  copyToClipboard,
+  generateGUID,
+  useSharedState,
+} from "../../utils/utils";
 
 const ImportExport: React.FC = () => {
   const [data, setData] = useSharedState(State);

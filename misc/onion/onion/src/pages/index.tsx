@@ -1,8 +1,8 @@
 import { Inter } from "next/font/google";
 import CollapsibleNode from "./components/CollapsibleNode";
 import ImportExport from "./components/ImportExport";
-import { State } from "./components/data";
-import { useSharedState } from "./components/utils";
+import { State } from "../utils/data";
+import { useSharedState } from "../utils/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -13,6 +13,7 @@ export function mapNodes<T extends string | INode>(array: T[]) {
           children: [],
         }
       : {
+          // @ts-ignore
           ..._node,
           children: _node.children.map((n) => n?.id).filter((v) => !v),
         }
@@ -136,6 +137,7 @@ export function copyToClipboard(text: string) {
     console.error("Clipboard API not available");
     return;
   }
+  // @ts-ignore
   navigator.permissions.query({ name: "clipboard-write" }).then((result) => {
     if (result.state == "granted" || result.state == "prompt") {
       navigator.clipboard.writeText(text).then(

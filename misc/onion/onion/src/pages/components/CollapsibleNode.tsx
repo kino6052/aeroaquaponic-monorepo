@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { INode, State } from "./data";
+import { INode, State } from "../../utils/data";
 import {
   arrayToMapped,
   arrayToTree,
@@ -9,7 +9,7 @@ import {
   sliceArray,
   useSharedState,
   _reduce,
-} from "./utils";
+} from "../../utils/utils";
 import TextNode from "./TextNode";
 import VisibilityNode from "./VisibilityNode";
 
@@ -63,6 +63,7 @@ const CollapsibleNode: React.FC<{
 
     if (!prevNode) return;
 
+    // @ts-ignore
     mappedArray[id] = { ...prevNode, ...node };
 
     const newState = JSON.parse(
@@ -103,6 +104,7 @@ const CollapsibleNode: React.FC<{
     const grandChildren = mapNodes(_reduce(section));
 
     const updatedChildrenMap = arrayToMapped(
+      // @ts-ignore
       _reduce(result).map((_node) => {
         if (typeof _node === "string") {
           return {
@@ -158,9 +160,8 @@ const CollapsibleNode: React.FC<{
 
     const mappedState = arrayToMapped(flattenObject(state));
 
-    // console.warn(array[index].children);
-    // setArray([...before, ...array[index].children, ...after]);
     const updatedChildrenMap = arrayToMapped(
+      // @ts-ignore
       mapNodes(_reduce([...before, ...array[index].children, ...after]))
     );
 
