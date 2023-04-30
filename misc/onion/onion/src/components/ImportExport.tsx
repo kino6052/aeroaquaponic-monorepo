@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { INode, State } from "../utils/data";
 import {
   Storage,
@@ -12,18 +12,17 @@ const ImportExport: React.FC = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [toImport, setToImport] = useState(Storage.getText());
 
-  useEffect(() => {
-    Storage.setText(JSON.stringify(data));
-  }, []);
-
-  const handleImport = () => {
+  const handleImport = useCallback(() => {
     setIsVisible(!isVisible);
     if (isVisible && toImport) {
       // console.warn(JSON.stringify(JSON.parse(toImport)));
       try {
-        setData(JSON.parse(toImport));
+        const result = JSON.parse(toImport);
+        setData(result);
+
+        return result;
       } catch (e) {
-        setData({
+        const result = {
           id: "root",
           text: "Summary",
           type: "node",
@@ -36,11 +35,19 @@ const ImportExport: React.FC = () => {
               children: [],
             },
           ],
-        } as INode);
+        } as INode;
+        setData(result);
         console.error("Could not parse import");
+
+        return result;
       }
     }
-  };
+  }, []);
+
+  useEffect(() => {
+    const result = handleImport();
+    Storage.setText(JSON.stringify(result));
+  }, [data, handleImport]);
 
   return (
     <div className="flex">
