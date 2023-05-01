@@ -158,13 +158,17 @@ export function copyToClipboard(text: string) {
 export const Storage = {
   getText: () => {
     try {
-      return localStorage.getItem("onion") || "";
+      if (typeof window === "undefined") return "";
+      return window?.localStorage?.getItem("onion") || "";
     } catch (e) {
       console.error("Could not restore data");
       return "";
     }
   },
-  setText: (text: string) => localStorage.setItem("onion", text),
+  setText: (text: string) => {
+    if (typeof window === "undefined") return;
+    window?.localStorage?.setItem("onion", text);
+  },
 };
 
 export const importData = (data?: string) => {
