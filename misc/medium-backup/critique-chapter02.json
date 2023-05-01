@@ -1,0 +1,113 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "1b646acb-0045-4bd5-bef5-54383390410d",
+      "type": "text",
+      "text": "       SECTION I. Of Space. \n § 2. Metaphysical Exposition of this Conception. \n ",
+      "children": []
+    },
+    {
+      "id": "e9981036-66ab-41ab-a15e-13ab90dde4c9",
+      "text": "What are time and space?",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "f0d55e31-c980-42bd-9152-00927b707bee",
+          "type": "text",
+          "text": " By means of the external sense (a property of the mind), we represent to ourselves objects as without us, and these all in space. Herein alone are their shape, dimensions, and relations to each other determined or determinable. The internal sense, by means of which the mind contemplates itself or its internal state, gives, indeed, no intuition of the soul as an object; yet there is nevertheless a determinate form, under which alone the contemplation of our internal state is possible, so that all which relates to the inward determinations of the mind is represented in relations of time. Of time we cannot have any external intuition, any more than we can have an internal intuition of space. What then are time and space? Are they real existences? Or, are they merely relations or determinations of things, such, however, as would equally belong to these things in themselves, though they should never become objects of intuition; or, are they such as belong only to the form of intuition, and consequently to the subjective constitution of the mind, without which these predicates of time and space could not be attached to any object? In order to become informed on these points, we shall first give an exposition of the conception of space. By exposition, I mean the clear, though not detailed, representation of that which belongs to a conception; and an exposition is metaphysical when it contains that which represents the conception as given à priori.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e2b44e44-6e50-48e0-9946-85a7f001ee8b",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "7fe66541-1623-4d21-b2a7-16da483a8d5d",
+      "text": "Representation of space must already exist in us.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "aa8555be-eeb1-426f-83f8-032a6f2acafd",
+          "type": "text",
+          "text": " 1. Space is not a conception which has been derived from outward experiences. For, in order that certain sensations may relate to something without me (that is, to something which occupies a different part of space from that in which I am); in like manner, in order that I may represent them not merely as without, of, and near to each other, but also in separate places, the representation of space must already exist as a foundation. Consequently, the representation of space cannot be borrowed from the relations of external phenomena through experience; but, on the contrary, this external experience is itself only possible through the said antecedent representation.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "7e7bca77-2375-4d6e-b951-5bed005aef59",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "eb20b37f-60ed-4e5d-8f26-818c8ad573fa",
+      "text": "Space is part of the foundation of all external intuitions.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "33ae7a3e-2131-427f-b629-8ef30053cdd9",
+          "type": "text",
+          "text": " 2. Space then is a necessary representation à priori, which serves for the foundation of all external intuitions. We never can imagine or make a representation to ourselves of the non-existence of space, though we may easily enough think that no objects are found in it. It must, therefore, be considered as the condition of the possibility of phenomena, and by no means as a determination dependent on them, and is a representation à priori, which necessarily supplies the basis for external phenomena.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "6d67015f-b989-4bf5-9a3a-af7dc7c67b93",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "f879e3ee-dcff-4dde-8c10-88e15624fd87",
+      "text": "Space is a pure intuition. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "a46b2666-3688-4815-8a68-1a3322dfdc0e",
+          "type": "text",
+          "text": " 3. Space is no discursive, or as we say, general conception of the relations of things, but a pure intuition. For, in the first place, we can only represent to ourselves one space, and, when we talk of divers spaces, we mean only parts of one and the same space. Moreover, these parts cannot antecede this one all-embracing space, as the component parts from which the aggregate can be made up, but can be cogitated only as existing in it. Space is essentially one, and multiplicity in it, consequently the general notion of spaces, of this or that space, depends solely upon limitations. Hence it follows that an à priori intuition (which is not empirical) lies at the root of all our conceptions of space. Thus, moreover, the principles of geometry—for example, that “in a triangle, two sides together are greater than the third,” are never deduced from general conceptions of line and triangle, but from intuition, and this à priori, with apodeictic certainty.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ad49f6e9-30c7-453a-b32c-005f4ddbe8a2",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "c2fb1339-c022-4b1c-9e98-e21b335d2b36",
+      "text": "Why space is pure intuition and not a conception.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "517326d7-b41c-47cf-b251-844ed117e207",
+          "type": "text",
+          "text": " 4. Space is represented as an infinite given quantity. Now every conception must indeed be considered as a representation which is contained in an infinite multitude of different possible representations, which, therefore, comprises these under itself; but no conception, as such, can be so conceived, as if it contained within itself an infinite multitude of representations. Nevertheless, space is so conceived of, for all parts of space are equally capable of being produced to infinity. Consequently, the original representation of space is an intuition à priori, and not a conception.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
