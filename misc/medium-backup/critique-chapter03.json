@@ -1,0 +1,71 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "3217ca1e-ad21-459f-a268-54f69ed21239",
+      "type": "text",
+      "text": "     § 3. Transcendental Exposition of the Conception of Space. \n",
+      "children": []
+    },
+    {
+      "id": "ea657f15-c37c-4496-b26e-355412f4b841",
+      "text": "Transcedental exposition as explanation of conception. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "8ac5a8d9-8205-4bce-9a5b-8bd03190b49f",
+          "type": "text",
+          "text": " By a transcendental exposition, I mean the explanation of a conception, as a principle, whence can be discerned the possibility of other synthetical à priori cognitions. For this purpose, it is requisite, firstly, that such cognitions do really flow from the given conception; and, secondly, that the said cognitions are only possible under the presupposition of a given mode of explaining this conception.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "b4f2b4e7-3a74-4dc0-a1ed-780081965bc5",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "1f584443-3204-40c3-aba6-5e2328fa76bc",
+      "text": "Geometry as an example of why space is innate intuition.  ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "3e13ed8c-90b7-430c-9ed7-202c8605bb30",
+          "type": "text",
+          "text": " Geometry is a science which determines the properties of space synthetically, and yet à priori. What, then, must be our representation of space, in order that such a cognition of it may be possible? It must be originally intuition, for from a mere conception, no propositions can be deduced which go out beyond the conception, and yet this happens in geometry. (Introd. V.) But this intuition must be found in the mind à priori, that is, before any perception of objects, consequently must be pure, not empirical, intuition. For geometrical principles are always apodeictic, that is, united with the consciousness of their necessity, as: “Space has only three dimensions.” But propositions of this kind cannot be empirical judgements, nor conclusions from them. (Introd. II.) Now, how can an external intuition anterior to objects themselves, and in which our conception of objects can be determined à priori, exist in the human mind? Obviously not otherwise than in so far as it has its seat in the subject only, as the formal capacity of the subject’s being affected by objects, and thereby of obtaining immediate representation, that is, intuition; consequently, only as the form of the external sense in general.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "0be03941-6917-4203-8ca9-d11dda3540ba",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "da687f86-1ad6-4132-834b-060346fb1797",
+      "text": "Conclusion of why geometry is possible as an a priori science. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "579b3f5d-3dc0-4c47-a319-b9ed2cd5a107",
+          "type": "text",
+          "text": " Thus it  is only by means of our explanation that the possibility of geometry, as a synthetical science à priori, becomes comprehensible. Every mode of explanation which does not show us this possibility, although in appearance it may be similar to ours, can with the utmost certainty be distinguished from it by these marks.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
