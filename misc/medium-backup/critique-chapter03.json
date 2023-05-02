@@ -18,10 +18,46 @@
       "isEditing": false,
       "children": [
         {
-          "id": "8ac5a8d9-8205-4bce-9a5b-8bd03190b49f",
+          "id": "a7192544-9066-48fc-a9f8-bb9520f0487d",
           "type": "text",
-          "text": " By a transcendental exposition, I mean the explanation of a conception, as a principle, whence can be discerned the possibility of other synthetical à priori cognitions. For this purpose, it is requisite, firstly, that such cognitions do really flow from the given conception; and, secondly, that the said cognitions are only possible under the presupposition of a given mode of explaining this conception.",
+          "text": "   By a transcendental exposition, I mean the explanation of",
           "children": []
+        },
+        {
+          "id": "317d4d11-5810-4d34-a478-6d3f9a0a3c0e",
+          "text": "a structure from which can other knowledge be deduced.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "7b99f68c-24cd-487b-9d2e-dce159c6bc56",
+              "type": "text",
+              "text": " a conception, as a principle, whence can be discerned the possibility of other synthetical à priori cognitions.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e5b2ba9b-908a-446c-b3d2-7986977c0f4f",
+          "type": "text",
+          "text": "For this purpose, it is requisite, firstly, that such cognitions do really flow from the given conception; and, secondly, that the said cognitions are only possible",
+          "children": []
+        },
+        {
+          "id": "3a359ad9-ede0-476c-9314-ce2bc7f21d81",
+          "text": "to be derived from this conception.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b45c5193-b318-43f2-8b5f-3da679e9d8dc",
+              "type": "text",
+              "text": " under the presupposition of a given mode of explaining this conception.",
+              "children": []
+            }
+          ]
         }
       ]
     },
