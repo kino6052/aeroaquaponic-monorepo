@@ -1,0 +1,284 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "0d371867-62ed-4807-9e65-bdd806a77bc8",
+      "type": "text",
+      "text": "        § 4. Conclusions from the foregoing Conceptions. \n",
+      "children": []
+    },
+    {
+      "id": "7b475f99-32d4-4d7e-9224-9bfa1a86a555",
+      "text": "Space doesn't belong to objects. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "7799d174-e870-4189-9d8b-a16a276372f1",
+          "type": "text",
+          "text": " (a) Space does not represent any property of objects as things in themselves, nor does it represent them in their relations to each other; in other words, space does not represent to us any determination of objects such as attaches to the objects themselves, and would remain, even though all subjective  conditions of the intuition were abstracted. For neither absolute nor relative determinations of objects can be intuited prior to the existence of the things to which they belong, and therefore not à priori.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "430c57c7-ccae-47a7-b21a-f52adad45b8b",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "9ba32f25-5f2f-4673-8f32-0bb23b17910d",
+      "text": "Space is given a priori.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "64af2f95-5dba-4676-9a66-e37a0b47ad83",
+          "type": "text",
+          "text": "    (b)",
+          "children": []
+        },
+        {
+          "id": "c460765a-8cf9-44d0-a410-1d3de22978bc",
+          "text": "Space is a form of \"external\" phenomena. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "88663283-8c36-4ed0-a96a-e98c8608bab1",
+              "type": "text",
+              "text": " Space is nothing else than the form of all phenomena of the external sense, that is, the subjective condition of the sensibility, under which alone external intuition is possible.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "e1d1eb5a-3cf8-428a-a4f6-179d8b9bc512",
+          "type": "text",
+          "text": "Now, because",
+          "children": []
+        },
+        {
+          "id": "fce94842-ecf1-4d95-9b33-a8e7c3294200",
+          "text": "ability to sense is a prerequisite, ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "5c608010-4228-4b94-a67f-ee5d2750609b",
+              "type": "text",
+              "text": " the receptivity or capacity of the subject to be affected by objects necessarily antecedes all intuitions of these objects,",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "899616ce-e9ed-4b26-b18f-f2a6b22ca76b",
+          "type": "text",
+          "text": "it is easily understood",
+          "children": []
+        },
+        {
+          "id": "f0396c70-758d-4018-aa1c-c4b2b6bf80ed",
+          "text": "how we can know something without experiencing it before.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "c454db27-7532-495c-9575-0eb57b785710",
+              "type": "text",
+              "text": " how the form of all phenomena can be given in the mind previous to all actual perceptions, therefore à priori, and how it, as a pure intuition, in which all objects must be determined, can contain principles of the relations of these objects prior to all experience.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "8298a49c-6900-4e13-a529-f632123deb7e",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "1c08c605-c37d-43d5-838d-b774dc84b9f6",
+      "text": "Space loses meaning separated from us. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "524d52ae-ae10-43d8-b233-69ca5d3820d9",
+          "type": "text",
+          "text": "       ",
+          "children": []
+        },
+        {
+          "id": "77e7080e-e1d2-4129-bf74-9ec110427ef6",
+          "text": "Outside of us space loses meaning. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "8985ca06-12ab-4208-90e9-1ecc19263e06",
+              "type": "text",
+              "text": " It is therefore from the human point of view only that we can speak of space, extended objects, etc. If we depart from the subjective condition, under which alone we can obtain external intuition, or, in other words, by means of which we are affected by objects, the representation of space has no meaning whatsoever. This predicate is only applicable to things in so far as they appear to us, that is, are objects of sensibility.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5720ca0c-e5a0-4cf2-b920-8de67f71b3b6",
+          "text": "Receptivity is required to produce relations from which we can reduce everything to space. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "493a554b-2286-4644-9b43-5814455fa149",
+              "type": "text",
+              "text": " The constant form of this receptivity, which we call sensibility, is a necessary condition of all relations in which objects can be intuited as existing without us, and when abstraction of these objects is made, is a pure intuition, to which we give the name of space.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "cf30b974-b4ec-4997-bedb-222b864711f7",
+          "text": "What understanding of sensibility tells about all things. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "3b406fed-3d26-4490-ad53-31cf81596139",
+              "type": "text",
+              "text": " It is clear that we cannot make the special conditions of sensibility into conditions of the possibility of things, but only of the possibility of their existence as far as they are phenomena.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2d66dc4f-f618-4a9b-ab54-3b4f7d8bd0e3",
+          "text": "This ability gives us ability to understand phenomena, but there are limitations. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "500dedf0-1bd3-424e-9584-be9f0c89843d",
+              "type": "text",
+              "text": " And so we may correctly say that space contains all which can appear to us externally, but not all things considered as things in themselves, be they intuited or not, or by whatsoever subject one will. As to the intuitions of other thinking beings, we cannot judge whether they are or are not bound by the same conditions which limit our own intuition, and which for us are universally valid.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "34601d65-0995-4d89-a8f8-078e4d7394fa",
+          "text": "This understanding can produce universal judgement about phenomena. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "573ecc84-bd98-476e-80bc-db60dfbfe445",
+              "type": "text",
+              "text": " If we join the limitation of a judgement to the conception of the subject, then the judgement will possess unconditioned validity. For example, the proposition, “All objects are beside each other in space,” is valid only under the limitation that these things are taken as objects of our sensuous intuition. But if I join the condition to the conception and say, “All things, as external phenomena, are beside each other in space,” then the rule is valid universally, and without any limitation.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "546045ec-2ffb-46f4-a4a7-82f01c3575ba",
+          "text": "Conclusions about phenomena and ideality of space. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "69ff52f4-4152-470b-a578-76a3663be766",
+              "type": "text",
+              "text": " Our expositions, consequently, teach the reality (i.e., the objective validity) of space in regard of all which can be presented to us externally as object, and at the same time also the ideality of space in regard to objects when they are considered by means of reason as things in themselves, that is, without reference to the constitution of our sensibility.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "03853380-f7de-411b-937f-2f4756bc94fb",
+          "text": "Space makes no sense when taken in isolation. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "1a084218-ec0d-4c87-9bbc-ee8835be512b",
+              "type": "text",
+              "text": " We maintain, therefore, the empirical reality of space in regard to all possible external experience, although we must admit its transcendental ideality; in other words, that it is nothing, so soon as we withdraw the condition upon which the possibility of all experience depends and look upon space as something that belongs to things in themselves.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "074cc5fa-f58c-45f9-9de0-57d093141638",
+      "type": "text",
+      "text": "\n  \n ",
+      "children": []
+    },
+    {
+      "id": "a95d3a08-15cf-4440-b5ad-eeca70b184cf",
+      "text": "Space is the only a priori representation of phenomena. (How about time?) ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "44eed281-40ef-4bb5-acb2-97dcf3b66740",
+          "type": "text",
+          "text": "  ",
+          "children": []
+        },
+        {
+          "id": "58968873-462a-4120-ae4a-ed6fef413ba2",
+          "text": "Space is the only representation outside of us that is given apriori. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "131cef3e-db28-4f2f-a087-77a831315983",
+              "type": "text",
+              "text": " But, with the exception of space, there is no representation, subjective and referring to something external to us, which could be called objective à priori. For there are no other subjective representations from which we can deduce synthetical propositions à priori, as we can from the intuition of space. (See § 3.) Therefore, to speak accurately, no ideality whatever belongs to these, although they agree in this respect with the representation of space, that they belong merely to the subjective nature of the mode of sensuous perception; such a mode, for example, as that of sight, of hearing, and of feeling, by means of the sensations of colour, sound, and heat, but which, because they are only sensations and not intuitions, do not of themselves give us the cognition of any object, least of all, an à priori cognition.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6383ad06-7ac9-43a3-8edf-e6d553eb4ed7",
+          "text": "Warning about insufficient demonstrations of ideality of space and how it's related to things in themselves. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "30decc0d-451b-4669-baf8-5a4e7392894a",
+              "type": "text",
+              "text": " My purpose, in the above remark, is merely this: to guard any one against illustrating the asserted ideality of space by examples quite insufficient, for example, by colour, taste, etc.; for these must be contemplated not as properties of things, but only as changes in the subject, changes which may be different in different men. For, in such a case, that which is originally a mere phenomenon, a rose, for example, is taken by the empirical understanding for a thing in itself, though to every different eye, in respect of its colour, it may appear different. On the contrary, the transcendental conception of phenomena in space is a critical admonition, that, in general, nothing which is intuited in space is a thing in itself, and that space is not a form which belongs as a property to things; but that objects are quite unknown to us in themselves, and what we call outward objects, are nothing else but mere representations of our sensibility, whose form is space, but whose real correlate, the thing in itself, is not known by means of these representations, nor ever can be, but respecting which, in experience, no inquiry is ever made.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
