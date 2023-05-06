@@ -1,0 +1,113 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "f3ab0d88-f7bc-4f57-8dc8-1715669d4a2b",
+      "type": "text",
+      "text": "     § 5. Metaphysical Exposition of this Conception. \n",
+      "children": []
+    },
+    {
+      "id": "2e5ccad3-3254-4d95-a60b-4b2b4aa0d42a",
+      "text": "1. Time is not an empirical conception. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "34ed9659-58af-440b-a54a-c1b850a74624",
+          "type": "text",
+          "text": " 1. Time is not an empirical conception. For neither coexistence nor succession would be perceived by us, if the representation of time did not exist as a foundation à priori. Without this presupposition we could not represent to ourselves that things exist together at one and the same time, or at different times, that is, contemporaneously, or in succession.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "53fc9cc9-88fa-4d12-b957-fb61d74ef269",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "cdf3dee4-0519-4814-a82c-9db08096997a",
+      "text": "2. Time lies at the foundation of our intuitions.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "8c88c602-f6ec-4745-af5a-3848d3aa5b9a",
+          "type": "text",
+          "text": " 2. Time is a necessary representation, lying at the foundation of all our intuitions. With regard to phenomena in general, we cannot think away time from them, and represent them to ourselves as out of and unconnected with time, but we can quite well represent to ourselves time void of phenomena. Time is therefore given à priori. In it alone is all reality of phenomena possible. These may all be annihilated in thought, but time itself, as the universal condition of their possibility, cannot be so annulled.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1fcc6745-7c21-4e59-a2fe-fc5670314af6",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "34011ac3-b6b2-47d1-bade-436d3d37cf30",
+      "text": "3. Necessity of certain axioms related to time. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "42afaddb-95ba-48de-b2c5-ffccdde404a8",
+          "type": "text",
+          "text": " 3. On this necessity à priori is also founded the possibility of apodeictic principles of the relations of time, or axioms of time in general, such as: “Time has only one dimension,” “Different times are not coexistent but successive” (as different spaces are not successive but coexistent). These principles cannot be derived from experience, for it would give neither strict universality, nor apodeictic certainty. We should only be able to say, “so common experience teaches us,” but not “it must be so.” They are valid as rules, through which, in general, experience is possible; and they instruct us respecting experience, and not by means of it.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "1215067b-ca0b-4bc5-b6b8-fb77c7c873c0",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "e84f17cd-c2e2-470c-ae0d-ca8d061eda05",
+      "text": "4. Time is not discursive but is a general conception. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "60187a05-ecc7-4c61-ae6e-e2480b7cabf1",
+          "type": "text",
+          "text": " 4. Time is not a discursive, or as it is called, general conception, but a pure form of the sensuous intuition. Different times are merely parts of one and the same time. But the representation which can only be given by a single object is an intuition. Besides, the proposition that different times cannot be coexistent could not be derived from a general conception. For this proposition is synthetical, and therefore cannot spring out of conceptions alone. It is therefore contained immediately in the intuition and representation of time.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "d7244355-afb6-4120-a6ce-f25e6ac7765f",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "4e1f3543-7ee2-41fb-bdb9-62c6c5e44012",
+      "text": "5. The infinity of time. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "eb4db395-c114-4539-821e-0a3341b94d96",
+          "type": "text",
+          "text": " 5. The infinity of time signifies nothing more than that every determined quantity of time is possible only through limitations of one time lying at the foundation. Consequently, the original representation, time, must be given as unlimited. But as the determinate representation of the parts of time and of every quantity of an object can only be obtained by limitation, the complete representation of time must not be furnished by means of conceptions, for these contain only partial representations. Conceptions, on the contrary, must have immediate intuition for their basis.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
