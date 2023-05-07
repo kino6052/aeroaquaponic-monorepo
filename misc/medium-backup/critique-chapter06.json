@@ -1,0 +1,50 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "cf5ab561-a369-4fcb-8d00-5023f2b9ed9e",
+      "type": "text",
+      "text": " § 6 Transcendental Exposition of the Conception of Time. \n",
+      "children": []
+    },
+    {
+      "id": "ba74159f-a480-4cea-86e4-933289280bd8",
+      "text": "Explanation of how a priori knowldge about change is possible a priori. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "a9e119e1-0e00-45c3-b7e4-2427ba05673d",
+          "type": "text",
+          "text": "  I may here refer to what is said above (§ 5, 3), where, for or sake of brevity, I have placed under the head of metaphysical exposition, that which is properly transcendental.",
+          "children": []
+        },
+        {
+          "id": "ff46dfbd-d1d4-494c-ac18-fbfc7205318a",
+          "text": "Conception of change requires a priori knowledge of time. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "a659da4b-d261-4783-8a61-9559c42cc9ce",
+              "type": "text",
+              "text": " Here I shall add that the conception of change, and with it the conception of motion, as change of place, is possible only through and in the representation of time; that if this representation were not an intuition (internal) à priori, no conception, of whatever kind, could render comprehensible the possibility of change, in other words, of a conjunction of contradictorily opposed predicates in one and the same object, for example, the presence of a thing in a place and the non-presence of the same thing in the same place.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "1a4c6bdc-9368-4a7d-adc6-26ef4909404e",
+          "type": "text",
+          "text": "It is only in time that it is possible to meet with two contradictorily opposed determinations in one thing, that is, after each other. Thus our conception of time explains the possibility of so much synthetical knowledge à priori, as is exhibited in the general doctrine of motion, which is not a little fruitful.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
