@@ -25,7 +25,7 @@
         },
         {
           "id": "c97c7bd6-6bd9-4d5b-94a9-cab3ef6d7f13",
-          "text": "[name]",
+          "text": "Time is not a separate phenomenon or part of phenomena. ",
           "type": "node",
           "isOpen": false,
           "isEditing": false,
@@ -46,16 +46,46 @@
         },
         {
           "id": "ecd9b167-4383-4454-8775-0eee42dbac61",
-          "text": "[name]",
+          "text": "Time is a form of internal sense. ",
           "type": "node",
           "isOpen": false,
           "isEditing": false,
           "children": [
             {
-              "id": "62228f74-30fd-472c-8083-089faf66009c",
+              "id": "4aec11aa-48dc-46f0-8bf9-f3e309944ce2",
               "type": "text",
-              "text": " (b) Time is nothing else than the form of the internal sense, that is, of the intuitions of self and of our internal state. For time cannot be any determination of outward phenomena. It has to do neither with shape nor position; on the contrary, it determines the relation of representations in our internal state. And precisely because this internal intuition presents to us no shape or form, we endeavour to supply this want by analogies, and represent the course of time by a line progressing to infinity, the content of which constitutes a series which is only of one dimension; and we conclude from the properties of this line as to all the properties of time, with this single exception, that the parts of the line are coexistent, whilst those of time are successive. From this it is clear also that the representation of time is itself an intuition, because all its relations can be expressed in an external intuition.",
+              "text": "   (b) Time is nothing else than the form of the internal sense, that is, of the intuitions of self and of our internal state.",
               "children": []
+            },
+            {
+              "id": "a3df9eb5-6930-4b8a-8719-659e48e49f5b",
+              "text": "It's not a property of something else. ",
+              "type": "node",
+              "isOpen": false,
+              "isEditing": false,
+              "children": [
+                {
+                  "id": "902c6680-9618-4b1b-9f13-7832e90db1d2",
+                  "type": "text",
+                  "text": " For time cannot be any determination of outward phenomena.",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "fa2d20a9-df6d-4bbc-9b37-72e950cd4242",
+              "text": "The want for analogies also illustrate it as just a form of intuition. ",
+              "type": "node",
+              "isOpen": false,
+              "isEditing": false,
+              "children": [
+                {
+                  "id": "6c292bd5-82cb-42ed-b72d-9ff806c816c1",
+                  "type": "text",
+                  "text": " It has to do neither with shape nor position; on the contrary, it determines the relation of representations in our internal state. And precisely because this internal intuition presents to us no shape or form, we endeavour to supply this want by analogies, and represent the course of time by a line progressing to infinity, the content of which constitutes a series which is only of one dimension; and we conclude from the properties of this line as to all the properties of time, with this single exception, that the parts of the line are coexistent, whilst those of time are successive. From this it is clear also that the representation of time is itself an intuition, because all its relations can be expressed in an external intuition.",
+                  "children": []
+                }
+              ]
             }
           ]
         },
@@ -67,13 +97,19 @@
         },
         {
           "id": "9fa5a234-a135-4ad4-936b-354ae99a3f55",
-          "text": "[name]",
+          "text": "Time is a condition for all phenomena (not just external) ",
           "type": "node",
           "isOpen": false,
           "isEditing": false,
           "children": [
             {
-              "id": "8ef61d95-61c4-47e5-8a8c-fa48116450c3",
+              "id": "37dab4b3-196f-4012-99e9-de97d843b078",
+              "type": "text",
+              "text": "  ",
+              "children": []
+            },
+            {
+              "id": "2d2095fc-db34-47bc-9a24-0c27ec6e3a0c",
               "type": "text",
               "text": " (c) Time is the formal condition à priori of all phenomena whatsoever. Space, as the pure form of external intuition, is limited as a condition à priori to external phenomena alone. On the other hand, because all representations, whether they have or have not external things for their objects, still in themselves, as determinations of the mind, belong to our internal state; and because this internal state is subject to the formal condition of the internal intuition, that is, to time—time is a condition à priori of all phenomena whatsoever—the immediate condition of all internal, and thereby the mediate condition of all external phenomena. If I can say à priori, “All outward phenomena are in space, and determined à priori according to the relations of space,” I can also, from the principle of the internal sense, affirm universally, “All phenomena in general, that is, all objects of the senses, are in time and stand necessarily in relations of time.”",
               "children": []
@@ -88,7 +124,7 @@
         },
         {
           "id": "ba9484ad-4422-47ee-9d64-f5c4e484feb5",
-          "text": "[name]",
+          "text": "Time doesn't make sense outside of us. ",
           "type": "node",
           "isOpen": false,
           "isEditing": false,
@@ -109,7 +145,7 @@
         },
         {
           "id": "411907d3-5f2a-4391-b405-26a5d39e132a",
-          "text": "[name]",
+          "text": "Time has no absolute reality, only empirical.",
           "type": "node",
           "isOpen": false,
           "isEditing": false,
