@@ -1,0 +1,128 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "4f5b0011-f791-44c0-8c27-05a9008c1e4f",
+      "type": "text",
+      "text": "  ",
+      "children": []
+    },
+    {
+      "id": "c484c912-e9a5-45e2-8460-4bc981f7f1eb",
+      "text": "[name]",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "54e5f65a-e2f1-4958-b34a-d7bc071d7a90",
+          "type": "text",
+          "text": "      §  7. Conclusions from the above Conceptions. \n",
+          "children": []
+        },
+        {
+          "id": "c97c7bd6-6bd9-4d5b-94a9-cab3ef6d7f13",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "d2bdccea-1838-4ba9-9117-6778651b20fe",
+              "type": "text",
+              "text": " (a) Time is not something which subsists of itself, or which inheres in things as an objective determination, and therefore remains, when abstraction is made of the subjective conditions of the intuition of things. For in the former case, it would be something real, yet without presenting to any power of perception any real object. In the latter case, as an order or determination inherent in things themselves, it could not be antecedent to things, as their condition, nor discerned or intuited by means of synthetical propositions à priori. But all this is quite possible when we regard time as merely the subjective condition under which all our intuitions take place. For in that case, this form of the inward intuition can be represented prior to the objects, and consequently à priori.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "71bedb03-904d-4507-a911-2580b27a3050",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "ecd9b167-4383-4454-8775-0eee42dbac61",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "62228f74-30fd-472c-8083-089faf66009c",
+              "type": "text",
+              "text": " (b) Time is nothing else than the form of the internal sense, that is, of the intuitions of self and of our internal state. For time cannot be any determination of outward phenomena. It has to do neither with shape nor position; on the contrary, it determines the relation of representations in our internal state. And precisely because this internal intuition presents to us no shape or form, we endeavour to supply this want by analogies, and represent the course of time by a line progressing to infinity, the content of which constitutes a series which is only of one dimension; and we conclude from the properties of this line as to all the properties of time, with this single exception, that the parts of the line are coexistent, whilst those of time are successive. From this it is clear also that the representation of time is itself an intuition, because all its relations can be expressed in an external intuition.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "34de4c9f-2717-49e6-a31f-db7a3e6c72a3",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "9fa5a234-a135-4ad4-936b-354ae99a3f55",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "8ef61d95-61c4-47e5-8a8c-fa48116450c3",
+              "type": "text",
+              "text": " (c) Time is the formal condition à priori of all phenomena whatsoever. Space, as the pure form of external intuition, is limited as a condition à priori to external phenomena alone. On the other hand, because all representations, whether they have or have not external things for their objects, still in themselves, as determinations of the mind, belong to our internal state; and because this internal state is subject to the formal condition of the internal intuition, that is, to time—time is a condition à priori of all phenomena whatsoever—the immediate condition of all internal, and thereby the mediate condition of all external phenomena. If I can say à priori, “All outward phenomena are in space, and determined à priori according to the relations of space,” I can also, from the principle of the internal sense, affirm universally, “All phenomena in general, that is, all objects of the senses, are in time and stand necessarily in relations of time.”",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0b1f0f43-5e39-4709-8773-3eed19abbfd9",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "ba9484ad-4422-47ee-9d64-f5c4e484feb5",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "f51587fe-b519-419e-99c6-84c1106f0b85",
+              "type": "text",
+              "text": " If we abstract our internal intuition of ourselves and all external intuitions, possible only by virtue of this internal intuition and presented to us by our faculty of representation, and consequently take objects as they are in themselves, then time is nothing. It is only of objective validity in regard to phenomena, because these are things which we regard as objects of our senses. It no longer objective we, make abstraction of the sensuousness of our intuition, in other words, of that mode of representation which is peculiar to us, and speak of things in general. Time is therefore merely a subjective condition of our (human) intuition (which is always sensuous, that is, so far as we are affected by objects), and in itself, independently of the mind or subject, is nothing. Nevertheless, in respect of all phenomena, consequently of all things which come within the sphere of our experience, it is necessarily objective. We cannot say, “All things are in time,” because in this conception of things in general, we abstract and make no mention of any sort of intuition of things. But this is the proper condition under which time belongs to our representation of objects. If we add the condition to the conception, and say, “All things, as phenomena, that is, objects of sensuous intuition, are in time,” then the proposition has its sound objective validity and universality à priori.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "387c5db5-2edc-4f52-8b18-e400a6c4eb63",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "411907d3-5f2a-4391-b405-26a5d39e132a",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b810e315-7ff3-4b14-8aee-ac9e5453b1f4",
+              "type": "text",
+              "text": " What we have now set forth teaches, therefore, the empirical reality of time; that is, its objective validity in reference to all objects which can ever be presented to our senses. And as our intuition is always sensuous, no object ever can be presented to us in experience, which does not come under the conditions of time. On the other hand, we deny to time all claim to absolute reality; that is, we deny that it, without having regard to the form of our sensuous intuition, absolutely inheres in things as a condition or property. Such properties as belong to objects as things in themselves never can be presented to us through the medium of the senses. Herein consists, therefore, the transcendental ideality of time, according to which, if we abstract the subjective conditions of sensuous intuition, it is nothing, and cannot be reckoned as subsisting or inhering in objects as things in themselves, independently of its relation to our intuition. This ideality, like that of space, is not to be proved or illustrated by fallacious analogies with sensations, for this reason—that in such arguments or illustrations, we make the presupposition that the phenomenon, in which such and such predicates inhere, has objective reality, while in this case we can only find such an objective reality as is itself empirical, that is, regards the object as a mere phenomenon. In reference to this subject, see the remark in Section I (§ 4)",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
