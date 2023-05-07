@@ -1,0 +1,767 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "b31fbd54-ff61-47b6-aa53-acf2fa300d7a",
+      "type": "text",
+      "text": "             § 9. General Remarks on Transcendental Æsthetic. \n",
+      "children": []
+    },
+    {
+      "id": "6bec2126-6b51-436b-a399-ed2eb0733bca",
+      "text": "Recap that all our intuition is nothing but representation of phenomena. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "17d1b1ce-4be3-4bf9-b3fb-4dd26ed75191",
+          "type": "text",
+          "text": "    I. In order to prevent any misunderstanding, it will be requisite, in the first place, to recapitulate, as clearly as possible, what our opinion is with respect to the fundamental nature of our sensuous cognition in general.",
+          "children": []
+        },
+        {
+          "id": "774d8209-ab52-4c5d-a367-b985e202533b",
+          "text": "Phenomena disappear if intuitions taken away. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "6c458561-65c4-44be-add5-40a5192caa75",
+              "type": "text",
+              "text": " We have intended, then, to say that all our intuition is nothing but the representation of phenomena; that the things which we intuite, are not in themselves the same as our representations of them in intuition, nor are their relations in themselves so constituted as they appear to us; and that if we take away the subject, or even only the subjective constitution of our senses in general, then not only the nature and relations of objects in space and time, but even space and time themselves disappear; and that these, as phenomena, cannot exist in themselves, but only in us.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6553d60d-8658-46cc-93fd-2d6e13396151",
+          "text": "We don't know what objects in themselves are. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "fe3a0833-2c28-4163-94b4-48dc3efa8275",
+              "type": "text",
+              "text": " What may be the nature of objects considered as things in themselves and without reference to the receptivity of our sensibility is quite unknown to us. We know nothing more than our mode of perceiving them, which is peculiar to us, and which, though not of necessity pertaining to every animated being, is so to the whole human race. With this alone we have to do.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0eeb7d27-8a9b-43ff-9746-db5d323da79a",
+          "type": "text",
+          "text": "Space and time are the pure forms thereof; sensation the matter. The former alone can we cognize à priori, that is, antecedent to all actual perception; and for this reason such cognition is called pure intuition. The latter is that in our cognition which is called cognition à posteriori, that is, empirical intuition. The former appertain absolutely and necessarily to our sensibility, of whatsoever kind our sensations may be; the latter may be of very diversified character.",
+          "children": []
+        },
+        {
+          "id": "b17dab34-4555-4ecd-b4f3-3e1016a449fe",
+          "text": "Advancing our empirical intuition we can't learn about objects themselves. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "059f0e19-3779-422e-b3de-f76147984fcd",
+              "type": "text",
+              "text": " Supposing that we should carry our empirical intuition even to the very highest degree of clearness, we should not thereby advance one step nearer to a knowledge of the constitution of objects as things in themselves. For we could only, at best, arrive at a complete cognition of our own mode of intuition, that is of our sensibility, and this always under the conditions originally attaching to the subject, namely, the conditions of space and time; while the question: “What are objects considered as things in themselves?” remains unanswerable even after the most thorough examination of the phenomenal world.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9af87bd7-6d02-4ea3-a426-9a5051e199f4",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "2c2f0d4a-0cb3-4183-a61a-fbdbb6801c14",
+      "text": "Our intuition is detached from objects in themselves. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "1b5dbdc9-6ef9-4ae8-9afb-d360294dabf4",
+          "type": "text",
+          "text": "    ",
+          "children": []
+        },
+        {
+          "id": "caefdfc5-0983-47ed-afb8-24c9ca3f8a98",
+          "text": "Our sensibility is not connected to things in themselves. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "ccac781a-56b8-472f-bfef-f87a35b35379",
+              "type": "text",
+              "text": " To say, then, that all our sensibility is nothing but the confused representation of things containing exclusively that which belongs to them as things in themselves, and this under an accumulation of characteristic marks and partial representations which we cannot distinguish in consciousness, is a falsification of the conception of sensibility and phenomenization, which renders our whole doctrine thereof empty and useless.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "dc80fa0c-bc57-4d61-8a7d-6aebafa86a9d",
+          "text": "Even false conception has certain properties. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "851de832-75d1-4046-92ce-efb85daa34a8",
+              "type": "text",
+              "text": " The difference between a confused and a clear representation is merely logical and has nothing to do with content. No doubt the conception of right, as employed by a sound understanding, contains all that the most subtle investigation could unfold from it, although, in the ordinary practical use of the word, we are not conscious of the manifold representations comprised in the conception.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8e06a4fc-75c4-404a-b546-e2e277feabf1",
+          "text": "Absolute things are not phenomena. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "f5971571-1349-4c46-9216-6f0ecec38dc3",
+              "type": "text",
+              "text": " But we cannot for this reason assert that the ordinary conception is a sensuous one, containing a mere phenomenon, for right cannot appear as a phenomenon; but the conception of it lies in the understanding, and represents a property (the moral property) of actions, which belongs to them in themselves.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8c018292-4408-435f-af62-aafde7fd0ed3",
+          "text": "Our intuition is detached from object in itself. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "a91d6ecc-a1a1-4bca-a3ef-db7e959645d5",
+              "type": "text",
+              "text": " On the other hand, the representation in intuition of a body contains nothing which could belong to an object considered as a thing in itself, but merely the phenomenon or appearance of something, and the mode in which we are affected by that appearance; and this receptivity of our faculty of cognition is called sensibility, and remains toto caelo different from the cognition of an object in itself, even though we should examine the content of the phenomenon to the very bottom.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "280ceda1-d83e-4f9e-8081-3bb04ffcf8d4",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "e431f082-916b-4339-aa49-d12358f31925",
+      "text": "Faculty of sensibility doesn't give knowledge of things in themselves. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "eff8128f-a289-40e5-aaeb-9acb330df7d8",
+          "type": "text",
+          "text": "   ",
+          "children": []
+        },
+        {
+          "id": "d1a8b1ed-ae49-48ec-a3d3-11c0ddbf3f3f",
+          "text": " Lebniz philosophy is wrong about content and origin of sensual and intellectual concepts. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "bc959a6c-46d0-4cfe-8370-4317cfcdd3a8",
+              "type": "text",
+              "text": " It must be admitted that the Leibnitz-Wolfian philosophy has assigned an entirely erroneous point of view to all investigations into the nature and origin of our cognitions, inasmuch as it regards the distinction between the sensuous and the intellectual as merely logical, whereas it is plainly transcendental, and concerns not merely the clearness or obscurity, but the content and origin of both.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6c2e8cd0-94b0-47ee-849f-95b553defbe4",
+          "text": "Faculty of sensibility doesn't give us knowledge about things in themselves. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "c27c6b34-b8b2-4e47-9990-508f77e7691c",
+              "type": "text",
+              "text": " For the faculty of sensibility not only does not present us with an indistinct and confused cognition of objects as things in themselves, but, in fact, gives us no knowledge of these at all.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0de9abc6-038c-42b9-833e-46ded8247552",
+          "text": "If we remove ourselves the object disappears. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "67722647-820c-4cb7-b141-bde734750c61",
+              "type": "text",
+              "text": " On the contrary, so soon as we abstract in thought our own subjective nature, the object represented, with the properties ascribed to it by sensuous intuition, entirely disappears, because it was only this subjective nature that determined the form of the object as a phenomenon.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5012ca89-2029-4639-a1fc-9a14d2508c05",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "f8807e8a-01d2-4b92-b5e3-3b3fbb683f01",
+      "text": "\"Subjective\" and \"objective\" parts of phenomena are still subjective. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "f68282b4-acfe-40c4-a8ef-aa4d97f14284",
+          "type": "text",
+          "text": "     ",
+          "children": []
+        },
+        {
+          "id": "5458641e-aacc-4cbc-989c-187267b62393",
+          "text": "Sometimes we have no problem distinguishing objective and subjective parts of phenomena. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "54395da4-3120-4734-b6cb-b9d63de6169e",
+              "type": "text",
+              "text": " In phenomena, we commonly, indeed, distinguish that which essentially belongs to the intuition of them, and is valid for the sensuous faculty of every human being, from that which belongs to the same intuition accidentally, as valid not for the sensuous faculty in general, but for a particular state or organization of this or that sense.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a14c419f-4e8f-4017-8d6a-9b5b682d1326",
+          "text": "The distinction is only empirical. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "13269cd6-fdef-40ab-af25-a118db13c508",
+              "type": "text",
+              "text": " Accordingly, we are accustomed to say that the former is a cognition which represents the object itself, whilst the latter presents only a particular appearance or phenomenon thereof. This distinction, however, is only empirical.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8347c7f4-e3ef-4c4d-a5e5-3b5bce45a142",
+          "text": "The entire sensuous world is just phenomena. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "e7bb8ed7-5941-4daf-bd81-7b550beb22e7",
+              "type": "text",
+              "text": " If we stop here (as is usual), and do not regard the empirical intuition as itself a mere phenomenon (as we ought to do), in which nothing that can appertain to a thing in itself is to be found, our transcendental distinction is lost, and we believe that we cognize objects as things in themselves, although in the whole range of the sensuous world, investigate the nature of its objects as profoundly as we may, we have to do with nothing but phenomena.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b6bf837d-acb8-42fd-a03e-f9bd650f9c54",
+          "text": "Why we call rainbow an illusion and the rain a reality. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "1d583dda-229f-40cd-960f-c741507fa688",
+              "type": "text",
+              "text": " Thus, we call the rainbow a mere appearance of phenomenon in a sunny shower, and the rain, the reality or thing in itself; and this is right enough, if we understand the latter conception in a merely physical sense, that is, as that which in universal experience, and under whatever conditions of sensuous perception, is known in intuition to be so and so determined, and not otherwise.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "d21301ce-e859-4728-a3b6-bdaeddd7c46f",
+          "text": "Why can't we find transcedental knowledge of thing in itself in rain and rainbow. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "5c1a5484-5323-4ed9-bbab-dbd07ac71365",
+              "type": "text",
+              "text": " But if we consider this empirical datum generally, and inquire, without reference to its accordance with all our senses, whether there can be discovered in it aught which represents an object as a thing in itself (the raindrops of course are not such, for they are, as phenomena, empirical objects), the question of the relation of the representation to the object is transcendental; and not only are the raindrops mere phenomena, but even their circular form, nay, the space itself through which they fall, is nothing in itself, but both are mere modifications or fundamental dispositions of our sensuous intuition, whilst the transcendental object remains for us utterly unknown.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "0fa46104-81cd-43fc-b8dc-b0eeaa9ea9f0",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "472f1e9b-1977-43b9-a143-dd5ae39c521d",
+      "text": "Why the argument about space and time are certain and can form a theory. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "8630140d-fded-43a2-a8cd-bcb436542ebf",
+          "type": "text",
+          "text": " The second important concern of our æsthetic is that it does not obtain favour merely as a plausible hypothesis, but possess as undoubted a character of certainty as can be demanded of any theory which is to serve for an organon. In order fully to convince the reader of this certainty, we shall select a case which will serve to make its validity apparent, and also to illustrate what has been said in § 3.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "817b2e7b-a6e9-49f6-ad97-78b2006e5c43",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "ed14d092-471b-4455-a13d-a2d65f9c1829",
+      "text": "If space is not a priori given, how can we attain knowledge that is universal?",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "2858feee-8827-4d20-a5f6-a61a842979f3",
+          "type": "text",
+          "text": " Suppose, then, that space and time are in themselves objective, and conditions of the—possibility of objects as things in themselves. In the first place, it is evident that both present us, with very many apodeictic and synthetic propositions à priori, but especially space—and for this reason we shall prefer it for investigation at present. As the propositions of geometry are cognized synthetically à priori, and with apodeictic certainty, I inquire: Whence do you obtain propositions of this kind, and on what basis does the understanding rest, in order to arrive at such absolutely necessary and universally valid truths?",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "e6c82289-b0fd-49a3-b294-cd209e76a0be",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "a4315b19-286c-44a0-bd00-ebb3aaa4ce37",
+      "text": "Space and time as forms of intuition possess necessity. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "771f7dc7-59bb-4283-b42d-36711a50c2bc",
+          "type": "text",
+          "text": "       ",
+          "children": []
+        },
+        {
+          "id": "015c4d47-0535-4217-8de4-f99fd2c674fb",
+          "text": "Intuitions or conceptions are the only way of arriving at truths, but conceptions gained from experience don't possess necessity. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "9ab4d12a-89f6-4810-aa93-e9a2b6854e61",
+              "type": "text",
+              "text": " There is no other way than through intuitions or conceptions, as such; and these are given either à priori or à posteriori. The latter, namely, empirical conceptions, together with the empirical intuition on which they are founded, cannot afford any synthetical proposition, except such as is itself also empirical, that is, a proposition of experience. But an empirical proposition cannot possess the qualities of necessity and absolute universality, which, nevertheless, are the characteristics of all geometrical propositions.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "268ff586-cf29-48b2-b349-1499671356ed",
+          "text": "From a priory conceptions only analytical cognitions can be done.  ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "d98e782b-cec6-40f0-9bcc-decd5a1d7289",
+              "type": "text",
+              "text": " As to the first and only means to arrive at such cognitions, namely, through mere conceptions or intuitions à priori, it is quite clear that from mere conceptions no synthetical cognitions, but only analytical ones, can be obtained.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "0cbbedc4-7c41-473d-941f-a0a0aa40ebec",
+          "text": "Example of necessity in geometry. (Why is imagination not mentioned???)",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "26e0fc06-d366-4c7c-9170-49df525aeed1",
+              "type": "text",
+              "text": " Take, for example, the proposition: “Two straight lines cannot enclose a space, and with these alone no figure is possible,” and try to deduce it from the conception of a straight line and the number two; or take the proposition: “It is possible to construct a figure with three straight lines,” and endeavour, in like manner, to deduce it from the mere conception of a straight line and the number three. All your endeavours are in vain, and you find yourself forced to have recourse to intuition, as, in fact, geometry always does.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a1f95db6-0511-4145-8546-d185d9012c0c",
+          "text": "Why you must have use a priori intuition and not empirical. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "060587c0-fe8c-4ee0-9dbf-5806a758f4c2",
+              "type": "text",
+              "text": " You therefore give yourself an object in intuition. But of what kind is this intuition? Is it a pure à priori, or is it an empirical intuition? If the latter, then neither an universally valid, much less an apodeictic proposition can arise from it, for experience never can give us any such proposition. You must, therefore, give yourself an object à priori in intuition, and upon that ground your synthetical proposition.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "693eedd0-994e-4f52-bccc-7eb24c7eb316",
+          "text": "Challenge to the view of thinking the knowledge is empirical. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "14145958-ebf8-4d1f-b07b-22813c639592",
+              "type": "text",
+              "text": " Now if there did not exist within you a faculty of intuition à priori; if this subjective condition were not in respect to its form also the universal condition à priori under which alone the object of this external intuition is itself possible; if the object (that is, the triangle) were something in itself, without relation to you the subject; how could you affirm that that which lies necessarily in your subjective conditions in order to construct a triangle, must also necessarily belong to the triangle in itself?",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "676040a9-536e-4274-b24e-c76e3d9e6975",
+          "text": "Why it would be futile to talk about geometry in this case. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "61c9301c-0aab-4518-a469-00336c56c6a3",
+              "type": "text",
+              "text": " For to your conceptions of three lines, you could not add anything new (that is, the figure); which, therefore, must necessarily be found in the object, because the object is given before your cognition, and not by means of it. If, therefore, space (and time also) were not a mere form of your intuition, which contains conditions à priori, under which alone things can become external objects for you, and without which subjective conditions the objects are in themselves nothing, you could not construct any synthetical proposition whatsoever regarding external objects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "5bae4207-9cf4-4d6a-8d26-b99d1e1c5bba",
+          "text": "Space and time as form of sensuous intuition have necessity. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "84f8ff09-d104-46f0-854f-22855d7ca626",
+              "type": "text",
+              "text": " It is therefore not merely possible or probable, but indubitably certain, that space and time, as the necessary conditions of all our external and internal experience, are merely subjective conditions of all our intuitions, in relation to which all objects are therefore mere phenomena, and not things in themselves, presented to us in this particular manner. And for this reason, in respect to the form of phenomena, much may be said à priori, whilst of the thing in itself, which may lie at the foundation of these phenomena, it is impossible to say anything.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fd981043-61db-473d-abc3-25dae93dce7f",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "5c0980ce-783a-43d5-9d93-ae4c7909fd17",
+      "text": "All phenomena are just relations and cannot teach us about things in themselves via external senses. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "0ee3adc5-2dce-4cdf-a29a-5e4c363b4bb6",
+          "type": "text",
+          "text": "  ",
+          "children": []
+        },
+        {
+          "id": "5cb9aa65-bd26-48bc-aafe-3b3dd3d5bfc7",
+          "text": "All data we get through senses are mere relations. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "1d8228da-b858-41d8-9825-166f96d311fa",
+              "type": "text",
+              "text": " II. In confirmation of this theory of the ideality of the external as well as internal sense, consequently of all objects of sense, as mere phenomena, we may especially remark that all in our cognition that belongs to intuition contains nothing more than mere relations. (The feelings of pain and pleasure, and the will, which are not cognitions, are excepted.)",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9c90f4ee-57c5-4097-a08a-9e90e5a2b988",
+          "text": "Things cannot be known by itself by the means of intuition. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "8729a265-50e7-46b7-881f-e63712e55435",
+              "type": "text",
+              "text": " The relations, to wit, of place in an intuition (extension), change of place (motion), and laws according to which this change is determined (moving forces). That, however, which is present in this or that place, or any operation going on, or result taking place in the things themselves, with the exception of change of place, is not given to us by intuition. Now by means of mere relations, a thing cannot be known in itself; and it may therefore be fairly concluded, that, as through the external sense nothing but mere representations of relations are given us, the said external sense in its representation can contain only the relation of the object to the subject, but not the essential nature of the object as a thing in itself.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b1c445dd-e5cd-4bcb-8c6f-0237b8728e03",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "bb8e7f24-be58-4d1e-be3b-c3930c814fa0",
+      "text": "Internal sense is also a form of perception of phenomena. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "f7fcba35-50d5-423e-aec4-699445357f15",
+          "type": "text",
+          "text": "    ",
+          "children": []
+        },
+        {
+          "id": "cd80c639-c8b9-49c8-8e0c-12f63d6a1630",
+          "text": "Internal senses also can't provide knowledge of things in themselves. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "136902d0-6eec-4852-b5f6-eb7540ee3b0e",
+              "type": "text",
+              "text": " The same is the case with the internal intuition, not only because, in the internal intuition, the representation of the external senses constitutes the material with which the mind is occupied; but because time, in which we place, and which itself antecedes the consciousness of, these representations in experience, and which, as the formal condition of the mode according to which objects are placed in the mind, lies at the foundation of them, contains relations of the successive, the coexistent, and of that which always must be coexistent with succession, the permanent. Now that which, as representation, can antecede every exercise of thought (of an object), is intuition; and when it contains nothing but relations, it is the form of the intuition, which, as it presents us with no representation, except in so far as something is placed in the mind, can be nothing else than the mode in which the mind is affected by its own activity, to wit—its presenting to itself representations, consequently the mode in which the mind is affected by itself; that is, it can be nothing but an internal sense in respect to its form.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "fb655ccb-8fba-4139-8b18-85288703ef08",
+          "text": "The internal sense (reflexivity) receives self as phenomenon.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "c036695a-baaa-47a0-abfd-d0760f9ae9ba",
+              "type": "text",
+              "text": " Everything that is represented through the medium of sense is so far phenomenal; consequently, we must either refuse altogether to admit an internal sense, or the subject, which is the object of that sense, could only be represented by it as phenomenon, and not as it would judge of itself, if its intuition were pure spontaneous activity, that is, were intellectual.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "7ee430cb-6987-41b1-a1f4-ffc16ac2875e",
+          "text": "The difficult question of how is self-intuition possible.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "d60c4ed0-76f5-49b2-b6e9-035fa45fe58d",
+              "type": "text",
+              "text": " The difficulty here lies wholly in the question: How can the subject have an internal intuition of itself? But this difficulty is common to every theory. The consciousness of self (apperception) is the simple representation of the “ego”; and if by means of that representation alone, all the manifold representations in the subject were spontaneously given, then our internal intuition would be intellectual.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2ece0435-eaea-452b-941d-4c5de880261a",
+          "text": "The consciousness requires perception and takes time to examine self. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b358199d-22eb-4758-8476-f6ba43b39a96",
+              "type": "text",
+              "text": " This consciousness in man requires an internal perception of the manifold representations which are previously given in the subject; and the manner in which these representations are given in the mind without spontaneity, must, on account of this difference (the want of spontaneity), be called sensibility. If the faculty of self-consciousness is to apprehend what lies in the mind, it must all act that and can in this way alone produce an intuition of self. But the form of this intuition, which lies in the original constitution of the mind, determines, in the representation of time, the manner in which the manifold representations are to combine themselves in the mind; since the subject intuites itself, not as it would represent itself immediately and spontaneously, but according to the manner in which the mind is internally affected, consequently, as it appears, and not as it is.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "45c0ce82-fd75-44ae-ad58-a8dad47ad644",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "fcf06044-0331-4ecc-9fd4-8aebb46e959b",
+      "text": "External objects are appearances but not necessarily illusory. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "dff4cc50-a345-42e5-ab54-d1907de2b41b",
+          "type": "text",
+          "text": "  ",
+          "children": []
+        },
+        {
+          "id": "aa7b92e1-c10f-4669-9618-20c27f64ebaa",
+          "text": "Even though objects are given through senses doesn't necessarily mean they are illusory. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "fe8b9e4e-afce-4f4a-ab43-e9bbeb15dfb6",
+              "type": "text",
+              "text": " III. When we say that the intuition of external objects, and also the self-intuition of the subject, represent both, objects and subject, in space and time, as they affect our senses, that is, as they appear—this is by no means equivalent to asserting that these objects are mere illusory appearances. For when we speak of things as phenomena, the objects, nay, even the properties which we ascribe to them, are looked upon as really given; only that, in so far as this or that property depends upon the mode of intuition of the subject, in the relation of the given object to the subject, the object as phenomenon is to be distinguished from the object as a thing in itself. Thus I do not say that bodies seem or appear to be external to me, or that my soul seems merely to be given in my self-consciousness, although I maintain that the properties of space and time, in conformity to which I set both, as the condition of their existence, abide in my mode of intuition, and not in the objects in themselves.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "cd7214ce-1915-4880-a595-2c8cd2f964d2",
+          "text": "We have to depend on appearances to avoid contradictions. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "a8ed1b7a-8b18-44d3-9fa9-a585d77145e1",
+              "type": "text",
+              "text": " It would be my own fault, if out of that which I should reckon as phenomenon, I made mere illusory appearance.[12] But this will not happen, because of our principle of the ideality of all sensuous intuitions. On the contrary, if we ascribe objective reality to these forms of representation, it becomes impossible to avoid changing everything into mere appearance. For if we regard space and time as properties, which must be found in objects as things in themselves, as sine quibus non of the possibility of their existence, and reflect on the absurdities in which we then find ourselves involved, inasmuch as we are compelled to admit the existence of two infinite things, which are nevertheless not substances, nor anything really inhering in substances, nay, to admit that they are the necessary conditions of the existence of all things, and moreover, that they must continue to exist, although all existing things were annihilated—we cannot blame the good Berkeley for degrading bodies to mere illusory appearances. Nay, even our own existence, which would in this case depend upon the self-existent reality of such a mere nonentity as time, would necessarily be changed with it into mere appearance—an absurdity which no one has as yet been guilty of.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "9bb457a0-8653-42ff-a241-d524c73ce5b6",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "ee981e8d-c81c-440f-9592-b2d872678217",
+      "text": "Illusion is when you attribute properties that aren't part of the object. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "655ed6d4-4135-4ce5-8b3b-44a9391b9672",
+          "type": "text",
+          "text": "  ",
+          "children": []
+        },
+        {
+          "id": "11be3116-97a9-4d00-a623-2e9f7601c75b",
+          "text": "Definition of phenomenon as something to be found in relation from object to subject. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "641e9618-18b2-4438-948e-cc8e90fea2aa",
+              "type": "text",
+              "text": " [12] The predicates of the phenomenon can be affixed to the object itself in relation to our sensuous faculty; for example, the red colour or the perfume to the rose. But (illusory) appearance never can be attributed as a predicate to an object, for this very reason, that it attributes to this object in itself that which belongs to it only in relation to our sensuous faculty, or to the subject in general, e.g., the two handles which were formerly ascribed to Saturn. That which is never to be found in the object itself, but always in the relation of the object to the subject, and which moreover is inseparable from our representation of the object, we denominate phenomenon.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8fd1e161-095c-4031-9379-7eb47f2ba04c",
+          "text": "Time and space being separate from things in themselves is not an illusion. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "79966353-8ac1-4d68-8a10-4f0212521528",
+              "type": "text",
+              "text": " Thus the predicates of space and time are rightly attributed to objects of the senses as such, and in this there is no illusion. On the contrary, if I ascribe redness of the rose as a thing in itself, or to Saturn his handles, or extension to all external objects, considered as things in themselves, without regarding the determinate relation of these objects to the subject, and without limiting my judgement to that relation—then, and then only, arises illusion.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "2eb756eb-169f-4700-8cb2-f992562e84a2",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "482a29c7-976e-430b-8598-100de3d1dae4",
+      "text": "Why would making space and time as things in themselves or conditions of things in themselves is not in line with Theology. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "465ecaf9-2412-4d57-ab08-e340a0fb984b",
+          "type": "text",
+          "text": " IV. In natural theology, where we think of an object—God—which never can be an object of intuition to us, and even to himself can never be an object of sensuous intuition, we carefully avoid attributing to his intuition the conditions of space and time—and intuition all his cognition must be, and not thought, which always includes limitation. But with what right can we do this if we make them forms of objects as things in themselves, and such, moreover, as would continue to exist as à priori conditions of the existence of things, even though the things themselves were annihilated? For as conditions of all existence in general, space and time must be conditions of the existence of the Supreme Being also. But if we do not thus make them objective forms of all things, there is no other way left than to make them subjective forms of our mode of intuition—external and internal; which is called sensuous, because it is not primitive, that is, is not such as gives in itself the existence of the object of the intuition (a mode of intuition which, so far as we can judge, can belong only to the Creator), but is dependent on the existence of the object, is possible, therefore, only on condition that the representative faculty of the subject is affected by the object.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "40dd922a-ed04-4d69-a733-73e9a3a8758f",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "5938a2d4-fed1-4e48-b694-c81d5622b215",
+      "text": "Musings about what beings might poses different or similar sensibility to ours. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "5b56ea08-531f-4fa8-8367-275ad4e18795",
+          "type": "text",
+          "text": " It is, moreover, not necessary that we should limit the mode of intuition in space and time to the sensuous faculty of man. It may well be that all finite thinking beings must necessarily in this respect agree with man (though as to this we cannot decide), but sensibility does not on account of this universality cease to be sensibility, for this very reason, that it is a deduced (intuitus derivativus), and not an original (intuitus originarius), consequently not an intellectual intuition, and this intuition, as such, for reasons above mentioned, seems to belong solely to the Supreme Being, but never to a being dependent, quoad its existence, as well as its intuition (which its existence determines and limits relatively to given objects). This latter remark, however, must be taken only as an illustration, and not as any proof of the truth of our æsthetical theory.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
