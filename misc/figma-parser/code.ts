@@ -12,19 +12,56 @@
 // );
 // This plugin counts the number of layers, ignoring instance sublayers,
 // in the document
+
+function reflowComponents(node: SceneNode & ChildrenMixin) {
+  const components: SceneNode[] = [];
+  const PADDING = 10; // Add padding between components
+
+  // Collect all top-level components in the page
+  if (node.children && node.type !== "FRAME") {
+    for (const child of node.children) {
+      components.push(child);
+    }
+  }
+
+  // Calculate new positions for components
+  let currentX = node.x;
+
+  for (const component of components) {
+    try {
+      console.warn(component);
+      component.x = currentX;
+      currentX += component.width + PADDING;
+      component.y = node.y;
+      // @ts-ignore
+      component.height = node.height;
+    } catch (e) {
+      console.warn(e);
+    }
+  }
+}
+
 let count = 0;
-function traverse(node: BaseNode) {
+function traverse(node: SceneNode & ChildrenMixin) {
   if ("children" in node) {
     count++;
+
+    reflowComponents(node);
     // if (node.type !== "INSTANCE") {
+    if (!node.children) return;
+
     for (const child of node.children) {
-      traverse(child);
+      traverse(child as SceneNode & ChildrenMixin);
       console.warn(child);
     }
     // }
   }
 }
-traverse(figma.root); // start the traversal at the root
+
+traverse(
+  figma.root.findOne((n) => n.name === "ROOT") as unknown as SceneNode &
+    ChildrenMixin
+); // start the traversal at the root
 
 // for (let i = 0; i < numberOfRectangles; i++) {
 //   const rect = figma.createRectangle();
