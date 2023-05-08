@@ -1,0 +1,116 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "2d76b492-647a-4ce9-b99e-9077c51caa45",
+      "type": "text",
+      "text": "   II. Of Transcendental Logic.  \n",
+      "children": []
+    },
+    {
+      "id": "9ca14dfb-5988-4cdd-a8d6-ac86364be09b",
+      "text": "There exists logic that deals only with pure form. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "432e92c6-6d16-4829-89d2-5d27eb0dd7aa",
+          "type": "text",
+          "text": "   ",
+          "children": []
+        },
+        {
+          "id": "f7ea359a-4131-4025-9c19-d43bebefbaaa",
+          "text": "General thought considers only the form of thought in general. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "e9c62cb6-4ade-459c-b10a-5464530cbb90",
+              "type": "text",
+              "text": " General logic, as we have seen, makes abstraction of all content of cognition, that is, of all relation of cognition to its object, and regards only the logical form in the relation of cognitions to each other, that is, the form of thought in general.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "a7ed77e4-c3f9-4cb0-83f7-93fe75cc9144",
+          "text": "Distinction between pure and empirical thought. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "1f2d632e-a686-4dbc-91b1-2373c14f3282",
+              "type": "text",
+              "text": " But as we have both pure and empirical intuitions (as transcendental æsthetic proves), in like manner a distinction might be drawn between pure and empirical thought (of objects).",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "405d29c0-c1e7-49a8-bd43-e7c49fdf4879",
+          "text": "There exists logic that can deal with pure form. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "75c4fe61-0517-49f6-a3ec-ab56c6747482",
+              "type": "text",
+              "text": " In this case, there would exist a kind of logic, in which we should not make abstraction of all content of cognition; for or logic which should comprise merely the laws of pure thought (of an object), would of course exclude all those cognitions which were of empirical content. This kind of logic would also examine the origin of our cognitions of objects, so far as that origin cannot be ascribed to the objects themselves; while, on the contrary, general logic has nothing to do with the origin of our cognitions, but contemplates our representations, be they given primitively à priori in ourselves, or be they only of empirical origin, solely according to the laws which the understanding observes in employing them in the process of thought, in relation to each other. Consequently, general logic treats of the form of the understanding only, which can be applied to representations, from whatever source they may have arisen.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cc087630-8817-4b57-8bc2-c667e874472e",
+      "type": "text",
+      "text": " \n   \n",
+      "children": []
+    },
+    {
+      "id": "a2fb2f47-7c3f-4d89-bc0b-5d987cf4fe0a",
+      "text": "There is a distinction between pure a priori logic and a priori intuitions related to aesthetic.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "9311ced3-642f-413d-ab97-bd12c27f7602",
+          "type": "text",
+          "text": " And here I shall make a remark, which the reader must bear well in mind in the course of the following considerations, to wit, that not every cognition à priori, but only those through which we cognize that and how certain representations (intuitions or conceptions) are applied or are possible only à priori; that is to say, the à priori possibility of cognition and the à priori use of it are transcendental. Therefore neither is space, nor any à priori geometrical determination of space, a transcendental Representation, but only the knowledge that such a representation is not of empirical origin, and the possibility of its relating to objects of experience, although itself à priori, can be called transcendental. So also, the application of space to objects in general would be transcendental; but if it be limited to objects of sense it is empirical. Thus, the distinction of the transcendental and empirical belongs only to the critique of cognitions, and does not concern the relation of these to their object.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "734faaff-69e1-4ce0-97c8-b65fc1215de3",
+      "type": "text",
+      "text": " \n   \n",
+      "children": []
+    },
+    {
+      "id": "e218081c-f513-4e5d-8a9f-d82dc9f8c763",
+      "text": "Pure logic is different from general logic as it deals with only a priori. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "bae2889e-a687-4926-9273-31689e751e57",
+          "type": "text",
+          "text": " Accordingly, in the expectation that there may perhaps be conceptions which relate à priori to objects, not as pure or sensuous intuitions, but merely as acts of pure thought (which are therefore conceptions, but neither of empirical nor æsthetical origin)—in this expectation, I say, we form to ourselves, by anticipation, the idea of a science of pure understanding and rational cognition, by means of which we may cogitate objects entirely à priori. A science of this kind, which should determine the origin, the extent, and the objective validity of such cognitions, must be called transcendental logic, because it has not, like general logic, to do with the laws of understanding and reason in relation to empirical as well as pure rational cognitions without distinction, but concerns itself with these only in an à priori relation to objects.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

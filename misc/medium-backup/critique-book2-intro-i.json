@@ -69,15 +69,72 @@
     },
     {
       "id": "0f0cbb3c-0c80-489e-9b46-1c19a1c6e4e7",
-      "text": "[name]",
+      "text": "We distinguish science of aesthetic from science of logic. ",
       "type": "node",
       "isOpen": false,
       "isEditing": false,
       "children": [
         {
-          "id": "023edff8-3061-4b67-9100-030d39493de4",
+          "id": "18fb7f5c-679c-4578-8a28-6fa8a56735f3",
           "type": "text",
-          "text": " We apply the term sensibility to the receptivity of the mind for impressions, in so far as it is in some way affected; and, on the other hand, we call the faculty of spontaneously producing representations, or the spontaneity of cognition, understanding. Our nature is so constituted that intuition with us never can be other than sensuous, that is, it contains only the mode in which we are affected by objects. On the other hand, the faculty of thinking the object of sensuous intuition is the understanding. Neither of these faculties has a preference over the other. Without the sensuous faculty no object would be given to us, and without the understanding no object would be thought. Thoughts without content are void; intuitions without conceptions, blind. Hence it is as necessary for the mind to make its conceptions sensuous (that is, to join to them the object in intuition), as to make its intuitions intelligible (that is, to bring them under conceptions). Neither of these faculties can exchange its proper function. Understanding cannot intuite, and the sensuous faculty cannot think. In no other way than from the united operation of both, can knowledge arise. But no one ought, on this account, to overlook the difference of the elements contributed by each; we have rather great reason carefully to separate and distinguish them. We therefore distinguish the science of the laws of sensibility, that is, æsthetic, from the science of the laws of the understanding, that is, logic.",
+          "text": "   ",
+          "children": []
+        },
+        {
+          "id": "3a0cc764-af33-446e-9fdd-2911184518fe",
+          "text": "There is sensibility and cogntions. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "4ad7812c-e562-4b3b-a7aa-4731031cd114",
+              "type": "text",
+              "text": " We apply the term sensibility to the receptivity of the mind for impressions, in so far as it is in some way affected; and, on the other hand, we call the faculty of spontaneously producing representations, or the spontaneity of cognition, understanding.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9c96c2a8-8fc7-4917-b4d7-9460cb7656c3",
+          "text": "Our intuitions are sensuous in nature. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "5f8a17aa-b54c-495f-93b2-8ffe8f4856f4",
+              "type": "text",
+              "text": " Our nature is so constituted that intuition with us never can be other than sensuous, that is, it contains only the mode in which we are affected by objects.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "80e42e6e-6140-46c3-8260-5a5534d2d035",
+          "type": "text",
+          "text": "On the other hand, the faculty of thinking the object of sensuous intuition is the understanding.",
+          "children": []
+        },
+        {
+          "id": "a25fab5a-c2e0-4a36-bdf9-62e1ecbb64e4",
+          "text": "Both faculties are equally important. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "c59700e5-1df5-4afc-bb76-f81b5914dbcf",
+              "type": "text",
+              "text": " Neither of these faculties has a preference over the other. Without the sensuous faculty no object would be given to us, and without the understanding no object would be thought.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "78655b1f-3c9e-4bd6-b352-61ec506ac6a2",
+          "type": "text",
+          "text": "Thoughts without content are void; intuitions without conceptions, blind. Hence it is as necessary for the mind to make its conceptions sensuous (that is, to join to them the object in intuition), as to make its intuitions intelligible (that is, to bring them under conceptions). Neither of these faculties can exchange its proper function. Understanding cannot intuite, and the sensuous faculty cannot think. In no other way than from the united operation of both, can knowledge arise. But no one ought, on this account, to overlook the difference of the elements contributed by each; we have rather great reason carefully to separate and distinguish them. We therefore distinguish the science of the laws of sensibility, that is, æsthetic, from the science of the laws of the understanding, that is, logic.",
           "children": []
         }
       ]
@@ -90,16 +147,46 @@
     },
     {
       "id": "3b636acf-96e4-4de3-9f0f-21eb4114e9e3",
-      "text": "[name]",
+      "text": "Logic is divided into logic of general and logic of particular. ",
       "type": "node",
       "isOpen": false,
       "isEditing": false,
       "children": [
         {
-          "id": "0ea7c4be-2718-4a78-91fc-81e58c62271d",
+          "id": "e1253699-e3b2-40a9-a2cd-20d1d1d7e521",
           "type": "text",
-          "text": " Now, logic in its turn may be considered as twofold—namely, as logic of the general, or of the particular use of the understanding. The first contains the absolutely necessary laws of thought, without which no use whatsoever of the understanding is possible, and gives laws therefore to the understanding, without regard to the difference of objects on which it may be employed. The logic of the particular use of the understanding contains the laws of correct thinking upon a particular class of objects. The former may be called elemental logic—the latter, the organon of this or that particular science. The latter is for the most part employed in the schools, as a propædeutic to the sciences, although, indeed, according to the course of human reason, it is the last thing we arrive at, when the science has been already matured, and needs only the finishing touches towards its correction and completion; for our knowledge of the objects of our attempted science must be tolerably extensive and complete before we can indicate the laws by which a science of these objects can be established.",
+          "text": "   Now, logic in its turn may be considered as twofold—namely, as logic of the general, or of the particular use of the understanding.",
           "children": []
+        },
+        {
+          "id": "50e25fee-5425-4432-b463-e39ddf6ab47a",
+          "text": "The logic of the general is fundamental. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "d8045c65-1b77-4c63-8e46-a7cc89a34881",
+              "type": "text",
+              "text": " The first contains the absolutely necessary laws of thought, without which no use whatsoever of the understanding is possible, and gives laws therefore to the understanding, without regard to the difference of objects on which it may be employed.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "12581b06-5442-4fdb-b712-a41ffa19128e",
+          "text": "The logic of particulars is secondary. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "0add2c55-04c4-433d-9b4b-244e5febbf22",
+              "type": "text",
+              "text": " The logic of the particular use of the understanding contains the laws of correct thinking upon a particular class of objects. The former may be called elemental logic—the latter, the organon of this or that particular science. The latter is for the most part employed in the schools, as a propædeutic to the sciences, although, indeed, according to the course of human reason, it is the last thing we arrive at, when the science has been already matured, and needs only the finishing touches towards its correction and completion; for our knowledge of the objects of our attempted science must be tolerably extensive and complete before we can indicate the laws by which a science of these objects can be established.",
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -111,16 +198,46 @@
     },
     {
       "id": "17cae9c1-9a82-41bb-82b3-339d136d64e5",
-      "text": "[name]",
+      "text": "General logic is either pure or applied. ",
       "type": "node",
       "isOpen": false,
       "isEditing": false,
       "children": [
         {
-          "id": "3e524d17-174b-4019-a520-dfe9fce7d0df",
+          "id": "8ae1a676-63d7-45bb-806c-b1390c652fb1",
           "type": "text",
-          "text": " General logic is again either pure or applied. In the former, we abstract all the empirical conditions under which the understanding is exercised; for example, the influence of the senses, the play of the fantasy or imagination, the laws of the memory, the force of habit, of inclination, etc., consequently also, the sources of prejudice—in a word, we abstract all causes from which particular cognitions arise, because these causes regard the understanding under certain circumstances of its application, and, to the knowledge of them experience is required. Pure general logic has to do, therefore, merely with pure à priori principles, and is a canon of understanding and reason, but only in respect of the formal part of their use, be the content what it may, empirical or transcendental. General logic is called applied, when it is directed to the laws of the use of the understanding, under the subjective empirical conditions which psychology teaches us. It has therefore empirical principles, although, at the same time, it is in so far general, that it applies to the exercise of the understanding, without regard to the difference of objects. On this account, moreover, it is neither a canon of the understanding in general, nor an organon of a particular science, but merely a cathartic of the human understanding.",
+          "text": "  ",
           "children": []
+        },
+        {
+          "id": "5392b596-49ff-4415-b5ce-36e45fa9a9d3",
+          "text": "Pure logic has to do with fundamental a priori principles. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "63f8a9d4-a918-4331-a9a8-3e5315a7b2a4",
+              "type": "text",
+              "text": " General logic is again either pure or applied. In the former, we abstract all the empirical conditions under which the understanding is exercised; for example, the influence of the senses, the play of the fantasy or imagination, the laws of the memory, the force of habit, of inclination, etc., consequently also, the sources of prejudice—in a word, we abstract all causes from which particular cognitions arise, because these causes regard the understanding under certain circumstances of its application, and, to the knowledge of them experience is required. Pure general logic has to do, therefore, merely with pure à priori principles, and is a canon of understanding and reason, but only in respect of the formal part of their use, be the content what it may, empirical or transcendental.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "07e67d44-d280-4c00-be01-74f91b03aae2",
+          "text": "Applied logic is about studying understanding in conjunction with empirical. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "a3d23b13-4210-4ea4-b9e8-0806a1bdd181",
+              "type": "text",
+              "text": " General logic is called applied, when it is directed to the laws of the use of the understanding, under the subjective empirical conditions which psychology teaches us. It has therefore empirical principles, although, at the same time, it is in so far general, that it applies to the exercise of the understanding, without regard to the difference of objects. On this account, moreover, it is neither a canon of the understanding in general, nor an organon of a particular science, but merely a cathartic of the human understanding.",
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -132,16 +249,73 @@
     },
     {
       "id": "fda1a7db-d912-4584-afde-2c2a636f0184",
-      "text": "[name]",
+      "text": "It's important to distinguish these two types. ",
       "type": "node",
       "isOpen": false,
       "isEditing": false,
       "children": [
         {
-          "id": "610fa76a-f3a7-4c55-a148-016d7f1f9296",
+          "id": "b635a9f1-252a-4190-88e4-6f175cac187f",
           "type": "text",
-          "text": " In general logic, therefore, that part which constitutes pure logic must be carefully distinguished from that which constitutes applied (though still general) logic. The former alone is properly science, although short and dry, as the methodical exposition of an elemental doctrine of the understanding ought to be. In this, therefore, logicians must always bear in mind two rules: \n  \n 1. As general logic, it makes abstraction of all content of the cognition of the understanding, and of the difference of objects, and has to do with nothing but the mere form of thought. \n  \n 2. As pure logic, it has no empirical principles, and consequently draws nothing (contrary to the common persuasion) from psychology, which therefore has no influence on the canon of the understanding. It is a demonstrated doctrine, and everything in it must be certain completely à priori.",
+          "text": "   ",
           "children": []
+        },
+        {
+          "id": "b5c32eb9-f006-4c43-9f46-0c42f25e9eeb",
+          "text": "Warning about distinction between the two types of logic. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "3440d04b-a232-4ccb-813c-4263fc1b8a68",
+              "type": "text",
+              "text": " In general logic, therefore, that part which constitutes pure logic must be carefully distinguished from that which constitutes applied (though still general) logic. The former alone is properly science, although short and dry, as the methodical exposition of an elemental doctrine of the understanding ought to be. In this, therefore, logicians must always bear in mind two rules:",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "148755a8-822b-4400-8737-0c485a3abfd6",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "7bae03d0-8de2-4658-8a32-433156de2a9e",
+          "text": "1. General logic = pure form of thought. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "35cc55b3-4f77-4a0b-a514-63b94b037328",
+              "type": "text",
+              "text": " 1. As general logic, it makes abstraction of all content of the cognition of the understanding, and of the difference of objects, and has to do with nothing but the mere form of thought.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "c9fc88e9-772d-4da7-bb4a-77e10d10f8c3",
+          "type": "text",
+          "text": "\n  \n",
+          "children": []
+        },
+        {
+          "id": "588eb850-1e8e-4815-abd7-2ae8751997cf",
+          "text": "2. Should draw only from a prior principles. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "54c5127f-1a56-47ac-83d9-d1243713eb42",
+              "type": "text",
+              "text": " 2. As pure logic, it has no empirical principles, and consequently draws nothing (contrary to the common persuasion) from psychology, which therefore has no influence on the canon of the understanding. It is a demonstrated doctrine, and everything in it must be certain completely à priori.",
+              "children": []
+            }
+          ]
         }
       ]
     },
@@ -153,16 +327,67 @@
     },
     {
       "id": "4598fc54-1697-4683-b43d-281daa7ea537",
-      "text": "[name]",
+      "text": "What is applied logic. ",
       "type": "node",
       "isOpen": false,
       "isEditing": false,
       "children": [
         {
-          "id": "4d046afd-951a-40f5-ba57-1d409f151b02",
+          "id": "97743039-98c1-48a8-9560-fb18a2e02971",
           "type": "text",
-          "text": " What I called applied logic (contrary to the common acceptation of this term, according to which it should contain certain exercises for the scholar, for which pure logic gives the rules), is a representation of the understanding, and of the rules of its necessary employment in concreto, that is to say, under the accidental conditions of the subject, which may either hinder or promote this employment, and which are all given only empirically. Thus applied logic treats of attention, its impediments and consequences, of the origin of error, of the state of doubt, hesitation, conviction, etc., and to it is related pure general logic in the same way that pure morality, which contains only the necessary moral laws of a free will, is related to practical ethics, which considers these laws under all the impediments of feelings, inclinations, and passions to which men are more or less subjected, and which never can furnish us with a true and demonstrated science, because it, as well as applied logic, requires empirical and psychological principles.",
+          "text": "   ",
           "children": []
+        },
+        {
+          "id": "99e72ac3-97e7-4470-83ef-dd5bc8028f30",
+          "text": "Applied logic is logic that is used for a special use case. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "3b7d5f0a-5ced-451f-b172-576732ee1513",
+              "type": "text",
+              "text": " What I called applied logic",
+              "children": []
+            },
+            {
+              "id": "24b5e7fd-bc5f-4e4c-8d63-b9bbc25a3186",
+              "text": "(not logic exercises)",
+              "type": "node",
+              "isOpen": false,
+              "isEditing": false,
+              "children": [
+                {
+                  "id": "5ba7687a-c852-4e11-8547-dc3bdf87dc22",
+                  "type": "text",
+                  "text": " (contrary to the common acceptation of this term, according to which it should contain certain exercises for the scholar, for which pure logic gives the rules),",
+                  "children": []
+                }
+              ]
+            },
+            {
+              "id": "f2bdad16-1cc1-457c-bb1e-5b23168ac142",
+              "type": "text",
+              "text": "is a representation of the understanding, and of the rules of its necessary employment in concreto, that is to say, under the accidental conditions of the subject, which may either hinder or promote this employment, and which are all given only empirically.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9af50386-f416-4b82-874c-ed342f7b8924",
+          "text": "It has to do with phenomenology. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "5194fbb3-1373-42ac-8db0-379524cdacd6",
+              "type": "text",
+              "text": " Thus applied logic treats of attention, its impediments and consequences, of the origin of error, of the state of doubt, hesitation, conviction, etc., and to it is related pure general logic in the same way that pure morality, which contains only the necessary moral laws of a free will, is related to practical ethics, which considers these laws under all the impediments of feelings, inclinations, and passions to which men are more or less subjected, and which never can furnish us with a true and demonstrated science, because it, as well as applied logic, requires empirical and psychological principles.",
+              "children": []
+            }
+          ]
         }
       ]
     }
