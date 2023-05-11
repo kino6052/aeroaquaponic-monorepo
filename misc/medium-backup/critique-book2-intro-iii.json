@@ -1,0 +1,251 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "62d97a20-7357-4305-b4e0-a715fe64e3eb",
+      "type": "text",
+      "text": "       III. Of the Division of General Logic into Analytic and Dialectic. \n",
+      "children": []
+    },
+    {
+      "id": "e112bb2e-93d6-4135-a7d6-91fb9997ecd2",
+      "text": "Famous question that opens doors to sophism is \"what is truth?\". ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "58029416-1eaf-4fc4-abd6-75c1ff86344c",
+          "type": "text",
+          "text": " The old question with which people sought to push logicians into a corner, so that they must either have recourse to pitiful sophisms or confess their ignorance, and consequently the vanity of their whole art, is this: “What is truth?” The definition of the word truth, to wit, “the accordance of the cognition with its object,” is presupposed in the question; but we desire to be told, in the answer to it, what is the universal and secure criterion of the truth of every cognition.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "62e40e5c-7c0d-45d5-817e-9da08c0fd1b2",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "69e9e2ec-7377-43fe-a902-d5b08d8a64f3",
+      "text": "To know what questions could be asked requires wisdom. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "b6b0ff9a-d9ed-4772-be21-7675d37cf079",
+          "type": "text",
+          "text": " To know what questions we may reasonably propose is in itself a strong evidence of sagacity and intelligence. For if a question be in itself absurd and unsusceptible of a rational answer, it is attended with the danger—not to mention the shame that falls upon the person who proposes it—of seducing the unguarded listener into making absurd answers, and we are presented with the ridiculous spectacle of one (as the ancients said) “milking the he-goat, and the other holding a sieve.”",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "56b5f308-a251-4e92-8e30-ebd8cf1c891c",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "618e7eb4-89e0-41d8-b4b1-c47647d7cb1d",
+      "text": "You can't get the universal test for truth for content of cognition because it would lead to a contradiction. (Personal note: important to remember that the objects can be either what you can observe from real world or can arrive at in imagination)",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "fb4b88c1-9c68-4d47-bdd3-4c84b7f31000",
+          "type": "text",
+          "text": " If truth consists in the accordance of a cognition with its object, this object must be, ipso facto, distinguished from all others; for a cognition is false if it does not accord with the object to which it relates, although it contains something which may be affirmed of other objects. Now an universal criterion of truth would be that which is valid for all cognitions, without distinction of their objects. But it is evident that since, in the case of such a criterion, we make abstraction of all the content of a cognition (that is, of all relation to its object), and truth relates precisely to this content, it must be utterly absurd to ask for a mark of the truth of this content of cognition; and that, accordingly, a sufficient, and at the same time universal, test of truth cannot possibly be found. As we have already termed the content of a cognition its matter, we shall say: “Of the truth of our cognitions in respect of their matter, no universal test can be demanded, because such a demand is self-contradictory.”",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "61f05ab7-084a-4371-94cd-da35d66b5dfc",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "5367ccfb-bca6-47ca-94d1-e369ccac851b",
+      "text": "Logic is necessary but not sufficient for determination of truth. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "9d8cce2c-95ad-4954-bdf0-83a444dda30f",
+          "type": "text",
+          "text": "   ",
+          "children": []
+        },
+        {
+          "id": "b16827d7-0b20-449d-968e-799a0d5bd299",
+          "text": "Logic can present us with criteria of truth. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "db8cff9d-d3de-4198-9106-0694c7957072",
+              "type": "text",
+              "text": " On the other hand, with regard to our cognition in respect of its mere form (excluding all content), it is equally manifest that logic, in so far as it exhibits the universal and necessary laws of the understanding, must in these very laws present us with criteria of truth.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "bb263a51-0608-4c16-816a-7fddfe77cacb",
+          "type": "text",
+          "text": "Whatever contradicts these rules is false, because thereby the understanding is made to contradict its own universal laws of thought; that is, to contradict itself.",
+          "children": []
+        },
+        {
+          "id": "cd11ae21-b814-4ffd-bfc5-d68d444014cc",
+          "text": "Logic is necessary for establishment of truth but not sufficient. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "39140637-abe2-42be-ae71-8902c6e39728",
+              "type": "text",
+              "text": " These criteria, however, apply solely to the form of truth, that is, of thought in general, and in so far they are perfectly accurate, yet not sufficient. For although a cognition may be perfectly accurate as to logical form, that is, not self-contradictory, it is notwithstanding quite possible that it may not stand in agreement with its object.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "9ebff20b-84e5-4e64-bb77-29e8d4c53482",
+          "text": "Logic can only present the negative test for truth. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "1bf2496b-7703-4f92-b936-463360c2622c",
+              "type": "text",
+              "text": " Consequently, the merely logical criterion of truth, namely, the accordance of a cognition with the universal and formal laws of understanding and reason, is nothing more than the conditio sine qua non, or negative condition of all truth. Farther than this logic cannot go, and the error which depends not on the form, but on the content of the cognition, it has no test to discover.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "5b0190bd-e742-4794-a4ee-4c384515af9b",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "2df64361-ea8d-413a-9d9f-89a596f0cb59",
+      "text": "Analytic logic alone can't produce true understanding. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "13508009-232b-4c9e-be23-e5e18d3a8598",
+          "type": "text",
+          "text": "   ",
+          "children": []
+        },
+        {
+          "id": "3c1e963a-1501-45c0-9094-76f0b6782c53",
+          "text": "Analytic logic. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "bd4dd810-7b24-4ea4-b1be-923389d2edaa",
+              "type": "text",
+              "text": " General logic, then, resolves the whole formal business of understanding and reason into its elements, and exhibits them as principles of all logical judging of our cognitions. This part of logic may, therefore, be called analytic, and is at least the negative test of truth, because all cognitions must first of an be estimated and tried according to these laws before we proceed to investigate them in respect of their content, in order to discover whether they contain positive truth in regard to their object.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "212ac6fa-3a34-4de9-a1d4-2cec2084dab2",
+          "text": "You can't determine the objective truth about object by logic alone. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "89735106-01cb-4c71-87e9-edb1a7fce884",
+              "type": "text",
+              "text": " Because, however, the mere form of a cognition, accurately as it may accord with logical laws, is insufficient to supply us with material (objective) truth, no one, by means of logic alone, can venture to predicate anything of or decide concerning objects, unless he has obtained, independently of logic, well-grounded information about them, in order afterwards to examine, according to logical laws, into the use and connection, in a cohering whole, of that information, or, what is still better, merely to test it by them.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4c3e4b14-2ff3-4b0c-bc31-3f5f3363e718",
+          "text": "Logic that goes unchecked produces dialectic.",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "2e4382b4-dde1-4f03-9fff-07fe45d65953",
+              "type": "text",
+              "text": " Notwithstanding, there lies so seductive a charm in the possession of a specious art like this—an art which gives to all our cognitions the form of the understanding, although with respect to the content thereof we may be sadly deficient—that general logic, which is merely a canon of judgement, has been employed as an organon for the actual production, or rather for the semblance of production, of objective assertions, and has thus been grossly misapplied. Now general logic, in its assumed character of organon, is called dialectic.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b3efb6b2-fc55-45c4-85ba-9ef5bd58cdda",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "45932cf3-6d97-4df8-8799-15bd522edbfd",
+      "text": "Dialectics is an illusion. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "7c9363cf-e49b-4097-a254-b37422007429",
+          "type": "text",
+          "text": " Different as are the significations in which the ancients used this term for a science or an art, we may safely infer, from their actual employment of it, that with them it was nothing else than a logic of illusion—a sophistical art for giving ignorance, nay, even intentional sophistries, the colouring of truth, in which the thoroughness of procedure which logic requires was imitated, and their topic employed to cloak the empty pretensions. Now it may be taken as a safe and useful warning, that general logic, considered as an organon, must always be a logic of illusion, that is, be dialectical, for, as it teaches us nothing whatever respecting the content of our cognitions, but merely the formal conditions of their accordance with the understanding, which do not relate to and are quite indifferent in respect of objects, any attempt to employ it as an instrument (organon) in order to extend and enlarge the range of our knowledge must end in mere prating; any one being able to maintain or oppose, with some appearance of truth, any single assertion whatever.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "ac400896-3cd8-4c69-a117-c7fac4deecd1",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "030694b6-a704-4a0b-b111-29615253a800",
+      "text": "Dialectic logic is bad :)",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "1fa8315a-63d0-498d-bc63-b1d1abcc4238",
+          "type": "text",
+          "text": " Such instruction is quite unbecoming the dignity of philosophy. For these reasons we have chosen to denominate this part of logic dialectic, in the sense of a critique of dialectical illusion, and we wish the term to be so understood in this place.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
