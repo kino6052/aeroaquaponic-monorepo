@@ -1,0 +1,89 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "563198f2-3788-44e1-87b1-1292d9c8cde3",
+      "type": "text",
+      "text": " IV. Of the Division of Transcendental Logic into Transcendental Analytic and Dialectic. \n",
+      "children": []
+    },
+    {
+      "id": "804155f0-4419-4534-bd9b-36771bc2a640",
+      "text": "Division of transcendental logic.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "7ec6fc6e-ad64-4490-a584-6670ded49907",
+          "type": "text",
+          "text": "    ",
+          "children": []
+        },
+        {
+          "id": "6a54cecc-2ddf-4aa6-93e1-41eda170bf76",
+          "text": "In transcendental logic our cognition is void. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "4b04a0fc-1438-4c4b-9848-2d4e6be9b847",
+              "type": "text",
+              "text": " In transcendental logic we isolate the understanding (as in transcendental æsthetic the sensibility) and select from our cognition merely that part of thought which has its origin in the understanding alone. The exercise of this pure cognition, however, depends upon this as its condition, that objects to which it may be applied be given to us in intuition, for without intuition the whole of our cognition is without objects, and is therefore quite void.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "eb54a766-513c-400e-b1a8-948eb4aaf56f",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "e6df912a-50df-475b-9435-911350b3d024",
+              "type": "text",
+              "text": " That part of transcendental logic, then, which treats of the elements of pure cognition of the understanding, and of the principles without which no object at all can be thought, is transcendental analytic, and at the same time a logic of truth. For no cognition can contradict it, without losing at the same time all content, that is, losing all reference to an object, and therefore all truth.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "8d2235a6-de30-4a21-bc20-1bf0d72cd862",
+          "text": "Dialectic misuse of analytical logic. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b572d4fa-bd57-445a-bef3-903b93cad6b1",
+              "type": "text",
+              "text": " But because we are very easily seduced into employing these pure cognitions and principles of the understanding by themselves, and that even beyond the boundaries of experience, which yet is the only source whence we can obtain matter (objects) on which those pure conceptions may be employed—understanding runs the risk of making, by means of empty sophisms, a material and objective use of the mere formal principles of the pure understanding, and of passing judgements on objects without distinction—objects which are not given to us, nay, perhaps cannot be given to us in any way. Now, as it ought properly to be only a canon for judging of the empirical use of the understanding, this kind of logic is misused when we seek to employ it as an organon of the universal and unlimited exercise of the understanding, and attempt with the pure understanding alone to judge synthetically, affirm, and determine respecting objects in general. In this case the exercise of the pure understanding becomes dialectical.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "4ee00c1a-4d9a-4fca-876c-ead62cfca78b",
+          "text": "The second part of transcendental logic is to protect from dialectical delusion. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "8045c929-274f-4470-8e4d-689ed18b9d4a",
+              "type": "text",
+              "text": " The second part of our transcendental logic must therefore be a critique of dialectical illusion, and this critique we shall term transcendental dialectic—not meaning it as an art of producing dogmatically such illusion (an art which is unfortunately too current among the practitioners of metaphysical juggling), but as a critique of understanding and reason in regard to their hyperphysical use. This critique will expose the groundless nature of the pretensions of these two faculties, and invalidate their claims to the discovery and enlargement of our cognitions merely by means of transcendental principles, and show that the proper employment of these faculties is to test the judgements made by the pure understanding, and to guard it from sophistical delusion.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
