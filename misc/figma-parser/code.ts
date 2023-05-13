@@ -13,25 +13,44 @@
 // This plugin counts the number of layers, ignoring instance sublayers,
 // in the document
 
+const BACKGROUND = "__BACKGROUND__";
+
+// Your plugin code goes here
 function reflowComponents(node: SceneNode & ChildrenMixin) {
   const components: SceneNode[] = [];
-  const PADDING = 10; // Add padding between components
+  const { x, y } = node;
 
   // Collect all top-level components in the page
-  if (node.children && node.type !== "FRAME") {
+  if (node.children) {
     for (const child of node.children) {
+      console.warn(child.name);
+      if (child.name === BACKGROUND) continue;
       components.push(child);
     }
   }
 
+  node
+    .findChildren((node) => node.name === BACKGROUND)
+    .forEach((node) => {
+      node.remove();
+    });
+  const _backgroundNode = figma.createRectangle();
+
+  _backgroundNode.name = BACKGROUND;
+  // _backgroundNode.x = 0;
+  // _backgroundNode.y = 0;
+  console.warn(node.name, node.x, node.y, node.width, node.height, node);
+  _backgroundNode.resize(node.width, node.height);
+  node.appendChild(_backgroundNode);
+
   // Calculate new positions for components
   let currentX = node.x;
 
-  for (const component of components) {
+  for (const component of [...components].reverse()) {
     try {
       console.warn(component);
       component.x = currentX;
-      currentX += component.width + PADDING;
+      currentX += component.width;
       component.y = node.y;
       // @ts-ignore
       component.height = node.height;
@@ -39,6 +58,13 @@ function reflowComponents(node: SceneNode & ChildrenMixin) {
       console.warn(e);
     }
   }
+
+  for (const component of components) {
+    node.appendChild(component);
+  }
+
+  node.x = x;
+  node.y = y;
 }
 
 let count = 0;
@@ -58,10 +84,41 @@ function traverse(node: SceneNode & ChildrenMixin) {
   }
 }
 
-traverse(
-  figma.root.findOne((n) => n.name === "ROOT") as unknown as SceneNode &
-    ChildrenMixin
-); // start the traversal at the root
+// traverse(
+//   figma.root.findOne((n) => n.name === "ROOT") as unknown as SceneNode &
+//     ChildrenMixin
+// ); // start the traversal at the root
+
+const verify = (
+  selection: readonly SceneNode[],
+  cb: (selection: SceneNode) => void
+) => {
+  if (selection.length !== 1) {
+    figma.notify("There should be exactly one Group element selected.");
+    return;
+  }
+
+  if (selection[0].type !== "GROUP") {
+    figma.notify("Selection should be a Group element.");
+    return;
+  }
+
+  cb(selection[0]);
+};
+
+if (figma.command === "flexify") {
+  const selection = figma.currentPage.selection;
+  verify(selection, (selection) => {
+    reflowComponents(selection as SceneNode & ChildrenMixin);
+  });
+  figma.closePlugin("Flexify worked!");
+}
+
+// figma.ui.onmessage = (msg) => {
+//   console.warn(msg);
+//   if (msg.type === "run-plugin") {
+//   }
+// };
 
 // for (let i = 0; i < numberOfRectangles; i++) {
 //   const rect = figma.createRectangle();

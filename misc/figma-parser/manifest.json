@@ -3,9 +3,13 @@
   "id": "1230764488775922148",
   "api": "1.0.0",
   "main": "code.js",
+  "menu": [
+    {
+      "name": "Flexify",
+      "command": "flexify"
+    }
+  ],
   "capabilities": [],
   "enableProposedApi": false,
-  "editorType": [
-    "figma"
-  ]
+  "editorType": ["figma"]
 }
