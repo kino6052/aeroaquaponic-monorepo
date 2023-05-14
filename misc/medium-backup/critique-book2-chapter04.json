@@ -1,0 +1,140 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "ba06a575-388d-4630-ac0b-35de64701c34",
+      "type": "text",
+      "text": " Section I. Of the Logical Use of the Understanding in General § 4 \n",
+      "children": []
+    },
+    {
+      "id": "03ad786e-0205-461f-b61d-97f663a90b62",
+      "text": "Defining the understanding. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "9000f449-6643-4ee5-b8ee-bbbfa5c0065f",
+          "type": "text",
+          "text": "       The understanding was defined above only negatively, as a non-sensuous faculty of cognition.",
+          "children": []
+        },
+        {
+          "id": "8d2c7bb8-6e6a-4d0d-902b-57ae579cfe62",
+          "text": "Understanding is no faculty of intuition. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "ff1a8470-8cf9-4978-8f32-abaabd3e8fb0",
+              "type": "text",
+              "text": " Now, independently of sensibility, we cannot possibly have any intuition; consequently, the understanding is no faculty of intuition.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "d129f2c1-38fe-46f6-9ca5-52ee79dd0bb2",
+          "text": "Understanding is discursive cognition through conceptions. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "2ce42f34-3821-407d-8c99-48b9e3695b78",
+              "type": "text",
+              "text": " But besides intuition there is no other mode of cognition, except through conceptions; consequently, the cognition of every, at least of every human, understanding is a cognition through conceptions—not intuitive, but discursive.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "6e947ea3-97a3-4aee-96e6-5fcd34fcb666",
+          "type": "text",
+          "text": "All intuitions, as sensuous, depend on affections; conceptions, therefore, upon functions. By the word function I understand the unity of the act of arranging diverse representations under one common representation.",
+          "children": []
+        },
+        {
+          "id": "69f62ebe-3888-4134-ad00-bed0d388c00f",
+          "text": "Judgement is a representation of representation of object. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "5048ee63-740d-4548-ba2a-37011c31eb9f",
+              "type": "text",
+              "text": " Conceptions, then, are based on the spontaneity of thought, as sensuous intuitions are on the receptivity of impressions. Now, the understanding cannot make any other use of these conceptions than to judge by means of them. As no representation, except an intuition, relates immediately to its object, a conception never relates immediately to an object, but only to some other representation thereof, be that an intuition or itself a conception. A judgement, therefore, is the mediate cognition of an object, consequently the representation of a representation of it.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b74b9d58-140e-47aa-b395-c962d535a48a",
+          "text": "Judgment operates with concepts consist of parts. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "555ee6e6-dc09-4122-a6b1-330d56a6bacc",
+              "type": "text",
+              "text": " In every judgement there is a conception which applies to, and is valid for many other conceptions, and which among these comprehends also a given representation, this last being immediately connected with an object. For example, in the judgement—“All bodies are divisible,” our conception of divisible applies to various other conceptions; among these, however, it is here particularly applied to the conception of body, and this conception of body relates to certain phenomena which occur to us. These objects, therefore, are mediately represented by the conception of divisibility.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "2e732792-2a57-4254-a1d2-d62e4793794f",
+          "text": "[name]",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b2775a84-fd77-4616-ab65-525ffa17317a",
+              "type": "text",
+              "text": " ",
+              "children": []
+            },
+            {
+              "id": "500eebfb-1a87-4530-824a-751064fb775d",
+              "text": "Judgements aim to unify representations. ",
+              "type": "node",
+              "isOpen": false,
+              "isEditing": false,
+              "children": [
+                {
+                  "id": "31c4f25d-6a01-471a-8e9e-b436d6b25036",
+                  "type": "text",
+                  "text": " All judgements, accordingly, are functions of unity in our representations, inasmuch as, instead of an immediate, a higher representation, which comprises this and various others, is used for our cognition of the object, and thereby many possible cognitions are collected into one. But we can reduce all acts of the understanding to judgements, so that understanding may be represented as the faculty of judging. For it is, according to what has been said above, a faculty of thought.",
+                  "children": []
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "e00f7d87-d8aa-47be-ad80-f186214a1da6",
+          "text": "Though is a cognition by the means of conceptions. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "867305ed-0771-4ab8-bfa6-7e70a72e939d",
+              "type": "text",
+              "text": " Now thought is cognition by means of conceptions. But conceptions, as predicates of possible judgements, relate to some representation of a yet undetermined object. Thus the conception of body indicates something—for example, metal—which can be cognized by means of that conception. It is therefore a conception, for the reason alone that other representations are contained under it, by means of which it can relate to objects. It is therefore the predicate to a possible judgement; for example: “Every metal is a body.” All the functions of the understanding therefore can be discovered, when we can completely exhibit the functions of unity in judgements. And that this may be effected very easily, the following section will show.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
