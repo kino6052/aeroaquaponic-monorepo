@@ -1,0 +1,29 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "a6b28ec6-e5fa-4df5-baa2-9dad0aebaf2a",
+      "type": "text",
+      "text": " BOOK I. Analytic of Conceptions. § 2 \n",
+      "children": []
+    },
+    {
+      "id": "e7071dde-7876-4f2a-9372-e7b3b58d1905",
+      "text": "Analytic of a priori concepts as void of any content.  ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "1580258e-8348-4317-8997-d39645d01625",
+          "type": "text",
+          "text": " By the term Analytic of Conceptions, I do not understand the analysis of these, or the usual process in philosophical investigations of dissecting the conceptions which present themselves, according to their content, and so making them clear; but I mean the hitherto little attempted dissection of the faculty of understanding itself, in order to investigate the possibility of conceptions à priori, by looking for them in the understanding alone, as their birthplace, and analysing the pure use of this faculty. For this is the proper duty of a transcendental philosophy; what remains is the logical treatment of the conceptions in philosophy in general. We shall therefore follow up the pure conceptions even to their germs and beginnings in the human understanding, in which they lie, until they are developed on occasions presented by experience, and, freed by the same understanding from the empirical conditions attaching to them, are set forth in their unalloyed purity.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "3eebd81f-840e-4ac5-8c9c-3926b26b8f02",
+      "type": "text",
+      "text": "  Chapter I. Of the Transcendental Clue to the Discovery of all Pure Conceptions of the Understanding \n Introductory § 3 \n",
+      "children": []
+    },
+    {
+      "id": "1b702832-3587-4cd4-bed3-949bb1c4455e",
+      "text": "The process of examining pure concepts is chaotic. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "e7455f1f-a56d-4cab-af16-4cd30103778a",
+          "type": "text",
+          "text": " When we call into play a faculty of cognition, different conceptions manifest themselves according to the different circumstances, and make known this faculty, and assemble themselves into a more or less extensive collection, according to the time or penetration that has been applied to the consideration of them. Where this process, conducted as it is mechanically, so to speak, will end, cannot be determined with certainty. Besides, the conceptions which we discover in this haphazard manner present themselves by no means in order and systematic unity, but are at last coupled together only according to resemblances to each other, and arranged in series, according to the quantity of their content, from the simpler to the more complex—series which are anything but systematic, though not altogether without a certain kind of method in their construction.",
+          "children": []
+        }
+      ]
+    },
+    {
+      "id": "12ecde39-c14c-49ab-8f01-34c389cdc616",
+      "type": "text",
+      "text": "\n  \n",
+      "children": []
+    },
+    {
+      "id": "f39a55e5-a4eb-4d1d-a669-2172b079543a",
+      "text": "Organizing pure conceptions.",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "f596ac08-e112-4016-a971-c9c05ef52185",
+          "type": "text",
+          "text": " Transcendental philosophy has the advantage, and moreover the duty, of searching for its conceptions according to a principle; because these conceptions spring pure and unmixed out of the understanding as an absolute unity, and therefore must be connected with each other according to one conception or idea. A connection of this kind, however, furnishes us with a ready prepared rule, by which its proper place may be assigned to every pure conception of the understanding, and the completeness of the system of all be determined à priori—both which would otherwise have been dependent on mere choice or chance.",
+          "children": []
+        }
+      ]
+    }
+  ]
+}
