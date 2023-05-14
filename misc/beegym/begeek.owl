@@ -1,0 +1,1281 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="urn:webprotege:ontology:f9c1b25f-844a-42dc-911a-c78b5679c745#"
+     xml:base="urn:webprotege:ontology:f9c1b25f-844a-42dc-911a-c78b5679c745"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="urn:webprotege:ontology:f9c1b25f-844a-42dc-911a-c78b5679c745"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://webprotege.stanford.edu/R0GPRRDeCHAEQ1qGzUSCjb -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R0GPRRDeCHAEQ1qGzUSCjb">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8labUj4MNtthve8gbCDw15"/>
+        <rdfs:label xml:lang="18.2.0 Topic">react</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">react</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R2YRZ11ToYMyFo1Y2ThJ1p -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R2YRZ11ToYMyFo1Y2ThJ1p">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP"/>
+        <rdfs:label>Web Development Practices Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R3ZiMSU7Mivzxuxfv6mnvP -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R3ZiMSU7Mivzxuxfv6mnvP">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDaIeTF0unQBylWoevKrH3x"/>
+        <rdfs:label>DOM API Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ"/>
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCJtElfRFBrYgWKjG7155Qr"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Client Side Web Development Frameworks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R747a2Em9eKSPZthPeOIsOl -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R747a2Em9eKSPZthPeOIsOl">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RM6LArETIE1keQDcbhXfkT"/>
+        <rdfs:label>Redux</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R75ugRBuhF6JB8jCvdb36so -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R75ugRBuhF6JB8jCvdb36so">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RetHX3SSj7Y5jPnuhQtxHp"/>
+        <rdfs:label>Tree Shaking Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R76mTs7egkeuws7qHRqWAX2 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R76mTs7egkeuws7qHRqWAX2">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beegeek Top-Down Flow Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7L727e4b3HYSIzQALEEdVt -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7L727e4b3HYSIzQALEEdVt">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi"/>
+        <rdfs:label>HTML Tag Type Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7LRVZowb5S3L5PBQYxf2nO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7LRVZowb5S3L5PBQYxf2nO">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RuoQQXabhQOUe2Y3tCorvy"/>
+        <rdfs:label>srcset Attribute Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7NlR3adGF9HAC49KvBrDnH -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7NlR3adGF9HAC49KvBrDnH">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCzJVmVRvIKTs0XazGzl3Na"/>
+        <rdfs:label>charset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7PMeBjDVAZMl1dT3m8WR2T -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7PMeBjDVAZMl1dT3m8WR2T">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9iCW9b7gsIjRXDkxjv1jXi"/>
+        <rdfs:label>SOLID Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7PcxUTUIPj64lbgKsFn2Px -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7PcxUTUIPj64lbgKsFn2Px">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDzCnRHNQC8wjOr6n5S4NXy"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Reactive Programming Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7Qkv7bwpcxmgg4JxNK31CD -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7Qkv7bwpcxmgg4JxNK31CD">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9J9ZwP7KldyQM56hMOXaBg"/>
+        <rdfs:label>HTTP Verbs Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7crEgw5L4LQySDBENjRBaH -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7crEgw5L4LQySDBENjRBaH">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R94mD2YYG2pBolGoECsrMsy"/>
+        <rdfs:label>useLayoutEffect Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7eYOYptILenGc4UA9wyhrg -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7eYOYptILenGc4UA9wyhrg">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo"/>
+        <rdfs:label>viewport</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7fOP5v7U7RwvBwmHceHnn2 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7fOP5v7U7RwvBwmHceHnn2">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RrRi4UpSkJs1paWQlUSj7r"/>
+        <rdfs:label>JPG Format Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7nayYaTHtoMi9zYMDL4i2y -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7nayYaTHtoMi9zYMDL4i2y">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R87Y3h5UGQW5jo0GRpXidOT"/>
+        <rdfs:label>Internet Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7rSCtHz6hTWqy1dxrCx3cS -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7rSCtHz6hTWqy1dxrCx3cS">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aSVNL7Jc5se3aQji33XuR"/>
+        <rdfs:label>useReducer Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7tvn13KaOymKdiyvPwTBLl -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7tvn13KaOymKdiyvPwTBLl">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW"/>
+        <rdfs:label>Web Application Communication Layer Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7wl2T6ggY8vksr8v07XdoD -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7wl2T6ggY8vksr8v07XdoD">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91ry59MypxW6U8do06y4S1"/>
+        <rdfs:label>Adaptive image loading: Picture, srcset</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7z2EuvEKRfjohIRoj0pDZB -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7z2EuvEKRfjohIRoj0pDZB">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R874ClDzleb4F9EdkaltC67"/>
+        <rdfs:label>NodeJS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R7z8ZlckAPyM9CBidD53P5i -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R7z8ZlckAPyM9CBidD53P5i">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RrRi4UpSkJs1paWQlUSj7r"/>
+        <rdfs:label>PNG Format Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R817OxC1qhurEuQuiY6XZa8 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R817OxC1qhurEuQuiY6XZa8">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCIEQ0u5NCnSZOWcbYVhUiJ"/>
+        <rdfs:label>HTML Deferred Attribute Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R874ClDzleb4F9EdkaltC67 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R874ClDzleb4F9EdkaltC67">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8vnNkFQASsjtYldMKQe1B3"/>
+        <rdfs:label>Server Side JavaScript Environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R87Y3h5UGQW5jo0GRpXidOT -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R87Y3h5UGQW5jo0GRpXidOT">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R76mTs7egkeuws7qHRqWAX2"/>
+        <rdfs:label>Computer Science Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8AuqHQolWIWQq8kdAbjvPW -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8AuqHQolWIWQq8kdAbjvPW">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aFOE6Jw1U1LMkRVDkRgb"/>
+        <rdfs:label>React Auxiliary Libraries Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8Blc9wqP06P3lrAlfv7qrF -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8Blc9wqP06P3lrAlfv7qrF">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc"/>
+        <rdfs:label>React Events</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8FL9ckJd9zIeltjGrnkc4z -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8FL9ckJd9zIeltjGrnkc4z">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDn5VDeA5pVPBvaJNPiVai4"/>
+        <rdfs:label>Image Media Condition Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8Fn3gzDOl9WW8wXrK1cit4 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8Fn3gzDOl9WW8wXrK1cit4">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi"/>
+        <rdfs:label>HTML Tag Attribute Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web Development Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8T00TnFJWKKn0vAxxfkLYo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8T00TnFJWKKn0vAxxfkLYo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aSVNL7Jc5se3aQji33XuR"/>
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3"/>
+        <rdfs:label>useContext Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8ZdXm18jRgQnnipZyjCPIO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8ZdXm18jRgQnnipZyjCPIO">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo"/>
+        <rdfs:label>author</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8aFOE6Jw1U1LMkRVDkRgb -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8aFOE6Jw1U1LMkRVDkRgb">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs"/>
+        <rdfs:label>React</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8aSVNL7Jc5se3aQji33XuR -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8aSVNL7Jc5se3aQji33XuR">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React State Management Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8cHamDD6v3lDlFoTQDDqwE -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8cHamDD6v3lDlFoTQDDqwE">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95l9Mi76acELtcnsIOhf7w"/>
+        <rdfs:label>Git</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8fFQbja9THRvwCfUGcGG1b -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8fFQbja9THRvwCfUGcGG1b">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP"/>
+        <rdfs:label>Testing Paradigm Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8labUj4MNtthve8gbCDw15 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8labUj4MNtthve8gbCDw15">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aFOE6Jw1U1LMkRVDkRgb"/>
+        <rdfs:label>ReactJS API Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8n9jWCmVc5Ln4wa1wgO51f -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8n9jWCmVc5Ln4wa1wgO51f">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9erX58L7JIgYzI2vTVeb46"/>
+        <rdfs:label>HTTP Protocol Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9kZa57xb3xlYTjI1WxowX"/>
+        <rdfs:label>Web Applications Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8vnNkFQASsjtYldMKQe1B3 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8vnNkFQASsjtYldMKQe1B3">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web Application Server Side Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R8yK40rSE7fhfIrMTPvTMtv -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R8yK40rSE7fhfIrMTPvTMtv">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc"/>
+        <rdfs:label>ReactJS State Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R91ry59MypxW6U8do06y4S1 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R91ry59MypxW6U8do06y4S1">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9CQDYcjVlNYrkjGnhPN99M"/>
+        <rdfs:label>Image Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTML Tag Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R93QvYkxsl752nMJIIwrGzM -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R93QvYkxsl752nMJIIwrGzM">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React Development Hooks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R94mD2YYG2pBolGoECsrMsy -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R94mD2YYG2pBolGoECsrMsy">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React Lifecycle Hooks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R95l9Mi76acELtcnsIOhf7w -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R95l9Mi76acELtcnsIOhf7w">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ"/>
+        <rdfs:label>Version Control Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R95pQd1HZTh538PWUPH0x3i -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R95pQd1HZTh538PWUPH0x3i">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9YuJhCZ6idVc1sIfj4ffJZ"/>
+        <rdfs:label>import()</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCzJVmVRvIKTs0XazGzl3Na"/>
+        <rdfs:label>name</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R99w8uf4KaVvyCF89Bd9Mu8 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R99w8uf4KaVvyCF89Bd9Mu8">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3"/>
+        <rdfs:label>useMemo Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React Performance Hooks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9BiXCUm3zrMafmJffn0mVh -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9BiXCUm3zrMafmJffn0mVh">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React Escape Hatch Hooks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9CMo1m2HgJD4IJEMKeLaCm -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9CMo1m2HgJD4IJEMKeLaCm">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6"/>
+        <rdfs:label>React Profiler Component Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9CQDYcjVlNYrkjGnhPN99M -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9CQDYcjVlNYrkjGnhPN99M">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7L727e4b3HYSIzQALEEdVt"/>
+        <rdfs:label>HTML Image Tag Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9G4NlAmcJN8p55tFVNiLh9 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9G4NlAmcJN8p55tFVNiLh9">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ"/>
+        <rdfs:label>Development Optimization Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9GkSSlD9MLB04P0xkmFF6s -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9GkSSlD9MLB04P0xkmFF6s">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCJtElfRFBrYgWKjG7155Qr"/>
+        <rdfs:label>Browser APIs Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9J9ZwP7KldyQM56hMOXaBg -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9J9ZwP7KldyQM56hMOXaBg">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8n9jWCmVc5Ln4wa1wgO51f"/>
+        <rdfs:label>HTTP Structure Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9VQe2WwDBb4gLbiQ9qsmtO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9VQe2WwDBb4gLbiQ9qsmtO">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE"/>
+        <rdfs:label>Block types</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP"/>
+        <rdfs:label>Web Development Tools Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9Y49LCuXXVHubhPEev6saj -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9Y49LCuXXVHubhPEev6saj">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCIEQ0u5NCnSZOWcbYVhUiJ"/>
+        <rdfs:label>HTML Async Attribute Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9YuJhCZ6idVc1sIfj4ffJZ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9YuJhCZ6idVc1sIfj4ffJZ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCJtElfRFBrYgWKjG7155Qr"/>
+        <rdfs:label>JavaScript Expressions and Operators Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9ZztWlahyImDEIl4rSTpHO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9ZztWlahyImDEIl4rSTpHO">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RB22co6lNFtfPFHbSaoKUnM"/>
+        <rdfs:label>ReactJS Component Trigger Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9bFPXzNytkGxD5hnaGVgHg -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9bFPXzNytkGxD5hnaGVgHg">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCzJVmVRvIKTs0XazGzl3Na"/>
+        <rdfs:label>meta content attribute topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9cSMT2mDtn5CX6KVogWJ5T -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9cSMT2mDtn5CX6KVogWJ5T">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9bFPXzNytkGxD5hnaGVgHg"/>
+        <rdfs:label>viewport meta content topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9erX58L7JIgYzI2vTVeb46 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9erX58L7JIgYzI2vTVeb46">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7nayYaTHtoMi9zYMDL4i2y"/>
+        <rdfs:label>Internet Protocols Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9iCW9b7gsIjRXDkxjv1jXi -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9iCW9b7gsIjRXDkxjv1jXi">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDzCnRHNQC8wjOr6n5S4NXy"/>
+        <rdfs:label>OOP Programming Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9k3pMwFJ6I76z7FBkDaLtU -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9k3pMwFJ6I76z7FBkDaLtU">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RM6LArETIE1keQDcbhXfkT"/>
+        <rdfs:label>MobX</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9kZa57xb3xlYTjI1WxowX -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9kZa57xb3xlYTjI1WxowX">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8n9jWCmVc5Ln4wa1wgO51f"/>
+        <rdfs:label>Web Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9lVijHuDbymv6oLNT4kFip -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9lVijHuDbymv6oLNT4kFip">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R93QvYkxsl752nMJIIwrGzM"/>
+        <rdfs:label>useDebugValue Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/R9xGLPWsqkV0qv5wB3o0j06 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/R9xGLPWsqkV0qv5wB3o0j06">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9cSMT2mDtn5CX6KVogWJ5T"/>
+        <rdfs:label>initial-scale</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RB0ez0jQ59VbH5cLQfxfypO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RB0ez0jQ59VbH5cLQfxfypO">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aSVNL7Jc5se3aQji33XuR"/>
+        <rdfs:label>useSyncExternalStore Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RB22co6lNFtfPFHbSaoKUnM -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RB22co6lNFtfPFHbSaoKUnM">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc"/>
+        <rdfs:label>ReactJS Component Lifecycle Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBAISUNJ0iBWTYgUw7NcQOw -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBAISUNJ0iBWTYgUw7NcQOw">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3"/>
+        <rdfs:label>useTransition Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBCkubTfLGf4OkrZOFXQxqa -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBCkubTfLGf4OkrZOFXQxqa">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi"/>
+        <rdfs:label>HTML Tag Value Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R0GPRRDeCHAEQ1qGzUSCjb"/>
+        <rdfs:label>React Components Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBJOym2h2tYlpPknvczmKKL -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBJOym2h2tYlpPknvczmKKL">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Performance Optimization Tools Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBJkzGNUwhi7Q2PQkksIVSE -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBJkzGNUwhi7Q2PQkksIVSE">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91ry59MypxW6U8do06y4S1"/>
+        <rdfs:label>Image Optimization Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBKVdPZftFsjDCbuvQeiEsn -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBKVdPZftFsjDCbuvQeiEsn">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDgy0wBxB5JppUHxeyTJxvS"/>
+        <rdfs:label>Vector Image Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBP68Rn4fIuGYtWWxUu7dcv -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBP68Rn4fIuGYtWWxUu7dcv">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9BiXCUm3zrMafmJffn0mVh"/>
+        <rdfs:label>useImperativeHandle Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBT17lwnM0lB7nzppk2PB6T -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBT17lwnM0lB7nzppk2PB6T">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R94mD2YYG2pBolGoECsrMsy"/>
+        <rdfs:label>useState Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBUYGqGQ4S9C3R3FWilWCvJ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBUYGqGQ4S9C3R3FWilWCvJ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RM6LArETIE1keQDcbhXfkT"/>
+        <rdfs:label>Effector</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBakiy6T3Qb5Uhg3vmkJ2mS -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBakiy6T3Qb5Uhg3vmkJ2mS">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RskNaDiBZcwjDCf01iGajn"/>
+        <rdfs:label>Web Browser Rendering Engine Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBnnMdqImYwbTOdX1xvY6x8 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBnnMdqImYwbTOdX1xvY6x8">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RKzxcxbukGqog1Q1B7aPf"/>
+        <rdfs:label>Web Application Client Side Vulnerabilities Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBpQYG9nznKOE3I4JwsNw5a -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBpQYG9nznKOE3I4JwsNw5a">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8vnNkFQASsjtYldMKQe1B3"/>
+        <rdfs:label>Web Application Server Side Vulnerabilities Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBpXyyJqalFzu8AdlHUmZKu -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBpXyyJqalFzu8AdlHUmZKu">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RB22co6lNFtfPFHbSaoKUnM"/>
+        <rdfs:label>ReactJS Component Committing Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RBtNDaPQtESgBK7qEh4mq6j -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RBtNDaPQtESgBK7qEh4mq6j">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBKVdPZftFsjDCbuvQeiEsn"/>
+        <rdfs:label>SVG Format Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RByaJOxxrGzLHiuqV4dWnQI -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RByaJOxxrGzLHiuqV4dWnQI">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDWLEx8NPe9MRS022hf7m7F"/>
+        <rdfs:label>Virtual DOM</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCCyNzX6fUB9cXcUMbRxIzC -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCCyNzX6fUB9cXcUMbRxIzC">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9GkSSlD9MLB04P0xkmFF6s"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTTP Requests Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCDTKEZjiLN97N7qpFUVRXx -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCDTKEZjiLN97N7qpFUVRXx">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6"/>
+        <rdfs:label>React Suspense Component Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCGrK6dfkW5K6X7xLznDB2Q -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCGrK6dfkW5K6X7xLznDB2Q">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7LRVZowb5S3L5PBQYxf2nO"/>
+        <rdfs:label>Intrinsic Image Size topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCH3ftifBtnkXmie5Y62voP -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCH3ftifBtnkXmie5Y62voP">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R94mD2YYG2pBolGoECsrMsy"/>
+        <rdfs:label>useEffect Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCIEQ0u5NCnSZOWcbYVhUiJ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCIEQ0u5NCnSZOWcbYVhUiJ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTML Execution Order Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCJtElfRFBrYgWKjG7155Qr -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCJtElfRFBrYgWKjG7155Qr">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCQgLY20KAV9lZox370yCgV"/>
+        <rdfs:label>JavaScript Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCMjm9wMfHh8fkoaDgVZRn1 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCMjm9wMfHh8fkoaDgVZRn1">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9cSMT2mDtn5CX6KVogWJ5T"/>
+        <rdfs:label>width</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCP9YANcmW6AEX6G6BFBkpo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCP9YANcmW6AEX6G6BFBkpo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo"/>
+        <rdfs:label>robots</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCQgLY20KAV9lZox370yCgV -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCQgLY20KAV9lZox370yCgV">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RskNaDiBZcwjDCf01iGajn"/>
+        <rdfs:label>Open Web Platform Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCQxWttEpYkqeQYJNMYUS1p -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCQxWttEpYkqeQYJNMYUS1p">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6"/>
+        <rdfs:label>React Fragment Component Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCXZVHhYl00jVZVQM1gRjKA -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCXZVHhYl00jVZVQM1gRjKA">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE"/>
+        <rdfs:label>Types of adding scripts to a page</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCmzZjO8SkvzytusCjYPurM -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCmzZjO8SkvzytusCjYPurM">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs"/>
+        <rdfs:label>Angular</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCsBhmb0dxLFZLburXc60to -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCsBhmb0dxLFZLburXc60to">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RB22co6lNFtfPFHbSaoKUnM"/>
+        <rdfs:label>ReactJS Component Render Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RCzJVmVRvIKTs0XazGzl3Na -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RCzJVmVRvIKTs0XazGzl3Na">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDwoocGxeQmqoHHBJD21O7a"/>
+        <rdfs:label>Meta tag attributes topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RD0Fb6UizqPFkJftAXArLI4 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RD0Fb6UizqPFkJftAXArLI4">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9GkSSlD9MLB04P0xkmFF6s"/>
+        <rdfs:label>Misc Browser APIs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDFD4JhEcj1IumfMgaFCCcZ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDFD4JhEcj1IumfMgaFCCcZ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs"/>
+        <rdfs:label>Svelte</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDI9Wp2h8zlOB9dWiDIDi0r -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDI9Wp2h8zlOB9dWiDIDi0r">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs"/>
+        <rdfs:label>SolidJS</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDWLEx8NPe9MRS022hf7m7F -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDWLEx8NPe9MRS022hf7m7F">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc"/>
+        <rdfs:label>ReactJS Performance Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDaIeTF0unQBylWoevKrH3x -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDaIeTF0unQBylWoevKrH3x">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9GkSSlD9MLB04P0xkmFF6s"/>
+        <rdfs:label>OM APIs Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDcmRhrg3m0O4fKUhJtyamr -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDcmRhrg3m0O4fKUhJtyamr">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ"/>
+        <rdfs:label>React Accessibility Hooks APIs</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDgy0wBxB5JppUHxeyTJxvS -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDgy0wBxB5JppUHxeyTJxvS">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R91ry59MypxW6U8do06y4S1"/>
+        <rdfs:label>Image Types Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDlBjZcLhh98AGnOiE69QzO -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDlBjZcLhh98AGnOiE69QzO">
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beegeek Main Flow Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDm6GSswbZbjkq03Cu1TWEE">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCQgLY20KAV9lZox370yCgV"/>
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDlBjZcLhh98AGnOiE69QzO"/>
+        <rdfs:label>HTML Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDn5VDeA5pVPBvaJNPiVai4 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDn5VDeA5pVPBvaJNPiVai4">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RuoQQXabhQOUe2Y3tCorvy"/>
+        <rdfs:label>size Attribute Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDq5znEQdC0B9q98TnVUAQj -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDq5znEQdC0B9q98TnVUAQj">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R4OWXqZ74Yo8XuubtTPIzs"/>
+        <rdfs:label>Vue</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDrKNIPKjvBTxOBLTp8Vzob -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDrKNIPKjvBTxOBLTp8Vzob">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RCQgLY20KAV9lZox370yCgV"/>
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDlBjZcLhh98AGnOiE69QzO"/>
+        <rdfs:label>CSS Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDwoocGxeQmqoHHBJD21O7a -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDwoocGxeQmqoHHBJD21O7a">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7L727e4b3HYSIzQALEEdVt"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HTML Meta Tag Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RDzCnRHNQC8wjOr6n5S4NXy -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RDzCnRHNQC8wjOr6n5S4NXy">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8PftufvFC87Q1iNgYwtaVP"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Development Paradigms Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RI394s48JMoYTA6Ul0Llwq -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RI394s48JMoYTA6Ul0Llwq">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7tvn13KaOymKdiyvPwTBLl"/>
+        <rdfs:label>GraphQL Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RJbl1pVRYLEPqW2iUkh0Oc">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8aFOE6Jw1U1LMkRVDkRgb"/>
+        <rdfs:label>React Internals Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RKt4KudawBbxd94D6UgN9Z -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RKt4KudawBbxd94D6UgN9Z">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8labUj4MNtthve8gbCDw15"/>
+        <rdfs:label xml:lang="18.2.0 Topic">react-dom</rdfs:label>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">react-dom</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RKzxcxbukGqog1Q1B7aPf -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RKzxcxbukGqog1Q1B7aPf">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8redPL0KXCLzMZjEbuyZiW"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Web Application Client Side Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RM6LArETIE1keQDcbhXfkT -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RM6LArETIE1keQDcbhXfkT">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9X9l0oM6jwB4AjkLmp9kDJ"/>
+        <rdfs:label>Web Application State Management Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RMSBP4MO30imaaOQm8U1Ls -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RMSBP4MO30imaaOQm8U1Ls">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7wl2T6ggY8vksr8v07XdoD"/>
+        <rdfs:label>HTML Picture Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RQeNt31pnA2AITmkc65yh6 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RQeNt31pnA2AITmkc65yh6">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDcmRhrg3m0O4fKUhJtyamr"/>
+        <rdfs:label>useId Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RXrTLD7drU2KGJigijDWsA -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RXrTLD7drU2KGJigijDWsA">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R76mTs7egkeuws7qHRqWAX2"/>
+        <rdfs:label>Development Cycle Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RZOcB3QMn1wftmzGeqghnz -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RZOcB3QMn1wftmzGeqghnz">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9259CBUaMxq7nD2Me8Bhi"/>
+        <rdfs:label rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Purpose of html, head, body</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RZbF7Owy7WPDZ0YsP2Saq8 -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RZbF7Owy7WPDZ0YsP2Saq8">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7tvn13KaOymKdiyvPwTBLl"/>
+        <rdfs:label>REST Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RbHmUsgvsv7grrsfQoBGlo -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RbHmUsgvsv7grrsfQoBGlo">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9BiXCUm3zrMafmJffn0mVh"/>
+        <rdfs:label>useInsertionEffect Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RczXdWbs8sxECkeK6fAHAQ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RczXdWbs8sxECkeK6fAHAQ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R8n9jWCmVc5Ln4wa1wgO51f"/>
+        <rdfs:label>HTTP Vulnerabilities Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RetHX3SSj7Y5jPnuhQtxHp -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RetHX3SSj7Y5jPnuhQtxHp">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBJOym2h2tYlpPknvczmKKL"/>
+        <rdfs:label>Bundler Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RgSA3GAqoUJhQxlPqqzp1j -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RgSA3GAqoUJhQxlPqqzp1j">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo"/>
+        <rdfs:label>keywords</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RjuoMMEVcLOeRzv2E759IE -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RjuoMMEVcLOeRzv2E759IE">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9BiXCUm3zrMafmJffn0mVh"/>
+        <rdfs:label>useRef Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/Rmjd5IUArRRPxTQwILixsp -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/Rmjd5IUArRRPxTQwILixsp">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9G4NlAmcJN8p55tFVNiLh9"/>
+        <rdfs:label>Codemods Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RrRi4UpSkJs1paWQlUSj7r -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RrRi4UpSkJs1paWQlUSj7r">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RDgy0wBxB5JppUHxeyTJxvS"/>
+        <rdfs:label>Raster Image Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RrbSMhwI59LGQYksLayFgI -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RrbSMhwI59LGQYksLayFgI">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9ADeWemL6KwtehlGp95e3"/>
+        <rdfs:label>useDeferredValue Hook Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RrgHK3mxo6UtZP0JZ7VYcJ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RrgHK3mxo6UtZP0JZ7VYcJ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R0GPRRDeCHAEQ1qGzUSCjb"/>
+        <rdfs:label>React APIs Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RsHKmtjfLCHH3yE8YBvlmp -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RsHKmtjfLCHH3yE8YBvlmp">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R95w0HvCUsFuqOyvPUNvhyo"/>
+        <rdfs:label>description</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RskNaDiBZcwjDCf01iGajn -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RskNaDiBZcwjDCf01iGajn">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RKzxcxbukGqog1Q1B7aPf"/>
+        <rdfs:label>Web Browser Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RtxSDQOYJRBSghE1rF1kQw -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RtxSDQOYJRBSghE1rF1kQw">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R9J9ZwP7KldyQM56hMOXaBg"/>
+        <rdfs:label>HTTP Statuses Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RuoQQXabhQOUe2Y3tCorvy -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RuoQQXabhQOUe2Y3tCorvy">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R7wl2T6ggY8vksr8v07XdoD"/>
+        <rdfs:label>img Tag Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RwYWDxDp75aAo19jm9KLqJ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/R0GPRRDeCHAEQ1qGzUSCjb"/>
+        <rdfs:label>React Hooks Topic</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://webprotege.stanford.edu/RxrZbPJ4bTUHKyefld8qtZ -->
+
+    <owl:Class rdf:about="http://webprotege.stanford.edu/RxrZbPJ4bTUHKyefld8qtZ">
+        <rdfs:subClassOf rdf:resource="http://webprotege.stanford.edu/RBIkXvnDrohx69Z3PLUVvg6"/>
+        <rdfs:label>React StrictMode Component Topic</rdfs:label>
+    </owl:Class>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.13) https://github.com/owlcs/owlapi -->
+
