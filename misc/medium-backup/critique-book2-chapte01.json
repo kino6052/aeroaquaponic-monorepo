@@ -1,0 +1,65 @@
+{
+  "id": "root",
+  "text": "Summary",
+  "type": "node",
+  "isOpen": true,
+  "children": [
+    {
+      "id": "5507b2a0-2dd6-47b6-8864-f016f60db472",
+      "type": "text",
+      "text": " FIRST DIVISION. TRANSCENDENTAL LOGIC. TRANSCENDENTAL ANALYTIC. § 1 \n",
+      "children": []
+    },
+    {
+      "id": "13edbb92-510d-4bff-8848-5db639172179",
+      "text": "Transcedental analytic is the dissection of the whole priori knowledge into its elements. ",
+      "type": "node",
+      "isOpen": false,
+      "isEditing": false,
+      "children": [
+        {
+          "id": "62070953-b2b4-4a34-90ad-25bbb6107e42",
+          "type": "text",
+          "text": "   Transcendental analytic is the dissection of the whole of our à priori knowledge into the elements of the pure cognition of the understanding.",
+          "children": []
+        },
+        {
+          "id": "9ad5c8eb-727c-4795-a8e9-491234e99cf3",
+          "text": "Requirements. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b0393fe7-483b-4fea-bcfe-1a57b423b796",
+              "type": "text",
+              "text": " In order to effect our purpose, it is necessary: (1) That the conceptions be pure and not empirical; (2) That they belong not to intuition and sensibility, but to thought and understanding; (3) That they be elementary conceptions, and as such, quite different from deduced or compound conceptions; (4) That our table of these elementary conceptions be complete, and fill up the whole sphere of the pure understanding.",
+              "children": []
+            }
+          ]
+        },
+        {
+          "id": "b5003328-1551-401b-a340-d42304255d1c",
+          "type": "text",
+          "text": "Now this completeness of a science cannot be accepted with confidence on the guarantee of a mere estimate of its existence in an aggregate formed only by means of repeated experiments and attempts. The completeness which we require is possible only by means of an idea of the totality of the à priori cognition of the understanding, and through the thereby determined division of the conceptions which form the said whole; consequently, only by means of their connection in a system.",
+          "children": []
+        },
+        {
+          "id": "3a5a8adb-a716-4424-9495-17c4cb1ea184",
+          "text": "The reason this understanding is pure. ",
+          "type": "node",
+          "isOpen": false,
+          "isEditing": false,
+          "children": [
+            {
+              "id": "b9c3802f-e430-436e-8f21-44baae96c1cf",
+              "type": "text",
+              "text": " Pure understanding distinguishes itself not merely from everything empirical, but also completely from all sensibility. It is a unity self-subsistent, self-sufficient, and not to be enlarged by any additions from without. Hence the sum of its cognition constitutes a system to be determined by and comprised under an idea; and the completeness and articulation of this system can at the same time serve as a test of the correctness and genuineness of all the parts of cognition that belong to it. The whole of this part of transcendental logic consists of two books, of which the one contains the conceptions, and the other the principles of pure understanding.",
+              "children": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

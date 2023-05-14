@@ -39,8 +39,8 @@ function repositionComponents(
   components: SceneNode[],
   flow: "row" | "column" = "row"
 ): void {
-  //@ts-ignore;
-  (node as GroupNode).resize(node.parent.width, node.height);
+  // //@ts-ignore;
+  // (node as GroupNode).resize(node.parent.width, node.height);
 
   if (flow === "row") {
     let currentX = node.x;
