@@ -9,10 +9,12 @@ import {
   faMessage,
   faPlus,
   faTrash,
-  faUpload
+  faUpload,
 } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 import { TConversationCategory } from "./types";
+import { decoupler } from "@/bridge";
+import { getEventWrapper } from "../../../../../utils/EventWrapper";
 
 const SideMenuWrapper = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -137,8 +139,10 @@ const SideMenuButton = styled.button`
   }
 `;
 
+const EventWrapper = getEventWrapper(decoupler);
+
 export const CollapseButton: React.FC<{ isOpen?: boolean }> = ({
-  isOpen = false
+  isOpen = false,
 }) => {
   return !isOpen ? (
     <SideMenuButton className="uncollapse">
@@ -165,23 +169,30 @@ export const SideMenu: React.FC<{
         return (
           <div className="category" key={category}>
             <span className="label">{category}</span>
-            {conversations?.map(({ name, isActive }) => (
-              <span
-                key={name}
-                className={["conversation", isActive && "active"]
-                  .filter((v) => !!v)
-                  .join(" ")}
+            {conversations?.map(({ name, isActive, id }) => (
+              <EventWrapper
+                key={id}
+                id={{
+                  id,
+                }}
               >
-                <Icon icon={faMessage} />
-                <span className="title">{name}</span>
-                {isActive && (
-                  <span className="icons">
-                    <Icon icon={faEdit} size="sm" />
-                    <Icon icon={faTrash} size="sm" />
-                    <Icon icon={faUpload} size="sm" />
-                  </span>
-                )}
-              </span>
+                <span
+                  key={name}
+                  className={["conversation", isActive && "active"]
+                    .filter((v) => !!v)
+                    .join(" ")}
+                >
+                  <Icon icon={faMessage} />
+                  <span className="title">{name}</span>
+                  {isActive && (
+                    <span className="icons">
+                      <Icon icon={faEdit} size="sm" />
+                      <Icon icon={faTrash} size="sm" />
+                      <Icon icon={faUpload} size="sm" />
+                    </span>
+                  )}
+                </span>
+              </EventWrapper>
             ))}
           </div>
         );

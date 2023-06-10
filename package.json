@@ -1,5 +1,10 @@
 {
   "dependencies": {
-    "pug": "^3.0.2"
+    "pug": "^3.0.2",
+    "react": "^18.2.0",
+    "rxjs": "^7.8.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.10"
   }
 }

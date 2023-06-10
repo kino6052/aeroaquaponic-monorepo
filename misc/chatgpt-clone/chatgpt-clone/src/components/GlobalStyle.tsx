@@ -1,6 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
+  .sb-show-main.sb-main-padded {
+    margin: 0;
+    padding: 0;
+  }
+
   body {
   margin: 0;
   padding: 0;
