@@ -3,12 +3,12 @@ import { Decoupler, TAction } from "./Decoupler";
 
 export function getEventWrapper<PState, PAction, PControlId, PPayload>(
   decoupler: Decoupler<PState, PAction, PControlId, PPayload>
-): React.FC<
-  React.PropsWithChildren<{
-    id: React.PropsWithChildren<TAction<PAction, PControlId, PPayload>>["id"];
-  }>
-> {
-  return (props) => {
+) {
+  const EventWrapper: React.FC<
+    React.PropsWithChildren<{
+      id: React.PropsWithChildren<TAction<PAction, PControlId, PPayload>>["id"];
+    }>
+  > = (props) => {
     const { children, id } = props;
     const childrenWithProps = React.Children.map<
       React.ReactNode,
@@ -48,4 +48,5 @@ export function getEventWrapper<PState, PAction, PControlId, PPayload>(
     });
     return childrenWithProps;
   };
+  return EventWrapper;
 }

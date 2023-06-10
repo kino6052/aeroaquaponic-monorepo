@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import { EStyleConstant } from "./enums";
 import { Icon } from "./Icon";
+import { EStyleConstant } from "./enums";
 
 import {
   faBook,
@@ -13,8 +13,7 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import "./styles.css";
 import { TConversationCategory } from "./types";
-import { decoupler } from "@/bridge";
-import { getEventWrapper } from "../../../../../utils/EventWrapper";
+import { EventWrapper } from "./EventWrapper";
 
 const SideMenuWrapper = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -138,8 +137,6 @@ const SideMenuButton = styled.button`
     z-index: 100;
   }
 `;
-
-const EventWrapper = getEventWrapper(decoupler);
 
 export const CollapseButton: React.FC<{ isOpen?: boolean }> = ({
   isOpen = false,

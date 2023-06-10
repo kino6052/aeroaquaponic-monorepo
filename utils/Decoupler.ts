@@ -5,7 +5,6 @@ export type TAction<A, C, T> = {
   id: { id: C; index?: number };
   payload?: T;
 };
-
 export class Decoupler<PState, PAction, PControlId, PPayload> {
   private ActionSubject = new Subject<TAction<PAction, PControlId, PPayload>>();
   private IOQueueSubject = new BehaviorSubject<
@@ -47,6 +46,8 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
       });
 
       this.IOQueueSubject.pipe(
+        // NOTE: Main loop will be waiting until action is received
+        // from one of the IO agents
         filter((queue) => queue.length > 0),
         take(1)
       ).subscribe((queue) => {
