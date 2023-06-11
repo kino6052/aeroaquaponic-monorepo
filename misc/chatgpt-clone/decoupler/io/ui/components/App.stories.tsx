@@ -3,7 +3,7 @@ import { EModel, EUser } from "../../../enums";
 import { TMainProps } from "../../../types";
 
 export default {
-  title: "ChatGPT/App",
+  title: "ChatGPT/App/Example Scenarios",
   component: Main,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   parameters: {

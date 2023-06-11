@@ -4,6 +4,13 @@ import { TMainProps } from "../../types";
 // Start the decouupler
 import "../../index";
 
+const initialState: TMainProps = {
+  input: "",
+  messages: [],
+  isOpen: true,
+  conversations: [],
+};
+
 export default {
   title: "ChatGPT/InteractiveApp",
   component: App,
@@ -14,14 +21,7 @@ export default {
   },
 };
 
-const initialState: TMainProps = {
-  input: "",
-  messages: [],
-  isOpen: true,
-  conversations: [],
-};
-
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const InitialState = {
+export const InteractiveApp = {
   args: initialState,
 };
