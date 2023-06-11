@@ -1,4 +1,4 @@
-import { EModel, EUser } from "./enums";
+import { EModel, EUser } from "../../../enums";
 import { TMainProps } from "./types";
 
 export const data: TMainProps = {
@@ -13,13 +13,13 @@ export const data: TMainProps = {
         {
           isActive: true,
           id: "1",
-          name: "ConversationConversationConversationConversation 001"
+          name: "ConversationConversationConversationConversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
-        }
-      ]
+          name: "Conversation 002",
+        },
+      ],
     },
     {
       id: "1",
@@ -27,13 +27,13 @@ export const data: TMainProps = {
       conversations: [
         {
           id: "1",
-          name: "Conversation 001"
+          name: "Conversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
-        }
-      ]
+          name: "Conversation 002",
+        },
+      ],
     },
     {
       id: "1",
@@ -41,13 +41,13 @@ export const data: TMainProps = {
       conversations: [
         {
           id: "1",
-          name: "Conversation 001"
+          name: "Conversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
-        }
-      ]
+          name: "Conversation 002",
+        },
+      ],
     },
     {
       id: "1",
@@ -55,60 +55,60 @@ export const data: TMainProps = {
       conversations: [
         {
           id: "1",
-          name: "Conversation 001"
+          name: "Conversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 001"
+          name: "Conversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 001"
+          name: "Conversation 001",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
+          name: "Conversation 002",
         },
         {
           id: "1",
-          name: "Conversation 002"
-        }
-      ]
-    }
+          name: "Conversation 002",
+        },
+      ],
+    },
   ],
   selectedModel: EModel.GPT4,
   messages: [
     {
       user: EUser.User,
-      text: "Test"
+      text: "Test",
     },
     {
       user: EUser.ChatGPT,
@@ -119,7 +119,7 @@ export const data: TMainProps = {
       
       Let's say you have a React Application, "Coffee Checker", that alerts users when recently brewed coffee has been sitting around too long and freshness is compromised.
       
-      We use Coffee Checker's App.js to initialize our app and library. Our app's UI wants to use two individual icons, faCheckSquare and faCoffee. We also add all of the brands in @fortawesome/free-brands-svg-icons to build the showcase of the big companies that fictitiously use "Coffee Checker" over time.`
-    }
-  ]
+      We use Coffee Checker's App.js to initialize our app and library. Our app's UI wants to use two individual icons, faCheckSquare and faCoffee. We also add all of the brands in @fortawesome/free-brands-svg-icons to build the showcase of the big companies that fictitiously use "Coffee Checker" over time.`,
+    },
+  ],
 };

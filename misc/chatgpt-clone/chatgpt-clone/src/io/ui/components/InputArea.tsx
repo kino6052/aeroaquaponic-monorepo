@@ -1,7 +1,7 @@
 import { faPlane } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import styled from "styled-components";
-import { EStyleConstant } from "./enums";
+import { EStyleConstant } from "../../../enums";
 import { Icon } from "./Icon";
 import "./styles.css";
 
@@ -89,11 +89,13 @@ const Button = styled.button`
   }
 `;
 
-export const InputArea: React.FC<Partial<{
-  isOpen: boolean;
-  input: string;
-  activeMessage: string;
-}>> = ({ isOpen = false, input = "", activeMessage = "" }) => {
+export const InputArea: React.FC<
+  Partial<{
+    isOpen: boolean;
+    input: string;
+    activeMessage: string;
+  }>
+> = ({ isOpen = false, input = "", activeMessage = "" }) => {
   return (
     <ChatBottomView isOpen={isOpen}>
       <Input>

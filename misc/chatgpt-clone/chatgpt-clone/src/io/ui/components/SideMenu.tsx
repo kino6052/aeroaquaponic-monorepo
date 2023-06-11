@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { Icon } from "./Icon";
-import { EStyleConstant } from "./enums";
+import { EStyleConstant } from "../../../enums";
 
 import {
   faBook,

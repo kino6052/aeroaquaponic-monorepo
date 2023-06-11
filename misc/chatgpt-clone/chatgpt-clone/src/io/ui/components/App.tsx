@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { EModel } from "./enums";
+import { EModel } from "../../../enums";
 import { CollapseButton, SideMenu } from "./SideMenu";
-import { TMainProps } from "./types";
 
+import { TMainProps } from "../../../types";
 import { ChatArea } from "./ChatArea";
-import { data } from "./data";
-import { InputArea } from "./InputArea";
 import { GlobalStyle } from "./GlobalStyle";
+import { InputArea } from "./InputArea";
+import { data } from "./data";
 
 const AppWrapper = styled.div`
   display: flex;

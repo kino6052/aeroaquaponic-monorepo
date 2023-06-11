@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { Main as App } from "../../components/App";
-import { TMainProps } from "@/components/types";
+import { Main as App } from "./components/App";
+import { TMainProps } from "../../types";
 
 function mapStateToProps<PState>(state: PState): TMainProps {
   return {

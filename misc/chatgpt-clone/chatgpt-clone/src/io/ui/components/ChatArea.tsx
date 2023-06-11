@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 import styled from "styled-components";
-import { EModel, EStyleConstant, EUser } from "./enums";
+import { EModel, EStyleConstant, EUser } from "../../../enums";
 import { Icon } from "./Icon";
 import { TMessage } from "./types";
 
