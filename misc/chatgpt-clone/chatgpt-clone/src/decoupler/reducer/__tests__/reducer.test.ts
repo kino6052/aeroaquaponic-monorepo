@@ -1,6 +1,6 @@
 import { initialState } from "../../bridge";
 import { reducer, selectMainProps } from "..";
-import { EActionType, EControlId, TMainProps } from "../../../types";
+import { EActionType, EControlId, TMainProps } from "../../types";
 import { EModel, EUser } from "../../enums";
 
 describe("Should correctly collapse and uncollapse side panel", () => {
@@ -53,7 +53,7 @@ describe("Should be able to enter input into the input field", () => {
   it("should have input value set when providing input", () => {
     const newState = reducer(initialState, {
       id: { id: EControlId.QueryInput },
-      type: EActionType.Input,
+      type: EActionType.Change,
       payload: "This is the new input that I typed into the query input",
     });
 
@@ -120,7 +120,7 @@ describe("Should submit the response and create a conversation", () => {
   it("should submit message and create conversation for today", () => {
     const newState001 = reducer(initialState, {
       id: { id: EControlId.QueryInput },
-      type: EActionType.Input,
+      type: EActionType.Change,
       payload: "This is the new input that I typed into the query input",
     });
 

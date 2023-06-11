@@ -141,9 +141,15 @@ export const CollapseButton: React.FC<{ isOpen?: boolean }> = ({
   isOpen = false,
 }) => {
   return !isOpen ? (
-    <SideMenuButton className="uncollapse">
-      <Icon icon={faBook} />
-    </SideMenuButton>
+    <EventWrapper
+      id={{
+        id: EControlId.ExpandButton,
+      }}
+    >
+      <SideMenuButton className="uncollapse">
+        <Icon icon={faBook} />
+      </SideMenuButton>
+    </EventWrapper>
   ) : null;
 };
 

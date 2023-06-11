@@ -1,5 +1,6 @@
 import { EModel, EUser } from "../enums";
 import {
+  EActionType,
   EControlId,
   IState,
   TAction,
@@ -31,6 +32,7 @@ export function reducer<T>(state: IState, action: TAction<T>): IState {
       };
 
     case EControlId.QueryInput:
+      if (action.type !== EActionType.Change) return state;
       return {
         ...state,
         input: action.payload as string,

@@ -3,11 +3,11 @@ import styled from "styled-components";
 import { EModel } from "../../../enums";
 import { CollapseButton, SideMenu } from "./SideMenu";
 
-import { TMainProps } from "../../../../types";
+import { ThemeProvider } from "styled-components";
+import { TMainProps } from "../../../types";
 import { ChatArea } from "./ChatArea";
 import { GlobalStyle } from "./GlobalStyle";
 import { InputArea } from "./InputArea";
-import { ThemeProvider, DefaultTheme } from "styled-components";
 
 const AppWrapper = styled.div`
   display: flex;

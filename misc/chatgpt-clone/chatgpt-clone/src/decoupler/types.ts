@@ -32,8 +32,8 @@ export enum EControlId {
 }
 
 export enum EActionType {
-  Click,
-  Input,
+  Click = "click",
+  Change = "change",
 }
 
 export type TAction<T> = {
