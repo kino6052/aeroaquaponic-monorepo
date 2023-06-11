@@ -1,10 +1,23 @@
 import { BehaviorSubject, Subject, filter, take } from "rxjs";
 
-export type TAction<A, C, T> = {
-  type: A;
-  id: { id: C; index?: number };
-  payload?: T;
+export type TAction<PAction, PControlId, PPayload> = {
+  type: PAction;
+  id: { id: PControlId; index?: number };
+  payload?: PPayload;
 };
+
+/**
+ * Decoupler decouples IO agent handling (io step of the main loop)
+ * and pure function logic of the application (reduce step of the main loop)
+ * while not being opinionated about what tools you use under the hood
+ *
+ * @public
+ * @method constructor: Creates an instance of Decoupler with the initial state and reducer function.
+ * @method registerIOHandler: Registers an IO handler to the ioHandlers array.
+ * @method sendAction: Sends an action to be processed by the main loop.
+ * @method init: Initializes the application loop with the initial state and starts the application.
+ *
+ */
 export class Decoupler<PState, PAction, PControlId, PPayload> {
   private ActionSubject = new Subject<TAction<PAction, PControlId, PPayload>>();
   private IOQueueSubject = new BehaviorSubject<
@@ -19,6 +32,12 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
     action: TAction<PAction, PControlId, PPayload>
   ) => PState;
 
+  /**
+   * Creates an instance of Decoupler.
+   *
+   * @param {PState} initialState - The initial state of the application.
+   * @param {(state: PState, action: TAction<PAction, PControlId, PPayload>) => PState} reducer - The reducer function.
+   */
   constructor(
     initialState: PState,
     reducer: (
@@ -34,11 +53,23 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
     });
   }
 
+  /**
+   * Registers an IO handler to the ioHandlers array.
+   *
+   * @param {(state: PState) => void} handler - The handler function to be registered.
+   */
   registerIOHandler(handler: (state: PState) => void) {
     this.ioHandlers.push(handler);
   }
 
-  io(state: PState) {
+  /**
+   * Run IO handlers in a non-blocking way and resolves a promise
+   * once an action is received from one of the IO agents.
+   *
+   * @param {PState} state - The state of the application.
+   * @returns {Promise<TAction<PAction, PControlId, PPayload>>} - Promise that resolves to the received action.
+   */
+  private io(state: PState) {
     return new Promise<TAction<PAction, PControlId, PPayload>>((res) => {
       // NOTE: Run IO Agents in a non-blocking way
       this.ioHandlers.forEach((handler) => {
@@ -58,28 +89,34 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
     });
   }
 
+  /**
+   * Sends an action to be processed by the main loop.
+   *
+   * @param {TAction<PAction, PControlId, PPayload>} action - The action to be sent.
+   */
   sendAction(action: TAction<PAction, PControlId, PPayload>) {
     this.ActionSubject.next(action);
   }
 
+  /**
+   * Initializes the application loop with the initial state.
+   * This is the main entry point of the application.
+   */
   init() {
     const initialState = this.StateSubject.getValue();
-
-    // MAIN APP ENTRY POINT
-    // NOTE: A representation of application/stateful agent
+    // A representation of application/stateful agent
     const applicationLoop = async (state: PState): Promise<void> => {
-      // NOTE: Non-pure function.
-      // Can be tested too though
+      // Non-pure function.
       const action = await this.io(state);
 
-      // NOTE: Pure function. TDD friendly
+      // Pure function. TDD friendly
       const nextState = this.reducer(state, action);
 
-      // NOTE: Recursion
+      // Recursion
       return applicationLoop(nextState);
     };
 
-    // NOTE: Start the Application
+    // Start the Application
     applicationLoop(initialState);
   }
 }
