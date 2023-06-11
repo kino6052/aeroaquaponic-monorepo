@@ -11,9 +11,8 @@ import {
   faTrash,
   faUpload,
 } from "@fortawesome/free-solid-svg-icons";
-import "./styles.css";
-import { TConversationCategory } from "./types";
 import { EventWrapper } from "./EventWrapper";
+import { EControlId, TConversationCategory } from "../../../types";
 
 const SideMenuWrapper = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -157,9 +156,15 @@ export const SideMenu: React.FC<{
       <SideMenuButton className="grow">
         <Icon icon={faPlus} /> New Chat
       </SideMenuButton>
-      <SideMenuButton>
-        <Icon icon={faBook} />
-      </SideMenuButton>
+      <EventWrapper
+        id={{
+          id: EControlId.ExpandButton,
+        }}
+      >
+        <SideMenuButton>
+          <Icon icon={faBook} />
+        </SideMenuButton>
+      </EventWrapper>
     </div>
     <div className="conversations">
       {conversations.map(({ category, conversations }) => {
@@ -167,29 +172,22 @@ export const SideMenu: React.FC<{
           <div className="category" key={category}>
             <span className="label">{category}</span>
             {conversations?.map(({ name, isActive, id }) => (
-              <EventWrapper
-                key={id}
-                id={{
-                  id,
-                }}
+              <span
+                key={name}
+                className={["conversation", isActive && "active"]
+                  .filter((v) => !!v)
+                  .join(" ")}
               >
-                <span
-                  key={name}
-                  className={["conversation", isActive && "active"]
-                    .filter((v) => !!v)
-                    .join(" ")}
-                >
-                  <Icon icon={faMessage} />
-                  <span className="title">{name}</span>
-                  {isActive && (
-                    <span className="icons">
-                      <Icon icon={faEdit} size="sm" />
-                      <Icon icon={faTrash} size="sm" />
-                      <Icon icon={faUpload} size="sm" />
-                    </span>
-                  )}
-                </span>
-              </EventWrapper>
+                <Icon icon={faMessage} />
+                <span className="title">{name}</span>
+                {isActive && (
+                  <span className="icons">
+                    <Icon icon={faEdit} size="sm" />
+                    <Icon icon={faTrash} size="sm" />
+                    <Icon icon={faUpload} size="sm" />
+                  </span>
+                )}
+              </span>
             ))}
           </div>
         );

@@ -1,4 +1,4 @@
-import { Decoupler } from "../../../../utils/Decoupler";
+import { Decoupler } from "../../utils/Decoupler";
 import { EModel } from "./enums";
 import { reducer } from "./reducer";
 import { EActionType, EControlId, IState } from "./types";

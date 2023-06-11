@@ -3,7 +3,8 @@ import React from "react";
 import styled from "styled-components";
 import { EStyleConstant } from "../../../enums";
 import { Icon } from "./Icon";
-import "./styles.css";
+import { EventWrapper } from "./EventWrapper";
+import { EControlId } from "@/decoupler/types";
 
 const ChatBottomView = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -99,10 +100,18 @@ export const InputArea: React.FC<
   return (
     <ChatBottomView isOpen={isOpen}>
       <Input>
-        <TextInput value={input} disabled={!!activeMessage} />
-        <Button disabled={!!activeMessage || input.length === 0}>
-          <Icon icon={faPlane} />
-        </Button>
+        <EventWrapper
+          id={{
+            id: EControlId.QueryInput,
+          }}
+        >
+          <TextInput value={input} disabled={!!activeMessage} />
+        </EventWrapper>
+        <EventWrapper id={{ id: EControlId.Submit }}>
+          <Button disabled={!!activeMessage || input.length === 0}>
+            <Icon icon={faPlane} />
+          </Button>
+        </EventWrapper>
       </Input>
       <SubTitle>
         ChatGPT may produce inaccurate information about people, places, or

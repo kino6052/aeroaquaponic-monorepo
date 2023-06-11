@@ -1,6 +1,6 @@
 import { initialState } from "../../bridge";
 import { reducer, selectMainProps } from "..";
-import { EActionType, EControlId, TMainProps } from "../../types";
+import { EActionType, EControlId, TMainProps } from "../../../types";
 import { EModel, EUser } from "../../enums";
 
 describe("Should correctly collapse and uncollapse side panel", () => {

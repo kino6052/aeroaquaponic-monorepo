@@ -1,5 +1,5 @@
 import { EModel, EUser } from "../../../enums";
-import { TMainProps } from "./types";
+import { TMainProps } from "../../../../types";
 
 export const data: TMainProps = {
   input: "Test!",

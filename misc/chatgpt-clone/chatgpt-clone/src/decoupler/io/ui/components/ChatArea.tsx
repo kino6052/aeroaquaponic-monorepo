@@ -2,7 +2,7 @@ import { PropsWithChildren } from "react";
 import styled from "styled-components";
 import { EModel, EStyleConstant, EUser } from "../../../enums";
 import { Icon } from "./Icon";
-import { TMessage } from "./types";
+import { TMessage } from "../../../../types";
 
 import {
   faClipboard,
@@ -12,7 +12,6 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
-import "./styles.css";
 
 const ChatAreaWrapper = styled.div<{ isOpen: boolean }>`
   display: flex;
