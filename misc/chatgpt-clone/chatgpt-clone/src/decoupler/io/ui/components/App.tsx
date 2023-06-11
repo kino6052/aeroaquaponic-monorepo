@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { EModel } from "../../../enums";
 import { CollapseButton, SideMenu } from "./SideMenu";
 
-import { ThemeProvider } from "styled-components";
 import { TMainProps } from "../../../types";
 import { ChatArea } from "./ChatArea";
 import { GlobalStyle } from "./GlobalStyle";
@@ -23,24 +22,22 @@ export const Main: React.FC<TMainProps> = ({
 }) => {
   return (
     <>
-      <ThemeProvider theme={{}}>
-        <GlobalStyle />
-        <AppWrapper>
-          <CollapseButton isOpen={isOpen} />
-          <SideMenu isOpen={isOpen} conversations={conversations} />
-          <ChatArea
-            isOpen={isOpen}
-            activeMessage={activeMessage}
-            messages={messages}
-            selectedModel={selectedModel}
-          />
-          <InputArea
-            input={input}
-            isOpen={isOpen}
-            activeMessage={activeMessage}
-          />
-        </AppWrapper>
-      </ThemeProvider>
+      <GlobalStyle />
+      <AppWrapper>
+        <CollapseButton isOpen={isOpen} />
+        <SideMenu isOpen={isOpen} conversations={conversations} />
+        <ChatArea
+          isOpen={isOpen}
+          activeMessage={activeMessage}
+          messages={messages}
+          selectedModel={selectedModel}
+        />
+        <InputArea
+          input={input}
+          isOpen={isOpen}
+          activeMessage={activeMessage}
+        />
+      </AppWrapper>
     </>
   );
 };
