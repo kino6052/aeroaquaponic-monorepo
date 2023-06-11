@@ -106,14 +106,18 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
     const initialState = this.StateSubject.getValue();
     // A representation of application/stateful agent
     const applicationLoop = async (state: PState): Promise<void> => {
-      // Non-pure function.
-      const action = await this.io(state);
+      try {
+        // Non-pure function.
+        const action = await this.io(state);
 
-      // Pure function. TDD friendly
-      const nextState = this.reducer(state, action);
+        // Pure function. TDD friendly
+        const nextState = this.reducer(state, action);
 
-      // Recursion
-      return applicationLoop(nextState);
+        return applicationLoop(nextState);
+      } catch (e) {
+        console.warn(e);
+        return applicationLoop(state);
+      }
     };
 
     // Start the Application

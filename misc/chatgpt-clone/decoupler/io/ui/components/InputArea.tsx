@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { EStyleConstant } from "../../../enums";
 import { Icon } from "./Icon";
 import { EventWrapper } from "./EventWrapper";
-import { EControlId } from "@/decoupler/types";
+import { EControlId } from "../../../types";
 
 const ChatBottomView = styled.div<{ isOpen: boolean }>`
   display: flex;

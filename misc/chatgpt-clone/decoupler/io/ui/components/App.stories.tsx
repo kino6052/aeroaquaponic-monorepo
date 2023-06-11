@@ -1,6 +1,6 @@
 import { Main } from "./App";
 import { EModel, EUser } from "../../../enums";
-import { TMainProps } from "../../../../types";
+import { TMainProps } from "../../../types";
 
 export default {
   title: "ChatGPT/App",

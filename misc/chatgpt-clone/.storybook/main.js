@@ -1,8 +1,8 @@
 /** @type { import('@storybook/nextjs').StorybookConfig } */
 const config = {
   stories: [
-    "../chatgpt-clone/**/*.mdx",
-    "../chatgpt-clone/**/*.stories.@(js|jsx|ts|tsx)",
+    "../decoupler/**/*.mdx",
+    "../decoupler/**/*.stories.@(js|jsx|ts|tsx)",
   ],
   addons: [
     "@storybook/addon-links",

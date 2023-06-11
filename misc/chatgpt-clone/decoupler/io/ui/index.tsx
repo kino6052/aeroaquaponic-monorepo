@@ -1,5 +1,6 @@
+import React from "react";
 import { BehaviorSubject } from "rxjs";
-import { useSharedState } from "../../../../utils/useSharedState";
+import { useSharedState } from "../../../utils/useSharedState";
 import { initialState } from "../../bridge";
 import { IState, TMainProps } from "../../types";
 import { Main } from "./components/App";
