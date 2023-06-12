@@ -6,22 +6,10 @@ import {
   TAction,
   TConversation,
   TConversationCategory,
-  TMainProps,
   TMessage,
 } from "../types";
 
 import { v4 as uuid } from "uuid";
-
-export const selectMainProps = (state: IState): TMainProps => {
-  return {
-    input: state.input,
-    messages: state.messages,
-    activeMessage: state.activeMessage,
-    conversations: state.conversations,
-    isOpen: state.isOpen,
-    selectedModel: state.selectedModel,
-  };
-};
 
 export function compose<T>(state: IState) {
   return (actions: TAction<T>[]) =>

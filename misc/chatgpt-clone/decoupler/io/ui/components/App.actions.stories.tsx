@@ -1,10 +1,10 @@
 import React from "react";
-import { mapStateToProps } from "..";
 import { initialState } from "../../../bridge";
 import { compose } from "../../../reducer";
 import { EActionType, EControlId, TAction, TMainProps } from "../../../types";
 import { ActionList } from "./ActionList";
 import { Main } from "./App";
+import { selectMainProps } from "../../../selectors";
 
 const MainWithActions: React.FC<
   TMainProps & { showActions?: boolean; actions?: TAction<any>[] }
@@ -30,7 +30,7 @@ export default {
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
 export const InitialState = {
   args: {
-    ...mapStateToProps(initialState),
+    ...selectMainProps(initialState),
     showActions: false,
   },
 };
@@ -50,7 +50,7 @@ const SidePanelCollapsedState = compose(initialState)(
 export const SidePanelCollapsed = {
   args: {
     showActions: false,
-    ...mapStateToProps(SidePanelCollapsedState),
+    ...selectMainProps(SidePanelCollapsedState),
     actions: SidePanelCollapsedActions,
   },
 };
@@ -68,7 +68,7 @@ const ContainsInputState = compose(initialState)(ContainsInputActions);
 export const ContainsInput = {
   args: {
     showActions: false,
-    ...mapStateToProps(ContainsInputState),
+    ...selectMainProps(ContainsInputState),
     actions: ContainsInputActions,
   },
 };
@@ -85,7 +85,7 @@ const ToggleModelState = compose(initialState)(ToggleModelActions);
 export const ToggleModel = {
   args: {
     showActions: false,
-    ...mapStateToProps(ToggleModelState),
+    ...selectMainProps(ToggleModelState),
     actions: ToggleModelActions,
   },
 };
@@ -111,7 +111,7 @@ const ConversationAndMessagesState = compose(initialState)(
 export const ConversationAndMessages = {
   args: {
     showActions: false,
-    ...mapStateToProps(ConversationAndMessagesState),
+    ...selectMainProps(ConversationAndMessagesState),
     actions: ConversationAndMessagesActions,
   } as TMainProps,
 };
@@ -145,7 +145,7 @@ const ActiveMessageState = compose(initialState)(ActiveMessageActions);
 export const ActiveMessage = {
   args: {
     showActions: false,
-    ...mapStateToProps(ActiveMessageState),
+    ...selectMainProps(ActiveMessageState),
     actions: ActiveMessageActions,
   } as TMainProps,
 };
@@ -181,7 +181,7 @@ const FinalActiveMessageState = compose(initialState)(
 export const FinalActiveMessage = {
   args: {
     showActions: false,
-    ...mapStateToProps(FinalActiveMessageState),
+    ...selectMainProps(FinalActiveMessageState),
     actions: FinalActiveMessageActions,
   } as TMainProps,
 };
@@ -199,7 +199,7 @@ const LikeButtonState = compose(FinalActiveMessageState)(LikeButtonActions);
 export const LikeButton = {
   args: {
     showActions: false,
-    ...mapStateToProps(LikeButtonState),
+    ...selectMainProps(LikeButtonState),
     actions: LikeButtonActions,
   } as TMainProps,
 };
@@ -219,7 +219,7 @@ const DislikeButtonState = compose(FinalActiveMessageState)(
 export const DislikeButton = {
   args: {
     showActions: false,
-    ...mapStateToProps(DislikeButtonState),
+    ...selectMainProps(DislikeButtonState),
     actions: DislikeButtonActions,
   } as TMainProps,
 };
@@ -259,7 +259,7 @@ const NewChatClickState = compose(initialState)(NewChatClickActions);
 export const NewChatClick = {
   args: {
     showActions: false,
-    ...mapStateToProps(NewChatClickState),
+    ...selectMainProps(NewChatClickState),
     actions: NewChatClickActions,
   } as TMainProps,
 };
@@ -279,7 +279,7 @@ const SelectConversationState = compose(NewChatClickState)(
 export const SelectConversation = {
   args: {
     showActions: false,
-    ...mapStateToProps(SelectConversationState),
+    ...selectMainProps(SelectConversationState),
     actions: SelectConversationActions,
   } as TMainProps,
 };
@@ -299,7 +299,7 @@ const RemoveConversationState = compose(SelectConversationState)(
 export const RemoveConversation = {
   args: {
     showActions: false,
-    ...mapStateToProps(RemoveConversationState),
+    ...selectMainProps(RemoveConversationState),
     actions: RemoveConversationActions,
   } as TMainProps,
 };
@@ -319,7 +319,7 @@ const EditConversationState = compose(SelectConversationState)(
 export const EditConversation = {
   args: {
     showActions: false,
-    ...mapStateToProps(EditConversationState),
+    ...selectMainProps(EditConversationState),
     actions: EditConversationActions,
   } as TMainProps,
 };
@@ -340,7 +340,7 @@ const ConversationEditInputState = compose(EditConversationState)(
 export const ConversationEditInput = {
   args: {
     showActions: false,
-    ...mapStateToProps(ConversationEditInputState),
+    ...selectMainProps(ConversationEditInputState),
     actions: ConversationEditInputActions,
   } as TMainProps,
 };
@@ -360,7 +360,7 @@ const ConversationEditAcceptState = compose(ConversationEditInputState)(
 export const ConversationEditAccept = {
   args: {
     showActions: false,
-    ...mapStateToProps(ConversationEditAcceptState),
+    ...selectMainProps(ConversationEditAcceptState),
     actions: ConversationEditAcceptActions,
   } as TMainProps,
 };

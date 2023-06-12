@@ -4,17 +4,14 @@ import { useSharedState } from "../../../utils/useSharedState";
 import { initialState } from "../../bridge";
 import { IState, TMainProps } from "../../types";
 import { Main } from "./components/App";
-
-export function mapStateToProps(state: IState): TMainProps {
-  return state;
-}
+import { selectMainProps } from "../../selectors";
 
 const PropsSubject = new BehaviorSubject<TMainProps>(
-  mapStateToProps(initialState)
+  selectMainProps(initialState)
 );
 
 export function uiHandler(state: IState) {
-  const props = mapStateToProps(state);
+  const props = selectMainProps(state);
 
   PropsSubject.next(props);
 }
