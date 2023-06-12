@@ -159,9 +159,15 @@ export const SideMenu: React.FC<{
 }> = ({ isOpen, conversations = [] }) => (
   <SideMenuWrapper isOpen={isOpen}>
     <div className="buttons">
-      <SideMenuButton className="grow">
-        <Icon icon={faPlus} /> New Chat
-      </SideMenuButton>
+      <EventWrapper
+        id={{
+          id: EControlId.NewChat,
+        }}
+      >
+        <SideMenuButton className="grow">
+          <Icon icon={faPlus} /> New Chat
+        </SideMenuButton>
+      </EventWrapper>
       <EventWrapper
         id={{
           id: EControlId.ExpandButton,
@@ -178,22 +184,29 @@ export const SideMenu: React.FC<{
           <div className="category" key={category}>
             <span className="label">{category}</span>
             {conversations?.map(({ name, isActive, id }) => (
-              <span
-                key={name}
-                className={["conversation", isActive && "active"]
-                  .filter((v) => !!v)
-                  .join(" ")}
+              <EventWrapper
+                key={id}
+                id={{
+                  id: EControlId.Conversation,
+                  uid: id,
+                }}
               >
-                <Icon icon={faMessage} />
-                <span className="title">{name}</span>
-                {isActive && (
-                  <span className="icons">
-                    <Icon icon={faEdit} size="sm" />
-                    <Icon icon={faTrash} size="sm" />
-                    <Icon icon={faUpload} size="sm" />
-                  </span>
-                )}
-              </span>
+                <span
+                  className={["conversation", isActive && "active"]
+                    .filter((v) => !!v)
+                    .join(" ")}
+                >
+                  <Icon icon={faMessage} />
+                  <span className="title">{name}</span>
+                  {isActive && (
+                    <span className="icons">
+                      <Icon icon={faEdit} size="sm" />
+                      <Icon icon={faTrash} size="sm" />
+                      <Icon icon={faUpload} size="sm" />
+                    </span>
+                  )}
+                </span>
+              </EventWrapper>
             ))}
           </div>
         );

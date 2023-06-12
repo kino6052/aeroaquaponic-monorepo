@@ -95,8 +95,14 @@ export const InputArea: React.FC<
     isOpen: boolean;
     input: string;
     activeMessage: string;
+    isWaitingForResponse?: boolean;
   }>
-> = ({ isOpen = false, input = "", activeMessage = "" }) => {
+> = ({
+  isOpen = false,
+  input = "",
+  activeMessage = "",
+  isWaitingForResponse = false,
+}) => {
   return (
     <ChatBottomView isOpen={isOpen}>
       <Input>
@@ -105,7 +111,10 @@ export const InputArea: React.FC<
             id: EControlId.QueryInput,
           }}
         >
-          <TextInput value={input} disabled={!!activeMessage} />
+          <TextInput
+            value={input}
+            disabled={isWaitingForResponse || !!activeMessage}
+          />
         </EventWrapper>
         <EventWrapper id={{ id: EControlId.Submit }}>
           <Button disabled={!!activeMessage || input.length === 0}>

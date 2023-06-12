@@ -12,7 +12,9 @@ export const initialState: IState = {
   selectedModel: EModel.GPT3,
 };
 
-export const decoupler = new Decoupler<IState, EActionType, EControlId, string>(
-  initialState,
-  reducer
-);
+export const decoupler = new Decoupler<
+  IState,
+  EActionType,
+  EControlId,
+  unknown
+>(initialState, reducer);

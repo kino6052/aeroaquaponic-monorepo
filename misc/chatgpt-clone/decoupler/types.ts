@@ -6,6 +6,7 @@ export type TConversation = {
   id: string;
   name: string;
   isActive?: boolean;
+  messages: TMessage[];
 };
 
 export type TConversationCategory = {
@@ -19,6 +20,7 @@ export type TMainProps = {
   activeMessage?: string;
   messages: TMessage[];
   conversations?: TConversationCategory[];
+  isWaitingForResponse?: boolean;
   isOpen?: boolean;
   selectedModel?: EModel;
 };
@@ -29,11 +31,14 @@ export enum EControlId {
   Toggle = "Toggle",
   NewChat = "NewChat",
   Submit = "Submit",
+  QueryResponse = "QueryResponse",
+  Conversation = "Conversation",
 }
 
 export enum EActionType {
   Click = "click",
   Change = "change",
+  IO = "io",
 }
 
 export type TAction<T> = {
@@ -47,6 +52,8 @@ export interface IState {
   messages: TMessage[];
   activeMessage: string;
   conversations: TConversationCategory[];
+  activeConversationId?: string;
   isOpen: boolean;
   selectedModel: EModel;
+  isWaitingForResponse?: boolean;
 }

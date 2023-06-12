@@ -5,7 +5,7 @@ import { initialState } from "../../bridge";
 import { IState, TMainProps } from "../../types";
 import { Main } from "./components/App";
 
-function mapStateToProps(state: IState): TMainProps {
+export function mapStateToProps(state: IState): TMainProps {
   return state;
 }
 
@@ -21,8 +21,6 @@ export function uiHandler(state: IState) {
 
 export const App: React.FC = () => {
   const [props] = useSharedState(PropsSubject);
-
-  console.warn(props);
 
   if (typeof window === undefined) return null;
   return <Main {...props} />;

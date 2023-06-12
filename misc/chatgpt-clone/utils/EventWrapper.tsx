@@ -15,8 +15,6 @@ export function getEventWrapper<PState, PAction, PControlId, PPayload>(
       React.ReactNode
     >(children, (child) => {
       if (React.isValidElement(child)) {
-        console.warn("Voila");
-
         return React.cloneElement(child, {
           // @ts-ignore
           id,

@@ -1,8 +1,8 @@
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useEffect } from "react";
 import styled from "styled-components";
 import { EModel, EStyleConstant, EUser } from "../../../enums";
 import { Icon } from "./Icon";
-import { TMessage } from "../../../../types";
+import { TMessage } from "../../../types";
 
 import {
   faClipboard,
@@ -268,22 +268,34 @@ const MessageList: React.FC<{
   messages: TMessage[];
   selectedModel: EModel;
   activeMessage: string;
-}> = ({ messages, selectedModel, activeMessage }) => (
-  <MessageViewWrapper>
-    <div className="heading">Model: {selectedModel}</div>
-    {messages.map(({ user, text }, i) => {
-      return (
-        <Message key={text} user={user} active={(i + 1) % 2 === 0}>
-          {text}
+  isWaitingForResponse?: boolean;
+}> = React.memo(
+  ({
+    messages,
+    selectedModel,
+    activeMessage,
+    isWaitingForResponse = false,
+  }) => (
+    <MessageViewWrapper>
+      <div className="heading">Model: {selectedModel}</div>
+      {messages.map(({ user, text }, i) => {
+        return (
+          <Message key={i} user={user} active={(i + 1) % 2 === 0}>
+            {text}
+          </Message>
+        );
+      })}
+      {(activeMessage || isWaitingForResponse) && (
+        <Message
+          active={(messages.length + 1) % 2 === 0}
+          user={EUser.ChatGPT}
+          isTyping
+        >
+          {activeMessage}
         </Message>
-      );
-    })}
-    {activeMessage && (
-      <Message user={EUser.ChatGPT} isTyping>
-        {activeMessage}
-      </Message>
-    )}
-  </MessageViewWrapper>
+      )}
+    </MessageViewWrapper>
+  )
 );
 
 // ChatArea.tsx
@@ -292,13 +304,20 @@ export const ChatArea: React.FC<{
   selectedModel: EModel;
   messages: TMessage[];
   activeMessage: string;
+  isWaitingForResponse?: boolean;
 }> = ({
   isOpen = false,
   selectedModel = EModel.GPT3,
   messages = [],
   activeMessage = "",
+  isWaitingForResponse = false,
 }) => {
   const hasMessages = messages.length > 0;
+
+  useEffect(() => {
+    window.scrollTo(0, document.body.scrollHeight);
+  }, [messages]);
+
   return (
     <ChatAreaWrapper isOpen={isOpen}>
       <div className="body">
@@ -308,6 +327,7 @@ export const ChatArea: React.FC<{
             messages={messages}
             selectedModel={selectedModel}
             activeMessage={activeMessage}
+            isWaitingForResponse={isWaitingForResponse}
           />
         )}
       </div>

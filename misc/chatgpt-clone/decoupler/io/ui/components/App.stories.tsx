@@ -60,6 +60,7 @@ export const State004 = {
         user: EUser.User,
       },
     ],
+    isWaitingForResponse: true,
     activeMessage: "",
     conversations: [
       {
@@ -99,6 +100,77 @@ export const State005 = {
             id: "1",
             name: "Conversation 1",
             isActive: true,
+          },
+        ],
+      },
+    ],
+  } as TMainProps,
+};
+
+export const State006 = {
+  args: {
+    ...initialState,
+    selectedModel: EModel.GPT4,
+    isOpen: true,
+    input: "",
+    messages: [
+      {
+        text: "This is an awesome input!",
+        user: EUser.User,
+      },
+      {
+        text: "This is the only message I can generate...",
+        user: EUser.ChatGPT,
+      },
+    ],
+    activeMessage: "",
+    conversations: [
+      {
+        category: "Today",
+        id: "1",
+        conversations: [
+          {
+            id: "1",
+            name: "Conversation 1",
+            isActive: true,
+          },
+        ],
+      },
+    ],
+  } as TMainProps,
+};
+
+export const State007 = {
+  args: {
+    ...initialState,
+    selectedModel: EModel.GPT4,
+    isOpen: true,
+    input: "",
+    messages: [
+      {
+        text: "This is an awesome input!",
+        user: EUser.User,
+      },
+      {
+        text: "This is the only message I can generate...",
+        user: EUser.ChatGPT,
+      },
+    ],
+    activeMessage: "",
+    conversations: [
+      {
+        category: "Today",
+        id: "1",
+        conversations: [
+          {
+            id: "1",
+            name: "Conversation 2",
+            isActive: true,
+          },
+          {
+            id: "1",
+            name: "Conversation 1",
+            isActive: false,
           },
         ],
       },

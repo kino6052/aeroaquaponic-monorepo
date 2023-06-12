@@ -19,6 +19,7 @@ export const Main: React.FC<TMainProps> = ({
   isOpen = false,
   conversations = [],
   activeMessage = "",
+  isWaitingForResponse = false,
 }) => {
   return (
     <>
@@ -31,11 +32,13 @@ export const Main: React.FC<TMainProps> = ({
           activeMessage={activeMessage}
           messages={messages}
           selectedModel={selectedModel}
+          isWaitingForResponse={isWaitingForResponse}
         />
         <InputArea
           input={input}
           isOpen={isOpen}
           activeMessage={activeMessage}
+          isWaitingForResponse={isWaitingForResponse}
         />
       </AppWrapper>
     </>
