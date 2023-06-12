@@ -1,5 +1,5 @@
 import { Main } from "./App";
-import { EModel, EUser } from "../../../enums";
+import { EModel, EReaction, EUser } from "../../../enums";
 import { TMainProps } from "../../../types";
 
 export default {
@@ -166,6 +166,124 @@ export const State007 = {
             id: "1",
             name: "Conversation 2",
             isActive: true,
+          },
+          {
+            id: "1",
+            name: "Conversation 1",
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  } as TMainProps,
+};
+
+export const Liked = {
+  args: {
+    ...initialState,
+    selectedModel: EModel.GPT4,
+    isOpen: true,
+    input: "",
+    messages: [
+      {
+        text: "This is an awesome input!",
+        user: EUser.User,
+      },
+      {
+        text: "This is the only message I can generate...",
+        reaction: EReaction.Like,
+        user: EUser.ChatGPT,
+      },
+    ],
+    activeMessage: "",
+    conversations: [
+      {
+        category: "Today",
+        id: "1",
+        conversations: [
+          {
+            id: "1",
+            name: "Conversation 2",
+            isActive: true,
+          },
+          {
+            id: "1",
+            name: "Conversation 1",
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  } as TMainProps,
+};
+
+export const Disliked = {
+  args: {
+    ...initialState,
+    selectedModel: EModel.GPT4,
+    isOpen: true,
+    input: "",
+    messages: [
+      {
+        text: "This is an awesome input!",
+        user: EUser.User,
+      },
+      {
+        text: "This is the only message I can generate...",
+        reaction: EReaction.Dislike,
+        user: EUser.ChatGPT,
+      },
+    ],
+    activeMessage: "",
+    conversations: [
+      {
+        category: "Today",
+        id: "1",
+        conversations: [
+          {
+            id: "1",
+            name: "Conversation 2",
+            isActive: true,
+          },
+          {
+            id: "1",
+            name: "Conversation 1",
+            isActive: false,
+          },
+        ],
+      },
+    ],
+  } as TMainProps,
+};
+
+export const Editing = {
+  args: {
+    ...initialState,
+    selectedModel: EModel.GPT4,
+    isOpen: true,
+    input: "",
+    messages: [
+      {
+        text: "This is an awesome input!",
+        user: EUser.User,
+      },
+      {
+        text: "This is the only message I can generate...",
+        reaction: EReaction.Dislike,
+        user: EUser.ChatGPT,
+      },
+    ],
+    activeMessage: "",
+    conversations: [
+      {
+        category: "Today",
+        id: "1",
+        conversations: [
+          {
+            id: "1",
+            name: "Conversation 2",
+            isActive: true,
+            isEditing: true,
           },
           {
             id: "1",

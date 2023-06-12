@@ -1,8 +1,8 @@
 import { PropsWithChildren, useEffect } from "react";
 import styled from "styled-components";
-import { EModel, EStyleConstant, EUser } from "../../../enums";
+import { EModel, EReaction, EStyleConstant, EUser } from "../../../enums";
 import { Icon } from "./Icon";
-import { TMessage } from "../../../types";
+import { EControlId, TMessage } from "../../../types";
 
 import {
   faClipboard,
@@ -12,6 +12,7 @@ import {
   faUser,
 } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
+import { EventWrapper } from "./EventWrapper";
 
 const ChatAreaWrapper = styled.div<{ isOpen: boolean }>`
   display: flex;
@@ -204,32 +205,57 @@ const MessageContent: React.FC<PropsWithChildren<{ isTyping: boolean }>> = ({
 );
 
 // MessageButtons.tsx
-const MessageButtons: React.FC = () => (
+const MessageButtons: React.FC<{ reaction?: EReaction; id: string }> = ({
+  reaction,
+  id,
+}) => (
   <div className="buttons">
-    <button className="button">
+    {/* <button className="button">
       <Icon icon={faClipboard} size="sm" />
-    </button>
-    <button className="button">
-      <Icon icon={faThumbsUp} size="sm" />
-    </button>
-    <button className="button">
-      <Icon icon={faThumbsDown} size="sm" />
-    </button>
+    </button> */}
+    {(!reaction || reaction === EReaction.Like) && (
+      <EventWrapper
+        id={{
+          id: EControlId.LikeButton,
+          uid: id,
+        }}
+      >
+        <button className="button">
+          <Icon icon={faThumbsUp} size="sm" />
+        </button>
+      </EventWrapper>
+    )}
+    {(!reaction || reaction === EReaction.Dislike) && (
+      <EventWrapper
+        id={{
+          id: EControlId.DislikeButton,
+          uid: id,
+        }}
+      >
+        <button className="button">
+          <Icon icon={faThumbsDown} size="sm" />
+        </button>
+      </EventWrapper>
+    )}
   </div>
 );
 
 // Message.tsx
 const Message: React.FC<
   PropsWithChildren<{
+    id: string;
     user: EUser;
+    reaction?: EReaction;
     active?: boolean;
     isTyping?: boolean;
   }>
-> = ({ children, user, active = false, isTyping = false }) => (
+> = ({ children, user, active = false, isTyping = false, id, reaction }) => (
   <MessageWrapper className={active ? "active" : ""}>
     <Avatar user={user} />
     <MessageContent isTyping={isTyping}>{children}</MessageContent>
-    {user === EUser.ChatGPT && !isTyping && <MessageButtons />}
+    {user === EUser.ChatGPT && !isTyping && (
+      <MessageButtons id={id} reaction={reaction} />
+    )}
   </MessageWrapper>
 );
 
@@ -248,14 +274,20 @@ const ModelSelection: React.FC<{ selectedModel: EModel }> = ({
 }) => (
   <ModelSelectionWrapper>
     <ToggleWrapper>
-      <Toggle>
-        <ToggleItem active={selectedModel === EModel.GPT3}>
-          {EModel.GPT3}
-        </ToggleItem>
-        <ToggleItem active={selectedModel === EModel.GPT4}>
-          {EModel.GPT4}
-        </ToggleItem>
-      </Toggle>
+      <EventWrapper
+        id={{
+          id: EControlId.Toggle,
+        }}
+      >
+        <Toggle>
+          <ToggleItem active={selectedModel === EModel.GPT3}>
+            {EModel.GPT3}
+          </ToggleItem>
+          <ToggleItem active={selectedModel === EModel.GPT4}>
+            {EModel.GPT4}
+          </ToggleItem>
+        </Toggle>
+      </EventWrapper>
     </ToggleWrapper>
     <h2>
       ChatGPT <span>plus</span>
@@ -278,15 +310,22 @@ const MessageList: React.FC<{
   }) => (
     <MessageViewWrapper>
       <div className="heading">Model: {selectedModel}</div>
-      {messages.map(({ user, text }, i) => {
+      {messages.map(({ user, text, id, reaction }, i) => {
         return (
-          <Message key={i} user={user} active={(i + 1) % 2 === 0}>
+          <Message
+            id={id}
+            reaction={reaction}
+            key={id}
+            user={user}
+            active={(i + 1) % 2 === 0}
+          >
             {text}
           </Message>
         );
       })}
       {(activeMessage || isWaitingForResponse) && (
         <Message
+          id={""}
           active={(messages.length + 1) % 2 === 0}
           user={EUser.ChatGPT}
           isTyping

@@ -109,6 +109,7 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
       try {
         // Non-pure function.
         const action = await this.io(state);
+        console.warn(action);
 
         // Pure function. TDD friendly
         const nextState = this.reducer(state, action);

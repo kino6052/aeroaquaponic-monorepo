@@ -18,6 +18,16 @@ export function getEventWrapper<PState, PAction, PControlId, PPayload>(
         return React.cloneElement(child, {
           // @ts-ignore
           id,
+          onKeyDown: (e: React.KeyboardEvent) => {
+            if (e.key.toLowerCase() === "enter") {
+              e.preventDefault();
+              decoupler.sendAction({
+                id,
+                type: "enter" as PAction,
+                payload: e?.target?.value as PPayload,
+              });
+            }
+          },
           onClick: (e: React.MouseEvent) => {
             e.preventDefault();
             decoupler.sendAction({
@@ -31,13 +41,6 @@ export function getEventWrapper<PState, PAction, PControlId, PPayload>(
               id,
               type: "change" as PAction,
               payload: e?.target?.value as PPayload,
-            });
-          },
-          onFocus: (e: React.FocusEvent) => {
-            e.preventDefault();
-            decoupler.sendAction({
-              id,
-              type: "focus" as PAction,
             });
           },
         });

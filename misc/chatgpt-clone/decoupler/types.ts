@@ -1,12 +1,20 @@
-import { EModel, EUser } from "./enums";
+import { EModel, EReaction, EUser } from "./enums";
 
-export type TMessage = { user: EUser; text: string };
+export type TMessage = {
+  id: string;
+  user: EUser;
+  text: string;
+  reaction?: EReaction;
+};
 
 export type TConversation = {
   id: string;
   name: string;
   isActive?: boolean;
+  model?: EModel;
   messages: TMessage[];
+  isEditing?: boolean;
+  tempName?: string;
 };
 
 export type TConversationCategory = {
@@ -33,11 +41,20 @@ export enum EControlId {
   Submit = "Submit",
   QueryResponse = "QueryResponse",
   Conversation = "Conversation",
+  LikeButton = "LikeButton",
+  DislikeButton = "DislikeButton",
+  EditConversation = "EditConversation",
+  RemoveConversation = "RemoveConversation",
+  ShareConversation = "ShareConversation",
+  ConversationEditAccept = "ConversationEditAccept",
+  ConversationEditCancel = "ConversationEditCancel",
+  ConversationEditInput = "ConversationEditInput",
 }
 
 export enum EActionType {
   Click = "click",
   Change = "change",
+  Enter = "enter",
   IO = "io",
 }
 

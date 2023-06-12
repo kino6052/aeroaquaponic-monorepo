@@ -21,7 +21,7 @@ export const Icon: React.FC<React.ComponentProps<typeof FontAwesomeIcon>> = ({
   ...rest
 }) => {
   return (
-    <IconWrapper>
+    <IconWrapper {...rest}>
       <FontAwesomeIcon {...rest} className={`${className} icon`} />
     </IconWrapper>
   );

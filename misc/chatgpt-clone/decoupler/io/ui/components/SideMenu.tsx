@@ -10,6 +10,8 @@ import {
   faPlus,
   faTrash,
   faUpload,
+  faCheck,
+  faClose as faCross,
 } from "@fortawesome/free-solid-svg-icons";
 import { EventWrapper } from "./EventWrapper";
 import { EControlId, TConversationCategory } from "../../../types";
@@ -95,6 +97,16 @@ const SideMenuWrapper = styled.div<{ isOpen: boolean }>`
           flex-grow: 1;
         }
 
+        .edit-title {
+          display: inline-flex;
+          background: transparent;
+          border: 1px solid white;
+          padding: 0 4px;
+          color: white;
+          flex-shrink: 1;
+          width: inherit;
+        }
+
         .icons {
           display: inline-flex;
           gap: 4px;
@@ -153,6 +165,64 @@ export const CollapseButton: React.FC<{ isOpen?: boolean }> = ({
   ) : null;
 };
 
+const Icons: React.FC<{ id: string; isEditing: boolean }> = ({
+  id,
+  isEditing = false,
+}) => {
+  return (
+    <span className="icons">
+      {isEditing && (
+        <>
+          <EventWrapper
+            id={{
+              id: EControlId.ConversationEditAccept,
+              uid: id,
+            }}
+          >
+            <Icon icon={faCheck} size="sm" tabIndex={0} />
+          </EventWrapper>
+          <EventWrapper
+            id={{
+              id: EControlId.ConversationEditCancel,
+              uid: id,
+            }}
+          >
+            <Icon icon={faCross} size="sm" tabIndex={0} />
+          </EventWrapper>
+        </>
+      )}
+      {!isEditing && (
+        <>
+          <EventWrapper
+            id={{
+              id: "EditConversation" as EControlId,
+              uid: id,
+            }}
+          >
+            <Icon icon={faEdit} size="sm" tabIndex={0} />
+          </EventWrapper>
+          <EventWrapper
+            id={{
+              id: "RemoveConversation" as EControlId,
+              uid: id,
+            }}
+          >
+            <Icon icon={faTrash} size="sm" tabIndex={0} />
+          </EventWrapper>
+          {/* <EventWrapper
+            id={{
+              id: "ShareConversation" as EControlId,
+              uid: id,
+            }}
+          >
+            <Icon icon={faUpload} size="sm" />
+          </EventWrapper> */}
+        </>
+      )}
+    </span>
+  );
+};
+
 export const SideMenu: React.FC<{
   isOpen: boolean;
   conversations: TConversationCategory[];
@@ -183,31 +253,42 @@ export const SideMenu: React.FC<{
         return (
           <div className="category" key={category}>
             <span className="label">{category}</span>
-            {conversations?.map(({ name, isActive, id }) => (
-              <EventWrapper
-                key={id}
-                id={{
-                  id: EControlId.Conversation,
-                  uid: id,
-                }}
-              >
-                <span
-                  className={["conversation", isActive && "active"]
-                    .filter((v) => !!v)
-                    .join(" ")}
+            {conversations?.map(
+              ({ name, isActive, id, isEditing = false, tempName }) => (
+                <EventWrapper
+                  key={id}
+                  id={{
+                    id: EControlId.Conversation,
+                    uid: id,
+                  }}
                 >
-                  <Icon icon={faMessage} />
-                  <span className="title">{name}</span>
-                  {isActive && (
-                    <span className="icons">
-                      <Icon icon={faEdit} size="sm" />
-                      <Icon icon={faTrash} size="sm" />
-                      <Icon icon={faUpload} size="sm" />
-                    </span>
-                  )}
-                </span>
-              </EventWrapper>
-            ))}
+                  <span
+                    tabIndex={0}
+                    className={["conversation", isActive && "active"]
+                      .filter((v) => !!v)
+                      .join(" ")}
+                  >
+                    <Icon icon={faMessage} />
+                    {isEditing && (
+                      <EventWrapper
+                        id={{
+                          id: EControlId.ConversationEditInput,
+                          uid: id,
+                        }}
+                      >
+                        <input
+                          autoFocus
+                          className="edit-title"
+                          value={tempName}
+                        />
+                      </EventWrapper>
+                    )}
+                    {!isEditing && <span className="title">{name}</span>}
+                    {isActive && <Icons id={id} isEditing={isEditing} />}
+                  </span>
+                </EventWrapper>
+              )
+            )}
           </div>
         );
       })}
