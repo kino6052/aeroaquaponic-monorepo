@@ -74,3 +74,6 @@ export interface IState {
   selectedModel: EModel;
   isWaitingForResponse?: boolean;
 }
+export interface ICommand {
+  execute(): IState;
+}

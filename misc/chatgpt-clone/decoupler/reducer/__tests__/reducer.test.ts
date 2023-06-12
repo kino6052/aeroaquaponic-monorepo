@@ -1,8 +1,7 @@
 import { compose, reducer } from "..";
 import { initialState } from "../../bridge";
-import { EModel } from "../../enums";
 import { selectMainProps } from "../../selectors";
-import { EActionType, EControlId, TMainProps } from "../../types";
+import { EActionType, EControlId } from "../../types";
 
 let uid = 0;
 
@@ -13,6 +12,14 @@ jest.mock("uuid", () => {
     }),
   };
 });
+
+// jest.mock("uuidv4", () => {
+//   return {
+//     uuid: jest.fn(() => {
+//       return String(uid++);
+//     }),
+//   };
+// });
 
 beforeEach(() => {
   uid = 0;
