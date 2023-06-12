@@ -4,7 +4,6 @@ import {
   IState,
   TAction,
   TConversation,
-  TConversationCategory,
   TMessage,
 } from "../../types";
 import { EUser } from "../../enums";
@@ -12,34 +11,55 @@ import { EUser } from "../../enums";
 export class SubmitCommand implements ICommand {
   constructor(private state: IState, private action: TAction<any>) {}
 
-  execute(): IState {
-    const newConversation: TConversation = {
-      id: uuid(),
-      name:
-        "Conversation " +
-        (this.state.conversations.reduce((sum, c) => {
-          return sum + (c.conversations?.length || 0);
-        }, 0) +
-          1),
+  private getConversationCount(): number {
+    return this.state.conversations.reduce(
+      (sum, c) => sum + (c.conversations?.length || 0),
+      0
+    );
+  }
+
+  private createNewConversation(id: string): TConversation {
+    return {
+      id: id,
+      name: `Conversation ${this.getConversationCount() + 1}`,
       isActive: true,
       messages: [],
       model: this.state.selectedModel,
     };
+  }
 
-    const newCategory: TConversationCategory = {
-      id: uuid(),
-      category: "Today",
-      conversations: [],
-    };
-
-    const newMessage: TMessage = {
-      id: uuid(),
+  private createNewMessage(id: string): TMessage {
+    return {
+      id: id,
       user: EUser.User,
       text: this.state.input,
     };
+  }
 
-    const category = this.state.conversations?.[0] || newCategory;
+  private getUpdatedCategory(
+    newConversation: TConversation,
+    categoryId: string
+  ) {
+    const category = this.state.conversations[0] ?? {
+      id: categoryId,
+      category: "Today",
+      conversations: [],
+    };
+    const conversations = this.state.activeConversationId
+      ? []
+      : [newConversation];
 
+    return {
+      ...category,
+      conversations: [...conversations, ...(category.conversations || [])],
+    };
+  }
+
+  private getUpdatedState(
+    newConversation: TConversation,
+    newMessage: TMessage,
+    categoryId: string
+  ) {
     return {
       ...this.state,
       input: "",
@@ -47,16 +67,19 @@ export class SubmitCommand implements ICommand {
       activeConversationId:
         this.state.activeConversationId || newConversation.id,
       messages: [...this.state.messages, newMessage],
-      conversations: [
-        {
-          ...category,
-          conversations: [
-            ...(this.state.activeConversationId ? [] : [newConversation]),
-            ...(category.conversations || []),
-          ],
-        },
-      ],
+      conversations: [this.getUpdatedCategory(newConversation, categoryId)],
       isWaitingForResponse: true,
     };
+  }
+
+  execute(): IState {
+    const conversationId = uuid();
+    const categoryId = uuid();
+    const messageId = uuid();
+
+    const newConversation = this.createNewConversation(conversationId);
+    const newMessage = this.createNewMessage(messageId);
+
+    return this.getUpdatedState(newConversation, newMessage, categoryId);
   }
 }
