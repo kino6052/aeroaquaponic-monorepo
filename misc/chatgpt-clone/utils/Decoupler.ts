@@ -27,7 +27,7 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
 
   private ioHandlers: ((state: PState) => void)[] = [];
 
-  private reducer: (
+  private update: (
     state: PState,
     action: TAction<PAction, PControlId, PPayload>
   ) => PState;
@@ -46,7 +46,7 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
     ) => PState
   ) {
     this.StateSubject = new BehaviorSubject<PState>(initialState);
-    this.reducer = reducer;
+    this.update = reducer;
 
     this.ActionSubject.subscribe((action) => {
       this.IOQueueSubject.next([...this.IOQueueSubject.getValue(), action]);
@@ -105,20 +105,20 @@ export class Decoupler<PState, PAction, PControlId, PPayload> {
   init() {
     const initialState = this.StateSubject.getValue();
     // A representation of application/stateful agent
-    const applicationLoop = async (state: PState): Promise<void> => {
-      try {
-        // Non-pure function.
-        const action = await this.io(state);
+const applicationLoop = async (state: PState): Promise<void> => {
+  try {
+    // Non-pure function.
+    const action = await this.io(state);
 
-        // Pure function. TDD friendly
-        const nextState = this.reducer(state, action);
+    // Pure function. TDD friendly
+    const nextState = this.update(state, action);
 
-        return applicationLoop(nextState);
-      } catch (e) {
-        console.error(e);
-        return applicationLoop(state);
-      }
-    };
+    return applicationLoop(nextState);
+  } catch (e) {
+    console.error(e);
+    return applicationLoop(state);
+  }
+};
 
     // Start the Application
     applicationLoop(initialState);

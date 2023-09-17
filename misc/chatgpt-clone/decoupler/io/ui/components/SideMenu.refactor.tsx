@@ -1,7 +1,5 @@
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import styled from "styled-components";
-import { EStyleConstant } from "../../../enums";
-import { Icon } from "./Icon";
 
 import {
   faBook,
@@ -12,8 +10,9 @@ import {
   faPlus,
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
-import { EControlId, TConversationCategory } from "../../../types";
-import { EventWrapper } from "./EventWrapper";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { EStyleConstant } from "../../../enums";
 
 const _SideMenu = styled.div<{ isOpen: boolean }>`
   display: flex;
