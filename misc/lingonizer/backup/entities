@@ -1,0 +1,21 @@
+-- Table: public.entities
+
+-- DROP TABLE IF EXISTS public.entities;
+
+CREATE TABLE IF NOT EXISTS public.entities
+(
+    entity_id integer NOT NULL DEFAULT nextval('entities_entity_id_seq'::regclass),
+    title character varying(255) COLLATE pg_catalog."default" NOT NULL,
+    description text COLLATE pg_catalog."default",
+    tags integer[] NOT NULL,
+    CONSTRAINT entities_pkey PRIMARY KEY (entity_id),
+    CONSTRAINT entities_entity_id_fkey FOREIGN KEY (entity_id)
+        REFERENCES public.entities (entity_id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.entities
+    OWNER to postgres;

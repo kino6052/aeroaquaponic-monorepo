@@ -1,0 +1,8 @@
+WITH tag_ids AS (
+    SELECT UNNEST(tags) AS tag_id
+    FROM entities
+    WHERE entity_id = 1
+)
+SELECT e.*
+FROM entities e
+JOIN tag_ids t ON e.entity_id = t.tag_id;

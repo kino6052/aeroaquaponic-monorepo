@@ -1,0 +1,3 @@
+SELECT *
+FROM entities
+WHERE title ILIKE '%ty3%';

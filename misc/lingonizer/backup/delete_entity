@@ -1,0 +1,2 @@
+DELETE FROM public.entities
+WHERE entity_id = 5;

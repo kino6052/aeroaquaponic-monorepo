@@ -1,0 +1,27 @@
+SELECT 
+    e.entity_id, 
+    e.title, 
+    e.description,
+	e.tags,
+    ARRAY_AGG(t.title) AS tag_titles
+FROM 
+    entities e
+
+LEFT JOIN LATERAL 
+    UNNEST(e.tags) AS unnested_tag_id
+ON TRUE
+
+LEFT JOIN 
+    entities t 
+ON t.entity_id = unnested_tag_id
+
+WHERE 
+e.title ILIKE ANY(ARRAY['%%']) 
+AND 
+EXISTS (
+    SELECT 1
+    WHERE t.title ILIKE '%%'
+)
+
+GROUP BY 
+    e.entity_id, e.title, e.description;

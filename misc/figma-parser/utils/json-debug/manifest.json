@@ -1,0 +1,15 @@
+{
+  "name": "json-debug",
+  "id": "1230764488775922148",
+  "api": "1.0.0",
+  "main": "index.js",
+  "menu": [
+    {
+      "name": "json-debug",
+      "command": "json-debug"
+    }
+  ],
+  "capabilities": [],
+  "enableProposedApi": false,
+  "editorType": ["figma"]
+}

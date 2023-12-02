@@ -1,0 +1,2 @@
+INSERT INTO public.entities (title, description, tags) VALUES 
+('Entity1', 'Description1', ARRAY[2, 3]::integer[]);
