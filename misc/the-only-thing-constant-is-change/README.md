@@ -1,0 +1,176 @@
+- Structure
+  - Title
+    - The only thing constant is change
+  - Subtitle
+    - A snapshot of an ever-changing understanding
+  - Main
+    - Introduction
+      - Book purpose
+        - To service as a snapshot of understanding
+          - This book serves as a snapshot of my thoughts and understanding.
+          - It is about how philosophy influenced me up to the present moment, because, as this book suggests, everything is a subject to change including understanding.
+          - Most of all, it preserves what I consider valuable
+        - To demonstrate that understanding of the world is a personal construct
+          - We build it over the course of our lives similar to software
+          - I will provide my understanding of a variety of topics
+            - Faith
+              - What I believe and why
+            - Science
+              - Math
+              - Physics
+              - Biology
+              - Computer Science
+                - Especially significant, as it is something I do professionally
+                - Influenced my world view
+                - When programming we create constructs and we revise them so often, so many times
+                - Programming, with its constant revisions, is a form of applied philosophy.
+        - To demonstrate that a well-formed understanding allows for happier life
+          - Can help answering questions
+            - What can I know?
+            - What ought I do?
+            - What can I hope for?
+            - What is the meaning of life?
+            - What is happiness?
+        - To demonstrate a process of getting to such an understanding
+          - To demonstrate the value of philosophical reflexive introspection as a means of finding fundamental knowledge
+          - To demonstrate that we can't have "the true" understanding
+          - To explain why philosophy deserves why philosophy deserves more homage than it gets
+        - To outline the path forward and encourage the reader to follow their own journey
+          - Express hope that if I am careful I will eventually reduce misconceptions in the construct and it will keep improving
+          - Express hope that this construct might help others in critically examining their own constructs
+    - Part 1: Foundation
+      - Chapter 1: Prior to understanding
+        - Foreword
+          - It wouldn't be worthwhile to write a book if there wasn't some mechanism or construct
+            - which I find valuable
+            - which I want to preserve through demonstration
+            - which I want to share
+          - This system is a mechanism that was assembled from principles (or base components)
+            - Will have its flaws
+            - Might proof insightful
+          - Base components
+            - I would not be able to put together most basic components if I didn't start completely from scratch
+            - It was only possible through thorough philosophical introspective reflection
+        - Basic components
+          - Introspective exposition
+            - Why would we need to concern with such
+              - It was part of putting together the messy puzzle of misconceptions that I found myself in when I was younger and completely confused about life, my relationship with it and others
+              - Mess in your concepts manifests in the mess in your life
+      - Capter 2: Philosophy
+        - Beginnings
+          - What can I be absolutely certain of?
+            - Is this the real life or is it just fantasy?
+              - Do I know that I exist?
+                - "Cogito ergo sum" (I think, therefore I am) as a foundational belief.
+                - Skepticism and nihilism examined and deemed less fundamental than the certainty of personal existence.
+              - Do I know that the world exist?
+                - I can tell for sure is that what I call the world is an experience
+                  - Moreover it is an experience that I believe to be true
+                    - Fundamental intuition
+                      - Upon examination, I can't be certain of its existence
+                        - Not to the degree I can be certain of my existence
+                        - Because it is dreamlike
+                          - In dreams we also believe that the world is true
+                          - Upon waking up, we find it strange how real to us it seemed
+        - What is philosophy
+          - This introspection is really what philosophy is about
+            - Foreword
+              - Funny aspect
+                - Philosophers as a group don't agree on the definition
+            - What is academic philosophy?
+              - Community
+              - System
+              - Method
+              - The main benefit of studying academically
+                - Become acquainted with philosophical arguments of various philosophers
+                  - In philosophical history not all that glitters is gold
+            - What is real philosophy?
+              - Intimate thing
+              - Examination
+                - "Unexamined life is not worth living"
+                - Of mind
+                  - Discoveries in mind could either be
+                    - Key to understanding anything
+                    - Path to delusions
+              - Like academic philosophy in personal philosophy we build
+                - System
+                  - If you won't build a coherent and all encompassing system over the course of your life, then your understanding will always be fragmented and kaleidoscopic
+                    - Not every system will do, but only the one that is as true to experience is possible
+                    - But if you are in pursuit of the true understanding
+                      – You will not stop on fragmented understanding
+                - Method
+                  - You will develop a way to enhance and elaborate on your knowledge
+                    - Building ontologies
+                    - Critically examining
+                    - Doubting
+                    - Etc.
+                - On our own
+                  - True philosophers are destined to be more or less lonely as the constructs we are creating are constant subject to change and complete revision, and in academia, constructs are guarded from shattering as the maintenance of these constructs is often the purpose of the academia
+              - Philosophy is always about epistemology
+                - Always about the search for the truth
+                  - Main problem
+                    - Not easy to determine what is truth and what is just an appearance
+                - Immanuel Kant went farthest than other philosophers in epistemic understanding
+                  - we can only know either what is imprinted in our minds from birth (apriori)
+                  - Or something from the phenomenal word that is validated by experience
+                    - Knowledge only in relative terms because experience is limited in time and space and could never become absolute
+                - Ethics
+                  - Builds on epistemology
+                    - We can only know what is good interaction or bad interaction if we know something to be true or false
+                - Aesthetics
+                  - We know something to be good for us or bad for us, only if we know what is true
+              - Philosophy will inevitably contain contradictions
+                - Immanuel Kant
+                  - Demonstrated that something that stands behind the world of phenomena (phenomena maps very well to our mind, but not whatever stands behind it, and there must, as at least because we know that we are certain of apriori things are a sort of phenomenon with different modalities, which tells us that phenomena are analogous to our soul products), is something that is out of reach, and because phenomena only hint at what lies behind, they don't have the power of telling us what it really is.
+                  - The limitations of the expressiveness of phenomena is the source of contradictions to the mind
+                    - It makes the mind suffer as it doesn't want to stop just here, but if it isn't grounded properly, it will wander off into delusions.
+              - Futility
+                - Admitting that our knowledge is always limited the search for the ultimate truth might seem futile
+                  - Absolute knowledge itself (apriori knowledge) is not always useful
+                    - Non-applied mathematics
+                    - Non-applied logic
+                  - Never ending process of accumulating "relative" (not absolute) knowledge
+                    - Even building understanding is a relative knowledge, as it is a process
+                - Justification
+                  - The process of finding the truth is really futile
+                    - If believe that the ever-changing and uncertain world
+                      – Is all there is
+                      – There is no way out
+                  - It is not futile
+                    - If there is a justification for a way out
+      - Chapter 3: Mind vs matter
+        - The mind is the only thing that can be certain to exist
+        - The mind is the only thing that we know exists
+        - Idealistic vantage point
+          - Berkley
+          - Immanuel Kant
+          - Plato
+        - Materialism contains contradictions
+        - Proper idealism does not contain contradictions
+          - It is a solid foundation that can be built on top of
+            - Even if there really was a world-in-itself, having an idealist vantage point would still be the most solid foundation for reasoning in general and a secure starting point in any discourse
+              - As was clearly demonstrated by Immanuel Kant, using the reference frame of our mind is the only way we can make sense of things
+        - The phenomenal world (the world of phenomenons)
+          - We can only know from experience
+          - At its core is change because time and space are conditions of our experience
+          - Our minds are also part of phenomenal world, as they reveal themselves in time and is subject to change
+          - Essentially, we as spirits (or minds or consciousness) have access to at least to "windows" through which we see things
+          - We experience mind and the world somewhat differently
+            - Mind
+              - We have access to a wide variety of interactions and experiments can be done rather quickly
+            - World
+              - Our interactions are much more limited and are rather slow
+      - Chapter 4: Change
+        - Is the core contradiction and problem of the phenomenal world
+        - Everything is trying to attain "completeness", but it can't
+        - There is always "incompleteness" that makes things change
+        - I also call incompleteness "conflict" (conflict of interests if you will, as everything is trying to become complete, but is in conflict with other things in that goal)
+        - Often, take matter for example, things try to resolve this conflict in a "greedy" fashion (in computer science terms it means that it goes for the first option that is available)
+        - Stability
+          - Abstractions
+    - Part 2: Applications
+      - Chapter 5: Faith
+      - Chapter 6: Science
+      - Chapter 7: Education
+      - Chapter 8: Living in the ever-changing world
+    - Conclusion
