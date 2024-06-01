@@ -56,6 +56,8 @@
             - Why would we need to concern with such
               - It was part of putting together the messy puzzle of misconceptions that I found myself in when I was younger and completely confused about life, my relationship with it and others
               - Mess in your concepts manifests in the mess in your life
+              - To unravel the ball of yarn of misconceptions, you sometimes have to start from scratch
+              - You can't build a solid structure on top of a shaky foundation
       - Capter 2: Philosophy
         - Beginnings
           - What can I be absolutely certain of?
@@ -139,6 +141,7 @@
                   - It is not futile
                     - If there is a justification for a way out
       - Chapter 3: Mind vs matter
+        - Building the understanding from the ground up 
         - The mind is the only thing that can be certain to exist
         - The mind is the only thing that we know exists
         - Idealistic vantage point
@@ -154,23 +157,36 @@
           - We can only know from experience
           - At its core is change because time and space are conditions of our experience
           - Our minds are also part of phenomenal world, as they reveal themselves in time and is subject to change
-          - Essentially, we as spirits (or minds or consciousness) have access to at least to "windows" through which we see things
+          - Essentially, we as spirits (or minds or consciousness) have access to at least two "windows" through which we see things
           - We experience mind and the world somewhat differently
             - Mind
               - We have access to a wide variety of interactions and experiments can be done rather quickly
             - World
               - Our interactions are much more limited and are rather slow
       - Chapter 4: Change
+        - The understanding of the phenomenal world requires change at its foundation
         - Is the core contradiction and problem of the phenomenal world
         - Everything is trying to attain "completeness", but it can't
         - There is always "incompleteness" that makes things change
         - I also call incompleteness "conflict" (conflict of interests if you will, as everything is trying to become complete, but is in conflict with other things in that goal)
         - Often, take matter for example, things try to resolve this conflict in a "greedy" fashion (in computer science terms it means that it goes for the first option that is available)
         - Stability
-          - Abstractions
-    - Part 2: Applications
+          - Generalities or thinking in general (broad) terms
+    - Part 2: Building on top of the foundation
       - Chapter 5: Faith
+        - Happiness
+        - Meaning of life
       - Chapter 6: Science
       - Chapter 7: Education
-      - Chapter 8: Living in the ever-changing world
+      - Chapter 8: Living in the ever-changing world (path forward and encouragement)
     - Conclusion
+      - Test (inquire and get data), Implement (apply to your structure), Refactor on repeat
+      - The only thing constant is change in the world of phenomenons, and it is a core contradiction that lies at the root of everything, including good and evil
+      - Although the world of phenomenons is often considered "material world", it may not be
+        - Believing in substantiality of matter is full of contradictions and I concur on this with Berkley
+        - Matter is an abstraction, not something concrete
+        - Matter is a concept, not an object
+        - As such, we can hope that the death is not the end
+        - However, how can we escape this core contradiction that is the change?
+          - We surely can't hope to do so by ourselves
+          - We need God 
