@@ -182,7 +182,10 @@
         - Meaning of life
       - Chapter 6: Science
       - Chapter 7: Education
+        - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
       - Chapter 8: Living in the ever-changing world (path forward and encouragement)
+        - Minimalism 
+        - Unit of self-sufficiency
     - Conclusion
       - Test (inquire and get data), Implement (apply to your structure), Refactor on repeat
       - The only thing constant is change in the world of phenomenons, and it is a core contradiction that lies at the root of everything, including good and evil
