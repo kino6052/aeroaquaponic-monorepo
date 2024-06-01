@@ -172,6 +172,10 @@
         - Often, take matter for example, things try to resolve this conflict in a "greedy" fashion (in computer science terms it means that it goes for the first option that is available)
         - Stability
           - Generalities or thinking in general (broad) terms
+        - Conflicts in this world are resolved in space and time
+          - Varying proximity
+            - Avoiding conflict by being far away from it (e.g. planets in a solar system)
+            - Resolving conflict by being close to it (e.g. cells working together in an organism)
     - Part 2: Building on top of the foundation
       - Chapter 5: Faith
         - Happiness
