@@ -13,7 +13,7 @@
     
     - Though I ain't understand it.
     - I just keep singing on.
-    - So darling play and sing with me.
+    - So come on darling sing with me.
     - This journey is lifelong
 
     - (c) Dolly Parton
