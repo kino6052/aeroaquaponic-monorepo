@@ -15,8 +15,8 @@
     - I just keep singing on.
     - Living is like practicing
     - The art of impossible.
-    - So come on darling sing with me.
-    - This journey is lifelong
+    - So come on darling join me
+    - On this journey that's lifelong
 
     - (c) Dolly Parton
   - Main
