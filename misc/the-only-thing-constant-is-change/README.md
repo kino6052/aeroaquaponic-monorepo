@@ -13,6 +13,8 @@
     
     - Though I ain't understand it.
     - I just keep singing on.
+    - Living is like practicing
+    - The art of impossible.
     - So come on darling sing with me.
     - This journey is lifelong
 
