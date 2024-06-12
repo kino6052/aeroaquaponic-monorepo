@@ -131,6 +131,8 @@
                         - We had a siloed and naive understanding of entering the music industry that in a sense protected us from being squeezed dry by the terrible industry without giving any return on investment.
                         - It was a learning experience, but it just showed how easy it was for us to be manipulated emotionally
                         - I believe that emotions are part of the magic sauce that gave us our talents, but they often clouded our minds and caused more pain that offering a solution. 
+                    - Extra illustrations of misconceptions
+                      - "Adult content is a natural thing" 18+ (find in the appendix)
               - Problem
                 - The point here is simple - the mess in your concepts manifests in the mess in your life
               - Solution
@@ -245,7 +247,7 @@
           - Immanuel Kant
           - Plato
         - Materialism contains contradictions
-          - Matterialism only concerns with what is immediately perceivable
+          - Materialism only concerns with what is immediately perceivable
           - It doesn't concern itself with mind and its necessities, only body and nervous system
             - Does not satisfy individual's desire for meaning
         - Proper idealism does not contain contradictions
@@ -263,7 +265,7 @@
             - World
               - Our interactions are much more limited and are rather slow
       - Chapter 4: Change
-        - The understanding of the phenomenal world requires change at its foundation
+        - The understanding of the phenomenal world requires the concept of change at its foundation
         - Is the core contradiction and problem of the phenomenal world
         - Everything is trying to attain "completeness", but it can't
         - There is always "incompleteness" that makes things change
