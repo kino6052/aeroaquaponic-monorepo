@@ -279,9 +279,6 @@
             - Resolving conflict by being close to it (e.g. cells working together in an organism)
     - Part 2: Building on top of the foundation
       - Chapter 5: Faith
-        - Happiness
-          - Completeness
-            - Faith is one of our foundational needs
         - Meaning of life
           - There exists no agreement on this subject
           - However, you will have to answer this question along your journey
@@ -307,6 +304,14 @@
             - But it is an impossible goal
             - If we are to achieve it in the phenomenal world
             - Meaning of life requires looking outside the phenomenal world
+        - Happiness
+          - Completeness
+            - Faith is one of our foundational needs
+            - However, even if we acknowledge the need for faith, we need to be extra careful not to count our faith as a story that we tell ourselves
+              - The most important point is that we are after the truth
+              - Not a make believe
+              - If we are deceiving ourselves, we are fools
+              - Our faith has to be bought for a high price of doubt and hard work
         - Religion
           - Patterns behind many religions
             - Completeness lies outside this world
