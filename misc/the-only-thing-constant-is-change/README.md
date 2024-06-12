@@ -314,7 +314,7 @@
               - Our faith has to be bought for a high price of doubt and hard work
         - Religion
           - Acknowledging that we need faith, we need to search for what is already known and whether there are patterns
-            - What paths have others went through
+            - What paths have others went through 
           - Patterns behind many religions
             - Completeness lies outside this world
             - The other world doesn't have the same problems that we do here
