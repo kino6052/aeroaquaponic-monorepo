@@ -11,10 +11,8 @@
     - Living is like practicing
     - The art of impossible.
     
-    - Though I cannot understand it.
-    - I play and sing along.
-    - Living is like practicing 
-    - The art of impossible.
+    - Though I ain't understand it.
+    - I just keep singing on.
     - So darling play and sing with me.
     - This journey is lifelong
 
