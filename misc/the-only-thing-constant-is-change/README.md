@@ -61,10 +61,11 @@
                       - To put things into perspective and demonstrate how misconceptions affected me personally, would worth to provide a few anecdotes from personal life. 
                     - Living abroad
                       - Expectations
-                        - When my family and I started living in the United States, in beautiful Colorado, I thought that that was it, everything was going be downhill from here, and things will only get better and cooler from now on.
-                          - My brother and I were around 20 years of age. Super young. Full of energy. Somewhat talented. Full of misconceptions that were instilled in us by the globalist society (more on that later) and I wasn't really against those misconceptions back then, they were such attractive misconceptions. My brother and I were perfect candidates for the meat grinder of dreams.
+                        - When my family and I started living in the United States, in the beautiful state of Colorado, I thought that that was it, everything was going be downhill from here, and things will only get better and cooler from now on.
+                          - My brother and I were around 20 years of age. Super young. Full of energy. Somewhat talented. Full of misconceptions that were instilled in us by the globalist society (more on that later), and I wasn't really against those misconceptions back then, they were such attractive misconceptions. My brother and I were perfect candidates for entering the meat grinder of dreams.
                           - We expected nothing less than becoming the next world sensation that everybody would talk about
-                            - I know, it's very modest, but let's be honest and admit that we all are either a covert celebrity or covert billionaire whose time hasn't come yet.
+                            - I know, it's very modest. But at least it's honest.
+                            - However, let's be honest and admit that we all are either a covert celebrity, covert billionaire whose time hasn't come yet or in some cases a spiritual being that has transcended the worldly desires and is already partaking of the pleasures beyond this world.
                               - Of course I'm being sarcastic.
                       - Reality
                         - The reality, however, hit soon enough. 
@@ -131,7 +132,7 @@
                         - It was a learning experience, but it just showed how easy it was for us to be manipulated emotionally
                         - I believe that emotions are part of the magic sauce that gave us our talents, but they often clouded our minds and caused more pain that offering a solution. 
               - Problem
-                - Mess in your concepts manifests in the mess in your life
+                - The point here is simple - the mess in your concepts manifests in the mess in your life
               - Solution
                 - To unravel the ball of yarn of misconceptions, you sometimes have to start from scratch
                 - Because you can't build a solid structure on top of a shaky foundation
@@ -184,7 +185,8 @@
               - Examination
                 - "Unexamined life is not worth living"
                 - Of mind
-                  - We already mentioned the importance of the vantage
+                  - We already mentioned the importance of the vantage point of personal existence
+                    - Examining one's mind is exactly the examination required for philosophy 
                   - Discoveries in mind could either be
                     - Key to understanding anything
                     - Path to delusions
