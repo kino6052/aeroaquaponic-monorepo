@@ -3,6 +3,22 @@
     - The only thing constant is change
   - Subtitle
     - A snapshot of an ever-changing understanding
+  - Epigram
+    - And when you think you've got it,
+    - You got it oh so wrong...
+    - Living is like practicing
+    - The art of impossible.
+    - Living is like practicing
+    - The art of impossible.
+    
+    - Though I cannot understand it.
+    - Just play and sing along.
+    - Living is like practicing 
+    - The art of impossible.
+    - Living is like practicing 
+    - The art of impossible.
+    
+    - (c) Dolly Parton
   - Main
     - Introduction
       - Book purpose
