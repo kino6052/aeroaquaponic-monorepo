@@ -12,12 +12,12 @@
     - The art of impossible.
     
     - Though I cannot understand it.
-    - Just play and sing along.
+    - I play and sing along.
     - Living is like practicing 
     - The art of impossible.
-    - Living is like practicing 
-    - The art of impossible.
-    
+    - So darling play and sing with me.
+    - This journey is lifelong
+
     - (c) Dolly Parton
   - Main
     - Introduction
