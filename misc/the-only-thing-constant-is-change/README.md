@@ -9,7 +9,7 @@
         - To service as a snapshot of understanding
           - This book serves as a snapshot of my thoughts and understanding.
           - It is about how philosophy influenced me up to the present moment, because, as this book suggests, everything is a subject to change including understanding.
-          - Most of all, it preserves what I consider valuable
+          - Most of all, it preserves thoughts that I consider valuable
         - To demonstrate that understanding of the world is a personal construct
           - We build it over the course of our lives similar to software
           - I will provide my understanding of a variety of topics
@@ -45,35 +45,128 @@
             - which I find valuable
             - which I want to preserve through demonstration
             - which I want to share
-          - This system is a mechanism that was assembled from principles (or base components)
+          - This system is a mechanism that was assembled from principles (or base components)               
             - Will have its flaws
-            - Might proof insightful
+            - Might prove insightful
           - Base components
             - I would not be able to put together most basic components if I didn't start completely from scratch
             - It was only possible through thorough philosophical introspective reflection
         - Basic components
           - Introspective exposition
             - Why would we need to concern with such
-              - It was part of putting together the messy puzzle of misconceptions that I found myself in when I was younger and completely confused about life, my relationship with it and others
-              - Mess in your concepts manifests in the mess in your life
-              - To unravel the ball of yarn of misconceptions, you sometimes have to start from scratch
-              - You can't build a solid structure on top of a shaky foundation
-      - Capter 2: Philosophy
+              - Historic context
+                - It was part of putting together the messy puzzle of misconceptions that I found myself in when I was younger and completely confused about life, my relationship with it and others
+                  - Illustration
+                    - Description
+                      - To put things into perspective and demonstrate how misconceptions affected me personally, would worth to provide a few anecdotes from personal life. 
+                    - Living abroad
+                      - Expectations
+                        - When my family and I started living in the United States, in beautiful Colorado, I thought that that was it, everything was going be downhill from here, and things will only get better and cooler from now on.
+                          - My brother and I were around 20 years of age. Super young. Full of energy. Somewhat talented. Full of misconceptions that were instilled in us by the globalist society (more on that later) and I wasn't really against those misconceptions back then, they were such attractive misconceptions. My brother and I were perfect candidates for the meat grinder of dreams.
+                          - We expected nothing less than becoming the next world sensation that everybody would talk about
+                            - I know, it's very modest, but let's be honest and admit that we all are either a covert celebrity or covert billionaire whose time hasn't come yet.
+                              - Of course I'm being sarcastic.
+                      - Reality
+                        - The reality, however, hit soon enough. 
+                        - Living in an English speaking country, you realize that English that you learned in school is no English at all.
+                          - You have to forget everything you learned and learn from scratch.
+                          - It is extremely humiliating.
+                            - When you thought you were interesting and cool
+                            - All of a sudden you speak like a 1 year old that isn't particularly talented
+                            - Of course the language improved gradually, but at a much slower pace than you would imagine 
+                        - Without language, and even with it, it is relatively hard to make meaningful connections with people
+                          - All your friends back home are now on the other side of the globe and you are on you own
+                          - Because we were already too old for being high school students, yet not residents of the state to attend a college at reasonable prices
+                                - Our only option was to stay home, volunteer a little bit at food pantry and to attend ESL (English as a second language) classes.
+                                - Not only was this rather boring, but also not contributing to the language learning.
+                                - The first year of living in the U.S. was probably the worst year in my life 
+                        - All of your habits that you are used to in your country of origin are either considered weird and sometimes even illegal
+                          - I remember that when my dad was teaching my brother and I to drive a car in the parking space of a mall, somebody called the police
+                            - When they arrived, they stopped our car and made us step out of the car and make my dad explain the situation
+                            - Of course when you don't know English very well, you are super nervous
+                            - So it was a very unpleasant thing to realize that simple things, or things that we were used to back home, are now requiring extra planning and consideration.
+                            - It made us second-guess almost every move.
+                        - To advance to a high degree of skill, you will have to become humble
+                          - Only around 5-6 years after coming to the United States and studying in the University (which was hard), we learned English well
+                        - Preliminary conclusion
+                          - I imagined that assimilating in another country would be difficult, but I could imagine that it would be undescribably and unimaginably difficult. Teeth-grindingly difficult. The only description that comes to mind describing what reality held -- impossibly difficult.
+                            - I later saw this movie "Princess Bride," that has a very fitting line that rings true with the experience:
+                              - Life is pain. Anyone who says differently is selling something.
+                    - Childhood dream of becoming a rock star
+                      - Expectations
+                        - As a dream of living easy in another country wasn't foolish enough, there was yet even more foolish dream.
+                        - The dream of becoming a rock star. To be a part of the biggest rock (or pop) band.
+                          - Of course I knew how to play instruments enough to be dangerous
+                          - Of course I liked the material that me and my brother were putting out 
+                      - Reality
+                        - The reality was such that all our conceptions of music were a child play.
+                          - We had material
+                            - We had a couple of tunes that we didn't know how to put out into the world
+                            - We played live only at open mics and not very often.
+                            - We never found other band members (other than us two)
+                            - Recording was so much work.
+                              - The music we were recording was just demos.
+                              - They were not fit for the real world audience
+                          - We didn't have skills of promoting our band or even had any people that were interested in us or our cause
+                            - Laziness
+                              - We didn't do much to organize our band
+                              - We expected that it will come naturally
+                            - Introversion
+                              - We were more comfortable in our own little world and fantasies than interacting with the outside world
+                          - Wrong cause
+                            - What we really enjoyed is the process of music creation
+                            - We thought that that itself was enough, the golden goose that people will be attracted to like fruit-flies
+                            - We were not performers
+                              - Performance was a side goal and more theoretical
+                            - What we really wanted, as it turned out, was karaoke
+                              - It allowed for low stake music performance that we craved
+                              - Karaoke gave us the fulfillment that we were searching in music
+                              - Of course, it didn't make us rock stars, but when you on a stage singing your favorite songs, you are already living your best dream
+                          - Realities of music industry
+                            - Music industry is a meat grinder
+                            - People in it are squeezed dry by the life-styles and the outright satanic ideology that encourages them to spin their wheels till they drop dead while infecting others to do the same
+                              - But more on that later
+                      - Preliminary conclusion
+                        - We had a siloed and naive understanding of entering the music industry that in a sense protected us from being squeezed dry by the terrible industry without giving any return on investment.
+                        - It was a learning experience, but it just showed how easy it was for us to be manipulated emotionally
+                        - I believe that emotions are part of the magic sauce that gave us our talents, but they often clouded our minds and caused more pain that offering a solution. 
+              - Problem
+                - Mess in your concepts manifests in the mess in your life
+              - Solution
+                - To unravel the ball of yarn of misconceptions, you sometimes have to start from scratch
+                - Because you can't build a solid structure on top of a shaky foundation
+      - Chapter 2: Philosophy
         - Beginnings
           - What can I be absolutely certain of?
             - Is this the real life or is it just fantasy?
               - Do I know that I exist?
                 - "Cogito ergo sum" (I think, therefore I am) as a foundational belief.
-                - Skepticism and nihilism examined and deemed less fundamental than the certainty of personal existence.
-              - Do I know that the world exist?
-                - I can tell for sure is that what I call the world is an experience
-                  - Moreover it is an experience that I believe to be true
-                    - Fundamental intuition
-                      - Upon examination, I can't be certain of its existence
-                        - Not to the degree I can be certain of my existence
-                        - Because it is dreamlike
-                          - In dreams we also believe that the world is true
-                          - Upon waking up, we find it strange how real to us it seemed
+                - Seemingly not useful knowledge, but it can hint at a much more fundamental shift in understanding of everything
+                  - If I know that I exist, but I don't know whether other things really exist
+                  - Ultimately, I know nothing other than what is "shown" to me via experience.
+                    - Is what is "shown" real? Or some sort of fantasy?
+                    - Do I know that the world exist?
+                      - I can tell for sure is that what I call the world is an experience
+                        - Moreover it is an experience that I believe to be true
+                          - Fundamental intuition
+                            - Upon examination, I can't be certain of its existence
+                              - Not to the degree I can be certain of my existence
+                              - Because it is dreamlike
+                                - In dreams we also believe that the world is true
+                                - Upon waking up, we find it strange how real to us it seemed
+                            - But I have certain very strong and crude sensations and feelings/intuitions that force me to believe it is real
+                              - I can't control them, but they control me
+                                - Memory
+                                  - Makes me believe that there is past
+                                - Fantasy
+                                  - Makes me believe that there is future
+                                - Sensations
+                                  - Pain
+                                    - Hunger
+                                    - ...
+                              - But even if I am certain that they affect me somehow, I still can't know whether they are real or some kind of fantasy that will evaporate eventually
+                    - Allows for setting the reference frame (like Copernican shift in Immanuel Kant's philosophy) from focusing on reality to our own mind, if we speak in the modern terms, or soul if we speak from the classical standpoint   
+                      - This reference frame will later proof to be the most solid foundation for building the structure of understanding that we are after 
         - What is philosophy
           - This introspection is really what philosophy is about
             - Foreword
@@ -91,6 +184,7 @@
               - Examination
                 - "Unexamined life is not worth living"
                 - Of mind
+                  - We already mentioned the importance of the vantage
                   - Discoveries in mind could either be
                     - Key to understanding anything
                     - Path to delusions
@@ -149,6 +243,9 @@
           - Immanuel Kant
           - Plato
         - Materialism contains contradictions
+          - Matterialism only concerns with what is immediately perceivable
+          - It doesn't concern itself with mind and its necessities, only body and nervous system
+            - Does not satisfy individual's desire for meaning
         - Proper idealism does not contain contradictions
           - It is a solid foundation that can be built on top of
             - Even if there really was a world-in-itself, having an idealist vantage point would still be the most solid foundation for reasoning in general and a secure starting point in any discourse
@@ -179,7 +276,20 @@
     - Part 2: Building on top of the foundation
       - Chapter 5: Faith
         - Happiness
+          - Completeness
+            - Faith is one of our foundational needs
         - Meaning of life
+        - Religion
+          - Patterns behind religions
+            - Completeness lies outside this world
+            - The other world doesn't have the same problems that we do here
+              - Majority of religions
+                - Other world is similar to this one (changing, not complete)
+              - Few religions
+                - Escape is complete and fulfilling
+                  - Christianity
+                  - Budhism
+            - Requirements to escape exist  
       - Chapter 6: Science
       - Chapter 7: Education
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
