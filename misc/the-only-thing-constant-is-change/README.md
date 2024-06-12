@@ -338,13 +338,37 @@
                     - But part of this mystery included reestablishment of the relationship between people (us) who falsely believed that they can be like Gods, through faith and especially understanding that faith is the most important virtue and thing that we really need
               - Suffering has meaning
                 - Suffering as somet
-              - There is no algorithm, God is the only one who can figure things out, we just need to trust Him and His plan
-                - It's not a point collection game
-                  - Reward is not based on how many points you collected
-                    - Pharisees
-                    - Islam
-                  - Reward is based on how strong faith is
-              - Spiritual content, more precisely faith, not physical well being, matters
+              - Salvation is not a luxury, it is ours to take
+                - Spiritual content, more precisely faith, not physical well being, matters
+                - Politics is not important
+                  - Put not your trust in princes, in a son of man, in whom there is no salvation.
+                - Money is not important
+                - There is no algorithm, God is the only one who can figure things out, we just need to trust Him and His plan
+                  - It's not a point collection game
+                    - Reward is not based on how many points you collected
+                      - Pharisees
+                      - Islam
+                    - Reward is based on how strong faith is
+                      - It is not beneficial to think of faith as any other skill that you can build
+                        - If you start approaching similar as with points, you will soon fall in contradictions
+                          - You will start compete for these points
+                            - Uncovers bad motivation
+                            - some sort of possession and self-fulfillment
+                          - You will compare yourself to others
+                            - You will think that you are better than others based on how much points you have
+                      - It is also not laziness, where you just lazily say that only God can figure something out and so on
+                      - It is something about personal, something only between you and God that will be tested throughout life as you face difficult situations that tell you about who you really are and where you stand with God
+                        - If you don't learn through all your life that you are a very modest creature at best, then you don't learn anything.
+                        - And only through God that you find hope for the resolution of this predicament.
+                        - Knowing that you are most likely fail yourself and others when faced with a tough situation, you really start to pray hard with all your heart when faced with such a situation.
+              - We are given all the freedom in the world
+                - God doesn't punish us for our choices
+                  - We either punishing ourselves
+                  - Or being given correctness feedback
+                  - Suffering in this world are either:
+                    - Consequence of the existence of evil in the phenomenal contradictory world
+                      - Even then this evil when taken with faith can help us to grow our faith even more
+                    - Self-inflicted 
               - Dialectics (contradictions)
                 - One of the things that blow my mind about Christianity are "beautifully crafted" the dialectical contradictions
                   - Of course I don't believe that they are part of the human thought, as such sophistication seems impossible for people in the context of those times
