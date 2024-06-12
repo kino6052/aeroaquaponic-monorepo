@@ -59,7 +59,7 @@
                   - Illustration
                     - Description
                       - To put things into perspective and demonstrate how misconceptions affected me personally, would worth to provide a few anecdotes from personal life. 
-                    - Living abroad
+                    - Illustration 1: Living abroad
                       - Expectations
                         - When my family and I started living in the United States, in the beautiful state of Colorado, I thought that that was it, everything was going be downhill from here, and things will only get better and cooler from now on.
                           - My brother and I were around 20 years of age. Super young. Full of energy. Somewhat talented. Full of misconceptions that were instilled in us by the globalist society (more on that later), and I wasn't really against those misconceptions back then, they were such attractive misconceptions. My brother and I were perfect candidates for entering the meat grinder of dreams.
@@ -93,7 +93,7 @@
                           - I imagined that assimilating in another country would be difficult, but I could imagine that it would be undescribably and unimaginably difficult. Teeth-grindingly difficult. The only description that comes to mind describing what reality held -- impossibly difficult.
                             - I later saw this movie "Princess Bride," that has a very fitting line that rings true with the experience:
                               - Life is pain. Anyone who says differently is selling something.
-                    - Childhood dream of becoming a rock star
+                    - Illustration 2: Childhood dream of becoming a rock star
                       - Expectations
                         - As a dream of living easy in another country wasn't foolish enough, there was yet even more foolish dream.
                         - The dream of becoming a rock star. To be a part of the biggest rock (or pop) band.
@@ -134,7 +134,7 @@
                     - Extra illustrations of misconceptions
                       - "Adult content is a natural thing" 18+ (find in the appendix)
               - Problem
-                - The point here is simple - the mess in your concepts manifests in the mess in your life
+                - The point here is simple - mess in your concepts manifests in the mess of your life
               - Solution
                 - To unravel the ball of yarn of misconceptions, you sometimes have to start from scratch
                 - Because you can't build a solid structure on top of a shaky foundation
@@ -145,9 +145,9 @@
               - Do I know that I exist?
                 - "Cogito ergo sum" (I think, therefore I am) as a foundational belief.
                 - Seemingly not useful knowledge, but it can hint at a much more fundamental shift in understanding of everything
-                  - If I know that I exist, but I don't know whether other things really exist
+                  - I know that I exist, but I don't know whether other things really exist
                   - Ultimately, I know nothing other than what is "shown" to me via experience.
-                    - Is what is "shown" real? Or some sort of fantasy?
+                    - Is what is "shown" real? Or some sort of fantasy? Can I step outside the cinema?
                     - Do I know that the world exist?
                       - I can tell for sure is that what I call the world is an experience
                         - Moreover it is an experience that I believe to be true
@@ -283,8 +283,32 @@
           - Completeness
             - Faith is one of our foundational needs
         - Meaning of life
+          - There exists no agreement on this subject
+          - However, you will have to answer this question along your journey
+          - The way I answer this question to the present day is as follows
+          - Meaning of life is really about what is the ultimate goal of life as an activity
+          - Let's imagine us having all our needs completely fulfilled. 
+            - The keyword here is "completely" 
+            - It is hard to imagine because there are just so many
+              - Even smallest desires (needs) to breath, look at things, move parts of our body.
+              - Imagine that all those needs are taken care of.
+              - You would be completely stationary on the outside, as well as on the inside.
+                - Because there will no longer be a need for anything
+          - Any action/activity is there because we are incomplete
+          - Life as an activity has only one goal to make us complete
+            - Physical homeostasis, trying to get things into balance, non-stop
+            - Our psychological needs of belonging
+              - Having lived a life that is valued by us as part of a greater context (society)
+            - Can't achieve it 
+              - Personal death
+              - Death of civilizations
+              - Death of information carriers
+          - Meaning of life is the achievement of completeness
+            - But it is an impossible goal
+            - If we are to achieve it in the phenomenal world
+            - Meaning of life requires looking outside the phenomenal world
         - Religion
-          - Patterns behind religions
+          - Patterns behind many religions
             - Completeness lies outside this world
             - The other world doesn't have the same problems that we do here
               - Majority of religions
@@ -292,8 +316,70 @@
               - Few religions
                 - Escape is complete and fulfilling
                   - Christianity
-                  - Budhism
-            - Requirements to escape exist  
+                  - Buddhism
+            - Requirements to escape exist 
+            - I take seriously only the religions that have a promise of the ultimate escape, the ultimate completeness
+              - Otherwise even heaven will be temporary bliss before deities destroy each other
+              - Completeness is the core contradiction of our minds and our world, if we have longing for something that is impossible to achieve, then our existence is a complete joke. A very very bad joke.
+                - But jumping to this conclusion would be too rushed
+                - This place of desolation will always be there as the last resort, so why not start looking at what are some other options
+                - As a side note, those who jump to the conclusion of this existence being a bad joke (myself in the past included) are really just looking for excuses to get high and have a break from the difficulties of the existence. It is laziness, cowardice and egoism all in one. 
+          - Why Christianity?
+            - Foreword
+              - I have to be very careful describing my understanding, as it is known that in the domain of religion misconceptions are especially dangerous and can lead people into uncontrollable musings that end up being either complete madness or affecting the reputation of faith as such
+            - Christianity is unique
+              - A person, namely each one of us, not civilization or some cosmic accident that causes our existence, is in the center
+                - Buddhism is similar in this regard, but it is an impersonal and non-religious prescriptive algorithm
+                  - Removing everything from the person's search for diving except the practice
+                  - Person without God is a direct path to ego blowing up
+              - God not only cares about people, He is willing to sacrifice Himself for them
+                - If compared to Hephestus or Mitra or some other sacrifice, then it's because they have a common enemy that they disagree with
+                  - In case of Christianity, our fall was necessary and its core is a mystery, for God is beyond the phenomenal world.
+                    - But part of this mystery included reestablishment of the relationship between people (us) who falsely believed that they can be like Gods, through faith and especially understanding that faith is the most important virtue and thing that we really need
+              - Suffering has meaning
+                - Suffering as somet
+              - There is no algorithm, God is the only one who can figure things out, we just need to trust Him and His plan
+                - It's not a point collection game
+                  - Reward is not based on how many points you collected
+                    - Pharisees
+                    - Islam
+                  - Reward is based on how strong faith is
+              - Spiritual content, more precisely faith, not physical well being, matters
+              - Dialectics (contradictions)
+                - One of the things that blow my mind about Christianity are "beautifully crafted" the dialectical contradictions
+                  - Of course I don't believe that they are part of the human thought, as such sophistication seems impossible for people in the context of those times
+                  - The most natural thing to expect from Divine entering our world is that there will be contradictions irreconcilable by our mind
+                    - I call these "dialecticisms"
+                      - Birth of God in flesh
+                        - Virgin giving birth
+                        - King is born in the manger
+                      - "Most righteous" pharisees and terrible toll workers
+                      - It is easier for a camel to go through the eye of the needle
+                      - For people to have eternal life an ultimate sin must be committed
+                      - Repented thief is first to enter the Kingdom of Heaven
+                      - Metaphors (not complicated stories) are best for understanding of what lies beyond   
+            - Christianity is way too deep to not take it seriously
+          - Two serious contenders for me in the search for divine are
+            - Christianity
+            - Buddhism
+            - How to choose one or the other?
+              - I believe that eightfold path is not contradicting a healthy Christian practice
+              - However, I believe that being just a Buddhist contradicts Christianity
+              - Using an argument similar to the Pascal's wager, it seems that you can have a healthy compromise
+              - If we are really about searching the truth and not just looking for something that is either popular or fits our personality, then we always will be wrong
+                - At the end of the day you have to pay a high price for truth and searching for it
+                - You have to make many mistakes
+                - Shed many tears
+                - Feel very lonely and misunderstood
+                - If your faith isn't purchased through suffering, it is worth nothing
+                  - Atheism or agnosticism cannot be considered with seriousness because they are "not bought", they are just accepted as status quo.
+                  - Some religions are chosen because they fit our personality
+                  - Non of this can be regarded with any seriousness if our goal is to figure things out  
+          - What is the modern globalist religion?
+            - Childhood dreams
+              - Ideal means of manipulation
+            - Nihilism
+              - Ideal for manipulating of conciousness to believe anything
       - Chapter 6: Science
       - Chapter 7: Education
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
