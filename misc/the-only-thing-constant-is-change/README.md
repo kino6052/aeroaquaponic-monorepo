@@ -361,6 +361,11 @@
                         - If you don't learn through all your life that you are a very modest creature at best, then you don't learn anything.
                         - And only through God that you find hope for the resolution of this predicament.
                         - Knowing that you are most likely fail yourself and others when faced with a tough situation, you really start to pray hard with all your heart when faced with such a situation.
+                        - Even though I am pretty sure that my faith is not very strong, I still don't panic, as I know that God knows our heart, and if we are willing to work on ourselves will give us as many chances as we need (and even more) to improve the situation
+                          - Essentially, what keeps me going is that I know that God is there for me and will always be there for me
+                            - He is the kindest and most loving beyond imagination
+                            - Unlike some kind people that are kind because it helps them to avoid conflict and feel better about their otherwise weaknesses, He is ultimately strong spirited and is courageous beyond imagination
+                              - So His love isn't just given to be thrown away, you will have to fight for it and you will be rewarded (always)  
               - We are given all the freedom in the world
                 - God doesn't punish us for our choices
                   - We either punishing ourselves
@@ -403,7 +408,7 @@
             - Childhood dreams
               - Ideal means of manipulation
             - Nihilism
-              - Ideal for manipulating of conciousness to believe anything
+              - Ideal for manipulating of consciousness to believe anything
       - Chapter 6: Science
       - Chapter 7: Education
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
