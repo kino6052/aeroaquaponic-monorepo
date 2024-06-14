@@ -198,6 +198,18 @@
               - The main benefit of studying academically
                 - Become acquainted with philosophical arguments of various philosophers
                   - In philosophical history not all that glitters is gold
+              - Why, despite philosophy concerning itself with the simplest (in the truest sense of the word) things that are accessible to everyone via mind, is so convoluted and difficult to interpret
+                - I believe this is best understood from programming stand point
+                - Programming is in essence a straightforward activity
+                  - Building constructs (similar to what philosophers build)
+                    - Difficulty
+                      - Constructs 
+                        - are expressed given my personal context and the conventions of the community
+                        - Simplicity is rarely a goal
+                          - Lack of proper illustrations
+                      - Construct expression
+                        - Similar proglems with simplicity and context of the community
+                          - Lack of proper illustrations
             - What is real philosophy?
               - Intimate thing
               - Examination
@@ -376,13 +388,17 @@
                           - I ate it
                           - It is no longer present as that certain something
                 - Although it is hard to say whether this holds for absolutely everything in the phenomenal world
-                  - But it is true for anything that I have ever observed
                   - This is definitely not a big problem, as in reality, we consider the laws of physics to be set in stone
                     - Even though they are not apriori knowledge that we can know with 100% certainty
-                
+                  - But it is true for anything that I have ever observed
+                  - It is useful in the context of construct that I am describing
+                - Because it concerns with the fundamental necessity
+                  - The answer to "why" question provides the most deep insights into any subject
     - Part 2: Building on top of the foundation
       - Chapter 5: Faith
         - Meaning of life
+          - As we discussed in the previous chapter the why question is the most important question to ask
+            - Meaning of life is the ultimate "why" question.
           - There exists no agreement on this subject
           - However, you will have to answer this question along your journey
           - The way I answer this question to the present day is as follows
