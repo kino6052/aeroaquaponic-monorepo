@@ -256,30 +256,59 @@
                     - If there is a justification for a way out
       - Chapter 3: Mind vs matter
         - Building the understanding from the ground up 
-        - The mind is the only thing that can be certain to exist
-        - The mind is the only thing that we know exists
-        - Idealistic vantage point
-          - Berkley
-          - Immanuel Kant
-          - Plato
+          - As we already mentioned the thing that provides has most certainty to us is the existence of our own mind
+            - We also mentioned that everything else is really something that affects our mind
         - Materialism contains contradictions
           - Materialism only concerns with what is immediately perceivable
-          - It doesn't concern itself with mind and its necessities, only body and nervous system
-            - Does not satisfy individual's desire for meaning
+            - It does not concern itself with mind
+              - It doesn't care about how is it possible for logic and other apriori universal to be possible
+              - It does not care about the spiritual needs of an individual that has mind
+                - Illustration: Psychiatry 
+                  - Modern psychiatry only cares about fixing imbalances of chemicals in brains
+                  - It does not care about providing meaning
+                - It doesn't concern itself with mind and its necessities, only body and nervous system
+                  - Does not satisfy individual's desire for meaning
         - Proper idealism does not contain contradictions
           - It is a solid foundation that can be built on top of
             - Even if there really was a world-in-itself, having an idealist vantage point would still be the most solid foundation for reasoning in general and a secure starting point in any discourse
               - As was clearly demonstrated by Immanuel Kant, using the reference frame of our mind is the only way we can make sense of things
+                - Idealistic vantage point
+          - Berkley
+          - Immanuel Kant
+          - Plato
         - The phenomenal world (the world of phenomenons)
           - We can only know from experience
-          - At its core is change because time and space are conditions of our experience
-          - Our minds are also part of phenomenal world, as they reveal themselves in time and is subject to change
+          - At its core is change because space and time are conditions of our experience
+          - Our minds are also part of phenomenal world, as they reveal themselves in time and are subjects to change
           - Essentially, we as spirits (or minds or consciousness) have access to at least two "windows" through which we see things
           - We experience mind and the world somewhat differently
             - Mind
               - We have access to a wide variety of interactions and experiments can be done rather quickly
             - World
               - Our interactions are much more limited and are rather slow
+          - Point about the idealist vantage point is the most crucial in this book, as in this framework, mind (or soul if using more traditional vocabulary) is key player of the world view. 
+            - An answer to the core problem of what's more fundamental consciousness or matter.
+              - Matter itself is not even something we can know to exist, it's an abstraction and not even a phenomenon.
+              - However, we know all to well that mind exists. At least our own mind.
+              - From this vantage point, believing other minds exist
+                - Because there is a strong intuition that tells us that people that we perceive are similar to us, also have minds and feelings.
+                - Because only thing that we know is phenomena
+                  - As we already said that if reality was materialist and independent of our minds, 
+                    - We would not be able to know much about it
+                    - There would be no true and universal understanding of it 
+                    - However, the consistency and conformity of it to our minds suggests that there exist a certain way of thinking, certain way of understanding that is correct, that is the content of mind that is true.
+                      - It is also much easier to believe that reality is a product of mind 
+                        - Albeit not our own and most likely not divine, as this mind is also in space and time and therefore is subject to change
+                          - Let's call it the spirit of the material world
+                          - It is much stronger than our minds
+                            - in terms of the content and consistency it can produce
+                          - It is created (because it is subject to change)
+                - If everything is in essence about mind, then believing in God is the most natural thing
+                  - The question now is really about understanding the true intention behind existence
+                    - Because understanding is subject to change
+                    - We can't know the true intention, but at least we can have a better or worse understanding
+                    - This is exactly why we need to discuss the most important aspect about the phenomenal world
+                      - Namely "change"
       - Chapter 4: Change
         - The understanding of the phenomenal world requires the concept of change at its foundation
         - Is the core contradiction and problem of the phenomenal world
