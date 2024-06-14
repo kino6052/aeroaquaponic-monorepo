@@ -276,6 +276,7 @@
           - Berkley
           - Immanuel Kant
           - Plato
+          - Caution: Hegel
         - The phenomenal world (the world of phenomenons)
           - We can only know from experience
           - At its core is change because space and time are conditions of our experience
@@ -307,21 +308,78 @@
                   - The question now is really about understanding the true intention behind existence
                     - Because understanding is subject to change
                     - We can't know the true intention, but at least we can have a better or worse understanding
-                    - This is exactly why we need to discuss the most important aspect about the phenomenal world
+                    - To understand intentionality behind existence, we need to discuss the most important aspect about the phenomenal world
                       - Namely "change"
       - Chapter 4: Change
         - The understanding of the phenomenal world requires the concept of change at its foundation
-        - Is the core contradiction and problem of the phenomenal world
-        - Everything is trying to attain "completeness", but it can't
-        - There is always "incompleteness" that makes things change
-        - I also call incompleteness "conflict" (conflict of interests if you will, as everything is trying to become complete, but is in conflict with other things in that goal)
-        - Often, take matter for example, things try to resolve this conflict in a "greedy" fashion (in computer science terms it means that it goes for the first option that is available)
-        - Stability
-          - Generalities or thinking in general (broad) terms
-        - Conflicts in this world are resolved in space and time
-          - Varying proximity
-            - Avoiding conflict by being far away from it (e.g. planets in a solar system)
-            - Resolving conflict by being close to it (e.g. cells working together in an organism)
+          - Is the core contradiction and problem of the phenomenal world
+            - Everything is trying to attain "completeness", but it can't
+            - It is always "incompleteness" that makes things change
+              - I also call incompleteness "conflict" 
+                -(conflict of interests if you will, as everything is trying to become complete, but is in conflict with other things in that goal)
+                - Illustration
+                  - Often, take matter for example, things try to resolve this conflict in a "greedy" fashion (in computer science terms it means that it goes for the first option that is available)
+        - The second part of the book will illustrate understanding of change and completeness in more detail
+          - It will discuss practical applications of this understanding
+            - Religion
+            - Science
+            - Life
+          - This chapter is going to give a broader introduction to this problem 
+        - Consequences of change
+          - Nothing is permanent
+          - Possibility of conflict 
+            - Change is also the conflict resolution mechanism
+            - Conflict resolution is greedy
+              - No strategic "sacrifice"
+                - It requires mind
+              - Avoid conflict at all costs
+                - Jump away
+                  - Matter 
+                - "Steal"
+                  - Complexity
+                    - Carbon molecules can get very large and unstable
+        - Our minds and bodies are also subjects to the conflict of interest
+          - Want to fulfill the needs, want to keep homeostasis
+          - Human activities
+            - Goal is to resolve some conflict
+            - Examples
+              - Human activities
+                - Eating
+                  - Give fuel for the machinery of our bodies to keep the "homeostasis", the balance, the proper function
+                - Entertainment
+                  - In essence is an "eating" activity, but required by our nervous system to function properly.
+                  - Stories
+                    - Our minds not only require information to maintain themselves in "homeostasis", 
+                      - but also want this information to contain incompleteness that gets resolved
+                      - Essentially they want to solve problems
+                        - In essence there is a contradiction here too as we need conflict to resolve conflict
+                          - This is the hallmark of the phenomenal world
+                            - Contradictions are resolved in space and time
+                            - All the while creating other contradictions
+        - "Conflict resolution" is the answer to the "why" question 
+          - Having mentioned the contradiction that we have regarding our minds
+            - Our minds require "conflict" that gets resolved
+            - The main embodiment of such conflict is the "why" question.
+              - The real question that "why" asks is "why is it necessary".
+                - Necessity of any process 
+                  - Process is an interaction between entities in space and time
+                    - Burning
+                      - Oxigen taking away things from other atoms
+                    - Thinking
+                      - Mind interacts with ideas
+                    - Communication
+                      - Interaction between entities that understand information conveyed in a certain form (signal)
+                    - Existence
+                      - Interaction between presence and absence
+                        - A certain apple exist
+                          - I see it and identify it as something one
+                          - I ate it
+                          - It is no longer present as that certain something
+                - Although it is hard to say whether this holds for absolutely everything in the phenomenal world
+                  - But it is true for anything that I have ever observed
+                  - This is definitely not a big problem, as in reality, we consider the laws of physics to be set in stone
+                    - Even though they are not apriori knowledge that we can know with 100% certainty
+                
     - Part 2: Building on top of the foundation
       - Chapter 5: Faith
         - Meaning of life
@@ -337,7 +395,7 @@
               - You would be completely stationary on the outside, as well as on the inside.
                 - Because there will no longer be a need for anything
           - Any action/activity is there because we are incomplete
-          - Life as an activity has only one goal to make us complete
+          - Life as an activity has only one goal - completion
             - Physical homeostasis, trying to get things into balance, non-stop
             - Our psychological needs of belonging
               - Having lived a life that is valued by us as part of a greater context (society)
