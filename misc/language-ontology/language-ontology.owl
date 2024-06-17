@@ -143,6 +143,22 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#City -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#City">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geographic_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Country -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Country">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geographic_Entity"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Creature -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Creature">
@@ -170,7 +186,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Difference -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Difference">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
     </owl:Class>
     
 
@@ -217,7 +233,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Event -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Event">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Physical_Entity"/>
     </owl:Class>
     
 
@@ -249,7 +265,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Expression -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Expression">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity"/>
     </owl:Class>
     
 
@@ -257,6 +273,14 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Generalization -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Generalization">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geographic_Entity -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geographic_Entity">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
     </owl:Class>
     
@@ -273,7 +297,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Grammatical_Structure -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Grammatical_Structure">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity"/>
     </owl:Class>
     
 
@@ -316,6 +340,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Life -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Life"/>
@@ -334,6 +366,14 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Line">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geometric_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
     </owl:Class>
     
 
@@ -371,7 +411,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Negation -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Negation">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
     </owl:Class>
     
 
@@ -421,6 +461,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Physical_Entity -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Physical_Entity">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Point -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Point">
@@ -441,7 +489,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Process -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Process">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Physical_Entity"/>
     </owl:Class>
     
 
@@ -462,10 +510,18 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Region -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Region">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geographic_Entity"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Relation -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Relation">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
     </owl:Class>
     
 
@@ -503,10 +559,18 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Signal -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Signal">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Information"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Similarity -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Similarity">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
     </owl:Class>
     
 
@@ -594,7 +658,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Time -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Time">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Physical_Entity"/>
     </owl:Class>
     
 
@@ -625,7 +689,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Topic -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Topic">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstraction"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity"/>
     </owl:Class>
     
 
@@ -680,7 +744,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Word -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Word">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Information"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Grammatical_Structure"/>
     </owl:Class>
     
 
