@@ -210,7 +210,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Completeness -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Completeness">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstractly_Symbolically_Representable_Entities"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity"/>
     </owl:Class>
     
 
@@ -245,10 +245,28 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Consequence-related_Expression -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Consequence-related_Expression">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Expression"/>
+        <rdfs:comment>So</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Contradiction -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Contradiction">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Contributive_Expression -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Contributive_Expression">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Expression"/>
+        <rdfs:comment>By the way</rdfs:comment>
     </owl:Class>
     
 
@@ -289,6 +307,22 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Decade">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Time"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Demonstration -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Demonstration">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Concretely_Symbolically_Representable_Entities"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Description -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Description">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Language_Entity"/>
     </owl:Class>
     
 
@@ -550,6 +584,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Infinity -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Infinity">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Information_Carrier -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Information_Carrier">
@@ -670,6 +712,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Many -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Many">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity">
@@ -753,7 +803,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Nothing -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Nothing">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Abstractly_Symbolically_Representable_Entities"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Logical_Entity"/>
     </owl:Class>
     
 
@@ -778,6 +828,14 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Occurance">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#One -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#One">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Number"/>
     </owl:Class>
     
 
@@ -1177,6 +1235,15 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Turn-around_Expression -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Turn-around_Expression">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Expression"/>
+        <rdfs:comment>But, unfortunately</rdfs:comment>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#TwoDSpace -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#TwoDSpace">
@@ -1205,6 +1272,14 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Understanding">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#System"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Uniqueness -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Uniqueness">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Identity"/>
     </owl:Class>
     
 
