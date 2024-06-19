@@ -156,6 +156,7 @@
                 - Because you can't build a solid structure on top of a shaky foundation
       - Chapter 2: Philosophy
         - Beginnings
+          - To begin unravelling the messy ball of yarn, a good starting point is to ask yourself
           - What can I be absolutely certain of?
             - Is this the real life or is it just fantasy?
               - Do I know that I exist?
@@ -265,7 +266,11 @@
                       – Is all there is
                       – There is no way out
                   - It is not futile
-                    - If there is a justification for a way out
+                    - If there is a justification for a way out 
+            - Foundational decision making 
+              - As we philosophize and build the foundation, if we are honest with ourselves, we will encounter a very serious predicament
+                - The main problem is to decide what is the ultimate reality - mind or matter, what is the reference frame
+                - As we will discuss in the next chapter, this reference frame is in fact the most fundamental decision to make, and it will have the most serious consequences
       - Chapter 3: Mind vs matter
         - Building the understanding from the ground up 
           - As we already mentioned the thing that provides has most certainty to us is the existence of our own mind

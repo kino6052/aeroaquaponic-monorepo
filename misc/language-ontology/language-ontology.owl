@@ -1058,6 +1058,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Repetition -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Repetition">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Mathematical_Entity"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Result -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Result">
