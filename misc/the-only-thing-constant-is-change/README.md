@@ -318,6 +318,12 @@
               - I also am not trying to say that I'm fixing what I think Hegel broke.
               - Instead, I am just reinventing a wheel
                 - Which is a very important practice when you really want to understand something
+          - It seems that these philosophers' works are enough to help lay the solid foundation
+            - Understand the distinction between to main points of view: positivism and idealism.
+            - Understand why idealism is more sound than positivism
+              - And far less "crazy" to consider than materialism
+            - Understand the necessity of grounding philosophy in experience
+            - Understand that change is a crucial aspect of the phenomenal world 
         - The phenomenal world (the world of phenomenons)
           - We can only know from experience
           - At its core is change because space and time are conditions of our experience
@@ -497,7 +503,8 @@
                   - Removing everything from the person's search for diving except the practice
                   - Person without God is a direct path to ego blowing up
               - God not only cares about people, He is willing to sacrifice Himself for them
-                - If compared to Hephestus or Mitra or some other sacrifice, then it's because they have a common enemy that they disagree with
+                - If compared to Prometheus or Mitra or some other sacrifice, then it's because they have a common enemy that they disagree with
+                  Nanahuatzin, Aravan, Odin, Prometheus, Osiris, Quetzalcoatl, Inanna, Tyr, Horus, Shiva, Dionysus, Baldr
                   - In case of Christianity, our fall was necessary and its core is a mystery, for God is beyond the phenomenal world.
                     - But part of this mystery included reestablishment of the relationship between people (us) who falsely believed that they can be like Gods, through faith and especially understanding that faith is the most important virtue and thing that we really need
               - Suffering has meaning
@@ -573,8 +580,28 @@
               - Ideal means of manipulation
             - Nihilism
               - Ideal for manipulating of consciousness to believe anything
+        - Morality and ethics
+          - Understanding that others are similar to us
+          - Seeing their completeness as part of our completeness
       - Chapter 6: Science
+        - Math
+          - Understanding math through the lens of apriori knowledge gives benefits
+          - It tells us that the answers are already hidden inside us
+        - Physics
+          - Physics is a science of change
+          - The most fundamental science there is
+          - It answers the why question by discovering the fundamental conflict in nature 
+        - Biology
+          - Understanding living organisms is also key
+          - What is true of organisms is also true of non-organic matter
+          - But organic matter has qualities that only informational systems have
+            - Homeostasis
+            - Feedback loops
+        - Computer science
+          - Nothing rings in more unison with the entire book as the process of developing software, especially software applications
       - Chapter 7: Education
+        - Now, if we have really come this long way and understood things similar to how it is outlined in this book
+          - We understand that technically (although I did not discuss morality in this book - ) completeness
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
       - Chapter 8: Living in the ever-changing world (path forward and encouragement)
         - Minimalism 
