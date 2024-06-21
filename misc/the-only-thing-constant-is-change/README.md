@@ -590,8 +590,17 @@
         - Math
           - Understanding math through the lens of apriori knowledge gives benefits
           - It tells us that the answers are already hidden inside us
+            - Given simple rules and axioms we can analytically infer entire body of knowledge
+              - Because it is the most fundamental manipulation of categories for creating analytical structures
+                - These structures correspond to the structures of the world that is reflected in us
+                - Because phenomena get "assembled" into structures themselves
+                  - And according to Immanuel Kant we are studying them (and not the reflected structures and not what is behind the phenomena)
+                  - So it is no wonder math is called the language of the universe
         - Physics
           - Physics is a science of change
+          - It is essentially math on steroids
+            - We are just confining math to very specific frame of the "physical world"
+              - And add couple more rules to it
           - The most fundamental science there is
           - It answers the why question by discovering the fundamental conflict in nature 
         - Biology
@@ -600,6 +609,11 @@
           - But organic matter has qualities that only informational systems have
             - Homeostasis
             - Feedback loops
+          - It is also important to note that informational systems don't jump out of non-informational systems
+            - They are created by minds
+            - Simply because information is about mind
+              - Yes, signals are about matter
+              - Information is created by mind or other information systems
         - Computer science
           - Nothing rings in more unison with the entire book as the process of developing software, especially software applications
       - Chapter 7: Education
