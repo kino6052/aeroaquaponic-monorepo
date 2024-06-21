@@ -583,6 +583,9 @@
         - Morality and ethics
           - Understanding that others are similar to us
           - Seeing their completeness as part of our completeness
+          - Illustration
+            - Children
+              - Natural understanding of their completeness as part of ours
       - Chapter 6: Science
         - Math
           - Understanding math through the lens of apriori knowledge gives benefits
@@ -601,11 +604,35 @@
           - Nothing rings in more unison with the entire book as the process of developing software, especially software applications
       - Chapter 7: Education
         - Now, if we have really come this long way and understood things similar to how it is outlined in this book
-          - We understand that technically (although I did not discuss morality in this book - ) completeness
+          - We understand that completeness of others is part of ours
+          - Fundamental understanding of this world is the road to such completeness
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
+        - Need for proper educational method
+          - Curriculum
+          - Teaching method
+          - Discussions
+          - Challenges
       - Chapter 8: Living in the ever-changing world (path forward and encouragement)
-        - Minimalism 
+        - The key message of this book is that when we understand that change is the ultimate contradiction of this world
+          - We should not focus on the establishing solid foundation in this world
+            - Rather we need to improve the foundation of spirit and mind
+              - Improve the foundational understanding
+              - Improve faith by disconnecting your heart from the phenomenal world and directing it to the search of the great beyond
+        - Minimalism
+          - It is obvious consequence of trying to live minimally
         - Unit of self-sufficiency
+          - This is an example of a way of life that we can lead if we understand the premises behind this book
+          - I'm in the process of establishing a prototype
+            - Very challenging
+            - Requires a lot of knowledge and resources to begin
+            - But once it's there it will be easier to maintain and improve upon
+        - Other ways
+          - Some people choose to go even beyond the simplicity
+            - There are monastics and ascetics
+            - I consider this an extreme way
+              - That is not for everyone
+              - I personally don't think I can live like this
+              - But I respect and admire those who do
     - Conclusion
       - Test (inquire and get data), Implement (apply to your structure), Refactor on repeat
       - The only thing constant is change in the world of phenomenons, and it is a core contradiction that lies at the root of everything, including good and evil
