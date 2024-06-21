@@ -290,10 +290,34 @@
             - Even if there really was a world-in-itself, having an idealist vantage point would still be the most solid foundation for reasoning in general and a secure starting point in any discourse
               - As was clearly demonstrated by Immanuel Kant, using the reference frame of our mind is the only way we can make sense of things
                 - Idealistic vantage point
-          - Berkley
-          - Immanuel Kant
-          - Plato
-          - Caution: Hegel
+          - Foreword
+            - As I already mentioned, this book captures my understanding, including understanding of famous philosophers. Because my understanding will change as I get older, I will try to just capture the most fundamental aspects of it, and everything else will be added later as appendixes.
+          - Comparative analysis of philosophers 
+            - Descartes
+              - Good starting point for any philosophical inquiry
+              - Simple and genius
+            - Plato vs Aristotle
+              - Plato and Aristotle when taken together, demonstrate an interesting contrast
+              - Plato realized there was this world of abstractions that have extreme form of certainty that material world can never have
+                - He is the most fundmental phenomenologist and true philosopher who searched for truth (or rather Socrates)
+                - Not grounded in experience
+              - Aristotle on the other hand is an interesting example of a true positivist
+                - He is interested in the world around him and classifiying it
+                - He does not seem puzzled by a strangeness of abstractions that Socrates was puzzled by
+                - More grounded in experience
+              - In a sense Plato and Aristotle correspond to idealism and materialism respectively
+            - Berkley
+              - Demonstrates problem with positivism and materialism
+              - Demonstrates the resolution of problems through idealistic exposition
+            - Immanuel Kant & Hume
+              - Proper idealistic phenomenological system 
+              - Critical foundation grounded in experience
+            - Hegel
+              - Although Hegel's works are also about dialectics, or in other words change, it would be a mistake to think that I am drawing inspiration from this philosopher.
+              - I think this philosopher used a wonderful idea incorrectly, in terms of disregarding the solid foundation of critical philosophy established by Immanuel Kant, that could have helped him to turn his works into real philosophy instead of metaphysics.
+              - I also am not trying to say that I'm fixing what I think Hegel broke.
+              - Instead, I am just reinventing a wheel
+                - Which is a very important practice when you really want to understand something
         - The phenomenal world (the world of phenomenons)
           - We can only know from experience
           - At its core is change because space and time are conditions of our experience
@@ -395,7 +419,16 @@
                 - Although it is hard to say whether this holds for absolutely everything in the phenomenal world
                   - This is definitely not a big problem, as in reality, we consider the laws of physics to be set in stone
                     - Even though they are not apriori knowledge that we can know with 100% certainty
-                  - But it is true for anything that I have ever observed
+                  - But it is true for anything that I have ever observed and it has predictive power that satisfies the scientific method
+                    - I can make predictions and verify them
+                    - Falsifiability
+                      - We hold something true, until we have enough evidence to refute it
+                        - This evidence is possible to acquire
+                          - However, to see that something has changed without a true conflict (not just an apparent one) seems to be impossible to acquire for we have to have exact knowledge of why something changed, and if it changed without a reason, we need to know that there is really no reason.
+                            - Seems a contradiction of terms, because if there is no reason for something to change, why would it bother?
+                            - This contradiction makes me think that our causal understanding is in fact more like apriori understanding because to say that something doesn't have a cause is impossible to prove while something having a cause - is provable.
+                            - **IT IS A PRIORI KNOWLEDGE, because we discover it just like 2 + 2 = 4 with just a few examples and it we have certainty that it will work for any case.**
+                            - However, even if it is not a true apriori knowledge in a sense that the knowledge of causes lies in experience, and rather a presupposition that every effect requires a cause, and paraphrased "every change requires a conflict", it seems a very useful one and fundamental one that all sciences and philosophies and people take for granted.
                   - It is useful in the context of construct that I am describing
                 - Because it concerns with the fundamental necessity
                   - The answer to "why" question provides the most deep insights into any subject
