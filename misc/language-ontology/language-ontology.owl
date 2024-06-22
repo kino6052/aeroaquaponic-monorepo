@@ -840,6 +840,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Missile -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Missile">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Rocket"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Modality -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Modality">
@@ -1074,6 +1082,14 @@
     
 
 
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Rocket -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Rocket">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Machine"/>
+    </owl:Class>
+    
+
+
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Room -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Room">
@@ -1086,6 +1102,14 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Sadness">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Emotion"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Satellite -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Satellite">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Machine"/>
     </owl:Class>
     
 
@@ -1158,7 +1182,7 @@
     <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Software -->
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Software">
-        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Information_Carrier"/>
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Technology"/>
     </owl:Class>
     
 
@@ -1176,6 +1200,14 @@
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Space">
         <rdfs:label>Space</rdfs:label>
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Geometric_Entity"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Spacecraft -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Spacecraft">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Rocket"/>
     </owl:Class>
     
 
@@ -1416,6 +1448,14 @@
 
     <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Verb">
         <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Grammatical_Structure"/>
+    </owl:Class>
+    
+
+
+    <!-- urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Weapon -->
+
+    <owl:Class rdf:about="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Weapon">
+        <rdfs:subClassOf rdf:resource="urn:webprotege:ontology:ed9b2174-9f5f-49eb-86be-b63f919a37db#Technology"/>
     </owl:Class>
     
 
