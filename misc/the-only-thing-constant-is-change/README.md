@@ -559,14 +559,32 @@
                       - Repented thief is first to enter the Kingdom of Heaven
                       - Metaphors (not complicated stories) are best for understanding of what lies beyond   
             - Christianity is way too deep to not take it seriously
+            - One type of proof that seems to me the most convincing is proof by contradiction
+              - Similar to M. Bulgakov's in Master and Margarita
+              - If there was no substance to this faith, then it would not need violent eradication and establishment of direct opposite rather a middle ground.
+              - Bulgakov's portrayal suggests that the vehement denial and suppression of spiritual truths paradoxically affirm their existence and importance
+                - What is the modern globalist religion?
+                  - Childhood dreams
+                    - Ideal means of manipulation
+                  - Nihilism
+                    - Ideal for manipulating of consciousness to believe anything
+                    - We are filled with implanted ideas, dreams and desires
+                      - It is now more than ever requires us to not place our hope and faith in ourselves or a new generation
+                      - But God
+                        - Focus on simple things
+                        - Focus on the eternal
+                        - Keep calm and cary on with our duties
           - Two serious contenders for me in the search for divine are
             - Christianity
             - Buddhism
             - How to choose one or the other?
-              - I believe that eightfold path is not contradicting a healthy Christian practice
-              - However, I believe that being just a Buddhist contradicts Christianity
-              - Using an argument similar to the Pascal's wager, it seems that you can have a healthy compromise
-              - If we are really about searching the truth and not just looking for something that is either popular or fits our personality, then we always will be wrong
+              - Given that we find ourselves targeted by a bunch that wants Christianity destroyed as well as Bulgakovs' argument
+                - Christianity emerges as the most serious contender
+              - To look outside of this terrible battle and looking more abstractly 
+                - I believe that eightfold path is not contradicting a healthy Christian practice
+                - However, I believe that being just a Buddhist contradicts Christianity
+                - Using an argument similar to the Pascal's wager, it seems that you can have a healthy compromise
+                - If we are really about searching the truth and not just looking for something that is either popular or fits our personality, then we always will be wrong
                 - At the end of the day you have to pay a high price for truth and searching for it
                 - You have to make many mistakes
                 - Shed many tears
@@ -575,17 +593,15 @@
                   - Atheism or agnosticism cannot be considered with seriousness because they are "not bought", they are just accepted as status quo.
                   - Some religions are chosen because they fit our personality
                   - Non of this can be regarded with any seriousness if our goal is to figure things out  
-          - What is the modern globalist religion?
-            - Childhood dreams
-              - Ideal means of manipulation
-            - Nihilism
-              - Ideal for manipulating of consciousness to believe anything
-        - Morality and ethics
-          - Understanding that others are similar to us
+        - Morality and ethics are not replacement for religion
+          - They are based not on the need for God
+          - But out of understanding that others are similar to us
           - Seeing their completeness as part of our completeness
           - Illustration
             - Children
               - Natural understanding of their completeness as part of ours
+          - This is why I think that God deniers or haters might be "ethical" individuals
+            - Seeing that others are in the same boat with you thrown into the same storm that we call the world by an evil creator or chance
       - Chapter 6: Science
         - Math
           - Understanding math through the lens of apriori knowledge gives benefits
