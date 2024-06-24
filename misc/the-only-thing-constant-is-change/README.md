@@ -4,13 +4,10 @@
   - Subtitle
     - A snapshot of an ever-changing understanding
   - Epigram
-    - And when you think you've got it,
+    - And when you think you got it,
     - You got it oh so wrong...
     - Living is like practicing
     - The art of impossible.
-    
-    - Though I ain't understand it.
-    - I just keep singing on.
     - Living is like practicing
     - The art of impossible.
 
@@ -53,16 +50,12 @@
     - Part 1: Foundation
       - Chapter 1: Prior to understanding
         - Foreword
-          - It wouldn't be worthwhile to write a book if there wasn't some mechanism or construct
-            - which I find valuable
-            - which I want to preserve through demonstration
-            - which I want to share
-          - This system is a mechanism that was assembled from principles (or base components)               
-            - Will have its flaws
-            - Might prove insightful
-          - Base components
-            - I would not be able to put together most basic components if I didn't start completely from scratch
-            - It was only possible through thorough philosophical introspective reflection
+          - It wouldn't be worthwhile to write this book if I didn't consider the knowledge contained in it valuable, worth preserving and sharing with others.
+          - Most importantly, it would not be worthwhile to write it, if the information contained in it was already put together in a similar comprehensive way by somebody else.
+          - However, to the best of my knowledge, it does not seem to be the case, and because of that, I feel compelled to do it myself.
+          - In this chapter, I will share my experience of having built a fundamental understanding from scratch, which was only possible through philosophical introspective reflection, or in other words by thinking as deeply as I could.
+          - And, as the system outlined in the book is a mechanism that was assembled from principles (or base components), it is guaranteed to have its flaws, however, and it is my hope, it still might prove insightful.
+          - However, to show you how I arrived at my understanding, I first feel the need to explain why it was necessary.
         - Basic components
           - Introspective exposition
             - Why would we need to concern with such
