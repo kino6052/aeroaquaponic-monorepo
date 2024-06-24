@@ -492,7 +492,7 @@
               - Otherwise even heaven will be temporary bliss before deities destroy each other
               - Completeness is the core contradiction of our minds and our world, if we have longing for something that is impossible to achieve, then our existence is a complete joke. A very very bad joke.
                 - But jumping to this conclusion would be too rushed
-                - This place of desolation will always be there as the last resort, so why not start looking at what are some other options
+                - This place of desolation will always be there as the last resort, so why not start looking at what some other options
                 - As a side note, those who jump to the conclusion of this existence being a bad joke (myself in the past included) are really just looking for excuses to get high and have a break from the difficulties of the existence. It is laziness, cowardice and egoism all in one. 
           - Why Christianity?
             - Foreword
@@ -636,12 +636,18 @@
         - Now, if we have really come this long way and understood things similar to how it is outlined in this book
           - We understand that completeness of others is part of ours
           - Fundamental understanding of this world is the road to such completeness
+          - So it follows that it is our duty to share this understanding with others, if we really believe that this is a helpful understanding
         - advice to the young: the most important thing in the physical (no spiritual realm) is to have a steady influx of reward (dopamine pr whatever) and sustainable  long-term orientation (grit), then both happiness and achievement will follow
         - Need for proper educational method
           - Curriculum
           - Teaching method
           - Discussions
           - Challenges
+        - If we build on top of such a fundamental understanding, there is a really great perk
+          - The understanding that students will have will not be so called "kaleidoscopic" and rather comprehensive
+            - Kaledoskopic understanding is such understanding, where various topics are not connected and the understanding is fragmented
+            - Comprehensive understanding is such understanding, where all topics are united in a single framework
+          - Where all topics unite
       - Chapter 8: Living in the ever-changing world (path forward and encouragement)
         - The key message of this book is that when we understand that change is the ultimate contradiction of this world
           - We should not focus on the establishing solid foundation in this world
@@ -650,8 +656,12 @@
               - Improve faith by disconnecting your heart from the phenomenal world and directing it to the search of the great beyond
         - Minimalism
           - It is obvious consequence of trying to live minimally
+          - Because possessions bind us to the phenomenal world and make us forget about the great beyond
         - Unit of self-sufficiency
           - This is an example of a way of life that we can lead if we understand the premises behind this book
+            - Trying to establish a minimal but somewhat complete framework
+            - No excesses
+              - Everything has to "fight for its survival"
           - I'm in the process of establishing a prototype
             - Very challenging
             - Requires a lot of knowledge and resources to begin
