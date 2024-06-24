@@ -8,15 +8,11 @@
     - You got it oh so wrong...
     - Living is like practicing
     - The art of impossible.
-    - Living is like practicing
-    - The art of impossible.
     
     - Though I ain't understand it.
     - I just keep singing on.
     - Living is like practicing
     - The art of impossible.
-    - So come on darling join me
-    - On this journey that's lifelong
 
     - (c) Dolly Parton
   - Main
