@@ -1,0 +1,34 @@
+
+## The Only Thing Constant Is Change: Part 1: Chapter 3: Mind vs. Matter
+
+I now want to examine what would happen if I chose the mind as the reference frame for my understanding of the world and see where it would lead me.
+
+If I were to dismiss the world of experiences as a chimera, an illusion, I would then not bother describing it in detail or try to form an understanding of it. If I had this type of skepticism, then this book would be already over.
+
+However, this option of skepticism is always there as a last resort, why should I jump to this hasty conclusion without first having a good look at what my other options are?
+
+The world of experiences presents me with a variety of repeating patterns. Although it is very confusing, it is definitely not nonsensical. Day and night alternate, the seasons alternate, there is gravity, there are complex living beings, there are societies, there are machines. My personal thoughts and feelings also have repetitive patterns, although I don’t always understand the patterns behind them. Long story short, the world is full of regular patterns that can be predicted with a high degree of certainty.
+
+Before I knew there was an option of using my mind as a reference frame, I naturally took this world as the reference frame. It seemed very logical because, for example, just like me, there are other people out there. As I was growing up, I saw others growing up, and how behaviors developed. I was taught that humans and animals are just complicated preprogrammed machines created through the lengthy process of evolution. My mind is then just an illusion that is the result of the operation of our brains. Little did I know that this analogy was actually faulty and could be demonstrated to be so upon examination.
+
+Behavior is not the same thing as the mind and neither brain is the same thing as the mind. For some reason, this confusion is very common. I learn about behavior or the brain through experience, however, the mind is something that contains both the entirety of experience as well as everything else that turns this experience into understanding. It is something that tells me that things are of this color or that color, that things are different or similar, that there is a connection between events, that there is a meaning behind a sound signal when somebody talks to me. That is, I know that experience conforms to my mind. It makes me understand that there is a physical world, there is a planet Earth, I have a physical body, and so on, but it still does not tell me that my mind is not the reference frame. It does not tell me that it would still exist if the mind did not exist.
+
+Now, I don’t believe that the world is contingent on my personal mind, I think that it would be a hasty conclusion, however, in some sense, it is true, as my mind contains the entire world model, so this model would go out of existence if my mind went out of existence. I am more convinced that the world is contingent on the mind as such. What kind of mind it is I don’t know, but I don’t believe it to be my own.
+
+This line of thinking made me uncomfortable in the past, I was worried that I got into some jungle in my search for the Truth. However, along the way, I discovered the work of Anglo-Irish philosopher George Berkley “[A Treatise Concerning the Principles of Human Knowledge](https://en.wikipedia.org/wiki/A_Treatise_Concerning_the_Principles_of_Human_Knowledge)” that was discussing the same subject.
+
+In this work, George Berkley lays a thorough foundation distinguishing between the faculty of our mind to form abstractions and generalizations and the faculty of perceiving things via imagination or reality. He then says that there is a big problem with people believing that abstractions (like triangles neither equilateral, equicrural nor scalenon) really do exist on their own. The problem is that they cannot be imagined or represented, for it is only particulars that could be. This idea is taken further by materialists and positivists to think that there exists absolute space and there exists matter on its own. However, neither space nor matter in this case could contain any qualities from our perception because we stripped away all of these qualities. We can’t say it is such and such, so in reality we can’t really know anything about it or even perceive it in any way. To those who are familiar with Immanuel Kant’s “Critique of Pure Reason”, this abstraction is known as a thing-in-itself, a noumenon, which is a very problematic concept of Kantian philosophy.
+
+Strangely, this idealistic concept of absolute matter lies at the foundation of materialism. Materialism is a contradiction because it posits that matter, which is an abstraction created by the mind, is the source and reason of everything.
+
+George Berkley, however, claims that only the mind has substantiality and that all things that exist are contingent on being perceived by the mind, even if it is not our own mind. In other words, there is some content of the mind that is true, that tells how things really are. Because, no matter whether we are materialists or idealists, we believe that there is a world that doesn't depend on us for its existence, and as such there is a True description of it. If that wasn’t the case, we could throw all the science books away for their uselessness.
+
+George Berkley’s work is a fantastic example of deep philosophical insight. Its main purpose is to battle positivism and materialism. In my opinion, he was successful in this pursuit.
+
+However, aside from positivism and materialism, there exists another huge threat to us as we continue our journey of introspection. This threat is called metaphysics. In other words, there is a problem of producing fantasies about how things are instead of real knowledge because we don’t ground them in experience.
+
+This problem of metaphysical wanderings of the mind was addressed by Immanuel Kant in his work “Critique of Pure Reason”. In this work, Immanuel Kant does a thorough analysis of the faculties of our mind and distinguishes between innate knowledge (apriori) and the knowledge obtained via experience. He explains very well the limitations of what experience can tell us and what are the limitations of our knowledge. For example, physics can never have the same amount of certainty as mathematics, because physics will always have to be grounded in observation and no observation would be enough for having an absolute certainty.
+
+Not only these works are great protectors of sanity in our pursuit of establishing a mind-first reference frame, but they even help us acknowledge that the idealist vantage point is far more sane than that of materialism and positivism.
+
+I now provided more reasons for the change of the reference frame, so that I could continue reflecting more on the world of experiences and set further expectations about it, and see what consequences are to follow.
