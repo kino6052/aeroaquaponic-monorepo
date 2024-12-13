@@ -1,4 +1,4 @@
-**The Only Thing Constant Is Change: Part 2: Chapter 7: Living in the Ever-Changing World**
+## The Only Thing Constant Is Change: Part 2: Chapter 7: Living in the Ever-Changing World
 
 In this chapter, I will synthesize the conclusions drawn from earlier discussions and explore how these ideas apply to personal life and well-being.
 
