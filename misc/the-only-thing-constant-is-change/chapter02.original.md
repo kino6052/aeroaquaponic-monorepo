@@ -1,4 +1,4 @@
-# The Only Thing Constant Is Change: Part 1: Chapter 2: Philosophy
+## The Only Thing Constant Is Change: Part 1: Chapter 2: Philosophy
 
 So, if I find myself tangled in this messy yarn that has accumulated throughout my life, a good place to start figuring the way out would be to ask myself: “Is this the real life or is it just fantasy?”.
 
