@@ -1,4 +1,4 @@
-**The Only Thing Constant Is Change: Part 2: Chapter 6: Science**
+## The Only Thing Constant Is Change: Part 2: Chapter 6: Science
 
 I was often told that science is the best tool for studying the world because it explains it. However, science does not explain *why* things are one way or the other; it only explains *how* things work. I hope I have demonstrated that the “why” question is best addressed through philosophical examination.
 
