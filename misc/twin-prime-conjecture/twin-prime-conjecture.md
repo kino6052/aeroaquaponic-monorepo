@@ -10,6 +10,16 @@ Eventually, I realized my mistake: I had unconsciously assumed I was working wit
 
 These frameworks began as thought experiments and explorations of human reasoning, but evolved into rigorous structures somewhat detached from their intuitive origins. While this evolution makes sense for formal advancement, we should remember that mathematics ultimately exists in human minds, not just in formal systems. It remains important to examine our foundational thinking and occasionally revisit first principles, ensuring we don't lose sight of what's truly fundamental in our pursuit of mathematical truth.
 
+## Why This Argument is not Accepted by Mathematicians?
+
+Mathematicians do not accept this argument primarily because it relies on unconventional definitions of primes and twin primes. In standard mathematical discourse, primes are defined within the established number-theoretic framework, and twin primes are understood through conventional properties of divisibility and modular arithmetic. While I argue that these definitions align with a rational understanding of primes—fundamentally as numbers surviving a sieving process—mathematics as a discipline adheres to strict formal rules. Thought experiments like this, which propose alternative definitions, are typically not considered serious arguments within the mainstream framework.
+
+However, we must remember that mathematics is not some distant, immutable truth locked behind the walls of academia. It is, at its core, a construct of the human mind, something we can engage with, reason about, and even reinterpret. We do not need to rely solely on established doctrine to explore mathematical ideas; we can examine them personally and seek understanding through direct reasoning.
+
+The primary objection to this argument is that it does not guarantee, at every step, that infinitely many primes or coprime pairs survive all iterations of the sieve. In the traditional framework, such a guarantee is essential to proving an infinite structure. However, this critique misunderstands the nature of the argument. I do not view primes as absolute entities existing independently, as if they were some kind of mathematical super-beings. Instead, they are relative—specifically, relative to the process of sieving. If we were to modify the rules of sieving, we would obtain different sets of "primes," whose infinitude would depend on the conditions imposed by our chosen process.
+
+Therefore, while this perspective may not be accepted within the conventional mathematical framework, that does not mean it is invalid. It is a perfectly coherent and logical argument, even if it challenges traditional assumptions. If you can recognize its validity, you may also share the excitement of seeing a novel and intriguing way to approach this long-standing problem.
+
 ## The Twin Prime Sieve: A Computational Redefinition
 
 ### Overview of the Sifting Process
