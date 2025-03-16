@@ -2,11 +2,13 @@
 
 ## Introduction
 
-In this article, I introduce a conceptual framework—a computational approach to exploring prime numbers. This is not a classical number theoretic framework; rather, it is a thought experiment that reinterprets the notion of primes and twin primes through an iterative sifting process. The aim is to provide an accessible, computational perspective on prime generation and the infinitude of primes, and to stimulate discussion about prime gaps and longstanding conjectures.
+Here I present a conceptual framework that I call computational prime number framework. It is not the classical number theoretic framework, and therefore I don't claim to have proven anything within the standard framework. However, my adaptation is a fun thought experiment that allowed me to experiment with the infinitude arguments of twin primes and have fun in the mean time. It was an interesting experiment that helped me to look at prime gaps from a novel standpoint and it allowed to have prooves for longstanding conjectures only valid within the confines of my framework.
 
-My initial excitement about what I believed was a proof within classical number theory was tempered when I realized that the work actually pertained to a self-contained computational framework. This realization underscored an important lesson: while mathematics is a universal language, its formal acceptance depends on adhering to established definitions and conventions. By stepping outside those confines, we can still gain fresh insights—even if those insights remain within the realm of exploratory thought experiments.
+When I initially believed I had proven this conjecture, it was disheartening to discover that my work wasn't taken seriously by the mathematical community. I struggled to understand why mathematics—something I viewed as universally accessible to all minds—seemed restricted to an elite few. Isn't mathematics supposed to be a universal language available to anyone capable of logical thought?
 
-This article uses a blend of natural language explanations and Python code examples. The goal is to demystify the concepts and allow interested readers to follow along and verify the computational steps on their own.
+Eventually, I realized my mistake: I had unconsciously assumed I was working within classical number theory, when in fact I had developed a proof within my own consistent conceptual framework. This crucial distinction had eluded me. I had forgotten that mathematics, like philosophy and other disciplines, operates within established frameworks with specific rules and conventions.
+
+These frameworks began as thought experiments and explorations of human reasoning, but evolved into rigorous structures somewhat detached from their intuitive origins. While this evolution makes sense for formal advancement, we should remember that mathematics ultimately exists in human minds, not just in formal systems. It remains important to examine our foundational thinking and occasionally revisit first principles, ensuring we don't lose sight of what's truly fundamental in our pursuit of mathematical truth.
 
 ## The Twin Prime Sieve: A Computational Redefinition
 
