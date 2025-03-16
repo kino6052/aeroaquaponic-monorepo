@@ -268,6 +268,69 @@ for n in range(1, 4):
   \]
   This reinforces the claim that twin primes are not exhaustible through the sifting process.
 
+```python
+def twin_sieve(max_index, known_divisors=None):
+    """
+    Filters candidate indices n for which both numbers 6n-1 and 6n+1
+    are not divisible by any number in known_divisors.
+
+    Parameters:
+      max_index (int): Maximum n to test.
+      known_divisors (list of int, optional): Divisors to test against.
+
+    Returns:
+      tuple:
+        - List of candidate twin prime pairs (6n-1, 6n+1).
+        - Updated list of known divisors.
+    """
+    if known_divisors is None:
+        known_divisors = [2, 3]
+
+    twin_candidates = []
+    new_divisors = known_divisors[:]  # Create a copy to avoid modifying the original list
+
+    for n in range(1, max_index + 1):
+        twin1, twin2 = 6 * n - 1, 6 * n + 1
+        if all(twin1 % d != 0 and twin2 % d != 0 for d in known_divisors):
+            twin_candidates.append((twin1, twin2))
+            new_divisors.extend([twin1, twin2])  # Add new primes safely
+
+    return twin_candidates, new_divisors
+
+# Example usage
+print("Twin prime candidates:", twin_sieve(15, [2, 3, 5, 7, 11, 13]))
+```
+
+```python
+def twin_sieve_recursive(max_index, known_divisors=None, twin_candidates=None):
+    """
+    Recursively applies twin_sieve to refine the set of twin prime candidates.
+
+    Parameters:
+      max_index (int): Maximum n to test.
+      known_divisors (list of int, optional): Divisors to test against.
+      twin_candidates (list of tuple, optional): Accumulated twin prime pairs.
+
+    Returns:
+      list of tuple: The final list of twin prime candidates.
+    """
+    if known_divisors is None:
+        known_divisors = [2, 3]  # Default starting divisors
+    if twin_candidates is None:
+        twin_candidates = []  # Initialize empty candidates if not provided
+
+    # Base case: Stop when no new twin prime candidates appear
+    new_candidates, next_known_divisors = twin_sieve(max_index, known_divisors)
+    if not new_candidates or new_candidates == twin_candidates:
+        return twin_candidates  # No new primes found, stop recursion
+
+    return twin_sieve_recursive(max_index, next_known_divisors, new_candidates)
+
+
+# Example usage
+print("Twin prime candidates:", twin_sieve_recursive(15))
+```
+
 ### Bridging Computation and Analysis
 
 The classical proof of the infinitude of primes uses constructions like
