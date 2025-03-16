@@ -186,31 +186,23 @@ def twin_sieve(A, N):
       list: A filtered list of numbers where both (6n-1) and (6n+1) pass the divisibility tests.
     """
     return list(filter(
-        lambda n: all([
-            (6*n + 1) % (6*a + 1) != 0,
-            (6*n + 1) % (6*a - 1) != 0,
-            (6*n - 1) % (6*a + 1) != 0,
+        lambda n: all(
+            (6*n + 1) % (6*a + 1) != 0 and
+            (6*n + 1) % (6*a - 1) != 0 and
+            (6*n - 1) % (6*a + 1) != 0 and
             (6*n - 1) % (6*a - 1) != 0
-        ] for a in range(1, A[-1] + 1)),
+            for a in A
+        ),
         N
     ))
+
+# Example usage
+print("Twin prime candidates:", twin_sieve([1,2,3,5,7,10], range(1, 100)))
 ```
 
 #### How It Works:
 
-Here is a clear and precise definition of \( F \) for your article:
-
-### Function \( F \) – Mapping Natural Numbers to Twin Prime Intervals
-
 We define a function \( F \) that maps natural numbers to pairs of integers that represent potential twin prime candidates:
-
-\[
-F: \mathbb{N} \to \mathbb{Z} \times \mathbb{Z}
-\]
-
-\[
-F(n) = (6n-1, 6n+1)
-\]
 
 ```python
 def F(n):
@@ -233,29 +225,10 @@ for i in range(1, 6):
 This function expresses the fundamental structure of twin prime candidates after applying the sieve \( S(\{2,3\}) \), which leaves numbers of the form \( 6n \pm 1 \). The function \( F \) converts natural numbers into these pairs, allowing us to systematically examine and filter potential twin primes through the sifting process.
 
 ```python
-import math
+def generate_pairs_from_indices(indices):
+    return [F(n) for n in indices]
 
-def candidate_number(n, primes):
-    """
-    Computes candidate numbers using the formula:
-      candidate = n * (product of primes) ± 1.
-
-    Parameters:
-      n (int): A natural number multiplier.
-      primes (list of int): List of prime numbers.
-
-    Returns:
-      tuple: (n * product + 1, n * product - 1)
-    """
-    product = math.prod(primes)
-    return (n * product + 1, n * product - 1)
-
-# Example usage:
-primes_example = [2, 3, 5]
-for n in range(1, 4):
-    plus, minus = candidate_number(n, primes_example)
-    print(f"For n={n} with primes {primes_example}: candidate = {plus} and {minus}")
-
+print(generate_pairs_from_indices([1,2,3,5,7,10]))
 ```
 
 - **Initial Step:**  
@@ -269,66 +242,14 @@ for n in range(1, 4):
   This reinforces the claim that twin primes are not exhaustible through the sifting process.
 
 ```python
-def twin_sieve(max_index, known_divisors=None):
-    """
-    Filters candidate indices n for which both numbers 6n-1 and 6n+1
-    are not divisible by any number in known_divisors.
+def twin_sieve_recursive(A, N):
+    result = twin_sieve(A, N)
+    if len(result) == 0:
+        return A
+    return twin_sieve_recursive(A + [result[0]], N)
 
-    Parameters:
-      max_index (int): Maximum n to test.
-      known_divisors (list of int, optional): Divisors to test against.
-
-    Returns:
-      tuple:
-        - List of candidate twin prime pairs (6n-1, 6n+1).
-        - Updated list of known divisors.
-    """
-    if known_divisors is None:
-        known_divisors = [2, 3]
-
-    twin_candidates = []
-    new_divisors = known_divisors[:]  # Create a copy to avoid modifying the original list
-
-    for n in range(1, max_index + 1):
-        twin1, twin2 = 6 * n - 1, 6 * n + 1
-        if all(twin1 % d != 0 and twin2 % d != 0 for d in known_divisors):
-            twin_candidates.append((twin1, twin2))
-            new_divisors.extend([twin1, twin2])  # Add new primes safely
-
-    return twin_candidates, new_divisors
-
-# Example usage
-print("Twin prime candidates:", twin_sieve(15, [2, 3, 5, 7, 11, 13]))
-```
-
-```python
-def twin_sieve_recursive(max_index, known_divisors=None, twin_candidates=None):
-    """
-    Recursively applies twin_sieve to refine the set of twin prime candidates.
-
-    Parameters:
-      max_index (int): Maximum n to test.
-      known_divisors (list of int, optional): Divisors to test against.
-      twin_candidates (list of tuple, optional): Accumulated twin prime pairs.
-
-    Returns:
-      list of tuple: The final list of twin prime candidates.
-    """
-    if known_divisors is None:
-        known_divisors = [2, 3]  # Default starting divisors
-    if twin_candidates is None:
-        twin_candidates = []  # Initialize empty candidates if not provided
-
-    # Base case: Stop when no new twin prime candidates appear
-    new_candidates, next_known_divisors = twin_sieve(max_index, known_divisors)
-    if not new_candidates or new_candidates == twin_candidates:
-        return twin_candidates  # No new primes found, stop recursion
-
-    return twin_sieve_recursive(max_index, next_known_divisors, new_candidates)
-
-
-# Example usage
-print("Twin prime candidates:", twin_sieve_recursive(15))
+print(generate_pairs_from_indices(twin_sieve_recursive([1], [a for a in range(1,50)])))
+# [(5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73), (101, 103), (107, 109), (137, 139), (149, 151), (179, 181), (191, 193), (197, 199), (227, 229), (239, 241), (269, 271), (281, 283)]
 ```
 
 ### Bridging Computation and Analysis
@@ -355,8 +276,6 @@ This argument shows, in a computational context, why the process of iteratively 
 
 The twin sieve process in our computational primes framework is guaranteed to be never-ending. At each step, the process removes only a finite number of numbers—those divisible by the current finite set of primes—while always leaving behind an infinite subset of natural numbers. These survivors consistently take the form \(6n-1\) and \(6n+1\), as captured by the function
 
-\[
-F(n) = (6n-1, 6n+1).
-\]
+`F(n) = (6n-1, 6n+1)`
 
 Because each sieving step only eliminates a finite portion of an infinite set, there will always be new pairs that have not been removed. This ensures that every iteration contributes a new candidate pair to the list. The inherent infinity of the natural numbers combined with the finite impact of each sieving operation means that the process never terminates and continues to generate new twin prime candidates indefinitely.
