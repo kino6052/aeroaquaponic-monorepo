@@ -200,7 +200,51 @@ F: \mathbb{N} \to \mathbb{Z} \times \mathbb{Z}
 F(n) = (6n-1, 6n+1)
 \]
 
+```python
+def F(n):
+    """
+    Maps a natural number n to a twin prime candidate pair (6n-1, 6n+1).
+
+    Parameters:
+      n (int): A natural number (n >= 1)
+
+    Returns:
+      tuple: A pair (6n-1, 6n+1) representing potential twin primes.
+    """
+    return (6 * n - 1, 6 * n + 1)
+
+# Example usage: display F(n) for n = 1 to 5
+for i in range(1, 6):
+    print(f"F({i}) =", F(i))
+```
+
 This function expresses the fundamental structure of twin prime candidates after applying the sieve \( S(\{2,3\}) \), which leaves numbers of the form \( 6n \pm 1 \). The function \( F \) converts natural numbers into these pairs, allowing us to systematically examine and filter potential twin primes through the sifting process.
+
+```python
+import math
+
+def candidate_number(n, primes):
+    """
+    Computes candidate numbers using the formula:
+      candidate = n * (product of primes) ± 1.
+
+    Parameters:
+      n (int): A natural number multiplier.
+      primes (list of int): List of prime numbers.
+
+    Returns:
+      tuple: (n * product + 1, n * product - 1)
+    """
+    product = math.prod(primes)
+    return (n * product + 1, n * product - 1)
+
+# Example usage:
+primes_example = [2, 3, 5]
+for n in range(1, 4):
+    plus, minus = candidate_number(n, primes_example)
+    print(f"For n={n} with primes {primes_example}: candidate = {plus} and {minus}")
+
+```
 
 - **Initial Step:**  
   With a starting set \( A \) (say, \( A = \{1\} \)), the twin sieve TS({1}) preserves numbers of the form \( n \times 6 \times F(1)[0] \times F(1)[1] \pm 1 \). This guarantees that these numbers are not divisible by the primes associated with \( F(1) \).
