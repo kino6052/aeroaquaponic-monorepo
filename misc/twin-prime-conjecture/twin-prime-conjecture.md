@@ -128,7 +128,7 @@ The twin prime conjecture asserts that there are infinitely many pairs of primes
 
 > **S({2, 3}) = { 2, 3, 6n ± 1 }**
 
-This means that apart from the primes 2 and 3, every remaining number is either 6n – 1 or 6n + 1. Notice that for any natural number \( n \), the pair \((6n-1,\,6n+1)\) is a candidate for twin primes. Although subsequent sifting with additional primes may remove some candidates, the underlying structure guarantees that infinitely many such pairs persist.
+This means that apart from the primes 2 and 3, every remaining number is either 6n - 1 or 6n + 1. Notice that for any natural number \( n \), the pair \((6n-1,\,6n+1)\) is a candidate for twin primes. Although subsequent sifting with additional primes may remove some candidates, the underlying structure guarantees that infinitely many such pairs persist.
 
 ### The Role of S({2, 3}) and Intervals of 6
 
@@ -149,27 +149,27 @@ Our computational framework uses an iterative process (or sieve) that mimics Euc
 
 1. **Step SP(2):**
 
-   - Start with S({2, 3}), which produces all numbers of the form \(6n \pm 1\).
-   - Since \( n \) can be any natural number, there are infinitely many numbers in each of the forms \(6n+1\) and \(6n-1\).
+   - Start with S({2, 3}), which produces all numbers of the form `6*n + 1` or `6*n - 1`.
+   - Since `n` can be any natural number, there are infinitely many numbers in each of the forms `6*n + 1` and `6*n - 1`.
    - Consequently, there are infinitely many candidate twin prime pairs.
 
 2. **Step SP(3):**
 
    - Next, apply the sieve S({2, 3, 5}).
-   - The filtered set will contain numbers like \(2 \times 3 \times 5 \, n \pm 1\), which—while expressed in a slightly altered form—still preserves an infinite structure.
-   - Again, for every \( n \), the structure guarantees twin prime candidates remain.
+   - The filtered set will contain numbers like `2 * 3 * 5 * n + 1` and `2 * 3 * 5 * n - 1`, which—while expressed in a slightly altered form—still preserves an infinite structure.
+   - Again, for every `n` in range(1, float('inf')), the structure guarantees twin prime candidates remain.
 
 3. **General Inductive Step:**
-   - Assume that after \( k \) steps, the sieve \( SP(k)=S(\{2, 3, \dots, p_k\}) \) leaves infinitely many numbers of the form:
-     \[
-     n \cdot (p_1 \times p_2 \times \dots \times p_k) \pm 1.
-     \]
-   - In the next step, adding \( p\_{k+1} \) eliminates only finitely many numbers, so infinitely many numbers of the same form still persist.
+   - Assume that after k steps, the sieve SP(k)=S([2, 3, ..., p_k]) leaves infinitely many numbers of the form:
+     ```python
+     n * (p_1 * p_2 * ... * p_k) + 1  # or minus 1
+     ```
+   - In the next step, adding p_k+1 eliminates only finitely many numbers, so infinitely many numbers of the same form still persist.
    - This inductive guarantee mirrors the classical analytic argument but is framed within our computational process.
 
 ### A Computational Bridge: The Twin Sieve Function
 
-To further illustrate the computational approach, consider a modified sieve—called the _Twin Sieve_—that targets numbers representable as pairs \((6n-1, 6n+1)\). The idea is to apply a filtering function that ensures these pairs remain candidate twin primes.
+To further illustrate the computational approach, consider a modified sieve—called the _Twin Sieve_—that targets numbers representable as pairs `(6n-1, 6n+1)`. The idea is to apply a filtering function that ensures these pairs remain candidate twin primes.
 
 Below is a Python function that demonstrates the concept. (Note that while this code is not optimized for performance, it clearly shows the idea.)
 
@@ -202,7 +202,7 @@ print("Twin prime candidates:", twin_sieve([1,2,3,5,7,10], range(1, 100)))
 
 #### How It Works:
 
-We define a function \( F \) that maps natural numbers to pairs of integers that represent potential twin prime candidates:
+We define a function `F(n)` that maps natural numbers to pairs of integers that represent potential twin prime candidates:
 
 ```python
 def F(n):
@@ -222,7 +222,7 @@ for i in range(1, 6):
     print(f"F({i}) =", F(i))
 ```
 
-This function expresses the fundamental structure of twin prime candidates after applying the sieve \( S(\{2,3\}) \), which leaves numbers of the form \( 6n \pm 1 \). The function \( F \) converts natural numbers into these pairs, allowing us to systematically examine and filter potential twin primes through the sifting process.
+This function expresses the fundamental structure of twin prime candidates after applying the sieve S([2,3]), which leaves numbers of the form 6n + 1 and 6n - 1. The function F converts natural numbers into these pairs, allowing us to systematically examine and filter potential twin primes through the sifting process.
 
 ```python
 def generate_pairs_from_indices(indices):
@@ -232,13 +232,19 @@ print(generate_pairs_from_indices([1,2,3,5,7,10]))
 ```
 
 - **Initial Step:**  
-  With a starting set \( A \) (say, \( A = \{1\} \)), the twin sieve TS({1}) preserves numbers of the form \( n \times 6 \times F(1)[0] \times F(1)[1] \pm 1 \). This guarantees that these numbers are not divisible by the primes associated with \( F(1) \).
+  With a starting set `A` (say, `A = [1]`), the twin sieve `TS([1])` preserves numbers of the form `n * 6 * F(1)[0] * F(1)[1] + 1` and `n * 6 * F(1)[0] * F(1)[1] - 1`. This guarantees that these numbers are not divisible by the primes associated with `F(1)`.
 
 - **Subsequent Steps:**  
-  When new indices (representing further primes) are added (for example, \( A = \{1, 2\} \), then \( A = \{1, 2, 3\} \)), the structure of the sieve ensures that an infinite set of numbers remains. Each stage removes only a finite subset, leaving infinitely many candidates in the form:
-  \[
-  n \times 6 \times \prod\_{i=1}^{k}F(i)[0]F(i)[1] \pm 1.
-  \]
+  When new indices (representing further primes) are added (for example, `A = [1, 2]`, then `A = [1, 2, 3]`), the structure of the sieve ensures that an infinite set of numbers remains. Each stage removes only a finite subset, leaving infinitely many candidates in the form:
+
+  ```python
+  def candidate_formula(n, A):
+      product = 1
+      for i in A:
+          product *= F(i)[0] * F(i)[1]
+      return [n * 6 * product - 1, n * 6 * product + 1]
+  ```
+
   This reinforces the claim that twin primes are not exhaustible through the sifting process.
 
 ```python
@@ -255,10 +261,19 @@ print(generate_pairs_from_indices(twin_sieve_recursive([1], [a for a in range(1,
 ### Bridging Computation and Analysis
 
 The classical proof of the infinitude of primes uses constructions like
-\[
-p_1 \times p_2 \times \dots \times p_n \pm 1
-\]
-to show that there is always another prime. In our computational framework, a similar guarantee is provided by the iterative sifting process: no matter how many primes are used to filter out candidates, there remain infinitely many numbers that take the form necessary for twin primes. The numbers \( n \cdot (p_1 p_2 \dots p_k) \pm 1 \) serve as an analytical guarantee—they demonstrate that our sieve will never eliminate every candidate pair.
+
+```python
+def product_plus_minus_one(primes):
+    """
+    Calculate p1 * p2 * ... * pn ± 1 for a list of primes
+    """
+    product = 1
+    for p in primes:
+        product *= p
+    return [product - 1, product + 1]
+```
+
+to show that there is always another prime. In our computational framework, a similar guarantee is provided by the iterative sifting process: no matter how many primes are used to filter out candidates, there remain infinitely many numbers that take the form necessary for twin primes. The numbers `n * product(primes) - 1` and `n * product(primes) + 1` serve as an analytical guarantee—they demonstrate that our sieve will never eliminate every candidate pair.
 
 While this guarantee is analytic, our approach also offers a computational perspective: even though some twin prime candidates might get removed in later iterations, at every step the sieve leaves behind an infinite set of numbers that fit the twin prime pattern. This disconnect between the computation (which might seem to “lose” some twin pairs) and the analytic guarantee (which confirms their infinite existence) is a key point of confusion that this framework helps to clarify.
 
@@ -266,13 +281,11 @@ While this guarantee is analytic, our approach also offers a computational persp
 
 By integrating the twin sieve into our overall computational prime framework, we argue as follows:
 
-- **For every finite set \( \{2, 3, \dots, p_k\} \) used in the sieve, infinitely many numbers remain in the form \( n \cdot (p_1 p_2 \dots p_k) \pm 1 \).**
-- **These numbers, expressible as \( 6n \pm 1 \) in the initial step and in analogous forms in later steps, are precisely the structure that underpins twin primes.**
+- **For every finite set `[2, 3, ..., p_k]` used in the sieve, infinitely many numbers remain in the form `n * product(primes) - 1` and `n * product(primes) + 1`.**
+- **These numbers, expressible as `6*n - 1` and `6*n + 1` in the initial step and in analogous forms in later steps, are precisely the structure that underpins twin primes.**
 - **Thus, at each step of the sifting process, no matter how far we progress, there will always be infinitely many numbers that conform to the twin prime structure.**
 
 This argument shows, in a computational context, why the process of iteratively filtering natural numbers never exhausts the possibility of finding twin primes. In other words, our sifting process is a computational embodiment of the twin prime conjecture: the infinitude of twin primes is preserved at every step.
-
-### Conclusion
 
 The twin sieve process in our computational primes framework is guaranteed to be never-ending. At each step, the process removes only a finite number of numbers—those divisible by the current finite set of primes—while always leaving behind an infinite subset of natural numbers. These survivors consistently take the form \(6n-1\) and \(6n+1\), as captured by the function
 
