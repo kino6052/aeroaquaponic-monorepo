@@ -148,6 +148,7 @@ sieve([2,3], N)
 def twin_sieve(P, N):
     """
     Filters the list N for twin prime candidates based on divisibility tests.
+    NOTE: We don't consider 2 and 3 because those numbers themselves were used to create a sieve that  generated the twin prime candidates (6n-1, 6n+1)
 
     Parameters:
       P (list): A list of indices representing previously identified prime-related values.
@@ -162,7 +163,7 @@ def twin_sieve(P, N):
             (6*n + 1) % (6*p - 1) != 0 and
             (6*n - 1) % (6*p + 1) != 0 and
             (6*n - 1) % (6*p - 1) != 0
-            for p in P  # Ensure all prime candidates are removed
+            for p in range(1, P[-1]+1) # to make sure we remove all composite numbers and prime numbers up to and including the 6*p+1
         ),
         N
     ))
