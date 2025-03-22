@@ -8,6 +8,8 @@ This article is the least detailed (Level 1).
 
 The purpose of this article is to demonstrate how simple yet unconventional definitions can lead to interesting mathematical insights.
 
+**This article doesn't claim to have proven longstanding conjectures within the conventional number theory. The proof is only valid within framework.**
+
 ## Why this Argument is Likely to Be Rejected by Mathematicians
 
 This argument does not rely on conventional definitions of prime numbers and does not use a "rigorous" mathematical proof structure. Instead, it relies more on demonstration and simple logic.
