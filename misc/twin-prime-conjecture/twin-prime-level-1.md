@@ -2,36 +2,36 @@
 
 ## Introduction
 
-This article describes several mathematical proofs using a conceptual framework called "Computational Prime Number Framework" in three levels of detail.
+This article describes several mathematical proofs using a conceptual framework called the "Computational Prime Number Framework" at three levels of detail.
 
-This article is the least detailed (level 1).
+This article is the least detailed (Level 1).
 
-The reason for this article is to demonstrate how simple yet unconventional definitions may lead to interesting mathematical insights.
+The purpose of this article is to demonstrate how simple yet unconventional definitions can lead to interesting mathematical insights.
 
-## Why this argument is likely to be rejected by mathematicians
+## Why this Argument is Likely to Be Rejected by Mathematicians
 
-This argument doesn't rely on conventional definitions of prime numbers and doesn't use "rigorous" mathematical proof structure. It relies more on demonstration and simple logic.
+This argument does not rely on conventional definitions of prime numbers and does not use a "rigorous" mathematical proof structure. Instead, it relies more on demonstration and simple logic.
 
 ## Sieve
 
 ```python
 def sieve(P, N):
     """
-    Filters out numbers from N (natural numbers) that are divisible by any element in P (primes)
+    Filters out numbers from N (natural numbers) that are divisible by any element in P (primes).
 
     Parameters:
       P (list): Known primes.
       N (list): List of numbers to filter (starting with numbers > 1).
 
     Returns:
-      list: Numbers from N not divisible by any element in P.
+      list: Numbers from N that are not divisible by any element in P.
     """
     return [n for n in N if all(n % p != 0 for p in P)]
 
 print(sieve([2], [n for n in range(2, 40)]))
 # [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]
 
-print(sieve([2,3], [n for n in range(2,40)]))
+print(sieve([2,3], [n for n in range(2, 40)]))
 # [5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37]
 ```
 
@@ -47,7 +47,7 @@ def recursive_sifting(P, N):
       N (list): List of natural numbers (starting with numbers > 1) (assumed infinite conceptually).
 
     Returns:
-      list: Infinite conceptual sequence of primes (limited by recursion depth in practice).
+      list: An infinite conceptual sequence of primes (limited by recursion depth in practice).
     """
     N = sieve(P, N)
     if not N:
@@ -59,15 +59,15 @@ def recursive_sifting(P, N):
     return recursive_sifting(P, N)
 
 # Example usage:
-print(recursive_sifting([], [n for n in range(2,50)]))
+print(recursive_sifting([], [n for n in range(2, 50)]))
 # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 ```
 
 ## Definition of Prime
 
-Primes in our framework are defined as number resulting from a sieve like above.
+Primes in our framework are defined as numbers resulting from a sieve like the one above.
 
-If we have a finite set of P, the our primes will not only be P themselves but also multiples of each of them.
+If we have a finite set P, then our primes will not only be P themselves but also include numbers that are not multiples of any element in P.
 
 ```python
 # Example primes resulting from P = [2]
@@ -75,9 +75,9 @@ print(sieve([2], [n for n in range(2, 40)]))
 # [3, 5, 7, 9, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39]
 ```
 
-Essentially they are holes in the sieve.
+Essentially, they are the "holes" in the sieve.
 
-However, if we want to create an iterative sieve that would keep adding first element from the result to P, we would get a set that is exactly the set of prime numbers.
+However, if we iteratively update the sieve by adding the first element from the result to P, we will obtain exactly the set of prime numbers.
 
 ```python
 # Example usage:
@@ -87,32 +87,32 @@ print(recursive_sifting([], [n for n in range(2,50)]))
 
 ## Euclid's Proof
 
-The original proof - for any finite set of primes, one can construct a number that is not divisible by any of them, thus contradicting the finitude assumption.
+The original proof states that for any finite set of primes, one can construct a number that is not divisible by any of them, thus contradicting the assumption of finiteness.
 
-Here we assert that every step of the sifting process is guaranteed to have an infinite candidate list and we can always select the first number from that list, thus we will always keep adding new number to our resulting set and thus proving that there are infinite amount of such numbers.
+Here, we assert that every step of the sifting process is guaranteed to have an infinite candidate list, and we can always select the first number from that list. Thus, we will always keep adding new numbers to our resulting set, thereby proving that there are an infinite number of such numbers.
 
 ```python
 # NOT EXECUTABLE
 # Euclid's Proof
 
-# inductive step 1
+# Inductive step 1
 sieve([2], [n for n in range(2, float('inf'))])
 # [3, 5, 7, 9, 11, ...]
 
-# inductive step 2
+# Inductive step 2
 sieve([2, 3], [n for n in range(2, float('inf'))])
 # [5, 7, 9, 11, ...]
 
-# let's assume there is a number k (resulting from sieve), that will not generate any further candidates
+# Assume there is a number k (resulting from sieve) that will not generate any further candidates.
 
-# inductive step k
+# Inductive step k
 sieve([2,3,5,7...,k], [n for n in range(2, float('inf'))])
 # [5*7*11*...*k+1, 5*7*11*...*k*2+1, ...,5*7*11*...*k*n+1]
 
-# we see that we know that k will generate infinitely many candidates as we can construct infinitely many indivisible examples)
+# Since k continues to generate infinitely many candidates that contradicted our assumption, we conclude that an infinite number of primes must exist.
 ```
 
-Thus we are guaranteed to have an infinite number of primes from such a process.
+Thus, we are guaranteed to have an infinite number of primes through this process.
 
 ## Twin Primes Proof
 
