@@ -1,156 +1,169 @@
 I'll help you create a comprehensive list of common adjectives organized by categories, excluding colors. This will be useful for language learners.
 
 ### Physical Shapes
-- round
-- square
-- rectangular
-- triangular
-- flat
-- curved
-- straight
-- circular
-- oval
-- pointed
-- crooked
-- hollow
+
+- round (yuán)
+- square (fāng)
+- rectangular (cháng fāng xíng)
+- triangular (sān jiǎo xíng)
+- flat (píng)
+- curved (qū)
+- straight (zhí)
+- circular (yuán xíng)
+- oval (tuǒ yuán xíng)
+- pointed (jiān)
+- crooked (wāi)
+- hollow (kōng)
 
 ### Body/Physical Appearance
-- tall
-- short
-- thin
-- thick
-- slim
-- muscular
-- fit
-- broad
-- narrow
-- slender
-- plump
-- lean
+
+- tall (gāo)
+- short (ǎi)
+- thin (shòu)
+- thick (hòu)
+- slim (miáo)
+- muscular (jiānzhuàng)
+- fit (jiànkāng)
+- broad (kuān)
+- narrow (zhǎi)
+- slender (xiùzhì)
+- plump (pàng)
+- lean (shòu)
 
 ### Size
-- big
-- small
-- tiny
-- huge
-- enormous
-- miniature
-- massive
-- giant
-- little
-- medium
-- large
-- wide
+
+- big (dà)
+- small (xiǎo)
+- tiny (xiǎo xiǎo de)
+- huge (jùdà)
+- enormous (jùdà wú bǐ)
+- miniature (xiǎoxíng)
+- massive (qiángdà)
+- giant (jùdà)
+- little (xiǎo)
+- medium (zhōng)
+- large (dà)
+- wide (kuān)
 
 ### Texture
-- smooth
-- rough
-- soft
-- hard
-- bumpy
-- silky
-- fuzzy
-- coarse
-- slippery
-- sticky
-- fluffy
-- crispy
+
+- smooth (guāng huá)
+- rough (cū cāo)
+- soft (ruǎn)
+- hard (yìng)
+- bumpy (bù píng)
+- silky (sī huá)
+- fuzzy (máo róng róng)
+- coarse (cū lì)
+- slippery (huá)
+- sticky (nián)
+- fluffy (róng róng)
+- crispy (cuì)
 
 ### Temperature
-- hot
-- cold
-- warm
-- cool
-- freezing
-- boiling
-- chilly
-- mild
+
+- hot (rè)
+- cold (lěng)
+- warm (nuǎn)
+- cool (liáng)
+- freezing (dòng)
+- boiling (fèi téng)
+- chilly (liáng)
+- mild (wēn hé)
 
 ### Personality/Character
-- kind
-- mean
-- friendly
-- shy
-- brave
-- clever
-- funny
-- serious
-- lazy
-- energetic
-- quiet
-- loud
+
+- kind (hǎoxīn)
+- mean (xiōngè)
+- friendly (yǒuhǎo)
+- shy (hàixiū)
+- brave (yǒnggǎn)
+- clever (cōngmíng)
+- funny (hǎoxiào)
+- serious (yánsù)
+- lazy (lǎnduò)
+- energetic (yǒu jīnglì)
+- quiet (ānjìng)
+- loud (chǎo)
 
 ### Quality/Condition
-- new
-- old
-- clean
-- dirty
-- broken
-- fixed
-- fresh
-- stale
-- wet
-- dry
-- empty
-- full
+
+- new (xīn)
+- old (jiù)
+- clean (gānjìng)
+- dirty (zāng)
+- broken (huài)
+- fixed (xiū hǎo)
+- fresh (xīnxiān)
+- stale (bàihuài)
+- wet (shī)
+- dry (gān)
+- empty (kōng)
+- full (mǎn)
 
 ### Weight
-- heavy
-- light
-- weightless
-- solid
-- dense
-- feathery
+
+- heavy (zhòng)
+- light (qīng)
+- weightless (wú zhòng)
+- solid (gù tǐ)
+- dense (mì dù gāo)
+- feathery (qīng ruò yǔmáo)
 
 ### Speed/Pace
-- fast
-- slow
-- quick
-- rapid
-- steady
-- swift
-- sluggish
-- speedy
+
+- fast (kuài)
+- slow (màn)
+- quick (kuài)
+- rapid (xùnsù)
+- steady (wěndìng)
+- swift (kuàisù)
+- sluggish (chìdùn)
+- speedy (kuài)
 
 ### Age
-- young
-- old
-- ancient
-- modern
-- fresh
-- mature
-- elderly
-- youthful
+
+- young (niánqīng)
+- old (lǎo)
+- ancient (gǔ)
+- modern (xiàndài)
+- fresh (xīnxiān)
+- mature (chéngshú)
+- elderly (lǎonián)
+- youthful (qīngchūn)
 
 ### Value/Worth
-- expensive
-- cheap
-- valuable
-- worthless
-- precious
-- affordable
-- priceless
-- costly
+
+- expensive (guì)
+- cheap (piányi)
+- valuable (yǒu jiàzhí)
+- worthless (méi jiàzhí)
+- precious (bǎoguì)
+- affordable (fúhé jīngjì)
+- priceless (wújiàde)
+- costly (hěn guì)
 
 ### General Qualities
-- beautiful
-- ugly
-- pleasant
-- unpleasant
-- comfortable
-- uncomfortable
-- simple
-- complex
-- difficult
-- easy
-- dangerous
-- safe
+
+- beautiful (měilì)
+- ugly (chǒu)
+- pleasant (yúkuài)
+- unpleasant (bù yúkuài)
+- comfortable (shūfú)
+- uncomfortable (bù shūfú)
+- simple (jiǎndān)
+- complex (fùzá)
+- difficult (nán)
+- easy (róngyì)
+- dangerous (wēixiǎn)
+- safe (ānquán)
 
 This list covers many common adjectives that language learners would find useful in everyday conversations and descriptions. Each category helps organize the vocabulary in a way that makes it easier to remember and use in context.
 
 Here's a comprehensive list of common verbs organized by categories, which are essential for language learners:
 
 ### Movement
+
 - walk
 - run
 - jump
@@ -165,6 +178,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - bounce
 
 ### Daily Routines
+
 - wake up
 - sleep
 - eat
@@ -179,6 +193,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - wash
 
 ### Communication
+
 - talk
 - speak
 - say
@@ -193,6 +208,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - explain
 
 ### Mental Actions
+
 - think
 - learn
 - understand
@@ -207,6 +223,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - solve
 
 ### Physical Actions
+
 - push
 - pull
 - lift
@@ -221,6 +238,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - close
 
 ### Creation/Destruction
+
 - make
 - build
 - create
@@ -235,6 +253,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - separate
 
 ### Emotions/Feelings
+
 - love
 - hate
 - like
@@ -249,6 +268,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - relax
 
 ### Social Interactions
+
 - help
 - meet
 - visit
@@ -263,6 +283,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - introduce
 
 ### Work/Study
+
 - teach
 - learn
 - study
@@ -277,6 +298,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - review
 
 ### Food Related
+
 - eat
 - drink
 - cook
@@ -291,6 +313,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - slice
 
 ### Travel/Transportation
+
 - go
 - come
 - arrive
@@ -305,6 +328,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - land
 
 ### Change/Transformation
+
 - become
 - grow
 - change
@@ -319,6 +343,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - modify
 
 ### Household
+
 - clean
 - wash
 - sweep
@@ -333,6 +358,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - place
 
 ### Technology
+
 - click
 - type
 - download
@@ -347,6 +373,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - connect
 
 ### Basic Existence/State
+
 - be
 - exist
 - live
@@ -361,6 +388,7 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 - smell
 
 ### Beginning/Ending
+
 - start
 - begin
 - finish
