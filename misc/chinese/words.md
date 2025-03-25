@@ -164,242 +164,242 @@ Here's a comprehensive list of common verbs organized by categories, which are e
 
 ### Movement
 
-- walk
-- run
-- jump
-- skip
-- crawl
-- climb
-- swim
-- fly
-- dance
-- hop
-- slide
-- bounce
+- walk (zǒu)
+- run (pǎo)
+- jump (tiào)
+- skip (tiàoyuè)
+- crawl (pá)
+- climb (pá shàng)
+- swim (yóuyǒng)
+- fly (fēi)
+- dance (tiàowǔ)
+- hop (tiàoyuè)
+- slide (huá)
+- bounce (tàntiào)
 
 ### Daily Routines
 
-- wake up
-- sleep
-- eat
-- drink
-- shower
-- brush
-- dress
-- work
-- study
-- cook
-- clean
-- wash
+- wake up (xǐng lái)
+- sleep (shuì jiào)
+- eat (chī)
+- drink (hē)
+- shower (xǐzǎo)
+- brush (shuā)
+- dress (chuān yī)
+- work (gōngzuò)
+- study (xuéxí)
+- cook (zuò fàn)
+- clean (qīngxǐ)
+- wash (xǐ)
 
 ### Communication
 
-- talk
-- speak
-- say
-- tell
-- ask
-- answer
-- write
-- read
-- listen
-- shout
-- whisper
-- explain
+- talk (shuō huà)
+- speak (shuō)
+- say (shuō)
+- tell (gào sù)
+- ask (wèn)
+- answer (huí dá)
+- write (xiě)
+- read (dú)
+- listen (tīng)
+- shout (hǎn)
+- whisper (xiāo shuō)
+- explain (jiěshì)
 
 ### Mental Actions
 
-- think
-- learn
-- understand
-- forget
-- remember
-- know
-- believe
-- decide
-- plan
-- imagine
-- dream
-- solve
+- think (xiǎng)
+- learn (xué)
+- understand (dǒng)
+- forget (wàng)
+- remember (jì)
+- know (zhī dào)
+- believe (xiāng xìn)
+- decide (juédìng)
+- plan (jìhuà)
+- imagine (xiǎng xiàng)
+- dream (mèng)
+- solve (jiě jué)
 
 ### Physical Actions
 
-- push
-- pull
-- lift
-- carry
-- throw
-- catch
-- hold
-- drop
-- break
-- fix
-- open
-- close
+- push (tuī)
+- pull (lā)
+- lift (tái)
+- carry (bān)
+- throw (rēng)
+- catch (zhuō)
+- hold (ná)
+- drop (diào)
+- break (dǎ pò)
+- fix (xiū)
+- open (kāi)
+- close (guān)
 
 ### Creation/Destruction
 
-- make
-- build
-- create
-- destroy
-- draw
-- paint
-- design
-- erase
-- cut
-- join
-- combine
-- separate
+- make (zuò)
+- build (jiàn)
+- create (chuàngzào)
+- destroy (huǐmiè)
+- draw (huà)
+- paint (huà)
+- design (shèjì)
+- erase (shānchú)
+- cut (jiǎn)
+- join (jiārù)
+- combine (hébìng)
+- separate (fēnlí)
 
 ### Emotions/Feelings
 
-- love
-- hate
-- like
-- dislike
-- enjoy
-- suffer
-- cry
-- laugh
-- smile
-- frown
-- worry
-- relax
+- love (ài)
+- hate (hèn)
+- like (xǐhuān)
+- dislike (bù xǐhuān)
+- enjoy (xiǎngshòu)
+- suffer (shòukǔ)
+- cry (kū)
+- laugh (xiào)
+- smile (wēixiào)
+- frown (zhòuméi)
+- worry (dānxīn)
+- relax (fàngsōng)
 
 ### Social Interactions
 
-- help
-- meet
-- visit
-- invite
-- share
-- give
-- take
-- receive
-- thank
-- apologize
-- greet
-- introduce
+- help (bāngzhù)
+- meet (jiànmiàn)
+- visit (fǎngwèn)
+- invite (yāoqǐng)
+- share (fēnxiǎng)
+- give (gěi)
+- take (ná)
+- receive (shōu)
+- thank (gǎnxiè)
+- apologize (dàoqiàn)
+- greet (wènhǎo)
+- introduce (jièshào)
 
 ### Work/Study
 
-- teach
-- learn
-- study
-- practice
-- write
-- read
-- calculate
-- research
-- analyze
-- prepare
-- present
-- review
+- teach (jiāo)
+- learn (xué)
+- study (xuéxí)
+- practice (liànxí)
+- write (xiě)
+- read (dú)
+- calculate (jìsuàn)
+- research (yánjiū)
+- analyze (fēnxī)
+- prepare (zhǔnbèi)
+- present (chénshì)
+- review (fùxí)
 
 ### Food Related
 
-- eat
-- drink
-- cook
-- bake
-- fry
-- boil
-- taste
-- chew
-- swallow
-- serve
-- prepare
-- slice
+- eat (chī)
+- drink (hē)
+- cook (zuò fàn)
+- bake (kǎo)
+- fry (zhá)
+- boil (zhǔ)
+- taste (cháng)
+- chew (jiáo)
+- swallow (tūn)
+- serve (shàng cài)
+- prepare (zhǔnbèi)
+- slice (qiē)
 
 ### Travel/Transportation
 
-- go
-- come
-- arrive
-- leave
-- return
-- travel
-- drive
-- ride
-- fly
-- sail
-- depart
-- land
+- go (qù)
+- come (lái)
+- arrive (dàodá)
+- leave (líkāi)
+- return (huílái)
+- travel (lǚxíng)
+- drive (kāichē)
+- ride (qíchē/qímǎ)
+- fly (fēi)
+- sail (háng/chuán)
+- depart (chūfā)
+- land (jiàngluò)
 
 ### Change/Transformation
 
-- become
-- grow
-- change
-- transform
-- turn
-- improve
-- develop
-- increase
-- decrease
-- expand
-- shrink
-- modify
+- become (biàn chéng)
+- grow (zhǎng)
+- change (gǎibiàn)
+- transform (zhuǎnbiàn)
+- turn (zhuǎn)
+- improve (gǎishàn)
+- develop (fāzhǎn)
+- increase (zēngjiā)
+- decrease (jiǎnshǎo)
+- expand (kuòdà)
+- shrink (shōusuō)
+- modify (xiūgǎi)
 
 ### Household
 
-- clean
-- wash
-- sweep
-- dust
-- vacuum
-- organize
-- arrange
-- store
-- fold
-- iron
-- hang
-- place
+- clean (qīnglǐ)
+- wash (xǐ)
+- sweep (sǎo)
+- dust (cā chén)
+- vacuum (xī chén)
+- organize (zhěnglǐ)
+- arrange (ānpái)
+- store (cúnfàng)
+- fold (zhé)
+- iron (yùn)
+- hang (guà)
+- place (fàngzhì)
 
 ### Technology
 
-- click
-- type
-- download
-- upload
-- save
-- delete
-- search
-- browse
-- install
-- update
-- restart
-- connect
+- click (diǎn jī)
+- type (dǎ zì)
+- download (xiàzài)
+- upload (shàngchuán)
+- save (bǎocún)
+- delete (shānchú)
+- search (sōusuǒ)
+- browse (liúlǎn)
+- install (ānzhuāng)
+- update (gēngxīn)
+- restart (chóngqǐ)
+- connect (liánjiē)
 
 ### Basic Existence/State
 
-- be
-- exist
-- live
-- stay
-- remain
-- continue
-- seem
-- appear
-- look
-- feel
-- sound
-- smell
+- be (shì)
+- exist (cúnzài)
+- live (shēnghuó)
+- stay (tíngliú)
+- remain (bǎochí)
+- continue (jìxù)
+- seem (sìhū)
+- appear (chūxiàn)
+- look (kàn)
+- feel (gǎnjué)
+- sound (tīngqǐlái)
+- smell (wén)
 
 ### Beginning/Ending
 
-- start
-- begin
-- finish
-- end
-- stop
-- complete
-- quit
-- pause
-- resume
-- conclude
-- initiate
-- terminate
+- start (kāishǐ)
+- begin (kāishǐ)
+- finish (wánchéng)
+- end (jiéshù)
+- stop (tíngzhǐ)
+- complete (wánchéng)
+- quit (tuìchū)
+- pause (zàntíng)
+- resume (jìxù)
+- conclude (jiéshù)
+- initiate (kāishǐ)
+- terminate (zhōngzhǐ)
 
 This list covers essential verbs that language learners would commonly use in various situations. The categorization helps in understanding different contexts and making connections between related actions. Remember that many of these verbs can be used in multiple contexts and may have different meanings depending on how they're used.
