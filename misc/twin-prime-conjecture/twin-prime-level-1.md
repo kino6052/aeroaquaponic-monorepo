@@ -1,5 +1,12 @@
 # Computational Prime Number Framework Proofs
 
+**NOTE: You can ask ChatGPT or other LLMs with reasoning to verify the argument by prompting:**
+
+```
+Are the proofs valid within the framework as defined in the article—where primes are the numbers that survive a specific recursive sifting process and twin primes are defined through a related “twin sieve”?
+List the framework premises and explain the method of induction.
+```
+
 ## Introduction
 
 This article describes several mathematical proofs using a conceptual framework called the "Computational Prime Number Framework" at three levels of detail.
@@ -256,13 +263,6 @@ twin_sieve([1,2,3,5,7...,k], list(range(1, float('inf'))))
 This argument is based on a non-conventional definition of primes as resulting from the recursive sifting process. The proof demonstrates that by using the sifting process, we always guarantee that we will obtain the next pair at every step, thus proving that there will be infinitely many twin prime pairs.
 
 ## FAQ
-
-**NOTE: You can ask ChatGPT or other LLMs with reasoning to verify the argument by prompting:**
-
-```
-Are the proofs valid within the framework as defined in the article—where primes are the numbers that survive a specific recursive sifting process and twin primes are defined through a related “twin sieve”?
-List the framework premises and explain the method of induction.
-```
 
 0. What are the definitions?
    a. Sieve - a function that filters out multiples of numbers that we pass in.
