@@ -374,3 +374,22 @@ This argument is based on a non-conventional definition of primes as resulting f
     3. Ensure we check division by all previous prime pairs
 
     This recursive approach guarantees that at each step, we only retain numbers that are not divisible by any smaller prime, which is precisely the definition of primality. Therefore, our twin prime candidates are guaranteed to be actual twin primes.
+
+## Critical Questions
+
+1. Infinite Process Justification
+
+   - Core Concern: The recursive sieve operates on an infinite list N, but how does this translate to rigorous mathematical proof?
+   - Mathematical Perspective: For any finite set of primes P, we must demonstrate the existence of a larger twin prime pair not divisible by any p ∈ P.
+   - Implementation Insight: The twin_sieve guarantees an infinite candidate pool at each step. The first valid candidate (6n±1) is confirmed prime through divisibility checks against all numbers in [1, 6n+1], ensuring twin prime status.
+
+2. Twin Prime Sieve Specificity
+
+   - Core Concern: How does filtering indices where both 6n-1 and 6n+1 are prime ensure infinite twin prime pairs?
+   - Robustness Test: Comparison with Sieve of Sundaram (which generates primes but not all primes) provides valuable perspective.
+   - Analytical Proof: Our inductive approach, particularly the k-step counterexample, demonstrates the indefinite growth of twin prime pairs through rigorous analytical verification.
+
+3. Computational Limits and Theoretical Framework
+   - Core Concern: How to reconcile the sieve's infinite recursion with finite computational resources?
+   - Philosophical Perspective: The framework serves as a conceptual tool for mathematical reasoning, following Kantian principles of a priori knowledge.
+   - Practical Consideration: While the implementation is finite, the mathematical argument remains valid as a means of communication and mental verification, independent of computational constraints.
