@@ -257,6 +257,12 @@ This argument is based on a non-conventional definition of primes as resulting f
 
 ## FAQ
 
+0. What are the definitions?
+   a. Sieve - function that filters out multiples of known primes.
+   b. Prime Number - result of a sieve. (For a recursive sieve where we select first number from each step we will generate a list of prime numbers in their conventional definition)
+   c. Twin Sieve - a sieve that builds on top of `sieve([2,3])` that generates indices (natural numbers) that correspond to a pair from sieve([2,3]) (e.g. for index n, the pair is (6n-1, 6n+1)). This allows us to create a recursive sieve similar to how we created a recursive sieve for the Euclid's argument.
+   d. Twin Prime Pair - a pair of prime numbers (holes in the sieve) that match the conventional prime definition when a recursive algorithm is used.
+
 1. Why use finite numbers in examples rather than working directly with infinite sets?
 
    - Practical Demonstration: Finite examples make abstract concepts concrete and verifiable
@@ -270,7 +276,7 @@ This argument is based on a non-conventional definition of primes as resulting f
    - Mathematical Structure: Captures all primes > 3 in twin prime format
    - Index Mapping: Enables systematic generation of candidate pairs
    - Example: Index 1 → (6*1-1, 6*1+1) = (5,7)
-   - Connection: Parallels recursive Eratosthenes sieve approach
+   - Connection: Parallels recursive Euclid's argument
 
 3. What are twin prime indices and how do they work?
 
@@ -304,7 +310,23 @@ This argument is based on a non-conventional definition of primes as resulting f
 
 10. What empirical validation has been done to verify this approach aligns with known twin prime distributions for large numbers?
     a. The beauty of math (especially many inductive arguments ) lies in fact that it can be verified within the confines of pure logic alone. The fact that we need computational verification seems to be a turn in the wrong direction somewhere in mathematical thinking.
-11. Where is the guarantee that twin sieve results are not composite and that the sieve actually eliminates all compound numbers?
+
+11. Why each sieve step generates an infinite candidate list?
+    a. Because for each step (e.g. [2,3,5] that sieves all multiples of 2 or 3) we can construct infinitely many such candidates (e.g. 2*3*5*n-1 or 2*3*5*n+1 or similar)
+
+12. Why does recursive sifting obtain conventional primes?
+    a. The recursive sifting process systematically builds the set of primes through elimination:
+
+    - Initialization: Starts with the first prime (2) and all natural numbers > 1
+    - Recursive Step: At each iteration:
+      1. Filters out multiples of known primes using the sieve
+      2. The smallest remaining number is identified as prime
+      3. This new prime is added to the known primes set
+    - Guarantee: Each new prime is the smallest number not divisible by any previous primes
+    - Convergence: The process continues indefinitely, generating all primes
+    - Parallel: The twin prime sieve follows the same recursive elimination principle, but operates on pairs of the form (6n-1, 6n+1)
+
+13. Where is the guarantee that twin sieve results are not composite and that the sieve actually eliminates all compound numbers?
     a. The guarantee comes from our comprehensive divisibility check:
 
     ```
