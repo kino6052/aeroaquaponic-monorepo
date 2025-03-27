@@ -258,76 +258,88 @@ This argument is based on a non-conventional definition of primes as resulting f
 ## FAQ
 
 0. What are the definitions?
-   a. Sieve - function that filters out multiples of known primes.
-   b. Prime Number - result of a sieve. (For a recursive sieve where we select first number from each step we will generate a list of prime numbers in their conventional definition)
-   c. Twin Sieve - a sieve that builds on top of `sieve([2,3])` that generates indices (natural numbers) that correspond to a pair from sieve([2,3]) (e.g. for index n, the pair is (6n-1, 6n+1)). This allows us to create a recursive sieve similar to how we created a recursive sieve for the Euclid's argument.
+   a. Sieve - a function that filters out multiples of numbers that we pass in.
+   b. Prime Number - the result of a sieve. (For a recursive sieve where we select the first number from each step, we will generate a list of prime numbers in their conventional definition.)
+   c. Twin Sieve - a sieve that builds on top of `sieve([2,3])` that generates indices (natural numbers) that correspond to a pair from sieve([2,3]) (e.g., for index n, the pair is (6n-1, 6n+1)). This allows us to create a recursive sieve similar to how we created a recursive sieve for Euclid's argument.
    d. Twin Prime Pair - a pair of prime numbers (holes in the sieve) that match the conventional prime definition when a recursive algorithm is used.
 
 1. Why use finite numbers in examples rather than working directly with infinite sets?
 
-   - Practical Demonstration: Finite examples make abstract concepts concrete and verifiable
-   - Pedagogical Approach: Serves as stepping stones to understand infinite cases
-   - Computational Limitation: Python requires finite numbers for execution
-   - Mathematical Foundation: Mirrors induction's use of base cases to build general proofs
+   - Practical Demonstration: Finite examples make abstract concepts concrete and verifiable.
+   - Pedagogical Approach: Serves as stepping stones to understand infinite cases.
+   - Computational Limitation: Python requires finite numbers for execution.
+   - Mathematical Foundation: Mirrors induction's use of base cases to build general proofs.
 
 2. Where does the (6n-1, 6n+1) form originate?
 
-   - Sieve Foundation: Derived from applying sieve([2,3])
-   - Mathematical Structure: Captures all primes > 3 in twin prime format
-   - Index Mapping: Enables systematic generation of candidate pairs
-   - Example: Index 1 → (6*1-1, 6*1+1) = (5,7)
-   - Connection: Parallels recursive Euclid's argument
+   - Sieve Foundation: Derived from applying sieve([2,3]).
+   - Mathematical Structure: Captures all primes > 3 in twin prime format.
+   - Index Mapping: Enables systematic generation of candidate pairs.
+   - Example: Index 1 → (6*1-1, 6*1+1) = (5,7).
+   - Connection: Parallels recursive Euclid's argument.
 
 3. What are twin prime indices and how do they work?
 
-   - Definition: Numerical positions in the 6n±1 sequence
-   - Generation: Produced through sieve([2,3]) filtering
-   - Mapping: Each index corresponds to a potential twin prime pair
-   - Example: Index 1 → (5,7), Index 2 → (11,13)
-   - Purpose: Provides framework for recursive sifting process
+   - Definition: Numerical positions in the 6n±1 sequence.
+   - Generation: Produced through sieve([2,3]) filtering.
+   - Mapping: Each index corresponds to a potential twin prime pair.
+   - Example: Index 1 → (5,7), Index 2 → (11,13).
+   - Purpose: Provides framework for recursive sifting process.
 
 4. Does the algorithm guarantee that all remaining pairs are actual twin primes?
-   a. Within our framework, the remaining pairs are twin primes by definition - they represent the "holes" in our sifting process. As we approach infinity, these holes converge to the traditional definition of twin primes. This is analogous to how the sieve of Eratosthenes identifies primes through elimination, with the key difference being our focus on twin prime pairs rather than individual primes.
+
+   - Within our framework, the remaining pairs are twin primes by definition - they represent the "holes" in our sifting process. As we approach infinity, these holes converge to the traditional definition of twin primes. This is analogous to how the sieve of Eratosthenes identifies primes through elimination, with the key difference being our focus on twin prime pairs rather than individual primes.
 
 5. How does this computational framework relate to the conventional proof approaches for the twin prime conjecture?
-   a. The conventional proof approaches relies on the assumption that since we know that there are infinite prime numbers (from Euclid's proof), we now have to rely on that knowledge somehow to prove that there are twin primes. The main problem with this approach is that we have to forget that there are infinitely many prime numbers to prove infinitude of twin primes - because we have to construct a recursive sieve with arbitrary large steps where we can demonstrate that we will always be able to get a new pair. The fact that we know there exist infinitely many primes is the main hurdle for the thinking about the argument. We can see that twin prime sieve actually gives us not twin prime candidates but actuall twin primes while filtering all composites under the hood.
+
+   - The conventional proof approach relies on the assumption that since we know there are infinite prime numbers (from Euclid's proof), we now have to rely on that knowledge somehow to prove that there are twin primes. The main problem with this approach is that we have to forget that there are infinitely many prime numbers to prove the infinitude of twin primes - because we have to construct a recursive sieve with arbitrarily large steps where we can demonstrate that we will always be able to get a new pair. The fact that we know there exist infinitely many primes is the main hurdle for thinking about the argument. We can see that the twin prime sieve actually gives us not twin prime candidates but actual twin primes while filtering all composites under the hood.
 
 6. Can the computational approach be extended to other prime patterns beyond twins (like prime triplets or cousin primes)?
-   a. Yes, it would be easy to construct a sieve similar to recursive twin prime sieve that we demonstrated and do analogous arguments for arbitrary large gaps. For example, we can see that sieve([2,3]) (congruent modulo 6 or repeating after every 6 numbers) has (5,7) and (11,13), where 7 and 11 would correspond to gap of 4, 7 and 13 would correspond to gap 6 and 5 and 13 would have a gap of 8, and so on. This means that we now need to construct a function that would take (6n-1,6n+3) or (6n-1,6n+5) or (6n-3, 6n+3), or (6n-3, 6n+5) and so on and accumulate those while removing compound numbers.
+
+   - Yes, it would be easy to construct a sieve similar to the recursive twin prime sieve that we demonstrated and do analogous arguments for arbitrarily large gaps. For example, we can see that sieve([2,3]) (congruent modulo 6 or repeating after every 6 numbers) has (5,7) and (11,13), where 7 and 11 would correspond to a gap of 4, 7 and 13 would correspond to gap 6, and 5 and 13 would have a gap of 8, and so on. This means that we now need to construct a function that would take (6n-1,6n+3) or (6n-1,6n+5) or (6n-3, 6n+3), or (6n-3, 6n+5) and so on and accumulate those while removing compound numbers.
 
 7. What is the time complexity of the twin sieve algorithm, and how does it compare to other computational approaches?
-   a. This is not relevant to the argument, we only interested in the infinitude. Python implementation was used to be as clear of a demonstration as possible
+
+   - This is not relevant to the argument; we are only interested in the infinitude. Python implementation was used to be as clear of a demonstration as possible.
 
 8. How does induction work in the argument?
-   a. The argument employs mathematical induction in the following way:
-   b. Base Case: We demonstrate the process works for initial steps, showing the sieve generates valid twin prime candidates.
-   c. Inductive Hypothesis: Assume the sieve successfully generates twin prime candidates up to some arbitrary step k.
-   d. Inductive Step: We prove that if the hypothesis holds for step k, it must also hold for step k+1. This is achieved by: - Showing the recursive sieve structure preserves the generation of new candidates - Demonstrating that at each step, the sieve cannot eliminate all potential candidates - Proving the process remains valid for arbitrarily large k
-   e. Conclusion: Since the base case holds and the inductive step is valid for any k, the sieve must generate twin prime candidates indefinitely. This establishes the infinitude of twin primes through the inductive nature of the recursive sieve process.
+
+   - The argument employs mathematical induction in the following way:
+   - Base Case: We demonstrate the process works for initial steps, showing the sieve generates valid twin prime candidates.
+   - Inductive Hypothesis: Assume the sieve successfully generates twin prime candidates up to some arbitrary step k.
+   - Inductive Step: We prove that if the hypothesis holds for step k, it must also hold for step k+1. This is achieved by:
+     - Showing the recursive sieve structure preserves the generation of new candidates
+     - Demonstrating that at each step, the sieve cannot eliminate all potential candidates
+     - Proving the process remains valid for arbitrarily large k
+   - Conclusion: Since the base case holds and the inductive step is valid for any k, the sieve must generate twin prime candidates indefinitely. This establishes the infinitude of twin primes through the inductive nature of the recursive sieve process.
 
 9. Does this approach yield any insights about the distribution of twin primes or their density?
-   a. The infinitude argument does not require distribution knowledge. It is a false supposition. Infinitude argument only needs to show the infinitude. Distribution knowledge is a completely different concern. As a software engineer it is hard for me to tolerate such violation of conern separation.
+
+   - The infinitude argument does not require distribution knowledge. It is a false supposition. The infinitude argument only needs to show the infinitude. Distribution knowledge is a completely different concern. As a software engineer, it is hard for me to tolerate such violation of concern separation.
 
 10. What empirical validation has been done to verify this approach aligns with known twin prime distributions for large numbers?
-    a. The beauty of math (especially many inductive arguments ) lies in fact that it can be verified within the confines of pure logic alone. The fact that we need computational verification seems to be a turn in the wrong direction somewhere in mathematical thinking.
 
-11. Why each sieve step generates an infinite candidate list?
-    a. Because for each step (e.g. [2,3,5] that sieves all multiples of 2 or 3) we can construct infinitely many such candidates (e.g. 2*3*5*n-1 or 2*3*5*n+1 or similar)
+    - The beauty of math (especially many inductive arguments) lies in the fact that it can be verified within the confines of pure logic alone. The fact that we need computational verification seems to be a turn in the wrong direction somewhere in mathematical thinking.
+
+11. Why does each sieve step generate an infinite candidate list?
+
+    - Because for each step (e.g., [2,3,5] that sieves all multiples of 2 or 3) we can construct infinitely many such candidates (e.g., 2*3*5*n-1 or 2*3*5*n+1 or similar).
 
 12. Why does recursive sifting obtain conventional primes?
-    a. The recursive sifting process systematically builds the set of primes through elimination:
 
-    - Initialization: Starts with the first prime (2) and all natural numbers > 1
-    - Recursive Step: At each iteration:
-      1. Filters out multiples of known primes using the sieve
-      2. The smallest remaining number is identified as prime
-      3. This new prime is added to the known primes set
-    - Guarantee: Each new prime is the smallest number not divisible by any previous primes
-    - Convergence: The process continues indefinitely, generating all primes
-    - Parallel: The twin prime sieve follows the same recursive elimination principle, but operates on pairs of the form (6n-1, 6n+1)
+    - The recursive sifting process systematically builds the set of primes through elimination:
+      - Initialization: Starts with the first prime (2) and all natural numbers > 1
+      - Recursive Step: At each iteration:
+        1. Filters out multiples of known primes using the sieve
+        2. The smallest remaining number is identified as prime
+        3. This new prime is added to the known primes set
+      - Guarantee: Each new prime is the smallest number not divisible by any previous primes
+      - Convergence: The process continues indefinitely, generating all primes
+      - Parallel: The twin prime sieve follows the same recursive elimination principle, but operates on pairs of the form (6n-1, 6n+1)
 
 13. Where is the guarantee that twin sieve results are not composite and that the sieve actually eliminates all compound numbers?
-    a. The guarantee comes from our comprehensive divisibility check:
+
+    - The guarantee comes from our comprehensive divisibility check:
 
     ```
     all(
