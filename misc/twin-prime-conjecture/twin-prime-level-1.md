@@ -175,10 +175,16 @@ candidates = twin_sieve([1], range(1, 50))
 print("Twin prime candidate indices:", candidates)
 print("Twin prime candidates:", [(6*c-1, 6*c+1) for c in candidates])
 
+# Twin prime candidate indices: [2, 3, 5, 7, 10, 12, 17, 18, 23, 25, 28, 30, 32, 33, 35, 37, 38, 40, 42, 45, 47]
+# Twin prime candidates: [(11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73), (101, 103), (107, 109), (137, 139), (149, 151), (167, 169), (179, 181), (191, 193), (197, 199), (209, 211), (221, 223), (227, 229), (239, 241), (251, 253), (269, 271), (281, 283)]
+
 ## Step 2
 candidates = twin_sieve([1,2], range(1, 50))
 print("Twin prime candidate indices:", candidates)
 print("Twin prime candidates:", [(6*c-1, 6*c+1) for c in candidates])
+
+# Twin prime candidate indices: [3, 5, 7, 10, 12, 17, 18, 23, 25, 30, 32, 33, 38, 40, 45, 47]
+# Twin prime candidates: [(17, 19), (29, 31), (41, 43), (59, 61), (71, 73), (101, 103), (107, 109), (137, 139), (149, 151), (179, 181), (191, 193), (197, 199), (227, 229), (239, 241), (269, 271), (281, 283)]
 ```
 
 ## Twin Sifting Process
@@ -188,6 +194,7 @@ def generate_pairs_from_indices(indices):
     return [(6*n-1, 6*n+1) for n in indices]
 
 print(generate_pairs_from_indices([1,2,3,5,7,10]))
+# [(5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61)]
 ```
 
 ```python
@@ -197,7 +204,8 @@ def twin_recursive_sifting(P, N):
         return P
     return twin_recursive_sifting(P + [result[0]], N)
 
-print(generate_pairs_from_indices(twin_recursive_sifting([1], list(range(1,50))))
+print(generate_pairs_from_indices(twin_recursive_sifting([1], list(range(1,50)))))
+# [(5, 7), (11, 13), (17, 19), (29, 31), (41, 43), (59, 61), (71, 73), (101, 103), (107, 109), (137, 139), (149, 151), (179, 181), (191, 193), (197, 199), (227, 229), (239, 241), (269, 271), (281, 283)]
 ```
 
 ```python
@@ -209,7 +217,7 @@ twin_sieve([1], list(range(1, float('inf'))))
 # [2, 3, 5, 7, 10, ...]
 
 # Inductive step 2
-sieve([2, 3], list(range(1, float('inf'))))
+twin_sieve([1,2,3], list(range(1, float('inf'))))
 # [3, 5, 7, 10, ...]
 
 # Assume there exists a number k (resulting from sieve) that does not generate any further candidates.
@@ -219,7 +227,7 @@ sieve([2, 3], list(range(1, float('inf'))))
 def get_index(candidate):
     return (candidate-1)//6
 
-sieve([2,3,5,7...,k], list(range(1, float('inf'))))
+twin_sieve([1,2,3,5,7...,k], list(range(1, float('inf'))))
 # [get_index(6*(5*7*11*...*k)+1), get_index(6*(5*7*11*...*k*2)+1), ..., get_index(6*(5*7*11*...*k*n)+1)]
 
 # Since k will generate infinitely many candidates, we can always construct infinitely many indivisible examples.
