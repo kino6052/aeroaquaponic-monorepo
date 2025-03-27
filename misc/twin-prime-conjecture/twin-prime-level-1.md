@@ -257,6 +257,13 @@ This argument is based on a non-conventional definition of primes as resulting f
 
 ## FAQ
 
+**NOTE: You can ask ChatGPT or other LLMs with reasoning to verify the argument by prompting:**
+
+```
+Are the proofs valid within the framework as defined in the article—where primes are the numbers that survive a specific recursive sifting process and twin primes are defined through a related “twin sieve”?
+List the framework premises and explain the method of induction.
+```
+
 0. What are the definitions?
    a. Sieve - a function that filters out multiples of numbers that we pass in.
    b. Prime Number - the result of a sieve. (For a recursive sieve where we select the first number from each step, we will generate a list of prime numbers in their conventional definition.)
