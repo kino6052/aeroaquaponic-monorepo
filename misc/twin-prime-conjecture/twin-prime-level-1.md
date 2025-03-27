@@ -8,7 +8,7 @@ This article is the least detailed (Level 1).
 
 The purpose of this article is to demonstrate how simple yet unconventional definitions can lead to interesting mathematical insights.
 
-**This article doesn't claim to have proven longstanding conjectures within the conventional number theory. The proof is only valid within framework.**
+**This article doesn't claim to have proven longstanding conjectures within conventional number theory. The proofs are only valid within this framework.**
 
 ## Why this Argument is Likely to Be Rejected by Mathematicians
 
@@ -60,7 +60,7 @@ def recursive_sifting(P, N):
     P.append(next_prime)
     return recursive_sifting(P, N)
 
-# Example usage:
+# Example usage (finite number N is used for demonstration purposes):
 print(recursive_sifting([], [n for n in range(2, 50)]))
 # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 ```
@@ -82,7 +82,7 @@ Essentially, they are the "holes" in the sieve.
 However, if we iteratively update the sieve by adding the first element from the result to P, we will obtain exactly the set of prime numbers.
 
 ```python
-# Example usage:
+# Example usage (finite number N is used for demonstration purposes):
 print(recursive_sifting([], [n for n in range(2,50)]))
 # [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47]
 ```
@@ -128,9 +128,9 @@ sieve([2,3], N)
 # [5, 7, 11, 13, 17, 19, 23, 25, 29, 31, 35, 37]
 ```
 
-They can be generalized as `S({2, 3}) = {2, 3, 6n ± 1}`.
+They can be generalized as `S({2, 3}) = {6n ± 1}`.
 
-Every further step in the iteration will remove some of the numbers, and none of the removed numbers will remain. However, the candidates that remain are the twin primes.
+Every further step in the iteration will remove some of the numbers. However, the candidates that remain are the twin prime candidates.
 
 Here, we construct a sieve similar to the original, but instead of sieving the numbers themselves, we sieve the indices of twin prime candidates.
 
@@ -148,14 +148,19 @@ sieve([2,3], N)
 def twin_sieve(P, N):
     """
     Filters the list N for twin prime candidates based on divisibility tests.
-    NOTE: We don't consider 2 and 3 because those numbers themselves were used to create a sieve that  generated the twin prime candidates (6n-1, 6n+1)
+
+    The sieve operates on indices n where both (6n-1) and (6n+1) are prime candidates.
+    We exclude 2 and 3 since they were used to generate the initial twin prime candidate
+    form (6n ± 1) through the sieve([2,3]) operation.
 
     Parameters:
       P (list): A list of indices representing previously identified prime-related values.
-      N (list): A list of natural numbers.
+                These indices correspond to n values where (6n-1) and (6n+1) are primes.
+      N (list): A list of natural numbers to filter.
 
     Returns:
-      list: A filtered list of numbers where both (6n-1) and (6n+1) pass the divisibility tests.
+      list: A filtered list of indices n where both (6n-1) and (6n+1) pass all
+            divisibility tests against previously identified primes.
     """
     return list(filter(
         lambda n: all(
@@ -163,12 +168,16 @@ def twin_sieve(P, N):
             (6*n + 1) % (6*p - 1) != 0 and
             (6*n - 1) % (6*p + 1) != 0 and
             (6*n - 1) % (6*p - 1) != 0
-            for p in range(1, P[-1]+1) # to make sure we remove all composite numbers and prime numbers up to and including the 6*p+1
+            for p in range(1, P[-1]+1)
+            # The range ensures we test against all previously identified primes
+            # represented by their indices. This removes all composite numbers
+            # up to the current sieve step, leaving only potential twin primes.
+            # The form (6p ± 1) covers all primes > 3 due to the initial sieve([2,3]).
         ),
         N
     ))
 
-# Example usage
+# Example usage (finite number N is used for demonstration purposes)
 
 ## Step 1
 candidates = twin_sieve([1], range(1, 50))
