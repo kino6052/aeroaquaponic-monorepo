@@ -177,6 +177,9 @@ def twin_sieve(P, N):
         N
     ))
 
+# NOTE: This is essentially the same as sieve(P, N) function above, but it allows to map values
+# more conveniently, so that we could accumulate twin-primes as a result (mapped from "indices")
+
 # Example usage (finite number N is used for demonstration purposes)
 
 ## Step 1
@@ -251,3 +254,116 @@ twin_sieve([1,2,3,5,7...,k], list(range(1, float('inf'))))
 ## Conclusion
 
 This argument is based on a non-conventional definition of primes as resulting from the recursive sifting process. The proof demonstrates that by using the sifting process, we always guarantee that we will obtain the next pair at every step, thus proving that there will be infinitely many twin prime pairs.
+
+## FAQ
+
+1. Why use finite numbers in examples rather than working directly with infinite sets?
+
+   - Practical Demonstration: Finite examples make abstract concepts concrete and verifiable
+   - Pedagogical Approach: Serves as stepping stones to understand infinite cases
+   - Computational Limitation: Python requires finite numbers for execution
+   - Mathematical Foundation: Mirrors induction's use of base cases to build general proofs
+
+2. Where does the (6n-1, 6n+1) form originate?
+
+   - Sieve Foundation: Derived from applying sieve([2,3])
+   - Mathematical Structure: Captures all primes > 3 in twin prime format
+   - Index Mapping: Enables systematic generation of candidate pairs
+   - Example: Index 1 → (6*1-1, 6*1+1) = (5,7)
+   - Connection: Parallels recursive Eratosthenes sieve approach
+
+3. What are twin prime indices and how do they work?
+
+   - Definition: Numerical positions in the 6n±1 sequence
+   - Generation: Produced through sieve([2,3]) filtering
+   - Mapping: Each index corresponds to a potential twin prime pair
+   - Example: Index 1 → (5,7), Index 2 → (11,13)
+   - Purpose: Provides framework for recursive sifting process
+
+4. Does the algorithm guarantee that all remaining pairs are actual twin primes?
+   a. Within our framework, the remaining pairs are twin primes by definition - they represent the "holes" in our sifting process. As we approach infinity, these holes converge to the traditional definition of twin primes. This is analogous to how the sieve of Eratosthenes identifies primes through elimination, with the key difference being our focus on twin prime pairs rather than individual primes.
+
+5. How does this computational framework relate to the conventional proof approaches for the twin prime conjecture?
+   a. The conventional proof approaches relies on the assumption that since we know that there are infinite prime numbers (from Euclid's proof), we now have to rely on that knowledge somehow to prove that there are twin primes. The main problem with this approach is that we have to forget that there are infinitely many prime numbers to prove infinitude of twin primes - because we have to construct a recursive sieve with arbitrary large steps where we can demonstrate that we will always be able to get a new pair. The fact that we know there exist infinitely many primes is the main hurdle for the thinking about the argument. We can see that twin prime sieve actually gives us not twin prime candidates but actuall twin primes while filtering all composites under the hood.
+
+6. Can the computational approach be extended to other prime patterns beyond twins (like prime triplets or cousin primes)?
+   a. Yes, it would be easy to construct a sieve similar to recursive twin prime sieve that we demonstrated and do analogous arguments for arbitrary large gaps. For example, we can see that sieve([2,3]) (congruent modulo 6 or repeating after every 6 numbers) has (5,7) and (11,13), where 7 and 11 would correspond to gap of 4, 7 and 13 would correspond to gap 6 and 5 and 13 would have a gap of 8, and so on. This means that we now need to construct a function that would take (6n-1,6n+3) or (6n-1,6n+5) or (6n-3, 6n+3), or (6n-3, 6n+5) and so on and accumulate those while removing compound numbers.
+
+7. What is the time complexity of the twin sieve algorithm, and how does it compare to other computational approaches?
+   a. This is not relevant to the argument, we only interested in the infinitude. Python implementation was used to be as clear of a demonstration as possible
+
+8. Does this approach yield any insights about the distribution of twin primes or their density?
+   a. The infinitude argument does not require distribution knowledge. It is a false supposition. Infinitude argument only needs to show the infinitude. Distribution knowledge is a completely different concern. As a software engineer it is hard for me to tolerate such violation of conern separation.
+
+9. What empirical validation has been done to verify this approach aligns with known twin prime distributions for large numbers?
+   a. The beauty of math (especially many inductive arguments ) lies in fact that it can be verified within the confines of pure logic alone. The fact that we need computational verification seems to be a turn in the wrong direction somewhere in mathematical thinking.
+10. Where is the guarantee that twin sieve results are not composite and that the sieve actually eliminates all compound numbers?
+    a. The guarantee comes from our comprehensive divisibility check:
+
+    ```
+    all(
+        (6*n + 1) % (6*p + 1) != 0 and
+        (6*n + 1) % (6*p - 1) != 0 and
+        (6*n - 1) % (6*p + 1) != 0 and
+        (6*n - 1) % (6*p - 1) != 0
+        for p in range(1, P[-1]+1)
+    )
+    ```
+
+    Let's trace through the algorithm to demonstrate:
+
+    For n = 1 and P = [] (initial state):
+
+    - We simply return [1,2,3...n] as our starting indices.
+
+    When we select 1 as our first index (corresponding to (5,7)) and P=[1]:
+
+    We check:
+
+    ```
+    (6*1+1) % (6*1+1) != 0 and
+    (6*1+1) % (6*1-1) != 0 and
+    (6*1-1) % (6*1+1) != 0 and
+    (6*1-1) % (6*1-1) != 0
+    ```
+
+    Which simplifies to:
+
+    ```
+    7 % 7 != 0 and
+    7 % 5 != 0 and
+    5 % 7 != 0 and
+    5 % 5 != 0
+    ```
+
+    This evaluates to False (specifically because 5 % 5 = 0 and 7 % 7 = 0), correctly identifying 5 and 7 as our first twin prime pair.
+
+    For the next step, when n = 2 and P=[1]:
+
+    We check:
+
+    ```
+    (6*2+1) % (6*1+1) != 0 and
+    (6*2+1) % (6*1-1) != 0 and
+    (6*2-1) % (6*1+1) != 0 and
+    (6*2-1) % (6*1-1) != 0
+    ```
+
+    Which simplifies to:
+
+    ```
+    13 % 7 != 0 and
+    13 % 5 != 0 and
+    11 % 7 != 0 and
+    11 % 5 != 0
+    ```
+
+    This evaluates to True, confirming (11,13) as our next twin prime pair since neither 11 nor 13 is divisible by 5 or 7 (or by 2 or 3, as they were already filtered by sieve([2,3])).
+
+    By iterating this process, we systematically:
+
+    1. Identify candidates in the form (6n-1, 6n+1)
+    2. Verify they are not divisible by any previously identified primes
+    3. Ensure we check division by all previous prime pairs
+
+    This recursive approach guarantees that at each step, we only retain numbers that are not divisible by any smaller prime, which is precisely the definition of primality. Therefore, our twin prime candidates are guaranteed to be actual twin primes.
