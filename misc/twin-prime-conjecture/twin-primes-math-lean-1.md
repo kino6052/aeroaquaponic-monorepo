@@ -221,138 +221,44 @@ have hq_ge_2 : q ≥ 2 := hq_prime.two_le
 
 -- Conclusion: H1 is provable. The prime generation process never stops.
 
-/-! ### Hypothesis H2 and its Proof -/
+Okay, let's rewrite the description of the H2 process (Twin Primes Proof) to explicitly incorporate the idea that the sieve at each step must guarantee the elimination of all composites, ensuring survivors are actual twin primes, aligning with the _intent_ described in your article (especially FAQ 13 and Critical Question 1's "Implementation Insight"), even if the provided Python code's check is more limited.
 
--- Helper: Prove Factors(I) only contains elements >= 5 if I is non-empty and contains only >= 1
-lemma factors*ge_5 (I : Finset ℕ) (hI_nonempty : I.Nonempty) (hI_ge_1 : ∀ i ∈ I, i ≥ 1) :
-∀ f ∈ Factors I, f ≥ 5 := by
-intro f hf_in_factors
-simp only [Factors, filter_mem_dom, biUnion_mem, exists_prop] at hf_in_factors
-rcases hf_in_factors with ⟨i, hi_in_I_ge_1, hf_in_candidates⟩
-simp only [mem_filter, List.mem_toFinset, List.mem_append, List.mem_filter, List.mem_singleton] at hf_in_candidates
-rcases hf_in_candidates with ⟨⟨hf_prop, hf_gt_1⟩, hf_in_list⟩
-rw [List.mem_filter, List.mem_append, List.mem_singleton] at hf_in_list
-obtain (h_eq | h_eq) := hf_in_list.1
-· -- Case f = 6i - 1
-rw [h_eq] at *
-have hi_ge_1 : i ≥ 1 := (mem_filter.mp hi_in_I_ge_1).2
-by_cases hi_eq_1 : i = 1
-· rw [hi_eq_1]; norm_num -- f = 5
-· have hi_ge_2 : i ≥ 2 := Nat.succ_le_iff.mpr (Nat.one_lt_iff_ne_zero_and_ne_one.mpr ⟨ne_of_gt hi_ge_1, hi_eq_1⟩)
-rw [h_eq]
-calc 6 \* i - 1 ≥ 6 \* 2 - 1 := Nat.sub_le_sub_right (mul_le_mul_left' hi_ge_2 6) 1
+---
 
-- = 11 := by norm\*num
-- ≥ 5 := by norm*num
-  · -- Case f = 6i + 1
-  rw [h_eq] at *
-  have hi_ge_1 : i ≥ 1 := (mem_filter.mp hi_in_I_ge_1).2
-  calc 6 \* i + 1 ≥ 6 \* 1 + 1 := add_le_add_right (mul_le_mul_left' hi_ge_1 6) 1
-- = 7 := by norm\*num
-- ≥ 5 := by norm_num
+### **Rewritten H2: Twin Primes Proof (Reflecting Comprehensive Sieve Intent)**
 
--- Hypothesis H2 (Twin Sieve Non-Emptiness for next index):
--- For any finite non-empty set Ik generated (assume Ik ⊆ N1),
--- the set {n ∈ TwinSieve(Ik, N1) | n > max(Ik)} is non-empty.
-theorem HypothesisH2 (I : Finset ℕ) (hI*nonempty : I.Nonempty) (hI_ge_1 : ∀ i ∈ I, i ≥ 1) :
-Set.Nonempty { n ∈ TwinSieve I N1 | n > I.max' hI_nonempty } := by
-let F := Factors I
--- Handle empty F case (can only happen if I is empty or generates no factors > 1, but I is non-empty >=1)
-have hF_nonempty : F.Nonempty := by
-rcases hI_nonempty with ⟨i₀, hi₀_mem⟩
-simp only [Factors, filter_mem_dom, biUnion_mem, exists_prop]
-use i₀
-have hi₀_ge_1 : i₀ ≥ 1 := hI_ge_1 i₀ hi₀_mem
-refine ⟨(mem_filter.mpr ⟨hi₀_mem, hi₀_ge_1⟩), ?*⟩
--- Need to show either 6i₀-1 or 6i₀+1 is > 1 and in the list.toFinset
-simp only [List.mem_toFinset, List.mem_filter, List.mem_append, List.mem_singleton]
-have h6i0*p1_gt_1 : 6 * i₀ + 1 > 1 := by linarith [hi₀_ge_1]
-use 6 _ i₀ + 1
-refine ⟨⟨by simp, h6i0_p1_gt_1⟩, ?_⟩
-right; rfl
+**1. Initial Candidate Generation:**
 
-let Q := F.prod id
-have hQ_ge_1 : Q ≥ 1 := Finset.prod_ge_one' hF_nonempty (fun f hf => by linarith [factors_ge_5 I hI_nonempty hI_ge_1 f hf])
+- The process starts with the set of numbers remaining after applying `sieve([2, 3], N)`, where N represents the natural numbers conceptually extending to infinity.
+- These initial candidates are known to be of the form `6n ± 1` for `n ≥ 1`. Examples: `(5, 7), (11, 13), (17, 19), (23, 25), ...`
+- Each integer `n ≥ 1` serves as an **index** representing a candidate pair `(6n-1, 6n+1)`.
 
--- Candidate index n = Q
-let n := Q
-have hn_ge_1 : n ≥ 1 := hQ_ge_1
+**2. Framework Definition of Twin Primes (via Comprehensive Sieve):**
 
--- Check n ∈ N1
-have hn_in_N1 : n ∈ N1 := hn_ge_1
+- Within this framework, a "Framework Twin Prime Pair" corresponding to index `n` is defined as a pair `(6n-1, 6n+1)` that survives a **comprehensive recursive sifting process**.
+- **Comprehensive Sieve (`twin_sieve` - Conceptual Definition):** This sieve operates on the _indices_ `n`. An index `n` survives the sieve at a given step _if and only if both numbers `6n-1` and `6n+1` are prime_.
+  - **Guarantee:** To satisfy this condition, the sieve must effectively eliminate any `n` where _either_ `6n-1` or `6n+1` (or both) is composite. This implicitly requires a check equivalent to testing for divisibility by _all_ necessary primes (e.g., up to the square root of each number), ensuring that survivors are not divisible by any number other than 1 and themselves (besides 2 and 3, which were already handled).
+  - This aligns with the article's claim (FAQ 13) that the process retains only pairs where both components meet the definition of primality by eliminating all composites.
 
--- Check n survives TwinSieve(I, N1)
-have hn*survives : n ∈ TwinSieve I N1 := by
-simp only [TwinSieve, Set.mem_setOf_eq]
-refine ⟨hn_in_N1, hn_ge_1, ?*⟩ -- Need to prove the main condition
-intro f hf*in_F
--- Check (6n - 1) % f ≠ 0
-have hc1 : (6 * n - 1) % f ≠ 0 := by
-rw [Nat.mod_eq_of_lt] -- Need 6n-1 < f ? No, use modeq
-have hf_dvd_Q : f ∣ Q := Finset.dvd_prod_of_mem id hf_in_F
-rw [Nat.dvd_iff_mod_eq_zero] at hf_dvd_Q
-rw [← n] -- n = Q
-calc (6 \* Q - 1) % f = (6 \* Q + (f - 1) - f) % f := by rw [Nat.add_sub_cancel'] -- Needs proof f >= 1
--- Simpler: Use Nat.mod_sub_self
+**3. Twin Recursive Sifting Process:**
 
-- = (6 \_ Q + (f-1)) % f := Nat.mod*sub_self * \* -- Needs proof f >= 1
-- = ((6 _ Q) % f + (f - 1) % f) % f := Nat.add*mod * \_ \_
-  _ = (0 + (f-1)%f) % f := by rw[Nat.mul_mod, hf_dvd_Q, zero_mul, zero_mod]
-  \_ = (f-1)%f := by rw[zero_add]
-  \_ = f-1 := Nat.mod_eq_of_lt (Nat.sub_lt_self (by linarith[factors_ge_5 I hI_nonempty hI_ge_1 f hf_in_F]) (by norm_num))
+- This process iteratively identifies the indices `n` corresponding to Framework Twin Primes.
+- **Initialization:** Start with a base set `P` of confirmed twin prime indices (e.g., `P = [1]` corresponding to the pair (5,7)).
+- **Recursive Step:**
+  - Given the current set of confirmed indices `P_k`, search for the _smallest index_ `n` such that `n > max(P_k)` and the pair `(6n-1, 6n+1)` survives the **Comprehensive Sieve** (i.e., both `6n-1` and `6n+1` are verified as prime).
+  - Add this smallest surviving index `n` to the set: `P_{k+1} = P_k ∪ {n}`.
+- **Output:** The process generates an ordered, potentially infinite sequence of indices `P = [1, 2, 3, 5, ...]` which map directly to the sequence of Framework Twin Prime Pairs: `[(5,7), (11,13), (17,19), (29,31), ...]`.
 
-        have hf_ge_5 : f ≥ 5 := factors_ge_5 I hI_nonempty hI_ge_1 f hf_in_F
-        have h_ne_zero : f - 1 ≠ 0 := by linarith
-        exact h_ne_zero -- f-1 != 0 mod f (since f-1 != 0)
+**4. Argument for Infinitude (as presented in the article):**
 
-      -- Check (6n + 1) % f ≠ 0
-      have hc2 : (6 * n + 1) % f ≠ 0 := by
-        have hf_dvd_Q : f ∣ Q := Finset.dvd_prod_of_mem id hf_in_F
-        rw [Nat.dvd_iff_mod_eq_zero] at hf_dvd_Q
-        rw [← n] -- n = Q
-        calc (6 * Q + 1) % f = ((6 * Q) % f + 1 % f) % f := Nat.add_mod _ _ _
-                         _ = (0 + 1 % f) % f := by rw[Nat.mul_mod, hf_dvd_Q, zero_mul, zero_mod]
-                         _ = 1 % f := by rw [zero_add]
-                         _ = 1 := Nat.mod_eq_of_lt (by linarith [factors_ge_5 I hI_nonempty hI_ge_1 f hf_in_F])
-        exact one_ne_zero -- 1 ≠ 0
+- The core assertion is that this **Twin Recursive Sifting Process** never terminates.
+- **Justification (based on article's inductive/constructive claims):** For any finite set of confirmed twin prime indices `P_k` found so far, the article implies (via the Theoretical Proof section and FAQ 11/8) that a constructive method exists (analogous to Euclid's proof, adapted using factors like `6p±1` derived from indices `p` in `P_k`) to generate _new candidate indices_ `n'` such that the pair `(6n'-1, 6n'+1)` is not divisible by the factors derived from `P_k`.
+- **Crucial Link (Article's Claim):** The argument hinges on the assertion that this constructive guarantee of finding _candidates_ that survive the _limited_ factor sieve (based on previous `6p±1`) ensures that the _Comprehensive Sieve_ (which demands actual primality) will also always find a next survivor. It posits that because a candidate-generating mechanism exists for _any_ finite step `k`, the process of finding the _next actual twin prime pair_ via the comprehensive check must also continue indefinitely.
+- **Conclusion (within the framework):** Since the Twin Recursive Sifting Process, which identifies _actual_ twin primes by definition via the Comprehensive Sieve, is argued to never terminate due to the underlying constructive principle, there must be infinitely many Framework Twin Prime Pairs.
 
-      exact ⟨hc1, hc2⟩
+---
 
--- Check n > max(I)
-have hn*gt_maxI : n > I.max' hI_nonempty := by
-let M := I.max' hI_nonempty
-have hM_in_I : M ∈ I := Finset.max'\_mem * _
-have hM_ge_1 : M ≥ 1 := hI_ge_1 M hM_in_I
--- Factors F contains fm = 6M-1 or 6M+1 (or both if > 1)
--- Let's use 6M+1, which is always > 1 since M >= 1
-let fM_p1 := 6 \* M + 1
-have hfM_p1_gt_1 : fM_p1 > 1 := by linarith
-have hfM_p1_in_F : fM_p1 ∈ F := by
-simp only [Factors, filter_mem_dom, biUnion_mem, exists_prop]
-use M
-refine ⟨mem_filter.mpr ⟨hM_in_I, hM_ge_1⟩, ?_⟩
-simp only [List.mem_toFinset, List.mem_filter, List.mem_append, List.mem_singleton]
-use fM*p1
-refine ⟨⟨by simp, hfM_p1_gt_1⟩, ?*⟩
-right; rfl
-
-    -- Q is the product of factors in F, so Q ≥ fM_p1 if F is non-empty
-    have hQ_ge_fMp1 : Q ≥ fM_p1 := Finset.prod_le_prod_of_subset (singleton_subset_iff.mpr hfM_p1_in_F) (fun f hf => by linarith[factors_ge_5 I hI_nonempty hI_ge_1 f hf]) -- prod >= element needs elements >= 1
-    -- Need simpler argument: Q = prod F >= element of F
-    have hQ_ge_fMp1' : Q ≥ fM_p1 := Finset.le_prod_of_mem' hF_nonempty hfM_p1_in_F (fun f hf => by linarith [factors_ge_5 I hI_nonempty hI_ge_1 f hf])
-
-
-    -- Show Q > M
-    calc n = Q       := rfl
-         _ ≥ fM_p1   := hQ_ge_fMp1'
-         _ = 6 * M + 1 := rfl
-         _ > M       := by linarith
-
--- Combine: n exists, n is in TwinSieve I N1, and n > max I.
-exact Set.nonempty_of_mem ⟨hn_survives, hn_gt_maxI⟩
-
--- Conclusion: H2 is provable based on the framework's definitions.
--- The twin prime index generation process never stops.
+This rewritten H2 description explicitly defines the sieve step to require confirmation of actual primality for both `6n-1` and `6n+1`, aligning with your stated goal and FAQ 13. It then frames the infinitude argument based on the article's claim that a constructive proof guarantees this process continues forever.
 
 end HypothesesAndProofs
 
