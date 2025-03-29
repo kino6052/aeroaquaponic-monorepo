@@ -221,86 +221,94 @@ have hq_ge_2 : q ≥ 2 := hq_prime.two_le
 
 -- Conclusion: H1 is provable. The prime generation process never stops.
 
+/-
+Formalization of the H2 Twin Prime Infinitude Argument
+Based on the "Computational Prime Number Framework"
+
+NOTE: This proof relies on an explicitly stated axiom (`FrameworkHypothesis`)
+which encodes the non-standard assertion made by the framework. This assertion
+links the survival of a constructed candidate in a limited sieve to the
+guaranteed existence of a subsequent actual twin prime. This axiom is not
+proven within standard mathematics and represents the logical leap taken
+by the framework's argument.
+-/
 import Mathlib.Data.Nat.Prime
-import Mathlib.Data.Nat.Modeq -- For modulo arithmetic, maybe not needed directly
+import Mathlib.Data.Nat.Modeq -- For modulo arithmetic lemmas
 import Mathlib.Data.Set.Finite
 import Mathlib.Data.Set.Infinite
-import Mathlib.Algebra.BigOperators.Finset.Basic -- For Finset.prod
-import Mathlib.Order.WellFoundedSet -- For max' maybe
+import Mathlib.Algebra.BigOperators.Finset.Basic -- For Finset.prod, Finset.max'
+import Mathlib.Order.WellFoundedSet -- For max' existence guarantee with Nonempty
 
 open Set Finset Nat
 
 -- Definition: IsTwPrimeIndex n
 -- True if n >= 1 and (6n-1, 6n+1) is a twin prime pair.
+-- Note: Nat.Prime correctly handles 0 and 1. 6*n-1 uses Nat.sub, giving 0 if n=0.
 def IsTwPrimeIndex (n : ℕ) : Prop :=
-n ≥ 1 ∧ Prime (6 _ n - 1) ∧ Prime (6 _ n + 1)
+n ≥ 1 ∧ Prime (6 * n - 1) ∧ Prime (6 \* n + 1)
 
 -- The set of all Twin Prime Indices
 def ITP : Set ℕ := {n | IsTwPrimeIndex n}
 
--- Helper: 5 and 7 are prime
-lemma prime_5 : Prime 5 := by native_decide
-lemma prime_7 : Prime 7 := by native_decide
+-- Helper: 5 and 7 are prime (using built-in tactics)
+lemma prime_5 : Prime 5 := by decide
+lemma prime_7 : Prime 7 := by decide
 
--- Helper: 1 is a Twin Prime Index
+-- Helper: 1 is a Twin Prime Index (corresponding to (5, 7))
 lemma one_mem_ITP : 1 ∈ ITP := by
-simp [IsTwPrimeIndex]
+simp only [IsTwPrimeIndex, Prime.one_le_iff, true_and]
 norm_num -- Calculates 6*1-1=5, 6*1+1=7
 exact ⟨prime_5, prime_7⟩
 
--- Helper: ITP is non-empty
+-- Helper: The set ITP is non-empty
 lemma itp_nonempty : ITP.Nonempty := Set.nonempty_of_mem one_mem_ITP
 
--- Helper: Define the factors derived from an index i
--- Returns {6i-1, 6i+1} filtered for elements > 1
+-- Helper: Define the factors derived from an index i >= 1
+-- Returns the finset {f | f = 6i-1 or f = 6i+1, and f > 1}
+-- (These are the components of the twin prime pair itself)
 def factors_of_i (i : ℕ) : Finset ℕ :=
--- Ensure 6*i-1 doesn't underflow for i=0; IsTwPrimeIndex ensures i>=1 anyway.
 if h : i ≥ 1 then
-([6*i-1, 6\*i+1].filter (· > 1)).toFinset
+-- For i >= 1, 6i-1 >= 5 and 6i+1 >= 7, so both are > 1
+{6 _ i - 1, 6 _ i + 1}
 else
 ∅
 
--- Helper Lemma: Factors are >= 5
+-- Helper Lemma: Factors are >= 5 for valid indices
 lemma factors*ge_5 {i : ℕ} (hi : i ≥ 1) : ∀ f ∈ factors_of_i i, f ≥ 5 := by
 intro f hf
-simp only [factors_of_i, ge_iff_le, dite_true hi] at hf
-rw [List.mem_toFinset, List.mem_filter] at hf
-rcases hf with ⟨hf_in_list, hf_gt_1⟩
-cases hf_in_list with
-| inl hf_eq => -- f = 6*i - 1
+simp only [factors_of_i, ge_iff_le, dite_true hi, Finset.mem_insert, Finset.mem_singleton] at hf
+rcases hf with hf_eq | hf_eq
+· -- Case f = 6*i - 1
 rw [hf_eq]
-clear hf -- Avoid using f inside calc
+clear hf
 calc 6 * i - 1
 * ≥ 6 * 1 - 1 := Nat.sub*le_sub_right (mul_le_mul_left' hi 6) 1
 * = 5 := by norm_num
-| inr hf_eq => -- f = 6*i + 1
-rw [List.mem_singleton] at hf*eq
+· -- Case f = 6*i + 1
 rw [hf_eq]
 clear hf
-calc 6 \* i + 1
-* ≥ 6 \* 1 + 1 := Nat.add*le_add_right (mul_le_mul_left' hi 6) 1
+calc 6 _ i + 1
+\_ ≥ 6 _ 1 + 1 := Nat.add*le_add_right (mul_le_mul_left' hi 6) 1
 * = 7 := by norm*num
-* ≥ 5 := by norm_num
+* ≥ 5 := by norm_num -- 7 >= 5
 
--- The Crucial Framework Assertion (stated as an axiom/hypothesis)
--- "If I contains ALL twin prime indices, then the construction based on I's factors
--- guarantees the existence of a _next_ twin prime index greater than any in I."
-axiom FrameworkHypothesis (I : Finset ℕ) (h_all : ∀ n, IsTwPrimeIndex n ↔ n ∈ I) :
-let F := I.biUnion factors_of_i
--- Need to ensure F is non-empty for prod, relies on I non-empty
-let Q := if hF : F.Nonempty then F.prod id else 1
--- Intermediate check (implied by framework?):
--- (∀ f ∈ F, (6*Q - 1) % f ≠ 0 ∧ (6*Q + 1) % f ≠ 0) → -- This part is provable, maybe don't include in axiom
--- Guarantee:
-∃ n_next, n_next > I.max' (Finset.nonempty_of_ne_empty (by rintro rfl; exact Set.not_nonempty_empty itp_nonempty (h_all ▸ Set.eq_empty_iff_forall_not_mem.mpr fun n hn => hn))) ∧ IsTwPrimeIndex n_next
+-- The Crucial Framework Assertion (stated as an axiom)
+-- "If `I` is a Finset containing ALL twin prime indices (and is therefore non-empty),
+-- then the framework guarantees the existence of a _next_ twin prime index
+-- strictly greater than the maximum index in `I`."
+axiom FrameworkHypothesis (I : Finset ℕ) (h_nonempty : I.Nonempty) (h_all : ∀ n, IsTwPrimeIndex n ↔ n ∈ I) :
+∃ n_next, n_next > I.max' h_nonempty ∧ IsTwPrimeIndex n_next
+-- The framework's justification for this involves constructing Q from factors of I
+-- and claiming that Q surviving the limited sieve implies the existence of n_next.
+-- We encode the _conclusion_ of that justification directly as the axiom here.
 
 -- Theorem: Infinitude of Twin Primes (within the framework)
 theorem infinitude_of_twin_primes_framework : ITP.Infinite := by
--- Proof by contradiction
-by_contra h_finite_mem
-have h_finite : ITP.Finite := Set.finite_of_finite_mem h_finite_mem -- Use the standard library definition
+-- Assume ITP is finite, aiming for a contradiction
+rw [Set.infinite_iff_not_finite]
+intro h_finite
 
--- ITP is non-empty because 1 ∈ ITP
+-- ITP is non-empty because 1 ∈ ITP (index for pair (5,7))
 have h_nonempty : ITP.Nonempty := itp_nonempty
 
 -- Convert the finite set ITP to a Finset
@@ -309,90 +317,73 @@ have h_nonempty_finset : I_finset.Nonempty :=
 Set.Finite.toFinset_nonempty.mpr h_nonempty
 
 -- Define h_all property: n is a twin prime index iff n is in I_finset
+-- This follows from I_finset being constructed from the set ITP under assumption h_finite
 have h_all : ∀ n, IsTwPrimeIndex n ↔ n ∈ I_finset := by
 intro n
-simp [I_finset, Set.Finite.mem_toFinset, h_finite]
+simp only [I_finset, Set.Finite.mem_toFinset, h_finite]
 
--- Define F_k and Q based on I_finset
-let F_k := I_finset.biUnion factors_of_i
-have hF_nonempty : F_k.Nonempty := by
-apply Finset.Nonempty.biUnion
-· exact h_nonempty_finset -- Use that I_finset is non-empty (contains 1)
-· intro i hi
--- Show factors_of_i i is non-empty if IsTwPrimeIndex i
-have hi_is_tp : IsTwPrimeIndex i := (h_all i).mpr hi
-simp only [factors_of_i, ge_iff_le, dite_true hi_is_tp.1, Finset.Nonempty.toFinset_nonempty]
-rw [List.filter_eq_nil] -- Check if filter is non-empty
-intro h_empty_list
--- 6*i+1 is always > 1 for i >= 1
-have h6i_p1_gt_1 : 6 * i + 1 > 1 := by linarith [hi_is_tp.1]
--- Check if 6*i+1 is in the original list
-have h_in_list : 6 * i + 1 ∈ [6 * i - 1, 6 * i + 1] := by simp
--- If the filter is empty, then 6*i+1 must fail the filter condition (>1)
-specialize h_empty_list (6*i+1) h_in_list
-rw [not_and] at h_empty_list
--- This implies not (6\*i+1 > 1)
-exact (h_empty_list (by assumption)) h6i_p1_gt_1 -- Contradiction
-
+/-
+-- Optional: Construction of Q (as justification insight, not needed for proof logic below)
+let F*k := I_finset.biUnion factors_of_i
+have hF_nonempty : F_k.Nonempty := by -- Prove F_k is non-empty since I_finset is
+obtain ⟨i, hi⟩ := h_nonempty_finset -- Get some element i from I_finset
+use i
+simp only [mem_biUnion, exists_prop]
+refine ⟨hi, ?*⟩
+rw [factors_of_i]
+have hi_ge_1 : i ≥ 1 := (h_all i).mp hi |>.1
+simp only [ge_iff_le, dite_true hi_ge_1, Finset.nonempty_iff_ne_empty, ne_eq,
+Finset.coe_insert, Set.singleton_nonempty, Set.insert_nonempty]
 let Q := F_k.prod id
-have hQ_def : Q = if hF : F_k.Nonempty then F_k.prod id else 1 := rfl
-rw [dif_pos hF_nonempty] at hQ_def; injection hQ_def with hQ_prod_eq
 
--- **Intermediate Result Proof (Modulo Arithmetic)**
--- Prove that T_Q survives the sieve F_k
+-- Provable Intermediate Result: T_Q = (6Q-1, 6Q+1) survives sieve based on F_k
 have h_survives_sieve : ∀ f ∈ F_k, (6 _ Q - 1) % f ≠ 0 ∧ (6 _ Q + 1) % f ≠ 0 := by
 intro f hf_in_Fk
--- Need f >= 5
 rcases Finset.mem_biUnion.mp hf_in_Fk with ⟨i, hi_in_Ifin, hf_in_factors_i⟩
 have hi_is_tp : IsTwPrimeIndex i := (h_all i).mpr hi_in_Ifin
 have hf_ge_5 : f ≥ 5 := factors_ge_5 hi_is_tp.1 hf_in_factors_i
+have hf_dvd_Q : f ∣ Q := Finset.dvd_prod_of_mem id hf_in_Fk
+have hQ_pos : Q > 0 := Finset.prod_pos (by rintro f' hf'; linarith [factors_ge_5 ((h_all (Classical.choose (mem_biUnion.mp hf')).1).mp (Classical.choose_spec (mem_biUnion.mp hf')).1).1 (Classical.choose_spec (mem_biUnion.mp hf')).2]) -- Q > 0 if F_k non-empty
 
-    -- Prove (6*Q - 1) % f != 0
-    have hc1 : (6 * Q - 1) % f ≠ 0 := by
-      have hf_dvd_Q : f ∣ Q := by rw [hQ_prod_eq]; exact Finset.dvd_prod_of_mem id hf_in_Fk
-      have h_mod_eq : (6 * Q - 1) % f = (f - 1) % f := by
-        rw [Nat.sub_mod, Nat.mul_mod, Nat.mod_eq_zero_of_dvd hf_dvd_Q] -- Need Q >= 1
-        rw [zero_mul, Nat.mod_self, Nat.zero_sub_mod, Nat.mod_eq_of_lt]
-        exact Nat.sub_lt_self (by linarith) (by norm_num) -- f >= 5 => f >= 1
-      rw [h_mod_eq]
-      rw [Nat.mod_eq_of_lt (Nat.sub_lt_self (by linarith) (by norm_num))] -- f >= 5 => f-1 < f
-      intro h_contra_zero -- Assume f-1 = 0 mod f (i.e. f-1 = 0)
-      exact Nat.ne_of_gt (by linarith) h_contra_zero -- f >= 5 => f-1 != 0
+     -- Check (6*Q - 1) % f ≠ 0
+     have hc1 : (6 * Q - 1) % f ≠ 0 := by
+       have h_mod_eq : (6 * Q - 1) % f = (f - 1) % f := Nat.sub_mul_mod_eq_sub_mod_of_dvd Q 1 6 hf_dvd_Q
+       rw [h_mod_eq, Nat.mod_eq_of_lt (Nat.sub_lt (by linarith) (by norm_num))] -- f >= 5 => f-1 < f
+       intro h_contra_zero -- Assume f-1 = 0 mod f (i.e. f-1 = 0)
+       simp only [Nat.mod_eq_zero_iff_dvd, dvd_zero] at h_contra_zero
+       exact Nat.ne_of_gt (by linarith) (eq_of_sub_eq_zero h_contra_zero) -- f >= 5 => f-1 != 0
 
-    -- Prove (6*Q + 1) % f != 0
-    have hc2 : (6 * Q + 1) % f ≠ 0 := by
-      have hf_dvd_Q : f ∣ Q := by rw [hQ_prod_eq]; exact Finset.dvd_prod_of_mem id hf_in_Fk
-      have h_mod_eq : (6 * Q + 1) % f = 1 % f := by
-        rw [Nat.add_mod, Nat.mul_mod, Nat.mod_eq_zero_of_dvd hf_dvd_Q, zero_mul, zero_add]
-      rw [h_mod_eq, Nat.mod_eq_of_lt (by linarith [hf_ge_5])]
-      norm_num -- 1 != 0
+     -- Check (6*Q + 1) % f ≠ 0
+     have hc2 : (6 * Q + 1) % f ≠ 0 := by
+       have h_mod_eq : (6 * Q + 1) % f = 1 % f := Nat.add_mul_mod_eq_add_mod_of_dvd Q 1 6 hf_dvd_Q
+       rw [h_mod_eq, Nat.mod_eq_of_lt (by linarith [hf_ge_5])]
+       norm_num -- 1 != 0
 
-    exact ⟨hc1, hc2⟩
+     exact ⟨hc1, hc2⟩
+
+-- End Optional Construction Section
+-/
 
 -- **Apply the Framework Hypothesis**
--- Check if the axiom needs the survival proof as input
--- My definition assumes the intermediate result is provable.
--- Need to handle the `I.max'` argument for `FrameworkHypothesis`.
-have I_finset_ne_empty : I_finset ≠ ∅ := Finset.nonempty_iff_ne_empty.mp h_nonempty_finset
-let framework_axiom_instance := FrameworkHypothesis I_finset h_all
+-- The axiom takes the Finset I_finset (which assumes all TPs) and its properties
+let framework_axiom_instance := FrameworkHypothesis I_finset h_nonempty_finset h_all
 
--- We need to show Q > max'(I_finset) to show the constructed candidate _could_ be the next one
--- This isn't strictly needed to apply the axiom, but good for intuition
--- Let's prove n_next > max' I_finset implies n_next ∉ I_finset later.
-
--- The axiom directly gives existence of n_next
+-- The axiom directly guarantees the existence of a _next_ twin prime index
 rcases framework_axiom_instance with ⟨n_next, h_n_next_gt_max, h_n_next_is_TP⟩
 
 -- **Derive Contradiction**
--- Since n_next is a twin prime index...
+-- 1. Since n_next is a twin prime index...
 have hn_next_in_I : n_next ∈ I_finset := (h_all n_next).mp h_n_next_is_TP
+-- ... it must be in I_finset, because I_finset contains _all_ twin prime indices by assumption h_all.
 
--- But n_next is greater than the maximum element of I_finset
+-- 2. But n_next is strictly greater than the maximum element of I_finset...
 have hn_next_not_in_I : n_next ∉ I_finset := by
-apply Finset.not_mem_of_gt_max' -- Use the Mathlib lemma
+apply Finset.not_mem_of_gt_max' -- Mathlib lemma: if x > max'(S), then x ∉ S
 exact h_n_next_gt_max
 
--- Contradiction
+-- ... which means n_next cannot be in I_finset.
+
+-- Contradiction: We have n_next ∈ I_finset AND n_next ∉ I_finset.
 exact hn_next_not_in_I hn_next_in_I
 
 end HypothesesAndProofs
