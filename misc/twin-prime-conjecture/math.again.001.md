@@ -1,76 +1,134 @@
-Okay, let's structure the argument presented in the "Computational Prime Number Framework" into a more formal mathematical style, starting with the definitions and hypotheses/theorems as defined _within this specific framework_. The proofs themselves will be omitted as requested.
-
----
-
-## Mathematical Presentation of the Computational Prime Number Framework
+## The Computational Prime Number Framework: Proofs of Infinitude
 
 ### Abstract
 
-This document outlines the foundational definitions and central theorems of the Computational Prime Number Framework. This framework utilizes specific procedural definitions for prime numbers and twin prime pairs based on recursive filtering algorithms (sieves). The objective is to demonstrate logical consequences, such as the infinitude of primes and twin primes, _strictly within the confines of these definitions_. It does not claim to prove these conjectures within standard number theory but rather explores the outcomes of its unique axiomatic base.
+This document presents proofs for the infinitude of prime numbers and twin prime pairs strictly within the axiomatic system defined by the Computational Prime Number Framework (CPNF). The CPNF defines prime numbers and twin prime pairs procedurally, based on the outcomes of specific recursive filtering algorithms (sieves). The objective is to demonstrate the infinitude of these sets as logical consequences derived solely from the framework's definitions and axioms. The results establish infinitude _for the objects defined within this framework_, without claiming to resolve conjectures in standard number theory using conventional definitions.
 
-### I. Definitions
+### 1. Introduction
 
-Let `ℕ = {1, 2, 3, ...}` be the set of natural numbers and `ℕ≥2 = {2, 3, 4, ...}`.
+Standard number theory defines prime numbers based on their divisors. The Computational Prime Number Framework adopts an alternative, procedural approach. Numbers are classified based on their persistence through iterative sieving processes. This framework allows for the construction of arguments for infinitude based directly on the properties of these defined processes. We present the foundational definitions and axioms of the CPNF and derive theorems concerning the infinitude of Framework Primes and Framework Twin Prime Pairs.
 
-1.  **Sieve Function:**
-    Let `P` be a finite subset of `ℕ≥2` and `N'` be a subset of `ℕ≥2`. The sieve function, `sieve: P(ℕ≥2) × P(ℕ≥2) → P(ℕ≥2)`, is defined as:
-    `sieve(P, N') = {n ∈ N' | ∀p ∈ P, n mod p ≠ 0}`
-    _(This function filters elements from N' that are divisible by any element in P)._
+### 2. Foundational Definitions and Axioms
 
-2.  **Recursive Sifting Process:**
-    This process generates a sequence of prime sets `(P_i)_{i≥0}` and candidate number sets `(N_i)_{i≥0}`.
+Let `ℕ = {1, 2, 3, ...}` be the set of natural numbers and `ℕ≥k = {k, k+1, k+2, ...}`.
 
-    - **Initialization:** `P_0 = ∅`, `N_0 = ℕ≥2`.
-    - **Iteration (i ≥ 0):**
-      a. `N'_{i+1} = sieve(P_i, N_i)`
-      b. If `N'_{i+1} = ∅`, the process terminates.
-      c. Else, let `p_{i+1} = min(N'_{i+1})`.
-      d. Set `P_{i+1} = P_i ∪ {p_{i+1}}`.
-      e. Set `N_{i+1} = N'_{i+1}` (or alternatively, `N_{i+1} = N_i` can be used if the sieve always filters the original infinite set, though the code implies filtering the remaining set). _Let's assume `N_{i+1} = N'_{i+1}` based on the code's structure._
+**Definition 2.1 (Sieve Function):**
+Let `P ⊂ ℕ≥2` be a finite set and `N' ⊆ ℕ≥2`. The sieve function `sieve: P × N' → N'` is defined as:
+`sieve(P, N') = {n ∈ N' | ∀p ∈ P, n mod p ≠ 0}`.
+This function filters elements from `N'` that are divisible by any element in `P`.
 
-3.  **Framework Prime Number:**
-    A number `p` is a _Framework Prime_ if `p ∈ P_k` for some `k ≥ 1` in the Recursive Sifting Process. The set of all Framework Primes is denoted `P_F = ∪_{i=1}^∞ P_i`.
-    _(Note: This procedural definition yields the set of prime numbers as conventionally defined)._
+_Illustration (Python):_
 
-4.  **Initial Twin Prime Candidate Indices:**
-    Let `N* = sieve({2, 3}, ℕ≥2)`. The elements of `N*` are of the form `6k ± 1` for `k ∈ ℕ`. The set of _Initial Twin Prime Candidate Indices_ is `I_0 = {n ∈ ℕ | (6n-1 ∈ N*) ∧ (6n+1 ∈ N*)}`.
-    _(These are the indices `n` such that neither `6n-1` nor `6n+1` is divisible by 2 or 3. Note: (3,5) is excluded, but (5,7) corresponds to n=1)._
+```python
+# Illustrates the sieve function
+def sieve_illustrative(P, N_list):
+  """Filters numbers from N_list divisible by any p in P."""
+  return [n for n in N_list if all(n % p != 0 for p in P)]
 
-5.  **Twin Sieve Function:**
-    Let `P_I` be a finite subset of `I_0` (representing indices of previously identified twin primes) and `N_I` be a subset of `I_0` (representing indices to be filtered). The twin sieve function, `twin_sieve: P(I_0) × P(I_0) → P(I_0)`, is defined as:
-    `twin_sieve(P_I, N_I) = {n ∈ N_I | ∀p ∈ P_I, ( (6n-1) mod (6p-1) ≠ 0 ) ∧ ( (6n-1) mod (6p+1) ≠ 0 ) ∧ ( (6n+1) mod (6p-1) ≠ 0 ) ∧ ( (6n+1) mod (6p+1) ≠ 0 ) }`
-    _(This function filters indices `n` from `N_I` if either `6n-1` or `6n+1` is divisible by `6p-1` or `6p+1` for any index `p` in the set `P_I`). Note: This assumes `6p±1` are Framework Primes._
+# Example: sieve({2, 3}, {2, ..., 19})
+# print(sieve_illustrative([2, 3], list(range(2, 20))))
+# Output: [5, 7, 11, 13, 17, 19]
+```
 
-6.  **Twin Recursive Sifting Process:**
-    This process generates a sequence of twin prime index sets `(P_{I,i})_{i≥0}` and candidate index sets `(I_i)_{i≥0}`.
+**Definition 2.2 (Recursive Sifting Process for Primes):**
+This process generates sequences `(P_i)_{i≥0}` (sets of identified Framework Primes) and `(N_i)_{i≥0}` (sets of candidates).
 
-    - **Initialization:** `P_{I,0} = {1}` (corresponding to the pair (5,7)). `N_{I,0} = ℕ` (the pool of all potential indices to check).
-    - **Iteration (i ≥ 0):**
-      a. `I'_{i+1} = twin_sieve(P_{I,i}, N_{I,0})` _(The framework description implies filtering the full set of natural numbers as indices each time)_.
-      b. If `I'_{i+1} = ∅`, the process terminates.
-      c. Else, let `n_{i+1} = min(I'_{i+1})`. _(The smallest index surviving the current sieve)_.
-      d. Set `P_{I,i+1} = P_{I,i} ∪ {n_{i+1}}`.
+- **Initialization:** `P_0 = ∅`, `N_0 = ℕ≥2`.
+- **Iteration (i ≥ 0):**
+  1.  Compute `N'_{i+1} = sieve(P_i, N_i)`.
+  2.  If `N'_{i+1} = ∅`, the process terminates.
+  3.  Else, let `p_{i+1} = min(N'_{i+1})`.
+  4.  Update `P_{i+1} = P_i ∪ {p_{i+1}}`.
+  5.  Set `N_{i+1} = N'_{i+1}` (or optionally `N_{i+1} = N'_{i+1} \setminus \{p_{i+1}\}` for subsequent steps).
 
-7.  **Framework Twin Prime Index:**
-    An index `n` is a _Framework Twin Prime Index_ if `n ∈ P_{I,k}` for some `k ≥ 0` in the Twin Recursive Sifting Process. The set of all Framework Twin Prime Indices is `P_{I,F} = ∪_{i=0}^∞ P_{I,i}`.
+**Definition 2.3 (Framework Prime Number):**
+A number `p` is a _Framework Prime_ if `p ∈ P_k` for some `k ≥ 1` generated by the Recursive Sifting Process (Definition 2.2) assuming it does not terminate. The set of all Framework Primes is denoted `P_F = ∪_{i=1}^∞ P_i`.
 
-8.  **Framework Twin Prime Pair:**
-    A pair of numbers `(a, b)` is a _Framework Twin Prime Pair_ if `a = 6n-1` and `b = 6n+1` for some Framework Twin Prime Index `n ∈ P_{I,F}`.
+**Axiom 2.1 (Infinitude of Natural Numbers):** The set `ℕ` is infinite.
 
-### II. Fundamental Hypotheses/Axioms of the Framework
+**Axiom 2.2 (Sieve Correctness):** The `sieve` function correctly implements Definition 2.1 based on the properties of modular arithmetic.
 
-1.  **Infinitude of Natural Numbers:** The set `ℕ≥2` (and thus `ℕ`) is infinite.
-2.  **Sieve Correctness:** The `sieve` function correctly identifies and removes all multiples of primes in `P` from the set `N'`.
-3.  **Twin Sieve Correctness:** The `twin_sieve` function correctly identifies and removes all indices `n` from `N_I` such that `6n-1` or `6n+1` is divisible by `6p±1` for any `p ∈ P_I`.
-4.  **Non-Termination of Recursive Sifting:** For any finite set of Framework Primes `P_i` generated by the Recursive Sifting Process, the set `sieve(P_i, ℕ≥2)` is infinite. (This implies `min(sieve(P_i, ℕ≥2))` always exists).
-5.  **Non-Termination of Twin Recursive Sifting:** For any finite set of Framework Twin Prime Indices `P_{I,i}` generated by the Twin Recursive Sifting Process, the set `twin_sieve(P_{I,i}, ℕ)` is infinite. (This implies `min(twin_sieve(P_{I,i}, ℕ))` always exists).
+**Lemma 2.1 (Non-Termination of Prime Sifting):** For any finite set `P_i ⊂ P_F`, the set `N'_{i+1} = sieve(P_i, ℕ≥2)` is infinite. Consequently, the Recursive Sifting Process (Definition 2.2) applied to the infinite set `ℕ≥2` never terminates.
 
-### III. Theorems (within the Framework)
+_Proof of Lemma 2.1:_
+Let `P_i = {p_1, ..., p_k}` be any finite set of Framework Primes. Construct the number `M = (∏_{j=1}^k p_j) + 1`. For any `p_j ∈ P_i`, `M mod p_j = (0 + 1) mod p_j = 1`. Thus, `M ≠ 0 mod p_j` for all `p_j ∈ P_i`. By Definition 2.1, `M ∈ sieve(P_i, ℕ≥2)`.
+Now, consider numbers of the form `M_m = m * (∏_{j=1}^k p_j) + 1` for `m ∈ ℕ`. For any `p_j ∈ P_i`, `M_m mod p_j = (m * 0 + 1) mod p_j = 1`. Thus, all such `M_m` belong to `sieve(P_i, ℕ≥2)`. Since there are infinitely many choices for `m`, the set `sieve(P_i, ℕ≥2)` is infinite.
+Because `N'_{i+1} = sieve(P_i, N_i)` contains `sieve(P_i, ℕ≥2)` (as `N_i ⊆ ℕ≥2` initially and remains infinite), `N'_{i+1}` is non-empty (in fact, infinite) for any finite `P_i`. Therefore, step 2 of the Recursive Sifting Process never occurs, and the process never terminates when `N_0 = ℕ≥2`. □
 
-1.  **Theorem 1 (Infinitude of Framework Primes):** The set `P_F` of Framework Primes generated by the Recursive Sifting Process is infinite.
-    _(Proof omitted here, but relies on Definition 2 and Hypothesis 4)_.
+**Definition 2.4 (Framework Primality Test `IsFrameworkPrime`):**
+For the purpose of the twin sieve definition, we define a predicate `IsFrameworkPrime(k)` for `k ∈ ℕ≥5`.
+`IsFrameworkPrime(k) := (∀p ∈ P_F, p ≤ √k ⇒ k mod p ≠ 0)`.
+_(Note: This aligns with the standard primality test using the known Framework Primes found so far)_.
 
-2.  **Theorem 2 (Infinitude of Framework Twin Primes):** The set of Framework Twin Prime Pairs `{(6n-1, 6n+1) | n ∈ P_{I,F}}` generated by the Twin Recursive Sifting Process is infinite.
-    _(Proof omitted here, but relies on Definitions 5, 6, 7, 8 and Hypothesis 5)_.
+**Definition 2.5 (Twin Sieve Function):**
+Let `I ⊂ ℕ` be a set of indices. The twin sieve function `twin_sieve: I → I` is defined as:
+`twin_sieve(I) = {n ∈ I | (6n-1 ≥ 5) ∧ (6n+1 ≥ 5) ∧ IsFrameworkPrime(6n-1) ∧ IsFrameworkPrime(6n+1)}`.
+This function selects indices `n` such that _both_ `6n-1` and `6n+1` satisfy the Framework Primality test.
+
+_Illustration (Python Filter):_
+
+```python
+# Illustrates the filtering logic of twin_sieve
+def is_framework_prime_illustrative(k, known_primes):
+  """Checks if k is divisible by any known_primes up to sqrt(k)"""
+  if k < 2: return False
+  for p in known_primes:
+      if p * p > k: break
+      if k % p == 0: return False
+  return True
+
+def twin_sieve_filter_illustrative(n, known_primes):
+   """Checks if index n corresponds to a twin prime pair based on known_primes."""
+   a = 6*n - 1
+   b = 6*n + 1
+   if a < 5 or b < 5: return False # Ensure components are >= 5
+   # Check against primes up to sqrt(b) which covers both
+   return is_framework_prime_illustrative(a, known_primes) and \
+          is_framework_prime_illustrative(b, known_primes)
+
+# Example: Check index n=5 (pair 29, 31) using primes up to 7
+# known_framework_primes = [2, 3, 5, 7]
+# print(twin_sieve_filter_illustrative(5, known_framework_primes)) # Output: True
+# print(twin_sieve_filter_illustrative(4, known_framework_primes)) # Output: False (23, 25 - 25 is not prime)
+```
+
+**Definition 2.6 (Recursive Sifting Process for Twin Prime Indices):**
+This process generates a sequence of sets of indices `(P_{I,i})_{i≥0}`.
+
+- **Initialization:** `P_{I,0} = {1}` (corresponding to the pair (5, 7)). `N_{I,0} = ℕ≥1`.
+- **Iteration (i ≥ 0):**
+  1.  Let `I'_{i+1} = twin_sieve(N_{I,i})`. _(Note: `twin_sieve` implicitly uses the current set of known Framework Primes `P_F`)_.
+  2.  If `I'_{i+1} = ∅`, the process terminates.
+  3.  Else, let `n_{i+1} = min(I'_{i+1} \setminus P_{I,i})` (the smallest new index).
+  4.  Update `P_{I,i+1} = P_{I,i} ∪ {n_{i+1}}`.
+  5.  Set `N_{I,i+1} = N_{I,i}` (or refine based on `I'_{i+1}`).
+
+**Axiom 2.3 (Non-Termination of Twin Sifting - CPNF Core Axiom):** The set `I'_{i+1} = twin_sieve(ℕ≥1)` is infinite. Consequently, the Recursive Sifting Process for Twin Prime Indices (Definition 2.6) never terminates.
+*(Motivation/Heuristic for Axiom 2.3: Similar to Lemma 2.1, one can construct candidate pairs `(6n-1, 6n+1)` that avoid divisibility by any finite set of known Framework Primes. For a finite set of twin prime indices `P_{I,i}` and their corresponding prime factors `F = {p | p=6k±1, p is prime, k ∈ P_{I,i}}`, consider numbers related to `M = ∏_{f∈F} f`. Candidates like `(6M-1, 6M+1)` or `(6(M+1)-1, 6(M+1)+1)` often survive sieving by factors in `F`. The framework elevates the observation that such candidates can always be constructed to the axiom that the set of indices `n` for which *both* `6n-1` and `6n+1` are *actually* Framework Primes is infinite.)*
+
+**Definition 2.7 (Framework Twin Prime Index):**
+An index `n` is a _Framework Twin Prime Index_ if `n ∈ P_{I,k}` for some `k ≥ 0` generated by the Twin Recursive Sifting Process (Definition 2.6). The set of all Framework Twin Prime Indices is `P*{I,F} = ∪*{i=0}^∞ P\_{I,i}$.
+
+**Definition 2.8 (Framework Twin Prime Pair):**
+A pair `(a, b)` is a _Framework Twin Prime Pair_ if `a = 6n-1` and `b = 6n+1` for some `n ∈ P_{I,F}`.
+
+### 3. Theorems and Proofs
+
+**Theorem 3.1 (Infinitude of Framework Primes):** The set `P_F` of Framework Primes is infinite.
+
+_Proof of Theorem 3.1:_
+The set `P_F` is generated by the Recursive Sifting Process for Primes (Definition 2.2), starting with `N_0 = ℕ≥2`. By Lemma 2.1, this process never terminates because the set `N'_{i+1}` from which the next prime `p_{i+1}` is chosen is always non-empty (and infinite) for any finite set `P_i`. Since a new, distinct Framework Prime `p_{i+1} = min(N'_{i+1})` is added to the set `P_i` at each iteration `i`, the union `P_F = ∪_{i=1}^∞ P_i` must contain infinitely many elements. □
+
+**Theorem 3.2 (Infinitude of Framework Twin Primes):** The set of Framework Twin Prime Pairs is infinite.
+
+_Proof of Theorem 3.2:_
+Framework Twin Prime Pairs are defined by indices in the set `P_{I,F}` (Definitions 2.7, 2.8), which is generated by the Recursive Sifting Process for Twin Prime Indices (Definition 2.6). This process starts with `N_{I,0} = ℕ≥1`.
+By Axiom 2.3 (Non-Termination of Twin Sifting), the set `I'_{i+1} = twin_sieve(ℕ≥1)` from which new indices are drawn is infinite. Therefore, the step `I'_{i+1} = ∅` in Definition 2.6 never occurs.
+At each iteration `i`, a new, distinct Framework Twin Prime Index `n_{i+1} = min(I'_{i+1} \setminus P_{I,i})` is added to the set `P_{I,i}`. Consequently, the union `P_{I,F} = ∪_{i=0}^∞ P_{I,i}` must contain infinitely many elements.
+Since each distinct index `n ∈ P_{I,F}` corresponds to a unique Framework Twin Prime Pair `(6n-1, 6n+1)`, the set of Framework Twin Prime Pairs must also be infinite. □
+
+### 4. Conclusion
+
+The Computational Prime Number Framework provides a self-contained system based on procedural definitions of primes and twin primes using iterative sieves. Within this system, the infinitude of Framework Primes is rigorously demonstrated using a proof analogous to Euclid's (Theorem 3.1, relying on Lemma 2.1). The infinitude of Framework Twin Primes (Theorem 3.2) is derived as a direct consequence of accepting the framework's core axiom regarding the non-termination of the twin index sifting process (Axiom 2.3). The validity of these theorems is contingent upon the acceptance of the CPNF's definitions and axioms.
 
 ---
